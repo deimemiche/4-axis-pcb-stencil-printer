@@ -68,14 +68,27 @@ TURNS_WITH_ALPHA = ("SR_OUTER_RING_W_GEAR", "ALPHA_TOP_PLATE")
 IGNORE = (("rail", "LM8UU"), ("rail", "RAIL_HOLDER"),
           ("rail", "BEARING_MOUNT"), ("column", "CLAMP_Z"), ("rail", "CLAMP"))
 
-# The alpha assembly's fixed plate lands on top of the LM8UU that ride the Y
-# rails, so its height comes from where the mounts put those rails.
-LM8UU_OUTER = 15.0
+# How much air to leave between the carriage and the alpha assembly above it.
+ALPHA_CLEARANCE = 1.0
 
 
-def alpha_seat(mounts):
-    """Y of the alpha assembly's underside: the top of an LM8UU on a Y rail."""
-    return asmprim.frame(mounts[0], "TROUGH").Base.y + LM8UU_OUTER / 2.0
+def alpha_seat(doc, carried):
+    """Y of the alpha assembly's underside.
+
+    Bounded from below by the tallest thing already standing on the carriage,
+    which turns out to be the arm of `BOT_RAIL_CLAMP_X_DRIVE` -- it reaches
+    inboard under where the alpha plate goes, and its top is what the plate has
+    to clear.  Measured from the parts rather than assumed, because the first
+    guess (resting the plate straight on the Y-rail bearings) put it 9 mm too
+    low and the interference check said so.
+
+    This is still not the *final* answer: manual step 3's four
+    `BOT_BEARING_MOUNT_Y_AXIS` are what actually hold the plate up, and their
+    flange sits 11.6 mm above the bearing bore, which would put it at 15.2.
+    That is below the caps, so the two do not yet agree -- see ASSEMBLY.md.
+    """
+    top = max(check.placed(obj).BoundBox.YMax for obj in carried)
+    return top + ALPHA_CLEARANCE
 
 
 def alpha_axis(doc, asm, at_y, turn):
@@ -140,6 +153,7 @@ EXPLODE = (
     ("BOT_RAIL_HOLDER", 0.0), ("X rail", 0.0),
     ("LM8UU -", 40.0), ("LM8UU +", 40.0),
     ("BOT_BEARING_MOUNT_X_AXIS", 70.0),
+    ("BOT_RAIL_CLAMP", 115.0),
     ("XY_PLATE", 55.0),
     ("Y rail", 90.0), ("LM8UU Y", 100.0),
     ("ALPHA_BOT_PLATE", 130.0), ("SR_BEARING_PLATE", 155.0),
@@ -256,12 +270,14 @@ def build(pose=None):
     mounts = carriage.bearing_mounts(doc, asm)
     plate = carriage.print_plate(doc, asm, mounts)
     y_rods = carriage.y_rails(doc, asm, mounts)
+    caps = carriage.rail_caps(doc, asm, mounts)
+    carriage.check_caps(caps, mounts)
     carriage.check_collinear(holders)
     carriage.check_bolts_land(mounts, plate)
 
-    say("=== the alpha axis, on the Y rails")
-    seat = alpha_seat(mounts)
-    say(f"  its fixed plate rests at Y {seat:.1f}, on top of the LM8UU")
+    say("=== the alpha axis, above the carriage")
+    seat = alpha_seat(doc, list(mounts) + list(caps))
+    say(f"  its fixed plate clears the carriage at Y {seat:.1f}")
     stack = alpha_axis(doc, asm, seat, pose["alpha"])
 
     y_bearings = carriage.y_bearings(doc, asm, mounts, y_rods)
@@ -270,7 +286,7 @@ def build(pose=None):
     # everything on the print plate rides the X rails -- including the Y rails
     # themselves and, through them, the alpha stack.
     on_y = list(stack.values()) + [b for b, _ in y_bearings]
-    on_x = list(mounts) + [plate] + y_rods + on_y
+    on_x = list(mounts) + list(caps) + [plate] + y_rods + on_y
 
     say("=== driving the axes")
     x_plus, x_minus = travel_limit(doc, "x", on_x, riding=x_bearings)

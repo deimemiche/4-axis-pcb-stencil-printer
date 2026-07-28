@@ -36,6 +36,20 @@ CONTAINERS = ("Assembly::AssemblyObject", "Assembly::JointGroup",
               "App::DocumentObjectGroup", "App::Part")
 
 
+def placed(obj):
+    """An object's shape in machine coordinates.
+
+    An `App::Link` shares its shape with every other link to the same part, so
+    `link.Shape` is the part where it was *drawn*, not where it was put.  Asking
+    a link for its bounding box directly is therefore wrong, and quietly so.
+    """
+    shape = obj.Shape
+    if obj.TypeId == "App::Link":
+        shape = obj.LinkedObject.Shape.copy()
+        shape.Placement = obj.Placement.multiply(shape.Placement)
+    return shape
+
+
 def solids(doc):
     """Every placed solid in a document, as (label, shape in machine space)."""
     out = []
@@ -45,10 +59,7 @@ def solids(doc):
         shape = getattr(obj, "Shape", None)
         if shape is None or not shape.Solids:
             continue
-        if obj.TypeId == "App::Link":
-            shape = obj.LinkedObject.Shape.copy()
-            shape.Placement = obj.Placement.multiply(shape.Placement)
-        out.append((obj.Label, shape))
+        out.append((obj.Label, placed(obj)))
     return out
 
 

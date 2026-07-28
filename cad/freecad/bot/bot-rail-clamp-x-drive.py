@@ -140,6 +140,14 @@ def bot_rail_clamp_x_drive(doc):
                       name=f"head{'np'[side > 0]}")
     fcprim.pocket(bdy, "Heads", heads, arm_y - shank_y)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  This part is the cap
+    # for BOT_BEARING_MOUNT_X_AXIS's trough: the rod lies along the block's own
+    # X at the underside, and the two M3 straddle it 18 mm apart, which is
+    # exactly the mount's own cap bolt spacing.
+    fcprim.lcs(bdy, "ROD", axis=(1, 0, 0))
+    for i, z in enumerate((-bolt_z, bolt_z)):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(0.0, 0.0, z), axis=(0, -1, 0))
+
     return bdy
 
 

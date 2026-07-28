@@ -238,6 +238,57 @@ def y_bearings(doc, asm, mounts, rails_y):
     return made
 
 
+# One cap per bearing mount.  Two are plain; the other two carry the machine's
+# two drive screws as well, which is why they are not all the same part.
+CAPS = ("bot/BOT_RAIL_CLAMP_Y_AXIS", "bot/BOT_RAIL_CLAMP_Y_AXIS_1",
+        "bot/BOT_RAIL_CLAMP_Y_AXIS", "bot/BOT_RAIL_CLAMP_X_DRIVE")
+
+
+def rail_caps(doc, asm, mounts):
+    """Manual step 7: the caps that clamp the Y rails into the mounts.
+
+    These are not standalone clamps, which is what they look like listed on
+    their own.  `BOT_BEARING_MOUNT_X_AXIS` has a half round trough across its
+    top with an M3 either side, and these are what close it: same 4.05 mm
+    groove, same 18 mm bolt spacing, same 21 x 27 footprint, and the square
+    nuts the manual buys for them drop into the mount's own slots.
+
+    Two of the four do a second job.  `BOT_RAIL_CLAMP_X_DRIVE` carries the X
+    screw's nut on an arm, and `BOT_RAIL_CLAMP_Y_AXIS_1` reaches out to hold
+    the alpha axis drive rod -- so the caps are where the two drives hang off
+    the carriage.
+    """
+    made = []
+    for mount, which in zip(mounts, CAPS):
+        body = asmprim.part(which)
+        seat = asmprim.frame(mount, "TROUGH").Base
+        # The cap is drawn with the rod along its own X; the Y rails run along
+        # Z, so it goes on a quarter turn.  Its underside is the rod's centre
+        # line, which is what the trough datum gives.
+        cap = asmprim.link(
+            asm, f"{which.split('/')[1]} at {seat.x:+.0f},{seat.z:+.0f}", body,
+            Placement(seat, Rotation(Vector(0, 1, 0), -90.0)))
+        made.append(cap)
+    doc.recompute()
+    return made
+
+
+def check_caps(caps, mounts):
+    """Each cap's groove must land on the rod its mount is holding."""
+    ok = True
+    for cap, mount in zip(caps, mounts):
+        rod = asmprim.frame(cap, "ROD").Base
+        trough = asmprim.frame(mount, "TROUGH").Base
+        off = (rod - trough).Length
+        if off > TOL:
+            say(f"  FAIL {cap.Label} is {off:.3f} mm off its trough")
+            ok = False
+    if not ok:
+        raise SystemExit("the caps do not sit on their troughs")
+    say(f"  ok: {len(caps)} caps seated on their troughs, "
+        f"8 x M3x10 into the mounts' square nut slots")
+
+
 def check_bolts_land(mounts, plate):
     """Do the mounts' feet bolt into holes that are actually there?
 
@@ -400,6 +451,10 @@ def build():
     say("=== the two Y rails, in the mounts' troughs")
     rails_y = y_rails(doc, asm, mounts)
     check_stack(mounts, plate, rails_y)
+
+    say("=== the caps that clamp them down (manual step 7)")
+    caps = rail_caps(doc, asm, mounts)
+    check_caps(caps, mounts)
 
     asmprim.save(doc)
     say("\nSTAGE 3 (XY carriage) PASSED -- bores collinear, "
