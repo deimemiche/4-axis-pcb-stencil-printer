@@ -52,23 +52,34 @@ def solids(doc):
     return out
 
 
-def interference(doc, say, tolerance=CLASH_MM3, ignore=()):
+def interference(doc, say, tolerance=CLASH_MM3, ignore=(), only=None):
     """Every pair of solids that shares more space than it should.
 
     `ignore` is pairs of label fragments that are allowed to touch -- a rod in
     its own clamp, say.
+
+    `only` is a set of labels that just moved.  Driving an axis cannot change
+    whether two *stationary* parts overlap, so a travel check need only look at
+    pairs involving something that moved -- which turns an O(n^2) sweep over
+    the whole machine into a narrow one, and is the difference between a check
+    that runs in seconds and one that does not finish.
     """
     placed = solids(doc)
-    say(f"  {len(placed)} solids, {len(placed) * (len(placed) - 1) // 2} pairs")
+    pairs = len(placed) * (len(placed) - 1) // 2
+    if only is None:
+        say(f"  {len(placed)} solids, {pairs} pairs")
 
     near = []
     for i, (label_a, a) in enumerate(placed):
         for label_b, b in placed[i + 1:]:
+            if only is not None and label_a not in only and label_b not in only:
+                continue
             box_a, box_b = a.BoundBox, b.BoundBox
             box_a.enlarge(-1e-6)
             if box_a.intersect(box_b):
                 near.append((label_a, a, label_b, b))
-    say(f"  {len(near)} pairs whose bounding boxes touch at all")
+    if only is None:
+        say(f"  {len(near)} pairs whose bounding boxes touch at all")
 
     clashes = []
     for label_a, a, label_b, b in near:
@@ -83,11 +94,31 @@ def interference(doc, say, tolerance=CLASH_MM3, ignore=()):
         if shared.Solids and shared.Volume > tolerance:
             clashes.append((label_a, label_b, shared.Volume))
 
-    for label_a, label_b, volume in sorted(clashes, key=lambda c: -c[2]):
-        say(f"  CLASH {label_a} into {label_b}: {volume:.1f} mm3")
-    if not clashes:
-        say(f"  ok: nothing overlaps by more than {tolerance} mm3")
+    if only is None:
+        for label_a, label_b, volume in sorted(clashes, key=lambda c: -c[2]):
+            say(f"  CLASH {label_a} into {label_b}: {volume:.1f} mm3")
+        if not clashes:
+            say(f"  ok: nothing overlaps by more than {tolerance} mm3")
     return clashes
+
+
+def on_its_rod(pairs, margin=0.0):
+    """Is every bearing still somewhere along the rod it runs on?
+
+    An interference check cannot see a carriage that has run off the end of its
+    rail -- there is nothing left to collide with -- so travel has to be bounded
+    by this instead.  Each pair is (bearing, rod), and both are compared along
+    whichever axis the rod is longest in, which is the one it was built along.
+    """
+    for bearing, rod in pairs:
+        rb, sb = rod.Shape.BoundBox, bearing.Shape.BoundBox
+        spans = ((rb.XLength, (rb.XMin, rb.XMax), (sb.XMin, sb.XMax)),
+                 (rb.YLength, (rb.YMin, rb.YMax), (sb.YMin, sb.YMax)),
+                 (rb.ZLength, (rb.ZMin, rb.ZMax), (sb.ZMin, sb.ZMax)))
+        _, (lo, hi), (blo, bhi) = max(spans)
+        if blo < lo - margin or bhi > hi + margin:
+            return False
+    return True
 
 
 def collinear(frames, say, tolerance=1e-6):

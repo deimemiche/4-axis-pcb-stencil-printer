@@ -67,7 +67,9 @@ def _make(doc, kind, size, length=None, label=None):
     FastenersCmd.FSScrewObject(gen, kind, None)
     gen.Diameter = size
     if length is not None:
-        gen.Length = str(length)
+        # Length is an enumeration of the standard lengths, so it wants "10"
+        # and rejects "10.0" -- which is what a float turns into by default.
+        gen.Length = f"{length:g}"
     return _bake(doc, label, gen)
 
 

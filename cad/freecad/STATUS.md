@@ -1,5 +1,75 @@
 # Reconstruction status
 
+## Mapping and gaps: mesh, model, manual
+
+Three sets that ought to agree and do not quite: the STLs the author
+published, the FreeCAD parts here, and the parts his assembly manual actually
+calls for.
+
+| | count |
+|---|---|
+| STLs in [`../`](../) | 39 |
+| reconstructed from an STL | **39** -- every one, no orphans |
+| FreeCAD parts with no STL | 6, the `plate/` group, drawn from his 2D drawings |
+| **parts the manual needs that exist nowhere** | **4** |
+| total parts built | 45 |
+
+### The four that are missing
+
+Nothing to reconstruct from and no drawing either, so these cannot be modelled
+without either the author publishing them or somebody drawing them from
+scratch:
+
+| Part | Manual | Needed |
+|---|---|---|
+| `TOP_BRACKET` | step 12, top frame corners | x8 |
+| `ECCB_BODY` | step 18, **rear** eccentric | x2 |
+| `ECCB_LEVER` | step 18 | x2 |
+| `ECCB_SHIM` | step 18 | x2 |
+
+The front eccentric (`ECCF_*`) is published in full; the rear one is not. So
+the machine can be assembled up to the top frame and no further. This is what
+blocks stage 6, and half of what the top frame needs in stage 5.
+
+### Names the manual and the meshes disagree on
+
+Worth writing down, because each one looks like a missing part until it is
+chased:
+
+| the manual says | the mesh is called |
+|---|---|
+| `BOT_CLAMP_Z` | `BOT_CLAMP_Z_AXIS` |
+| `BOT_TAIL_CLAMP_Y_AXIS_1` | `BOT_RAIL_CLAMP_Y_AXIS_1` (its typo) |
+| `TOP_BEARING_MOUNT_1` / `_2` | `TOP_CLAMP_BEARING_MOUNT_1` / `_2` |
+| `TOP_CLAMP_SPANNER_CASE` | `TOP_CLAMP_SPANNER_CASE_1` |
+| `Adapter D5 to M3x14` | `ADAPTER_D5_TO_M3` |
+
+### Assembly datums: 5 of 45
+
+The gap that governs how much of the assembly is left. A part can only be
+*joined* once it carries named datums (`fcprim.lcs`), and only the parts the
+built stages actually join have them:
+
+| Part | Datums |
+|---|---|
+| `BOT_RAIL_HOLDER` | `RAIL`, `MOUNT`, `BOLT1..2` |
+| `BOT_BEARING_MOUNT_X_AXIS` | `RAIL`, `TROUGH`, `PLATE`, `BOLT1..4` |
+| `BOT_CLAMP_Z_AXIS` | `ROD`, `MOUNT` |
+| `TOP_CLAMP_Z_AXIS` | `ROD`, `MOUNT` |
+| `TOP_RAIL_HOLDER` | `RAIL`, `MOUNT`, `BOLT1..2` |
+
+The other 40 are reconstructed and checked but not yet joinable. That is by
+design -- datums get added as the stage that needs them arrives, so they are
+placed against a real mating requirement rather than guessed at.
+
+### One inconsistency, harmless so far
+
+`bot/bot-right-angle-con.py` builds through `fcprim.document` and
+`fcprim.finish` directly instead of `fcprim.make`, so it skips
+`check_sketches` and would not warn about an underdefined sketch. Checked by
+hand: all four of its sketches are fully constrained, so nothing is hiding
+behind it. Worth tidying, not worth hurrying.
+
 ## The parts that were drawn, not reverse engineered
 
 The author published the aluminium as proper 2D drawings rather than as meshes,

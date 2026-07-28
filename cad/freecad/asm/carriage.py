@@ -87,6 +87,7 @@ SLOT_Y = -10.0                   # a 2020's inner face slot, on its centre line
 RAIL_Y = SLOT_Y - 1.0            # the holder's bore sits 1 mm off its bolts
 
 PLATE_THICKNESS = 2.0
+Y_BEARING_SPACING = 120.0     # the two LM8UU along each Y rail
 
 TOL = 1e-6
 
@@ -157,7 +158,7 @@ def bearings(doc, asm, rods):
                           [sleeve, ["Face2", "Face2"]],
                           [rod, ["Face1", "Face1"]],
                           label=f"LM8UU {x:+.0f},{z:+.0f} on rail {z:+.0f}")
-            made.append(sleeve)
+            made.append((sleeve, rod))
     return made
 
 
@@ -207,6 +208,33 @@ def y_rails(doc, asm, mounts):
         asmprim.ground(asm, rod)
         made.append(rod)
     doc.recompute()
+    return made
+
+
+def y_bearings(doc, asm, mounts, rails_y):
+    """The other four LM8UU -- the ones the alpha assembly rides on.
+
+    Manual step 2 buys eight: four carry the print plate along the X rails and
+    these four carry the alpha axis along the Y rails.  Step 6's "clip the
+    Alpha Axis Assembly to the LM8UU bearings" is these.
+
+    They matter for more than completeness.  Nothing else in the model says how
+    far the alpha axis may slide -- an interference check cannot see a carriage
+    running off the end of its rail, only one hitting something -- so these are
+    what the Y travel is actually measured against.
+    """
+    seat = asmprim.frame(mounts[0], "TROUGH").Base.y
+    made = []
+    for rod, x in zip(rails_y, BEARING_X):
+        for z in (-Y_BEARING_SPACING / 2.0, Y_BEARING_SPACING / 2.0):
+            sleeve = stock.linear_bearing(doc, f"LM8UU Y {x:+.0f},{z:+.0f}")
+            sleeve.Placement = Placement(Vector(x, seat, z - 12.0), Rotation())
+            doc.recompute()
+            asmprim.joint(asm, asmprim.CYLINDRICAL,
+                          [sleeve, ["Face2", "Face2"]],
+                          [rod, ["Face1", "Face1"]],
+                          label=f"LM8UU Y {x:+.0f},{z:+.0f} on rail {x:+.0f}")
+            made.append((sleeve, rod))
     return made
 
 
@@ -359,7 +387,7 @@ def build():
     say("=== the four LM8UU on the X rails, joined so they still slide")
     sleeves = bearings(doc, asm, rods)
     asmprim.solve(asm, context="the linear bearings")
-    for sleeve in sleeves[:2]:
+    for sleeve, _ in sleeves[:2]:
         bb = sleeve.Shape.BoundBox
         say(f"  {sleeve.Label} sitting at x {bb.XMin:.1f}..{bb.XMax:.1f}")
     say(f"  ok: {len(sleeves)} bearings on the rails, free to slide")

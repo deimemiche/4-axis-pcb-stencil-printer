@@ -681,13 +681,64 @@ is a by-product and is ignored.
 but Pillow, which the flatpak's own Python turns out to have - so this
 tessellates and draws in one pass instead of shelling out.
 
+### The machine actually drives now
+
+X and Y were accepted in the pose and then ignored -- the header printed them
+and nothing read them. They drive it now, and the travel is *measured* rather
+than declared: each axis is walked outwards a step at a time until either two
+parts touch or a bearing runs off the end of its rod.
+
+| axis | travel | what stops it |
+|---|---|---|
+| X | **+-55 mm** | the bearing mounts reach the rail holders |
+| Y | **+-25 mm** | the LM8UU run off the 244 mm Y rails |
+| Z | **66 mm** | the M8 rod, less what the two clamps grip |
+| alpha | **+-32.6 deg** | the ring's 29 teeth over a 72 degree sector |
+
+So the work area is **110 x 50 mm**, and interference is re-checked at every
+step of the walk, which is the plan's "drive each axis to both ends and re-run
+interference".
+
+Two things had to be got right for that to mean anything. An interference check
+**cannot see a carriage running off the end of its rail** -- there is nothing
+left to collide with -- so `check.on_its_rod` bounds the travel instead, and
+the four LM8UU that carry the alpha axis along the Y rails had to be modelled
+for it to have something to measure. That completes the manual's eight: four on
+X, four on Y.
+
+And the walk had to stop re-testing the whole machine at every step. Driving an
+axis cannot change whether two *stationary* parts overlap, so `interference`
+takes an `only` set and looks at pairs involving something that moved. Without
+it the check does not finish.
+
+### The fasteners are in
+
+32 screws, placed from the parts' own `BOLT` datums rather than positioned a
+second time -- so they land wherever the part says its holes are and cannot
+disagree with it. The counts fall out of the datums and match the manual for
+what is built: 8 x M4x10 into slot nuts for the bottom rail holders, 16 x M3x6
+for the bearing mounts, 8 x M4x10 for the top ones.
+
+The M3x6 is a small confirmation in itself. Those bolts come up from *under*
+the print plate and into the mount's foot -- 2 mm plus 4 mm -- and the manual
+buys exactly M3x6 for them.
+
+### An exploded view
+
+`explode()` lifts each layer clear of the one below in build order and saves
+`MachineExploded.FCStd`; `render/MachineExploded.png` is the drawing. It is an
+offset applied to the assembled machine, not a second model, which is the whole
+reason for keeping it in one document at a known pose.
+
 ### The one number in it that is still soft
 
 Where the alpha assembly sits on the Y rails. Manual step 6 says only "clip the
-Alpha Axis Assembly to the LM8UU bearings", so its fixed plate is rested
-directly on top of them at Y = 11.1. Step 7's four `BOT_RAIL_CLAMP_*` are what
-actually do the clipping and they belong to stage 6; whatever thickness they
-add, they add here.
+Alpha Axis Assembly to the LM8UU bearings", so its fixed plate rests directly
+on top of them at Y = 11.1. Step 7's four `BOT_RAIL_CLAMP_*` are what actually
+do the clipping and they are not modelled yet; whatever thickness they add,
+they add here. The spacing of the two LM8UU along each Y rail is assumed at
+120 mm, and that is what sets the +-25 mm of Y travel -- closer together would
+give more.
 
 ## Stage 6 - not built, and why
 

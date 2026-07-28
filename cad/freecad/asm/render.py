@@ -49,6 +49,7 @@ AGAINST = {
     "Alpha": ("STEP_4_2",),
     "Column": ("STEP_10_1", "STEP_12_1"),
     "Machine": ("STEP_18_1",),
+    "MachineExploded": (),
 }
 
 # Tessellation: fine enough to read a T-slot, coarse enough to stay quick.
