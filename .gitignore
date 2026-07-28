@@ -21,3 +21,6 @@ dist/
 
 # FreeCAD backups
 *.FCBak
+
+# The author's own build-step renders, fetched by asm/reference.py
+cad/freecad/asm/reference/
