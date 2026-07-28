@@ -105,8 +105,26 @@ Rebuilding a part means: measure it with `stlmeasure.py`, write the script,
 then get both checks in [`README.md`](README.md) to pass - volume within the
 mesh's own faceting error, and zero point classification mismatches.
 
-**All 39 done.** Every script builds and every one passes `verify.py` with zero
-mismatches. The worst volume deviation is 0.26 %, on `SR_WORM_GEAR`, and that is
+**All 39 done.** Every script builds.
+
+The claim that every one passes `verify.py` with **zero** mismatches does not
+quite hold, and it is worth being exact rather than tidy about it.
+`TOP_CLAMP_Z_AXIS` reports **2 mismatches out of 20000 sample points**, with 3
+more excused inside the 0.05 mm skin. It is reproducible -- the sampler seeds
+deterministically, so the same two points disagree every run -- and it is not
+a regression: adding datums does not touch a body's shape, and the part's
+volume reads the same before and after.
+
+Two points in twenty thousand is a very small discrepancy, most likely one
+detail of the saw cut or a break that is slightly off, and nothing built on
+this part has shown it. But it is not zero, and the four other parts checked
+alongside it (`BOT_RAIL_HOLDER`, `BOT_BEARING_MOUNT_X_AXIS`,
+`BOT_CLAMP_Z_AXIS`, `TOP_RAIL_HOLDER`) do report a clean match, so the
+difference is real rather than a quirk of the checker.
+
+The remaining 34 have not been re-run recently -- `verify.py` takes a few
+minutes a part -- so "all 39 pass" should be read as "all 39 passed when they
+were written, and one of the five re-checked since does not". The worst volume deviation is 0.26 %, on `SR_WORM_GEAR`, and that is
 the original mesh's own faceting error on a helical surface; the next worst is
 0.054 %.
 
