@@ -142,6 +142,13 @@ def bot_clamp_z_axis(doc):
             fcprim.circle(heads, (hand * bolt_x, y), head_d, name=f"head{i}")
         fcprim.pocket(bdy, f"Heads {label}", heads, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The rod runs up Y and
+    # the two M4 run along Z, so this clamp bolts flat to a *vertical* face
+    # with the rod standing off it -- on the machine, the outer face of the
+    # 2040 that stands on edge at the back.
+    fcprim.lcs(bdy, "ROD", axis=(0, 1, 0))
+    fcprim.lcs(bdy, "MOUNT", at=(0.0, length / 2, foot_z), axis=(0, 0, -1))
+
     return bdy
 
 

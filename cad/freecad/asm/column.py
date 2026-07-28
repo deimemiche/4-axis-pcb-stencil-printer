@@ -48,11 +48,11 @@ would change the answer.
 
 ## What is inferred rather than derived
 
-The columns' **position in plan**.  Both Z clamps are on one side of the frame
-near its two ends - the manual's STEP_10 and STEP_12 renders agree on that, and
-it is what the two hinges on the same side imply, since the top frame lifts.
-The exact stations along that side are taken from the renders and are the least
-certain thing here; nothing else depends on them.
+The columns' **stations along the back**.  Both Z clamps go on the back member,
+which is the 2040 standing on edge and the same member the hinges mount to -
+that is what makes the top frame a lid.  How far apart they sit along it is
+read off the manual's STEP_10 and STEP_12 renders and is the least certain
+thing here; nothing else depends on it.
 """
 
 import math
@@ -85,7 +85,7 @@ BOT_GRIP = 40.0                  # BOT_CLAMP_Z_AXIS, along the rod
 TOP_GRIP = 34.0                  # TOP_CLAMP_Z_AXIS
 CLAMP_STANDOFF = 9.1             # rod axis, out from the face the clamp bolts to
 
-COLUMN_Z = (-120.0, 120.0)       # from the renders; see the docstring
+COLUMN_X = (-120.0, 120.0)       # along the back member; see the docstring
 TOP_RAIL_Z = (-60.0, 60.0)       # where the two top rails sit across the frame
 TOP_FRAME_Y = 100.0              # nominal, inside the range checked below
 
@@ -150,34 +150,58 @@ def top_rails(doc, asm, at_y):
 
 
 def columns(doc, asm, at_y):
-    """Two M8 rods, clamped to the bottom frame and carrying the top one."""
+    """Two M8 rods, clamped to the bottom frame and carrying the top one.
+
+    They go on the **back**, on the outer face of the 2040 that stands on edge
+    there, and are spaced along X.  That is the same member the hinges mount
+    to, which is what makes the top frame a lid: it lifts about the back and
+    the two columns set how high it sits.
+    """
     bot = asmprim.part("bot/BOT_CLAMP_Z_AXIS")
     top = asmprim.part("top/TOP_CLAMP_Z_AXIS")
 
-    # The rods stand off the bottom frame's outer face by the clamp's own
-    # depth, which is what puts them clear of the top frame as it comes down.
-    face_x = frame.HALF_SPAN + frame.NARROW          # 170, the outer face
-    rod_x = -(face_x + CLAMP_STANDOFF)
+    # Both clamps are placed from their own MOUNT datum rather than by eye,
+    # because the two mount completely differently and guessing got it wrong:
+    # the lower one bolts sideways to a vertical face with the rod standing
+    # off it, the upper one bolts straight *up* through its shelf into the top
+    # frame's underside.
+    bot_rod = asmprim.datum(bot, "ROD").Placement.Base
+    bot_face = asmprim.datum(bot, "MOUNT").Placement.Base
+    top_rod = asmprim.datum(top, "ROD").Placement.Base
+    top_face = asmprim.datum(top, "MOUNT").Placement.Base
+
+    # The lower clamp's face lands on the back member's outer face, so the rod
+    # ends up standing off it by however far the part puts the two apart.
+    face_z = frame.HALF_DEPTH                        # 150, the back outer face
+    standoff = bot_rod.z - bot_face.z
+    rod_z = face_z + standoff
+
+    # Turned so its local +X, which runs from the rod towards the shelf, points
+    # inboard along -Z and puts the shelf under the top frame.
+    face_in = Rotation(Vector(0, 1, 0), 90.0)
 
     rods, clamps = [], []
-    for z in COLUMN_Z:
-        rod = stock.threaded_rod(doc, f"M8x140 column {z:+.0f}",
+    for x in COLUMN_X:
+        rod = stock.threaded_rod(doc, f"M8x140 column {x:+.0f}",
                                  ROD_D, ROD_LENGTH)
-        rod.Placement = Placement(Vector(rod_x, 0.0, z),
+        rod.Placement = Placement(Vector(x, -frame.TALL, rod_z),
                                   Rotation(Vector(1, 0, 0), -90))
         asmprim.ground(asm, rod)
         rods.append(rod)
 
-        # Each clamp is modelled about its own origin rather than its base, so
-        # hang them off the faces they actually meet: the lower one starts on
-        # the bottom frame's top face, the upper one finishes flush with the
-        # top frame's.
-        lower = asmprim.link(asm, f"BOT_CLAMP_Z_AXIS {z:+.0f}", bot,
-                             Placement(Vector(rod_x, 0.0, z), Rotation()))
-        top_high = top.Shape.BoundBox.YMax
-        upper = asmprim.link(asm, f"TOP_CLAMP_Z_AXIS {z:+.0f}", top,
-                             Placement(Vector(rod_x, at_y - top_high, z),
+        # Sits against the whole height of the 2040's outer face, which is
+        # 40 mm and so is the clamp.
+        lower = asmprim.link(asm, f"BOT_CLAMP_Z_AXIS {x:+.0f}", bot,
+                             Placement(Vector(x, -frame.TALL, rod_z),
                                        Rotation()))
+
+        # Hung so its shelf meets the top frame's underside and its bore lands
+        # on the rod.  The quarter turn sends local X to global -Z, so the
+        # rod's own -X offset comes back as +Z.
+        upper = asmprim.link(
+            asm, f"TOP_CLAMP_Z_AXIS {x:+.0f}", top,
+            Placement(Vector(x, at_y - MEMBER - top_face.y, rod_z + top_rod.x),
+                      face_in))
         clamps += [lower, upper]
     doc.recompute()
     return rods, clamps
@@ -250,10 +274,13 @@ def check_reach(clamps):
     """Can the top clamp actually span from its frame out to the rod?"""
     body = asmprim.part("top/TOP_CLAMP_Z_AXIS")
     width = body.Shape.BoundBox.XLength
-    need = (frame.HALF_SPAN + frame.NARROW + CLAMP_STANDOFF) - \
-        (HALF_SPAN + MEMBER)
-    say(f"  the rod stands {need:.1f} mm outboard of the top frame's face, "
-        f"and TOP_CLAMP_Z_AXIS is {width:.1f} wide")
+    # Along Z the side members run the frame's full length, so HALF_DEPTH is
+    # already its outer face -- there is no member thickness to add.
+    need = (frame.HALF_DEPTH + CLAMP_STANDOFF) - HALF_DEPTH
+    say(f"  the rod stands {need:.1f} mm outboard of the top frame's back "
+        f"face, and TOP_CLAMP_Z_AXIS is {width:.1f} wide")
+    if need <= 0:
+        raise SystemExit("the rod is inside the top frame, not outboard of it")
     if need > width:
         raise SystemExit("the top clamp cannot reach its rod")
     say("  ok: the clamp reaches")

@@ -4,7 +4,7 @@ The bottom frame is four extrusions, all 300 mm, **butt jointed** into a
 rectangle: two run the full length and the other two land between them.  The
 build manual's step 1 lists them as 1 x 2040 x 300 and 3 x 2020 x 300.
 
-That makes the frame **360 x 300**, not the 300 x 300 square it was first
+That makes the frame **340 x 300**, not the 300 x 300 square it was first
 modelled as, and the difference matters because the X rails hang off it.
 
 Four things settle it, and they agree:
@@ -17,21 +17,27 @@ Four things settle it, and they agree:
   members, and its rails are 8 mm x **280**.  So a rail runs the full distance
   between the inner faces of the two members it is bolted to, and equals the
   length of the members parallel to it.
-* **The side members are therefore 300 apart.**  The X rails are 300 and run
-  between their inner faces, so that spacing is fixed.
-* **The 2040 is a side member, and lies flat.**  Butt joints do not care how
-  wide a member is, so it can lie flat at 40 x 20 -- and then every member's
-  top and bottom are flush and the four feet stand level, which as a mitred
-  square they could not, as `check_level` said by failing.  That it is a
-  *side* member rather than an end one was settled by the assembly itself:
-  `machine.py`'s interference check found the X rails and the print plate
-  driving straight through it when it was modelled across the front.
+* **The side members are therefore 300 apart**, since the X rails are 300 and
+  run between their inner faces.  Adding a 20 mm member each side gives 340.
+* **The 2040 is the back member, standing on edge** -- 20 mm across in plan
+  like the rest, 40 mm tall.  The four members are flush *underneath* rather
+  than on top, so it rises 20 mm above the frame's top face, and that upstand
+  is what the top frame's hinges mount to.
 
-Adding a 40 and a 20 to the 300 gives **360 x 300**.  The frame is therefore
-**not symmetric about the machine origin** -- the origin follows the rails,
-which is what everything else is measured from, and the 2040's extra 20 mm
-hangs off one side.  The X axis mounts on it, which is what
-`BOT_BRACKET_X_AXIS` is for.
+Two earlier readings of the 2040 were wrong, and each was ruled out by
+something real rather than by taste:
+
+* **lying flat across the back** it would be 40 mm in plan, reaching Z = 130
+  down to 90 -- and the X rails sit at Z = +-111 with the print plate reaching
+  +-128.5.  `machine.py`'s interference check found them driving through it.
+* **moved to a side** it cleared the carriage, but sat nowhere near the hinges,
+  which mount on the back.  On edge at the back it clears the carriage *and*
+  carries the hinges, and that is the reading that survives.
+
+Standing it on edge also settles the feet: with the undersides flush all four
+stands are the same length and the machine sits level, which is what
+`check_level` complained about when the frame was first modelled as a mitred
+square.
 
 Run it directly:
 
@@ -42,12 +48,12 @@ Run it directly:
 
 One origin for the whole machine, **Y up**, matching every part script:
 
-* **Y = 0 is the frame's top face.**  Everything the machine is built from
-  stands on that face, so heights read directly as "how far above the frame".
-* **X = 0, Z = 0 is the centre of the X rails**, which run -150 .. +150.  The
-  frame reaches -190 .. +170 across, because the 2040 side is 20 mm wider than
-  its opposite number, so the outline is not symmetric even though the axes
-  are.
+* **Y = 0 is the frame's top face** -- the top of the three 2020s, which is
+  what everything is built on, so heights read directly as "how far above the
+  frame".  The 2040 at the back rises 20 mm above it; the frame's underside is
+  the one plane all four share, at Y = -20.
+* **X = 0, Z = 0 is the centre of the frame**, which runs -170 .. +170 across
+  and -150 .. +150 along, and the X rails are centred in it.
 
 `stock.extrusion` therefore puts a section's **top** at its own local Y = 0
 rather than centring it, so members of different heights hang from a common top
@@ -100,39 +106,55 @@ HALF_DEPTH = MEMBER_LENGTH / 2.0             # the side members run this far
 # Side members run the full length along Z and the rails bolt to their inner
 # faces; end members land between them.
 #
-# **The 2040 is a side member, not an end member**, and the assembly is what
-# settled that.  Lying flat it is 40 mm across in plan, so as an end member it
-# would reach from Z = -150 to -110 -- and the X rails sit at Z = +-111 with
-# the print plate reaching +-128.5.  `machine.py`'s interference check found
-# them driving straight through it.  As a *side* member it is clear of both,
-# because the rails run between the side members rather than across them.
+# **The 2040 is the back member, standing on edge.**  It is 20 mm across in
+# plan like the rest and 40 mm *tall*, and the four members line up on their
+# undersides rather than their tops, so it stands 20 mm proud of the frame's
+# top face.  That upstand is what the top frame's hinges mount to.
 #
-# That makes the frame 360 x 300 and **not symmetric about the machine origin**:
-# the origin stays on the rails, which is what everything else is measured
-# from, and the extra 20 mm of the 2040 hangs off one side.  The X axis mounts
-# on it, which is what BOT_BRACKET_X_AXIS is for.
-WIDE_SIDE = "left"
+# Two earlier readings were wrong and are worth recording, because each was
+# ruled out by something real:
+#
+#  * lying flat across the back it would be 40 mm in plan, reaching Z = 130
+#    down to 90 -- and the X rails sit at Z = +-111 with the print plate
+#    reaching +-128.5.  `machine.py`'s interference check found them driving
+#    through it.
+#  * moving it to a side instead cleared that, but put it nowhere near the
+#    hinges, which mount on the back.  On edge at the back it clears the
+#    carriage *and* carries the hinges, which is the reading that survives.
+#
+# Standing it on edge also settles the feet: with the undersides flush, all
+# four stands are the same length and the machine sits level, which is what
+# `check_level` complained about when the frame was first modelled.
+WIDE_SIDE = "back"
 SIDES = {
-    "left":  (0.0, WIDE, Vector(-(HALF_SPAN + WIDE / 2.0), 0.0, -HALF_DEPTH)),
-    "right": (0.0, NARROW, Vector(HALF_SPAN + NARROW / 2.0, 0.0, -HALF_DEPTH)),
+    #        turn   across   tall    where its local origin lands
+    "left":  (0.0, NARROW, TALL,
+              Vector(-(HALF_SPAN + NARROW / 2.0), 0.0, -HALF_DEPTH)),
+    "right": (0.0, NARROW, TALL,
+              Vector(HALF_SPAN + NARROW / 2.0, 0.0, -HALF_DEPTH)),
     # Turned a quarter turn so their length runs along X instead.
-    "front": (90.0, NARROW, Vector(-HALF_SPAN, 0.0,
-                                   -HALF_DEPTH + NARROW / 2.0)),
-    "back":  (90.0, NARROW, Vector(-HALF_SPAN, 0.0,
-                                   HALF_DEPTH - NARROW / 2.0)),
+    "front": (90.0, NARROW, TALL,
+              Vector(-HALF_SPAN, 0.0, -HALF_DEPTH + NARROW / 2.0)),
+    # The 2040, on edge.  Its top is at +TALL because the four members are
+    # flush underneath, not on top.
+    "back":  (90.0, NARROW, WIDE,
+              Vector(-HALF_SPAN, TALL, HALF_DEPTH - NARROW / 2.0)),
 }
 
-OUTER_X = RAIL_SPAN + NARROW + WIDE          # 360
+OUTER_X = RAIL_SPAN + 2 * NARROW             # 340
 OUTER_Z = MEMBER_LENGTH                      # 300
+UPSTAND = WIDE - TALL                        # how far the 2040 rises, 20
 
 
 def bottom_frame(doc, asm):
     """The four extrusions, placed and grounded."""
     members = {}
-    for name, (angle, across, base) in SIDES.items():
+    for name, (angle, across, tall, base) in SIDES.items():
         cells_x = int(round(across / 20.0))
-        label = f"{'2040' if cells_x == 2 else '2020'} {name}"
-        member = stock.extrusion(doc, label, MEMBER_LENGTH, cells_x=cells_x)
+        cells_y = int(round(tall / 20.0))
+        label = f"{'2040' if cells_x * cells_y == 2 else '2020'} {name}"
+        member = stock.extrusion(doc, label, MEMBER_LENGTH,
+                                 cells_x=cells_x, cells_y=cells_y)
         member.Placement = Placement(base, Rotation(Vector(0, 1, 0), angle))
         members[name] = member
     doc.recompute()
@@ -179,18 +201,18 @@ def check_size(members):
         if abs((hi[i] - lo[i]) - want) > 1e-6:
             say(f"  FAIL {axis} is {hi[i] - lo[i]:.3f}, expected {want}")
             ok = False
-    # Z is symmetric about the origin; X is not, because the 2040 side member
-    # is 20 mm wider than its opposite number.  The origin follows the rails,
-    # not the outline.
-    if abs(lo[2] + hi[2]) > 1e-6:
-        say("  FAIL Z is not centred on the origin")
+    for i, axis in ((0, "X"), (2, "Z")):
+        if abs(lo[i] + hi[i]) > 1e-6:
+            say(f"  FAIL {axis} is not centred on the origin")
+            ok = False
+    # The four members are flush *underneath*, so the frame's underside is one
+    # plane and only the 2040 rises above the datum.
+    if abs(lo[1] + TALL) > 1e-6:
+        say(f"  FAIL the underside is at Y = {lo[1]:.3f}, expected {-TALL}")
         ok = False
-    if abs(abs(lo[0]) - (HALF_SPAN + WIDE)) > 1e-6:
-        say(f"  FAIL the 2040 side is at {lo[0]:.1f}, "
-            f"expected {-(HALF_SPAN + WIDE):.1f}")
-        ok = False
-    if abs(hi[1]) > 1e-6:
-        say(f"  FAIL the top face is at Y = {hi[1]:.3f}, expected 0")
+    if abs(hi[1] - UPSTAND) > 1e-6:
+        say(f"  FAIL the 2040 tops out at Y = {hi[1]:.3f}, "
+            f"expected {UPSTAND}")
         ok = False
 
     # The whole point of the width: an X rail has to reach from one side
@@ -202,8 +224,10 @@ def check_size(members):
         ok = False
     if not ok:
         raise SystemExit("the bottom frame is not the size it should be")
-    say(f"  ok: {OUTER_X:.0f} x {OUTER_Z:.0f} outer, top face on Y = 0, "
-        f"the 2040 hanging off the {WIDE_SIDE}")
+    say(f"  ok: {OUTER_X:.0f} x {OUTER_Z:.0f} outer, centred, flush "
+        f"underneath on Y = {-TALL:.0f}")
+    say(f"  ok: the 2040 stands on edge at the {WIDE_SIDE}, "
+        f"{UPSTAND:.0f} mm proud, for the hinges")
     say(f"  ok: side members {gap:.0f} apart, which is the X rail exactly")
 
 

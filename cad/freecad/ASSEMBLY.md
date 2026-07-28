@@ -101,9 +101,9 @@ and implemented in [`asm/frame.py`](asm/frame.py):
   far above the frame".
 * **X = 0, Z = 0 is the centre of the frame**, which runs -170 .. +170 across
   and -150 .. +150 along.  The frame reaches -190 .. +170 across, because the
-  2040 side member is 20 mm wider than its opposite number, so **the outline is
-  not symmetric even though the axes are**: the origin follows the rails, which
-  is what everything else is measured from.
+  frame is 340 x 300 and centred on it.  Y = 0 is the top of the three 2020s;
+  the 2040 at the back stands on edge and rises 20 mm above it, and the one
+  plane all four members share is the **underside**, at Y = -20.
 
 `stock.extrusion` puts a section's *top* at its own local Y = 0 rather than
 centring it, so members of different heights hang from one common surface
@@ -353,10 +353,10 @@ the hardware. They needed the manual's own step lists and a hard look at its
 renders.
 
 1. **How do the corners meet, and which way round is the 2040?**
-   **Butt joints, and the 2040 lies flat.** Zoom the manual's STEP_1 render on a
+   **Butt joints, and the 2040 stands on edge at the back.** Zoom the manual's STEP_1 render on a
    corner and an extrusion **end face** is there, T-slots and all, where a mitre
    would show a diagonal. Butt joints do not care how wide a member is, so the
-   2040 lies flat at 40 x 20, every member's top and bottom are flush, and the
+   2040 can be 20 x 40 on edge, the four members line up underneath, and the
    four feet stand level. `check_level` had already argued for exactly this by
    failing.
 
@@ -365,9 +365,9 @@ renders.
    ambiguity: 2 x 2020 x **280** between two 300 mm members, and rails of
    8 x **280**. So a rail runs the full distance between the inner faces of the
    two members it bolts to. The bottom frame's X rails are 300, so its side
-   members are 300 apart, and with a 20 mm member one side and the 40 mm 2040
-   the other the frame is **360 x 300** - not the 300 x 300 square stage 1
-   first assumed, though every member is still 300 as the manual lists.
+   members are 300 apart, so with a 20 mm member each side the frame is
+   **340 x 300** - not the 300 x 300 square stage 1 first assumed, though every
+   member is still 300 as the manual lists.
 
 ### Still open, and worth a glance from you
 
@@ -431,7 +431,7 @@ The rest of the parts get theirs as the stage that joins them needs them.
 ## Stage 3 - the X axis
 
 [`asm/carriage.py`](asm/carriage.py). Manual step 2. The four rail holders, the
-two 300 mm rails and the four LM8UU that ride them, on the corrected 360 x 300
+two 300 mm rails and the four LM8UU that ride them, on the corrected 340 x 300
 frame.
 
 Measuring `BOT_RAIL_HOLDER` before placing anything is what made this tractable,
@@ -573,7 +573,7 @@ circular: the rule was read off the top frame's own unambiguous arithmetic and
 then *applied* to the bottom. Its rails are 280 and so are two of its
 extrusions, so the two 300s are the sides, their inner faces are 280 apart, and
 the frame is **320 x 300** - exactly one member narrower each side than the
-bottom frame's 360 x 300, which is what lets it sit inboard of the columns.
+bottom frame's 340 x 300, which is what lets it sit inboard of the columns.
 
 Its two 280 mm rails come out collinear to 6e-14 mm, the same check the X rails
 passed.
@@ -590,6 +590,19 @@ and `TOP_CLAMP_Z_AXIS` **34**, and the two cannot overlap, so
 that changed a clamp would change the answer. There is also a reach check:
 the rod stands 19.1 mm outboard of the top frame's face and the top clamp is
 30.2 mm wide, so it gets there.
+
+### The two Z clamps mount completely differently
+
+Worth recording, because assuming they were alike put both in the wrong place
+until the interference check said so. `BOT_CLAMP_Z_AXIS` has its two M4 along
+its own Z: it bolts flat to a **vertical face** with the rod standing off it,
+and on the machine that face is the back 2040's outer face - whose 40 mm height
+is exactly the clamp's own. `TOP_CLAMP_Z_AXIS`'s two M4 only pull its saw cut
+shut; what holds it to the machine is a single bolt straight **up** through its
+shelf into the top frame's underside.
+
+Both now carry `ROD` and `MOUNT` datums and are placed from those rather than
+by eye.
 
 ### What is left out, deliberately
 
@@ -622,17 +635,23 @@ to touch - a rod in its bearing, a clamp on what it holds - are excused.
 
 ### The interference check earned its keep immediately
 
-It found the 2040 in the wrong place. Stage 1 had it lying flat across the
-front, from Z = -150 to -110; the X rails sit at Z = +-111 and the print plate
-reaches +-128.5, so **the carriage ran straight through it**. Nothing in stage
-1, 3 or 5 could see that, because each of them only ever looked at its own
-parts.
+It found the 2040 in the wrong place - twice, in the end, and each wrong answer
+was ruled out by something real rather than by taste.
 
-As a **side** member instead it is clear of both, since the rails run between
-the side members rather than across them. That is now the model, and it makes
-the frame **360 x 300** and not symmetric about the origin - the origin follows
-the rails, and the 2040's extra 20 mm hangs off one side, which is where
-`BOT_BRACKET_X_AXIS` and the X drive go.
+Stage 1 first had it **lying flat across the front**, from Z = -150 to -110.
+The X rails sit at Z = +-111 and the print plate reaches +-128.5, so the
+carriage ran straight through it. Nothing in stage 1, 3 or 5 could see that,
+because each of them only ever looked at its own parts.
+
+Moving it to a **side** cleared the carriage and passed every check - and was
+still wrong, because it put the 2040 nowhere near the hinges. Michael caught
+that one: the hinges mount to it, and they are on the **back**.
+
+It is the **back member, standing on edge** - 20 mm across in plan like the
+rest, 40 mm tall, with the four members flush underneath rather than on top so
+it rises 20 mm proud. That upstand is what the hinges bolt to, it clears the
+carriage because it is only 20 mm in plan, and the flush undersides are what
+let all four feet be the same length. The frame is **340 x 300** and centred.
 
 This is exactly what the plan expected the assembly to be worth: "the first
 thing that can catch an error in a part that its own volume and point checks

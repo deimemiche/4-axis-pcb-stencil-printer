@@ -167,6 +167,15 @@ def top_clamp_z_axis(doc):
         fcprim.circle(sk, (bolt[0], side * bolt[1]), diameter, name="head")
         fcprim.pocket(bdy, label, sk, boss_d + over)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  Unlike its bottom
+    # counterpart this one does *not* bolt to a vertical face: its two M4 pull
+    # the saw cut shut, and what holds it to the machine is a single bolt
+    # straight up through the shelf into the top frame's underside.  So MOUNT
+    # points up, not sideways.
+    fcprim.lcs(bdy, "ROD", at=(rod[0], 0.0, rod[1]), axis=(0, 1, 0))
+    fcprim.lcs(bdy, "MOUNT", at=(top_bore[0], top_y[1], top_bore[1]),
+               axis=(0, 1, 0))
+
     return bdy
 
 
