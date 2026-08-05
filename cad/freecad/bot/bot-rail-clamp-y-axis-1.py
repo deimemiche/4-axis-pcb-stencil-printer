@@ -143,6 +143,16 @@ def bot_rail_clamp_y_axis_1(doc):
                       name=f"bolt{'np'[side > 0]}")
     fcprim.pocket(bdy, "Shanks", shanks, block_y - head_depth)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The clamp half is
+    # BOT_RAIL_CLAMP_Y_AXIS's, datums and all; `SCREW` is the tube on the end
+    # of the gusset, which is where the Y axis screw's nuts bear.
+    fcprim.lcs(bdy, "ROD", axis=(1, 0, 0))
+    fcprim.lcs(bdy, "MOUNT", axis=(0, -1, 0))
+    for i, side in enumerate((-1, 1)):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(0.0, 0.0, side * bolt_z),
+                   axis=(0, -1, 0))
+    fcprim.lcs(bdy, "SCREW", at=(0.0, tube[0], tube[1]), axis=(1, 0, 0))
+
     return bdy
 
 

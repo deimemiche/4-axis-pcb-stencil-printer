@@ -87,6 +87,15 @@ def sr_worm_gear(doc):
         ], name="trim")
         fcprim.pocket(bdy, label, square, pitch + over, reversed_=away)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `SHAFT` is the bore's
+    # axis at the worm's mid length, which is where it has to meet the ring's
+    # own centre plane, and `MESH` is on the pitch cylinder facing the wheel --
+    # the point the centre distance is measured to.
+    middle = 0.5 * (worm_y[0] + worm_y[1])
+    pitch_r = 0.25 * (thread_d + core_d)
+    fcprim.lcs(bdy, "SHAFT", at=(0.0, middle, 0.0), axis=(0, 1, 0))
+    fcprim.lcs(bdy, "MESH", at=(pitch_r, middle, 0.0), axis=(1, 0, 0))
+
     return bdy
 
 

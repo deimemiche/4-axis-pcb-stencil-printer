@@ -61,6 +61,16 @@ def bot_rail_clamp_y_axis(doc):
                       name=f"bolt{'np'[side > 0]}")
     fcprim.pocket(bdy, "Bolt clearance", shanks)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `ROD` is the rod the
+    # groove closes on and `MOUNT` the underside that meets the trough it is
+    # pulled down against, which is the same plane -- the groove is a half
+    # round, so the rod's axis lies in the joint face.
+    fcprim.lcs(bdy, "ROD", axis=(1, 0, 0))
+    fcprim.lcs(bdy, "MOUNT", axis=(0, -1, 0))
+    for i, side in enumerate((-1, 1)):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(0.0, 0.0, side * bolt_z),
+                   axis=(0, -1, 0))
+
     return bdy
 
 

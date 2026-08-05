@@ -159,6 +159,12 @@ def bot_handwheel(doc):
     fcprim.circle(grub, (grub_y, 0.0), grub_hole_d, name="grub")
     fcprim.pocket(bdy, "Grub screw", grub, lug_d / 2, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `SHAFT` is where the
+    # rod's end comes to rest -- the bore's floor -- with Z pointing back down
+    # the rod, so a screw joint reads as "the wheel goes on this far".
+    fcprim.lcs(bdy, "SHAFT", at=(0.0, bore_floor, 0.0), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "FACE", at=(0.0, rim_y[0], 0.0), axis=(0, -1, 0))
+
     return bdy
 
 

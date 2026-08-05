@@ -81,6 +81,14 @@ def bot_rod_holder_alpha_axis_short(doc):
     fcprim.pocket(bdy, "Bolt clearance", bolts, plate_top_y - plate_y,
                   reversed_=True)
 
+    # The same datums as the long saddle, which is this part with a barrel on
+    # the end of it; see fcprim.lcs.
+    fcprim.lcs(bdy, "ROD", axis=(1, 0, 0))
+    fcprim.lcs(bdy, "MOUNT", at=(0.0, plate_top_y, 0.0), axis=(0, 1, 0))
+    for i, (x, z) in enumerate([(x, sz * bolt_z) for x in bolt_x
+                                for sz in (-1, 1)]):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, plate_top_y, z), axis=(0, 1, 0))
+
     return bdy
 
 

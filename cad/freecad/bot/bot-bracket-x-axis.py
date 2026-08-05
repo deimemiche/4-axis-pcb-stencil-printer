@@ -99,6 +99,14 @@ def bot_bracket_x_axis(doc):
         fcprim.circle(bolts, (x, z), bolt_hole_d, name=f"bolt{i}")
     fcprim.pocket(bdy, "Bolt clearance", bolts, plate_thickness, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `SCREW` is the X axis
+    # screw's own axis, 13 mm above the frame's top face -- which is the number
+    # BOT_RAIL_CLAMP_X_DRIVE's eye has to agree with, and does.
+    fcprim.lcs(bdy, "SCREW", at=(0.0, screw_y, screw_z), axis=(1, 0, 0))
+    fcprim.lcs(bdy, "MOUNT", axis=(0, -1, 0))
+    for i, (x, z) in enumerate(bolt_at):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, 0.0, z), axis=(0, -1, 0))
+
     return bdy
 
 

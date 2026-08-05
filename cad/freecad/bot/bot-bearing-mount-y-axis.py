@@ -93,6 +93,15 @@ def bot_bearing_mount_y_axis(doc):
         fcprim.circle(bolts, (x, z), bolt_hole_d, name=f"bolt{i}")
     fcprim.pocket(bdy, "Bolt clearance", bolts, flange_thickness, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The seat's axis is the
+    # rail the bearing rides, and the flange's top face is what bolts up
+    # against the plate above it -- which is what fixes the plate's height.
+    fcprim.lcs(bdy, "BEARING", axis=(1, 0, 0))
+    fcprim.lcs(bdy, "PLATE", at=(0.0, flange_top_y, 0.0), axis=(0, 1, 0))
+    for i, (x, z) in enumerate(((bolt_x, bolt_z), (bolt_x, -bolt_z),
+                                (-bolt_x, bolt_z), (-bolt_x, -bolt_z))):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, flange_top_y, z), axis=(0, 1, 0))
+
     return bdy
 
 

@@ -9,6 +9,23 @@ the flange the wall tapers gently inwards and the bore opens out to 7 mm, which
 leaves room for the bolt head.
 
     Section  sketch -> Revolution  the whole part, swept about Y
+
+**Mounting datums**, which this part went without until the four feet in
+`assembly/Bottom_Frame.FCStd` lost their joints over it.  A joint made against
+`Revolution.Edge10` is stored under an element name the build regenerates every
+time, so it dies whenever the part is rebuilt; a datum placed by this script is
+parametric and survives one.  See `fcprim.lcs`.
+
+    SEAT   the flange's outer face, Y = 0, Z pointing out of it
+    AXIS   the bolt hole, at mid height, Z up the part -- a Cylindrical joint
+    TIP    the small end, Y = 7, Z pointing out of it
+
+`SEAT` is the mating face and `TIP` the one that meets the table, as far as the
+section says: a bolt goes in from the small end, down the 7 mm bore, and its
+head lands on the shoulder above the flange, which leaves the thread to come
+out through `SEAT`.  Nothing here depends on that reading -- a datum is a named
+coordinate system either way, so joint against `TIP` instead if the foot in
+fact stands the other way up.
 """
 
 import os
@@ -44,6 +61,15 @@ def stand(doc):
         (bolt_hole_d / 2, base_height),
     ], name="section")
     fcprim.revolution(bdy, "Turned body", section, axis="V_Axis")
+
+    # Mounting datums for the assembly; see fcprim.lcs and the module
+    # docstring.  The part is turned about +Y, so that is the axis every one of
+    # these points along, and each end datum's Z points out of the face it
+    # names -- the way a bolt goes in and the way a butting part comes up
+    # against it.
+    fcprim.lcs(bdy, "SEAT", axis=(0, -1, 0))
+    fcprim.lcs(bdy, "AXIS", at=(0.0, total_height / 2.0, 0.0), axis=(0, 1, 0))
+    fcprim.lcs(bdy, "TIP", at=(0.0, total_height, 0.0), axis=(0, 1, 0))
 
     return bdy
 

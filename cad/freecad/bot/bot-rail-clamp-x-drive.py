@@ -140,6 +140,17 @@ def bot_rail_clamp_x_drive(doc):
                       name=f"head{'np'[side > 0]}")
     fcprim.pocket(bdy, "Heads", heads, arm_y - shank_y)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The clamp half is its
+    # siblings' exactly.  `SCREW` is the eye, and note that it runs **across**
+    # the rod rather than along it: this is the one part where the two axes are
+    # perpendicular, because the X screw drives what the Y rail carries.
+    fcprim.lcs(bdy, "ROD", axis=(1, 0, 0))
+    fcprim.lcs(bdy, "MOUNT", axis=(0, -1, 0))
+    for i, side in enumerate((-1, 1)):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(0.0, 0.0, side * bolt_z),
+                   axis=(0, -1, 0))
+    fcprim.lcs(bdy, "SCREW", at=(boss[0], boss[1], 0.0), axis=(0, 0, 1))
+
     return bdy
 
 

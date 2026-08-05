@@ -61,6 +61,17 @@ def bot_brackets(doc):
                           bolt_hole_d, name=f"bolt_b{i}")
     fcprim.pocket(bdy, "Bolt clearance", bolts)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The gusset lies flat
+    # on two members at a corner, so every datum is on its underside and the
+    # five bolts are what tie the two together.
+    fcprim.lcs(bdy, "MOUNT", axis=(0, -1, 0))
+    at = [(bolt_inset + i * bolt_pitch, bolt_inset)
+          for i in range(bolts_per_leg)]
+    at += [(bolt_inset, bolt_inset + i * bolt_pitch)
+           for i in range(1, bolts_per_leg)]
+    for i, (x, z) in enumerate(at):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, 0.0, z), axis=(0, -1, 0))
+
     return bdy
 
 

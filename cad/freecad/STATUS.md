@@ -24,6 +24,19 @@ a contradiction. And `ALPHA_TOP_PLATE`'s grid comes to exactly the 83 holes its
 drawing annotates, which is a real check on having read the stagger right --
 the script refuses to build if it does not.
 
+## Two parts whose names are misleading
+
+Both were read off the mesh alone, before there was an assembly to put them in,
+and the assembly reads them differently. The reconstructions are right; it is
+the prose in their docstrings that is not:
+
+* **`BOT_BEARING_MOUNT_Y_AXIS` is an LM8UU holder**, not a bearing for the Y
+  screw. Its 15.2 mm seat with 13.2 mm lips is an LM8UU dropped in from below,
+  and four of them clip the alpha plate onto the Y rails.
+* **`BOT_ROD_HOLDER_ALPHA_AXIS` carries the worm's shaft.** Its bore is 5.3, an
+  M5 clearance, and the "alpha axis rod" of its name is that shaft rather than
+  a rail.
+
 ## The reconstructed meshes
 
 One row per mesh in [`../`](../). "Prismatic" is the fraction of the mesh's

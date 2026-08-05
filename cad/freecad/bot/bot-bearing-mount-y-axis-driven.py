@@ -161,6 +161,16 @@ def bot_bearing_mount_y_axis_driven(doc):
     fcprim.pocket(bdy, "Bolt clearance", bolts, flange_thickness,
                   reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The seat and the
+    # flange are the idle end's exactly, and `SCREW` is what this part adds:
+    # the arm's eye, which carries the Y axis screw parallel to the rail.
+    fcprim.lcs(bdy, "BEARING", axis=(1, 0, 0))
+    fcprim.lcs(bdy, "PLATE", at=(0.0, flange_top_y, 0.0), axis=(0, 1, 0))
+    for i, (x, z) in enumerate(((bolt_x, bolt_z), (bolt_x, -bolt_z),
+                                (-bolt_x, bolt_z), (-bolt_x, -bolt_z))):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, flange_top_y, z), axis=(0, 1, 0))
+    fcprim.lcs(bdy, "SCREW", at=(0.0, shaft[0], shaft[1]), axis=(1, 0, 0))
+
     return bdy
 
 
