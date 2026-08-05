@@ -310,7 +310,11 @@ as anonymous numbers.
 ## Notes on individual meshes
 
 * `ECCF_LEVER.stl` contains **two separate shells** - it is a printing pair of
-  two identical lever cheeks, not one part.
+  lever cheeks, not one part, and a chiral pair at that: the plate carries its
+  hub on one face and the two hubs have to face each other across the shaft.
+  `eccf/eccf-lever.py` builds both hands, `ECCF_LEVER` and
+  `ECCF_LEVER_MIRRORED`, each keeping the coordinates of the shell it came
+  from.
 * `SR_WORM_GEAR.stl` is a helical gear. It is the one part a revolve cannot
   make, and `fcprim.helix` - `PartDesign::AdditiveHelix` - makes it from the
   same kind of fully constrained sketch as everything else.

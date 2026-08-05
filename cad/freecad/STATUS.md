@@ -59,6 +59,25 @@ the prose in their docstrings that is not:
   M5 clearance, and the "alpha axis rod" of its name is that shaft rather than
   a rail.
 
+## A part that is two parts
+
+`ECCF_LEVER.stl` holds **two shells**: it is a printing pair of cheeks that go
+one either side of the eccenter and grip its shaft between their hubs, 6 mm
+apart. They are a *chiral* pair and not two of the same part - reflect one
+about X = -13.2 and all 1087 of its vertices land on the other, slide it across
+by the 20.2 mm between them instead and only 336 do - so `eccf/eccf-lever.py`
+builds both hands, `ECCF_LEVER` at X = -30.4 .. -16.2 and `ECCF_LEVER_MIRRORED`
+at X = -10.2 .. 4.0. For a long time it built only the first, and the assembly
+placed only that one - and it is the *outer* cheek, so it touched nothing at
+all.
+
+`asm/check.py`'s connectedness check is what found it: four hand levers hanging
+in mid air, which no interference check can ever see. The inner cheek is now
+mirrored in and lands against `ECCF_TOP`. The outer one still reaches nothing,
+because what it grips is the **eccenter body, and there is no part for it** -
+`eccf/` has `_BOT`, `_HEIGHT`, `_MOUNT`, `_TOP` and `_LEVER` and nothing else.
+It is listed in `asm/machine.py`'s `ADRIFT` and reported every build.
+
 ## The reconstructed meshes
 
 One row per mesh in [`../`](../). "Prismatic" is the fraction of the mesh's
@@ -74,6 +93,12 @@ mesh's own faceting error, and zero point classification mismatches.
 mismatches. The worst volume deviation is 0.26 %, on `SR_WORM_GEAR`, and that is
 the original mesh's own faceting error on a helical surface; the next worst is
 0.054 %.
+
+The one exception is **`ECCF_MOUNT`, and it is deliberate**: its cross bolt hole
+is opened out from the author's 3.5 mm to 5.7 mm for a heat set threaded insert,
+so the part is no longer the mesh. Its volume is checked against the mesh less
+the 132 mm3 that widening takes out, and `verify.py` reports 184 mismatches in
+20000 samples, all inside the enlarged hole. See `eccf/eccf-mount.py`.
 
 | Part | Size mm | Volume mm3 | Axis | Prismatic | Status |
 |---|---|---|---|---|---|

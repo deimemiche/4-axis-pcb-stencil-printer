@@ -1,11 +1,25 @@
-"""ECCF_LEVER - the eccenter's hand lever.
+"""ECCF_LEVER - the eccenter's hand lever, both hands.
 
 Reconstructed from the original author's ECCF_LEVER.stl. **That mesh holds two
-separate shells**: it is a printing pair of two identical cheeks, one either
-side of the eccenter, not one part. This builds the cheek at X = -30.4 .. -16.2;
-the other is its mirror image about X = -13.2. So the volume checked against is
-half the mesh's, and `verify.py` still works because it only samples inside this
-cheek's own bounding box, which the other one is 6 mm clear of.
+separate shells**: it is a printing pair of two cheeks, one either side of the
+eccenter, not one part. So it comes out as two documents, and the volume each
+is checked against is half the mesh's:
+
+    ECCF_LEVER.FCStd            the cheek at X = -30.4 .. -16.2
+    ECCF_LEVER_MIRRORED.FCStd   the cheek at X = -10.2 ..   4.0
+
+**They are a chiral pair, not two of the same part.** Reflect the first shell's
+vertices about X = -13.2 and all 1087 of them land on the second's; slide it
+across by the 20.2 mm between them instead and only 336 do. The plate is a 4 mm
+slab with a 10.2 mm hub on one face, and the two hubs have to face each other
+across the shaft, so what the printer needs is one of each and not two off one
+plate. `hand` below is the reflection: the outline is drawn in Y and Z and is
+untouched by it, and every X the sketches sit at is the one number that moves.
+
+Both keep the mesh's own coordinates rather than sharing an origin, so the two
+documents side by side reproduce the printing pair as the author laid it out,
+and either can be checked against the STL on its own: `verify.py` samples inside
+the solid's own bounding box, and the two are 6 mm clear of each other.
 
 A 4 mm plate with an 8 mm eye at one end and a 4.5 mm pin hole at the other, and
 a hub behind the eye so the pair grips the eccenter shaft over 10.2 mm rather
@@ -36,8 +50,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import fcprim
 
-cheek_x = (-30.4, -26.4)   # the plate; the other cheek mirrors about X = -13.2
+cheek_x = (-30.4, -26.4)   # the plate, as the mesh's first shell has it
 hub_x = -16.2              # the hub reaches from the plate to here
+mirror_x = -13.2           # the plane the pair straddles, the shaft's midpoint
 hub_d = 13.0
 hub_break = 1.0            # 45 degrees off its far end
 
@@ -65,9 +80,20 @@ def at(centre, radius, degrees):
             centre[1] + radius * math.sin(turn))
 
 
-def eccf_lever(doc):
-    bdy = fcprim.body(doc, "ECCF_LEVER")
+def eccf_lever(doc, hand=1):
+    """One cheek, `hand` +1 as the mesh's first shell has it and -1 mirrored."""
+    bdy = fcprim.body(doc, "ECCF_LEVER" + ("" if hand > 0 else "_MIRRORED"))
     reach = hub_d / 2 + blend_r          # centre distance for a rolling fillet
+
+    def x(value):
+        """Where `value` lands on this hand, reflected about the shaft."""
+        return value if hand > 0 else 2.0 * mirror_x - value
+
+    # Everything that ran along +X on the first hand -- the plate into the hub,
+    # both bores -- runs -X on the reflected one.  A pad and a pocket default
+    # to opposite directions off the same plane, so saying that once takes two
+    # flags that are each other's negation.
+    pad_reversed, cut_reversed = hand < 0, hand > 0
 
     # The two fillets on the hub, mirrored about its 225 degree line.
     inner = at(eye, reach, 270.0 - hub_blend_at)
@@ -89,7 +115,7 @@ def eccf_lever(doc):
             + math.degrees(math.acos((arm_r[1] + blend_r) / span)))
 
     # Drawn looking along the shaft; H is Y, V is Z, and the pad runs along X.
-    plate = fcprim.sketch(bdy, "Plate", "YZ_Plane", offset=cheek_x[0])
+    plate = fcprim.sketch(bdy, "Plate", "YZ_Plane", offset=x(cheek_x[0]))
     fcprim.polyline(plate, [
         band_out,
         (band_out[0], off_pin[0][1] + (band_out[0] - off_pin[0][0])),
@@ -114,27 +140,32 @@ def eccf_lever(doc):
         11: -blend_r,
         13: arm_r[1],
     })
-    fcprim.pad(bdy, "Plate", plate, cheek_x[1] - cheek_x[0])
+    fcprim.pad(bdy, "Plate", plate, cheek_x[1] - cheek_x[0],
+               reversed_=pad_reversed)
 
-    hub = fcprim.sketch(bdy, "Hub", "YZ_Plane", offset=cheek_x[1])
+    hub = fcprim.sketch(bdy, "Hub", "YZ_Plane", offset=x(cheek_x[1]))
     fcprim.circle(hub, eye, hub_d, name="hub")
-    fcprim.pad(bdy, "Hub", hub, hub_x - cheek_x[1])
+    fcprim.pad(bdy, "Hub", hub, hub_x - cheek_x[1], reversed_=pad_reversed)
 
     # The hub's far end is broken 1 mm; nothing else has reached that plane.
     def rim(edge):
-        return abs(fcprim.midpoint(edge).x - hub_x) < 1e-6
+        return abs(fcprim.midpoint(edge).x - x(hub_x)) < 1e-6
 
     fcprim.chamfer(bdy, "Rim", hub_break, rim)
 
-    bore = fcprim.sketch(bdy, "Eye", "YZ_Plane", offset=cheek_x[0])
+    bore = fcprim.sketch(bdy, "Eye", "YZ_Plane", offset=x(cheek_x[0]))
     fcprim.circle(bore, eye, eye_bore_d, name="eye")
-    fcprim.pocket(bdy, "Eye", bore, hub_x - cheek_x[0], reversed_=True)
+    fcprim.pocket(bdy, "Eye", bore, hub_x - cheek_x[0], reversed_=cut_reversed)
 
-    hole = fcprim.sketch(bdy, "Pin", "YZ_Plane", offset=cheek_x[0])
+    hole = fcprim.sketch(bdy, "Pin", "YZ_Plane", offset=x(cheek_x[0]))
     fcprim.circle(hole, pin, pin_bore_d, name="pin")
-    fcprim.pocket(bdy, "Pin", hole, cheek_x[1] - cheek_x[0], reversed_=True)
+    fcprim.pocket(bdy, "Pin", hole, cheek_x[1] - cheek_x[0],
+                  reversed_=cut_reversed)
 
     return bdy
 
 
-fcprim.make(__file__, "ECCF_LEVER", eccf_lever, mesh_volume)
+# Reflecting a solid does not change its volume, so one figure checks both.
+for side in (1, -1):
+    fcprim.make(__file__, "ECCF_LEVER" + ("" if side > 0 else "_MIRRORED"),
+                lambda doc, h=side: eccf_lever(doc, h), mesh_volume)
