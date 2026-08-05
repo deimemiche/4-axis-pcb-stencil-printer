@@ -22,7 +22,8 @@ stlrender.py     draws a mesh, so a shape can be looked at rather than guessed
 export.py        tessellates a built body back to STL, to render against the
                  original
 
-bot/             bottom frame, X and Y axes, rail and rod holders
+bot/             bottom frame, X and Y axes, rail and rod holders, the mod's
+                 Z bracket, and the bought rod and LM8UU
 eccf/            the front eccenter (README calls the mechanism the "eccenter")
 sr/              the slewing ring - the rotary alpha axis
 top/             top frame, stencil clamp, Z axis
@@ -30,6 +31,7 @@ misc/            parts belonging to no one assembly - feet, adapters - and the
                  stock several of them share: 2020 extrusion, M5 studding, the
                  alpha axis's ball bearing
 plate/           the plates and angles, drawn from the author's own 2D drawings
+mod/             Michael's own parts, transcribed from his CadQuery source
 asm/             the machine itself: the parts put together with real joints
 asm/render/      four views of each assembly, drawn by asm/render.py
 ```
@@ -40,6 +42,22 @@ aluminium was drawn properly, and `../../technical-drawings/` has those
 drawings. So those parts are *transcribed* rather than reverse engineered, and
 their check is arithmetic on the drawing's own dimensions rather than a
 comparison against a mesh. A mistyped hole position fails the build.
+
+`mod/` is the other odd one out, and for the same reason as `plate/`: its parts
+belong to the linear Z axis mod in the [repository's
+README](../../README.md), they already exist as parametric CadQuery in
+[`../z-axis.py`](../z-axis.py), and they are transcribed from it rather than
+measured off anything. The mod's **Z bracket** is transcribed the same way but
+is not in `mod/`: it bolts to a corner of the bottom frame, so it is a `bot/`
+part, and because it is chiral it is two documents --
+[`bot/bot-z-axis-bracket.py`](bot/bot-z-axis-bracket.py) builds
+`BOT_Z_AXIS_BRACKET` and `BOT_Z_AXIS_BRACKET_MIRRORED`, one for each corner.
+
+The **hinge locks** of [`../hinge-lock.py`](../hinge-lock.py) are there too,
+and they, like the bracket, are checked harder: CadQuery can be installed and
+run, so their volumes are held against that source's own solids with its
+cosmetic chamfers suppressed, and they agree exactly. The bracket goes further
+and is booleaned against that solid, which leaves nothing on either side.
 
 `asm/` is the assembly, built with the Assembly workbench so the machine is held
 together by joints and can be driven to any pose rather than frozen in one.
@@ -343,7 +361,7 @@ Several parts come in families, and finding the family is most of the work:
   `TOP_CLAMP_STOP` - are all a bore in a 16.2 mm boss with a saw cut and an M3
   pulling it shut.
 
-All 39 meshes are rebuilt, and the 6 drawn parts alongside them, so `build.py`
-comes back **45/45**. [`STATUS.md`](STATUS.md) carries the per-part table and
+All 39 meshes are rebuilt, the 6 drawn parts and Michael's 2 alongside them, so
+`build.py` comes back **47/47**. [`STATUS.md`](STATUS.md) carries the per-part table and
 what each awkward one turned out to be; [`ASSEMBLY.md`](ASSEMBLY.md) is the plan
 for putting them together into the machine, and how far it has got.

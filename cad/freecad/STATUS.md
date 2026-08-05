@@ -46,6 +46,50 @@ hands, and the hand is the 5.4 through the upright at the middle: `_FRONT` and
 `_FRONT_2` have it, `_BACK` and `_BACK_2` do not. The short pair is the part of
 this still taken from a sheet rather than from the machine.
 
+## The parts of Michael's own
+
+The linear Z axis mod in the repository's [README](../../README.md) has printed
+parts of its own, and they already exist as CadQuery in
+[`../z-axis.py`](../z-axis.py) driven by [`../settings.py`](../settings.py).
+They are **transcribed** from that source rather than reverse engineered, which
+is the same bargain `plate/` makes with the author's drawings, and their
+cosmetic chamfers and fillets are deliberately left off -- they change no fit.
+Most live in `mod/`; the Z bracket bolts to the bottom frame, so it is a `bot/`
+part and takes that prefix.
+
+| Part | From | Size mm | What it does |
+|---|---|---|---|
+| `BOT_Z_AXIS_BRACKET` | `z-axis.py` `bracket()` | 62 x 24 x 79.65 | stands an 8 mm Z rod up on a corner of the bottom frame |
+| `BOT_Z_AXIS_BRACKET_MIRRORED` | the same, every X negated | 62 x 24 x 79.65 | the other hand, for the other corner |
+| `TOP_Z_AXIS_BEARING_MOUNT` | `z-axis.py` `bearingMount()` | 42.2 x 24 x 25.1 | holds the LM8UU the hinge bar rides it on |
+| `TOP_HINGE_LOCK_BACK` | `hinge-lock.py` `hingeLockBack()` | 39 x 19.9 x 28.1 | hooks over a member; holds the M3's nut |
+| `TOP_HINGE_LOCK_FRONT` | `hinge-lock.py` `hingeLockFront()` | 15 x 48 x 20 | bolts flat to a member's face; carries the M3 |
+
+The hinge locks and the Z bracket are checked against CadQuery itself, which
+can be installed and run: their **volumes match the CadQuery solids exactly**
+once that source's cosmetic chamfers and fillets are suppressed, and every hole
+position was read off the real solid rather than off the script. `undressed`
+(the locks) and `plain_volume` (the bracket) are that number. What is
+deliberately left off is only the chamfers and fillets.
+
+The bracket is held to that solid harder still: booleaned against it, in both
+hands, it leaves nothing on either side. That check is worth having. Before it
+there was no bore in the collar at all, no saw cut and no pinch bolt -- three
+pockets that were cutting away from the material rather than into it, and a
+volume nobody was holding against anything.
+
+`TOP_Z_AXIS_BEARING_MOUNT` has no such check yet, so what checks it is the
+assembly: one rod has to pass both bores on one axis, which is what
+`asm/column.py` says.
+
+They also disagree with each other by exactly **2 mm**, and it is worth knowing
+why. The bracket measures the rod from the frame face its plate lies on and
+stands it 11.55 out; the mount measures it from the flange it bolts through and
+reaches 13.55 in. Both are right about themselves, so the difference cannot be
+split - the flange has to lie on the bar and the bore has to be on the rod. It
+comes out instead as the whole top assembly sitting 2 mm inboard of the bottom
+frame's own face, which `asm/column.py`'s `check_reach` prints every build.
+
 ## Two parts whose names are misleading
 
 Both were read off the mesh alone, before there was an assembly to put them in,
