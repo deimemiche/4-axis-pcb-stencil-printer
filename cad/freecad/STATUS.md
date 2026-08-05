@@ -14,8 +14,10 @@ drawing's own dimensions, so a mistyped hole position fails the build.
 | `ALPHA_BOT_PLATE` | `bottom-plate.pdf` | 200 x 200 x 6 | 4 x M3 on a 122 bolt circle, 10 for the worm at x 75.45, 24 x M3 in clusters |
 | `ALPHA_TOP_PLATE` | `top-plate-workholding.dxf` | 240 x 200 x 6 | 5 x M3 at r 75.45, plus an 83 hole staggered grid |
 | `ALPHA_TOP_PLATE_PLAIN` | `top-plate-plain.dxf` | 240 x 200 x 6 | the same plate before the grid is drilled |
-| `STENCIL_HOLDER_BOT` | `stencil-holder-bottom.pdf` | L 20x20x2, 198 | 4 x 5 at +-25 / +-75, one 5.4 through the upright |
-| `STENCIL_HOLDER_TOP` | `stencil-holder-top.pdf` | L 20x20x2, 213.72 | 6 + 2 x 5, two 5.4; across-leg positions are the least certain thing here |
+| `STENCIL_HOLDER_BACK` | Michael's machine | L 20x20x2, 213.72 | 4 x 3.4 at +-25 / +-75, and a mount's three at each end |
+| `STENCIL_HOLDER_FRONT` | Michael's machine | L 20x20x2, 213.72 | the same bar, plus one 5.4 through the upright at the middle |
+| `STENCIL_HOLDER_BACK_2` | `stencil-holder-bottom.pdf` | L 20x20x2, 198 | 4 x 3.4 at +-25 / +-75, the short angle that closes on `_BACK` |
+| `STENCIL_HOLDER_FRONT_2` | `stencil-holder-bottom.pdf` | L 20x20x2, 198 | the same, plus the 5.4 its long bar has |
 
 Two things fell out of doing these that were not obvious from the build page.
 The alpha axis has **two** plates, a fixed 200 x 200 and a rotating 240 x 200,
@@ -23,6 +25,26 @@ which is why the page's "200 x 200 x 6" and the drawings' 240 x 200 looked like
 a contradiction. And `ALPHA_TOP_PLATE`'s grid comes to exactly the 83 holes its
 drawing annotates, which is a real check on having read the stagger right --
 the script refuses to build if it does not.
+
+The two stencil holder angles are the exception to the rule above, and the
+warning that goes with it. They are named for where they sit -- flat in the top
+frame, one behind the other -- rather than for the BOT and TOP their sheets
+say, and **their figures are Michael's, off the built machine, not off a
+drawing**. `stencil-holder-top.pdf` does describe a 213.72 angle, but it draws
+a row of six where the bar has four and gives 5 and 5.4 where every hole is 3.4
+M3 clearance, and `stencil-holder-bottom.pdf` describes a 198 bar that is not
+in the machine at all. A reconstruction from those sheets was built, checked
+against `TOP_CLAMP_BEARING_MOUNT_1` to a hundredth of a millimetre, and was
+still the wrong part; both angles had to be reworked by hand. The scripts now
+reproduce what he built, exactly. Do not reconcile them with the sheets.
+
+The clamp is **four angles, not two**: each long bar closes on a shorter one
+with the foil pinched between, and the short pair is what
+`stencil-holder-bottom.pdf` draws -- its 198 is shorter than the long bars'
+213.72, not a different front bar as the file name suggests. The four go in two
+hands, and the hand is the 5.4 through the upright at the middle: `_FRONT` and
+`_FRONT_2` have it, `_BACK` and `_BACK_2` do not. The short pair is the part of
+this still taken from a sheet rather than from the machine.
 
 ## Two parts whose names are misleading
 
