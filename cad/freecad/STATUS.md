@@ -103,6 +103,21 @@ the prose in their docstrings that is not:
   M5 clearance, and the "alpha axis rod" of its name is that shaft rather than
   a rail.
 
+## The extrusion section was five pieces, not one
+
+`asm/stock.py` draws the T-slot profile every frame member is cut from, and it
+drew each slot's cavity as a plain 11 x 4 rectangle behind the mouth. Four of
+those meet each other across the diagonals, so what came out was **five
+separate lumps** -- the boss the centre bore runs through, and each of the four
+corners -- with nothing joining them. It could not be extruded and it could not
+be a profile; Michael looked at a render and said so.
+
+The fix is to slope the cavity's flanks at 45 degrees, which leaves the four
+diagonal **ribs** that carry the boss out to the corners. What checks it is a
+number nothing else in the repository could have supplied: a real 20 x 20
+slot 6 profile is catalogued at 0.53 kg/m, which at 2.70 g/cm3 is **196 mm2**
+of section. The old one measured 171.1. This one measures **196.1**.
+
 ## A part that is two parts
 
 `ECCF_LEVER.stl` holds **two shells**: it is a printing pair of cheeks that go

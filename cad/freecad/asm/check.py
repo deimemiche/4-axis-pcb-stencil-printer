@@ -6,9 +6,14 @@ those only ever compare a part with itself.  Two parts can each be perfect and
 still not fit.
 
     interference   no two solids may share space
+    connected      and none may share space with nothing at all
     collinear      every bore on one rod must have one axis
     fit            a rod must pass every bore assigned to it
     envelope       the machine must come out the size the manual says
+
+`interference` and `connected` are the two halves of one question and neither
+is any use without the other: a model can be free of clashes and still be a
+pile of parts in mid air.
 
 Interference is the expensive one, so it is done in two passes: bounding boxes
 first, which throws away almost every pair for the cost of six comparisons, then
@@ -27,6 +32,11 @@ from FreeCAD import Vector
 # An overlap smaller than this is a fit, not a clash.  A 8 mm rod in a 8.2 mm
 # clamp bore that has been drawn shut would show a sliver of this order.
 CLASH_MM3 = 1.0
+
+# And how close two solids have to be before they count as holding each other.
+# A bolted joint with a slot nut and a washer in it, because the bolts are not
+# modelled; small enough that a part standing in mid air still shows up.
+CONTACT_MM = 2.5
 
 
 # The assembly container carries a Shape of its own that is the union of
@@ -52,11 +62,14 @@ def solids(doc):
     return out
 
 
-def interference(doc, say, tolerance=CLASH_MM3, ignore=()):
+def interference(doc, say, tolerance=CLASH_MM3, ignore=(), open_pairs=()):
     """Every pair of solids that shares more space than it should.
 
     `ignore` is pairs of label fragments that are allowed to touch -- a rod in
-    its own clamp, say.
+    its own clamp, say.  `open_pairs` is different and deliberately noisier:
+    pairs that overlap because something about the real machine is not yet
+    understood.  They are reported as OPEN every build and do not fail it, so
+    they cannot quietly turn into furniture the way an ignored pair can.
     """
     placed = solids(doc)
     say(f"  {len(placed)} solids, {len(placed) * (len(placed) - 1) // 2} pairs")
@@ -70,10 +83,13 @@ def interference(doc, say, tolerance=CLASH_MM3, ignore=()):
                 near.append((label_a, a, label_b, b))
     say(f"  {len(near)} pairs whose bounding boxes touch at all")
 
-    clashes = []
+    def matches(label_a, label_b, pairs):
+        return any(x in label_a and y in label_b
+                   or x in label_b and y in label_a for x, y in pairs)
+
+    clashes, opens = [], []
     for label_a, a, label_b, b in near:
-        if any(x in label_a and y in label_b or x in label_b and y in label_a
-               for x, y in ignore):
+        if matches(label_a, label_b, ignore):
             continue
         try:
             shared = a.common(b)
@@ -81,13 +97,90 @@ def interference(doc, say, tolerance=CLASH_MM3, ignore=()):
             say(f"  ? could not test {label_a} against {label_b}")
             continue
         if shared.Solids and shared.Volume > tolerance:
-            clashes.append((label_a, label_b, shared.Volume))
+            where = opens if matches(label_a, label_b, open_pairs) else clashes
+            where.append((label_a, label_b, shared.Volume))
 
+    for label_a, label_b, volume in sorted(opens, key=lambda c: -c[2]):
+        say(f"  OPEN  {label_a} into {label_b}: {volume:.1f} mm3")
     for label_a, label_b, volume in sorted(clashes, key=lambda c: -c[2]):
         say(f"  CLASH {label_a} into {label_b}: {volume:.1f} mm3")
     if not clashes:
-        say(f"  ok: nothing overlaps by more than {tolerance} mm3")
+        say(f"  ok: nothing overlaps by more than {tolerance} mm3, "
+            f"{len(opens)} known-open pairs aside")
     return clashes
+
+
+def connected(doc, say, reach=CONTACT_MM, adrift=()):
+    """Nothing may float: every solid has to reach something else.
+
+    This is the check that was missing, and it is the one that would have
+    caught the Z axis.  `interference` can only ever say that two parts share
+    space they should not; it is blind to a part that shares space with
+    *nothing*, which is exactly what a machine that falls apart looks like.
+    A bearing mount hanging 8 mm off the frame it is supposed to be bolted to
+    passes every other check in this file.
+
+    So: build a graph over every solid in the document, join two of them when
+    they come within `reach`, and insist the whole machine is one piece.
+    `reach` is a bolted joint's worth rather than nothing at all -- parts are
+    held together by screws that are not modelled, and a washer or a slot nut
+    is a couple of millimetres -- but it is small enough that a part with no
+    neighbour at all cannot hide.
+    """
+    placed = solids(doc)
+    boxes = []
+    for _, shape in placed:
+        box = shape.BoundBox
+        box.enlarge(reach / 2.0)
+        boxes.append(box)
+
+    parent = list(range(len(placed)))
+
+    def find(i):
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    tested = 0
+    for i in range(len(placed)):
+        for j in range(i + 1, len(placed)):
+            root_i, root_j = find(i), find(j)
+            if root_i == root_j or not boxes[i].intersect(boxes[j]):
+                continue
+            tested += 1
+            try:
+                gap = placed[i][1].distToShape(placed[j][1])[0]
+            except Exception:
+                continue                       # a distance that will not run
+            if gap <= reach:
+                parent[root_i] = root_j
+
+    groups = {}
+    for i, (label, _) in enumerate(placed):
+        groups.setdefault(find(i), []).append(label)
+
+    def name(group):
+        return (f"{len(group)} " + ", ".join(sorted(group)[:6])
+                + (" ..." if len(group) > 6 else ""))
+
+    excused, loose = [], []
+    for group in sorted(groups.values(), key=len)[:-1]:
+        (excused if all(any(a in label for a in adrift) for label in group)
+         else loose).append(group)
+
+    say(f"  {len(placed)} solids, {tested} pairs close enough to measure")
+    for group in excused:
+        say(f"  ADRIFT {name(group)} -- held by a part the repository "
+            f"does not have")
+    for group in loose:
+        say(f"  LOOSE {name(group)} with nothing holding "
+            f"{'them' if len(group) > 1 else 'it'}")
+    if not loose:
+        say(f"  ok: the machine is one piece -- every solid reaches another "
+            f"within {reach} mm"
+            + (f", {len(excused)} adrift aside" if excused else ""))
+    return loose
 
 
 def collinear(frames, say, tolerance=1e-6):

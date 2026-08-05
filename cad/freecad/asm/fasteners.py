@@ -130,3 +130,83 @@ def bolt_through(doc, size, length, at, axis=(0.0, 0.0, 1.0),
             Vector(*at) + turn.multVec(Vector(0, 0, down)), turn)
         made.append(fixing)
     return made
+
+
+def bolt_datums(item):
+    """The `BOLT*` datums a part carries, in their own order.
+
+    Sorted by number rather than by name, so a part with more than nine of them
+    would not put BOLT10 between BOLT1 and BOLT2.
+    """
+    body = item.LinkedObject if item.TypeId == "App::Link" else item
+    names = [o.Label for o in body.Group
+             if o.TypeId == "PartDesign::CoordinateSystem"
+             and o.Label.startswith("BOLT")]
+    return sorted(names, key=lambda s: int(s[4:]))
+
+
+def placed_shape(item):
+    """A part's shape where the assembly has put it."""
+    if item.TypeId != "App::Link":
+        return item.Shape
+    shape = item.LinkedObject.Shape.copy()
+    shape.Placement = item.Placement.multiply(shape.Placement)
+    return shape
+
+
+def _through_material(shape, at, axis):
+    """How far a bolt on this axis runs through the part's own material.
+
+    Returned relative to `at`, so a datum sitting on the bolted face -- which
+    is where `fcprim.lcs` puts them -- gives a negative near end and a zero far
+    end: the material is all *behind* the datum, and the head goes at the far
+    side of it.
+
+    Measured with a thin probe rather than assumed from a thickness, because a
+    gusset bolted flat and a rail holder bolted on its foot present quite
+    different amounts of plastic to their screws.
+    """
+    reach = shape.BoundBox.DiagonalLength + 1.0
+    probe = Part.makeCylinder(0.05, 2.0 * reach, at - axis * reach, axis)
+    inside = shape.common(probe)
+    if not inside.Solids:
+        return None
+    along = [(v.Point - at).dot(axis) for v in inside.Vertexes]
+    return min(along), max(along)
+
+
+# How far past the bolted face a slot nut's own seat lies: the thickness of the
+# extrusion's lip, which is what the nut pulls up against from inside.
+SLOT_WALL = 2.0
+
+
+def bolts(doc, item, size="M4", length=10.0, with_nut="slot", seat=SLOT_WALL):
+    """A cap screw and its nut on every `BOLT*` datum a placed part carries.
+
+    This is the whole point of having put the datums on the parts: the part
+    already says where it is bolted and which way the bolt runs, so the screws
+    are read off it rather than dimensioned a second time in the assembly --
+    and they follow the part when it moves.
+
+    The datum sits on the face that is bolted down with its Z up the bolt, so
+    the head goes back at whichever face the bolt goes in at, and the nut sits
+    `seat` beyond the part -- inside the extrusion's channel, for a slot nut.
+    """
+    shape = placed_shape(item)
+    body = item.LinkedObject if item.TypeId == "App::Link" else item
+    datums = {o.Label: o for o in body.Group
+              if o.TypeId == "PartDesign::CoordinateSystem"}
+    made = []
+    for name in bolt_datums(item):
+        where = item.Placement.multiply(datums[name].Placement)
+        at = where.Base
+        axis = where.Rotation.multVec(Vector(0.0, 0.0, 1.0))
+        span = _through_material(shape, at, axis)
+        if span is None:                   # a datum whose bolt misses the part
+            continue
+        near, far = span
+        head = at + axis * near
+        made += bolt_through(doc, size, length, (head.x, head.y, head.z),
+                             (axis.x, axis.y, axis.z), with_nut=with_nut,
+                             grip=(far - near) + seat)
+    return made

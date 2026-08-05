@@ -62,4 +62,5 @@ Status: in use
 * [`technical-drawings/`](technical-drawings/) - technical drawings in DXF and PDF formats for CNC manufacturing
 * [`cad/`](cad/) - source CAD files, either original author's (STLs), or mine (FreeCAD, CadQuery)
 * [`cad/freecad/`](cad/freecad/) - the original author's STLs rebuilt as editable FreeCAD parts, with the tools that measure and check them
+* [`cad/freecad/asm/`](cad/freecad/asm/) - the whole machine as a FreeCAD assembly, **with the mods above**: all eighteen build steps, held together by joints and checked for interference, alignment and fit ([`ASSEMBLY.md`](cad/freecad/ASSEMBLY.md))
 * [`docs/`](docs/) - documentation

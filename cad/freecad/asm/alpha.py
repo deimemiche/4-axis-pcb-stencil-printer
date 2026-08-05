@@ -75,6 +75,11 @@ TOL = 1e-6
 RING_TEETH = 29
 TOOTH_PITCH = 2.25               # degrees
 TOOTH_SECTOR = (234.0, 306.0)
+TIP_R = 79.9506                  # from sr-outer-ring-w-gear.py
+ROOT_R = 78.5083
+RING_R = 75.45                   # the plain ring's own outside radius
+PITCH_R = 0.5 * (TIP_R + ROOT_R)  # where the worm's own pitch circle meets it
+RIM_R = 0.5 * (RING_R + ROOT_R)  # between the two: solid across the sector
 
 PLATE_THICKNESS = 6.0
 BEARING_PLATE_SCREW = 8.0        # M3x8, step 3
@@ -82,6 +87,14 @@ TOP_PLATE_SCREW = 14.0           # M3x14, step 4
 
 # The SR meshes are exported upside down; see the docstring.
 SR_FLIP = Rotation(Vector(1, 0, 0), 180.0)
+
+# How far the toothed ring is turned before it is bolted down.  Its five bosses
+# have to land on ALPHA_TOP_PLATE's five holes, which leaves five clockings 72
+# degrees apart, and only one of those points the teeth at the worm; see
+# `check_clocking`.
+RING_CLOCK = 270.0
+TEETH_TOWARDS = 180.0            # -X, where the worm's saddles are
+RING_TURN = Rotation(Vector(0, 1, 0), RING_CLOCK).multiply(SR_FLIP)
 
 
 def flipped(body):
@@ -97,8 +110,12 @@ def stack(doc, asm):
     made = {}
     for name in names:
         body = asmprim.part(name)
+        # Only the toothed ring cares which way round it goes: the other two
+        # are turned parts, and the bearing plate's four pads are 90 degrees
+        # apart, so the flip alone leaves them right.
+        turn = RING_TURN if name.endswith("OUTER_RING_W_GEAR") else SR_FLIP
         link = asmprim.link(asm, os.path.basename(name), body,
-                            Placement(Vector(), SR_FLIP))
+                            Placement(Vector(), turn))
         made[os.path.basename(name)] = link
 
     low = min(flipped(asmprim.part(n))[0] for n in names)
@@ -119,6 +136,105 @@ def stack(doc, asm):
     for link in made.values():
         asmprim.ground(asm, link)
     return made, low, high
+
+
+# What turns with the alpha axis, and what stays still.
+TURNING = ("SR_OUTER_RING_W_GEAR", "ALPHA_TOP_PLATE")
+
+
+def place(doc, asm, at_y, turn=0.0):
+    """The whole stack, with the fixed plate's **underside** at `at_y`.
+
+    `turn` is the alpha pose in degrees; only the outer ring and the top plate
+    take it, which is the whole point of the slewing ring.
+    """
+    made, low, high = stack(doc, asm)
+    lift = at_y - (low - PLATE_THICKNESS)
+    spin = Rotation(Vector(0, 1, 0), turn)
+    for name, link in made.items():
+        link.Placement = Placement(
+            Vector(0, lift, 0),
+            spin if name in TURNING else Rotation()).multiply(link.Placement)
+    doc.recompute()
+    return made
+
+
+def plate_top(at_y):
+    """The fixed plate's top face, which is what the worm's saddles sit on."""
+    return at_y + PLATE_THICKNESS
+
+
+def placed_holes(link, max_r=3.0):
+    """Small round holes in a *placed* part, as (radius, angle) about Y.
+
+    `holes` reads a body in its own coordinates; this reads a link in the
+    machine's, which is what a clocking check needs.
+    """
+    found = {}
+    for face in link.LinkedObject.Shape.Faces:
+        surface = face.Surface
+        if surface.TypeId != "Part::GeomCylinder" or surface.Radius > max_r:
+            continue
+        centre = link.Placement.multVec(surface.Center)
+        found[(round(centre.x, 3), round(centre.z, 3))] = surface.Radius
+    return [(math.hypot(x, z), math.degrees(math.atan2(z, x)) % 360.0)
+            for x, z in found]
+
+
+def check_clocking(ring, top):
+    """Which of the five ways round the toothed ring goes on.
+
+    Its bosses are 72 degrees apart and so are the plate's holes, so five
+    clockings bolt up.  Only one of them points the toothed sector at the worm,
+    and that is what settles it -- the ring's own teeth and the fixed plate's
+    saddle holes have to agree, and they were drawn from a mesh and a 2D
+    drawing respectively.
+    """
+    on_ring = sorted(a for r, a in placed_holes(ring) if abs(r - 75.45) < 0.5)
+    on_plate = sorted(a for r, a in placed_holes(top) if abs(r - 75.45) < 0.5)
+    say(f"  ring bosses at  {', '.join(f'{a:6.1f}' for a in on_ring)}")
+    say(f"  plate holes at  {', '.join(f'{a:6.1f}' for a in on_plate)}")
+    if len(on_ring) != 5 or len(on_plate) != 5:
+        raise SystemExit("the ring and the plate do not have five holes each")
+    worst = max(abs(a - b) for a, b in zip(on_ring, on_plate))
+    if worst > 0.01:
+        raise SystemExit(f"the ring's bosses miss the plate's holes by "
+                         f"{worst:.2f} degrees")
+    say(f"  ok: bolted up, worst hole out by {worst:.3f} degrees")
+
+    # Which way the teeth point, asked of the solid rather than of a bounding
+    # box: a box cannot tell a tooth from a boss, and the bosses stand 80.7 mm
+    # out against the teeth's 79.95.  So probe the pitch circle instead --
+    # there is material there only where there are teeth.
+    shape = ring.LinkedObject.Shape.copy()
+    shape.Placement = ring.Placement.multiply(shape.Placement)
+    middle = 0.5 * (shape.BoundBox.YMin + shape.BoundBox.YMax)
+    # Probe the **rim** the teeth stand on rather than the teeth themselves:
+    # at the pitch circle a gear is half air, so a comb of teeth gives no run
+    # at all, whereas the rim under them is solid right across the sector.
+    solid = [a for a in range(360)
+             if shape.isInside(Vector(RIM_R * math.cos(math.radians(a)),
+                                      middle,
+                                      RIM_R * math.sin(math.radians(a))),
+                               1e-6, True)]
+    # The five bosses reach past this radius too, so take the longest run of
+    # material rather than any material at all.
+    runs, run = [], []
+    for a in solid + [s + 360 for s in solid]:
+        if run and a != run[-1] + 1:
+            runs.append(run)
+            run = []
+        run.append(a)
+    runs.append(run)
+    sector = max(runs, key=len)
+    centre = (0.5 * (sector[0] + sector[-1])) % 360.0
+    say(f"  the longest run of material at r = {RIM_R:.2f} is "
+        f"{len(sector)} degrees wide, centred on {centre:.0f}")
+    if abs(centre - TEETH_TOWARDS) > 1.0:
+        raise SystemExit(f"the teeth face {centre:.0f} degrees, not the worm "
+                         f"at {TEETH_TOWARDS:.0f}")
+    say(f"  ok: the teeth face {TEETH_TOWARDS:.0f} degrees, which is where "
+        f"the worm's saddles are")
 
 
 def check_stack(low):
@@ -234,6 +350,9 @@ def build():
     check_circle("turning plate to toothed ring, 5 x M3 on 150.9",
                  asmprim.part("plate/ALPHA_TOP_PLATE"),
                  asmprim.part("sr/SR_OUTER_RING_W_GEAR"), 5, 75.45)
+
+    say("=== which way round the ring goes on")
+    check_clocking(made["SR_OUTER_RING_W_GEAR"], made["ALPHA_TOP_PLATE"])
 
     say("=== the ring gear")
     check_gear()

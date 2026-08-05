@@ -47,8 +47,16 @@ AGAINST = {
     "BottomFrame": ("STEP_1_1-1", "STEP_1_2-1"),
     "Carriage": ("STEP_2_2",),
     "Alpha": ("STEP_4_2",),
+    "Drive": ("STEP_6_1", "STEP_9_1", "STEP_9_2"),
     "Column": ("STEP_10_1", "STEP_12_1"),
-    "Machine": ("STEP_18_1",),
+    "Stencil": ("STEP_13_1-1", "STEP_15_2-1", "STEP_16_1"),
+    # Step 11 has no render of its own -- the only step in the manual that
+    # has none -- so the eccentrics are held against the finished machine.
+    "Eccentric": ("STEP_18_4",),
+    "Machine": ("STEP_18_4",),
+    # The lid up, which the manual never draws; the thing to hold this one
+    # against is Michael's own photograph, docs/img/open-top.jpg.
+    "MachineOpen": (),
 }
 
 # Tessellation: fine enough to read a T-slot, coarse enough to stay quick.

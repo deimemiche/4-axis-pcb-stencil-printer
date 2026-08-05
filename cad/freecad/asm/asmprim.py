@@ -38,7 +38,7 @@ import os
 import sys
 
 import FreeCAD as App
-from FreeCAD import Placement, Rotation, Vector
+from FreeCAD import Matrix, Placement, Rotation, Vector
 
 import JointObject
 import UtilsAssembly
@@ -202,7 +202,23 @@ def axis_of(item, label):
     return frame(item, label).Rotation.multVec(Vector(0.0, 0.0, 1.0))
 
 
+def basis(xd, yd, zd):
+    """A rotation given where it sends the three axes.
+
+    Placing a reconstructed part usually means saying "its X runs along the
+    machine's Z, its Y up" rather than naming an angle, and three unit vectors
+    say that plainly where a pair of composed rotations does not.
+    """
+    m = Matrix()
+    m.A11, m.A21, m.A31 = xd.x, xd.y, xd.z
+    m.A12, m.A22, m.A32 = yd.x, yd.y, yd.z
+    m.A13, m.A23, m.A33 = zd.x, zd.y, zd.z
+    return Rotation(m)
+
+
 def save(doc):
+    # Saved already looking right: solids on, sketches and datums off.
+    fcprim.dress(doc)
     doc.save()
     print(f"  saved {doc.FileName}")
     sys.stdout.flush()

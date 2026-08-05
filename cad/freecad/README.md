@@ -60,8 +60,20 @@ cosmetic chamfers suppressed, and they agree exactly. The bracket goes further
 and is booleaned against that solid, which leaves nothing on either side.
 
 `asm/` is the assembly, built with the Assembly workbench so the machine is held
-together by joints and can be driven to any pose rather than frozen in one.
-[`ASSEMBLY.md`](ASSEMBLY.md) is the plan and the progress against it.
+together by joints and can be driven to any pose rather than frozen in one. It
+covers all eighteen of the build manual's steps, as **Michael's** machine rather
+than the author's original -- the linear Z axis and the workholding top plate
+are in it. [`ASSEMBLY.md`](ASSEMBLY.md) is the plan and the progress against it.
+
+The top frame is a **lid**: a hinge bar carried on the two Z rods, and the
+stencil frame hinged off it so it swings up to put a board in. Any of the pose's
+numbers can be given on the command line, so
+
+```
+... asm/machine.py lid=60
+```
+
+builds it open, as `MachineOpen.FCStd`, and checks it in that pose too.
 
 Every group holds `<part-name>.py` next to the `<PART_NAME>.FCStd` it builds,
 named after the STL in [`../`](../) it was reconstructed from.

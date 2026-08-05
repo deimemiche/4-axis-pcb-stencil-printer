@@ -26,17 +26,26 @@ Two deliberate simplifications, both of which affect looks rather than fit:
   section differs in the corner fillets and the web shape.  The outside
   dimensions and the slot positions -- the two things anything bolts to -- are
   right.
+
+  It comes out at **196.1 mm2** of section, and a real 20 x 20 slot 6 profile
+  is catalogued at 0.53 kg/m, which at 2.70 g/cm3 is 196 mm2.  That is a check
+  worth having, because it is sensitive to exactly the thing the section used
+  to get wrong: too much cut away and the number falls, and the boss the centre
+  bore runs through stops being attached to anything.  See `_slot`.
 """
+
+import math
 
 import Part
 from FreeCAD import Placement, Rotation, Vector
 
 # Slot geometry for a 20 mm T-slot section.
 SLOT_MOUTH = 6.0         # the gap a nut drops through
-SLOT_MOUTH_DEPTH = 2.0
-SLOT_CHANNEL = 11.0      # the wider space behind it
-SLOT_DEPTH = 6.0         # total, from the face inwards
+SLOT_MOUTH_DEPTH = 2.0   # and the outer wall it goes through
+SLOT_CHANNEL = 11.0      # the widest the T gets, behind that wall
 CENTRE_BORE = 4.2        # tapped M5 in most profiles
+CORE = 8.0               # across the boss the centre bore is drilled through
+RIB = 2.0                # the four diagonal webs that hold the boss on
 
 
 def _feature(doc, label, shape):
@@ -46,21 +55,51 @@ def _feature(doc, label, shape):
     return obj
 
 
+def _prism(points, length):
+    """A closed profile in the XY plane, run up +Z."""
+    wire = Part.makePolygon([Vector(x, y, 0.0) for x, y in points]
+                            + [Vector(points[0][0], points[0][1], 0.0)])
+    return Part.Face(wire).extrude(Vector(0, 0, length))
+
+
+def _slot(length):
+    """One T-slot, as two cutting solids: the mouth and the cavity behind it.
+
+    Drawn for the +Y face of a cell centred on the origin, and then turned to
+    each of the four faces.
+
+    **The cavity's flanks run at 45 degrees**, and that is the whole of what
+    makes this a section rather than a puzzle.  Cut the cavity as a plain 11 mm
+    rectangle 6 deep -- which is what this file did until Michael looked at a
+    render and said the extrusions were impossible -- and the four cavities
+    meet each other across the diagonals: the boss the centre bore runs through
+    is left floating in mid air, joined to nothing, and the profile comes out
+    in five pieces rather than one -- the boss, and each of the four corners.
+    Sloping the flanks leaves the four diagonal **ribs** that carry the boss out
+    to the corners, which is what every real T-slot profile has and why it can
+    be extruded at all.  The old section measured 171.1 mm2 against a real
+    profile's 196; this one measures 196.1.
+    """
+    half, wide = 10.0, SLOT_CHANNEL / 2.0
+    front = half - SLOT_MOUTH_DEPTH          # the wall's inner face
+    back = CORE / 2.0                        # and the boss's own
+    rib = RIB / math.sqrt(2.0)               # the ribs, off the diagonal
+    cavity = _prism([
+        (-wide, front), (wide, front), (wide, wide + rib),
+        (back - rib, back), (-(back - rib), back), (-wide, wide + rib),
+    ], length)
+    mouth = Part.makeBox(SLOT_MOUTH, SLOT_MOUTH_DEPTH + 1.0, length,
+                         Vector(-SLOT_MOUTH / 2.0, front, 0))
+    return [cavity, mouth]
+
+
 def _cell(cx, cy, length):
     """One 20 mm cell of an extrusion: the slots and bore, as cutting solids."""
     cuts = [Part.makeCylinder(CENTRE_BORE / 2.0, length,
                               Vector(cx, cy, 0), Vector(0, 0, 1))]
     for angle in (0, 90, 180, 270):
         rot = Rotation(Vector(0, 0, 1), angle)
-        # A slot cut in the +Y face, then turned to each of the four faces.
-        mouth = Part.makeBox(SLOT_MOUTH, SLOT_MOUTH_DEPTH + 1.0, length,
-                             Vector(-SLOT_MOUTH / 2.0, 10.0 - SLOT_MOUTH_DEPTH,
-                                    0))
-        channel = Part.makeBox(SLOT_CHANNEL, SLOT_DEPTH - SLOT_MOUTH_DEPTH,
-                               length,
-                               Vector(-SLOT_CHANNEL / 2.0, 10.0 - SLOT_DEPTH,
-                                      0))
-        for solid in (mouth, channel):
+        for solid in _slot(length):
             solid.Placement = Placement(Vector(cx, cy, 0), rot) \
                 .multiply(solid.Placement)
             cuts.append(solid)
@@ -170,3 +209,42 @@ def spring(doc, label, outer, wire, length, turns=None):
         wire / 2.0, Vector((outer - wire) / 2.0, 0, 0), Vector(0, 1, 0)))
     return _feature(doc, label,
                     Part.Wire(helix.Edges).makePipeShell([profile], True, True))
+
+
+# A butt hinge from the shop, of the size the manual's step 12 calls for.  It
+# is bought, not printed and not drawn, so these are the proportions of an
+# ordinary 40 mm steel hinge rather than a measurement of the author's.
+HINGE_LEAF = 20.0        # how far each leaf reaches from the pivot
+HINGE_LENGTH = 40.0      # along the pivot
+HINGE_THICK = 2.0
+HINGE_KNUCKLE = 5.0
+
+
+def hinge_leaf(doc, label, spans, hand=1, leaf=HINGE_LEAF,
+               length=HINGE_LENGTH, thick=HINGE_THICK,
+               knuckle=HINGE_KNUCKLE):
+    """One leaf of a butt hinge, its pivot on the origin and axis along +Z.
+
+    A hinge is drawn as two of these rather than one solid, because the whole
+    point of it is that the two halves move relative to each other: one leaf
+    stays with the hinge bar and the other goes up with the lid, and a single
+    solid could only ever belong to one of them.
+
+    `spans` are the knuckle segments this leaf carries along the pivot; the two
+    leaves interleave, so between them they cover the whole length once.  The
+    leaf lies flat on the face it is screwed to, which puts the pivot `thick`
+    above that face -- a surface mounted hinge, which is what the photographs
+    of the machine show.
+    """
+    plate = Part.makeBox(leaf, thick, length,
+                         Vector(0.0 if hand > 0 else -leaf, 0.0,
+                                -length / 2.0))
+    shape = plate
+    for z0, z1 in spans:
+        shape = shape.fuse(Part.makeCylinder(
+            knuckle / 2.0, z1 - z0, Vector(0, thick, z0), Vector(0, 0, 1)))
+    for z in (-length / 4.0, length / 4.0):
+        shape = shape.cut(Part.makeCylinder(
+            2.1, thick + 2.0, Vector(hand * leaf / 2.0, -1.0, z),
+            Vector(0, 1, 0)))
+    return _feature(doc, label, shape.removeSplitter())
