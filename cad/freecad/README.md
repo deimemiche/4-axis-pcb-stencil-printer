@@ -45,6 +45,15 @@ together by joints and can be driven to any pose rather than frozen in one.
 Every group holds `<part-name>.py` next to the `<PART_NAME>.FCStd` it builds,
 named after the STL in [`../`](../) it was reconstructed from.
 
+**Next to it is not tidiness.** `fcprim.make` saves beside its own source, so a
+script in one group and its document in another means every rebuild lands in
+the wrong place and has to be copied over the right one. That copy is a
+*different document*: a build regenerates the element map, so the topological
+names any assembly stored - `Pad.;#6:1;:G;XTR;:H440:7,F.Face1` - no longer
+resolve, and every joint made against a face or an edge of that part breaks.
+Moving a built document is the same trap. This is what LCS datums are for, and
+why the scripted assemblies in `asm/` use nothing else; see `fcprim.lcs`.
+
 ## Building
 
 FreeCAD 1.1 is needed. With the flatpak:

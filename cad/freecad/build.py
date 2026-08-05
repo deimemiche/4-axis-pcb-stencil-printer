@@ -17,7 +17,7 @@ import sys
 import traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-GROUPS = ("misc", "plate", "eccf", "sr", "bot", "top")
+GROUPS = ("misc", "plate", "eccf", "sr", "bot", "top", "mod")
 
 
 def part_scripts(argv):
@@ -70,6 +70,9 @@ def main(argv):
     say(f"\n{len(scripts) - len(failed)}/{len(scripts)} built")
     for name in failed:
         say(f"  FAILED {name}")
+    # Nothing headless can write GuiDocument.xml, so everything just built
+    # would open in the GUI as an empty 3D view; see view.py.
+    say("\nnow dress them, or they open blank:  view.py under the full FreeCAD")
     return 1 if failed else 0
 
 

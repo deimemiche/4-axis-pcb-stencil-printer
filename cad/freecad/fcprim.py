@@ -545,6 +545,26 @@ def polar_pattern(bdy, label, features, count, axis="Z_Axis", angle=360.0):
     return p
 
 
+def linear_pattern(bdy, label, features, count, spacing, axis="Z_Axis",
+                   reversed_=False):
+    """Repeat features along an axis -- a row of holes, a hinge's knuckles.
+
+    `spacing` is centre to centre and `count` **includes the original**, which
+    is what PartDesign means by an occurrence: two occurrences 20 apart are the
+    seed and one copy, and the feature's own `Length` is the span between the
+    outermost two rather than the step between them.
+    """
+    p = bdy.Document.addObject("PartDesign::LinearPattern", "LinearPattern")
+    p.Label = label
+    _append(bdy, p)
+    p.Originals = features
+    p.Direction = _axis_link(bdy, None, axis)
+    p.Length = spacing * (count - 1)
+    p.Occurrences = count
+    p.Reversed = reversed_
+    return p
+
+
 def mirrored(bdy, label, features, plane="XY_Plane"):
     m = bdy.Document.addObject("PartDesign::Mirrored", "Mirrored")
     m.Label = label
@@ -616,11 +636,125 @@ def check_sketches(bdy):
             print(f"  WARNING sketch {obj.Label!r} is not fully constrained")
 
 
-def finish(doc, result, path, expect_volume=None, tolerance=0.01):
+# What the parts are made of.  Michael sets this by hand in the GUI, and a
+# rebuild used to lose it: `build.py` writes a new document from a script, the
+# appearance lives in the document rather than in the source, so a part that
+# had been given a material came back in FreeCAD's default grey and git had no
+# copy to put back.  Every part now says what it is instead.
+#
+# The two bought metals are cards from FreeCAD's own library and carry their
+# own appearance, so naming the card is the whole job.  **Printed is the odd
+# one out**: it is the library's `Default` card with Michael's own colour laid
+# over it, and that colour cannot be set from here.  A headless document has no
+# view provider to put it on, and setting it on the material does not work
+# either -- the GUI paints anything wearing the `Default` card in its own
+# `DefaultShapeColor` whatever the material's own diffuse colour says, which is
+# `#727980` here and is exactly the grey this exists to stop.  So the kind is
+# recorded on the body as `PartMaterial`, and `view.py` -- the only thing here
+# that runs under a GUI, and the only thing that can write the appearance into
+# `GuiDocument.xml` -- paints the printed ones.
+PRINTED = "printed"
+STEEL = "steel"
+ALUMINIUM = "aluminium"
+
+MATERIAL_CARD = {
+    PRINTED: "7f9fd73b-50c9-41d8-b7b2-575a030c1eeb",     # Default
+    STEEL: "4b849c55-6b3a-4f75-a055-40c0d0324596",       # Steel
+    ALUMINIUM: "68b152b2-fd5e-4f10-8db0-1a2df3fe0fda",   # Aluminum-6061-T6
+}
+
+PRINTED_COLOUR = (1.0, 0.4706, 0.0, 1.0)   # #FF7800, and Michael's filament
+
+
+def material(bdy, kind=PRINTED):
+    """Say what a body is made of, and give it the matching material card.
+
+    The name goes on as `PartMaterial` so that it survives into the document
+    and can be read back without guessing: a part with no such property was
+    built before this existed, and is left alone rather than repainted.
+    """
+    if kind not in MATERIAL_CARD:
+        raise KeyError(f"unknown material {kind!r}")
+    if not hasattr(bdy, "PartMaterial"):
+        bdy.addProperty("App::PropertyString", "PartMaterial", "Stock",
+                        "What the part is made of; see fcprim.material",
+                        locked=True)
+    bdy.PartMaterial = kind
+    import Materials                        # only in FreeCAD 1.1 and later
+    bdy.ShapeMaterial = Materials.MaterialManager().getMaterial(
+        MATERIAL_CARD[kind])
+    return bdy
+
+
+# What a document holds that is not the thing itself: the sketches a feature
+# was drawn from, the datums it was drawn on, and the intermediate features a
+# body's tip already contains.  A joint is in here too, for the assemblies.
+SCAFFOLDING = ("Sketcher::", "PartDesign::CoordinateSystem", "PartDesign::Plane",
+               "PartDesign::Line", "PartDesign::Point", "App::Origin",
+               "App::OriginFeature", "App::Plane", "App::Line", "App::Point",
+               "App::Placement",
+               "Assembly::JointGroup", "App::FeaturePython")
+
+
+def dress(doc):
+    """Leave every solid visible and everything that drew it hidden.
+
+    Opening a document and turning everything on should show a machine, not a
+    machine inside a thicket of white sketch outlines and datum planes, and
+    that is what it did until Michael opened one and said so.
+
+    `Visibility` is an App level property, not a view property, so this runs
+    under `freecadcmd` with no GUI at all.  Within a PartDesign body every
+    intermediate feature is hidden, because showing them draws each stage of
+    the part on top of the last -- every one *except the tip*.  A body's view
+    provider defaults to `DisplayModeBody = 'Through'`, and in that mode the
+    body draws nothing of its own: what is seen is whichever of its children
+    are visible.  Hiding the tip too leaves the body `Visibility=True` with an
+    empty scene graph under it, which is a document that opens blank, and it
+    did until Michael opened one and said so a second time.  So the tip stays
+    visible and the rest of the body's features do not, which is exactly the
+    state the GUI itself leaves a body in after modelling.
+
+    Setting it here is necessary but not sufficient: a document saved headless
+    carries no `GuiDocument.xml`, and a GUI opening one builds its view
+    providers from scratch and hides every one of them, overriding what is set
+    here.  [`view.py`](view.py) writes that file, and running it is what makes
+    a built part actually appear when the document is opened.
+    """
+    tips = {body.Tip.Name for body in doc.Objects
+            if body.TypeId == "PartDesign::Body" and body.Tip is not None}
+    for obj in doc.Objects:
+        if not hasattr(obj, "Visibility"):
+            continue
+        kind = obj.TypeId
+        scaffold = any(kind.startswith(prefix) for prefix in SCAFFOLDING)
+        inside_body = (kind.startswith("PartDesign::")
+                       and kind != "PartDesign::Body"
+                       and obj.Name not in tips)
+        obj.Visibility = not (scaffold or inside_body)
+    return doc
+
+
+def _results(result):
+    """One built feature, or several -- a document may hold more than one body.
+
+    Every part here is a single body except where one document holds a set of
+    sticks cut from the same stock, so `make` and `finish` take either.
+    """
+    return list(result) if isinstance(result, (list, tuple)) else [result]
+
+
+def finish(doc, result, path, expect_volume=None, tolerance=0.01,
+           made_of=PRINTED):
     """Recompute, report the volume and save the document to `path`.
 
     `expect_volume` is the volume measured off the original STL mesh; the
     check guards against a reconstruction silently drifting from the original.
+    Given several bodies it is the volume of all of them together, which is
+    what a set of identical sticks wants: one of them short catches here.
+
+    `made_of` is what the part is made of; see `material`.  It defaults to
+    printed because all but a dozen of these parts are.
     """
     doc.recompute()
     # A feature that throws is only reported to the console: the body keeps the
@@ -630,7 +764,12 @@ def finish(doc, result, path, expect_volume=None, tolerance=0.01):
     failed = [obj.Label for obj in doc.Objects if "Invalid" in obj.State]
     if failed:
         raise SystemExit("feature(s) failed to build: " + ", ".join(failed))
-    shape = result.Shape
+    built = _results(result)
+    for item in built:
+        if item.TypeId == "PartDesign::Body":
+            material(item, made_of)
+    shape = (built[0].Shape if len(built) == 1
+             else Part.Compound([item.Shape for item in built]))
     bb = shape.BoundBox
     print(f"{doc.Name}: volume {shape.Volume:.3f} mm^3, "
           f"{len(shape.Solids)} solid(s), {len(shape.Faces)} faces, "
@@ -643,22 +782,29 @@ def finish(doc, result, path, expect_volume=None, tolerance=0.01):
         if error > tolerance:
             raise SystemExit(
                 f"reconstruction deviates from the mesh by {error * 100:.3f} %")
+    dress(doc)
     doc.saveAs(path)
     print(f"  saved {path}")
     return result
 
 
-def make(script, name, builder, expect_volume=None, tolerance=0.01):
+def make(script, name, builder, expect_volume=None, tolerance=0.01,
+         made_of=PRINTED):
     """Build one part and save it next to its script.
 
     The whole tail of every part script:  a fresh document called `name`,
     `builder(doc)` to draw it, a check that no sketch was left underdefined,
     and a save to <name>.FCStd beside the source.
+
+    `builder` may hand back a list, for a document holding more than one body;
+    every one of them is checked and they are saved together.
     """
     doc = document(name)
     result = builder(doc)
-    check_sketches(result if result.TypeId == "PartDesign::Body"
-                   else result.getParent())
+    for item in _results(result):
+        check_sketches(item if item.TypeId == "PartDesign::Body"
+                       else item.getParent())
     folder = os.path.dirname(os.path.abspath(script))
     return finish(doc, result, os.path.join(folder, name + ".FCStd"),
-                  expect_volume=expect_volume, tolerance=tolerance)
+                  expect_volume=expect_volume, tolerance=tolerance,
+                  made_of=made_of)
