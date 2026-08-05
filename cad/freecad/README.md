@@ -26,7 +26,9 @@ bot/             bottom frame, X and Y axes, rail and rod holders
 eccf/            the front eccenter (README calls the mechanism the "eccenter")
 sr/              the slewing ring - the rotary alpha axis
 top/             top frame, stencil clamp, Z axis
-misc/            parts belonging to no one assembly - feet, adapters
+misc/            parts belonging to no one assembly - feet, adapters - and the
+                 stock several of them share: 2020 extrusion, M5 studding, the
+                 alpha axis's ball bearing
 plate/           the plates and angles, drawn from the author's own 2D drawings
 asm/             the machine itself: the parts put together with real joints
 asm/render/      four views of each assembly, drawn by asm/render.py
@@ -54,6 +56,61 @@ names any assembly stored - `Pad.;#6:1;:G;XTR;:H440:7,F.Face1` - no longer
 resolve, and every joint made against a face or an edge of that part breaks.
 Moving a built document is the same trap. This is what LCS datums are for, and
 why the scripted assemblies in `asm/` use nothing else; see `fcprim.lcs`.
+
+The exceptions are the **bought stock**, which was never printed and so was
+never an STL. The rod and the bearing live in `bot/` with the rest of the
+frame; the extrusion and the studding belong to no one assembly - they are cut
+for several at once - and so are in `misc/`:
+
+| script | documents | what |
+|---|---|---|
+| [`misc/2020-extrusion.py`](misc/2020-extrusion.py) | `2020_300` `2020_280` `2020_300_TOP_FRONT` | 20 x 20 T-slot extrusion |
+| [`bot/rod-d8.py`](bot/rod-d8.py) | `ROD_D8_300` `ROD_D8_280` `ROD_D8_244` `ROD_D8_140` | 8 mm ground linear rod |
+| [`bot/lm8uu.py`](bot/lm8uu.py) | `LM8UU` | 8 mm linear ball bearing |
+| [`misc/m5-threaded-rod.py`](misc/m5-threaded-rod.py) | `M5_270` | M5 threaded rod, the three drive screws and the stretcher |
+| [`misc/m8-threaded-rod.py`](misc/m8-threaded-rod.py) | `M8_55` | M8 threaded rod, the four eccenter rods |
+| [`misc/tube-d8.py`](misc/tube-d8.py) | `TUBE_D8_170` | drawn aluminium tube, 8 x 1 mm |
+| [`top/hinge-40.py`](top/hinge-40.py) | `HINGE_40_LEAF` | 40 mm butt hinge - one leaf, and two make the hinge |
+| [`misc/bearing-14x5x5.py`](misc/bearing-14x5x5.py) | `BEARING_14X5X5` | 605 ball bearing, 14 x 5 x 5, four on the alpha axis |
+
+One script, a document per size: a stick of extrusion or of rod is nothing but
+its section and how far it runs, so the length is the only parameter that
+varies and adding one is adding a number. The LM8UU and the ball bearing come
+in one size each and so have a document each.
+
+`2020_300_TOP_FRONT` is the exception, and a document rather than a length: it
+is a 300 with a 5.4 mm hole across it at mid length, for the M5 rod of the
+stencil stretcher to pass through the lid's front rail. Six of the seven 300s
+are plain, so the drilled one cannot share their document.
+
+The M5 studding is the other way round - the manual buys three of one size - so
+`M5_270` is a single document holding a body per stick, each named after the job
+it does: `M5_270_WORM_SHAFT` turns the alpha axis, `M5_270_X_SCREW` and
+`M5_270_Y_SCREW` drive the carriage. Michael has added a fourth,
+`M5_100_Stencil_Stretcher`, so the document now holds a length its own name does
+not cover - one of the renames its script's **Left to do** lists. They stand
+20 mm apart along X, which is document layout rather than geometry. The M8 is
+back to a document per length: its four sticks are interchangeable, and all four
+are the eccenter rods.
+
+The **M8 is also the one that carries its thread** - a real ISO 60 degree
+profile swept along a helix, cut square at both ends the way a hacksaw leaves
+it. Everything else here is drawn plain at its nominal major diameter, and the
+reason is length: M5 x 270 is 337 turns of swept profile per stick, to show a
+surface that never leaves a printed nut or a clearance hole, while the same
+thread over 55 mm is 44 turns and this is the rod you take hold of and turn to
+level the machine.
+
+The plain ones are the same solids `asm/stock.py` builds for the assembly --
+each agrees with it to **zero volume** -- drawn as sketches and pads instead of
+booleans so they can be opened and edited like everything else here. Their
+checks are arithmetic rather than a mesh comparison: a rod is `pi/4 d^2 L`, and
+the extrusion's section is held against the 196 mm2 a real 20 x 20 slot 6
+profile is catalogued at, which is what catches a lost rib or a slot the polar
+pattern dropped. The threaded rod is checked the same way, off a section area
+it works out from the thread profile: a screw sweep has the same cross section
+at every height, so a stick cut square at both ends is exactly that area times
+its length, with no end effects to allow for.
 
 Every document is **saved already looking right**: the solids visible, the
 sketches, datum planes and origins that drew them hidden, and the camera aimed
