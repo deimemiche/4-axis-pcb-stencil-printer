@@ -100,4 +100,5 @@ def plate(doc):
     return bdy
 
 
-fcprim.make(__file__, "ALPHA_BOT_PLATE", plate, expected_volume())
+fcprim.make(__file__, "ALPHA_BOT_PLATE", plate, expected_volume(),
+            made_of=fcprim.ALUMINIUM)

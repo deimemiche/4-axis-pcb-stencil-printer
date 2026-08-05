@@ -108,4 +108,5 @@ def plate(doc):
 if len(grid()) != 83:
     raise SystemExit(f"the grid should come to 83 holes, got {len(grid())}")
 
-fcprim.make(__file__, "ALPHA_TOP_PLATE", plate, expected_volume())
+fcprim.make(__file__, "ALPHA_TOP_PLATE", plate, expected_volume(),
+            made_of=fcprim.ALUMINIUM)

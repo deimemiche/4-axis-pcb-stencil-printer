@@ -16,6 +16,7 @@ the parts can be opened without running anything.
 fcprim.py        the helper library every part script is written against
 stlmeasure.py    measures the original meshes: layers, outlines, bores
 build.py         rebuilds part scripts and reports which ones failed
+view.py          gives the built .FCStd the view data a GUI needs to show it
 verify.py        point-samples a built solid against the mesh it came from
 stlrender.py     draws a mesh, so a shape can be looked at rather than guessed
 export.py        tessellates a built body back to STL, to render against the
@@ -54,6 +55,77 @@ resolve, and every joint made against a face or an edge of that part breaks.
 Moving a built document is the same trap. This is what LCS datums are for, and
 why the scripted assemblies in `asm/` use nothing else; see `fcprim.lcs`.
 
+Every document is **saved already looking right**: the solids visible, the
+sketches, datum planes and origins that drew them hidden, and the camera aimed
+at the part so it is on screen the moment the file opens. That takes two
+things. `fcprim.dress` sets `Visibility`, which is an App level property and so
+works with no GUI at all - but a document saved headless carries no
+`GuiDocument.xml`, and a GUI opening one builds its view providers from scratch
+and hides every single one of them, whatever `Visibility` says. `view.py`
+writes that file. Without it a part opens as an empty 3D view over a greyed out
+tree, which is exactly what it looked like until it did.
+
+Getting `Visibility` right is subtler than it sounds, and it was wrong
+underneath the missing `GuiDocument.xml` for as long as that hid it. A
+PartDesign body defaults to `DisplayModeBody = 'Through'`, and in that mode the
+body draws *nothing of its own*: what is on screen is whichever of its children
+are visible, which has to be the tip. Hiding every feature inside the body -
+the tip with them - leaves a body that is visible and empty, so `view.py`
+frames a scene with nothing in it and the part still opens blank. `dress` keeps
+the tip visible and hides only the features behind it. `view.py` then asserts
+it, per document, before saving: it parks the camera somewhere no fit could
+return, calls `fitAll`, and fails the document if the camera did not move,
+because an empty scene is exactly what leaves it standing still.
+
+### Materials
+
+Every part says what it is made of, so that a machine on screen reads as one:
+
+| what | what it gets | how it looks |
+|---|---|---|
+| **3D printed** | FreeCAD's `Default` card, its diffuse colour set to **`#FF7800`** | orange, shininess 0.9 |
+| **Bought steel** - studding, ground rod, LM8UU, ball bearings, the hinge | the `Steel` card, `4b849c55-6b3a-4f75-a055-40c0d0324596` | near black, shininess 0.06 - the card carries no diffuse colour at all |
+| **Aluminium** - the plates, the 2020 extrusion, the 8 mm tube | the `Aluminum-6061-T6` card, `68b152b2-fd5e-4f10-8db0-1a2df3fe0fda` | `#4D4D4D`, shininess 0.09 |
+
+The orange is Michael's own colour and not a FreeCAD default: this install's
+`DefaultShapeColor` is `#727980`, which is the grey a body comes up in when
+nobody has said otherwise.
+
+`fcprim.make` takes `made_of=`, and it defaults to `fcprim.PRINTED` because all
+but a dozen of these parts are. The dozen that are not say so:
+
+```python
+fcprim.make(__file__, "LM8UU", lm8uu, ..., made_of=fcprim.STEEL)
+```
+
+**It takes two passes, and the printed parts are why.** The two bought metals
+are cards from FreeCAD's own library and carry an appearance of their own, so
+`fcprim.material` naming the card as the part is built is the whole job. The
+printed parts wear the `Default` card with a colour laid over it, and the GUI
+paints anything wearing that card in its own `DefaultShapeColor` whatever the
+material says - so their colour has to go on the view provider, and there is no
+view provider until a GUI opens the document. `view.py` does it, in `paint`,
+which is also the only place that can: the appearance is stored in
+`GuiDocument.xml`, and `view.py` is the only thing here that writes one.
+
+So a part is only the right colour once **both** have run, which is the order
+they already run in:
+
+```sh
+fc cad/freecad/build.py misc/tube-d8.py     # material card, and PartMaterial
+fcgui cad/freecad/view.py misc/TUBE_D8_170.FCStd   # the colour, and the camera
+```
+
+`build.py` used to lose all of this: it writes a new document from a script,
+the appearance lives in the document rather than in the source, so a part that
+had been coloured by hand came back grey and git had no copy to put it back.
+
+What a body carries is a `PartMaterial` string, in its **Stock** property
+group, and `paint` only touches bodies that have one. A document built before
+this existed says nothing, is left exactly as it was, and so dressing an old
+part can never repaint a rod or a plate orange - but it will stay whatever
+colour it already is until its script is rebuilt.
+
 ## Building
 
 FreeCAD 1.1 is needed. With the flatpak:
@@ -68,6 +140,21 @@ fc cad/freecad/build.py eccf/eccf-bot.py   # rebuild one part
 Run from the repository root. `build.py` exists because `freecadcmd` swallows
 tracebacks - a script that raises simply prints nothing - so every build goes
 through a wrapper that catches and prints them.
+
+Then dress what was built, so that opening it shows something:
+
+```sh
+alias fcgui='flatpak run --filesystem=home \
+    --env=QT_QPA_PLATFORM=offscreen org.freecad.FreeCAD'
+
+fcgui cad/freecad/view.py                    # every document
+fcgui cad/freecad/view.py bot/BOT_HANDWHEEL.FCStd
+```
+
+This is the one script here that needs a real GUI rather than `freecadcmd`,
+because `GuiDocument.xml` is written by the view providers and `freecadcmd` has
+none. Qt's offscreen platform means it still needs no display, and no window
+appears.
 
 ## Checking a reconstruction against the original
 
