@@ -408,6 +408,71 @@ def circle(sk, center, diameter, name="hole"):
     return sk
 
 
+def bolt_circle(sk, center, radius, diameter, count, angle=0.0, name="bolt"):
+    """`count` holes evenly spaced round a bolt circle.
+
+    Drawn the way a person draws one rather than the way a loop would: the
+    holes sit on the corners of a construction polygon inscribed in a
+    construction circle, so the sketch itself carries the layout.  Placing each
+    hole at its own computed coordinate makes the same picture but says nothing
+    -- move the circle and the holes stay where they were, and nothing on the
+    screen tells you they were ever meant to be a circle of holes.
+
+    Only the first hole is dimensioned.  The rest are held equal to it and
+    coincident with a corner, so `{name}_dia` and that first hole's position
+    drive the whole pattern; `angle` turns the first hole off the sketch's own
+    horizontal.  A pattern this way round is also what a `PolarPattern` would
+    give, without leaving the sketch.
+    """
+    if count < 3:
+        raise ValueError("a bolt circle wants three holes or more; two corners "
+                         "make no polygon and leave the circle free")
+    cx, cy = center
+    start = math.radians(angle)
+    corners = [(cx + radius * math.cos(start + 2 * math.pi * i / count),
+                cy + radius * math.sin(start + 2 * math.pi * i / count))
+               for i in range(count)]
+
+    first = len(sk.Geometry)
+    for x, y in corners:
+        sk.addGeometry(Part.Circle(
+            Vector(x, y, 0), Vector(0, 0, 1), diameter / 2.0), False)
+    idx = sk.addConstraint(Sketcher.Constraint("Diameter", first, diameter))
+    sk.renameConstraint(idx, f"{name}_dia")
+    _locate(sk, first, 3, corners[0][0], corners[0][1], name)
+    for i in range(1, count):
+        sk.addConstraint(Sketcher.Constraint("Equal", first, first + i))
+
+    edge = len(sk.Geometry)
+    for i in range(count):
+        sk.addGeometry(Part.LineSegment(
+            Vector(*corners[i], 0),
+            Vector(*corners[(i + 1) % count], 0)), True)
+    guide = sk.addGeometry(Part.Circle(
+        Vector(cx, cy, 0), Vector(0, 0, 1), radius), True)
+
+    # Corner to corner, every corner on the guide circle and every edge the
+    # same length: that is a regular polygon, and it leaves the guide's radius
+    # and the pattern's clocking as the only freedoms left to pin down.
+    for i in range(count):
+        sk.addConstraint(Sketcher.Constraint(
+            "Coincident", edge + i, 2, edge + (i + 1) % count, 1))
+    for i in range(1, count):
+        sk.addConstraint(Sketcher.Constraint("Equal", edge, edge + i))
+    for i in range(count):
+        sk.addConstraint(Sketcher.Constraint(
+            "PointOnObject", edge + i, 2, guide))
+    if abs(cx) < 1e-9 and abs(cy) < 1e-9:
+        sk.addConstraint(Sketcher.Constraint("Coincident", guide, 3, *ROOT_POINT))
+    else:
+        _locate(sk, guide, 3, cx, cy, f"{name}_centre")
+    # Edge i ends on corner i + 1, so that is the hole it carries.
+    for i in range(count):
+        sk.addConstraint(Sketcher.Constraint(
+            "Coincident", edge + i, 2, first + (i + 1) % count, 3))
+    return first
+
+
 def _append(bdy, feature):
     """Add a solid feature to the body's chain and make it the new tip.
 

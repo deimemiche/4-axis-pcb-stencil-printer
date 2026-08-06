@@ -7,6 +7,9 @@ two hole patterns.
   radius, 75.45, is larger than `SR_INNER_RING` (70 mm) and fits inside
   `SR_OUTER_RING_W_GEAR` (77 mm), so this plate bolts to the **outer** ring --
   which is the one the worm drives, and is what makes this the rotating plate.
+  Drawn as a bolt circle proper, on a construction pentagon: see
+  `fcprim.bolt_circle`.  `ALPHA_BOT_PLATE`'s five 10 mm holes are the same
+  circle, and the two agree because both are that one radius.
 * **83 x M3 workholding grid**, 15 mm apart in X and 30 mm apart in Z, every
   other column offset by 15 mm.  It is a staggered grid rather than a square
   one, so a board can be clamped closer to wherever its edge happens to fall.
@@ -47,12 +50,6 @@ grid_x_max = 105.0
 grid_z_max = 75.0
 
 
-def mounting():
-    return [(mount_r * math.cos(math.radians(a)),
-             mount_r * math.sin(math.radians(a)))
-            for a in (i * 360.0 / mount_count for i in range(mount_count))]
-
-
 def grid():
     """The staggered workholding grid.
 
@@ -76,7 +73,7 @@ def grid():
 
 def expected_volume():
     plain = length * width * thickness
-    holes = len(mounting()) + len(grid())
+    holes = mount_count + len(grid())
     return plain - holes * math.pi * (grid_d / 2.0) ** 2 * thickness
 
 
@@ -93,8 +90,8 @@ def plate(doc):
     fcprim.pad(bdy, "Plate", outline, thickness, reversed_=True)
 
     mount = fcprim.sketch(bdy, "Mounting", "XZ_Plane")
-    for i, (x, z) in enumerate(mounting()):
-        fcprim.circle(mount, (x, z), mount_d, name=f"mount{i}")
+    fcprim.bolt_circle(mount, (0.0, 0.0), mount_r, mount_d, mount_count,
+                       name="mount")
     fcprim.pocket(bdy, "Ring mounting", mount, midplane=True)
 
     work = fcprim.sketch(bdy, "Grid", "XZ_Plane")

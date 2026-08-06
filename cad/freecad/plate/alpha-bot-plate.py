@@ -4,14 +4,23 @@ Drawn from `technical-drawings/bottom-plate.pdf`, whose title block calls it
 RAHMEN_BOTTOM_BOT_ALU_PLATE_XY_AXIS: 200 x 200 x 6, which is the "aluminium
 plate 200 x 200 x 6" the build page lists under the alpha axis.
 
-What the drawing carries:
+What the plate carries:
 
 * **4 x M3 on a 122 mm bolt circle**, at 0, 90, 180 and 270 degrees.  The
   circle is drawn dashed and labelled  122; it is a bolt circle rather than a
   bore, which the four holes sitting exactly on it settle.
-* **one 10 mm hole at x = 75.45**, on the centre line.  That radius is where
-  the worm meets the ring gear, and 10 mm is the worm's own diameter, so this
-  is the worm's clearance through the plate.
+* **5 x 10 mm on a 150.9 mm bolt circle**, at 0 and +-72 and +-144 degrees.
+  The drawing has only the one of them that lies on the centre line, at
+  x = 75.45: that radius is where the worm meets the ring gear, and 10 mm is
+  the worm's own diameter, so on the drawing it is the worm's clearance
+  through the plate.  Michael's plate has all five, and the other four are the
+  **worm gear's mounting**.  They sit at the same five stations as
+  `ALPHA_TOP_PLATE`'s ring screws and `SR_OUTER_RING_W_GEAR`'s five bosses,
+  and the ring hangs under the turning plate with its counterbores facing
+  down, so its five M3 go in from below - through here.  The five are drawn
+  as a bolt circle proper: a construction pentagon inscribed in a construction
+  circle, one hole on each corner, so the sketch says how they are spaced
+  instead of just landing them there.
 * **M3 clusters** in two families.  Both are mirrored top to bottom, but only
   the *inner* family is mirrored left to right as well -- the corner family
   exists on the left of the plate only, which is worth knowing before anyone
@@ -19,7 +28,7 @@ What the drawing carries:
 
     Outline    sketch -> Pad     the plate
     Ring bolts sketch -> Pocket  4 x M3 on the bolt circle
-    Worm       sketch -> Pocket  the 10 mm clearance
+    Worm       sketch -> Pocket  5 x 10 mm on the 75.45 circle
     Mounting   sketch -> Pocket  the M3 clusters
 
 M3 holes are drawn at the tapping drill, 2.5 mm, because the drawing calls
@@ -41,7 +50,8 @@ thickness = 6.0
 m3_tap_d = 2.5           # M3 tapping drill; the drawing says "M3", not a size
 bolt_circle_d = 122.0    # the 4 x M3 that hold the ring down
 worm_d = 10.0
-worm_x = 75.45           # where the worm meets the ring gear
+worm_r = 75.45           # where the worm meets the ring gear, and the
+worm_count = 5           # ring's own screw circle, so five of them
 
 corner_x = (-93.7, -73.4)          # left hand side only
 corner_z = (84.0, 96.0)
@@ -67,7 +77,7 @@ def expected_volume():
     plain = side * side * thickness
     m3 = len(ring_bolts()) + len(mounting())
     plain -= m3 * math.pi * (m3_tap_d / 2.0) ** 2 * thickness
-    plain -= math.pi * (worm_d / 2.0) ** 2 * thickness
+    plain -= worm_count * math.pi * (worm_d / 2.0) ** 2 * thickness
     return plain
 
 
@@ -89,7 +99,8 @@ def plate(doc):
     fcprim.pocket(bdy, "Ring bolts", ring, midplane=True)
 
     worm = fcprim.sketch(bdy, "Worm", "XZ_Plane")
-    fcprim.circle(worm, (worm_x, 0.0), worm_d, name="worm")
+    fcprim.bolt_circle(worm, (0.0, 0.0), worm_r, worm_d, worm_count,
+                       name="worm")
     fcprim.pocket(bdy, "Worm clearance", worm, midplane=True)
 
     mount = fcprim.sketch(bdy, "Mounting", "XZ_Plane")

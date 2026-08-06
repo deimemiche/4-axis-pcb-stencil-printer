@@ -323,6 +323,14 @@ tie together, and adds exactly one dimension per remaining degree of freedom -
 no redundancy, whatever mix of straight, slanted and arc segments a profile
 uses. `build.py` warns about any sketch that ends up underdefined.
 
+**A ring of holes is a bolt circle, not five coordinates.** `fcprim.bolt_circle`
+puts the holes on the corners of a construction polygon inscribed in a
+construction circle, dimensions only the first one, and holds the rest equal
+and coincident with a corner. Computing each centre in Python draws the same
+holes but the sketch then says nothing about them: nothing on screen shows they
+belong to one circle, and editing the radius leaves them where they were.
+`ALPHA_BOT_PLATE`'s five 10 mm holes are drawn this way.
+
 **A 45 degree break that adds material is a tapered pad, not a chamfer.**
 `fcprim.pad` takes `taper=45.0`, which drafts the sides as the pad runs; draw
 the profile at whichever end of the break is smaller. A `PartDesign::Chamfer`
