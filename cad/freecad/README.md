@@ -102,6 +102,7 @@ for several at once - and so are in `misc/`:
 | [`misc/tube-d8.py`](misc/tube-d8.py) | `TUBE_D8_170` | drawn aluminium tube, 8 x 1 mm |
 | [`top/hinge-40.py`](top/hinge-40.py) | `HINGE_40_LEAF` | 40 mm butt hinge - one leaf, and two make the hinge |
 | [`misc/bearing-14x5x5.py`](misc/bearing-14x5x5.py) | `BEARING_14X5X5` | 605 ball bearing, 14 x 5 x 5, four on the alpha axis |
+| [`misc/spring.py`](misc/spring.py) | `SPRING_ID6_L30_AT12` `SPRING_ID10_L35_AT20` | compression springs, 6 and 10 mm bore - each drawn at the length it is squashed to |
 
 One script, a document per size: a stick of extrusion or of rod is nothing but
 its section and how far it runs, so the length is the only parameter that
