@@ -4,6 +4,8 @@ The 39 printed parts are rebuilt and each one is checked against the mesh it
 came from ([`STATUS.md`](STATUS.md)). This is the plan for putting them
 together into a real FreeCAD assembly - one that is *correct*, that can be
 rendered and exploded, and that can be extended later.
+[`ASSEMBLY_SCRIPT.md`](ASSEMBLY_SCRIPT.md) is the separate plan for rebuilding
+that assembly from Python.
 
 **Every stage is built.** All eighteen of the manual's steps are in the model
 except the two things it lists that the repository has no part for - the eight
