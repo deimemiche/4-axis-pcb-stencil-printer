@@ -86,6 +86,9 @@ def datum_of(doc, internal_name):
     return None
 
 
+FRAMES = {} if os.environ.get("ASM_FRAMES") else None
+
+
 def fastener_class(App):
     """The Fasteners workbench proxy class, loaded the only way that works.
 
@@ -104,7 +107,8 @@ def fastener_class(App):
     return cls
 
 
-def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes, offsets):
+def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes,
+                    offsets, frames=None):
     """Every fastener, put where its datum is.
 
     A fastener cannot use `BaseObject` here: the Fasteners workbench reads a
@@ -151,6 +155,16 @@ def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes, offsets):
         # OCC orients those inconsistently.  Measured here, there is nothing to
         # compose.
         frame = link.getSubObject(sub, retType=3)
+        # Record the frame this build actually used.  `calibrate.py` measures in
+        # a saved, reopened document, and for a container that is not the same
+        # frame -- a sub-assembly's links are still settling while it is being
+        # assembled.  Calibrating against what the build itself saw closes that
+        # gap; see calibrate-from-build.py.
+        if frames is not None:
+            frames[f"{spec['document']}/{f['name']}"] = [
+                frame.Base.x, frame.Base.y, frame.Base.z,
+                frame.Rotation.Q[0], frame.Rotation.Q[1],
+                frame.Rotation.Q[2], frame.Rotation.Q[3]]
         off = offsets.get(f"{spec['document']}/{f['name']}")
         if off:
             frame = frame.multiply(App.Placement(
@@ -310,7 +324,7 @@ def build(App, name, model, wiring, files, cache):
             if cal and os.path.exists(cal):
                 offsets = json.load(open(cal))
             fastened = place_fasteners(App, doc, asm, spec, wiring, links,
-                                       fcls, notes, offsets)
+                                       fcls, notes, offsets, FRAMES)
 
     doc.recompute()
     notes += check_assembly(asm, doc)
@@ -341,6 +355,12 @@ def main():
             f"{len(model[name]['grounded']):7} {fastened:7} {len(notes):6}")
         for t in notes[:6]:
             say(f"   ! {t}")
+
+    if FRAMES is not None:
+        with open(os.environ["ASM_FRAMES"], "w") as fh:
+            json.dump(FRAMES, fh, indent=1, sort_keys=True)
+        say(f"\n{len(FRAMES)} build-time datum frames written to "
+            f"{os.environ['ASM_FRAMES']}")
 
 
 try:
