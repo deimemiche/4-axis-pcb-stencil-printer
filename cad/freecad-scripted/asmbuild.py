@@ -175,6 +175,82 @@ def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes,
     return made
 
 
+# The five families Michael sorts an assembly into, in the order he lists
+# them.  His own trees drifted -- `Printed_parts` in six documents but
+# `3D_parts` in `Bottom_Frame`, `CNC_parts` in two but `CNC` in
+# `Stencil_Clamp` -- so the scripted build settles on one spelling of each.
+GROUPS = ("Printed_parts", "CNC_parts", "Norm_parts", "COTS", "Assemblies")
+
+
+def category(obj):
+    """Which of `GROUPS` an object in a built assembly belongs to.
+
+    Derived, not listed.  A name list is what this tree keeps learning not to
+    trust, and there is a real distinction underneath to read instead:
+
+    * a fastener is a `Part::FeaturePython` the Fasteners workbench made;
+    * a sub-assembly comes in as an `Assembly::AssemblyLink`;
+    * everything else is a link to a part, and that part already says what it
+      is made of, in the `PartMaterial` `fcprim.material` gave it.
+
+    Printed against machined against bought is the one that needs care, since
+    a plate and an extrusion are both aluminium.  What separates them is not
+    the material but who shaped it: **everything in `stock/` is bought**, cut
+    or drilled to length at most, and everything in a sub-assembly folder is
+    made here.  So `ALPHA_TOP_PLATE` in `rotation-table/` is CNC work and
+    `2020_300` in `stock/` is a bought extrusion, which is exactly how
+    Michael's own trees have them.
+    """
+    if obj.TypeId == "Part::FeaturePython":
+        return "Norm_parts"
+    if obj.TypeId == "Assembly::AssemblyLink":
+        return "Assemblies"
+    target = getattr(obj, "LinkedObject", None)
+    if target is None:
+        return None
+    if getattr(target, "PartMaterial", None) == "printed":
+        return "Printed_parts"
+    source = getattr(target.Document, "FileName", "") or ""
+    if os.path.basename(os.path.dirname(source)) == "stock":
+        return "COTS"
+    return "CNC_parts"
+
+
+def group_parts(doc, asm):
+    """Sort what the assembly holds into groups, the way the hand-built ones are.
+
+    Organisational only -- nothing here moves a part or touches a joint.  The
+    groups hang under the assembly container, and a part stays a member of the
+    container as well as of its group, which is how the hand-built documents
+    have it and what keeps the solver seeing every instance.
+
+    `Group` is assigned rather than `addObject`ed for that reason: a group that
+    claims its members would take them out of the assembly.
+    """
+    sorted_out = {name: [] for name in GROUPS}
+    for obj in asm.Group:
+        kind = category(obj)
+        if kind:
+            sorted_out[kind].append(obj)
+
+    made = {}
+    for name in GROUPS:
+        members = sorted_out[name]
+        if not members:
+            continue                       # no empty groups in the tree
+        grp = doc.addObject("App::DocumentObjectGroup", name)
+        grp.Label = name
+        # Into the assembly *first*.  An assembly is a geo-feature group, and a
+        # plain group standing outside it may not hold anything that lives
+        # inside one -- FreeCAD says the links "go out of the allowed scope"
+        # and drops them.  Once the group is itself a child of the assembly the
+        # two are in the same scope and the members are accepted.
+        asm.addObject(grp)
+        grp.Group = members
+        made[name] = len(members)
+    return made
+
+
 def check_assembly(asm, doc):
     """The DOF check, run on every build.
 
@@ -327,9 +403,11 @@ def build(App, name, model, wiring, files, cache):
                                        fcls, notes, offsets, FRAMES)
 
     doc.recompute()
+    grouped = group_parts(doc, asm)
+    doc.recompute()
     notes += check_assembly(asm, doc)
     doc.save()
-    return doc, made, fastened, notes
+    return doc, made, fastened, notes, grouped
 
 
 def main():
@@ -348,11 +426,14 @@ def main():
     todo = [n for n in todo if n in model]
 
     say(f"\n{'document':26} {'links':>6} {'joints':>7} {'ground':>7} "
-        f"{'bolts':>7} {'notes':>6}")
+        f"{'bolts':>7} {'notes':>6}  groups")
     for name in todo:
-        doc, made, fastened, notes = build(App, name, model, wiring, files, cache)
+        doc, made, fastened, notes, grouped = build(App, name, model, wiring,
+                                                    files, cache)
+        shown = " ".join(f"{k.split('_')[0]}:{v}" for k, v in grouped.items())
         say(f"{name:26} {len(model[name]['instances']):6} {made:7} "
-            f"{len(model[name]['grounded']):7} {fastened:7} {len(notes):6}")
+            f"{len(model[name]['grounded']):7} {fastened:7} {len(notes):6}  "
+            f"{shown}")
         for t in notes[:6]:
             say(f"   ! {t}")
 
