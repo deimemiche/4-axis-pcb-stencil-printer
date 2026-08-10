@@ -27,6 +27,7 @@ They are all regenerable from `../freecad/` by running this script.
     assemble   the nine scripted documents in assembly/
     dress      the view data a GUI needs, or they open blank
     drawings   the eight stock parts as TechDraw sheets, in ../../technical-drawings/
+    bom        what the machine is made of, counted -> data/bom.json, ../../BOM.md
     verify     scripted against hand-built, parts and bolts
 
 `assemble` needs `fastener-offsets.json`, which is calibrated from an assembled
@@ -328,6 +329,22 @@ def stage_drawings():
     say(f"  {len(DRAWINGS)} sheets, each with its FCStd, PDF, DXF and hole CSV")
 
 
+def stage_bom():
+    """Count what the machine is made of, from the assembly that holds it.
+
+    Runs after `assemble`, because that is what it counts, and it walks down
+    through the sub-assemblies so a part inside an `Eccenter` is counted once
+    for each of the four the machine has.
+    """
+    out = run("bom.py", quiet=False)
+    if not os.path.exists(os.path.join(DATA, "bom.json")):
+        raise SystemExit("!! bom.py wrote no data/bom.json")
+    total = json.load(open(os.path.join(DATA, "bom.json")))
+    pieces = sum(sum(rows.values()) for rows in total["groups"].values())
+    say(f"  {pieces} pieces in {len(total['groups'])} families "
+        f"-> data/bom.json, BOM.md")
+
+
 def stage_verify():
     d = os.path.join(DATA, "made")
     os.makedirs(d, exist_ok=True)
@@ -342,7 +359,8 @@ STAGES = [("extract", stage_extract), ("datums", stage_datums),
           ("names", stage_names), ("parts", stage_parts),
           ("wiring", stage_wiring), ("poses", stage_poses),
           ("assemble", stage_assemble), ("dress", stage_dress),
-          ("drawings", stage_drawings), ("verify", stage_verify)]
+          ("drawings", stage_drawings), ("bom", stage_bom),
+          ("verify", stage_verify)]
 
 
 def main():
