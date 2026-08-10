@@ -34,7 +34,8 @@ def existing_datums(root):
     datum's placement, and opening 59 documents to get it would be absurd.
     """
     out = {}
-    for f in glob.glob(os.path.join(root, "*", "*.FCStd")):
+    frozen = os.path.normpath(os.path.join(root, "..", "freecad"))
+    for f in glob.glob(os.path.join(frozen, "*", "*.FCStd")):
         doc = ET.fromstring(zipfile.ZipFile(f).read("Document.xml"))
         types = {o.get("name"): o.get("type") for o in doc.iter("Object")
                  if o.get("type")}
@@ -45,7 +46,9 @@ def existing_datums(root):
                 continue
             if types.get(od.get("name")) != "PartDesign::CoordinateSystem":
                 continue
-            pl = props.find(".//PropertyPlacement")
+            # `.//` would find AttachmentOffset, which precedes Placement in
+            # the file and is identity on every one of these datums.
+            pl = props.find("./Property[@name='Placement']/PropertyPlacement")
             if pl is None:
                 continue
             g = lambda k: float(pl.get(k, 0))

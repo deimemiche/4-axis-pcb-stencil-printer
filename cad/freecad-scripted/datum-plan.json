@@ -270,47 +270,19 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "Rotation_Table.Fixed"
    ],
    "mates": [
     "ADAPTER_D5_TO_M3"
    ],
-   "name": "AXIS",
+   "name": "ADAPTER",
    "refs": 4,
    "roll": 0.0,
-   "stem": "AXIS",
+   "stem": "ADAPTER",
    "was": [
     "Revolution.Edge1"
-   ],
-   "why": "kept"
-  },
-  {
-   "at": [
-    0.0,
-    0.0,
-    5.0
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "Rotation_Table.Fixed"
-   ],
-   "mates": [
-    "SR_BEARING_PLATE"
-   ],
-   "name": "PLATE",
-   "refs": 4,
-   "roll": 0.0,
-   "stem": "PLATE",
-   "was": [
-    "Revolution.Edge5"
    ],
    "why": "mates"
   },
@@ -326,21 +298,49 @@
     -1.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "Rotation_Table.Distance"
    ],
    "mates": [
     "SR_INNER_RING"
    ],
-   "name": "RING",
+   "name": "FACE_A",
    "refs": 1,
    "roll": 180.0,
-   "stem": "RING",
+   "stem": "FACE_A",
    "was": [
     "Revolution.Face1"
    ],
-   "why": "mates"
+   "why": "kept"
+  },
+  {
+   "at": [
+    0.0,
+    0.0,
+    5.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "Rotation_Table.Fixed"
+   ],
+   "mates": [
+    "SR_BEARING_PLATE"
+   ],
+   "name": "FACE_B",
+   "refs": 4,
+   "roll": 0.0,
+   "stem": "FACE_B",
+   "was": [
+    "Revolution.Edge5"
+   ],
+   "why": "kept"
   }
  ],
  "BOT_BEARING_MOUNT_X_AXIS": [
@@ -403,6 +403,90 @@
   },
   {
    "at": [
+    -8.5,
+    -11.6,
+    -13.35
+   ],
+   "axis": [
+    -0.0,
+    -1.0,
+    -0.0
+   ],
+   "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "X_Axis_Carriage.Fixed"
+   ],
+   "mates": [
+    "XY_PLATE"
+   ],
+   "name": "BOLT1",
+   "refs": 1,
+   "roll": 0.0,
+   "stem": "BOLT1",
+   "was": [
+    "Edge11"
+   ],
+   "why": "kept"
+  },
+  {
+   "at": [
+    -8.5,
+    -11.6,
+    13.35
+   ],
+   "axis": [
+    -0.0,
+    -1.0,
+    0.0
+   ],
+   "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "X_Axis_Carriage.Fixed"
+   ],
+   "mates": [
+    "XY_PLATE"
+   ],
+   "name": "BOLT2",
+   "refs": 2,
+   "roll": 0.0,
+   "stem": "BOLT2",
+   "was": [
+    "Edge10"
+   ],
+   "why": "kept"
+  },
+  {
+   "at": [
+    8.5,
+    -11.6,
+    13.35
+   ],
+   "axis": [
+    -0.0,
+    -1.0,
+    -0.0
+   ],
+   "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "X_Axis_Carriage.Fixed"
+   ],
+   "mates": [
+    "XY_PLATE"
+   ],
+   "name": "BOLT4",
+   "refs": 1,
+   "roll": 0.0,
+   "stem": "BOLT4",
+   "was": [
+    "Edge8"
+   ],
+   "why": "kept"
+  },
+  {
+   "at": [
     0.0,
     0.0,
     0.0
@@ -415,15 +499,15 @@
    "fasteners": [
     "DIN934"
    ],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "X_Axis_Carriage.Fastener"
    ],
    "mates": [],
-   "name": "RAIL",
+   "name": "NUT",
    "refs": 24,
    "roll": 0.0,
-   "stem": "RAIL",
+   "stem": "NUT",
    "was": [
     "BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge101",
     "BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge49",
@@ -447,7 +531,7 @@
     "Pocket004.Edge51",
     "Pocket004.Edge53"
    ],
-   "why": "kept"
+   "why": "fastener"
   },
   {
    "at": [
@@ -534,90 +618,6 @@
     "Pocket004.Edge144"
    ],
    "why": "mates"
-  },
-  {
-   "at": [
-    -8.5,
-    -11.6,
-    -13.35
-   ],
-   "axis": [
-    -0.0,
-    -1.0,
-    -0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "X_Axis_Carriage.Fixed"
-   ],
-   "mates": [
-    "XY_PLATE"
-   ],
-   "name": "XY_PLATE1",
-   "refs": 1,
-   "roll": 0.0,
-   "stem": "XY_PLATE",
-   "was": [
-    "Edge11"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    -8.5,
-    -11.6,
-    13.35
-   ],
-   "axis": [
-    -0.0,
-    -1.0,
-    0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "X_Axis_Carriage.Fixed"
-   ],
-   "mates": [
-    "XY_PLATE"
-   ],
-   "name": "XY_PLATE2",
-   "refs": 2,
-   "roll": 0.0,
-   "stem": "XY_PLATE",
-   "was": [
-    "Edge10"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    8.5,
-    -11.6,
-    13.35
-   ],
-   "axis": [
-    -0.0,
-    -1.0,
-    -0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "X_Axis_Carriage.Fixed"
-   ],
-   "mates": [
-    "XY_PLATE"
-   ],
-   "name": "XY_PLATE3",
-   "refs": 1,
-   "roll": 0.0,
-   "stem": "XY_PLATE",
-   "was": [
-    "Edge8"
-   ],
-   "why": "mates"
   }
  ],
  "BOT_BEARING_MOUNT_Y_AXIS": [
@@ -635,15 +635,15 @@
    "fasteners": [
     "ISO4762"
    ],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "Rotation_Table.Fastener"
    ],
    "mates": [],
-   "name": "BEARING",
+   "name": "BOLT",
    "refs": 12,
    "roll": 0.0,
-   "stem": "BEARING",
+   "stem": "BOLT",
    "was": [
     "BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge48",
     "BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge49",
@@ -657,7 +657,7 @@
     "Pocket.Edge49",
     "Pocket.Edge5"
    ],
-   "why": "kept"
+   "why": "fastener"
   },
   {
    "at": [
@@ -747,40 +747,6 @@
  "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN": [
   {
    "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fasteners": [
-    "DIN934",
-    "ISO4762"
-   ],
-   "fixed": true,
-   "joints": [
-    "Rotation_Table.Fastener"
-   ],
-   "mates": [],
-   "name": "BEARING",
-   "refs": 6,
-   "roll": 0.0,
-   "stem": "BEARING",
-   "was": [
-    "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge105",
-    "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge6",
-    "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge63",
-    "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge64",
-    "Pocket004.Edge5",
-    "Pocket004.Edge83"
-   ],
-   "why": "kept"
-  },
-  {
-   "at": [
     13.5,
     -0.0,
     0.0
@@ -798,7 +764,7 @@
    "mates": [
     "LM8UU"
    ],
-   "name": "BEARING1",
+   "name": "BEARING2",
    "refs": 1,
    "roll": 90.0,
    "stem": "BEARING",
@@ -806,6 +772,40 @@
     "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Edge28"
    ],
    "why": "mates"
+  },
+  {
+   "at": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fasteners": [
+    "DIN934",
+    "ISO4762"
+   ],
+   "fixed": false,
+   "joints": [
+    "Rotation_Table.Fastener"
+   ],
+   "mates": [],
+   "name": "BOLT",
+   "refs": 6,
+   "roll": 0.0,
+   "stem": "BOLT",
+   "was": [
+    "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge105",
+    "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge6",
+    "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge63",
+    "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge64",
+    "Pocket004.Edge5",
+    "Pocket004.Edge83"
+   ],
+   "why": "fastener"
   },
   {
    "at": [
@@ -839,6 +839,110 @@
  "BOT_BRACKETS": [
   {
    "at": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fasteners": [
+    "ISO4762"
+   ],
+   "fixed": false,
+   "joints": [
+    "Bottom_Frame.Fastener",
+    "Top_Frame.Fastener"
+   ],
+   "mates": [],
+   "name": "BOLT",
+   "refs": 61,
+   "roll": 0.0,
+   "stem": "BOLT",
+   "was": [
+    "BOT_BRACKETS.Pocket.Edge15",
+    "BOT_BRACKETS.Pocket.Edge16",
+    "BOT_BRACKETS.Pocket.Edge18",
+    "BOT_BRACKETS.Pocket.Edge19",
+    "BOT_BRACKETS.Pocket.Edge25",
+    "BOT_BRACKETS.Pocket.Edge26",
+    "BOT_BRACKETS.Pocket.Edge27",
+    "BOT_BRACKETS001.Pocket.Edge16",
+    "BOT_BRACKETS001.Pocket.Edge17",
+    "BOT_BRACKETS001.Pocket.Edge18",
+    "BOT_BRACKETS001.Pocket.Edge24",
+    "BOT_BRACKETS001.Pocket.Edge25",
+    "BOT_BRACKETS001.Pocket.Edge26",
+    "BOT_BRACKETS001.Pocket.Edge28",
+    "BOT_BRACKETS002.Pocket.Edge25",
+    "BOT_BRACKETS002.Pocket.Edge26",
+    "BOT_BRACKETS002.Pocket.Edge27",
+    "BOT_BRACKETS002.Pocket.Edge28",
+    "BOT_BRACKETS003.Pocket.Edge15",
+    "BOT_BRACKETS003.Pocket.Edge16",
+    "BOT_BRACKETS003.Pocket.Edge17",
+    "BOT_BRACKETS003.Pocket.Edge18",
+    "BOT_BRACKETS003.Pocket.Edge24",
+    "BOT_BRACKETS003.Pocket.Edge25",
+    "BOT_BRACKETS003.Pocket.Edge26",
+    "BOT_BRACKETS003.Pocket.Edge27",
+    "BOT_BRACKETS004.Pocket.Edge24",
+    "BOT_BRACKETS004.Pocket.Edge25",
+    "BOT_BRACKETS004.Pocket.Edge27",
+    "BOT_BRACKETS004.Pocket.Edge28",
+    "BOT_BRACKETS005.Pocket.Edge15",
+    "BOT_BRACKETS005.Pocket.Edge16",
+    "BOT_BRACKETS005.Pocket.Edge19",
+    "BOT_BRACKETS006.Pocket.Edge15",
+    "BOT_BRACKETS006.Pocket.Edge16",
+    "BOT_BRACKETS006.Pocket.Edge17",
+    "BOT_BRACKETS006.Pocket.Edge18",
+    "BOT_BRACKETS007.Pocket.Edge15",
+    "BOT_BRACKETS007.Pocket.Edge16",
+    "BOT_BRACKETS007.Pocket.Edge18",
+    "BOT_BRACKETS007.Pocket.Edge19",
+    "Pocket.Edge17",
+    "Pocket.Edge18",
+    "Pocket.Edge19",
+    "Pocket.Edge24",
+    "Pocket.Edge26",
+    "Pocket.Edge27",
+    "Pocket.Edge28"
+   ],
+   "why": "fastener"
+  },
+  {
+   "at": [
+    10.0,
+    -0.0,
+    10.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    -0.0
+   ],
+   "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "Bottom_Frame.Fixed"
+   ],
+   "mates": [
+    "STAND"
+   ],
+   "name": "BOLT1",
+   "refs": 3,
+   "roll": 0.0,
+   "stem": "BOLT1",
+   "was": [
+    "Pocket.Edge24"
+   ],
+   "why": "kept"
+  },
+  {
+   "at": [
     60.0,
     0.0,
     0.0
@@ -868,34 +972,6 @@
   {
    "at": [
     10.0,
-    -0.0,
-    10.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    -0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "Bottom_Frame.Fixed"
-   ],
-   "mates": [
-    "STAND"
-   ],
-   "name": "FOOT1",
-   "refs": 3,
-   "roll": 0.0,
-   "stem": "FOOT",
-   "was": [
-    "Pocket.Edge24"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    10.0,
     4.0,
     10.0
    ],
@@ -912,7 +988,7 @@
    "mates": [
     "STAND"
    ],
-   "name": "FOOT2",
+   "name": "FOOT",
    "refs": 1,
    "roll": 0.0,
    "stem": "FOOT",
@@ -1063,7 +1139,9 @@
     "Edge8"
    ],
    "why": "mates"
-  },
+  }
+ ],
+ "BOT_BRACKET_X_AXIS": [
   {
    "at": [
     0.0,
@@ -1076,72 +1154,27 @@
     1.0
    ],
    "fasteners": [
+    "DIN934",
     "ISO4762"
    ],
-   "fixed": true,
+   "fixed": false,
    "joints": [
-    "Bottom_Frame.Fastener",
-    "Top_Frame.Fastener"
+    "Bottom_Assembly.Fastener",
+    "Bottom_Frame.Fastener"
    ],
    "mates": [],
-   "name": "MOUNT",
-   "refs": 61,
+   "name": "BOLT",
+   "refs": 4,
    "roll": 0.0,
-   "stem": "MOUNT",
+   "stem": "BOLT",
    "was": [
-    "BOT_BRACKETS.Pocket.Edge15",
-    "BOT_BRACKETS.Pocket.Edge16",
-    "BOT_BRACKETS.Pocket.Edge18",
-    "BOT_BRACKETS.Pocket.Edge19",
-    "BOT_BRACKETS.Pocket.Edge25",
-    "BOT_BRACKETS.Pocket.Edge26",
-    "BOT_BRACKETS.Pocket.Edge27",
-    "BOT_BRACKETS001.Pocket.Edge16",
-    "BOT_BRACKETS001.Pocket.Edge17",
-    "BOT_BRACKETS001.Pocket.Edge18",
-    "BOT_BRACKETS001.Pocket.Edge24",
-    "BOT_BRACKETS001.Pocket.Edge25",
-    "BOT_BRACKETS001.Pocket.Edge26",
-    "BOT_BRACKETS001.Pocket.Edge28",
-    "BOT_BRACKETS002.Pocket.Edge25",
-    "BOT_BRACKETS002.Pocket.Edge26",
-    "BOT_BRACKETS002.Pocket.Edge27",
-    "BOT_BRACKETS002.Pocket.Edge28",
-    "BOT_BRACKETS003.Pocket.Edge15",
-    "BOT_BRACKETS003.Pocket.Edge16",
-    "BOT_BRACKETS003.Pocket.Edge17",
-    "BOT_BRACKETS003.Pocket.Edge18",
-    "BOT_BRACKETS003.Pocket.Edge24",
-    "BOT_BRACKETS003.Pocket.Edge25",
-    "BOT_BRACKETS003.Pocket.Edge26",
-    "BOT_BRACKETS003.Pocket.Edge27",
-    "BOT_BRACKETS004.Pocket.Edge24",
-    "BOT_BRACKETS004.Pocket.Edge25",
-    "BOT_BRACKETS004.Pocket.Edge27",
-    "BOT_BRACKETS004.Pocket.Edge28",
-    "BOT_BRACKETS005.Pocket.Edge15",
-    "BOT_BRACKETS005.Pocket.Edge16",
-    "BOT_BRACKETS005.Pocket.Edge19",
-    "BOT_BRACKETS006.Pocket.Edge15",
-    "BOT_BRACKETS006.Pocket.Edge16",
-    "BOT_BRACKETS006.Pocket.Edge17",
-    "BOT_BRACKETS006.Pocket.Edge18",
-    "BOT_BRACKETS007.Pocket.Edge15",
-    "BOT_BRACKETS007.Pocket.Edge16",
-    "BOT_BRACKETS007.Pocket.Edge18",
-    "BOT_BRACKETS007.Pocket.Edge19",
-    "Pocket.Edge17",
-    "Pocket.Edge18",
-    "Pocket.Edge19",
-    "Pocket.Edge24",
-    "Pocket.Edge26",
-    "Pocket.Edge27",
-    "Pocket.Edge28"
+    "BOT_BRACKET_X_AXIS.Pocket001.Edge18",
+    "BOT_BRACKET_X_AXIS.Pocket001.Edge19",
+    "BOT_BRACKET_X_AXIS001.Pocket001.Edge40",
+    "Pocket001.Edge20"
    ],
-   "why": "kept"
-  }
- ],
- "BOT_BRACKET_X_AXIS": [
+   "why": "fastener"
+  },
   {
    "at": [
     0.0,
@@ -1210,52 +1243,19 @@
     0.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "Bottom_Assembly.Revolute"
    ],
    "mates": [
     "BOT_HANDWHEEL"
    ],
-   "name": "HANDWHEEL",
+   "name": "SCREW",
    "refs": 1,
    "roll": 90.0,
-   "stem": "HANDWHEEL",
-   "was": [
-    "BOT_BRACKET_X_AXIS001.Edge33"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fasteners": [
-    "DIN934",
-    "ISO4762"
-   ],
-   "fixed": true,
-   "joints": [
-    "Bottom_Assembly.Fastener",
-    "Bottom_Frame.Fastener"
-   ],
-   "mates": [],
-   "name": "SCREW",
-   "refs": 4,
-   "roll": 0.0,
    "stem": "SCREW",
    "was": [
-    "BOT_BRACKET_X_AXIS.Pocket001.Edge18",
-    "BOT_BRACKET_X_AXIS.Pocket001.Edge19",
-    "BOT_BRACKET_X_AXIS001.Pocket001.Edge40",
-    "Pocket001.Edge20"
+    "BOT_BRACKET_X_AXIS001.Edge33"
    ],
    "why": "kept"
   }
@@ -1305,21 +1305,21 @@
     "DIN934",
     "ISO4027"
    ],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "Bottom_Assembly.Fastener",
     "Rotation_Table.Fastener"
    ],
    "mates": [],
-   "name": "SHAFT",
+   "name": "NUT",
    "refs": 6,
    "roll": 0.0,
-   "stem": "SHAFT",
+   "stem": "NUT",
    "was": [
     "Pocket003.Edge168",
     "Pocket003.Edge203"
    ],
-   "why": "kept"
+   "why": "fastener"
   },
   {
    "at": [
@@ -1357,34 +1357,6 @@
    "at": [
     0.0,
     0.0,
-    -9.0
-   ],
-   "axis": [
-    -0.0,
-    -1.0,
-    0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "X_Axis_Carriage.Fixed"
-   ],
-   "mates": [
-    "BOT_BEARING_MOUNT_X_AXIS"
-   ],
-   "name": "BEARING_MOUNT_X",
-   "refs": 1,
-   "roll": 0.0,
-   "stem": "BEARING_MOUNT_X",
-   "was": [
-    "Pocket005.Edge31"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    0.0,
-    0.0,
     0.0
    ],
    "axis": [
@@ -1396,20 +1368,48 @@
     "DIN934",
     "ISO4762"
    ],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "X_Axis_Carriage.Fastener"
    ],
    "mates": [],
-   "name": "ROD",
+   "name": "BOLT",
    "refs": 4,
    "roll": 0.0,
-   "stem": "ROD",
+   "stem": "BOLT",
    "was": [
     "BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge77",
     "BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge82",
     "Pocket005.Edge123",
     "Pocket005.Edge63"
+   ],
+   "why": "fastener"
+  },
+  {
+   "at": [
+    0.0,
+    0.0,
+    -9.0
+   ],
+   "axis": [
+    -0.0,
+    -1.0,
+    0.0
+   ],
+   "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "X_Axis_Carriage.Fixed"
+   ],
+   "mates": [
+    "BOT_BEARING_MOUNT_X_AXIS"
+   ],
+   "name": "BOLT1",
+   "refs": 1,
+   "roll": 0.0,
+   "stem": "BOLT1",
+   "was": [
+    "Pocket005.Edge31"
    ],
    "why": "kept"
   },
@@ -1447,6 +1447,36 @@
    "at": [
     0.0,
     0.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fasteners": [
+    "ISO4762"
+   ],
+   "fixed": false,
+   "joints": [
+    "X_Axis_Carriage.Fastener"
+   ],
+   "mates": [],
+   "name": "BOLT",
+   "refs": 4,
+   "roll": 0.0,
+   "stem": "BOLT",
+   "was": [
+    "BOT_RAIL_CLAMP_Y_AXIS.Pocket001.Edge27",
+    "BOT_RAIL_CLAMP_Y_AXIS001.Pocket001.Edge27",
+    "Pocket001.Edge19"
+   ],
+   "why": "fastener"
+  },
+  {
+   "at": [
+    0.0,
+    0.0,
     -9.0
    ],
    "axis": [
@@ -1455,22 +1485,24 @@
     0.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "X_Axis_Carriage.Fixed"
    ],
    "mates": [
     "BOT_BEARING_MOUNT_X_AXIS"
    ],
-   "name": "BEARING_MOUNT_X",
+   "name": "BOLT1",
    "refs": 2,
    "roll": 0.0,
-   "stem": "BEARING_MOUNT_X",
+   "stem": "BOLT1",
    "was": [
     "Pocket001.Edge5"
    ],
-   "why": "mates"
-  },
+   "why": "kept"
+  }
+ ],
+ "BOT_RAIL_CLAMP_Y_AXIS_1": [
   {
    "at": [
     0.0,
@@ -1485,24 +1517,21 @@
    "fasteners": [
     "ISO4762"
    ],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "X_Axis_Carriage.Fastener"
    ],
    "mates": [],
-   "name": "ROD",
-   "refs": 4,
+   "name": "BOLT",
+   "refs": 2,
    "roll": 0.0,
-   "stem": "ROD",
+   "stem": "BOLT",
    "was": [
-    "BOT_RAIL_CLAMP_Y_AXIS.Pocket001.Edge27",
-    "BOT_RAIL_CLAMP_Y_AXIS001.Pocket001.Edge27",
-    "Pocket001.Edge19"
+    "BOT_RAIL_CLAMP_Y_AXIS_1.Pocket003.Edge56",
+    "Pocket003.Edge58"
    ],
-   "why": "kept"
-  }
- ],
- "BOT_RAIL_CLAMP_Y_AXIS_1": [
+   "why": "fastener"
+  },
   {
    "at": [
     0.0,
@@ -1515,21 +1544,21 @@
     0.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "X_Axis_Carriage.Fixed"
    ],
    "mates": [
     "BOT_BEARING_MOUNT_X_AXIS"
    ],
-   "name": "BEARING_MOUNT_X",
+   "name": "BOLT2",
    "refs": 1,
    "roll": 0.0,
-   "stem": "BEARING_MOUNT_X",
+   "stem": "BOLT2",
    "was": [
     "Pocket003.Edge35"
    ],
-   "why": "mates"
+   "why": "kept"
   },
   {
    "at": [
@@ -1558,7 +1587,9 @@
     "BOT_RAIL_CLAMP_Y_AXIS_1.Edge54"
    ],
    "why": "mates"
-  },
+  }
+ ],
+ "BOT_RAIL_HOLDER": [
   {
    "at": [
     0.0,
@@ -1573,23 +1604,27 @@
    "fasteners": [
     "ISO4762"
    ],
-   "fixed": true,
+   "fixed": false,
    "joints": [
-    "X_Axis_Carriage.Fastener"
+    "Bottom_Assembly.Fastener"
    ],
    "mates": [],
-   "name": "ROD",
-   "refs": 2,
+   "name": "BOLT",
+   "refs": 8,
    "roll": 0.0,
-   "stem": "ROD",
+   "stem": "BOLT",
    "was": [
-    "BOT_RAIL_CLAMP_Y_AXIS_1.Pocket003.Edge56",
-    "Pocket003.Edge58"
+    "BOT_RAIL_HOLDER.Pocket002.Edge66",
+    "BOT_RAIL_HOLDER.Pocket002.Edge68",
+    "BOT_RAIL_HOLDER001.Pocket002.Edge66",
+    "BOT_RAIL_HOLDER001.Pocket002.Edge68",
+    "BOT_RAIL_HOLDER002.Pocket002.Edge66",
+    "BOT_RAIL_HOLDER002.Pocket002.Edge68",
+    "BOT_RAIL_HOLDER003.Pocket002.Edge66",
+    "BOT_RAIL_HOLDER003.Pocket002.Edge68"
    ],
-   "why": "kept"
-  }
- ],
- "BOT_RAIL_HOLDER": [
+   "why": "fastener"
+  },
   {
    "at": [
     0.0,
@@ -1647,6 +1682,38 @@
   {
    "at": [
     0.0,
+    -1.0,
+    14.2915
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "X_Axis_Carriage.Fixed"
+   ],
+   "mates": [
+    "ROD_D8_300"
+   ],
+   "name": "RAIL",
+   "refs": 4,
+   "roll": 90.0,
+   "stem": "RAIL",
+   "was": [
+    "Edge17",
+    "Pocket002.Edge16",
+    "Pocket002.Edge17"
+   ],
+   "why": "kept"
+  }
+ ],
+ "BOT_ROD_HOLDER_ALPHA_AXIS": [
+  {
+   "at": [
+    0.0,
     0.0,
     0.0
    ],
@@ -1658,59 +1725,23 @@
    "fasteners": [
     "ISO4762"
    ],
-   "fixed": true,
-   "joints": [
-    "Bottom_Assembly.Fastener"
-   ],
-   "mates": [],
-   "name": "RAIL",
-   "refs": 8,
-   "roll": 0.0,
-   "stem": "RAIL",
-   "was": [
-    "BOT_RAIL_HOLDER.Pocket002.Edge66",
-    "BOT_RAIL_HOLDER.Pocket002.Edge68",
-    "BOT_RAIL_HOLDER001.Pocket002.Edge66",
-    "BOT_RAIL_HOLDER001.Pocket002.Edge68",
-    "BOT_RAIL_HOLDER002.Pocket002.Edge66",
-    "BOT_RAIL_HOLDER002.Pocket002.Edge68",
-    "BOT_RAIL_HOLDER003.Pocket002.Edge66",
-    "BOT_RAIL_HOLDER003.Pocket002.Edge68"
-   ],
-   "why": "kept"
-  },
-  {
-   "at": [
-    0.0,
-    -1.0,
-    14.2915
-   ],
-   "axis": [
-    1.0,
-    0.0,
-    0.0
-   ],
-   "fasteners": [],
    "fixed": false,
    "joints": [
-    "X_Axis_Carriage.Fixed"
+    "Rotation_Table.Fastener"
    ],
-   "mates": [
-    "ROD_D8_300"
-   ],
-   "name": "ROD",
+   "mates": [],
+   "name": "BOLT",
    "refs": 4,
-   "roll": 90.0,
-   "stem": "ROD",
+   "roll": 0.0,
+   "stem": "BOLT",
    "was": [
-    "Edge17",
-    "Pocket002.Edge16",
-    "Pocket002.Edge17"
+    "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge34",
+    "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge36",
+    "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge8",
+    "Pocket001.Edge9"
    ],
-   "why": "mates"
-  }
- ],
- "BOT_ROD_HOLDER_ALPHA_AXIS": [
+   "why": "fastener"
+  },
   {
    "at": [
     16.0,
@@ -1738,7 +1769,9 @@
     "Pocket001.Edge14"
    ],
    "why": "mates"
-  },
+  }
+ ],
+ "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT": [
   {
    "at": [
     0.0,
@@ -1753,25 +1786,23 @@
    "fasteners": [
     "ISO4762"
    ],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "Rotation_Table.Fastener"
    ],
    "mates": [],
-   "name": "ROD",
+   "name": "BOLT",
    "refs": 4,
    "roll": 0.0,
-   "stem": "ROD",
+   "stem": "BOLT",
    "was": [
-    "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge34",
-    "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge36",
-    "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge8",
-    "Pocket001.Edge9"
+    "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge36",
+    "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge8",
+    "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge9",
+    "Pocket001.Edge34"
    ],
-   "why": "kept"
-  }
- ],
- "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT": [
+   "why": "fastener"
+  },
   {
    "at": [
     4.0,
@@ -1807,30 +1838,29 @@
     0.0
    ],
    "axis": [
+    1.0,
     0.0,
-    0.0,
-    1.0
+    0.0
    ],
-   "fasteners": [
-    "ISO4762"
-   ],
+   "fasteners": [],
    "fixed": true,
    "joints": [
-    "Rotation_Table.Fastener"
+    "Rotation_Table.Revolute"
    ],
-   "mates": [],
+   "mates": [
+    "M5_270"
+   ],
    "name": "ROD",
-   "refs": 4,
-   "roll": 0.0,
+   "refs": 1,
+   "roll": 90.0,
    "stem": "ROD",
    "was": [
-    "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge36",
-    "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge8",
-    "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge9",
-    "Pocket001.Edge34"
+    "Pocket001.Edge22"
    ],
    "why": "kept"
-  },
+  }
+ ],
+ "BOT_Z_AXIS_BRACKET": [
   {
    "at": [
     0.0,
@@ -1838,29 +1868,33 @@
     0.0
    ],
    "axis": [
-    1.0,
     0.0,
-    0.0
+    0.0,
+    1.0
    ],
-   "fasteners": [],
+   "fasteners": [
+    "ISO4762"
+   ],
    "fixed": false,
    "joints": [
-    "Rotation_Table.Revolute"
+    "Bottom_Frame.Fastener"
    ],
-   "mates": [
-    "M5_270"
-   ],
-   "name": "STUD",
-   "refs": 1,
-   "roll": 90.0,
-   "stem": "STUD",
+   "mates": [],
+   "name": "BOLT",
+   "refs": 7,
+   "roll": 0.0,
+   "stem": "BOLT",
    "was": [
-    "Pocket001.Edge22"
+    "BOT_Z_AXIS_BRACKET.Pocket005.Edge21",
+    "BOT_Z_AXIS_BRACKET.Pocket005.Edge22",
+    "BOT_Z_AXIS_BRACKET.Pocket005.Edge24",
+    "BOT_Z_AXIS_BRACKET.Pocket005.Edge25",
+    "Pocket005.Edge23",
+    "Pocket005.Edge86",
+    "Pocket005.Edge92"
    ],
-   "why": "mates"
-  }
- ],
- "BOT_Z_AXIS_BRACKET": [
+   "why": "fastener"
+  },
   {
    "at": [
     60.0,
@@ -1919,40 +1953,6 @@
   },
   {
    "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fasteners": [
-    "ISO4762"
-   ],
-   "fixed": true,
-   "joints": [
-    "Bottom_Frame.Fastener"
-   ],
-   "mates": [],
-   "name": "ROD",
-   "refs": 7,
-   "roll": 0.0,
-   "stem": "ROD",
-   "was": [
-    "BOT_Z_AXIS_BRACKET.Pocket005.Edge21",
-    "BOT_Z_AXIS_BRACKET.Pocket005.Edge22",
-    "BOT_Z_AXIS_BRACKET.Pocket005.Edge24",
-    "BOT_Z_AXIS_BRACKET.Pocket005.Edge25",
-    "Pocket005.Edge23",
-    "Pocket005.Edge86",
-    "Pocket005.Edge92"
-   ],
-   "why": "kept"
-  },
-  {
-   "at": [
     21.0,
     24.0,
     -11.55
@@ -1970,7 +1970,7 @@
    "mates": [
     "ROD_D8_140"
    ],
-   "name": "ROD1",
+   "name": "ROD2",
    "refs": 1,
    "roll": 0.0,
    "stem": "ROD",
@@ -1981,6 +1981,40 @@
   }
  ],
  "BOT_Z_AXIS_BRACKET_MIRRORED": [
+  {
+   "at": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fasteners": [
+    "ISO4762"
+   ],
+   "fixed": false,
+   "joints": [
+    "Bottom_Frame.Fastener"
+   ],
+   "mates": [],
+   "name": "BOLT",
+   "refs": 7,
+   "roll": 0.0,
+   "stem": "BOLT",
+   "was": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge23",
+    "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge24",
+    "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge25",
+    "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge27",
+    "Pocket005.Edge26",
+    "Pocket005.Edge92",
+    "Pocket005.Edge94"
+   ],
+   "why": "fastener"
+  },
   {
    "at": [
     -60.0,
@@ -2039,40 +2073,6 @@
   },
   {
    "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fasteners": [
-    "ISO4762"
-   ],
-   "fixed": true,
-   "joints": [
-    "Bottom_Frame.Fastener"
-   ],
-   "mates": [],
-   "name": "ROD",
-   "refs": 7,
-   "roll": 0.0,
-   "stem": "ROD",
-   "was": [
-    "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge23",
-    "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge24",
-    "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge25",
-    "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge27",
-    "Pocket005.Edge26",
-    "Pocket005.Edge92",
-    "Pocket005.Edge94"
-   ],
-   "why": "kept"
-  },
-  {
-   "at": [
     -21.0,
     24.0,
     -11.55
@@ -2090,7 +2090,7 @@
    "mates": [
     "ROD_D8_140"
    ],
-   "name": "ROD1",
+   "name": "ROD2",
    "refs": 1,
    "roll": 0.0,
    "stem": "ROD",
@@ -2098,36 +2098,6 @@
     "Bottom_Frame001.BOT_Z_AXIS_BRACKET_MIRRORED.Face9"
    ],
    "why": "mates"
-  }
- ],
- "Bottom_Assembly": [
-  {
-   "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fasteners": [
-    "DIN934"
-   ],
-   "fixed": false,
-   "joints": [
-    "Bottom_Assembly.Fastener"
-   ],
-   "mates": [],
-   "name": "NUT",
-   "refs": 1,
-   "roll": 0.0,
-   "stem": "NUT",
-   "was": [
-    "Edge2"
-   ],
-   "why": "fastener"
   }
  ],
  "ECCF_BOT": [
@@ -2968,43 +2938,6 @@
   {
    "at": [
     0.0,
-    -0.0,
-    24.0
-   ],
-   "axis": [
-    0.0,
-    -0.0,
-    1.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "Stencil_Clamp.Fixed",
-    "X_Axis_Carriage.Distance",
-    "X_Axis_Carriage.Fixed",
-    "X_Axis_Carriage.Slider"
-   ],
-   "mates": [
-    "BOT_BEARING_MOUNT_X_AXIS",
-    "ROD_D8_244",
-    "ROD_D8_280",
-    "ROD_D8_300",
-    "TOP_CLAMP_BEARING_MOUNT_2"
-   ],
-   "name": "BEARING_MOUNT_X",
-   "refs": 11,
-   "roll": 0.0,
-   "stem": "BEARING_MOUNT_X",
-   "was": [
-    "Edge3",
-    "Face4",
-    "Pocket.Face3"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    0.0,
     0.0,
     0.0
    ],
@@ -3042,6 +2975,43 @@
   {
    "at": [
     0.0,
+    -0.0,
+    24.0
+   ],
+   "axis": [
+    0.0,
+    -0.0,
+    1.0
+   ],
+   "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "Stencil_Clamp.Fixed",
+    "X_Axis_Carriage.Distance",
+    "X_Axis_Carriage.Fixed",
+    "X_Axis_Carriage.Slider"
+   ],
+   "mates": [
+    "BOT_BEARING_MOUNT_X_AXIS",
+    "ROD_D8_244",
+    "ROD_D8_280",
+    "ROD_D8_300",
+    "TOP_CLAMP_BEARING_MOUNT_2"
+   ],
+   "name": "END_B",
+   "refs": 11,
+   "roll": 0.0,
+   "stem": "END_B",
+   "was": [
+    "Edge3",
+    "Face4",
+    "Pocket.Face3"
+   ],
+   "why": "kept"
+  },
+  {
+   "at": [
+    0.0,
     0.0,
     12.0
    ],
@@ -3051,7 +3021,7 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "X_Axis_Carriage.Slider"
    ],
@@ -3059,46 +3029,42 @@
     "ROD_D8_244",
     "ROD_D8_300"
    ],
-   "name": "ROD",
+   "name": "SEAT",
    "refs": 3,
    "roll": 0.0,
-   "stem": "ROD",
+   "stem": "SEAT",
    "was": [
     "Pocket.Face4"
    ],
-   "why": "mates"
+   "why": "kept"
   }
  ],
  "M5_270": [
   {
    "at": [
     0.0,
-    -0.0,
-    270.0
+    0.0,
+    0.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     0.0,
     1.0
    ],
    "fasteners": [],
    "fixed": false,
    "joints": [
-    "Bottom_Assembly.Fixed",
-    "Rotation_Table.Revolute"
+    "Rotation_Table.Fixed"
    ],
    "mates": [
-    "BOT_HANDWHEEL",
-    "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT"
+    "BOT_HANDWHEEL"
    ],
    "name": "HANDWHEEL",
-   "refs": 3,
+   "refs": 1,
    "roll": 0.0,
    "stem": "HANDWHEEL",
    "was": [
-    "Face3",
-    "Pad.Face3",
-    "Pad002.Face3"
+    "Pad.Face2"
    ],
    "why": "mates"
   },
@@ -3170,7 +3136,7 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "Rotation_Table.Fixed",
     "Rotation_Table.Gears"
@@ -3179,41 +3145,45 @@
     "SR_INNER_RING",
     "SR_WORM_GEAR"
    ],
-   "name": "WORM",
+   "name": "WORM_SHAFT_AXIS",
    "refs": 2,
    "roll": 0.0,
-   "stem": "WORM",
+   "stem": "WORM_SHAFT_AXIS",
    "was": [
     "Face1",
     "Pad.Face1"
    ],
-   "why": "mates"
+   "why": "kept"
   },
   {
    "at": [
     0.0,
-    0.0,
-    0.0
+    -0.0,
+    270.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     0.0,
     1.0
    ],
    "fasteners": [],
    "fixed": true,
    "joints": [
-    "Rotation_Table.Fixed"
+    "Bottom_Assembly.Fixed",
+    "Rotation_Table.Revolute"
    ],
    "mates": [
-    "BOT_HANDWHEEL"
+    "BOT_HANDWHEEL",
+    "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT"
    ],
-   "name": "WORM_SHAFT_AXIS",
-   "refs": 1,
+   "name": "WORM_SHAFT_END_B",
+   "refs": 3,
    "roll": 0.0,
-   "stem": "WORM_SHAFT_AXIS",
+   "stem": "WORM_SHAFT_END_B",
    "was": [
-    "Pad.Face2"
+    "Face3",
+    "Pad.Face3",
+    "Pad002.Face3"
    ],
    "why": "kept"
   }
@@ -3280,36 +3250,6 @@
   {
    "at": [
     0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    0.0,
-    -0.0,
-    1.0
-   ],
-   "fasteners": [],
-   "fixed": true,
-   "joints": [
-    "_4_Axis_Stencil_Printer.Cylindrical",
-    "_4_Axis_Stencil_Printer.Distance"
-   ],
-   "mates": [
-    "TOP_CLAMP_Z_AXIS"
-   ],
-   "name": "AXIS",
-   "refs": 2,
-   "roll": 0.0,
-   "stem": "AXIS",
-   "was": [
-    "Face1",
-    "Face2"
-   ],
-   "why": "kept"
-  },
-  {
-   "at": [
-    0.0,
     -0.0,
     140.0
    ],
@@ -3319,7 +3259,7 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "_4_Axis_Stencil_Printer.Fixed"
    ],
@@ -3327,12 +3267,42 @@
     "BOT_Z_AXIS_BRACKET",
     "BOT_Z_AXIS_BRACKET_MIRRORED"
    ],
-   "name": "Z_AXIS_BRACKET",
+   "name": "END_B",
    "refs": 2,
    "roll": 0.0,
-   "stem": "Z_AXIS_BRACKET",
+   "stem": "END_B",
    "was": [
     "Face3"
+   ],
+   "why": "kept"
+  },
+  {
+   "at": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    -0.0,
+    1.0
+   ],
+   "fasteners": [],
+   "fixed": false,
+   "joints": [
+    "_4_Axis_Stencil_Printer.Cylindrical",
+    "_4_Axis_Stencil_Printer.Distance"
+   ],
+   "mates": [
+    "TOP_CLAMP_Z_AXIS"
+   ],
+   "name": "Z",
+   "refs": 2,
+   "roll": 0.0,
+   "stem": "Z",
+   "was": [
+    "Face1",
+    "Face2"
    ],
    "why": "mates"
   }
@@ -3350,21 +3320,21 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "X_Axis_Carriage.Slider"
    ],
    "mates": [
     "LM8UU"
    ],
-   "name": "BEARING",
+   "name": "AXIS",
    "refs": 3,
    "roll": 0.0,
-   "stem": "BEARING",
+   "stem": "AXIS",
    "was": [
     "Face1"
    ],
-   "why": "mates"
+   "why": "kept"
   },
   {
    "at": [
@@ -3378,7 +3348,7 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "X_Axis_Carriage.Fixed",
     "X_Axis_Carriage.Slider"
@@ -3387,23 +3357,23 @@
     "BOT_BEARING_MOUNT_X_AXIS",
     "LM8UU"
    ],
-   "name": "BEARING_MOUNT_X",
+   "name": "END_B",
    "refs": 3,
    "roll": 0.0,
-   "stem": "BEARING_MOUNT_X",
+   "stem": "END_B",
    "was": [
     "Face1",
     "Face3"
    ],
-   "why": "mates"
+   "why": "kept"
   }
  ],
  "ROD_D8_280": [
   {
    "at": [
-    0.0,
-    0.0,
-    0.0
+    -0.0,
+    -0.0,
+    280.0
    ],
    "axis": [
     -0.0,
@@ -3419,21 +3389,21 @@
     "LM8UU",
     "TOP_RAIL_HOLDER"
    ],
-   "name": "AXIS",
+   "name": "END_B",
    "refs": 4,
    "roll": 0.0,
-   "stem": "AXIS",
+   "stem": "END_B",
    "was": [
-    "Face2",
-    "Pad.Face2"
+    "Face3",
+    "Pad.Face3"
    ],
    "why": "kept"
   },
   {
    "at": [
-    -0.0,
-    -0.0,
-    280.0
+    0.0,
+    0.0,
+    0.0
    ],
    "axis": [
     -0.0,
@@ -3454,41 +3424,13 @@
    "roll": 0.0,
    "stem": "RAIL_HOLDER",
    "was": [
-    "Face3",
-    "Pad.Face3"
+    "Face2",
+    "Pad.Face2"
    ],
    "why": "mates"
   }
  ],
  "ROD_D8_300": [
-  {
-   "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    -0.0,
-    -0.0,
-    1.0
-   ],
-   "fasteners": [],
-   "fixed": true,
-   "joints": [
-    "X_Axis_Carriage.Fixed"
-   ],
-   "mates": [
-    "BOT_RAIL_HOLDER"
-   ],
-   "name": "AXIS",
-   "refs": 2,
-   "roll": 0.0,
-   "stem": "AXIS",
-   "was": [
-    "Face2"
-   ],
-   "why": "kept"
-  },
   {
    "at": [
     0.0,
@@ -3501,22 +3443,22 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "X_Axis_Carriage.Slider"
    ],
    "mates": [
     "LM8UU"
    ],
-   "name": "BEARING",
+   "name": "AXIS",
    "refs": 2,
    "roll": 0.0,
-   "stem": "BEARING",
+   "stem": "AXIS",
    "was": [
     "Face1",
     "Pad.Face1"
    ],
-   "why": "mates"
+   "why": "kept"
   },
   {
    "at": [
@@ -3530,6 +3472,35 @@
     1.0
    ],
    "fasteners": [],
+   "fixed": true,
+   "joints": [
+    "X_Axis_Carriage.Fixed"
+   ],
+   "mates": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "name": "END_B",
+   "refs": 2,
+   "roll": 0.0,
+   "stem": "END_B",
+   "was": [
+    "Face3",
+    "Pad.Face3"
+   ],
+   "why": "kept"
+  },
+  {
+   "at": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "axis": [
+    -0.0,
+    -0.0,
+    1.0
+   ],
+   "fasteners": [],
    "fixed": false,
    "joints": [
     "X_Axis_Carriage.Fixed"
@@ -3542,8 +3513,7 @@
    "roll": 0.0,
    "stem": "RAIL_HOLDER",
    "was": [
-    "Face3",
-    "Pad.Face3"
+    "Face2"
    ],
    "why": "mates"
   }
@@ -3561,7 +3531,7 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "Eccenter.Fixed",
     "Stencil_Clamp.Fixed"
@@ -3571,15 +3541,15 @@
     "TOP_CLAMP_STOP",
     "TOP_SPRING_PLATE"
    ],
-   "name": "AXIS",
+   "name": "SPRING_PLATE",
    "refs": 5,
    "roll": 0.0,
-   "stem": "AXIS",
+   "stem": "SPRING_PLATE",
    "was": [
     "LCS001.",
     "LCS002."
    ],
-   "why": "kept"
+   "why": "mates"
   }
  ],
  "SPRING_ID6_L30_AT12": [
@@ -3595,21 +3565,21 @@
     1.0
    ],
    "fasteners": [],
-   "fixed": true,
+   "fixed": false,
    "joints": [
     "X_Axis_Carriage.Fixed"
    ],
    "mates": [
     "BOT_RAIL_CLAMP_X_DRIVE"
    ],
-   "name": "AXIS",
+   "name": "RAIL_CLAMP_X_DRIVE",
    "refs": 1,
    "roll": 0.0,
-   "stem": "AXIS",
+   "stem": "RAIL_CLAMP_X_DRIVE",
    "was": [
     "LCS002."
    ],
-   "why": "kept"
+   "why": "mates"
   }
  ],
  "SR_BEARING_PLATE": [
@@ -3999,21 +3969,21 @@
     -0.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "Rotation_Table.Fixed"
    ],
    "mates": [
     "M5_270"
    ],
-   "name": "STUD",
+   "name": "SHAFT",
    "refs": 1,
    "roll": 0.0,
-   "stem": "STUD",
+   "stem": "SHAFT",
    "was": [
     "Pocket001.Face7"
    ],
-   "why": "mates"
+   "why": "kept"
   }
  ],
  "STAND": [
@@ -5391,6 +5361,41 @@
   {
    "at": [
     0.0,
+    0.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fasteners": [
+    "ISO4762"
+   ],
+   "fixed": false,
+   "joints": [
+    "Top_Assembly.Fastener"
+   ],
+   "mates": [],
+   "name": "BOLT",
+   "refs": 8,
+   "roll": 0.0,
+   "stem": "BOLT",
+   "was": [
+    "TOP_RAIL_HOLDER.Pocket002.Edge60",
+    "TOP_RAIL_HOLDER.Pocket002.Edge61",
+    "TOP_RAIL_HOLDER001.Pocket002.Edge60",
+    "TOP_RAIL_HOLDER001.Pocket002.Edge61",
+    "TOP_RAIL_HOLDER002.Pocket002.Edge60",
+    "TOP_RAIL_HOLDER002.Pocket002.Edge61",
+    "TOP_RAIL_HOLDER003.Pocket002.Edge60",
+    "TOP_RAIL_HOLDER003.Pocket002.Edge61"
+   ],
+   "why": "fastener"
+  },
+  {
+   "at": [
+    0.0,
     -2.5,
     -3.1863
    ],
@@ -5423,61 +5428,26 @@
     0.0
    ],
    "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fasteners": [
-    "ISO4762"
-   ],
-   "fixed": true,
-   "joints": [
-    "Top_Assembly.Fastener"
-   ],
-   "mates": [],
-   "name": "RAIL",
-   "refs": 8,
-   "roll": 0.0,
-   "stem": "RAIL",
-   "was": [
-    "TOP_RAIL_HOLDER.Pocket002.Edge60",
-    "TOP_RAIL_HOLDER.Pocket002.Edge61",
-    "TOP_RAIL_HOLDER001.Pocket002.Edge60",
-    "TOP_RAIL_HOLDER001.Pocket002.Edge61",
-    "TOP_RAIL_HOLDER002.Pocket002.Edge60",
-    "TOP_RAIL_HOLDER002.Pocket002.Edge61",
-    "TOP_RAIL_HOLDER003.Pocket002.Edge60",
-    "TOP_RAIL_HOLDER003.Pocket002.Edge61"
-   ],
-   "why": "kept"
-  },
-  {
-   "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
     1.0,
     0.0,
     0.0
    ],
    "fasteners": [],
-   "fixed": false,
+   "fixed": true,
    "joints": [
     "Stencil_Clamp.Fixed"
    ],
    "mates": [
     "ROD_D8_280"
    ],
-   "name": "ROD",
+   "name": "RAIL",
    "refs": 4,
    "roll": 90.0,
-   "stem": "ROD",
+   "stem": "RAIL",
    "was": [
     "Pocket002.Edge39"
    ],
-   "why": "mates"
+   "why": "kept"
   }
  ],
  "TOP_SPRING_PLATE": [
@@ -5561,10 +5531,10 @@
     "ECCF_LEVER",
     "ECCF_LEVER_MIRRORED"
    ],
-   "name": "AXIS",
+   "name": "BORE",
    "refs": 2,
    "roll": 0.0,
-   "stem": "AXIS",
+   "stem": "BORE",
    "was": [
     "Face2"
    ],

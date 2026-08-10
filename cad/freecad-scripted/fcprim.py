@@ -17,6 +17,7 @@ Run with FreeCAD's own interpreter, e.g.:
     freecadcmd cad/freecad/bot-right-angle-con.py
 """
 
+import json
 import math
 import os
 
@@ -853,19 +854,83 @@ def finish(doc, result, path, expect_volume=None, tolerance=0.01,
     return result
 
 
+_DATUM_PLAN = None
+
+
+def datum_plan():
+    """The measured mounting datums, keyed by document name.
+
+    `datum-plan.json` says, for every part the assembly joins, where each joint
+    and each fastener actually attaches -- measured off Michael's hand-built
+    assembly by `datums.py`, named by what mates there by `datum-names.py`.
+    See `ASSEMBLY_SCRIPT.md`.
+
+    The positions are **literals**, because that is what a measurement gives.
+    Moving each one into the part script as an expression in that part's own
+    dimensions is the last step of the plan, not this one; a number here is
+    checkable against the assembly it came from, and a guessed expression is
+    not.
+    """
+    global _DATUM_PLAN
+    if _DATUM_PLAN is None:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                            "datum-plan.json")
+        try:
+            with open(path) as fh:
+                _DATUM_PLAN = json.load(fh)
+        except FileNotFoundError:
+            _DATUM_PLAN = {}
+    return _DATUM_PLAN
+
+
+def apply_datums(doc, result):
+    """Put this document's mounting datums on its body.
+
+    Applied here rather than written into each of the sixty part scripts, for
+    three reasons that are all the same reason.  Five scripts build more than
+    one document -- `rod-d8.py` writes four rods, each wanting its own datums --
+    and keying off `doc.Name` gets that right for free.  Three more delegate to
+    a builder in another script and have no body of their own to hang a call
+    on.  And sixty hand-inserted calls can drift out of step with the plan,
+    while one cannot.
+
+    A datum whose label is already on the body is left alone: twenty-four are
+    already where a joint wants them, and rewriting those would be churn.
+    """
+    entries = datum_plan().get(doc.Name)
+    if not entries:
+        return 0
+    bodies = [i for i in _results(result) if i.TypeId == "PartDesign::Body"]
+    if not bodies:
+        return 0
+    bdy = bodies[0]
+    have = {o.Label for o in bdy.Group}
+    added = 0
+    for d in entries:
+        if d["name"] in have:
+            continue
+        lcs(bdy, d["name"], at=tuple(d["at"]), axis=tuple(d["axis"]),
+            roll=d.get("roll", 0.0))
+        added += 1
+    return added
+
+
 def make(script, name, builder, expect_volume=None, tolerance=0.01,
          made_of=PRINTED):
     """Build one part and save it next to its script.
 
     The whole tail of every part script:  a fresh document called `name`,
-    `builder(doc)` to draw it, a check that no sketch was left underdefined,
-    and a save to <name>.FCStd beside the source.
+    `builder(doc)` to draw it, the assembly's mounting datums, a check that no
+    sketch was left underdefined, and a save to <name>.FCStd beside the source.
 
     `builder` may hand back a list, for a document holding more than one body;
     every one of them is checked and they are saved together.
     """
     doc = document(name)
     result = builder(doc)
+    added = apply_datums(doc, result)
+    if added:
+        print(f"  {added} mounting datum(s) from datum-plan.json")
     for item in _results(result):
         check_sketches(item if item.TypeId == "PartDesign::Body"
                        else item.getParent())

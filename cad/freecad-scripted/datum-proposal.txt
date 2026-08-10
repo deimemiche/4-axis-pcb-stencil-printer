@@ -24,36 +24,36 @@
         # mates: SR_OUTER_RING_W_GEAR  [1 ref(s), was Pocket001.Edge177]
 
 # BEARING_14X5X5
-    fcprim.lcs(bdy, "AXIS", axis=(0, 0, 1))
-        # kept: ADAPTER_D5_TO_M3  [4 ref(s), was Revolution.Edge1]
-    fcprim.lcs(bdy, "PLATE", at=(0, 0, 5), axis=(0, 0, 1))
-        # mates: SR_BEARING_PLATE  [4 ref(s), was Revolution.Edge5]
-    fcprim.lcs(bdy, "RING", axis=(0, -0, -1), roll=180)
-        # mates: SR_INNER_RING  [1 ref(s), was Revolution.Face1]
+    fcprim.lcs(bdy, "ADAPTER", axis=(0, 0, 1))
+        # mates: ADAPTER_D5_TO_M3  [4 ref(s), was Revolution.Edge1]
+    fcprim.lcs(bdy, "FACE_A", axis=(0, -0, -1), roll=180)
+        # kept: SR_INNER_RING  [1 ref(s), was Revolution.Face1]
+    fcprim.lcs(bdy, "FACE_B", at=(0, 0, 5), axis=(0, 0, 1))
+        # kept: SR_BEARING_PLATE  [4 ref(s), was Revolution.Edge5]
 
 # BOT_BEARING_MOUNT_X_AXIS
     fcprim.lcs(bdy, "BEARING1", at=(-12, 0, 0), axis=(1, 0, 0), roll=90)
         # mates: LM8UU  [2 ref(s), was Edge108, Pocket004.Edge108]
     fcprim.lcs(bdy, "BEARING2", at=(12, -0, 0), axis=(1, -0, 0), roll=90)
         # mates: LM8UU  [2 ref(s), was Edge126]
-    fcprim.lcs(bdy, "RAIL", axis=(0, 0, 1))
-        # kept: DIN934  [24 ref(s), was BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge101, BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge49, BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge51, BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge55, BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge101, BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge49, BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge53, BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge55, BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge117, BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge51, BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge53, BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge55, BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge101, BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge49, BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge53, BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge55, Pocket004.Edge101, Pocket004.Edge117, Pocket004.Edge49, Pocket004.Edge51, Pocket004.Edge53]
+    fcprim.lcs(bdy, "BOLT1", at=(-8.5, -11.6, -13.35), axis=(-0, -1, -0))
+        # kept: XY_PLATE  [1 ref(s), was Edge11]
+    fcprim.lcs(bdy, "BOLT2", at=(-8.5, -11.6, 13.35), axis=(-0, -1, 0))
+        # kept: XY_PLATE  [2 ref(s), was Edge10]
+    fcprim.lcs(bdy, "BOLT4", at=(8.5, -11.6, 13.35), axis=(-0, -1, -0))
+        # kept: XY_PLATE  [1 ref(s), was Edge8]
+    fcprim.lcs(bdy, "NUT", axis=(0, 0, 1))
+        # fastener: DIN934  [24 ref(s), was BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge101, BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge49, BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge51, BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge55, BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge101, BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge49, BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge53, BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge55, BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge117, BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge51, BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge53, BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge55, BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge101, BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge49, BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge53, BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge55, Pocket004.Edge101, Pocket004.Edge117, Pocket004.Edge49, Pocket004.Edge51, Pocket004.Edge53]
     fcprim.lcs(bdy, "RAIL_CLAMP_X_DRIVE", at=(-9, 14.6, 0), axis=(-0, -1, -0))
         # mates: BOT_RAIL_CLAMP_X_DRIVE, BOT_RAIL_CLAMP_Y_AXIS_1  [2 ref(s), was Pocket004.Edge94]
     fcprim.lcs(bdy, "RAIL_CLAMP_Y", at=(9, 14.6, 0), axis=(-0, -1, -0))
         # mates: BOT_RAIL_CLAMP_Y_AXIS  [2 ref(s), was Pocket004.Edge112]
     fcprim.lcs(bdy, "ROD", at=(0, 14.6, 10.5), axis=(0, 0, 1))
         # mates: ROD_D8_244  [2 ref(s), was Edge144, Pocket004.Edge144]
-    fcprim.lcs(bdy, "XY_PLATE1", at=(-8.5, -11.6, -13.35), axis=(-0, -1, -0))
-        # mates: XY_PLATE  [1 ref(s), was Edge11]
-    fcprim.lcs(bdy, "XY_PLATE2", at=(-8.5, -11.6, 13.35), axis=(-0, -1, 0))
-        # mates: XY_PLATE  [2 ref(s), was Edge10]
-    fcprim.lcs(bdy, "XY_PLATE3", at=(8.5, -11.6, 13.35), axis=(-0, -1, -0))
-        # mates: XY_PLATE  [1 ref(s), was Edge8]
 
 # BOT_BEARING_MOUNT_Y_AXIS
-    fcprim.lcs(bdy, "BEARING", axis=(0, 0, 1))
-        # kept: ISO4762  [12 ref(s), was BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge48, BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge49, BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge6, BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge48, BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge5, BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge6, BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge48, BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge5, BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge6, Pocket.Edge49, Pocket.Edge5]
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [12 ref(s), was BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge48, BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge49, BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge6, BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge48, BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge5, BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge6, BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge48, BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge5, BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge6, Pocket.Edge49, Pocket.Edge5]
     fcprim.lcs(bdy, "BOT_PLATE1", at=(-9, 11.6, -14.5), axis=(0, -1, 0))
         # mates: ALPHA_BOT_PLATE  [1 ref(s), was Pocket.Edge32]
     fcprim.lcs(bdy, "BOT_PLATE2", at=(-9, 11.6, 14.5), axis=(0, -1, 0))
@@ -62,19 +62,21 @@
         # mates: ALPHA_BOT_PLATE  [1 ref(s), was Edge51]
 
 # BOT_BEARING_MOUNT_Y_AXIS_DRIVEN
-    fcprim.lcs(bdy, "BEARING", axis=(0, 0, 1))
-        # kept: DIN934, ISO4762  [6 ref(s), was BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge105, BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge6, BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge63, BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge64, Pocket004.Edge5, Pocket004.Edge83]
-    fcprim.lcs(bdy, "BEARING1", at=(13.5, -0, 0), axis=(1, 0, 0), roll=90)
+    fcprim.lcs(bdy, "BEARING2", at=(13.5, -0, 0), axis=(1, 0, 0), roll=90)
         # mates: LM8UU  [1 ref(s), was BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Edge28]
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: DIN934, ISO4762  [6 ref(s), was BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge105, BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge6, BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge63, BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge64, Pocket004.Edge5, Pocket004.Edge83]
     fcprim.lcs(bdy, "BOT_PLATE", at=(-9, 11.6, 14.5), axis=(0, -1, 0))
         # mates: ALPHA_BOT_PLATE  [1 ref(s), was Pocket004.Edge81]
 
 # BOT_BRACKETS
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [61 ref(s), was BOT_BRACKETS.Pocket.Edge15, BOT_BRACKETS.Pocket.Edge16, BOT_BRACKETS.Pocket.Edge18, BOT_BRACKETS.Pocket.Edge19, BOT_BRACKETS.Pocket.Edge25, BOT_BRACKETS.Pocket.Edge26, BOT_BRACKETS.Pocket.Edge27, BOT_BRACKETS001.Pocket.Edge16, BOT_BRACKETS001.Pocket.Edge17, BOT_BRACKETS001.Pocket.Edge18, BOT_BRACKETS001.Pocket.Edge24, BOT_BRACKETS001.Pocket.Edge25, BOT_BRACKETS001.Pocket.Edge26, BOT_BRACKETS001.Pocket.Edge28, BOT_BRACKETS002.Pocket.Edge25, BOT_BRACKETS002.Pocket.Edge26, BOT_BRACKETS002.Pocket.Edge27, BOT_BRACKETS002.Pocket.Edge28, BOT_BRACKETS003.Pocket.Edge15, BOT_BRACKETS003.Pocket.Edge16, BOT_BRACKETS003.Pocket.Edge17, BOT_BRACKETS003.Pocket.Edge18, BOT_BRACKETS003.Pocket.Edge24, BOT_BRACKETS003.Pocket.Edge25, BOT_BRACKETS003.Pocket.Edge26, BOT_BRACKETS003.Pocket.Edge27, BOT_BRACKETS004.Pocket.Edge24, BOT_BRACKETS004.Pocket.Edge25, BOT_BRACKETS004.Pocket.Edge27, BOT_BRACKETS004.Pocket.Edge28, BOT_BRACKETS005.Pocket.Edge15, BOT_BRACKETS005.Pocket.Edge16, BOT_BRACKETS005.Pocket.Edge19, BOT_BRACKETS006.Pocket.Edge15, BOT_BRACKETS006.Pocket.Edge16, BOT_BRACKETS006.Pocket.Edge17, BOT_BRACKETS006.Pocket.Edge18, BOT_BRACKETS007.Pocket.Edge15, BOT_BRACKETS007.Pocket.Edge16, BOT_BRACKETS007.Pocket.Edge18, BOT_BRACKETS007.Pocket.Edge19, Pocket.Edge17, Pocket.Edge18, Pocket.Edge19, Pocket.Edge24, Pocket.Edge26, Pocket.Edge27, Pocket.Edge28]
+    fcprim.lcs(bdy, "BOLT1", at=(10, -0, 10), axis=(0, -1, -0))
+        # kept: STAND  [3 ref(s), was Pocket.Edge24]
     fcprim.lcs(bdy, "ECC_BOT", at=(60, 0, 0), axis=(0, -1, 0), roll=270)
         # mates: ECCF_BOT  [1 ref(s), was BOT_BRACKETS008.Edge2]
-    fcprim.lcs(bdy, "FOOT1", at=(10, -0, 10), axis=(0, -1, -0))
-        # mates: STAND  [3 ref(s), was Pocket.Edge24]
-    fcprim.lcs(bdy, "FOOT2", at=(10, 4, 10), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "FOOT", at=(10, 4, 10), axis=(0, -1, 0))
         # mates: STAND  [1 ref(s), was Pocket.Edge15]
     fcprim.lcs(bdy, "FRAME1", axis=(0, -1, 0), roll=270)
         # mates: _2020_300  [6 ref(s), was Edge1]
@@ -86,96 +88,90 @@
         # mates: HINGE_40_LEAF  [1 ref(s), was Edge29]
     fcprim.lcs(bdy, "HINGE2", at=(60, -0, 20), axis=(0, -1, 0), roll=270)
         # mates: HINGE_40_LEAF  [1 ref(s), was Edge8]
-    fcprim.lcs(bdy, "MOUNT", axis=(0, 0, 1))
-        # kept: ISO4762  [61 ref(s), was BOT_BRACKETS.Pocket.Edge15, BOT_BRACKETS.Pocket.Edge16, BOT_BRACKETS.Pocket.Edge18, BOT_BRACKETS.Pocket.Edge19, BOT_BRACKETS.Pocket.Edge25, BOT_BRACKETS.Pocket.Edge26, BOT_BRACKETS.Pocket.Edge27, BOT_BRACKETS001.Pocket.Edge16, BOT_BRACKETS001.Pocket.Edge17, BOT_BRACKETS001.Pocket.Edge18, BOT_BRACKETS001.Pocket.Edge24, BOT_BRACKETS001.Pocket.Edge25, BOT_BRACKETS001.Pocket.Edge26, BOT_BRACKETS001.Pocket.Edge28, BOT_BRACKETS002.Pocket.Edge25, BOT_BRACKETS002.Pocket.Edge26, BOT_BRACKETS002.Pocket.Edge27, BOT_BRACKETS002.Pocket.Edge28, BOT_BRACKETS003.Pocket.Edge15, BOT_BRACKETS003.Pocket.Edge16, BOT_BRACKETS003.Pocket.Edge17, BOT_BRACKETS003.Pocket.Edge18, BOT_BRACKETS003.Pocket.Edge24, BOT_BRACKETS003.Pocket.Edge25, BOT_BRACKETS003.Pocket.Edge26, BOT_BRACKETS003.Pocket.Edge27, BOT_BRACKETS004.Pocket.Edge24, BOT_BRACKETS004.Pocket.Edge25, BOT_BRACKETS004.Pocket.Edge27, BOT_BRACKETS004.Pocket.Edge28, BOT_BRACKETS005.Pocket.Edge15, BOT_BRACKETS005.Pocket.Edge16, BOT_BRACKETS005.Pocket.Edge19, BOT_BRACKETS006.Pocket.Edge15, BOT_BRACKETS006.Pocket.Edge16, BOT_BRACKETS006.Pocket.Edge17, BOT_BRACKETS006.Pocket.Edge18, BOT_BRACKETS007.Pocket.Edge15, BOT_BRACKETS007.Pocket.Edge16, BOT_BRACKETS007.Pocket.Edge18, BOT_BRACKETS007.Pocket.Edge19, Pocket.Edge17, Pocket.Edge18, Pocket.Edge19, Pocket.Edge24, Pocket.Edge26, Pocket.Edge27, Pocket.Edge28]
 
 # BOT_BRACKET_X_AXIS
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: DIN934, ISO4762  [4 ref(s), was BOT_BRACKET_X_AXIS.Pocket001.Edge18, BOT_BRACKET_X_AXIS.Pocket001.Edge19, BOT_BRACKET_X_AXIS001.Pocket001.Edge40, Pocket001.Edge20]
     fcprim.lcs(bdy, "ECC_BOT", at=(0, 0, -60), axis=(0, -1, 0), roll=270)
         # mates: ECCF_BOT  [1 ref(s), was BOT_BRACKET_X_AXIS001.Edge27]
     fcprim.lcs(bdy, "FRAME", axis=(0, 1, 0), roll=270)
         # mates: _2020_300  [1 ref(s), was Face5]
-    fcprim.lcs(bdy, "HANDWHEEL", at=(0, 13, -10), axis=(1, 0, 0), roll=90)
-        # mates: BOT_HANDWHEEL  [1 ref(s), was BOT_BRACKET_X_AXIS001.Edge33]
-    fcprim.lcs(bdy, "SCREW", axis=(0, 0, 1))
-        # kept: DIN934, ISO4762  [4 ref(s), was BOT_BRACKET_X_AXIS.Pocket001.Edge18, BOT_BRACKET_X_AXIS.Pocket001.Edge19, BOT_BRACKET_X_AXIS001.Pocket001.Edge40, Pocket001.Edge20]
+    fcprim.lcs(bdy, "SCREW", at=(0, 13, -10), axis=(1, 0, 0), roll=90)
+        # kept: BOT_HANDWHEEL  [1 ref(s), was BOT_BRACKET_X_AXIS001.Edge33]
 
 # BOT_HANDWHEEL
     fcprim.lcs(bdy, "BRACKET_X", at=(0, 26, 0), axis=(0, -1, -0))
         # mates: BOT_BRACKET_X_AXIS, BOT_RAIL_CLAMP_Y_AXIS_1  [2 ref(s), was Pocket003.Edge210]
-    fcprim.lcs(bdy, "SHAFT", axis=(0, 0, 1))
-        # kept: DIN934, ISO4027  [6 ref(s), was Pocket003.Edge168, Pocket003.Edge203]
+    fcprim.lcs(bdy, "NUT", axis=(0, 0, 1))
+        # fastener: DIN934, ISO4027  [6 ref(s), was Pocket003.Edge168, Pocket003.Edge203]
     fcprim.lcs(bdy, "STUD", at=(0, 5, 0), axis=(0, 1, 0), roll=270)
         # mates: M5_270  [3 ref(s), was Face86, Pocket003.Face86]
 
 # BOT_RAIL_CLAMP_X_DRIVE
-    fcprim.lcs(bdy, "BEARING_MOUNT_X", at=(0, 0, -9), axis=(-0, -1, 0))
-        # mates: BOT_BEARING_MOUNT_X_AXIS  [1 ref(s), was Pocket005.Edge31]
-    fcprim.lcs(bdy, "ROD", axis=(0, 0, 1))
-        # kept: DIN934, ISO4762  [4 ref(s), was BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge77, BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge82, Pocket005.Edge123, Pocket005.Edge63]
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: DIN934, ISO4762  [4 ref(s), was BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge77, BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge82, Pocket005.Edge123, Pocket005.Edge63]
+    fcprim.lcs(bdy, "BOLT1", at=(0, 0, -9), axis=(-0, -1, 0))
+        # kept: BOT_BEARING_MOUNT_X_AXIS  [1 ref(s), was Pocket005.Edge31]
     fcprim.lcs(bdy, "SPRING", at=(-28.622, 9.4, 5.1), axis=(0, 0, -1), roll=180)
         # mates: SPRING_ID6_L30_AT12  [1 ref(s), was Edge105]
 
 # BOT_RAIL_CLAMP_Y_AXIS
-    fcprim.lcs(bdy, "BEARING_MOUNT_X", at=(0, 0, -9), axis=(0, -1, 0))
-        # mates: BOT_BEARING_MOUNT_X_AXIS  [2 ref(s), was Pocket001.Edge5]
-    fcprim.lcs(bdy, "ROD", axis=(0, 0, 1))
-        # kept: ISO4762  [4 ref(s), was BOT_RAIL_CLAMP_Y_AXIS.Pocket001.Edge27, BOT_RAIL_CLAMP_Y_AXIS001.Pocket001.Edge27, Pocket001.Edge19]
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [4 ref(s), was BOT_RAIL_CLAMP_Y_AXIS.Pocket001.Edge27, BOT_RAIL_CLAMP_Y_AXIS001.Pocket001.Edge27, Pocket001.Edge19]
+    fcprim.lcs(bdy, "BOLT1", at=(0, 0, -9), axis=(0, -1, 0))
+        # kept: BOT_BEARING_MOUNT_X_AXIS  [2 ref(s), was Pocket001.Edge5]
 
 # BOT_RAIL_CLAMP_Y_AXIS_1
-    fcprim.lcs(bdy, "BEARING_MOUNT_X", at=(0, -0, 9), axis=(0, -1, 0))
-        # mates: BOT_BEARING_MOUNT_X_AXIS  [1 ref(s), was Pocket003.Edge35]
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [2 ref(s), was BOT_RAIL_CLAMP_Y_AXIS_1.Pocket003.Edge56, Pocket003.Edge58]
+    fcprim.lcs(bdy, "BOLT2", at=(0, -0, 9), axis=(0, -1, 0))
+        # kept: BOT_BEARING_MOUNT_X_AXIS  [1 ref(s), was Pocket003.Edge35]
     fcprim.lcs(bdy, "HANDWHEEL", at=(38.622, 4, -26), axis=(1, 0, 0), roll=90)
         # mates: BOT_HANDWHEEL  [1 ref(s), was BOT_RAIL_CLAMP_Y_AXIS_1.Edge54]
-    fcprim.lcs(bdy, "ROD", axis=(0, 0, 1))
-        # kept: ISO4762  [2 ref(s), was BOT_RAIL_CLAMP_Y_AXIS_1.Pocket003.Edge56, Pocket003.Edge58]
 
 # BOT_RAIL_HOLDER
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [8 ref(s), was BOT_RAIL_HOLDER.Pocket002.Edge66, BOT_RAIL_HOLDER.Pocket002.Edge68, BOT_RAIL_HOLDER001.Pocket002.Edge66, BOT_RAIL_HOLDER001.Pocket002.Edge68, BOT_RAIL_HOLDER002.Pocket002.Edge66, BOT_RAIL_HOLDER002.Pocket002.Edge68, BOT_RAIL_HOLDER003.Pocket002.Edge66, BOT_RAIL_HOLDER003.Pocket002.Edge68]
     fcprim.lcs(bdy, "FACE", at=(0, 4.1272, 14.2915), axis=(1, 0, 0), roll=180)
         # geometry: X_Axis_Carriage.Distance  [2 ref(s), was Pocket002.Face4]
     fcprim.lcs(bdy, "FRAME", at=(-0, 2.5, 16.228), axis=(-1, 0, 0), roll=180)
         # mates: _2020_300  [1 ref(s), was BOT_RAIL_HOLDER001.Edge50]
-    fcprim.lcs(bdy, "RAIL", axis=(0, 0, 1))
-        # kept: ISO4762  [8 ref(s), was BOT_RAIL_HOLDER.Pocket002.Edge66, BOT_RAIL_HOLDER.Pocket002.Edge68, BOT_RAIL_HOLDER001.Pocket002.Edge66, BOT_RAIL_HOLDER001.Pocket002.Edge68, BOT_RAIL_HOLDER002.Pocket002.Edge66, BOT_RAIL_HOLDER002.Pocket002.Edge68, BOT_RAIL_HOLDER003.Pocket002.Edge66, BOT_RAIL_HOLDER003.Pocket002.Edge68]
-    fcprim.lcs(bdy, "ROD", at=(0, -1, 14.2915), axis=(1, 0, 0), roll=90)
-        # mates: ROD_D8_300  [4 ref(s), was Edge17, Pocket002.Edge16, Pocket002.Edge17]
+    fcprim.lcs(bdy, "RAIL", at=(0, -1, 14.2915), axis=(1, 0, 0), roll=90)
+        # kept: ROD_D8_300  [4 ref(s), was Edge17, Pocket002.Edge16, Pocket002.Edge17]
 
 # BOT_ROD_HOLDER_ALPHA_AXIS
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [4 ref(s), was BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge34, BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge36, BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge8, Pocket001.Edge9]
     fcprim.lcs(bdy, "BOT_PLATE", at=(16, 6.5, 10.15), axis=(-0, -1, 0))
         # mates: ALPHA_BOT_PLATE  [1 ref(s), was Pocket001.Edge14]
-    fcprim.lcs(bdy, "ROD", axis=(0, 0, 1))
-        # kept: ISO4762  [4 ref(s), was BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge34, BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge36, BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge8, Pocket001.Edge9]
 
 # BOT_ROD_HOLDER_ALPHA_AXIS_SHORT
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [4 ref(s), was BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge36, BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge8, BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge9, Pocket001.Edge34]
     fcprim.lcs(bdy, "BOT_PLATE", at=(4, 6.5, 10.15), axis=(-0, -1, 0))
         # mates: ALPHA_BOT_PLATE  [1 ref(s), was Pocket001.Edge16]
-    fcprim.lcs(bdy, "ROD", axis=(0, 0, 1))
-        # kept: ISO4762  [4 ref(s), was BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge36, BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge8, BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge9, Pocket001.Edge34]
-    fcprim.lcs(bdy, "STUD", axis=(1, 0, 0), roll=90)
-        # mates: M5_270  [1 ref(s), was Pocket001.Edge22]
+    fcprim.lcs(bdy, "ROD", axis=(1, 0, 0), roll=90)
+        # kept: M5_270  [1 ref(s), was Pocket001.Edge22]
 
 # BOT_Z_AXIS_BRACKET
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [7 ref(s), was BOT_Z_AXIS_BRACKET.Pocket005.Edge21, BOT_Z_AXIS_BRACKET.Pocket005.Edge22, BOT_Z_AXIS_BRACKET.Pocket005.Edge24, BOT_Z_AXIS_BRACKET.Pocket005.Edge25, Pocket005.Edge23, Pocket005.Edge86, Pocket005.Edge92]
     fcprim.lcs(bdy, "ECC_BOT", at=(60, 4, 0), axis=(0, 1, 0), roll=270)
         # mates: ECCF_BOT  [1 ref(s), was BOT_Z_AXIS_BRACKET001.Edge2]
     fcprim.lcs(bdy, "FRAME", at=(0, 4, 0), axis=(0, 1, 0), roll=270)
         # mates: _2020_300  [1 ref(s), was Edge76]
-    fcprim.lcs(bdy, "ROD", axis=(0, 0, 1))
-        # kept: ISO4762  [7 ref(s), was BOT_Z_AXIS_BRACKET.Pocket005.Edge21, BOT_Z_AXIS_BRACKET.Pocket005.Edge22, BOT_Z_AXIS_BRACKET.Pocket005.Edge24, BOT_Z_AXIS_BRACKET.Pocket005.Edge25, Pocket005.Edge23, Pocket005.Edge86, Pocket005.Edge92]
-    fcprim.lcs(bdy, "ROD1", at=(21, 24, -11.55), axis=(0, -1, -0))
+    fcprim.lcs(bdy, "ROD2", at=(21, 24, -11.55), axis=(0, -1, -0))
         # mates: ROD_D8_140  [1 ref(s), was Bottom_Frame001.BOT_Z_AXIS_BRACKET.Edge52]
 
 # BOT_Z_AXIS_BRACKET_MIRRORED
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [7 ref(s), was BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge23, BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge24, BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge25, BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge27, Pocket005.Edge26, Pocket005.Edge92, Pocket005.Edge94]
     fcprim.lcs(bdy, "ECC_BOT", at=(-60, 4, 0), axis=(0, 1, 0), roll=270)
         # mates: ECCF_BOT  [1 ref(s), was BOT_Z_AXIS_BRACKET_MIRRORED001.Edge44]
     fcprim.lcs(bdy, "FRAME", at=(0, 4, 0), axis=(0, 1, 0), roll=270)
         # mates: _2020_300  [1 ref(s), was Edge83]
-    fcprim.lcs(bdy, "ROD", axis=(0, 0, 1))
-        # kept: ISO4762  [7 ref(s), was BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge23, BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge24, BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge25, BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge27, Pocket005.Edge26, Pocket005.Edge92, Pocket005.Edge94]
-    fcprim.lcs(bdy, "ROD1", at=(-21, 24, -11.55), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "ROD2", at=(-21, 24, -11.55), axis=(0, -1, 0))
         # mates: ROD_D8_140  [1 ref(s), was Bottom_Frame001.BOT_Z_AXIS_BRACKET_MIRRORED.Face9]
-
-# Bottom_Assembly
-    fcprim.lcs(bdy, "NUT", axis=(0, 0, 1))
-        # fastener: DIN934  [1 ref(s), was Edge2]
 
 # ECCF_BOT
     fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
@@ -250,24 +246,24 @@
         # mates: _2020_300  [1 ref(s), was Face7]
 
 # LM8UU
-    fcprim.lcs(bdy, "BEARING_MOUNT_X", at=(0, -0, 24), axis=(0, -0, 1))
-        # mates: BOT_BEARING_MOUNT_X_AXIS, ROD_D8_244, ROD_D8_280, ROD_D8_300, TOP_CLAMP_BEARING_MOUNT_2  [11 ref(s), was Edge3, Face4, Pocket.Face3]
     fcprim.lcs(bdy, "BORE", axis=(0, 0, 1))
         # kept: BOT_BEARING_MOUNT_X_AXIS, BOT_BEARING_MOUNT_Y_AXIS_DRIVEN, ROD_D8_280, TOP_CLAMP_BEARING_MOUNT_1  [11 ref(s), was Face2, Face4, LM8UU004.Edge2, Pocket.Face2]
-    fcprim.lcs(bdy, "ROD", at=(0, 0, 12), axis=(0, 0, 1))
-        # mates: ROD_D8_244, ROD_D8_300  [3 ref(s), was Pocket.Face4]
+    fcprim.lcs(bdy, "END_B", at=(0, -0, 24), axis=(0, -0, 1))
+        # kept: BOT_BEARING_MOUNT_X_AXIS, ROD_D8_244, ROD_D8_280, ROD_D8_300, TOP_CLAMP_BEARING_MOUNT_2  [11 ref(s), was Edge3, Face4, Pocket.Face3]
+    fcprim.lcs(bdy, "SEAT", at=(0, 0, 12), axis=(0, 0, 1))
+        # kept: ROD_D8_244, ROD_D8_300  [3 ref(s), was Pocket.Face4]
 
 # M5_270
-    fcprim.lcs(bdy, "HANDWHEEL", at=(0, -0, 270), axis=(-0, 0, 1))
-        # mates: BOT_HANDWHEEL, BOT_ROD_HOLDER_ALPHA_AXIS_SHORT  [3 ref(s), was Face3, Pad.Face3, Pad002.Face3]
+    fcprim.lcs(bdy, "HANDWHEEL", axis=(0, 0, 1))
+        # mates: BOT_HANDWHEEL  [1 ref(s), was Pad.Face2]
     fcprim.lcs(bdy, "SPANNER_CASE", at=(0, 0, 50), axis=(0, 0, 1))
         # mates: TOP_CLAMP_SPANNER_CASE_1  [1 ref(s), was Face1]
     fcprim.lcs(bdy, "SPANNER_COUNTER", at=(0, 0, 100), axis=(0, 0, 1))
         # mates: TOP_CLAMP_SPANNER_COUNTER  [1 ref(s), was Face3]
-    fcprim.lcs(bdy, "WORM", at=(0, 0, 135), axis=(0, 0, 1))
-        # mates: SR_INNER_RING, SR_WORM_GEAR  [2 ref(s), was Face1, Pad.Face1]
-    fcprim.lcs(bdy, "WORM_SHAFT_AXIS", axis=(0, 0, 1))
-        # kept: BOT_HANDWHEEL  [1 ref(s), was Pad.Face2]
+    fcprim.lcs(bdy, "WORM_SHAFT_AXIS", at=(0, 0, 135), axis=(0, 0, 1))
+        # kept: SR_INNER_RING, SR_WORM_GEAR  [2 ref(s), was Face1, Pad.Face1]
+    fcprim.lcs(bdy, "WORM_SHAFT_END_B", at=(0, -0, 270), axis=(-0, 0, 1))
+        # kept: BOT_HANDWHEEL, BOT_ROD_HOLDER_ALPHA_AXIS_SHORT  [3 ref(s), was Face3, Pad.Face3, Pad002.Face3]
 
 # M8_55
     fcprim.lcs(bdy, "ECC_BOT", at=(0.3606, -0, 0), axis=(-0, -0, -1), roll=180)
@@ -276,38 +272,38 @@
         # mates: ECCF_TOP  [1 ref(s), was Pocket001.Face183]
 
 # ROD_D8_140
-    fcprim.lcs(bdy, "AXIS", axis=(0, -0, 1))
-        # kept: TOP_CLAMP_Z_AXIS  [2 ref(s), was Face1, Face2]
-    fcprim.lcs(bdy, "Z_AXIS_BRACKET", at=(0, -0, 140), axis=(0, -0, 1))
-        # mates: BOT_Z_AXIS_BRACKET, BOT_Z_AXIS_BRACKET_MIRRORED  [2 ref(s), was Face3]
+    fcprim.lcs(bdy, "END_B", at=(0, -0, 140), axis=(0, -0, 1))
+        # kept: BOT_Z_AXIS_BRACKET, BOT_Z_AXIS_BRACKET_MIRRORED  [2 ref(s), was Face3]
+    fcprim.lcs(bdy, "Z", axis=(0, -0, 1))
+        # mates: TOP_CLAMP_Z_AXIS  [2 ref(s), was Face1, Face2]
 
 # ROD_D8_244
-    fcprim.lcs(bdy, "BEARING", at=(0, 0, 122), axis=(0, 0, 1))
-        # mates: LM8UU  [3 ref(s), was Face1]
-    fcprim.lcs(bdy, "BEARING_MOUNT_X", at=(0, 0, 244), axis=(0, 0, 1))
-        # mates: BOT_BEARING_MOUNT_X_AXIS, LM8UU  [3 ref(s), was Face1, Face3]
+    fcprim.lcs(bdy, "AXIS", at=(0, 0, 122), axis=(0, 0, 1))
+        # kept: LM8UU  [3 ref(s), was Face1]
+    fcprim.lcs(bdy, "END_B", at=(0, 0, 244), axis=(0, 0, 1))
+        # kept: BOT_BEARING_MOUNT_X_AXIS, LM8UU  [3 ref(s), was Face1, Face3]
 
 # ROD_D8_280
-    fcprim.lcs(bdy, "AXIS", axis=(-0, 0, 1))
-        # kept: LM8UU, TOP_RAIL_HOLDER  [4 ref(s), was Face2, Pad.Face2]
-    fcprim.lcs(bdy, "RAIL_HOLDER", at=(-0, -0, 280), axis=(-0, 0, 1))
-        # mates: LM8UU, TOP_RAIL_HOLDER  [4 ref(s), was Face3, Pad.Face3]
+    fcprim.lcs(bdy, "END_B", at=(-0, -0, 280), axis=(-0, 0, 1))
+        # kept: LM8UU, TOP_RAIL_HOLDER  [4 ref(s), was Face3, Pad.Face3]
+    fcprim.lcs(bdy, "RAIL_HOLDER", axis=(-0, 0, 1))
+        # mates: LM8UU, TOP_RAIL_HOLDER  [4 ref(s), was Face2, Pad.Face2]
 
 # ROD_D8_300
-    fcprim.lcs(bdy, "AXIS", axis=(-0, -0, 1))
-        # kept: BOT_RAIL_HOLDER  [2 ref(s), was Face2]
-    fcprim.lcs(bdy, "BEARING", at=(0, 0, 150), axis=(0, -0, 1))
-        # mates: LM8UU  [2 ref(s), was Face1, Pad.Face1]
-    fcprim.lcs(bdy, "RAIL_HOLDER", at=(0, 0, 300), axis=(0, -0, 1))
-        # mates: BOT_RAIL_HOLDER  [2 ref(s), was Face3, Pad.Face3]
+    fcprim.lcs(bdy, "AXIS", at=(0, 0, 150), axis=(0, -0, 1))
+        # kept: LM8UU  [2 ref(s), was Face1, Pad.Face1]
+    fcprim.lcs(bdy, "END_B", at=(0, 0, 300), axis=(0, -0, 1))
+        # kept: BOT_RAIL_HOLDER  [2 ref(s), was Face3, Pad.Face3]
+    fcprim.lcs(bdy, "RAIL_HOLDER", axis=(-0, -0, 1))
+        # mates: BOT_RAIL_HOLDER  [2 ref(s), was Face2]
 
 # SPRING_ID10_L35_AT20
-    fcprim.lcs(bdy, "AXIS", axis=(0, 0, 1))
-        # kept: ECCF_TOP, TOP_CLAMP_STOP, TOP_SPRING_PLATE  [5 ref(s), was LCS001., LCS002.]
+    fcprim.lcs(bdy, "SPRING_PLATE", axis=(0, 0, 1))
+        # mates: ECCF_TOP, TOP_CLAMP_STOP, TOP_SPRING_PLATE  [5 ref(s), was LCS001., LCS002.]
 
 # SPRING_ID6_L30_AT12
-    fcprim.lcs(bdy, "AXIS", axis=(0, 0, 1))
-        # kept: BOT_RAIL_CLAMP_X_DRIVE  [1 ref(s), was LCS002.]
+    fcprim.lcs(bdy, "RAIL_CLAMP_X_DRIVE", axis=(0, 0, 1))
+        # mates: BOT_RAIL_CLAMP_X_DRIVE  [1 ref(s), was LCS002.]
 
 # SR_BEARING_PLATE
     fcprim.lcs(bdy, "BEARING1", at=(-61, 8, 0), axis=(0, 1, -0))
@@ -342,8 +338,8 @@
         # mates: ALPHA_TOP_PLATE  [1 ref(s), was Pocket001.Edge272]
 
 # SR_WORM_GEAR
-    fcprim.lcs(bdy, "STUD", at=(0, 10, 0), axis=(-0, 1, -0))
-        # mates: M5_270  [1 ref(s), was Pocket001.Face7]
+    fcprim.lcs(bdy, "SHAFT", at=(0, 10, 0), axis=(-0, 1, -0))
+        # kept: M5_270  [1 ref(s), was Pocket001.Face7]
 
 # STAND
     fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
@@ -468,12 +464,12 @@
         # mates: ROD_D8_140  [1 ref(s), was Top_Frame.TOP_CLAMP_Z_AXIS.Face4]
 
 # TOP_RAIL_HOLDER
+    fcprim.lcs(bdy, "BOLT", axis=(0, 0, 1))
+        # fastener: ISO4762  [8 ref(s), was TOP_RAIL_HOLDER.Pocket002.Edge60, TOP_RAIL_HOLDER.Pocket002.Edge61, TOP_RAIL_HOLDER001.Pocket002.Edge60, TOP_RAIL_HOLDER001.Pocket002.Edge61, TOP_RAIL_HOLDER002.Pocket002.Edge60, TOP_RAIL_HOLDER002.Pocket002.Edge61, TOP_RAIL_HOLDER003.Pocket002.Edge60, TOP_RAIL_HOLDER003.Pocket002.Edge61]
     fcprim.lcs(bdy, "FRAME", at=(0, -2.5, -3.1863), axis=(-1, -0, 0), roll=270)
         # mates: _2020_300  [1 ref(s), was TOP_RAIL_HOLDER001.Edge38]
-    fcprim.lcs(bdy, "RAIL", axis=(0, 0, 1))
-        # kept: ISO4762  [8 ref(s), was TOP_RAIL_HOLDER.Pocket002.Edge60, TOP_RAIL_HOLDER.Pocket002.Edge61, TOP_RAIL_HOLDER001.Pocket002.Edge60, TOP_RAIL_HOLDER001.Pocket002.Edge61, TOP_RAIL_HOLDER002.Pocket002.Edge60, TOP_RAIL_HOLDER002.Pocket002.Edge61, TOP_RAIL_HOLDER003.Pocket002.Edge60, TOP_RAIL_HOLDER003.Pocket002.Edge61]
-    fcprim.lcs(bdy, "ROD", axis=(1, 0, 0), roll=90)
-        # mates: ROD_D8_280  [4 ref(s), was Pocket002.Edge39]
+    fcprim.lcs(bdy, "RAIL", axis=(1, 0, 0), roll=90)
+        # kept: ROD_D8_280  [4 ref(s), was Pocket002.Edge39]
 
 # TOP_SPRING_PLATE
     fcprim.lcs(bdy, "BEARING_MOUNT", axis=(0, -1, 0), roll=180)
@@ -482,7 +478,7 @@
         # mates: SPRING_ID10_L35_AT20  [2 ref(s), was Edge10, Face6]
 
 # TUBE_D8_170
-    fcprim.lcs(bdy, "AXIS", axis=(-0, 0, 1))
+    fcprim.lcs(bdy, "BORE", axis=(-0, 0, 1))
         # kept: ECCF_LEVER, ECCF_LEVER_MIRRORED  [2 ref(s), was Face2]
 
 # XY_PLATE

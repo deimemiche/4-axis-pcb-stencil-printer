@@ -94,7 +94,11 @@ def key(r):
 
 def existing_datums():
     out = {}
-    for f in glob.glob(os.path.join(HERE, "*", "*.FCStd")):
+    # Read the FROZEN tree, not this one.  Once `fcprim.apply_datums` has run,
+    # this tree's parts carry the plan's own datums, and counting those as
+    # pre-existing would make the plan agree with itself.
+    frozen = os.path.normpath(os.path.join(HERE, "..", "freecad"))
+    for f in glob.glob(os.path.join(frozen, "*", "*.FCStd")):
         doc = ET.fromstring(zipfile.ZipFile(f).read("Document.xml"))
         types = {o.get("name"): o.get("type") for o in doc.iter("Object")
                  if o.get("type")}
@@ -104,7 +108,9 @@ def existing_datums():
             if props is None or types.get(od.get("name")) != \
                     "PartDesign::CoordinateSystem":
                 continue
-            pl = props.find(".//PropertyPlacement")
+            # `.//` would find AttachmentOffset, which precedes Placement in
+            # the file and is identity on every one of these datums.
+            pl = props.find("./Property[@name='Placement']/PropertyPlacement")
             if pl is None:
                 continue
             g = lambda k: float(pl.get(k, 0))
@@ -143,9 +149,15 @@ def main():
     have = existing_datums()
     close = lambda a, b: all(abs(p - q) < 1e-3 for p, q in zip(a, b))
 
+    assemblies = {"_4_Axis_Stencil_Printer", "Bottom_Assembly", "Bottom_Frame",
+                  "Eccenter", "Rotation_Table", "Stencil_Clamp", "Top_Assembly",
+                  "Top_Frame", "X_Axis_Carriage"}
+
     plan = collections.defaultdict(list)
     for k, rs in groups.items():
         part, at, axis, roll = k
+        if part in assemblies:
+            continue
 
         kept = None
         d = match_doc(part, have)
@@ -187,8 +199,17 @@ def main():
             "was": sorted({r["sub"] for r in rs}),
         })
 
-    # number per part and stem, ordered along the part
+    # Number per part and stem, ordered along the part.
+    #
+    # A generated name must not collide with a datum the part script already
+    # writes somewhere else: `apply_datums` skips a label the body already
+    # carries, so a collision does not overwrite -- it silently leaves the datum
+    # at the script's position instead of the measured one, and the joint that
+    # wanted it lands in the wrong place.
     for part, ds in plan.items():
+        d0 = match_doc(part, have)
+        taken = {e["label"] for e in have.get(d0, [])} if d0 else set()
+        taken -= {d["stem"] for d in ds if d["fixed"]}      # kept ones are ours
         ds.sort(key=lambda d: (d["stem"], d["at"]))
         counts = collections.Counter(d["stem"] for d in ds)
         seen = collections.Counter()
@@ -197,8 +218,13 @@ def main():
                 d["name"] = d["stem"]
                 continue
             seen[d["stem"]] += 1
-            d["name"] = (d["stem"] if counts[d["stem"]] == 1
-                         else f"{d['stem']}{seen[d['stem']]}")
+            name = (d["stem"] if counts[d["stem"]] == 1
+                    else f"{d['stem']}{seen[d['stem']]}")
+            while name in taken:
+                seen[d["stem"]] += 1
+                name = f"{d['stem']}{seen[d['stem']]}"
+            taken.add(name)
+            d["name"] = name
         ds.sort(key=lambda d: (d["name"]))
 
     total = sum(len(v) for v in plan.values())
