@@ -13,10 +13,13 @@ the datums `fcprim.apply_datums` put on them.
 labelled `LEVER2`.  `wiring.json` is the bridge, and `wiring.py` built it by
 matching each measured attachment frame to the datum the plan put there.
 
-**Fasteners are placed from their datum too.**  The Fasteners workbench reads a
-hole's diameter and plane off a circular edge, which a datum does not have, so a
-scripted fastener cannot use `BaseObject`.  It gets the datum's own global
-placement instead: same frame, same result, and nothing addressed by edge number.
+**Fasteners are not built yet.**  The Fasteners workbench reads a hole's
+diameter and plane off a circular edge, which a datum does not have, so a
+scripted fastener cannot use `BaseObject` and must be placed from its datum
+instead.  The datum is in the right place -- the joints built on the same datums
+reproduce the machine exactly -- but the transform from an attachment frame to a
+fastener's own `Placement` is not yet right, and only 25 of 245 land correctly.
+`ASM_FASTENERS=1` builds them anyway.  See `place_fasteners`.
 
 Order matters.  A document must exist and be saved before anything can XLink to
 it, and a sub-assembly must be built before the container that links it, so the
@@ -81,6 +84,78 @@ def datum_of(doc, internal_name):
         if o.Name == internal_name:
             return o
     return None
+
+
+def fastener_class(App):
+    """The Fasteners workbench proxy class, loaded the only way that works.
+
+    `import FastenersCmd` segfaults under freecadcmd.  The module loads safely
+    only when FreeCAD restores it while opening a document that holds a
+    fastener, so `asm/FASTENER_SEED.FCStd` exists to be that document.  See
+    `fastener-seed.py`.
+    """
+    seed = os.path.join(OUT, "FASTENER_SEED.FCStd")
+    if not os.path.exists(seed):
+        return None
+    doc = App.openDocument(seed)
+    got = [o for o in doc.Objects if "BaseObject" in o.PropertiesList]
+    cls = type(got[0].Proxy) if got else None
+    App.closeDocument(doc.Name)
+    return cls
+
+
+def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes):
+    """Every fastener, put where its datum is.
+
+    A fastener cannot use `BaseObject` here: the Fasteners workbench reads a
+    hole's diameter and plane off a circular edge, and a datum has no edge.  It
+    gets the datum's own global placement instead -- the same frame the hole
+    would have given, addressed by name rather than by number.
+
+    This runs after the solve, because a link's placement is an output: the
+    datum is only in the right place once the joints have put its part there.
+    """
+    made = 0
+    for f in spec["fasteners"]:
+        w = wiring["fasteners"].get(f"{spec['document']}/{f['name']}")
+        if w is None:
+            notes.append(f"fastener {f['name']}: not wired")
+            continue
+        link = links.get(f["base"]["via"])
+        if link is None:
+            notes.append(f"fastener {f['name']}: no link {f['base']['via']}")
+            continue
+        sub = w.get("prefix", "") + w["object"] + "."
+        try:
+            datum = link.getSubObject(sub, retType=1)
+        except Exception as e:
+            notes.append(f"fastener {f['name']}: {sub} -> {e}")
+            continue
+        if datum is None:
+            notes.append(f"fastener {f['name']}: {sub} resolved to nothing")
+            continue
+        o = doc.addObject("Part::FeaturePython", f["name"])
+        fcls(o, f.get("Type", "ISO4762"), None)
+        o.Label = f["label"]
+        for prop in ("Type", "Diameter", "Length", "Thread", "Invert",
+                     "OffsetAngle", "MatchOuter", "LeftHanded"):
+            if prop in f and prop in o.PropertiesList:
+                try:
+                    setattr(o, prop, f[prop])
+                except Exception:
+                    pass
+        asm.addObject(o)
+        # retType=3 gives the sub-element's placement in document coordinates:
+        # the attachment frame.  The measured offset then puts the screw where
+        # the workbench would have put it.
+        frame = link.getSubObject(sub, retType=3)
+        loc = w.get("local")
+        if loc:
+            frame = frame.multiply(App.Placement(
+                App.Vector(*loc[:3]), App.Rotation(*loc[3:])))
+        o.Placement = frame
+        made += 1
+    return made
 
 
 def build(App, name, model, wiring, files, cache):
@@ -176,8 +251,35 @@ def build(App, name, model, wiring, files, cache):
         made += 1
 
     doc.recompute()
+
+    # OFF by default.  The joints and the parts are verified exact; the
+    # fasteners are NOT -- only 25 of 245 land where the hand-built assembly
+    # puts them.  The attachment frame is measured correctly (the datums are
+    # right, and the joints built on them reproduce the machine), but the
+    # transform from that frame to a fastener's own Placement is still wrong:
+    # `getSubObject(edge, retType=3)` does not return the part-global frame
+    # this assumed, so the measured offset is composed from the wrong basis.
+    # Set ASM_FASTENERS=1 to build them anyway and work on it.
+    # Fasteners are OFF by default.  The joints and the parts are verified
+    # exact; the fasteners are NOT -- only 25 of 245 land where the hand-built
+    # assembly puts them.  The datums are in the right place (the joints built
+    # on them reproduce the machine), but the transform from an attachment
+    # frame to a fastener's own Placement is still wrong: getSubObject(edge,
+    # retType=3) does not return the part-global frame this assumed, so the
+    # measured offset is composed from the wrong basis.
+    # ASM_FASTENERS=1 builds them anyway, to work on it.
+    fastened = 0
+    if os.environ.get("ASM_FASTENERS"):
+        fcls = fastener_class(App)
+        if fcls is None:
+            notes.append("no FASTENER_SEED.FCStd -- run fastener-seed.py")
+        else:
+            fastened = place_fasteners(App, doc, asm, spec, wiring, links,
+                                       fcls, notes)
+
+    doc.recompute()
     doc.save()
-    return doc, made, notes
+    return doc, made, fastened, notes
 
 
 def main():
@@ -195,13 +297,12 @@ def main():
     # model keys are the file stems
     todo = [n for n in todo if n in model]
 
-    say(f"\n{'document':26} {'links':>6} {'joints':>7} {'ground':>7} {'notes':>6}")
+    say(f"\n{'document':26} {'links':>6} {'joints':>7} {'ground':>7} "
+        f"{'bolts':>7} {'notes':>6}")
     for name in todo:
-        doc, made, notes = build(App, name, model, wiring, files, cache)
-        n_links = sum(1 for o in doc.Objects
-                      if o.TypeId in ("App::Link", "Assembly::AssemblyLink"))
+        doc, made, fastened, notes = build(App, name, model, wiring, files, cache)
         say(f"{name:26} {len(model[name]['instances']):6} {made:7} "
-            f"{len(model[name]['grounded']):7} {len(notes):6}")
+            f"{len(model[name]['grounded']):7} {fastened:7} {len(notes):6}")
         for t in notes[:6]:
             say(f"   ! {t}")
 

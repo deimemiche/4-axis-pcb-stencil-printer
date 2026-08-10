@@ -109,7 +109,7 @@ def main():
         if r["prop"] == "BaseObject":
             fasteners[f"{r['assembly']}/{r['joint']}"] = {
                 **rec, "type": r.get("fastener"),
-                "diameter": r.get("diameter")}
+                "diameter": r.get("diameter"), "local": r.get("local")}
         else:
             joints.setdefault(f"{r['assembly']}/{r['joint']}", {})[r["prop"]] = rec
 

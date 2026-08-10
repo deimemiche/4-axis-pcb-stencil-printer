@@ -18,7 +18,10 @@ def main():
     doc = App.openDocument(path)
     out = {}
     for o in doc.Objects:
-        if o.TypeId not in ("App::Link", "Assembly::AssemblyLink"):
+        # Links and fasteners: a fastener is a Part::FeaturePython whose shape
+        # the Fasteners workbench makes, and its Placement is what we compare.
+        if o.TypeId not in ("App::Link", "Assembly::AssemblyLink",
+                            "Part::FeaturePython"):
             continue
         try:
             p = o.getGlobalPlacement()

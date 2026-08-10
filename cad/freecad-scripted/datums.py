@@ -119,11 +119,34 @@ def collect(App, path):
         kind = shape.ShapeType if shape is not None else None
         geom = (type(shape.Surface).__name__ if kind == "Face" else
                 type(shape.Curve).__name__ if kind == "Edge" else kind)
+        # Where the screw sits relative to the frame it attaches to.
+        #
+        # A fastener's Placement is NOT its attachment frame: the workbench puts
+        # the head at one end, flips it for `Invert`, and adds `Offset`.  Give a
+        # fastener the datum's own placement and every bolt lands tens of
+        # millimetres out.  So the difference is measured here, in the
+        # attachment frame's coordinates, and the builder re-applies it -- a
+        # number taken from the assembly, like every other number in this file.
+        # Relative to the DATUM's frame, not the owner's.  getSubObject(...,
+        # retType=3) returns the owning object's placement; the datum sits at
+        # `plc` inside it, and the builder will resolve the datum itself, whose
+        # retType=3 already includes that.  Leaving it out here double-counts
+        # and every bolt lands out by the datum's own offset.
+        local = None
+        try:
+            owner = link.getSubObject(subs[0], retType=3)
+            lp = owner.multiply(plc).inverse().multiply(f.Placement)
+            local = [round(v, 9) for v in
+                     (lp.Base.x, lp.Base.y, lp.Base.z,
+                      lp.Rotation.Q[0], lp.Rotation.Q[1],
+                      lp.Rotation.Q[2], lp.Rotation.Q[3])]
+        except Exception:
+            pass
         rows.append({"assembly": doc.Name, "joint": f.Name,
                      "joint_label": f.Label, "joint_type": "Fastener",
                      "prop": "BaseObject", "part": part, "sub": subs[0],
                      "kind": kind, "geom": geom, "at": at, "axis": axis,
-                     "roll": roll,
+                     "roll": roll, "local": local,
                      "fastener": str(getattr(f, "Type", "?")),
                      "diameter": str(getattr(f, "Diameter", "?"))})
 
