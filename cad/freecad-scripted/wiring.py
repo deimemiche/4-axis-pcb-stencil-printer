@@ -16,12 +16,18 @@ import collections
 import glob
 import json
 import os
+import re
 import sys
 import xml.etree.ElementTree as ET
 import zipfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOL, ATOL, RTOL = 4, 6, 3
+
+# PartDesign features, which sit beside a datum in the body rather than above it
+FEATURE = re.compile(r"^(Pad|Pocket|Revolution|Groove|Loft|Pipe|Helix|Chamfer|"
+                     r"Fillet|Draft|Thickness|Mirrored|LinearPattern|"
+                     r"PolarPattern|MultiTransform|Body|Sketch)\d*$")
 
 
 def key(r):
@@ -84,8 +90,18 @@ def main():
         name = by_spot.get(key(r))
         doc = match(r["part"], internal)
         obj = internal.get(doc, {}).get(name) if doc else None
+        # A reference reaching into a sub-assembly needs the whole path:
+        #   Bottom_Frame001.BOT_Z_AXIS_BRACKET.LCS007.
+        # not the bare datum.  The prefix is the original sub's link chain --
+        # its leading components, minus the element and minus any PartDesign
+        # feature, which lives inside the body next to the datum rather than
+        # above it.
+        parts = r["sub"].split(".")[:-1]
+        while parts and FEATURE.match(parts[-1]):
+            parts.pop()
+        prefix = ".".join(parts) + "." if parts else ""
         rec = {"part": r["part"], "datum": name, "object": obj,
-               "was": r["sub"]}
+               "prefix": prefix, "was": r["sub"]}
         if name is None or obj is None:
             unmapped.append({**rec, "assembly": r["assembly"],
                              "joint": r["joint"], "prop": r["prop"]})

@@ -153,7 +153,7 @@ def build(App, name, model, wiring, files, cache):
                 ends = None
                 notes.append(f"joint {j['name']}.{prop}: no link {via}")
                 break
-            ends.append((link, w["object"]))
+            ends.append((link, w.get("prefix", "") + w["object"]))
         if not ends:
             continue
         o = jg.newObject("App::FeaturePython", "Joint")
