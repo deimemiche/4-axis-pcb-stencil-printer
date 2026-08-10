@@ -2,8 +2,8 @@
 
 Michael's own part, from the linear Z axis mod in the repository's README, and
 one of the few here **transcribed from a parametric source rather than reverse
-engineered**: it already exists as CadQuery in [`../../z-axis.py`](../../z-axis.py),
-driven by [`../../settings.py`](../../settings.py), so every dimension below is
+engineered**: it already exists as CadQuery in [`../../archive/z-axis.py`](../../archive/z-axis.py),
+driven by [`../../archive/settings.py`](../../archive/settings.py), so every dimension below is
 read off that script.
 
 It bolts flat to a **corner of the bottom frame** -- it replaces the author's

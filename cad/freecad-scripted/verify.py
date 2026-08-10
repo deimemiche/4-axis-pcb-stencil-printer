@@ -10,7 +10,7 @@ and the true surface legitimately differ by the faceting error.  That test is
 expensive, so it only runs on the points that actually disagreed.
 
     freecadcmd cad/freecad/verify.py cad/freecad/eccf/ECCF_BOT.FCStd \
-        cad/ECCF_BOT.stl [--samples=20000]
+        cad/original-stl/ECCF_BOT.stl [--samples=20000]
 """
 import random
 import struct

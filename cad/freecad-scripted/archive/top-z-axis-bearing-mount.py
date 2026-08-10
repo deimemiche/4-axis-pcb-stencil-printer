@@ -1,7 +1,7 @@
 """TOP_Z_AXIS_BEARING_MOUNT - what the top frame rides the Z rod on.
 
 The other half of Michael's linear Z axis mod, and transcribed from
-[`../../z-axis.py`](../../z-axis.py) the same way `top-z-axis-bracket.py` is.
+[`../../archive/z-axis.py`](../../archive/z-axis.py) the same way `top-z-axis-bracket.py` is.
 
 There is no mesh or drawing to check it against, so the check is the
 assembly's: the rod has to pass this seat and the bracket's bore on one axis.

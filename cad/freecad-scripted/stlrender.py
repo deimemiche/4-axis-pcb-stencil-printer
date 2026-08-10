@@ -1,7 +1,7 @@
 """Draw an STL so it can actually be looked at.
 
-    python3 stlrender.py cad/ECCF_LEVER.stl                 # four views
-    python3 stlrender.py cad/ECCF_LEVER.stl out.png size=700 views=iso,top
+    python3 stlrender.py cad/original-stl/ECCF_LEVER.stl                 # four views
+    python3 stlrender.py cad/original-stl/ECCF_LEVER.stl out.png size=700 views=iso,top
     python3 stlrender.py a.stl b.stl                        # overlay, two colours
 
 Measuring a mesh tells you what is there; a picture tells you what it *is*.

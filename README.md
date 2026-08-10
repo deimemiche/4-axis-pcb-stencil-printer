@@ -49,7 +49,7 @@ Status: in use
 
 Both halves are also in the FreeCAD assembly, as [`cad/freecad/mod/`](cad/freecad/mod/)
 `TOP_HINGE_LOCK_BACK` and `TOP_HINGE_LOCK_FRONT`, transcribed from
-[`cad/hinge-lock.py`](cad/hinge-lock.py) and checked against its own solids.
+[`cad/archive/hinge-lock.py`](cad/archive/hinge-lock.py) and checked against its own solids.
 
 ### Bottom plate access holes
 This mod replicates the 10 mm access hole seen in the bottom plate in all of five bolt locations.

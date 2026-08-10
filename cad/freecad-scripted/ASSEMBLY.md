@@ -90,10 +90,10 @@ Two parts of Michael's own join the machine instead: `BOT_Z_AXIS_BRACKET`,
 which bolts to the bottom frame and so lives in
 [`bottom-frame/`](bottom-frame/) with the rest of it, and
 `TOP_Z_AXIS_BEARING_MOUNT`, which rides the lid and is now in
-[`shelved/`](shelved/), consumed by no assembly.  The bracket is chiral and the
+[`archive/`](archive/), consumed by no assembly.  The bracket is chiral and the
 machine needs both hands, so it is two documents: `BOT_Z_AXIS_BRACKET` and
 `..._MIRRORED`.  Those are transcribed from his CadQuery in
-[`../z-axis.py`](../z-axis.py) rather than reverse engineered, which is the
+[`../archive/z-axis.py`](../archive/z-axis.py) rather than reverse engineered, which is the
 same bargain the transcribed plates make with the author's 2D drawings.
 
 Which printed part belongs where:
@@ -114,7 +114,7 @@ Which printed part belongs where:
   `ECCF_LEVER` (**two cheeks per eccentric**, and two eccentrics).
 * **`shared/`** - `BOT_BRACKETS` and `BOT_HANDWHEEL`, the only two printed
   parts more than one sub-assembly uses.
-* **`shelved/`** - built, but consumed by no assembly: `BOT_CLAMP_Z_AXIS`,
+* **`archive/`** - built, but consumed by no assembly: `BOT_CLAMP_Z_AXIS`,
   `BOT_RIGHT_ANGLE_CON`, `BOT_Z_AXIS_COUNTER_HOLDER`, `..._KNOB`,
   `TOP_HANDWHEEL_Z_AXIS`, `ALPHA_TOP_PLATE_PLAIN`, and the mod's three.
 
@@ -248,7 +248,7 @@ cad/freecad/
     stencil-holder-front.py    STENCIL_HOLDER_FRONT    the same, one hole more
     stencil-holder-back-2.py   STENCIL_HOLDER_BACK_2   L 20x20x2, 198 long
     stencil-holder-front-2.py  STENCIL_HOLDER_FRONT_2  the same, one hole more
-  shelved/             built, and consumed by no assembly any more
+  archive/             built, and consumed by no assembly any more
     alpha-top-plate-plain.py     ALPHA_TOP_PLATE_PLAIN   240 x 200 x 6, undrilled
     top-z-axis-bearing-mount.py  TOP_Z_AXIS_BEARING_MOUNT  what rides the rod
                        (the bracket that stands the rod up is a bottom frame
@@ -281,7 +281,7 @@ cad/freecad/
 
 The microscope column is not in that list because it is **not this machine**:
 it stands beside the printer, and it has been shelved to
-[`../shelved/scope/`](../shelved/scope/) with the assembly that linked its parts
+[`../archive/scope/`](../archive/scope/) with the assembly that linked its parts
 deleted. See [`STATUS.md`](STATUS.md).
 
 The plates are **not stock**, because unlike a rod they have real drilled
@@ -1024,7 +1024,7 @@ has **0.8 mm** to wind out, which is well inside a thumb nut's range.
 * **The eccenter body.** `eccentric-clamp/` has five parts and none of them is the
   eccenter that turns in `ECCF_MOUNT`'s collar. See open question 7.
 * **Nothing of Michael's own.** The hinge locks were the last of it and they
-  are in, in `shelved/` and on the machine - see below.
+  are in, in `archive/` and on the machine - see below.
 * **The stretcher, step 17.** Its parts exist -
   `TOP_CLAMP_SPANNER_CASE_1` and `_2`, `..._COUNTER`, `..._HANDWHEEL` - but
   unlike everything else in the machine they do not interlock at a bore or a

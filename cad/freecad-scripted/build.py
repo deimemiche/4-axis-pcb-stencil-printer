@@ -19,10 +19,10 @@ import traceback
 HERE = os.path.dirname(os.path.abspath(__file__))
 # The part folders, named for the sub-assembly each part belongs to.  `stock/`
 # is what is bought or cut to length, `shared/` the two printed parts more than
-# one sub-assembly uses, `shelved/` what no assembly consumes any more.
+# one sub-assembly uses, `archive/` what no assembly consumes any more.
 GROUPS = ("stock", "bottom-frame", "rotation-table", "x-axis-carriage",
           "eccentric-clamp", "top-frame", "top-assembly", "stencil-clamp",
-          "shared", "shelved")
+          "shared", "archive")
 
 # Every script in a group folder builds a part.  An assembly has to be built
 # after all of them, which is why `assembly/` is a folder of its own and is run

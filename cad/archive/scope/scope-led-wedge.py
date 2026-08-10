@@ -1,7 +1,7 @@
 """SCOPE_LED_WEDGE - a strip of LEDs held at 45 degrees along a frame member.
 
 Michael's own part, transcribed from `led_wedge()` in
-[`../../microscope-mount/led-wedge.py`](../../microscope-mount/led-wedge.py).
+[`../microscope-mount/led-wedge.py`](../microscope-mount/led-wedge.py).
 It bolts flat under a 2020 and holds an 8.5 mm LED strip on a 45 degree face,
 so the light comes in across the board rather than straight down at it -- which
 is what makes solder joints and part outlines show up under the microscope.
@@ -40,7 +40,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import fcprim
 
-# From ../../microscope-mount/settings.py.
+# From ../microscope-mount/settings.py.
 loose_fit = 0.5          # Settings.loose_fit
 v_slot = 20.0            # Settings.v_slot_d
 frame_bolt_d = 5.0       # M5, Settings.frame_bolt

@@ -1,7 +1,7 @@
 """SCOPE_HOLDER - the collar the microscope tube hangs in.
 
 Michael's own part, transcribed from `holder()` in
-[`../../microscope-mount/microscope-mount.py`](../../microscope-mount/microscope-mount.py).
+[`../microscope-mount/microscope-mount.py`](../microscope-mount/microscope-mount.py).
 It bolts up under `SCOPE_SLIDER`'s ear with two M2.5 at 35 centres and holds
 the 50 mm scope tube 49 mm below them, so the whole microscope moves with the
 carriage.
@@ -48,7 +48,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import fcprim
 
-# From ../../microscope-mount/settings.py.
+# From ../microscope-mount/settings.py.
 wall = 4.0               # Settings.wall_t
 fit = 0.2                # Settings.fit
 loose_fit = 0.5          # Settings.loose_fit

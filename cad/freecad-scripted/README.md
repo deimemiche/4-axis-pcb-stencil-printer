@@ -35,7 +35,7 @@ top-assembly/    the spanner: its two cases, the counter, the handwheel
 stencil-clamp/   the four stencil holder angles, the clamp bearing mounts, nut
                  holder, stop, rail holder and spring plate
 shared/          the only two printed parts more than one sub-assembly uses
-shelved/         built, and consumed by no assembly any more
+archive/         built, and consumed by no assembly any more
 asm/             the machine itself: the parts put together with real joints
 asm/render/      four views of each assembly, drawn by asm/render.py
 ```
@@ -44,7 +44,7 @@ The folders are named for the **sub-assembly each part belongs to**, so what
 `Bottom_Frame` needs is answerable with `ls`. Three kinds of part cut across
 that: what is bought rather than printed goes to `stock/`, the two printed parts
 with more than one consumer go to `shared/`, and what no assembly consumes any
-more goes to `shelved/`.
+more goes to `archive/`.
 
 **The plates and angles are the odd ones out.** Everything else here is
 reconstructed from an STL, because that is all the author published of the
@@ -57,14 +57,14 @@ mistyped hole position fails the build.
 **The Z axis mod's parts** are transcribed too, and for the same reason: they
 belong to the linear Z axis mod in the [repository's
 README](../../README.md), they already exist as parametric CadQuery in
-[`../z-axis.py`](../z-axis.py), and they come from it rather than from any
-measurement. Most are in `shelved/`, consumed by no assembly. The mod's **Z
+[`../archive/z-axis.py`](../archive/z-axis.py), and they come from it rather than from any
+measurement. Most are in `archive/`, consumed by no assembly. The mod's **Z
 bracket** is not: it bolts to a corner of the bottom frame, so it is a
 `bottom-frame/` part, and because it is chiral it is two documents --
 [`bottom-frame/bot-z-axis-bracket.py`](bottom-frame/bot-z-axis-bracket.py) builds
 `BOT_Z_AXIS_BRACKET` and `BOT_Z_AXIS_BRACKET_MIRRORED`, one for each corner.
 
-The **hinge locks** of [`../hinge-lock.py`](../hinge-lock.py) are there too,
+The **hinge locks** of [`../archive/hinge-lock.py`](../archive/hinge-lock.py) are there too,
 and they, like the bracket, are checked harder: CadQuery can be installed and
 run, so their volumes are held against that source's own solids with its
 cosmetic chamfers suppressed, and they agree exactly. The bracket goes further
@@ -72,14 +72,14 @@ and is booleaned against that solid, which leaves nothing on either side.
 
 The **microscope column** is the third transcription and the odd one among
 *those*. Its eight parts come from the four scripts in
-[`../microscope-mount/`](../microscope-mount/) -- seven of them CadQuery and
+[`../archive/microscope-mount/`](../archive/microscope-mount/) -- seven of them CadQuery and
 one, the LED ring, **build123d** -- and they are not part of the stencil
 printer at all. They are a **microscope column that stands beside it**
 and looks down at the board: a 2020 mast, a leadscrew, a carriage that grips a
 50 mm tube, a ring of LEDs round the objective and a strip of them raking
 across the board. Being a second machine, it has been **shelved**: the eight
 parts and their scripts are kept as a record in
-[`../shelved/scope/`](../shelved/scope/), and the assembly that linked them has
+[`../archive/scope/`](../archive/scope/), and the assembly that linked them has
 been deleted rather than carried along. That also removed the one dependency
 this tree had across its own folders -- the microscope was the only thing
 linking a `stock/` extrusion into something that is not the stencil printer.
@@ -108,7 +108,7 @@ builds it open, as `MachineOpen.FCStd`, and checks it in that pose too.
 
 The microscope column had a second assembly driven the same way, posed by its
 carriage height. It went when the column was shelved; the parts it linked are
-in [`../shelved/scope/`](../shelved/scope/).
+in [`../archive/scope/`](../archive/scope/).
 
 Both assemblies have to be run **after** `build.py`, and neither is run by it.
 A link records when the part it points at was last written, so an assembly
@@ -291,7 +291,7 @@ number -- silently, because a stale reference does not have to fail. Rebuild the
 group you are working on:
 
 ```sh
-fc cad/freecad/build.py ../shelved/scope/scope-top.py    # or the one script you changed
+fc cad/freecad/build.py ../archive/scope/scope-top.py    # or the one script you changed
 ```
 
 `view.py` is kept out of `../freecad/assembly/` in code; see its `KEEP_OUT`. `build.py` is
@@ -317,7 +317,7 @@ check passed and the part was still wrong.
 disagreement:
 
 ```sh
-fc cad/freecad/verify.py cad/freecad/eccentric-clamp/ECCF_BOT.FCStd cad/ECCF_BOT.stl
+fc cad/freecad/verify.py cad/freecad/eccentric-clamp/ECCF_BOT.FCStd cad/original-stl/ECCF_BOT.stl
 ```
 
 Points within 0.05 mm of a surface are excused, because there the mesh and the
@@ -328,8 +328,8 @@ true surface legitimately differ.
 `stlmeasure.py` runs under plain `python3` - no FreeCAD, no dependencies:
 
 ```sh
-python3 cad/freecad/stlmeasure.py cad/BOT_RAIL_HOLDER.stl
-python3 cad/freecad/stlmeasure.py cad/*.stl --summary
+python3 cad/freecad/stlmeasure.py cad/original-stl/BOT_RAIL_HOLDER.stl
+python3 cad/freecad/stlmeasure.py cad/original-stl/*.stl --summary
 ```
 
 Measuring answers "what is there"; a picture answers "what is it". Arc fitting
@@ -337,8 +337,8 @@ cannot tell a fillet from a sweep from a draft, and a part whose outline is
 nothing but tangent arcs is far quicker to read than to measure:
 
 ```sh
-python3 cad/freecad/stlrender.py cad/ECCF_LEVER.stl          # four views
-python3 cad/freecad/stlrender.py cad/A.stl cad/B.stl out.png # two, overlaid
+python3 cad/freecad/stlrender.py cad/original-stl/ECCF_LEVER.stl          # four views
+python3 cad/freecad/stlrender.py cad/original-stl/A.stl cad/original-stl/B.stl out.png # two, overlaid
 ```
 
 Overlaying a reconstruction on its original is the quickest check there is that
@@ -346,7 +346,7 @@ a thread runs the right way round or a profile is not mirrored:
 
 ```sh
 fc cad/freecad/export.py cad/freecad/rotation-table/SR_WORM_GEAR.FCStd built.stl
-python3 cad/freecad/stlrender.py cad/SR_WORM_GEAR.stl built.stl cmp.png
+python3 cad/freecad/stlrender.py cad/original-stl/SR_WORM_GEAR.stl built.stl cmp.png
 ```
 
 Printed parts are layered, so `stlmeasure.py` finds the axis a prism would
@@ -437,8 +437,8 @@ Several parts come in families, and finding the family is most of the work:
 
 All 39 meshes are rebuilt, and with them the 8 plates drawn from the author's
 2D drawings, the 9 sticks and bearings of bought stock, and Michael's own 12 --
-the Z bracket, the 3 now in `shelved/` and the 8 microscope parts since shelved
-to [`../shelved/scope/`](../shelved/scope/) -- so `build.py` comes back
+the Z bracket, the 3 now in `archive/` and the 8 microscope parts since shelved
+to [`../archive/scope/`](../archive/scope/) -- so `build.py` comes back
 **60/60** over this tree. [`STATUS.md`](STATUS.md) carries the per-part table and
 what each awkward one turned out to be; [`ASSEMBLY.md`](ASSEMBLY.md) is the plan
 for putting them together into the machine, and how far it has got.

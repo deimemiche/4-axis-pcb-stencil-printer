@@ -1,8 +1,8 @@
 """TOP_HINGE_LOCK_BACK - the hooked half of Michael's hinge lock.
 
 Michael's own part, from the hinge lock mod in the repository's README, and
-transcribed from the CadQuery in [`../../hinge-lock.py`](../../hinge-lock.py)
-driven by [`../../settings.py`](../../settings.py) the same way `mod/`'s two Z
+transcribed from the CadQuery in [`../../archive/hinge-lock.py`](../../archive/hinge-lock.py)
+driven by [`../../archive/settings.py`](../../archive/settings.py) the same way `mod/`'s two Z
 axis parts are transcribed from `z-axis.py`.  There is no mesh and no drawing to
 check it against, so what checks it is the assembly.
 

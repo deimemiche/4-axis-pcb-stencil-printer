@@ -1,7 +1,7 @@
 """SCOPE_ROLLER_MOUNT - what hangs a roller wheel off a frame member.
 
 Michael's own part, transcribed from `roller_mount()` in
-[`../../microscope-mount/roller.py`](../../microscope-mount/roller.py).
+[`../microscope-mount/roller.py`](../microscope-mount/roller.py).
 
 A 53.5 x 20 x 4 plate with two M5 counterbored through it 20 apart -- one
 extrusion cell -- and a block hanging 25 below one end.  The block holds an M8
@@ -43,7 +43,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import fcprim
 
-# From ../../microscope-mount/settings.py.
+# From ../microscope-mount/settings.py.
 wall = 4.0               # Settings.wall_t
 loose_fit = 0.5          # Settings.loose_fit
 v_slot = 20.0            # Settings.v_slot_d

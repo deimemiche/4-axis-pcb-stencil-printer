@@ -1,7 +1,7 @@
 """SCOPE_TOP - the cap on the extrusion's end, and the leadscrew's top bearing.
 
 Michael's own part, transcribed from `top()` in
-[`../../microscope-mount/microscope-mount.py`](../../microscope-mount/microscope-mount.py).
+[`../microscope-mount/microscope-mount.py`](../microscope-mount/microscope-mount.py).
 It closes the top of the column and does three things at once:
 
 * a **28.5 mm square plate** with one 5.5 hole on the axis, which is an M5
@@ -35,7 +35,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import fcprim
 
-# From ../../microscope-mount/settings.py.
+# From ../microscope-mount/settings.py.
 wall = 4.0               # Settings.wall_t
 loose_fit = 0.5          # Settings.loose_fit
 v_slot = 20.0            # Settings.v_slot_d

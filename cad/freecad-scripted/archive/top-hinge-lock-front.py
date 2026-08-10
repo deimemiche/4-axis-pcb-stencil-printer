@@ -1,7 +1,7 @@
 """TOP_HINGE_LOCK_FRONT - the plated half of Michael's hinge lock.
 
 The other half of `top-hinge-lock-back.py`, and transcribed from the same
-CadQuery in [`../../hinge-lock.py`](../../hinge-lock.py).  Read that file's
+CadQuery in [`../../archive/hinge-lock.py`](../../archive/hinge-lock.py).  Read that file's
 docstring first: it says what the lock is for and what could not be settled
 from the source.
 

@@ -2,7 +2,7 @@
 
 Michael's own part, and the only one in `scope/` transcribed from
 **build123d** rather than CadQuery:
-[`../../microscope-mount/lens-led-mount.py`](../../microscope-mount/lens-led-mount.py).
+[`../microscope-mount/lens-led-mount.py`](../microscope-mount/lens-led-mount.py).
 It is a collar that slips over the objective end of the tube -- 46 mm there,
 not the 50 the barrel is, which is why this part has a bore of its own -- and
 carries three strips of LEDs facing down at the board.
@@ -36,7 +36,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import fcprim
 
-# From ../../microscope-mount/settings.py, and the script's own numbers.
+# From ../microscope-mount/settings.py, and the script's own numbers.
 wall = 4.0               # Settings.wall_t
 fit = 0.2                # Settings.fit
 loose_fit = 0.5          # Settings.loose_fit

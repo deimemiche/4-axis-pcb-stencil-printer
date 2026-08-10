@@ -1,7 +1,7 @@
 """SCOPE_ROLLER_WHEEL - the tyre a 608 bearing wears to run on an extrusion.
 
 Michael's own part, transcribed from `wheel()` in
-[`../../microscope-mount/roller.py`](../../microscope-mount/roller.py).
+[`../microscope-mount/roller.py`](../microscope-mount/roller.py).
 
 A ring 28 outside and 22 bored, 7 wide -- 22 and 7 being a 608 bearing's own
 outside and width, so the wheel is pressed on to one and the bearing does the

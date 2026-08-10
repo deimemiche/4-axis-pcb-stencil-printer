@@ -50,11 +50,11 @@ this still taken from a sheet rather than from the machine.
 
 The linear Z axis mod in the repository's [README](../../README.md) has printed
 parts of its own, and they already exist as CadQuery in
-[`../z-axis.py`](../z-axis.py) driven by [`../settings.py`](../settings.py).
+[`../archive/z-axis.py`](../archive/z-axis.py) driven by [`../archive/settings.py`](../archive/settings.py).
 They are **transcribed** from that source rather than reverse engineered, which
 is the same bargain the transcribed plates make with the author's drawings, and
 their cosmetic chamfers and fillets are deliberately left off -- they change no
-fit. Most live in `shelved/`, consumed by no assembly; the Z bracket bolts to
+fit. Most live in `archive/`, consumed by no assembly; the Z bracket bolts to
 the bottom frame, so it is a `bottom-frame/` part and takes that prefix.
 
 | Part | From | Size mm | What it does |
@@ -92,8 +92,8 @@ frame's own face, which `asm/column.py`'s `check_reach` prints every build.
 
 ## The microscope column, which is not part of this machine
 
-[`../shelved/scope/`](../shelved/scope/) transcribes all eight parts of
-[`../microscope-mount/`](../microscope-mount/) -- a column that **stands
+[`../archive/scope/`](../archive/scope/) transcribes all eight parts of
+[`../archive/microscope-mount/`](../archive/microscope-mount/) -- a column that **stands
 beside the stencil printer** and looks down at the board, so that solder joints
 and part outlines can be seen. It is a second machine, and it has been shelved:
 the parts are kept as a record, and the assembly that linked them has been
@@ -166,7 +166,7 @@ section below.
 ### What putting them together found
 
 Two things the eight scripts could not have caught on their own, because
-nothing in `../microscope-mount/` assembles them:
+nothing in `../archive/microscope-mount/` assembles them:
 
 * **The roller mount's gusset fouls its own wheel**, by about 1.6 mm3. The
   wheel's rim comes 2.25 mm below the plate and the 4 mm gusset comes 4 mm
@@ -258,17 +258,17 @@ the 132 mm3 that widening takes out, and `verify.py` reports 184 mismatches in
 | `BOT_BEARING_MOUNT_Y_AXIS_DRIVEN` | 27.0 x 18.0 x 49.9 | 9014 | X | 0.96 | **done** `rotation-table/` |
 | `BOT_BRACKETS` | 60.0 x 4.0 x 60.0 | 8118 | Y | 1.00 | **done** `shared/` |
 | `BOT_BRACKET_X_AXIS` | 36.0 x 19.8 x 60.0 | 9746 | X | 0.91 | **done** `bottom-frame/` |
-| `BOT_CLAMP_Z_AXIS` | 31.8 x 40.0 x 17.2 | 10794 | Y | 0.86 | **done** `shelved/` |
+| `BOT_CLAMP_Z_AXIS` | 31.8 x 40.0 x 17.2 | 10794 | Y | 0.86 | **done** `archive/` |
 | `BOT_HANDWHEEL` | 30.0 x 26.0 x 29.4 | 10725 | Y | 0.81 | **done** `shared/` |
 | `BOT_RAIL_CLAMP_X_DRIVE` | 43.9 x 16.5 x 27.0 | 8418 | Z | 0.83 | **done** `x-axis-carriage/` |
 | `BOT_RAIL_CLAMP_Y_AXIS` | 21.0 x 7.0 x 27.0 | 3145 | X | 0.89 | **done** `x-axis-carriage/` |
 | `BOT_RAIL_CLAMP_Y_AXIS_1` | 49.1 x 11.3 x 45.1 | 9094 | X | 0.83 | **done** `x-axis-carriage/` |
 | `BOT_RAIL_HOLDER` | 11.4 x 16.0 x 28.6 | 2288 | X | 0.94 | **done** `x-axis-carriage/` |
-| `BOT_RIGHT_ANGLE_CON` | 21.0 x 20.0 x 20.0 | 3861 | Z | 0.95 | **done** `shelved/` |
+| `BOT_RIGHT_ANGLE_CON` | 21.0 x 20.0 x 20.0 | 3861 | Z | 0.95 | **done** `archive/` |
 | `BOT_ROD_HOLDER_ALPHA_AXIS` | 68.6 x 12.2 x 28.3 | 6310 | X | 0.62 | **done** `rotation-table/` |
 | `BOT_ROD_HOLDER_ALPHA_AXIS_SHORT` | 20.0 x 12.2 x 28.3 | 3204 | X | 0.93 | **done** `rotation-table/` |
-| `BOT_Z_AXIS_COUNTER_HOLDER` | 40.0 x 24.0 x 20.0 | 6349 | Y | 0.88 | **done** `shelved/` |
-| `BOT_Z_AXIS_COUNTER_KNOB` | 24.0 x 17.0 x 23.7 | 4762 | Y | 0.80 | **done** `shelved/` |
+| `BOT_Z_AXIS_COUNTER_HOLDER` | 40.0 x 24.0 x 20.0 | 6349 | Y | 0.88 | **done** `archive/` |
+| `BOT_Z_AXIS_COUNTER_KNOB` | 24.0 x 17.0 x 23.7 | 4762 | Y | 0.80 | **done** `archive/` |
 | `ECCF_BOT` | 40.0 x 8.0 x 20.0 | 4961 | Y | 1.00 | **done** `eccentric-clamp/` |
 | `ECCF_HEIGHT` | 44.0 x 10.0 x 43.4 | 10162 | Y | 1.00 | **done** `eccentric-clamp/` |
 | `ECCF_LEVER` | 34.4 x 29.3 x 45.8 | 4929 | X | 0.74 | **done** `eccentric-clamp/` |
@@ -288,7 +288,7 @@ the 132 mm3 that widening takes out, and `verify.py` reports 184 mismatches in
 | `TOP_CLAMP_SPANNER_HANDWHEEL` | 5.0 x 33.8 x 34.0 | 3111 | X | 0.99 | **done** `top-assembly/` |
 | `TOP_CLAMP_STOP` | 10.0 x 20.8 x 15.6 | 1750 | X | 0.88 | **done** `stencil-clamp/` |
 | `TOP_CLAMP_Z_AXIS` | 30.2 x 34.0 x 32.0 | 10387 | Y | 0.86 | **done** `top-frame/` |
-| `TOP_HANDWHEEL_Z_AXIS` | 38.0 x 17.0 x 37.5 | 11108 | Y | 0.91 | **done** `shelved/` |
+| `TOP_HANDWHEEL_Z_AXIS` | 38.0 x 17.0 x 37.5 | 11108 | Y | 0.91 | **done** `archive/` |
 | `TOP_RAIL_HOLDER` | 11.4 x 16.1 x 27.6 | 2166 | X | 0.91 | **done** `stencil-clamp/` |
 | `TOP_SPRING_PLATE` | 19.4 x 4.4 x 19.4 | 769 | Y | 0.81 | **done** `stencil-clamp/` |
 
@@ -348,9 +348,9 @@ It also checks work. `export.py` tessellates a built body back to STL, and
 rendering the two together in different colours settles at a glance what a
 volume figure cannot: whether a thread runs the right way round.
 
-    python3 cad/freecad/stlrender.py cad/ECCF_LEVER.stl
+    python3 cad/freecad/stlrender.py cad/original-stl/ECCF_LEVER.stl
     fc cad/freecad/export.py cad/freecad/rotation-table/SR_WORM_GEAR.FCStd built.stl
-    python3 cad/freecad/stlrender.py cad/SR_WORM_GEAR.stl built.stl cmp.png
+    python3 cad/freecad/stlrender.py cad/original-stl/SR_WORM_GEAR.stl built.stl cmp.png
 
 ## The one thing a revolve cannot do
 

@@ -1,7 +1,7 @@
 """SCOPE_JOINER - the strap that ties two extrusions end to end.
 
 Michael's own part, transcribed from `joiner()` in
-[`../../microscope-mount/microscope-mount.py`](../../microscope-mount/microscope-mount.py),
+[`../microscope-mount/microscope-mount.py`](../microscope-mount/microscope-mount.py),
 and the simplest thing in `scope/`: an obround plate 116 x 13 x 4 with a
 108 x 5.5 obround slot down the middle.
 
@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import fcprim
 
-# From ../../microscope-mount/settings.py.
+# From ../microscope-mount/settings.py.
 wall = 4.0               # Settings.wall_t
 loose_fit = 0.5          # Settings.loose_fit
 scope_d = 50.0           # Settings.scope_d

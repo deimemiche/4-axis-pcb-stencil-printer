@@ -1,8 +1,8 @@
 """SCOPE_SLIDER - the carriage the microscope column rides an extrusion on.
 
 Michael's own part, transcribed from the CadQuery in
-[`../../microscope-mount/microscope-mount.py`](../../microscope-mount/microscope-mount.py)
-driven by [`../../microscope-mount/settings.py`](../../microscope-mount/settings.py),
+[`../microscope-mount/microscope-mount.py`](../microscope-mount/microscope-mount.py)
+driven by [`../microscope-mount/settings.py`](../microscope-mount/settings.py),
 the same way `mod/` transcribes the Z axis mod.  Read `../STATUS.md` for what
 that bargain leaves off.
 
@@ -51,7 +51,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import fcprim
 
-# From ../../microscope-mount/settings.py.
+# From ../microscope-mount/settings.py.
 wall = 4.0               # Settings.wall_t
 fit = 0.2                # Settings.fit
 loose_fit = 0.5          # Settings.loose_fit
