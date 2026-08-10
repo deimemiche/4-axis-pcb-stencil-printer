@@ -3,7 +3,7 @@
 ## The parts that were drawn, not reverse engineered
 
 The author published the aluminium as proper 2D drawings rather than as meshes,
-so these six are transcribed from [`../../technical-drawings/`](../../technical-drawings/)
+so these six are transcribed from [`../../technical-drawings/archive/`](../../technical-drawings/archive/)
 instead of measured off an STL. There is no mesh to compare against and none is
 wanted: the check is that the finished solid's volume matches arithmetic on the
 drawing's own dimensions, so a mistyped hole position fails the build.

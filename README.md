@@ -21,7 +21,7 @@ All the modifications and their status is described below.
 This mod adds workholding features (tapped holes) to the top plate,
 making adding tooling a breaze.
 
-Technical drawing: [`technical-drawings/top-plate-workholding.dxf`](`top-plate-workholding.dxf`)
+Technical drawing: [`technical-drawings/archive/top-plate-workholding.dxf`](technical-drawings/archive/top-plate-workholding.dxf)
 
 Status: in use
 
