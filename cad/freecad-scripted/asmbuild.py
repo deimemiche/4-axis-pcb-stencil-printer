@@ -161,6 +161,34 @@ def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes, offsets):
     return made
 
 
+def check_assembly(asm, doc):
+    """The DOF check, run on every build.
+
+    Two things, both of which bit the hand-built assembly.  `solve()` returns
+    non-zero when the solver cannot converge.  And anything still touched after
+    a recompute is what an over-constraint looks like from outside: both
+    `Top_Assembly` and `4-Axis_Stencil_Printer` were over-constrained by exactly
+    one `Parallel` where an `Angle` would do, and that is how it showed.
+
+    `isPartConnected` is deliberately NOT used.  It reports almost every part in
+    a working assembly as unreached -- including ones whose solved placement is
+    exact to 1e-6 -- so it does not mean what its name suggests, and a check
+    that cries wolf on a good build is worse than no check.
+    """
+    out = []
+    try:
+        rc = asm.solve()
+        if rc != 0:
+            out.append(f"solver did not converge (rc={rc})")
+    except Exception as e:
+        out.append(f"solve() raised: {type(e).__name__}: {e}")
+    doc.recompute()
+    touched = [o.Label for o in doc.Objects if o.State and "Touched" in o.State]
+    if touched:
+        out.append(f"still touched after recompute: {', '.join(touched[:6])}")
+    return out
+
+
 def build(App, name, model, wiring, files, cache):
     sys.path.append("/app/share/freecad/Mod/Assembly")
     import JointObject
@@ -285,6 +313,7 @@ def build(App, name, model, wiring, files, cache):
                                        fcls, notes, offsets)
 
     doc.recompute()
+    notes += check_assembly(asm, doc)
     doc.save()
     return doc, made, fastened, notes
 
