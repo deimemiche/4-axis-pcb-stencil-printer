@@ -25,6 +25,7 @@ They are all regenerable from `../freecad/` by running this script.
     wiring     old edge name -> new datum -> data/wiring.json
     poses      the hand-built solved placements, to compare against
     assemble   the nine scripted documents in asm/
+    dress      the view data a GUI needs, or they open blank
     verify     scripted against hand-built, parts and bolts
 
 `assemble` needs `fastener-offsets.json`, which is calibrated from an assembled
@@ -47,6 +48,12 @@ ASM = os.path.join(HERE, "asm")
 
 FREECAD = ["flatpak", "run", "--command=freecadcmd", "--filesystem=home",
            "org.freecad.FreeCAD"]
+
+# `view.py` needs the real FreeCAD, not freecadcmd: only a GUI can write a
+# GuiDocument.xml, and without one every document opens with everything hidden
+# and the camera a millimetre wide at the origin.  Offscreen is enough.
+FREECAD_GUI = ["flatpak", "run", "--filesystem=home",
+               "--env=QT_QPA_PLATFORM=offscreen", "org.freecad.FreeCAD"]
 
 NINE = ["4-Axis_Stencil_Printer", "Bottom_Assembly", "Bottom_Frame", "Eccenter",
         "Rotation_Table", "Stencil_Clamp", "Top_Assembly", "Top_Frame",
@@ -75,6 +82,18 @@ def run(script, args=(), env=None, quiet=True):
     if not quiet:
         say("\n".join(l for l in out.splitlines()
                       if l.strip() and "%)" not in l and "Importing" not in l))
+    return out
+
+
+def run_gui(script, args=()):
+    """One full-FreeCAD subprocess, offscreen."""
+    p = subprocess.run(FREECAD_GUI + [os.path.join(HERE, script)] + list(args),
+                       capture_output=True, text=True)
+    out = (p.stdout + p.stderr).replace("\r", "\n")
+    if "RAISED" in out or "Traceback (most recent call last)" in out:
+        say(f"\n!! {script} failed:")
+        say("\n".join(l for l in out.splitlines() if l.strip())[-2000:])
+        raise SystemExit(1)
     return out
 
 
@@ -198,6 +217,27 @@ def stage_assemble(calibrate=False):
     run("asmbuild.py", env=env, quiet=False)
 
 
+def stage_dress():
+    """Give every built document the view data a GUI needs to show it.
+
+    A document built headless has no `GuiDocument.xml`, and FreeCAD then makes
+    one from scratch on opening: every object comes up **hidden**, overriding
+    the App-level `Visibility`, and with no saved camera the 3D view starts a
+    few millimetres wide at the origin.  So an assembly that is perfectly
+    correct opens blank, which is how this looked when Michael opened it.
+
+    `view.py` writes both, and checks its own work: it parks the camera
+    somewhere no fit could ever return and asks FreeCAD to fit, so a scene with
+    nothing visible in it cannot move the camera and the failure is caught
+    rather than saved.
+    """
+    out = run_gui("view.py")
+    for line in out.splitlines():
+        if line.strip() and ("dressed" in line or "nothing visible" in line
+                             or "FAILED" in line):
+            say(f"  {line.strip()}")
+
+
 def stage_verify():
     d = os.path.join(DATA, "made")
     os.makedirs(d, exist_ok=True)
@@ -211,7 +251,8 @@ def stage_verify():
 STAGES = [("extract", stage_extract), ("datums", stage_datums),
           ("names", stage_names), ("parts", stage_parts),
           ("wiring", stage_wiring), ("poses", stage_poses),
-          ("assemble", stage_assemble), ("verify", stage_verify)]
+          ("assemble", stage_assemble), ("dress", stage_dress),
+          ("verify", stage_verify)]
 
 
 def main():
