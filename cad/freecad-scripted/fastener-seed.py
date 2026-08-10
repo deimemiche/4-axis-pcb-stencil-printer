@@ -1,6 +1,6 @@
 """Make the seed document that lets a headless build create fasteners.
 
-    freecadcmd fastener-seed.py            # writes asm/FASTENER_SEED.FCStd
+    freecadcmd fastener-seed.py            # writes assembly/FASTENER_SEED.FCStd
 
 `import FastenersCmd` **segfaults** under freecadcmd -- with or without
 `FreeCADGui.setupWithoutGUI()`, and whether or not its directory is added to
@@ -31,7 +31,7 @@ def main():
     say(f"proxy class restored: {cls.__module__}.{cls.__name__}")
     App.closeDocument(d.Name)                             # before anything else opens
 
-    out = os.path.join(HERE, "asm", "FASTENER_SEED.FCStd")
+    out = os.path.join(HERE, "assembly", "FASTENER_SEED.FCStd")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     doc = App.newDocument("FASTENER_SEED")
     for t in TYPES:

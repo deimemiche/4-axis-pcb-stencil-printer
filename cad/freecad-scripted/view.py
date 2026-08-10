@@ -21,7 +21,7 @@ Paths are relative to this directory.  Run it after `build.py` -- building
 stays headless, and this dresses what the build produced.
 
 **It needs a real display.**  Not `QT_QPA_PLATFORM=offscreen`, which is what
-this used to do and which is why every assembly in `asm/` was blank: offscreen
+this used to do and which is why every document in `assembly/` was blank: offscreen
 there is no GL context, FreeCAD says so repeatedly, and six of the ten
 assemblies then deadlock partway through `App.openDocument` -- all eight
 threads asleep on a futex, no CPU, for ever, so nothing times out and nothing

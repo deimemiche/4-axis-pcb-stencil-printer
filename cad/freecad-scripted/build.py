@@ -25,7 +25,7 @@ GROUPS = ("stock", "bottom-frame", "rotation-table", "x-axis-carriage",
           "shared", "shelved")
 
 # Every script in a group folder builds a part.  An assembly has to be built
-# after all of them, which is why `asm/` is a folder of its own and is run
+# after all of them, which is why `assembly/` is a folder of its own and is run
 # separately -- building it here would run it first, off whatever the last run
 # left behind.
 NOT_PARTS = ()

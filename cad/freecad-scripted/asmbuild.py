@@ -4,7 +4,7 @@
     flatpak run --command=freecadcmd --filesystem=home \
         org.freecad.FreeCAD asmbuild.py [Document_Name ...]
 
-Writes into `asm/`, under Michael's own names and nesting.  It never opens
+Writes into `assembly/`, under Michael's own names and nesting.  It never opens
 anything in `../freecad/`; the parts it links are this tree's, the ones carrying
 the datums `fcprim.apply_datums` put on them.
 
@@ -32,7 +32,7 @@ import sys
 import traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "asm")
+OUT = os.path.join(HERE, "assembly")
 
 # Leaves first: a container can only link a sub-assembly that already exists.
 ORDER = ["Bottom_Frame", "Eccenter", "Rotation_Table", "X-Axis_Carriage",
@@ -94,7 +94,7 @@ def fastener_class(App):
 
     `import FastenersCmd` segfaults under freecadcmd.  The module loads safely
     only when FreeCAD restores it while opening a document that holds a
-    fastener, so `asm/FASTENER_SEED.FCStd` exists to be that document.  See
+    fastener, so `assembly/FASTENER_SEED.FCStd` exists to be that document.  See
     `fastener-seed.py`.
     """
     seed = os.path.join(OUT, "FASTENER_SEED.FCStd")

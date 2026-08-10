@@ -8,20 +8,24 @@ processes to start.  Neither import of this module pulls in FreeCAD.
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ASSEMBLIES = os.path.join(HERE, "asm")
+ASSEMBLIES = os.path.join(HERE, "assembly")
 
-# Assemblies that do not live in `asm/`.  There are none now that the
+# Assemblies that do not live in `assembly/`.  There are none now that the
 # microscope has been shelved, but the ordering rule below still needs the hook.
 ELSEWHERE = ()
 
-# Folders not to walk into.  Michael's hand-built `assembly/` lives in the
-# frozen `../freecad/` tree and holds its parts together with **face and edge
-# names** rather than with the LCS datums `asm/` uses.  Nothing in it is
-# generated, so there is nothing here to dress -- and re-saving a document whose
-# topological references have gone stale is how they get quietly rebound to the
-# wrong edge.  Naming one on the command line still works; this only stops a
-# bare walk from finding it.
-KEEP_OUT = ("assembly", "__pycache__")
+# Folders not to walk into.  Michael's hand-built assembly lives in the frozen
+# `../freecad/assembly/` tree and holds its parts together with **face and edge
+# names** rather than with the LCS datums this tree uses; re-saving a document
+# whose topological references have gone stale is how they get quietly rebound
+# to the wrong edge.  It is not listed here because it cannot be reached: this
+# walk starts at `HERE`, and `../freecad/` is not under it.  Naming one of those
+# documents on the command line still works.
+#
+# Nothing may be excluded by the name "assembly" -- that is now *this* tree's
+# own generated assembly folder, and skipping it would silently drop all ten
+# machine documents from every walk.
+KEEP_OUT = ("__pycache__",)
 
 
 def is_assembly(path):
@@ -40,7 +44,7 @@ def documents(argv=()):
     Order matters even though each document is saved on its own: a link
     remembers when the part it points at was last written, so re-saving a part
     after the assembly leaves the assembly complaining that its links are out
-    of date every time it is opened.  `asm/` sorts first alphabetically, which
+    of date every time it is opened.  They sort first alphabetically, which
     is exactly the wrong way round.
 
     A named path may point outside this tree, which is how the hand-built

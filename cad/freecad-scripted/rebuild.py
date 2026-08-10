@@ -24,7 +24,7 @@ They are all regenerable from `../freecad/` by running this script.
     parts      the 60 part scripts, datums and all
     wiring     old edge name -> new datum -> data/wiring.json
     poses      the hand-built solved placements, to compare against
-    assemble   the nine scripted documents in asm/
+    assemble   the nine scripted documents in assembly/
     dress      the view data a GUI needs, or they open blank
     verify     scripted against hand-built, parts and bolts
 
@@ -47,7 +47,7 @@ import doclist  # noqa: E402  (needs the path above)
 
 DATA = os.path.join(HERE, "data")
 FROZEN = os.path.normpath(os.path.join(HERE, "..", "freecad", "assembly"))
-ASM = os.path.join(HERE, "asm")
+ASM = os.path.join(HERE, "assembly")
 
 FREECAD = ["flatpak", "run", "--command=freecadcmd", "--filesystem=home",
            "org.freecad.FreeCAD"]
@@ -101,7 +101,7 @@ def run(script, args=(), env=None, quiet=True):
 
 
 def run_gui(script, args=(), timeout=1800):
-    """One full-FreeCAD subprocess, offscreen.
+    """One full-FreeCAD subprocess, on the user's display.
 
     The timeout is not belt and braces.  FreeCAD deadlocks outright on some
     document combinations -- see `stage_dress` -- and a deadlocked process

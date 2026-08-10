@@ -30,7 +30,7 @@ def main():
     import FreeCAD as App
     name = [a for a in sys.argv[1:] if a.endswith(".FCStd")][0]
     hand = os.path.join(HERE, "..", "freecad", "assembly", name)
-    made = os.path.join(HERE, "asm", name)
+    made = os.path.join(HERE, "assembly", name)
     d1, a = poses(App, os.path.abspath(hand))
     d2, b = poses(App, os.path.abspath(made))
     shared = sorted(set(a) & set(b))
