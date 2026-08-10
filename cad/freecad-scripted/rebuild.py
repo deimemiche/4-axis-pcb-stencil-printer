@@ -26,6 +26,7 @@ They are all regenerable from `../freecad/` by running this script.
     poses      the hand-built solved placements, to compare against
     assemble   the nine scripted documents in assembly/
     dress      the view data a GUI needs, or they open blank
+    drawings   the eight stock parts as TechDraw sheets, in ../../technical-drawings/
     verify     scripted against hand-built, parts and bolts
 
 `assemble` needs `fastener-offsets.json`, which is calibrated from an assembled
@@ -48,6 +49,15 @@ import doclist  # noqa: E402  (needs the path above)
 DATA = os.path.join(HERE, "data")
 FROZEN = os.path.normpath(os.path.join(HERE, "..", "freecad", "assembly"))
 ASM = os.path.join(HERE, "assembly")
+DRAWN = os.path.normpath(os.path.join(HERE, "..", "..", "technical-drawings"))
+
+# The parts that are made rather than printed, and so need a drawing.  Kept
+# here as well as in drawings.py so the stage can check that each one actually
+# produced a sheet, rather than trusting what the script said.
+DRAWINGS = ("XY_PLATE", "ALPHA_BOT_PLATE", "ALPHA_TOP_PLATE",
+            "STENCIL_HOLDER_BACK", "STENCIL_HOLDER_FRONT",
+            "STENCIL_HOLDER_BACK_2", "STENCIL_HOLDER_FRONT_2",
+            "2020_300_TOP_FRONT")
 
 FREECAD = ["flatpak", "run", "--command=freecadcmd", "--filesystem=home",
            "org.freecad.FreeCAD"]
@@ -296,6 +306,28 @@ def stage_dress():
     say(f"  {len(every)} dressed, all carrying a GuiDocument.xml")
 
 
+def stage_drawings():
+    """Draw the eight parts that are cut and drilled rather than printed.
+
+    Two passes, because they need different FreeCADs.  `drawings.py` builds
+    the pages, dimensions them, checks every dimension against the model and
+    writes DXF -- all headless.  `drawings-pdf.py` only exports PDF, which
+    goes through `TechDrawGui`, which a console FreeCAD refuses to load, so
+    that pass needs the display for the same reason `dress` does.
+    """
+    out = run("drawings.py", quiet=False)
+    drawn = [l for l in out.splitlines() if "drawn" in l]
+    if not drawn or not drawn[-1].strip().startswith(
+            str(len(DRAWINGS))):
+        raise SystemExit(f"!! drawings.py did not draw all {len(DRAWINGS)}")
+    run_gui("drawings-pdf.py")
+    missing = [n for n in DRAWINGS
+               if not os.path.exists(os.path.join(DRAWN, n + ".pdf"))]
+    if missing:
+        raise SystemExit("!! no PDF for: " + ", ".join(missing))
+    say(f"  {len(DRAWINGS)} sheets, each with its FCStd, PDF, DXF and hole CSV")
+
+
 def stage_verify():
     d = os.path.join(DATA, "made")
     os.makedirs(d, exist_ok=True)
@@ -310,7 +342,7 @@ STAGES = [("extract", stage_extract), ("datums", stage_datums),
           ("names", stage_names), ("parts", stage_parts),
           ("wiring", stage_wiring), ("poses", stage_poses),
           ("assemble", stage_assemble), ("dress", stage_dress),
-          ("verify", stage_verify)]
+          ("drawings", stage_drawings), ("verify", stage_verify)]
 
 
 def main():
