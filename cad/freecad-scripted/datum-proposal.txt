@@ -1,0 +1,697 @@
+joint references measured        : 298
+  landing on a part document     : 271
+  landing on a sub-assembly      : 27   (a datum in the sub-assembly, not in a part script)
+failed to resolve                : 0
+
+DISTINCT DATUMS NEEDED           : 165
+  across part documents          : 59
+  collapse ratio                 : 271/165 = 1.64 references per datum
+
+what the references land on:
+   Edge/Circle            127
+   Face/Plane             75
+   Edge/Line              47
+   Face/Cylinder          22
+
+datums already on disk           : 159   in 34 part documents
+  of those, where a joint wants  : 9
+DATUMS TO ADD OR MOVE            : 156
+
+part document                       refs  datums  have   add
+   _2020_300                          26      18     0    18
+   HINGE_40_LEAF                      10       8     0     8
+   BOT_BEARING_MOUNT_X_AXIS           14       8     0     8
+   BOT_BRACKETS                       19       7     0     7
+   ALPHA_BOT_PLATE                     7       7     0     7
+   SR_BEARING_PLATE                    6       6     0     6
+   STENCIL_HOLDER_BACK                 6       6     0     6
+   M5_270                              8       5     1     4
+   STENCIL_HOLDER_FRONT                5       5     0     5
+   _2020_300_TOP_FRONT                 5       5     0     5
+   ECCF_MOUNT                          4       4     0     4
+   SR_INNER_RING                       4       4     0     4
+   TOP_CLAMP_BEARING_MOUNT_2           5       4     0     4
+   XY_PLATE                            4       4     0     4
+   BOT_BEARING_MOUNT_Y_AXIS            3       3     0     3
+   BEARING_14X5X5                      9       3     1     2
+   LM8UU                              24       3     1     2
+   TOP_CLAMP_BEARING_MOUNT_1           4       3     0     3
+   TOP_CLAMP_SPANNER_CASE_2            3       3     0     3
+   TOP_CLAMP_SPANNER_CASE_1            3       3     0     3
+   _2020_280                           3       3     0     3
+   ROD_D8_300                          6       3     1     2
+   ROD_D8_140                          4       2     1     1
+   BOT_HANDWHEEL                       5       2     0     2
+   M8_55                               2       2     0     2
+   ECCF_TOP                            3       2     0     2
+   BOT_ROD_HOLDER_ALPHA_AXIS_SHORT     2       2     0     2
+   SR_OUTER_RING_W_GEAR                2       2     0     2
+   ROD_D8_280                          8       2     1     1
+   TOP_SPRING_PLATE                    4       2     0     2
+   TOP_CLAMP_SPANNER_COUNTER           2       2     0     2
+   TOP_CLAMP_Z_AXIS                    2       2     0     2
+   BOT_RAIL_HOLDER                     6       2     0     2
+   ROD_D8_244                          6       2     0     2
+   BOT_RAIL_CLAMP_X_DRIVE              2       2     0     2
+   TUBE_D8_170                         2       1     1     0
+   BOT_BRACKET_X_AXIS                  1       1     0     1
+   BOT_Z_AXIS_BRACKET                  1       1     0     1
+   BOT_Z_AXIS_BRACKET_MIRRORED         1       1     0     1
+   STAND                               4       1     0     1
+   ECCF_HEIGHT                         1       1     0     1
+   ECCF_LEVER                          1       1     0     1
+   ECCF_BOT                            1       1     0     1
+   ECCF_LEVER_MIRRORED                 1       1     0     1
+   SPRING_ID10_L35_AT20                5       1     1     0
+   BOT_BEARING_MOUNT_Y_AXIS_DRIVEN     1       1     0     1
+   BOT_ROD_HOLDER_ALPHA_AXIS           1       1     0     1
+   SR_WORM_GEAR                        1       1     0     1
+   ADAPTER_D5_TO_M3                    4       1     0     1
+   ALPHA_TOP_PLATE                     1       1     0     1
+   TOP_RAIL_HOLDER                     4       1     0     1
+   TOP_CLAMP_NUT_HOLDER                6       1     0     1
+   STENCIL_HOLDER_BACK_2               1       1     0     1
+   STENCIL_HOLDER_FRONT_2              1       1     0     1
+   TOP_CLAMP_STOP                      2       1     0     1
+   TOP_CLAMP_SPANNER_HANDWHEEL         1       1     0     1
+   BOT_RAIL_CLAMP_Y_AXIS               2       1     0     1
+   BOT_RAIL_CLAMP_Y_AXIS_1             1       1     0     1
+   SPRING_ID6_L30_AT12                 1       1     1     0
+   TOTAL                             271     165     9   156
+
+========================================================================
+PROPOSED DATUMS -- names are placeholders, the numbers are measured
+========================================================================
+
+# ADAPTER_D5_TO_M3
+    fcprim.lcs(bdy, "JOINT1", at=(0, 1, 0), axis=(0, 1, -0))
+        # 4 ref(s): Rotation_Table.Fixed
+        # was: Revolution.Edge5
+
+# ALPHA_BOT_PLATE
+    fcprim.lcs(bdy, "JOINT1", at=(-93.7, 6, -96), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket002.Edge46
+    fcprim.lcs(bdy, "JOINT2", at=(-93.7, 6, 96), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket002.Edge60
+    fcprim.lcs(bdy, "JOINT3", at=(-82, 0, 70), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Edge24
+    fcprim.lcs(bdy, "JOINT4", at=(-53, 0, -52), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket002.Edge19
+    fcprim.lcs(bdy, "JOINT5", at=(0, 6, 61), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket002.Edge73
+    fcprim.lcs(bdy, "JOINT6", at=(53, 0, 70), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket002.Edge42
+    fcprim.lcs(bdy, "JOINT7", at=(82, 0, -52), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket002.Edge36
+
+# ALPHA_TOP_PLATE
+    fcprim.lcs(bdy, "JOINT1", at=(75.45, 6, -0), axis=(-0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket001.Edge177
+
+# BEARING_14X5X5
+    fcprim.lcs(bdy, "JOINT1", axis=(0, 0, 1))
+        # 4 ref(s): Rotation_Table.Fixed
+        # was: Revolution.Edge1
+    fcprim.lcs(bdy, "JOINT2", axis=(0, -0, -1), roll=180)
+        # 1 ref(s): Rotation_Table.Distance
+        # was: Revolution.Face1
+    fcprim.lcs(bdy, "JOINT3", at=(0, 0, 5), axis=(0, 0, 1))
+        # 4 ref(s): Rotation_Table.Fixed
+        # was: Revolution.Edge5
+
+# BOT_BEARING_MOUNT_X_AXIS
+    fcprim.lcs(bdy, "JOINT1", at=(-12, 0, 0), axis=(1, 0, 0), roll=90)
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge108, Pocket004.Edge108
+    fcprim.lcs(bdy, "JOINT2", at=(-9, 14.6, 0), axis=(-0, -1, -0))
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Pocket004.Edge94
+    fcprim.lcs(bdy, "JOINT3", at=(-8.5, -11.6, -13.35), axis=(-0, -1, -0))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge11
+    fcprim.lcs(bdy, "JOINT4", at=(-8.5, -11.6, 13.35), axis=(-0, -1, 0))
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge10
+    fcprim.lcs(bdy, "JOINT5", at=(0, 14.6, 10.5), axis=(0, 0, 1))
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge144, Pocket004.Edge144
+    fcprim.lcs(bdy, "JOINT6", at=(8.5, -11.6, 13.35), axis=(-0, -1, -0))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge8
+    fcprim.lcs(bdy, "JOINT7", at=(9, 14.6, 0), axis=(-0, -1, -0))
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Pocket004.Edge112
+    fcprim.lcs(bdy, "JOINT8", at=(12, -0, 0), axis=(1, -0, 0), roll=90)
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge126
+
+# BOT_BEARING_MOUNT_Y_AXIS
+    fcprim.lcs(bdy, "JOINT1", at=(-9, 11.6, -14.5), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket.Edge32
+    fcprim.lcs(bdy, "JOINT2", at=(-9, 11.6, 14.5), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket.Edge52
+    fcprim.lcs(bdy, "JOINT3", at=(9, 11.6, 14.5), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Edge51
+
+# BOT_BEARING_MOUNT_Y_AXIS_DRIVEN
+    fcprim.lcs(bdy, "JOINT1", at=(-9, 11.6, 14.5), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket004.Edge81
+
+# BOT_BRACKETS
+    fcprim.lcs(bdy, "JOINT1", axis=(0, -1, 0), roll=270)
+        # 6 ref(s): Bottom_Frame.Fixed, Top_Frame.Fixed
+        # was: Edge1
+    fcprim.lcs(bdy, "JOINT2", at=(0, 4, 0), axis=(0, 1, 0), roll=270)
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Face4
+    fcprim.lcs(bdy, "JOINT3", at=(0, 4, 0), axis=(0, -1, 0), roll=270)
+        # 6 ref(s): Bottom_Frame.Fixed, Top_Frame.Fixed
+        # was: Edge1
+    fcprim.lcs(bdy, "JOINT4", at=(10, -0, 10), axis=(0, -1, -0))
+        # 3 ref(s): Bottom_Frame.Fixed
+        # was: Pocket.Edge24
+    fcprim.lcs(bdy, "JOINT5", at=(10, 4, 10), axis=(0, -1, 0))
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Pocket.Edge15
+    fcprim.lcs(bdy, "JOINT6", at=(20, -0, 60), axis=(0, -1, 0), roll=270)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge29
+    fcprim.lcs(bdy, "JOINT7", at=(60, -0, 20), axis=(0, -1, 0), roll=270)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge8
+
+# BOT_BRACKET_X_AXIS
+    fcprim.lcs(bdy, "JOINT1", axis=(0, 1, 0), roll=270)
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Face5
+
+# BOT_HANDWHEEL
+    fcprim.lcs(bdy, "JOINT1", at=(0, 5, 0), axis=(0, 1, 0), roll=270)
+        # 3 ref(s): Bottom_Assembly.Fixed, Rotation_Table.Fixed
+        # was: Face86, Pocket003.Face86
+    fcprim.lcs(bdy, "JOINT2", at=(0, 26, 0), axis=(0, -1, -0))
+        # 2 ref(s): Bottom_Assembly.Revolute
+        # was: Pocket003.Edge210
+
+# BOT_RAIL_CLAMP_X_DRIVE
+    fcprim.lcs(bdy, "JOINT1", at=(-28.622, 9.4, 5.1), axis=(0, 0, -1), roll=180)
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge105
+    fcprim.lcs(bdy, "JOINT2", at=(0, 0, -9), axis=(-0, -1, 0))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Pocket005.Edge31
+
+# BOT_RAIL_CLAMP_Y_AXIS
+    fcprim.lcs(bdy, "JOINT1", at=(0, 0, -9), axis=(0, -1, 0))
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Pocket001.Edge5
+
+# BOT_RAIL_CLAMP_Y_AXIS_1
+    fcprim.lcs(bdy, "JOINT1", at=(0, -0, 9), axis=(0, -1, 0))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Pocket003.Edge35
+
+# BOT_RAIL_HOLDER
+    fcprim.lcs(bdy, "JOINT1", at=(0, -1, 14.291), axis=(1, 0, 0), roll=90)
+        # 4 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge17, Pocket002.Edge16, Pocket002.Edge17
+    fcprim.lcs(bdy, "JOINT2", at=(0, 4.127, 14.291), axis=(1, 0, 0), roll=180)
+        # 2 ref(s): X_Axis_Carriage.Distance
+        # was: Pocket002.Face4
+
+# BOT_ROD_HOLDER_ALPHA_AXIS
+    fcprim.lcs(bdy, "JOINT1", at=(16, 6.5, 10.15), axis=(-0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket001.Edge14
+
+# BOT_ROD_HOLDER_ALPHA_AXIS_SHORT
+    fcprim.lcs(bdy, "JOINT1", axis=(1, 0, 0), roll=90)
+        # 1 ref(s): Rotation_Table.Revolute
+        # was: Pocket001.Edge22
+    fcprim.lcs(bdy, "JOINT2", at=(4, 6.5, 10.15), axis=(-0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket001.Edge16
+
+# BOT_Z_AXIS_BRACKET
+    fcprim.lcs(bdy, "JOINT1", at=(0, 4, 0), axis=(0, 1, 0), roll=270)
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Edge76
+
+# BOT_Z_AXIS_BRACKET_MIRRORED
+    fcprim.lcs(bdy, "JOINT1", at=(0, 4, 0), axis=(0, 1, 0), roll=270)
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Edge83
+
+# ECCF_BOT
+    fcprim.lcs(bdy, "JOINT1", at=(0, -14, 0), axis=(0, -1, 0))
+        # 1 ref(s): Eccenter.Fixed
+        # was: Pocket003.Edge49
+
+# ECCF_HEIGHT
+    fcprim.lcs(bdy, "JOINT1", axis=(0, 1, 0), roll=270)
+        # 1 ref(s): Eccenter.Fixed
+        # was: Face24
+
+# ECCF_LEVER
+    fcprim.lcs(bdy, "JOINT1", at=(-26.4, 5.25, 0), axis=(1, 0, 0), roll=90)
+        # 1 ref(s): Eccenter.Fixed
+        # was: Edge39
+
+# ECCF_LEVER_MIRRORED
+    fcprim.lcs(bdy, "JOINT1", at=(0, 5.25, 0), axis=(1, 0, -0), roll=90)
+        # 1 ref(s): Eccenter.Fixed
+        # was: Pocket001.Edge39
+
+# ECCF_MOUNT
+    fcprim.lcs(bdy, "JOINT1", at=(-13.2, 5.25, 0), axis=(1, 0, -0), roll=90)
+        # 1 ref(s): Eccenter.Fixed
+        # was: Pocket001.Edge34
+    fcprim.lcs(bdy, "JOINT2", axis=(0, -1, -0))
+        # 1 ref(s): Eccenter.Fixed
+        # was: Edge22
+    fcprim.lcs(bdy, "JOINT3", at=(-0, 14, 0), axis=(0, 1, 0), roll=270)
+        # 1 ref(s): Eccenter.Fixed
+        # was: Pocket001.Face11
+    fcprim.lcs(bdy, "JOINT4", at=(13.2, 5.25, 0), axis=(1, 0, -0), roll=90)
+        # 1 ref(s): Eccenter.Fixed
+        # was: Edge33
+
+# ECCF_TOP
+    fcprim.lcs(bdy, "JOINT1", at=(0, 2, 0), axis=(0, -1, -0))
+        # 2 ref(s): Eccenter.Fixed
+        # was: Edge62, Pocket001.Edge62
+    fcprim.lcs(bdy, "JOINT2", at=(0, 14, -0), axis=(0, -1, -0))
+        # 1 ref(s): Eccenter.Fixed
+        # was: Pocket001.Edge5
+
+# HINGE_40_LEAF
+    fcprim.lcs(bdy, "JOINT1", at=(-1.5, 11.176, 19.926), axis=(1, -0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Distance
+        # was: Face1
+    fcprim.lcs(bdy, "JOINT2", at=(-1.5, 20, 0), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge22
+    fcprim.lcs(bdy, "JOINT3", at=(-1.5, 20, 40), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Face1
+    fcprim.lcs(bdy, "JOINT4", at=(-0.75, 20, 20), axis=(-0, -1, 0), roll=90)
+        # 1 ref(s): Top_Frame.Distance
+        # was: Face7
+    fcprim.lcs(bdy, "JOINT5", at=(0, 0, 10), axis=(0, 0, 1))
+        # 2 ref(s): Top_Frame.Revolute
+        # was: Pocket002.Edge16
+    fcprim.lcs(bdy, "JOINT6", at=(0, 0, 30), axis=(0, 0, 1))
+        # 2 ref(s): Top_Frame.Revolute
+        # was: Pocket002.Edge36
+    fcprim.lcs(bdy, "JOINT7", at=(-0, 11.309, 20), axis=(1, -0, -0), roll=180)
+        # 1 ref(s): Top_Frame.Parallel
+        # was: Face15
+    fcprim.lcs(bdy, "JOINT8", at=(-0, 12.25, 10), axis=(1, -0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Parallel
+        # was: Face15
+
+# LM8UU
+    fcprim.lcs(bdy, "JOINT1", axis=(-0, 0, 1))
+        # 10 ref(s): Stencil_Clamp.Fixed, X_Axis_Carriage.Distance, X_Axis_Carriage.Fixed
+        # was: Face2, Face4, Pocket.Face2
+    fcprim.lcs(bdy, "JOINT2", at=(0, 0, 12), axis=(0, 0, 1))
+        # 3 ref(s): X_Axis_Carriage.Slider
+        # was: Pocket.Face4
+    fcprim.lcs(bdy, "JOINT3", at=(0, -0, 24), axis=(0, -0, 1))
+        # 11 ref(s): Stencil_Clamp.Fixed, X_Axis_Carriage.Distance, X_Axis_Carriage.Fixed, X_Axis_Carriage.Slider
+        # was: Edge3, Face4, Pocket.Face3
+
+# M5_270
+    fcprim.lcs(bdy, "JOINT1", axis=(0, 0, 1))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pad.Face2
+    fcprim.lcs(bdy, "JOINT2", at=(0, 0, 50), axis=(0, 0, 1))
+        # 1 ref(s): Top_Assembly.Cylindrical
+        # was: Face1
+    fcprim.lcs(bdy, "JOINT3", at=(0, 0, 100), axis=(0, 0, 1))
+        # 1 ref(s): Top_Assembly.Fixed
+        # was: Face3
+    fcprim.lcs(bdy, "JOINT4", at=(0, 0, 135), axis=(0, 0, 1))
+        # 2 ref(s): Rotation_Table.Fixed, Rotation_Table.Gears
+        # was: Face1, Pad.Face1
+    fcprim.lcs(bdy, "JOINT5", at=(0, -0, 270), axis=(-0, 0, 1))
+        # 3 ref(s): Bottom_Assembly.Fixed, Rotation_Table.Revolute
+        # was: Face3, Pad.Face3, Pad002.Face3
+
+# M8_55
+    fcprim.lcs(bdy, "JOINT1", at=(0.361, -0, 0), axis=(-0, -0, -1), roll=180)
+        # 1 ref(s): Eccenter.Fixed
+        # was: Pocket001.Face4
+    fcprim.lcs(bdy, "JOINT2", at=(0.361, 0, 55), axis=(0, 0, 1))
+        # 1 ref(s): Eccenter.Fixed
+        # was: Pocket001.Face183
+
+# ROD_D8_140
+    fcprim.lcs(bdy, "JOINT1", axis=(0, -0, 1))
+        # 2 ref(s): _4_Axis_Stencil_Printer.Cylindrical, _4_Axis_Stencil_Printer.Distance
+        # was: Face1, Face2
+    fcprim.lcs(bdy, "JOINT2", at=(0, -0, 140), axis=(0, -0, 1))
+        # 2 ref(s): _4_Axis_Stencil_Printer.Fixed
+        # was: Face3
+
+# ROD_D8_244
+    fcprim.lcs(bdy, "JOINT1", at=(0, 0, 122), axis=(0, 0, 1))
+        # 3 ref(s): X_Axis_Carriage.Slider
+        # was: Face1
+    fcprim.lcs(bdy, "JOINT2", at=(0, 0, 244), axis=(0, 0, 1))
+        # 3 ref(s): X_Axis_Carriage.Fixed, X_Axis_Carriage.Slider
+        # was: Face1, Face3
+
+# ROD_D8_280
+    fcprim.lcs(bdy, "JOINT1", axis=(-0, 0, 1))
+        # 4 ref(s): Stencil_Clamp.Fixed
+        # was: Face2, Pad.Face2
+    fcprim.lcs(bdy, "JOINT2", at=(-0, -0, 280), axis=(-0, 0, 1))
+        # 4 ref(s): Stencil_Clamp.Fixed
+        # was: Face3, Pad.Face3
+
+# ROD_D8_300
+    fcprim.lcs(bdy, "JOINT1", axis=(-0, -0, 1))
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Face2
+    fcprim.lcs(bdy, "JOINT2", at=(0, 0, 150), axis=(0, -0, 1))
+        # 2 ref(s): X_Axis_Carriage.Slider
+        # was: Face1, Pad.Face1
+    fcprim.lcs(bdy, "JOINT3", at=(0, 0, 300), axis=(0, -0, 1))
+        # 2 ref(s): X_Axis_Carriage.Fixed
+        # was: Face3, Pad.Face3
+
+# SPRING_ID10_L35_AT20
+    fcprim.lcs(bdy, "JOINT1", axis=(0, 0, 1))
+        # 5 ref(s): Eccenter.Fixed, Stencil_Clamp.Fixed
+        # was: LCS001., LCS002.
+
+# SPRING_ID6_L30_AT12
+    fcprim.lcs(bdy, "JOINT1", axis=(0, 0, 1))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: LCS002.
+
+# SR_BEARING_PLATE
+    fcprim.lcs(bdy, "JOINT1", at=(-61, 8, 0), axis=(0, 1, -0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket.Edge149
+    fcprim.lcs(bdy, "JOINT2", at=(0, 8, -61), axis=(0, 1, -0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket.Edge147
+    fcprim.lcs(bdy, "JOINT3", at=(0, 8, 61), axis=(0, 1, -0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket.Edge125
+    fcprim.lcs(bdy, "JOINT4", at=(0, 10.5, 0), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Cylindrical
+        # was: Pocket.Face17
+    fcprim.lcs(bdy, "JOINT5", at=(0, 11, -61), axis=(0, -1, -0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket.Edge40
+    fcprim.lcs(bdy, "JOINT6", at=(61, 8, 0), axis=(0, 1, -0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket.Edge114
+
+# SR_INNER_RING
+    fcprim.lcs(bdy, "JOINT1", at=(-0, -2, 0), axis=(-0, 1, 0))
+        # 1 ref(s): Rotation_Table.Gears
+        # was: Edge1
+    fcprim.lcs(bdy, "JOINT2", at=(0, 3, -0), axis=(-0, 1, 0))
+        # 1 ref(s): Rotation_Table.Distance
+        # was: Revolution.Face5
+    fcprim.lcs(bdy, "JOINT3", at=(-0, 5.5, 0), axis=(-0, 1, 0))
+        # 1 ref(s): Rotation_Table.Cylindrical
+        # was: Revolution.Face4
+    fcprim.lcs(bdy, "JOINT4", at=(0, 8, 0), axis=(-0, 1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Edge5
+
+# SR_OUTER_RING_W_GEAR
+    fcprim.lcs(bdy, "JOINT1", at=(0, -2, 75.45), axis=(0, -1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket001.Edge272
+    fcprim.lcs(bdy, "JOINT2", at=(0, 8, 0), axis=(-0, 1, 0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Edge427
+
+# SR_WORM_GEAR
+    fcprim.lcs(bdy, "JOINT1", at=(0, 10, 0), axis=(-0, 1, -0))
+        # 1 ref(s): Rotation_Table.Fixed
+        # was: Pocket001.Face7
+
+# STAND
+    fcprim.lcs(bdy, "JOINT1", axis=(0, 1, -0))
+        # 4 ref(s): Bottom_Frame.Fixed
+        # was: Revolution.Edge1
+
+# STENCIL_HOLDER_BACK
+    fcprim.lcs(bdy, "JOINT1", at=(-103.11, 2, 15.64), axis=(-0, -1, 0))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Edge46
+    fcprim.lcs(bdy, "JOINT2", at=(-75, 8, 2), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket001.Edge40
+    fcprim.lcs(bdy, "JOINT3", at=(-25, 8, 2), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket001.Edge36
+    fcprim.lcs(bdy, "JOINT4", at=(25, 8, 2), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket001.Edge32
+    fcprim.lcs(bdy, "JOINT5", at=(75, 8, 0), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Edge6
+    fcprim.lcs(bdy, "JOINT6", at=(75, 8, 2), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket001.Edge30
+
+# STENCIL_HOLDER_BACK_2
+    fcprim.lcs(bdy, "JOINT1", at=(75, 10, 2), axis=(-0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Edge22
+
+# STENCIL_HOLDER_FRONT
+    fcprim.lcs(bdy, "JOINT1", at=(-103.11, 2, 15.64), axis=(-0, -1, 0))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Edge49
+    fcprim.lcs(bdy, "JOINT2", at=(-75, 8, -0), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Edge11
+    fcprim.lcs(bdy, "JOINT3", at=(-75, 8, 2), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket001.Edge41
+    fcprim.lcs(bdy, "JOINT4", at=(75, 8, 2), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket001.Edge31
+    fcprim.lcs(bdy, "JOINT5", at=(103.11, 15.6, 2), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket001.Edge35
+
+# STENCIL_HOLDER_FRONT_2
+    fcprim.lcs(bdy, "JOINT1", at=(-75, 10, 2), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Edge29
+
+# TOP_CLAMP_BEARING_MOUNT_1
+    fcprim.lcs(bdy, "JOINT1", at=(-10, 0, 0.656), axis=(1, -0, -0), roll=180)
+        # 2 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket003.Face2
+    fcprim.lcs(bdy, "JOINT2", at=(5.6, 12.75, -7.5), axis=(0, 0, 1))
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket003.Edge7
+    fcprim.lcs(bdy, "JOINT3", at=(16, 0, 0), axis=(1, -0, 0), roll=90)
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket004.Edge19
+
+# TOP_CLAMP_BEARING_MOUNT_2
+    fcprim.lcs(bdy, "JOINT1", at=(-10, 0, 0), axis=(1, 0, 0), roll=90)
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket004.Edge12
+    fcprim.lcs(bdy, "JOINT2", at=(-8, 12.75, -6.138), axis=(1, 0, 0), roll=90)
+        # 2 ref(s): Stencil_Clamp.Fixed
+        # was: Edge22
+    fcprim.lcs(bdy, "JOINT3", at=(14.5, 0, -0), axis=(1, 0, 0), roll=90)
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket004.Edge41
+    fcprim.lcs(bdy, "JOINT4", at=(16, 0, -0), axis=(1, 0, 0), roll=90)
+        # 1 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket004.Edge19
+
+# TOP_CLAMP_NUT_HOLDER
+    fcprim.lcs(bdy, "JOINT1", at=(1, -7.3, 0), axis=(0, -1, 0))
+        # 6 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket002.Edge82
+
+# TOP_CLAMP_SPANNER_CASE_1
+    fcprim.lcs(bdy, "JOINT1", at=(-1.2, 0, -24), axis=(1, 0, 0), roll=90)
+        # 1 ref(s): Top_Assembly.Fixed
+        # was: Edge41
+    fcprim.lcs(bdy, "JOINT2", axis=(1, -0, 0), roll=90)
+        # 1 ref(s): Top_Assembly.Cylindrical
+        # was: Face12
+    fcprim.lcs(bdy, "JOINT3", at=(2, 0, -24), axis=(1, -0, -0), roll=180)
+        # 1 ref(s): Top_Assembly.Distance
+        # was: Face5
+
+# TOP_CLAMP_SPANNER_CASE_2
+    fcprim.lcs(bdy, "JOINT1", at=(2, 0, -24), axis=(1, 0, 0), roll=90)
+        # 1 ref(s): Top_Assembly.Fixed
+        # was: Edge14
+    fcprim.lcs(bdy, "JOINT2", at=(7, 0, 0), axis=(1, 0, 0), roll=90)
+        # 1 ref(s): Top_Assembly.Fixed
+        # was: Pocket003.Edge45
+    fcprim.lcs(bdy, "JOINT3", at=(8, 7, -17.663), axis=(0, -1, 0), roll=90)
+        # 1 ref(s): Top_Assembly.Angle
+        # was: Face7
+
+# TOP_CLAMP_SPANNER_COUNTER
+    fcprim.lcs(bdy, "JOINT1", at=(-8.4, -0, 0), axis=(-1, -0, 0), roll=90)
+        # 1 ref(s): Top_Assembly.Fixed
+        # was: Edge26
+    fcprim.lcs(bdy, "JOINT2", at=(5, 0, 0), axis=(1, 0, -0), roll=90)
+        # 1 ref(s): Top_Assembly.Fixed
+        # was: Face60
+
+# TOP_CLAMP_SPANNER_HANDWHEEL
+    fcprim.lcs(bdy, "JOINT1", at=(5, -0, 0), axis=(-1, 0, -0), roll=90)
+        # 1 ref(s): Top_Assembly.Fixed
+        # was: Pocket002.Edge89
+
+# TOP_CLAMP_STOP
+    fcprim.lcs(bdy, "JOINT1", axis=(1, 0, 0), roll=90)
+        # 2 ref(s): Stencil_Clamp.Fixed
+        # was: Edge11
+
+# TOP_CLAMP_Z_AXIS
+    fcprim.lcs(bdy, "JOINT1", at=(0, 20, -16), axis=(0, -1, 0), roll=270)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge12
+    fcprim.lcs(bdy, "JOINT2", at=(0, 20, 16), axis=(0, -1, 0), roll=270)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge24
+
+# TOP_RAIL_HOLDER
+    fcprim.lcs(bdy, "JOINT1", axis=(1, 0, 0), roll=90)
+        # 4 ref(s): Stencil_Clamp.Fixed
+        # was: Pocket002.Edge39
+
+# TOP_SPRING_PLATE
+    fcprim.lcs(bdy, "JOINT1", axis=(0, -1, 0), roll=180)
+        # 2 ref(s): Stencil_Clamp.Fixed
+        # was: Revolution.Face1
+    fcprim.lcs(bdy, "JOINT2", at=(0, 2.4, 0), axis=(-0, 1, 0))
+        # 2 ref(s): Stencil_Clamp.Fixed
+        # was: Edge10, Face6
+
+# TUBE_D8_170
+    fcprim.lcs(bdy, "JOINT1", axis=(-0, 0, 1))
+        # 2 ref(s): Bottom_Assembly.Fixed
+        # was: Face2
+
+# XY_PLATE
+    fcprim.lcs(bdy, "JOINT1", at=(-124.35, 2, -76), axis=(0, -1, 0))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge29
+    fcprim.lcs(bdy, "JOINT2", at=(-124.35, 2, 76), axis=(0, -1, 0))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge34
+    fcprim.lcs(bdy, "JOINT3", at=(124.35, 2, -76), axis=(0, -1, 0))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge39
+    fcprim.lcs(bdy, "JOINT4", at=(124.35, 2, 76), axis=(0, -1, 0))
+        # 1 ref(s): X_Axis_Carriage.Fixed
+        # was: Edge44
+
+# _2020_280
+    fcprim.lcs(bdy, "JOINT1", at=(-10, 10, 0), axis=(-1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge5
+    fcprim.lcs(bdy, "JOINT2", at=(-10, 10, 280), axis=(-1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge51
+    fcprim.lcs(bdy, "JOINT3", at=(10, -10, 0), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge47
+
+# _2020_300
+    fcprim.lcs(bdy, "JOINT1", at=(-10, -10, 0), axis=(0, 1, 0))
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Face1
+    fcprim.lcs(bdy, "JOINT2", at=(-10, -10, 0), axis=(1, 0, 0), roll=180)
+        # 2 ref(s): Top_Frame.Fixed
+        # was: Edge1
+    fcprim.lcs(bdy, "JOINT3", at=(-10, -10, 300), axis=(0, 1, 0))
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Face1
+    fcprim.lcs(bdy, "JOINT4", at=(-10, -10, 300), axis=(1, 0, 0), roll=180)
+        # 2 ref(s): Top_Frame.Fixed
+        # was: Edge3
+    fcprim.lcs(bdy, "JOINT5", at=(-10, -3, 300), axis=(1, 0, -0), roll=270)
+        # 1 ref(s): Top_Frame.Distance
+        # was: Face5
+    fcprim.lcs(bdy, "JOINT6", at=(-10, 10, 0), axis=(0, -1, 0), roll=270)
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Edge7
+    fcprim.lcs(bdy, "JOINT7", at=(-10, 10, 0), axis=(-1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge5
+    fcprim.lcs(bdy, "JOINT8", at=(-10, 10, 300), axis=(0, -1, 0), roll=270)
+        # 2 ref(s): Bottom_Frame.Fixed
+        # was: Edge53
+    fcprim.lcs(bdy, "JOINT9", at=(-3, -10, 300), axis=(-0, 1, 0))
+        # 1 ref(s): Top_Frame.Distance
+        # was: Face1
+    fcprim.lcs(bdy, "JOINT10", at=(5.5, -8, 0), axis=(0, -0, 1))
+        # 1 ref(s): Top_Frame.Distance
+        # was: Face2
+    fcprim.lcs(bdy, "JOINT11", at=(5.5, 8, 0), axis=(0, -0, 1))
+        # 1 ref(s): Top_Frame.Distance
+        # was: Face2
+    fcprim.lcs(bdy, "JOINT12", at=(10, -10, 0), axis=(0, 1, 0), roll=270)
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Edge45
+    fcprim.lcs(bdy, "JOINT13", at=(10, -10, 0), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge47
+    fcprim.lcs(bdy, "JOINT14", at=(10, -10, 300), axis=(0, 1, 0), roll=270)
+        # 3 ref(s): Bottom_Frame.Fixed
+        # was: Edge90
+    fcprim.lcs(bdy, "JOINT15", at=(10, -10, 300), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge92
+    fcprim.lcs(bdy, "JOINT16", at=(10, 10, 0), axis=(0, 1, 0), roll=270)
+        # 4 ref(s): Bottom_Frame.Fixed
+        # was: Edge26
+    fcprim.lcs(bdy, "JOINT17", at=(10, 10, 300), axis=(0, 1, 0), roll=270)
+        # 1 ref(s): Bottom_Frame.Fixed
+        # was: Edge72
+    fcprim.lcs(bdy, "JOINT18", at=(10, 10, 300), axis=(-1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge70
+
+# _2020_300_TOP_FRONT
+    fcprim.lcs(bdy, "JOINT1", at=(-10, -10, -0), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge1
+    fcprim.lcs(bdy, "JOINT2", at=(-10, -10, 300), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge3
+    fcprim.lcs(bdy, "JOINT3", at=(10, -10, 0), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge47
+    fcprim.lcs(bdy, "JOINT4", at=(10, -10, 300), axis=(1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge92
+    fcprim.lcs(bdy, "JOINT5", at=(10, 10, 0), axis=(-1, 0, 0), roll=180)
+        # 1 ref(s): Top_Frame.Fixed
+        # was: Edge24
