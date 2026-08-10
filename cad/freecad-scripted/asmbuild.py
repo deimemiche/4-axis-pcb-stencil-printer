@@ -104,7 +104,7 @@ def fastener_class(App):
     return cls
 
 
-def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes):
+def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes, offsets):
     """Every fastener, put where its datum is.
 
     A fastener cannot use `BaseObject` here: the Fasteners workbench reads a
@@ -145,14 +145,17 @@ def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes):
                 except Exception:
                     pass
         asm.addObject(o)
-        # retType=3 gives the sub-element's placement in document coordinates:
-        # the attachment frame.  The measured offset then puts the screw where
-        # the workbench would have put it.
+        # The datum, plus the offset calibrated in this very frame.  See
+        # calibrate.py: measuring the offset from the hand-built assembly's own
+        # geometry meant composing two different resolutions of one edge, and
+        # OCC orients those inconsistently.  Measured here, there is nothing to
+        # compose.
         frame = link.getSubObject(sub, retType=3)
-        loc = w.get("local")
-        if loc:
+        off = offsets.get(f"{spec['document']}/{f['name']}")
+        if off:
             frame = frame.multiply(App.Placement(
-                App.Vector(*loc[:3]), App.Rotation(*loc[3:])))
+                App.Vector(*off["offset"][:3]),
+                App.Rotation(*off["offset"][3:])))
         o.Placement = frame
         made += 1
     return made
@@ -274,8 +277,12 @@ def build(App, name, model, wiring, files, cache):
         if fcls is None:
             notes.append("no FASTENER_SEED.FCStd -- run fastener-seed.py")
         else:
+            offsets = {}
+            cal = os.environ.get("ASM_OFFSETS")
+            if cal and os.path.exists(cal):
+                offsets = json.load(open(cal))
             fastened = place_fasteners(App, doc, asm, spec, wiring, links,
-                                       fcls, notes)
+                                       fcls, notes, offsets)
 
     doc.recompute()
     doc.save()

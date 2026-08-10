@@ -88,6 +88,40 @@ def leaf(link, sub):
     return obj, shp
 
 
+def body_sub(body, sub):
+    """The sub-element, resolved from inside the part it belongs to.
+
+    Deriving the frame from the body keeps it in the part's own coordinates,
+    which is where `fcprim.lcs` writes.  Composing a global frame back down
+    through `getSubObject(..., retType=3)` looks equivalent and is not: that
+    returns something other than the owner's global placement, and using it
+    puts most fasteners tens of millimetres out.
+    """
+    if body is None:
+        return None
+    parts = sub.split(".")
+    for i in range(len(parts)):
+        try:
+            shp = body.getSubObject(".".join(parts[i:]))
+        except Exception:
+            continue
+        if shp is not None and not shp.isNull():
+            return shp
+    return None
+
+
+def circle_frame(App, shape):
+    """A circular edge's own frame: its centre, with +Z down its axis."""
+    from FreeCAD import Placement, Rotation, Vector
+    if shape is None or shape.isNull() or shape.ShapeType != "Edge":
+        return None
+    curve = shape.Curve
+    if not hasattr(curve, "Center") or not hasattr(curve, "Axis"):
+        return None
+    return Placement(curve.Center,
+                     Rotation(Vector(0, 0, 1), curve.Axis))
+
+
 def collect(App, path):
     sys.path.append("/app/share/freecad/Mod/Assembly")
     import UtilsAssembly as U
@@ -106,47 +140,75 @@ def collect(App, path):
         link, subs = f.BaseObject
         if link is None or not subs:
             continue
-        body, shape = leaf(link, subs[0])
+        sub = subs[0]
+        body, shape = leaf(link, sub)
         part = body.Document.Name if body is not None else None
-        try:
-            plc = U.findPlacement(f.BaseObject)
-            at, axis, roll = decompose(App, plc)
-        except Exception as e:
-            failed.append({"assembly": doc.Name, "joint": f.Name,
-                           "prop": "BaseObject", "part": part, "sub": subs[0],
-                           "error": f"{type(e).__name__}: {e}"})
-            continue
-        kind = shape.ShapeType if shape is not None else None
-        geom = (type(shape.Surface).__name__ if kind == "Face" else
-                type(shape.Curve).__name__ if kind == "Edge" else kind)
-        # Where the screw sits relative to the frame it attaches to.
+
+        # NOT findPlacement.  That is built for joint references, which carry
+        # two subs; a fastener's BaseObject carries one, and findPlacement
+        # quietly returns the identity -- which put every fastener datum at the
+        # part origin.  A fastener always attaches to a circular edge, so the
+        # frame is the circle's own: centre, with Z down the axis.
         #
-        # A fastener's Placement is NOT its attachment frame: the workbench puts
-        # the head at one end, flips it for `Invert`, and adds `Offset`.  Give a
-        # fastener the datum's own placement and every bolt lands tens of
-        # millimetres out.  So the difference is measured here, in the
-        # attachment frame's coordinates, and the builder re-applies it -- a
-        # number taken from the assembly, like every other number in this file.
-        # Relative to the DATUM's frame, not the owner's.  getSubObject(...,
-        # retType=3) returns the owning object's placement; the datum sits at
-        # `plc` inside it, and the builder will resolve the datum itself, whose
-        # retType=3 already includes that.  Leaving it out here double-counts
-        # and every bolt lands out by the datum's own offset.
-        local = None
+        # A reference reads `BOT_RAIL_HOLDER001.Pocket002.Edge66` through the
+        # links but `Pocket002.Edge66` from inside the part, and how many
+        # leading components to drop varies.  Rather than guess, try each
+        # suffix and keep the first the body actually resolves.
+        gframe = circle_frame(App, link.getSubObject(sub))
+        frame = circle_frame(App, body_sub(body, sub))
+        if frame is None:
+            failed.append({"assembly": doc.Name, "joint": f.Name,
+                           "prop": "BaseObject", "part": part, "sub": sub,
+                           "error": "no circular edge to take a frame from"})
+            continue
+        at, axis, roll = decompose(App, frame)
+
+        # Where the screw sits relative to that hole.  A fastener's Placement is
+        # not its attachment frame: the workbench puts the head at one end,
+        # flips it for Invert and adds Offset.  Measured in the hole's own
+        # coordinates so the builder can re-apply it to the datum.
+        # Stored as a distance ALONG the hole axis, not as a full placement.
+        #
+        # `Rotation(Z, axis)` is a shortest-arc rotation, and it is not
+        # preserved by a transform: the frame taken globally and the datum
+        # written into the part differ by a roll about the axis.  A full offset
+        # expressed in one frame is then wrong in the other, unless it happens
+        # to be purely on-axis.  A distance along the axis has no such problem,
+        # and a bolt sitting in its own hole has no off-axis offset anyway --
+        # so `perp` is kept too, as the check that the frame really is the
+        # hole the fastener uses.
+        # Measured along the DATUM's own axis, not the globally-resolved
+        # edge's.  The same edge reached through the links and from inside the
+        # body can come back with opposite orientation, and a circle's Axis
+        # follows that -- so `along` measured one way and applied the other
+        # slides the screw backwards, out by exactly twice the offset.  The
+        # owner transform comes from retType=2's matrix, which is the
+        # accumulated placement; retType=3 is not it.
+        along = perp = None
+        owner = None
         try:
-            owner = link.getSubObject(subs[0], retType=3)
-            lp = owner.multiply(plc).inverse().multiply(f.Placement)
-            local = [round(v, 9) for v in
-                     (lp.Base.x, lp.Base.y, lp.Base.z,
-                      lp.Rotation.Q[0], lp.Rotation.Q[1],
-                      lp.Rotation.Q[2], lp.Rotation.Q[3])]
+            got = link.getSubObject(sub, retType=2)
+            if isinstance(got, tuple) and len(got) > 1:
+                owner = App.Placement(got[1])
         except Exception:
-            pass
+            owner = None
+        if frame is not None and owner is not None:
+            zaxis = owner.Rotation.multVec(
+                frame.Rotation.multVec(App.Vector(0, 0, 1)))
+            origin = owner.multVec(frame.Base)
+            delta = f.Placement.Base.sub(origin)
+            along = round(delta.dot(zaxis), 9)
+            perp = round(delta.sub(zaxis.multiply(along)).Length, 9)
+
+        kind = shape.ShapeType if shape is not None else None
+        geom = (type(shape.Curve).__name__ if kind == "Edge" else
+                type(shape.Surface).__name__ if kind == "Face" else kind)
         rows.append({"assembly": doc.Name, "joint": f.Name,
                      "joint_label": f.Label, "joint_type": "Fastener",
-                     "prop": "BaseObject", "part": part, "sub": subs[0],
+                     "prop": "BaseObject", "part": part, "sub": sub,
                      "kind": kind, "geom": geom, "at": at, "axis": axis,
-                     "roll": roll, "local": local,
+                     "roll": roll, "along": along, "perp": perp,
+                     "via_link": link.Name,
                      "fastener": str(getattr(f, "Type", "?")),
                      "diameter": str(getattr(f, "Diameter", "?"))})
 

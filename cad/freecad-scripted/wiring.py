@@ -101,7 +101,7 @@ def main():
             parts.pop()
         prefix = ".".join(parts) + "." if parts else ""
         rec = {"part": r["part"], "datum": name, "object": obj,
-               "prefix": prefix, "was": r["sub"]}
+               "prefix": prefix, "was": r["sub"], "via_link": r.get("via_link")}
         if name is None or obj is None:
             unmapped.append({**rec, "assembly": r["assembly"],
                              "joint": r["joint"], "prop": r["prop"]})
@@ -109,7 +109,8 @@ def main():
         if r["prop"] == "BaseObject":
             fasteners[f"{r['assembly']}/{r['joint']}"] = {
                 **rec, "type": r.get("fastener"),
-                "diameter": r.get("diameter"), "local": r.get("local")}
+                "diameter": r.get("diameter"),
+                "along": r.get("along"), "perp": r.get("perp")}
         else:
             joints.setdefault(f"{r['assembly']}/{r['joint']}", {})[r["prop"]] = rec
 
