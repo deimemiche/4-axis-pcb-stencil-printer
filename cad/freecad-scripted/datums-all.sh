@@ -9,7 +9,9 @@ FC="flatpak run --command=freecadcmd --filesystem=home --filesystem=$TMP org.fre
 for f in "$HERE"/../freecad/assembly/*.FCStd; do
     n=$(basename "$f" .FCStd)
     ASM_OUT="$TMP/$n.json" $FC "$HERE/datums.py" "$f" 2>&1 \
-        | tr '\r' '\n' | grep -E 'references,|FAILED|RAISED|Error' || true
+        | tr '\r' '\n' | grep -E 'references,|FAILED|RAISED|Error|Traceback' || true
+    # A document that produced no file did not merely report nothing: it died.
+    [ -f "$TMP/$n.json" ] || { echo "ABORT: $n produced no output"; exit 1; }
 done
 python3 - "$TMP" "$OUT" <<'PY'
 import glob, json, os, sys

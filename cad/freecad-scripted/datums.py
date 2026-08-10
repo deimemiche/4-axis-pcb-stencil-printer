@@ -56,12 +56,76 @@ def decompose(App, plc):
     )
 
 
+def leaf(link, sub):
+    """The part document at the end of a reference, and the shape it names.
+
+    A reference from a container assembly reads
+    `Bottom_Frame001.BOT_Z_AXIS_BRACKET.Edge52` -- a path through the child
+    links FreeCAD materialised, ending at a part.  The datum belongs on that
+    part, not on the sub-assembly the path starts in, so the chain is walked to
+    the end rather than stopping at the first hop.
+    """
+    obj = link.LinkedObject if link.TypeId in (
+        "App::Link", "Assembly::AssemblyLink") else link
+    try:
+        tail = link.getSubObject(sub, retType=1)
+    except Exception:
+        tail = None
+    if tail is not None:
+        while tail.TypeId in ("App::Link", "Assembly::AssemblyLink") and \
+                tail.LinkedObject is not None:
+            tail = tail.LinkedObject
+        obj = tail
+    try:
+        shp = link.getSubObject(sub)
+        # A sub-element FreeCAD could not map comes back as a *null* shape
+        # rather than None -- the four `?Edge39`-style references do this --
+        # and asking a null shape its type raises.
+        if shp is not None and shp.isNull():
+            shp = None
+    except Exception:
+        shp = None
+    return obj, shp
+
+
 def collect(App, path):
     sys.path.append("/app/share/freecad/Mod/Assembly")
     import UtilsAssembly as U
 
     doc = App.openDocument(path)
     rows, failed = [], []
+
+    # Fasteners attach through BaseObject, always to a circular edge -- the
+    # Fasteners workbench reads the hole's diameter and plane off it.  A datum
+    # has no such edge, so a scripted fastener is placed by a joint onto a
+    # datum instead, and that datum has to go where the hole is.  Same
+    # measurement, same frame, so they are collected together.
+    for f in doc.Objects:
+        if "BaseObject" not in f.PropertiesList or f.BaseObject is None:
+            continue
+        link, subs = f.BaseObject
+        if link is None or not subs:
+            continue
+        body, shape = leaf(link, subs[0])
+        part = body.Document.Name if body is not None else None
+        try:
+            plc = U.findPlacement(f.BaseObject)
+            at, axis, roll = decompose(App, plc)
+        except Exception as e:
+            failed.append({"assembly": doc.Name, "joint": f.Name,
+                           "prop": "BaseObject", "part": part, "sub": subs[0],
+                           "error": f"{type(e).__name__}: {e}"})
+            continue
+        kind = shape.ShapeType if shape is not None else None
+        geom = (type(shape.Surface).__name__ if kind == "Face" else
+                type(shape.Curve).__name__ if kind == "Edge" else kind)
+        rows.append({"assembly": doc.Name, "joint": f.Name,
+                     "joint_label": f.Label, "joint_type": "Fastener",
+                     "prop": "BaseObject", "part": part, "sub": subs[0],
+                     "kind": kind, "geom": geom, "at": at, "axis": axis,
+                     "roll": roll,
+                     "fastener": str(getattr(f, "Type", "?")),
+                     "diameter": str(getattr(f, "Diameter", "?"))})
 
     for j in doc.Objects:
         if "Reference1" not in j.PropertiesList:
@@ -73,7 +137,7 @@ def collect(App, path):
                 continue
             link, subs = ref
             sub = subs[0]
-            body = link.LinkedObject
+            body, shape = leaf(link, sub)
             part = body.Document.Name if body is not None else None
             try:
                 plc = U.findPlacement(ref)
@@ -83,13 +147,9 @@ def collect(App, path):
                                "prop": prop, "part": part, "sub": sub,
                                "error": f"{type(e).__name__}: {e}"})
                 continue
-            try:
-                shp = body.getSubObject(sub)
-                kind = shp.ShapeType if shp is not None else None
-                geom = (type(shp.Surface).__name__ if kind == "Face" else
-                        type(shp.Curve).__name__ if kind == "Edge" else kind)
-            except Exception:
-                kind, geom = None, None
+            kind = shape.ShapeType if shape is not None else None
+            geom = (type(shape.Curve).__name__ if kind == "Edge" else
+                    type(shape.Surface).__name__ if kind == "Face" else kind)
             rows.append({"assembly": doc.Name, "joint": j.Name,
                          "joint_label": j.Label, "joint_type": jtype,
                          "prop": prop, "part": part, "sub": sub,
