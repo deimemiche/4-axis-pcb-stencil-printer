@@ -10,16 +10,35 @@ an unhidden part would be off screen.  The document opens looking empty.
 
 Both of those live in `GuiDocument.xml`, and only a GUI can write one.  So this
 is the one script here that runs under the full FreeCAD binary rather than
-under `freecadcmd`, with Qt's offscreen platform so that it still needs no
-display:
+under `freecadcmd`:
 
-    flatpak run --filesystem=home --env=QT_QPA_PLATFORM=offscreen \\
-        org.freecad.FreeCAD cad/freecad/view.py                    # everything
-    flatpak run --filesystem=home --env=QT_QPA_PLATFORM=offscreen \\
-        org.freecad.FreeCAD cad/freecad/view.py shared/BOT_HANDWHEEL.FCStd
+    flatpak run --filesystem=home \\
+        org.freecad.FreeCAD cad/freecad-scripted/view.py           # everything
+    flatpak run --filesystem=home \\
+        org.freecad.FreeCAD cad/freecad-scripted/view.py shared/BOT_HANDWHEEL.FCStd
 
 Paths are relative to this directory.  Run it after `build.py` -- building
 stays headless, and this dresses what the build produced.
+
+**It needs a real display.**  Not `QT_QPA_PLATFORM=offscreen`, which is what
+this used to do and which is why every assembly in `asm/` was blank: offscreen
+there is no GL context, FreeCAD says so repeatedly, and six of the ten
+assemblies then deadlock partway through `App.openDocument` -- all eight
+threads asleep on a futex, no CPU, for ever, so nothing times out and nothing
+reports failure.
+
+It is worth being clear that this is *not* about the documents, because two
+plausible theories died here.  It is not size or nesting: `Top_Frame` hangs
+offscreen with 97 objects while `Stencil_Clamp` goes through with 100.  It is
+not the swept threads either: `Eccenter` links `M8_55` and its 44 turns and
+dresses fine.  On a real X11 display with direct rendering all ten dress in a
+couple of minutes, the 536-object `4-Axis_Stencil_Printer` included.  The cost
+is that windows appear on screen while it runs.
+
+`rebuild.py` still gives each assembly its own process.  With a display that
+may no longer be necessary, but a part re-opened after being closed in the same
+session is a documented hazard here -- see `per_document` in `rebuild.py` --
+and one FreeCAD start per assembly is a cheap way not to find out.
 """
 
 import os
@@ -32,22 +51,10 @@ import FreeCADGui as Gui
 from FreeCAD import Rotation, Vector
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ASSEMBLIES = os.path.join(HERE, "asm")
-# Assemblies that do not live in `asm/`.  There are none now that the
-# microscope has been shelved, but the ordering rule below still needs the hook.
-ELSEWHERE = ()
-
-# Folders this script must not walk into.  Michael's hand-built `assembly/`
-# lives in the frozen `../freecad/` tree and holds its parts together with
-# **face and edge names** rather than with the LCS datums `asm/` uses.  Nothing
-# in it is generated, so there is nothing here to dress -- and re-saving a
-# document whose topological references have gone stale is how they get quietly
-# rebound to the wrong edge.  Naming one on the command line still works; this
-# only stops a bare run from finding it.
-KEEP_OUT = ("assembly",)
 sys.path.insert(0, HERE)
 
 import fcprim  # noqa: E402  (needs the path above)
+from doclist import documents  # noqa: E402  (same)
 
 # How far the camera stands back, and how much air is left around the model,
 # both as multiples of its diagonal.  An orthographic view is framed by its
@@ -106,47 +113,38 @@ def say(*args):
     os.write(1, (" ".join(str(a) for a in args) + "\n").encode())
 
 
-def documents(argv):
-    """Every built document, parts before the assemblies that link them.
-
-    Order matters here even though each document is saved on its own: a link
-    remembers when the part it points at was last written, so re-saving a part
-    after the assembly leaves the assembly complaining that its links are out
-    of date every time it is opened.  `asm/` sorts first alphabetically, which
-    is exactly the wrong way round.
-
-    A named path may point outside this tree, which is how the hand-built
-    assembly in `../freecad/assembly/` gets dressed without this script ever
-    walking into it.
-    """
-    chosen = [a for a in argv if a.endswith(".FCStd")]
-    if chosen:
-        return [c if os.path.isabs(c) else os.path.join(HERE, c)
-                for c in chosen]
-    found = []
-    for folder, subs, names in os.walk(HERE):
-        subs[:] = [s for s in subs if s not in KEEP_OUT]
-        found += [os.path.join(folder, n)
-                  for n in names if n.endswith(".FCStd")]
-
-    def assembly(path):
-        return (os.path.dirname(path) == ASSEMBLIES
-                or os.path.basename(path) in ELSEWHERE)
-
-    return sorted(found, key=lambda p: (assembly(p), p))
-
-
 def placed_box(doc):
     """The bounding box of everything the document is going to show.
 
     An `App::Link` shares one shape with every other link to the same part and
     carries the placement itself, so its shape has to be moved before it
     counts -- otherwise a whole machine measures as one part at the origin.
+
+    But a link's `Placement` is only global when the link sits at the top of
+    the document.  Inside a nested assembly it is relative to the container,
+    and reading it as global flings the part off into space: measured that way
+    the whole machine came out 2137mm across the diagonal when it is really
+    719mm, and every top-level assembly was framed three times too far out.
+    An `Assembly::AssemblyObject` carries the union of everything it holds,
+    already correctly placed and nesting and all -- so where there is one, it
+    is the answer, and the links it contains must not be counted again.
     """
+    containers = [obj for obj in doc.Objects
+                  if obj.TypeId == "Assembly::AssemblyObject"]
+    if containers:
+        box = None
+        for obj in containers:
+            shape = getattr(obj, "Shape", None)
+            if shape is None or shape.isNull() or not shape.Solids:
+                continue
+            box = shape.BoundBox if box is None else box.united(shape.BoundBox)
+        if box is not None:
+            return box
+
     box = None
-    for obj in doc.Objects:
+    for obj in doc.Objects:                # a part document: no container
         if not getattr(obj, "Visibility", False) or obj.TypeId in SKIP:
-            continue                       # the container's shape is the union
+            continue
         shape = getattr(obj, "Shape", None)
         if shape is None or shape.isNull() or not shape.Solids:
             continue

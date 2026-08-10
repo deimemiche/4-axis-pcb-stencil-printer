@@ -42,6 +42,9 @@ import sys
 import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import doclist  # noqa: E402  (needs the path above)
+
 DATA = os.path.join(HERE, "data")
 FROZEN = os.path.normpath(os.path.join(HERE, "..", "freecad", "assembly"))
 ASM = os.path.join(HERE, "asm")
@@ -51,9 +54,21 @@ FREECAD = ["flatpak", "run", "--command=freecadcmd", "--filesystem=home",
 
 # `view.py` needs the real FreeCAD, not freecadcmd: only a GUI can write a
 # GuiDocument.xml, and without one every document opens with everything hidden
-# and the camera a millimetre wide at the origin.  Offscreen is enough.
-FREECAD_GUI = ["flatpak", "run", "--filesystem=home",
-               "--env=QT_QPA_PLATFORM=offscreen", "org.freecad.FreeCAD"]
+# and the camera a millimetre wide at the origin.
+#
+# It needs a real display too, which is the expensive lesson here.  Run under
+# `QT_QPA_PLATFORM=offscreen` and there is no GL context -- FreeCAD says so,
+# repeatedly, and then six of the ten assemblies deadlock on a futex partway
+# through `openDocument`: every thread asleep, no CPU, for ever.  It is not
+# about which documents or what is in them; `Top_Frame` hangs offscreen with no
+# threaded stock in it at all, while the bigger `Stencil_Clamp` goes through.
+# On a real X11 display with direct rendering all ten dress in a couple of
+# minutes, `4-Axis_Stencil_Printer` and its 421 links included.
+#
+# So this pops actual windows on the user's screen for the length of the dress
+# stage.  That is a real cost, and it is still the cheap option: the
+# alternative is writing `GuiDocument.xml` by hand.
+FREECAD_GUI = ["flatpak", "run", "--filesystem=home", "org.freecad.FreeCAD"]
 
 NINE = ["4-Axis_Stencil_Printer", "Bottom_Assembly", "Bottom_Frame", "Eccenter",
         "Rotation_Table", "Stencil_Clamp", "Top_Assembly", "Top_Frame",
@@ -85,10 +100,21 @@ def run(script, args=(), env=None, quiet=True):
     return out
 
 
-def run_gui(script, args=()):
-    """One full-FreeCAD subprocess, offscreen."""
-    p = subprocess.run(FREECAD_GUI + [os.path.join(HERE, script)] + list(args),
-                       capture_output=True, text=True)
+def run_gui(script, args=(), timeout=1800):
+    """One full-FreeCAD subprocess, offscreen.
+
+    The timeout is not belt and braces.  FreeCAD deadlocks outright on some
+    document combinations -- see `stage_dress` -- and a deadlocked process
+    sleeps rather than spins, so nothing short of a clock notices.  Without
+    this the whole pipeline waits for ever at no CPU.
+    """
+    cmd = FREECAD_GUI + [os.path.join(HERE, script)] + list(args)
+    try:
+        p = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        say(f"\n!! {script} hung for {timeout}s and was killed"
+            + (f" on {os.path.basename(args[0])}" if len(args) == 1 else ""))
+        raise SystemExit(1)
     out = (p.stdout + p.stderr).replace("\r", "\n")
     if "RAISED" in out or "Traceback (most recent call last)" in out:
         say(f"\n!! {script} failed:")
@@ -230,12 +256,44 @@ def stage_dress():
     somewhere no fit could ever return and asks FreeCAD to fit, so a scene with
     nothing visible in it cannot move the camera and the failure is caught
     rather than saved.
+
+    The parts go in one process; each assembly gets its own.  An assembly opens
+    every part it links, and a document reopened after being closed earlier in
+    the same session makes FreeCAD log `Reload partial document` and deadlock --
+    all eight threads asleep on a futex, no CPU, for ever.  This is the same
+    hazard `per_document` is built around, and dressing had it too: a run died
+    on the third assembly and left all ten of them blank.
+
+    Which is why this counts what it produced rather than trusting that it ran.
+    `view.py` cannot report a hang, so the check is made from outside, on the
+    files: a `.FCStd` is a zip, and either `GuiDocument.xml` is in it or the
+    document opens blank.
     """
-    out = run_gui("view.py")
-    for line in out.splitlines():
-        if line.strip() and ("dressed" in line or "nothing visible" in line
-                             or "FAILED" in line):
-            say(f"  {line.strip()}")
+    if not os.environ.get("DISPLAY") and not os.environ.get("WAYLAND_DISPLAY"):
+        raise SystemExit(
+            "!! dress needs a real display: no DISPLAY or WAYLAND_DISPLAY set.\n"
+            "   Offscreen deadlocks FreeCAD -- see the note on FREECAD_GUI.\n"
+            "   Run this stage from a desktop session, or under a virtual\n"
+            "   display that provides GL (xvfb-run -s '-screen 0 1280x1024x24').")
+
+    every = doclist.documents()
+    parts = [p for p in every if not doclist.is_assembly(p)]
+    assemblies = [p for p in every if doclist.is_assembly(p)]
+
+    say(f"  {len(parts)} parts, in one process")
+    run_gui("view.py", parts)
+    for path in assemblies:
+        say(f"    {os.path.basename(path)}")
+        run_gui("view.py", [path])
+
+    missing = doclist.undressed(every)
+    if missing:
+        say(f"\n!! {len(missing)} document(s) have no GuiDocument.xml "
+            f"and will open blank:")
+        for path in missing:
+            say(f"     {os.path.relpath(path, HERE)}")
+        raise SystemExit(1)
+    say(f"  {len(every)} dressed, all carrying a GuiDocument.xml")
 
 
 def stage_verify():
