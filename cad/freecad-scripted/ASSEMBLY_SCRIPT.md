@@ -5,10 +5,11 @@ the plan for **rebuilding, from Python, the assembly Michael built by hand** in
 [`../freecad/assembly/`](../freecad/assembly/) — so that the nine documents there stop being the only
 copy of that work.
 
-**Nothing here is built yet.** This is the design and the measurements it rests
-on, written down before any code, so the go/no-go is decided on numbers rather
-than on enthusiasm. The work happens on the `assembly-datums` branch; the nine
-hand-built documents are not touched until the last step.
+**Steps 1 to 5 are built.** What follows is the design, kept because the
+reasoning still explains the code; `## Where it got to` records what actually
+happened, including the places the plan was wrong. The work is on the
+`assembly-datums` branch, and the nine hand-built documents were never written
+to -- verified by checksum after every run.
 
 ## Why
 
@@ -262,6 +263,65 @@ with the hand-built documents as the answer key, so that a wrong answer shows up
 as a diff rather than as an opinion. Datums are what make that expressible:
 `MOUNT`, `ROD`, `BOLT3` are intent; `Edge52` is not.
 
+## Where it got to
+
+    parts      145/145 exact, worst 0.000000 mm
+    fasteners  233/241 exact
+    joints     149, none naming an edge
+    datums     308 across 59 part documents
+
+Every leaf sub-assembly -- `Bottom_Frame`, `Eccenter`, `Rotation_Table`,
+`Top_Frame`, `X-Axis_Carriage`, `Stencil_Clamp` -- reproduces the hand-built
+machine exactly, parts and bolts alike. **A joint on a named datum puts a part
+exactly where a joint on `Edge52` did**, which is the question the whole plan
+existed to answer.
+
+The pipeline, in order:
+
+    extract-all.sh    the nine documents -> model.json          (step 1)
+    datums-all.sh     every reference measured -> datums.json   (step 2)
+    datum-names.py    named by what mates there -> datum-plan.json
+    build.py          the parts, datums and all                 (step 3)
+    wiring.py         old edge name -> new datum -> wiring.json
+    calibrate.py      each fastener's offset, in the datum frame
+    asmbuild.py       the nine assemblies                       (step 4)
+    asmpose.py        solved placements, one document per process (step 5)
+
+### What is not done
+
+**Eight fasteners**, all in container assemblies, where a reference reaches
+through a sub-assembly path that resolves to no datum. `Nut031`'s `BaseObject`
+lands on `Bottom_Assembly` itself rather than on any part; `Nut030`'s path
+resolves to nothing; six more sit off-axis from the datum they matched. The
+build names them in its own notes.
+
+**Step 6**, the intent-level source. The datum positions are still literals,
+because that is what a measurement gives.
+
+### What the plan got wrong
+
+*"Two things bite"* about the API was two of about eight. The ones that cost
+most:
+
+* `findPlacement` returns the **identity** for a fastener. It is built for
+  joint references, which carry two subs; a `BaseObject` carries one and falls
+  through. Every fastener datum was measured at the part origin, and no amount
+  of fixing the transform afterwards helped.
+* A joint reference stores **two** subs, `(element, vertex)`. A one-element
+  list makes the workbench's own validation raise `list index out of range`.
+* The same edge reached through the links and from inside the body can come
+  back with **opposite orientation**, and a circle's `Axis` follows. An offset
+  measured in one frame and applied in the other puts a bolt out by exactly
+  twice its own offset.
+* `import FastenersCmd` **segfaults** under `freecadcmd`. The module loads only
+  when FreeCAD restores it from a document that already holds a fastener, which
+  is what `fastener-seed.py` exists for.
+* `isPartConnected` reports almost every part in a working assembly as
+  unreached. It is not a DOF check.
+
+The solve turned out to be **idempotent** after all: the plan budgeted a 1e-5
+tolerance and the difference is 0.000000 mm.
+
 ## Sequence
 
 1. **Extractor**, read-only: nine documents to a neutral model — 145 part
@@ -287,9 +347,9 @@ as a diff rather than as an opinion. Datums are what make that expressible:
 Steps 1 and 2 are read-only and cannot disturb work in progress. Step 3 is the
 first one that writes.
 
-[`asm/asmprim.py`](asm/asmprim.py) is worth reading before step 4 — not as
-authority, but it already solved the document-creation plumbing, even though its
-joints were scripted placements rather than real ones.
+`asm/asmprim.py` was worth reading before step 4 — not as authority, but it had
+already solved the document-creation plumbing. It has since been deleted with
+the rest of the retired attempt.
 
 ## Carried over from diagnosing the assembly
 
