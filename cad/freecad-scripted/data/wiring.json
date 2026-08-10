@@ -1,0 +1,6126 @@
+{
+ "fasteners": {
+  "Bottom_Assembly/Nut029": {
+   "along": -0.0,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "BOT_HANDWHEEL",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_HANDWHEEL001",
+   "was": "Pocket003.Edge203"
+  },
+  "Bottom_Assembly/Nut030": {
+   "along": -0.0,
+   "datum": "NUT",
+   "diameter": "M5",
+   "object": "LCS010",
+   "part": "BOT_BRACKET_X_AXIS",
+   "perp": 23.194827009,
+   "prefix": "BOT_BRACKET_X_AXIS001.",
+   "type": "DIN934",
+   "via_link": "Bottom_Frame001",
+   "was": "BOT_BRACKET_X_AXIS001.Pocket001.Edge40"
+  },
+  "Bottom_Assembly/Nut032": {
+   "along": -40.849313862,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "BOT_HANDWHEEL",
+   "perp": 597.115654543,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_HANDWHEEL002",
+   "was": "Pocket003.Edge203"
+  },
+  "Bottom_Assembly/Screw107": {
+   "along": 6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_RAIL_HOLDER",
+   "perp": 29.416318226,
+   "prefix": "BOT_RAIL_HOLDER001.",
+   "type": "ISO4762",
+   "via_link": "X_Axis_Carriage",
+   "was": "BOT_RAIL_HOLDER001.Pocket002.Edge68"
+  },
+  "Bottom_Assembly/Screw108": {
+   "along": 6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_RAIL_HOLDER",
+   "perp": 5.099019514,
+   "prefix": "BOT_RAIL_HOLDER001.",
+   "type": "ISO4762",
+   "via_link": "X_Axis_Carriage",
+   "was": "BOT_RAIL_HOLDER001.Pocket002.Edge66"
+  },
+  "Bottom_Assembly/Screw109": {
+   "along": 6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_RAIL_HOLDER",
+   "perp": 29.416318226,
+   "prefix": "BOT_RAIL_HOLDER.",
+   "type": "ISO4762",
+   "via_link": "X_Axis_Carriage",
+   "was": "BOT_RAIL_HOLDER.Pocket002.Edge68"
+  },
+  "Bottom_Assembly/Screw110": {
+   "along": 6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_RAIL_HOLDER",
+   "perp": 5.099019514,
+   "prefix": "BOT_RAIL_HOLDER.",
+   "type": "ISO4762",
+   "via_link": "X_Axis_Carriage",
+   "was": "BOT_RAIL_HOLDER.Pocket002.Edge66"
+  },
+  "Bottom_Assembly/Screw111": {
+   "along": 6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_RAIL_HOLDER",
+   "perp": 5.099019514,
+   "prefix": "BOT_RAIL_HOLDER002.",
+   "type": "ISO4762",
+   "via_link": "X_Axis_Carriage",
+   "was": "BOT_RAIL_HOLDER002.Pocket002.Edge66"
+  },
+  "Bottom_Assembly/Screw112": {
+   "along": 6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_RAIL_HOLDER",
+   "perp": 29.416318226,
+   "prefix": "BOT_RAIL_HOLDER002.",
+   "type": "ISO4762",
+   "via_link": "X_Axis_Carriage",
+   "was": "BOT_RAIL_HOLDER002.Pocket002.Edge68"
+  },
+  "Bottom_Assembly/Screw113": {
+   "along": 6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_RAIL_HOLDER",
+   "perp": 5.099019514,
+   "prefix": "BOT_RAIL_HOLDER003.",
+   "type": "ISO4762",
+   "via_link": "X_Axis_Carriage",
+   "was": "BOT_RAIL_HOLDER003.Pocket002.Edge66"
+  },
+  "Bottom_Assembly/Screw114": {
+   "along": 6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_RAIL_HOLDER",
+   "perp": 29.416318226,
+   "prefix": "BOT_RAIL_HOLDER003.",
+   "type": "ISO4762",
+   "via_link": "X_Axis_Carriage",
+   "was": "BOT_RAIL_HOLDER003.Pocket002.Edge68"
+  },
+  "Bottom_Assembly/Screw139": {
+   "along": 0.0,
+   "datum": "GRUB",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "BOT_HANDWHEEL",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4027",
+   "via_link": "BOT_HANDWHEEL001",
+   "was": "Pocket003.Edge168"
+  },
+  "Bottom_Assembly/Screw140": {
+   "along": 50.049313862,
+   "datum": "GRUB",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "BOT_HANDWHEEL",
+   "perp": 597.115654543,
+   "prefix": "",
+   "type": "ISO4027",
+   "via_link": "BOT_HANDWHEEL002",
+   "was": "Pocket003.Edge168"
+  },
+  "Bottom_Assembly/Screw149": {
+   "along": -14.5,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS",
+   "part": "ECCF_BOT",
+   "perp": 14.5,
+   "prefix": "ECCF_BOT002.",
+   "type": "ISO4762",
+   "via_link": "Eccenter002",
+   "was": "ECCF_BOT002.Pocket003.Edge40"
+  },
+  "Bottom_Assembly/Screw150": {
+   "along": -14.5,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "ECCF_BOT",
+   "perp": 14.5,
+   "prefix": "ECCF_BOT002.",
+   "type": "ISO4762",
+   "via_link": "Eccenter002",
+   "was": "ECCF_BOT002.Pocket003.Edge46"
+  },
+  "Bottom_Assembly/Screw151": {
+   "along": -14.5,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "ECCF_BOT",
+   "perp": 14.5,
+   "prefix": "ECCF_BOT001.",
+   "type": "ISO4762",
+   "via_link": "Eccenter001",
+   "was": "ECCF_BOT001.Pocket003.Edge46"
+  },
+  "Bottom_Assembly/Screw152": {
+   "along": -14.5,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS",
+   "part": "ECCF_BOT",
+   "perp": 14.5,
+   "prefix": "ECCF_BOT001.",
+   "type": "ISO4762",
+   "via_link": "Eccenter001",
+   "was": "ECCF_BOT001.Pocket003.Edge40"
+  },
+  "Bottom_Assembly/Screw153": {
+   "along": -14.5,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS",
+   "part": "ECCF_BOT",
+   "perp": 14.5,
+   "prefix": "ECCF_BOT003.",
+   "type": "ISO4762",
+   "via_link": "Eccenter003",
+   "was": "ECCF_BOT003.Pocket003.Edge40"
+  },
+  "Bottom_Assembly/Screw154": {
+   "along": -14.5,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS",
+   "part": "ECCF_BOT",
+   "perp": 14.5,
+   "prefix": "ECCF_BOT.",
+   "type": "ISO4762",
+   "via_link": "Eccenter",
+   "was": "ECCF_BOT.Pocket003.Edge40"
+  },
+  "Bottom_Assembly/Screw155": {
+   "along": -14.5,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "ECCF_BOT",
+   "perp": 14.5,
+   "prefix": "ECCF_BOT.",
+   "type": "ISO4762",
+   "via_link": "Eccenter",
+   "was": "ECCF_BOT.Pocket003.Edge46"
+  },
+  "Bottom_Assembly/Screw156": {
+   "along": -14.5,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "ECCF_BOT",
+   "perp": 14.5,
+   "prefix": "ECCF_BOT003.",
+   "type": "ISO4762",
+   "via_link": "Eccenter003",
+   "was": "ECCF_BOT003.Pocket003.Edge46"
+  },
+  "Bottom_Frame/Screw": {
+   "along": 34.0,
+   "datum": "BOLT6",
+   "diameter": "M4",
+   "object": "LCS007",
+   "part": "BOT_BRACKET_X_AXIS",
+   "perp": 26.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKET_X_AXIS",
+   "was": "Pocket001.Edge20"
+  },
+  "Bottom_Frame/Screw001": {
+   "along": 54.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS006",
+   "part": "BOT_BRACKET_X_AXIS",
+   "perp": 46.0,
+   "prefix": "BOT_BRACKET_X_AXIS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKET_X_AXIS",
+   "was": "BOT_BRACKET_X_AXIS.Pocket001.Edge19"
+  },
+  "Bottom_Frame/Screw002": {
+   "along": 14.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_BRACKET_X_AXIS",
+   "perp": 6.0,
+   "prefix": "BOT_BRACKET_X_AXIS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKET_X_AXIS",
+   "was": "BOT_BRACKET_X_AXIS.Pocket001.Edge18"
+  },
+  "Bottom_Frame/Screw003": {
+   "along": -6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "Pocket.Edge19"
+  },
+  "Bottom_Frame/Screw004": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "BOT_BRACKETS003.Pocket.Edge18"
+  },
+  "Bottom_Frame/Screw005": {
+   "along": -6.0,
+   "datum": "FOOT",
+   "diameter": "M4",
+   "object": "LCS007",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "BOT_BRACKETS003.Pocket.Edge15"
+  },
+  "Bottom_Frame/Screw006": {
+   "along": -26.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 34.0,
+   "prefix": "BOT_BRACKETS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "BOT_BRACKETS003.Pocket.Edge16"
+  },
+  "Bottom_Frame/Screw007": {
+   "along": -46.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 54.0,
+   "prefix": "BOT_BRACKETS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "BOT_BRACKETS003.Pocket.Edge17"
+  },
+  "Bottom_Frame/Screw008": {
+   "along": -10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_Z_AXIS_BRACKET",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET",
+   "was": "Pocket005.Edge23"
+  },
+  "Bottom_Frame/Screw009": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_Z_AXIS_BRACKET",
+   "perp": 10.0,
+   "prefix": "BOT_Z_AXIS_BRACKET.",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET",
+   "was": "BOT_Z_AXIS_BRACKET.Pocket005.Edge22"
+  },
+  "Bottom_Frame/Screw010": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_Z_AXIS_BRACKET",
+   "perp": 10.0,
+   "prefix": "BOT_Z_AXIS_BRACKET.",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET",
+   "was": "BOT_Z_AXIS_BRACKET.Pocket005.Edge24"
+  },
+  "Bottom_Frame/Screw011": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_Z_AXIS_BRACKET",
+   "perp": 30.0,
+   "prefix": "BOT_Z_AXIS_BRACKET.",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET",
+   "was": "BOT_Z_AXIS_BRACKET.Pocket005.Edge25"
+  },
+  "Bottom_Frame/Screw012": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS006",
+   "part": "BOT_Z_AXIS_BRACKET",
+   "perp": 50.0,
+   "prefix": "BOT_Z_AXIS_BRACKET.",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET",
+   "was": "BOT_Z_AXIS_BRACKET.Pocket005.Edge21"
+  },
+  "Bottom_Frame/Screw013": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "was": "Pocket005.Edge26"
+  },
+  "Bottom_Frame/Screw014": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "perp": 10.0,
+   "prefix": "BOT_Z_AXIS_BRACKET_MIRRORED.",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "was": "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge25"
+  },
+  "Bottom_Frame/Screw015": {
+   "along": -10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "perp": 10.0,
+   "prefix": "BOT_Z_AXIS_BRACKET_MIRRORED.",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "was": "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge24"
+  },
+  "Bottom_Frame/Screw016": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "perp": 30.0,
+   "prefix": "BOT_Z_AXIS_BRACKET_MIRRORED.",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "was": "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge27"
+  },
+  "Bottom_Frame/Screw017": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS006",
+   "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "perp": 50.0,
+   "prefix": "BOT_Z_AXIS_BRACKET_MIRRORED.",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "was": "BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge23"
+  },
+  "Bottom_Frame/Screw018": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "Pocket.Edge28"
+  },
+  "Bottom_Frame/Screw019": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "BOT_BRACKETS.Pocket.Edge27"
+  },
+  "Bottom_Frame/Screw020": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 30.0,
+   "prefix": "BOT_BRACKETS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "BOT_BRACKETS.Pocket.Edge25"
+  },
+  "Bottom_Frame/Screw021": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_BRACKETS",
+   "perp": 50.0,
+   "prefix": "BOT_BRACKETS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "BOT_BRACKETS.Pocket.Edge26"
+  },
+  "Bottom_Frame/Screw022": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_BRACKETS",
+   "perp": 50.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "Pocket.Edge26"
+  },
+  "Bottom_Frame/Screw023": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 30.0,
+   "prefix": "BOT_BRACKETS004.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "BOT_BRACKETS004.Pocket.Edge25"
+  },
+  "Bottom_Frame/Screw024": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS004.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "BOT_BRACKETS004.Pocket.Edge27"
+  },
+  "Bottom_Frame/Screw025": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS004.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "BOT_BRACKETS004.Pocket.Edge28"
+  },
+  "Bottom_Frame/Screw026": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_BRACKETS",
+   "perp": 50.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "Pocket.Edge26"
+  },
+  "Bottom_Frame/Screw027": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 30.0,
+   "prefix": "BOT_BRACKETS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "BOT_BRACKETS002.Pocket.Edge25"
+  },
+  "Bottom_Frame/Screw028": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "BOT_BRACKETS002.Pocket.Edge27"
+  },
+  "Bottom_Frame/Screw029": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "BOT_BRACKETS002.Pocket.Edge28"
+  },
+  "Bottom_Frame/Screw030": {
+   "along": -6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "Pocket.Edge19"
+  },
+  "Bottom_Frame/Screw031": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "BOT_BRACKETS001.Pocket.Edge18"
+  },
+  "Bottom_Frame/Screw032": {
+   "along": -26.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 34.0,
+   "prefix": "BOT_BRACKETS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "BOT_BRACKETS001.Pocket.Edge16"
+  },
+  "Bottom_Frame/Screw033": {
+   "along": -46.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 54.0,
+   "prefix": "BOT_BRACKETS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "BOT_BRACKETS001.Pocket.Edge17"
+  },
+  "Bottom_Frame/Screw038": {
+   "along": -10.55,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "perp": 17.45,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "was": "Pocket005.Edge94"
+  },
+  "Bottom_Frame/Screw039": {
+   "along": -10.55,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_Z_AXIS_BRACKET",
+   "perp": 17.45,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET",
+   "was": "Pocket005.Edge92"
+  },
+  "Bottom_Frame/Screw040": {
+   "along": -0.6,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_Z_AXIS_BRACKET",
+   "perp": 27.4,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET",
+   "was": "Pocket005.Edge86"
+  },
+  "Bottom_Frame/Screw041": {
+   "along": -0.6,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "perp": 27.4,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_Z_AXIS_BRACKET_MIRRORED",
+   "was": "Pocket005.Edge92"
+  },
+  "Bottom_Frame/Screw042": {
+   "along": -0.0,
+   "datum": "BOLT",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "STAND",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "STAND002",
+   "was": "Revolution.Edge10"
+  },
+  "Bottom_Frame/Screw043": {
+   "along": -0.0,
+   "datum": "BOLT",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "STAND",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "STAND001",
+   "was": "Revolution.Edge10"
+  },
+  "Bottom_Frame/Screw044": {
+   "along": 0.0,
+   "datum": "BOLT",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "STAND",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "STAND",
+   "was": "Revolution.Edge10"
+  },
+  "Bottom_Frame/Screw045": {
+   "along": -0.0,
+   "datum": "BOLT",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "STAND",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "STAND003",
+   "was": "Revolution.Edge10"
+  },
+  "Eccenter/Insert": {
+   "along": -0.0,
+   "datum": "INSERT1",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "ECCF_MOUNT",
+   "perp": 7.424621202,
+   "prefix": "",
+   "type": "IUTHeatInsert",
+   "via_link": "ECCF_MOUNT",
+   "was": "Pocket001.Edge34"
+  },
+  "Eccenter/Insert001": {
+   "along": -0.0,
+   "datum": "INSERT2",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "ECCF_MOUNT",
+   "perp": 7.424621202,
+   "prefix": "ECCF_MOUNT.",
+   "type": "IUTHeatInsert",
+   "via_link": "ECCF_MOUNT",
+   "was": "ECCF_MOUNT.Pocket001.Edge33"
+  },
+  "Eccenter/Nut": {
+   "along": -14.0,
+   "datum": "STUD",
+   "diameter": "M8",
+   "object": "LCS005",
+   "part": "ECCF_BOT",
+   "perp": 14.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "ECCF_BOT",
+   "was": "Pocket003.Edge49"
+  },
+  "Eccenter/Nut002": {
+   "along": -10.0,
+   "datum": "NUT",
+   "diameter": "M8",
+   "object": "LCS004",
+   "part": "ECCF_BOT",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "ECCF_BOT",
+   "was": "Pocket003.Edge26"
+  },
+  "Eccenter/Nut003": {
+   "along": -2.0,
+   "datum": "NUT",
+   "diameter": "M8",
+   "object": "LCS001",
+   "part": "ECCF_HEIGHT",
+   "perp": 2.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "ECCF_HEIGHT",
+   "was": "Pocket002.Edge86"
+  },
+  "Eccenter/Nut004": {
+   "along": -20.0,
+   "datum": "STUD",
+   "diameter": "M8",
+   "object": "LCS001",
+   "part": "ECCF_TOP",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "ECCF_TOP",
+   "was": "Pocket001.Edge62"
+  },
+  "Eccenter/Screw": {
+   "along": 35.65,
+   "datum": "BOLT",
+   "diameter": "M4",
+   "object": "LCS",
+   "part": "ECCF_LEVER",
+   "perp": 30.85,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "ECCF_LEVER",
+   "was": "Pocket001.Edge24"
+  },
+  "Eccenter/Screw001": {
+   "along": 1.25,
+   "datum": "BOLT",
+   "diameter": "M4",
+   "object": "LCS",
+   "part": "ECCF_LEVER_MIRRORED",
+   "perp": 6.600189391,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "ECCF_LEVER_MIRRORED",
+   "was": "Pocket001.Edge24"
+  },
+  "Rotation_Table/Nut": {
+   "along": -0.0,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "BOT_HANDWHEEL",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_HANDWHEEL",
+   "was": "Pocket003.Edge203"
+  },
+  "Rotation_Table/Nut001": {
+   "along": -15.5,
+   "datum": "NUT1",
+   "diameter": "M5",
+   "object": "LCS013",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "perp": 33.320414163,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "was": "Pocket004.Edge83"
+  },
+  "Rotation_Table/Nut002": {
+   "along": 3.1,
+   "datum": "NUT2",
+   "diameter": "M5",
+   "object": "LCS014",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "perp": 44.672250895,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge105"
+  },
+  "Rotation_Table/Screw": {
+   "along": 0.0,
+   "datum": "GRUB",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "BOT_HANDWHEEL",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4027",
+   "via_link": "BOT_HANDWHEEL",
+   "was": "Pocket003.Edge168"
+  },
+  "Rotation_Table/Screw001": {
+   "along": 12.8,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS006",
+   "part": "BOT_ROD_HOLDER_ALPHA_AXIS",
+   "perp": 14.21425341,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_ROD_HOLDER_ALPHA_AXIS",
+   "was": "Pocket001.Edge9"
+  },
+  "Rotation_Table/Screw002": {
+   "along": 12.8,
+   "datum": "BOLT7",
+   "diameter": "M3",
+   "object": "LCS008",
+   "part": "BOT_ROD_HOLDER_ALPHA_AXIS",
+   "perp": 29.360602855,
+   "prefix": "BOT_ROD_HOLDER_ALPHA_AXIS.",
+   "type": "ISO4762",
+   "via_link": "BOT_ROD_HOLDER_ALPHA_AXIS",
+   "was": "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge8"
+  },
+  "Rotation_Table/Screw003": {
+   "along": -7.5,
+   "datum": "BOLT8",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_ROD_HOLDER_ALPHA_AXIS",
+   "perp": 14.575493131,
+   "prefix": "BOT_ROD_HOLDER_ALPHA_AXIS.",
+   "type": "ISO4762",
+   "via_link": "BOT_ROD_HOLDER_ALPHA_AXIS",
+   "was": "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge34"
+  },
+  "Rotation_Table/Screw004": {
+   "along": -7.5,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS007",
+   "part": "BOT_ROD_HOLDER_ALPHA_AXIS",
+   "perp": 6.296427559,
+   "prefix": "BOT_ROD_HOLDER_ALPHA_AXIS.",
+   "type": "ISO4762",
+   "via_link": "BOT_ROD_HOLDER_ALPHA_AXIS",
+   "was": "BOT_ROD_HOLDER_ALPHA_AXIS.Pocket001.Edge36"
+  },
+  "Rotation_Table/Screw005": {
+   "along": 22.1,
+   "datum": "BOLT7",
+   "diameter": "M3",
+   "object": "LCS008",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 23.541665192,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS001",
+   "was": "Pocket.Edge5"
+  },
+  "Rotation_Table/Screw006": {
+   "along": 22.1,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS006",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 17.487424053,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS001",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge6"
+  },
+  "Rotation_Table/Screw007": {
+   "along": -6.9,
+   "datum": "BOLT8",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 5.675385449,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS001",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge48"
+  },
+  "Rotation_Table/Screw008": {
+   "along": -6.9,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS007",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 28.771687472,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS001",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS001.Pocket.Edge49"
+  },
+  "Rotation_Table/Screw009": {
+   "along": 22.1,
+   "datum": "BOLT7",
+   "diameter": "M3",
+   "object": "LCS010",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "perp": 23.541665192,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "was": "Pocket004.Edge5"
+  },
+  "Rotation_Table/Screw010": {
+   "along": 22.1,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS008",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "perp": 17.487424053,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge6"
+  },
+  "Rotation_Table/Screw011": {
+   "along": -6.9,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "perp": 28.771687472,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge64"
+  },
+  "Rotation_Table/Screw012": {
+   "along": -6.9,
+   "datum": "BOLT8",
+   "diameter": "M3",
+   "object": "LCS011",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "perp": 5.675385449,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge63"
+  },
+  "Rotation_Table/Screw013": {
+   "along": -6.9,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS007",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 28.771687472,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS002",
+   "was": "Pocket.Edge49"
+  },
+  "Rotation_Table/Screw014": {
+   "along": -6.9,
+   "datum": "BOLT8",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 5.675385449,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS002",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge48"
+  },
+  "Rotation_Table/Screw015": {
+   "along": 22.1,
+   "datum": "BOLT7",
+   "diameter": "M3",
+   "object": "LCS008",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 23.541665192,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS002",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge5"
+  },
+  "Rotation_Table/Screw016": {
+   "along": 22.1,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS006",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 17.487424053,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS002",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS002.Pocket.Edge6"
+  },
+  "Rotation_Table/Screw017": {
+   "along": -6.9,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS007",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 28.771687472,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS003",
+   "was": "Pocket.Edge49"
+  },
+  "Rotation_Table/Screw018": {
+   "along": -6.9,
+   "datum": "BOLT8",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 5.675385449,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS003",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge48"
+  },
+  "Rotation_Table/Screw019": {
+   "along": 22.1,
+   "datum": "BOLT7",
+   "diameter": "M3",
+   "object": "LCS008",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 23.541665192,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS003",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge5"
+  },
+  "Rotation_Table/Screw020": {
+   "along": 22.1,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS006",
+   "part": "BOT_BEARING_MOUNT_Y_AXIS",
+   "perp": 17.487424053,
+   "prefix": "BOT_BEARING_MOUNT_Y_AXIS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BEARING_MOUNT_Y_AXIS003",
+   "was": "BOT_BEARING_MOUNT_Y_AXIS003.Pocket.Edge6"
+  },
+  "Rotation_Table/Screw021": {
+   "along": -7.5,
+   "datum": "BOLT8",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+   "perp": 14.575493131,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+   "was": "Pocket001.Edge34"
+  },
+  "Rotation_Table/Screw022": {
+   "along": -7.5,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS007",
+   "part": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+   "perp": 6.296427559,
+   "prefix": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.",
+   "type": "ISO4762",
+   "via_link": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+   "was": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge36"
+  },
+  "Rotation_Table/Screw023": {
+   "along": 12.8,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS006",
+   "part": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+   "perp": 14.21425341,
+   "prefix": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.",
+   "type": "ISO4762",
+   "via_link": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+   "was": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge9"
+  },
+  "Rotation_Table/Screw024": {
+   "along": 12.8,
+   "datum": "BOLT7",
+   "diameter": "M3",
+   "object": "LCS008",
+   "part": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+   "perp": 29.360602855,
+   "prefix": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.",
+   "type": "ISO4762",
+   "via_link": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+   "was": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT.Pocket001.Edge8"
+  },
+  "Rotation_Table/Screw025": {
+   "along": -0.0,
+   "datum": "BOLT1",
+   "diameter": "M3",
+   "object": "LCS",
+   "part": "SR_OUTER_RING_W_GEAR",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "SR_OUTER_RING_W_GEAR",
+   "was": "Pocket001.Edge417"
+  },
+  "Rotation_Table/Screw026": {
+   "along": -0.0,
+   "datum": "BOLT2",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "SR_OUTER_RING_W_GEAR",
+   "perp": 0.0,
+   "prefix": "SR_OUTER_RING_W_GEAR.",
+   "type": "ISO4762",
+   "via_link": "SR_OUTER_RING_W_GEAR",
+   "was": "SR_OUTER_RING_W_GEAR.Pocket001.Edge419"
+  },
+  "Rotation_Table/Screw027": {
+   "along": 0.0,
+   "datum": "BOLT4",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "SR_OUTER_RING_W_GEAR",
+   "perp": 0.0,
+   "prefix": "SR_OUTER_RING_W_GEAR.",
+   "type": "ISO4762",
+   "via_link": "SR_OUTER_RING_W_GEAR",
+   "was": "SR_OUTER_RING_W_GEAR.Pocket001.Edge432"
+  },
+  "Rotation_Table/Screw028": {
+   "along": 0.0,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "SR_OUTER_RING_W_GEAR",
+   "perp": 0.0,
+   "prefix": "SR_OUTER_RING_W_GEAR.",
+   "type": "ISO4762",
+   "via_link": "SR_OUTER_RING_W_GEAR",
+   "was": "SR_OUTER_RING_W_GEAR.Pocket001.Edge423"
+  },
+  "Rotation_Table/Screw029": {
+   "along": 0.0,
+   "datum": "BOLT3",
+   "diameter": "M3",
+   "object": "LCS002",
+   "part": "SR_OUTER_RING_W_GEAR",
+   "perp": 0.0,
+   "prefix": "SR_OUTER_RING_W_GEAR.",
+   "type": "ISO4762",
+   "via_link": "SR_OUTER_RING_W_GEAR",
+   "was": "SR_OUTER_RING_W_GEAR.Pocket001.Edge421"
+  },
+  "Stencil_Clamp/Nut": {
+   "along": 0.1,
+   "datum": "NUT3",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "TOP_CLAMP_BEARING_MOUNT_2",
+   "perp": 10.182583169,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_002",
+   "was": "Pocket004.Edge37"
+  },
+  "Stencil_Clamp/Nut001": {
+   "along": -9.1,
+   "datum": "NUT2",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "TOP_CLAMP_BEARING_MOUNT_2",
+   "perp": 17.885329183,
+   "prefix": "TOP_CLAMP_BEARING_MOUNT_002.",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_002",
+   "was": "TOP_CLAMP_BEARING_MOUNT_002.Pocket004.Edge39"
+  },
+  "Stencil_Clamp/Nut002": {
+   "along": -18.75,
+   "datum": "NUT1",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "TOP_CLAMP_BEARING_MOUNT_2",
+   "perp": 18.889007769,
+   "prefix": "TOP_CLAMP_BEARING_MOUNT_002.",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_002",
+   "was": "TOP_CLAMP_BEARING_MOUNT_002.Pocket004.Edge44"
+  },
+  "Stencil_Clamp/Nut005": {
+   "along": -18.75,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS002",
+   "part": "TOP_CLAMP_BEARING_MOUNT_1",
+   "perp": 13.82226879,
+   "prefix": "TOP_CLAMP_BEARING_MOUNT_1.",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_1",
+   "was": "TOP_CLAMP_BEARING_MOUNT_1.Pocket004.Edge44"
+  },
+  "Stencil_Clamp/Nut006": {
+   "along": 0.1,
+   "datum": "NUT3",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "TOP_CLAMP_BEARING_MOUNT_2",
+   "perp": 10.182583169,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_2",
+   "was": "Pocket004.Edge37"
+  },
+  "Stencil_Clamp/Nut007": {
+   "along": -9.1,
+   "datum": "NUT2",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "TOP_CLAMP_BEARING_MOUNT_2",
+   "perp": 17.885329183,
+   "prefix": "TOP_CLAMP_BEARING_MOUNT_2.",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_2",
+   "was": "TOP_CLAMP_BEARING_MOUNT_2.Pocket004.Edge39"
+  },
+  "Stencil_Clamp/Nut008": {
+   "along": -18.75,
+   "datum": "NUT1",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "TOP_CLAMP_BEARING_MOUNT_2",
+   "perp": 18.889007769,
+   "prefix": "TOP_CLAMP_BEARING_MOUNT_2.",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_2",
+   "was": "TOP_CLAMP_BEARING_MOUNT_2.Pocket004.Edge44"
+  },
+  "Stencil_Clamp/Nut011": {
+   "along": -18.75,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS002",
+   "part": "TOP_CLAMP_BEARING_MOUNT_1",
+   "perp": 13.82226879,
+   "prefix": "TOP_CLAMP_BEARING_MOUNT_001.",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_001",
+   "was": "TOP_CLAMP_BEARING_MOUNT_001.Pocket004.Edge44"
+  },
+  "Stencil_Clamp/Nut012": {
+   "along": 8.2,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_STOP",
+   "perp": 12.822602622,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_STOP",
+   "was": "Pocket004.Edge54"
+  },
+  "Stencil_Clamp/Nut013": {
+   "along": 8.2,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_STOP",
+   "perp": 12.822602622,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_STOP001",
+   "was": "Pocket004.Edge54"
+  },
+  "Stencil_Clamp/Nut014": {
+   "along": -0.0,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_NUT_HOLDER",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_NUT_HOLDER005",
+   "was": "Pocket002.Edge102"
+  },
+  "Stencil_Clamp/Nut015": {
+   "along": -0.0,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_NUT_HOLDER",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_NUT_HOLDER003",
+   "was": "Pocket002.Edge102"
+  },
+  "Stencil_Clamp/Nut016": {
+   "along": -0.0,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_NUT_HOLDER",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_NUT_HOLDER001",
+   "was": "Pocket002.Edge102"
+  },
+  "Stencil_Clamp/Nut018": {
+   "along": -0.0,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_NUT_HOLDER",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_NUT_HOLDER002",
+   "was": "Pocket002.Edge102"
+  },
+  "Stencil_Clamp/Nut019": {
+   "along": 0.0,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_NUT_HOLDER",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_NUT_HOLDER004",
+   "was": "Pocket002.Edge102"
+  },
+  "Stencil_Clamp/Nut021": {
+   "along": 0.0,
+   "datum": "NUT",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_NUT_HOLDER",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_NUT_HOLDER007",
+   "was": "Pocket002.Edge102"
+  },
+  "Stencil_Clamp/Screw": {
+   "along": 0.0,
+   "datum": "BOLT",
+   "diameter": "M3",
+   "object": "LCS",
+   "part": "TOP_CLAMP_STOP",
+   "perp": 5.638469473,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_STOP",
+   "was": "Pocket004.Edge40"
+  },
+  "Stencil_Clamp/Screw001": {
+   "along": 0.0,
+   "datum": "BOLT",
+   "diameter": "M3",
+   "object": "LCS",
+   "part": "TOP_CLAMP_STOP",
+   "perp": 5.638469473,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_STOP001",
+   "was": "Pocket004.Edge40"
+  },
+  "Stencil_Clamp/Screw002": {
+   "along": -103.11,
+   "datum": "BOLT3",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "STENCIL_HOLDER_FRONT",
+   "perp": 119.730631419,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_TOP",
+   "was": "Pocket001.Edge12"
+  },
+  "Stencil_Clamp/Screw003": {
+   "along": -103.11,
+   "datum": "BOLT2",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "STENCIL_HOLDER_FRONT",
+   "perp": 109.69685547,
+   "prefix": "STENCIL_HOLDER_TOP.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_TOP",
+   "was": "STENCIL_HOLDER_TOP.Pocket001.Edge10"
+  },
+  "Stencil_Clamp/Screw004": {
+   "along": -15.64,
+   "datum": "BOLT1",
+   "diameter": "M3",
+   "object": "LCS002",
+   "part": "STENCIL_HOLDER_FRONT",
+   "perp": 157.26803426,
+   "prefix": "STENCIL_HOLDER_TOP.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_TOP",
+   "was": "STENCIL_HOLDER_TOP.Pocket001.Edge18"
+  },
+  "Stencil_Clamp/Screw005": {
+   "along": 103.11,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS007",
+   "part": "STENCIL_HOLDER_FRONT",
+   "perp": 88.889595004,
+   "prefix": "STENCIL_HOLDER_TOP.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_TOP",
+   "was": "STENCIL_HOLDER_TOP.Pocket001.Edge8"
+  },
+  "Stencil_Clamp/Screw006": {
+   "along": 103.11,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS006",
+   "part": "STENCIL_HOLDER_FRONT",
+   "perp": 96.921535791,
+   "prefix": "STENCIL_HOLDER_TOP.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_TOP",
+   "was": "STENCIL_HOLDER_TOP.Pocket001.Edge5"
+  },
+  "Stencil_Clamp/Screw007": {
+   "along": -15.64,
+   "datum": "BOLT4",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "STENCIL_HOLDER_FRONT",
+   "perp": 135.213434983,
+   "prefix": "STENCIL_HOLDER_TOP.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_TOP",
+   "was": "STENCIL_HOLDER_TOP.Pocket001.Edge16"
+  },
+  "Stencil_Clamp/Screw008": {
+   "along": 103.11,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "STENCIL_HOLDER_BACK",
+   "perp": 96.921535791,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_BACK",
+   "was": "Pocket001.Edge5"
+  },
+  "Stencil_Clamp/Screw009": {
+   "along": 103.11,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS006",
+   "part": "STENCIL_HOLDER_BACK",
+   "perp": 88.889595004,
+   "prefix": "STENCIL_HOLDER_BACK.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_BACK",
+   "was": "STENCIL_HOLDER_BACK.Pocket001.Edge8"
+  },
+  "Stencil_Clamp/Screw010": {
+   "along": -15.64,
+   "datum": "BOLT4",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "STENCIL_HOLDER_BACK",
+   "perp": 135.213434983,
+   "prefix": "STENCIL_HOLDER_BACK.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_BACK",
+   "was": "STENCIL_HOLDER_BACK.Pocket001.Edge16"
+  },
+  "Stencil_Clamp/Screw011": {
+   "along": -15.64,
+   "datum": "BOLT1",
+   "diameter": "M3",
+   "object": "LCS001",
+   "part": "STENCIL_HOLDER_BACK",
+   "perp": 157.26803426,
+   "prefix": "STENCIL_HOLDER_BACK.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_BACK",
+   "was": "STENCIL_HOLDER_BACK.Pocket001.Edge17"
+  },
+  "Stencil_Clamp/Screw012": {
+   "along": -103.11,
+   "datum": "BOLT2",
+   "diameter": "M3",
+   "object": "LCS002",
+   "part": "STENCIL_HOLDER_BACK",
+   "perp": 109.69685547,
+   "prefix": "STENCIL_HOLDER_BACK.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_BACK",
+   "was": "STENCIL_HOLDER_BACK.Pocket001.Edge10"
+  },
+  "Stencil_Clamp/Screw013": {
+   "along": -103.11,
+   "datum": "BOLT3",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "STENCIL_HOLDER_BACK",
+   "perp": 119.730631419,
+   "prefix": "STENCIL_HOLDER_BACK.",
+   "type": "ISO4762",
+   "via_link": "STENCIL_HOLDER_BACK",
+   "was": "STENCIL_HOLDER_BACK.Pocket001.Edge12"
+  },
+  "Top_Assembly/Nut022": {
+   "along": 4.000000188,
+   "datum": "NUT",
+   "diameter": "M5",
+   "object": "LCS",
+   "part": "TOP_CLAMP_SPANNER_HANDWHEEL",
+   "perp": 4.0,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_SPANNER_HANDWHEEL",
+   "was": "Pocket002.Edge88"
+  },
+  "Top_Assembly/Nut023": {
+   "along": 1.4669e-05,
+   "datum": "NUT",
+   "diameter": "M5",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_SPANNER_COUNTER",
+   "perp": 1.489e-06,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_SPANNER_COUNTER",
+   "was": "Pocket004.Edge135"
+  },
+  "Top_Assembly/Screw059": {
+   "along": 6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "TOP_RAIL_HOLDER",
+   "perp": 17.230930387,
+   "prefix": "TOP_RAIL_HOLDER003.",
+   "type": "ISO4762",
+   "via_link": "Stencil_Clamp",
+   "was": "TOP_RAIL_HOLDER003.Pocket002.Edge60"
+  },
+  "Top_Assembly/Screw060": {
+   "along": 6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "TOP_RAIL_HOLDER",
+   "perp": 9.246024119,
+   "prefix": "TOP_RAIL_HOLDER003.",
+   "type": "ISO4762",
+   "via_link": "Stencil_Clamp",
+   "was": "TOP_RAIL_HOLDER003.Pocket002.Edge61"
+  },
+  "Top_Assembly/Screw062": {
+   "along": 6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "TOP_RAIL_HOLDER",
+   "perp": 17.230930387,
+   "prefix": "TOP_RAIL_HOLDER001.",
+   "type": "ISO4762",
+   "via_link": "Stencil_Clamp",
+   "was": "TOP_RAIL_HOLDER001.Pocket002.Edge60"
+  },
+  "Top_Assembly/Screw063": {
+   "along": 6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "TOP_RAIL_HOLDER",
+   "perp": 17.230930387,
+   "prefix": "TOP_RAIL_HOLDER002.",
+   "type": "ISO4762",
+   "via_link": "Stencil_Clamp",
+   "was": "TOP_RAIL_HOLDER002.Pocket002.Edge60"
+  },
+  "Top_Assembly/Screw064": {
+   "along": 6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "TOP_RAIL_HOLDER",
+   "perp": 9.246024119,
+   "prefix": "TOP_RAIL_HOLDER002.",
+   "type": "ISO4762",
+   "via_link": "Stencil_Clamp",
+   "was": "TOP_RAIL_HOLDER002.Pocket002.Edge61"
+  },
+  "Top_Assembly/Screw065": {
+   "along": 6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "TOP_RAIL_HOLDER",
+   "perp": 17.230930387,
+   "prefix": "TOP_RAIL_HOLDER.",
+   "type": "ISO4762",
+   "via_link": "Stencil_Clamp",
+   "was": "TOP_RAIL_HOLDER.Pocket002.Edge60"
+  },
+  "Top_Assembly/Screw066": {
+   "along": 6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "TOP_RAIL_HOLDER",
+   "perp": 9.246024119,
+   "prefix": "TOP_RAIL_HOLDER.",
+   "type": "ISO4762",
+   "via_link": "Stencil_Clamp",
+   "was": "TOP_RAIL_HOLDER.Pocket002.Edge61"
+  },
+  "Top_Assembly/Screw067": {
+   "along": 6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "TOP_RAIL_HOLDER",
+   "perp": 9.246024119,
+   "prefix": "TOP_RAIL_HOLDER001.",
+   "type": "ISO4762",
+   "via_link": "Stencil_Clamp",
+   "was": "TOP_RAIL_HOLDER001.Pocket002.Edge61"
+  },
+  "Top_Frame/Screw": {
+   "along": -10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "Pocket.Edge24"
+  },
+  "Top_Frame/Screw001": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "BOT_BRACKETS002.Pocket.Edge27"
+  },
+  "Top_Frame/Screw002": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "BOT_BRACKETS002.Pocket.Edge28"
+  },
+  "Top_Frame/Screw003": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 30.0,
+   "prefix": "BOT_BRACKETS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "BOT_BRACKETS002.Pocket.Edge25"
+  },
+  "Top_Frame/Screw004": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_BRACKETS",
+   "perp": 50.0,
+   "prefix": "BOT_BRACKETS002.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS002",
+   "was": "BOT_BRACKETS002.Pocket.Edge26"
+  },
+  "Top_Frame/Screw005": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "Pocket.Edge27"
+  },
+  "Top_Frame/Screw006": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "BOT_BRACKETS001.Pocket.Edge28"
+  },
+  "Top_Frame/Screw007": {
+   "along": -10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "BOT_BRACKETS001.Pocket.Edge24"
+  },
+  "Top_Frame/Screw008": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 30.0,
+   "prefix": "BOT_BRACKETS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "BOT_BRACKETS001.Pocket.Edge25"
+  },
+  "Top_Frame/Screw009": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_BRACKETS",
+   "perp": 50.0,
+   "prefix": "BOT_BRACKETS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS001",
+   "was": "BOT_BRACKETS001.Pocket.Edge26"
+  },
+  "Top_Frame/Screw010": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "Pocket.Edge28"
+  },
+  "Top_Frame/Screw011": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "BOT_BRACKETS003.Pocket.Edge27"
+  },
+  "Top_Frame/Screw012": {
+   "along": -10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "BOT_BRACKETS003.Pocket.Edge24"
+  },
+  "Top_Frame/Screw013": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 30.0,
+   "prefix": "BOT_BRACKETS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "BOT_BRACKETS003.Pocket.Edge25"
+  },
+  "Top_Frame/Screw014": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_BRACKETS",
+   "perp": 50.0,
+   "prefix": "BOT_BRACKETS003.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS003",
+   "was": "BOT_BRACKETS003.Pocket.Edge26"
+  },
+  "Top_Frame/Screw015": {
+   "along": -50.0,
+   "datum": "BOLT5",
+   "diameter": "M4",
+   "object": "LCS005",
+   "part": "BOT_BRACKETS",
+   "perp": 50.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "Pocket.Edge26"
+  },
+  "Top_Frame/Screw016": {
+   "along": -30.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 30.0,
+   "prefix": "BOT_BRACKETS004.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "BOT_BRACKETS004.Pocket.Edge25"
+  },
+  "Top_Frame/Screw017": {
+   "along": -10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS004.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "BOT_BRACKETS004.Pocket.Edge24"
+  },
+  "Top_Frame/Screw018": {
+   "along": -10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS004.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "BOT_BRACKETS004.Pocket.Edge27"
+  },
+  "Top_Frame/Screw019": {
+   "along": -10.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 10.0,
+   "prefix": "BOT_BRACKETS004.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS004",
+   "was": "BOT_BRACKETS004.Pocket.Edge28"
+  },
+  "Top_Frame/Screw020": {
+   "along": -6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS006",
+   "was": "Pocket.Edge19"
+  },
+  "Top_Frame/Screw021": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS006.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS006",
+   "was": "BOT_BRACKETS006.Pocket.Edge18"
+  },
+  "Top_Frame/Screw022": {
+   "along": -6.0,
+   "datum": "FOOT",
+   "diameter": "M4",
+   "object": "LCS007",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS006.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS006",
+   "was": "BOT_BRACKETS006.Pocket.Edge15"
+  },
+  "Top_Frame/Screw023": {
+   "along": -26.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 34.0,
+   "prefix": "BOT_BRACKETS006.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS006",
+   "was": "BOT_BRACKETS006.Pocket.Edge16"
+  },
+  "Top_Frame/Screw024": {
+   "along": -46.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 54.0,
+   "prefix": "BOT_BRACKETS006.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS006",
+   "was": "BOT_BRACKETS006.Pocket.Edge17"
+  },
+  "Top_Frame/Screw025": {
+   "along": -46.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 54.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS005",
+   "was": "Pocket.Edge17"
+  },
+  "Top_Frame/Screw026": {
+   "along": -26.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 34.0,
+   "prefix": "BOT_BRACKETS005.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS005",
+   "was": "BOT_BRACKETS005.Pocket.Edge16"
+  },
+  "Top_Frame/Screw027": {
+   "along": -6.0,
+   "datum": "FOOT",
+   "diameter": "M4",
+   "object": "LCS007",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS005.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS005",
+   "was": "BOT_BRACKETS005.Pocket.Edge15"
+  },
+  "Top_Frame/Screw028": {
+   "along": -6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS005.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS005",
+   "was": "BOT_BRACKETS005.Pocket.Edge19"
+  },
+  "Top_Frame/Screw029": {
+   "along": -46.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 54.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS007",
+   "was": "Pocket.Edge17"
+  },
+  "Top_Frame/Screw030": {
+   "along": -26.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 34.0,
+   "prefix": "BOT_BRACKETS007.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS007",
+   "was": "BOT_BRACKETS007.Pocket.Edge16"
+  },
+  "Top_Frame/Screw031": {
+   "along": -6.0,
+   "datum": "FOOT",
+   "diameter": "M4",
+   "object": "LCS007",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS007.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS007",
+   "was": "BOT_BRACKETS007.Pocket.Edge15"
+  },
+  "Top_Frame/Screw032": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS007.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS007",
+   "was": "BOT_BRACKETS007.Pocket.Edge18"
+  },
+  "Top_Frame/Screw033": {
+   "along": -6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS007.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS007",
+   "was": "BOT_BRACKETS007.Pocket.Edge19"
+  },
+  "Top_Frame/Screw034": {
+   "along": -46.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "BOT_BRACKETS",
+   "perp": 54.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "Pocket.Edge17"
+  },
+  "Top_Frame/Screw035": {
+   "along": -26.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "BOT_BRACKETS",
+   "perp": 34.0,
+   "prefix": "BOT_BRACKETS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "BOT_BRACKETS.Pocket.Edge16"
+  },
+  "Top_Frame/Screw036": {
+   "along": -6.0,
+   "datum": "FOOT",
+   "diameter": "M4",
+   "object": "LCS007",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "BOT_BRACKETS.Pocket.Edge15"
+  },
+  "Top_Frame/Screw037": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "BOT_BRACKETS.Pocket.Edge18"
+  },
+  "Top_Frame/Screw038": {
+   "along": -6.0,
+   "datum": "BOLT4",
+   "diameter": "M4",
+   "object": "LCS004",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "BOT_BRACKETS.",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS",
+   "was": "BOT_BRACKETS.Pocket.Edge19"
+  },
+  "Top_Frame/Screw039": {
+   "along": 20.89,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "TOP_CLAMP_Z_AXIS",
+   "perp": 24.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS",
+   "was": "Pocket005.Edge41"
+  },
+  "Top_Frame/Screw040": {
+   "along": 0.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_Z_AXIS",
+   "perp": 18.995581065,
+   "prefix": "TOP_CLAMP_Z_AXIS.",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS",
+   "was": "TOP_CLAMP_Z_AXIS.Pocket005.Edge115"
+  },
+  "Top_Frame/Screw041": {
+   "along": 0.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "TOP_CLAMP_Z_AXIS",
+   "perp": 25.189523616,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS001",
+   "was": "Pocket005.Edge115"
+  },
+  "Top_Frame/Screw042": {
+   "along": 27.11,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "TOP_CLAMP_Z_AXIS",
+   "perp": 24.0,
+   "prefix": "TOP_CLAMP_Z_AXIS001.",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS001",
+   "was": "TOP_CLAMP_Z_AXIS001.Pocket005.Edge41"
+  },
+  "Top_Frame/Screw043": {
+   "along": -0.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS",
+   "part": "TOP_CLAMP_Z_AXIS",
+   "perp": 22.585661381,
+   "prefix": "TOP_CLAMP_Z_AXIS.",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS",
+   "was": "TOP_CLAMP_Z_AXIS.Pocket005.Edge82"
+  },
+  "Top_Frame/Screw044": {
+   "along": -0.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS",
+   "part": "TOP_CLAMP_Z_AXIS",
+   "perp": 22.027984474,
+   "prefix": "TOP_CLAMP_Z_AXIS001.",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS001",
+   "was": "TOP_CLAMP_Z_AXIS001.Pocket005.Edge82"
+  },
+  "Top_Frame/Screw045": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "BOT_BRACKETS",
+   "perp": 14.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_BRACKETS005",
+   "was": "Pocket.Edge18"
+  },
+  "X_Axis_Carriage/Nut": {
+   "along": -22.95,
+   "datum": "NUT5",
+   "diameter": "M3",
+   "object": "LCS013",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 18.738529825,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS002",
+   "was": "Pocket004.Edge49"
+  },
+  "X_Axis_Carriage/Nut001": {
+   "along": -22.95,
+   "datum": "NUT3",
+   "diameter": "M3",
+   "object": "LCS011",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 21.877671265,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS002.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS002",
+   "was": "BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge53"
+  },
+  "X_Axis_Carriage/Nut002": {
+   "along": 3.75,
+   "datum": "NUT4",
+   "diameter": "M3",
+   "object": "LCS012",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 28.37309465,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS002.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS002",
+   "was": "BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge51"
+  },
+  "X_Axis_Carriage/Nut003": {
+   "along": 3.75,
+   "datum": "NUT2",
+   "diameter": "M3",
+   "object": "LCS010",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 4.973178058,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS002.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS002",
+   "was": "BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge55"
+  },
+  "X_Axis_Carriage/Nut004": {
+   "along": -22.95,
+   "datum": "NUT3",
+   "diameter": "M3",
+   "object": "LCS011",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 21.877671265,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS",
+   "was": "Pocket004.Edge53"
+  },
+  "X_Axis_Carriage/Nut005": {
+   "along": -22.95,
+   "datum": "NUT5",
+   "diameter": "M3",
+   "object": "LCS013",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 18.738529825,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS",
+   "was": "BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge49"
+  },
+  "X_Axis_Carriage/Nut006": {
+   "along": 3.75,
+   "datum": "NUT4",
+   "diameter": "M3",
+   "object": "LCS012",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 28.37309465,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS",
+   "was": "BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge51"
+  },
+  "X_Axis_Carriage/Nut007": {
+   "along": 3.75,
+   "datum": "NUT2",
+   "diameter": "M3",
+   "object": "LCS010",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 4.973178058,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS",
+   "was": "BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge55"
+  },
+  "X_Axis_Carriage/Nut008": {
+   "along": 3.75,
+   "datum": "NUT4",
+   "diameter": "M3",
+   "object": "LCS012",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 28.37309465,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS003",
+   "was": "Pocket004.Edge51"
+  },
+  "X_Axis_Carriage/Nut009": {
+   "along": 3.75,
+   "datum": "NUT2",
+   "diameter": "M3",
+   "object": "LCS010",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 4.973178058,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS003.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS003",
+   "was": "BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge55"
+  },
+  "X_Axis_Carriage/Nut010": {
+   "along": -22.95,
+   "datum": "NUT3",
+   "diameter": "M3",
+   "object": "LCS011",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 21.877671265,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS003.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS003",
+   "was": "BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge53"
+  },
+  "X_Axis_Carriage/Nut011": {
+   "along": -22.95,
+   "datum": "NUT5",
+   "diameter": "M3",
+   "object": "LCS013",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 18.738529825,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS003.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS003",
+   "was": "BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge49"
+  },
+  "X_Axis_Carriage/Nut012": {
+   "along": 3.75,
+   "datum": "NUT4",
+   "diameter": "M3",
+   "object": "LCS012",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 28.37309465,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS001",
+   "was": "Pocket004.Edge51"
+  },
+  "X_Axis_Carriage/Nut013": {
+   "along": 3.75,
+   "datum": "NUT2",
+   "diameter": "M3",
+   "object": "LCS010",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 4.973178058,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS001.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS001",
+   "was": "BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge55"
+  },
+  "X_Axis_Carriage/Nut014": {
+   "along": -22.95,
+   "datum": "NUT3",
+   "diameter": "M3",
+   "object": "LCS011",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 21.877671265,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS001.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS001",
+   "was": "BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge53"
+  },
+  "X_Axis_Carriage/Nut015": {
+   "along": -22.95,
+   "datum": "NUT5",
+   "diameter": "M3",
+   "object": "LCS013",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 18.738529825,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS001.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS001",
+   "was": "BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge49"
+  },
+  "X_Axis_Carriage/Nut016": {
+   "along": -0.0,
+   "datum": "NUT1",
+   "diameter": "M5",
+   "object": "LCS006",
+   "part": "BOT_RAIL_CLAMP_X_DRIVE",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_RAIL_CLAMP_X_DRIVE",
+   "was": "Pocket005.Edge63"
+  },
+  "X_Axis_Carriage/Nut017": {
+   "along": -0.0,
+   "datum": "NUT2",
+   "diameter": "M5",
+   "object": "LCS007",
+   "part": "BOT_RAIL_CLAMP_X_DRIVE",
+   "perp": 0.0,
+   "prefix": "BOT_RAIL_CLAMP_X_DRIVE.",
+   "type": "DIN934",
+   "via_link": "BOT_RAIL_CLAMP_X_DRIVE",
+   "was": "BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge82"
+  },
+  "X_Axis_Carriage/Nut018": {
+   "along": -9.6,
+   "datum": "NUT6",
+   "diameter": "M3",
+   "object": "LCS014",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 9.019977827,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS",
+   "was": "Pocket004.Edge117"
+  },
+  "X_Axis_Carriage/Nut019": {
+   "along": -9.6,
+   "datum": "NUT1",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 20.663010429,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS",
+   "was": "BOT_BEARING_MOUNT_X_AXIS.Pocket004.Edge101"
+  },
+  "X_Axis_Carriage/Nut020": {
+   "along": -9.6,
+   "datum": "NUT1",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 20.663010429,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS002",
+   "was": "Pocket004.Edge101"
+  },
+  "X_Axis_Carriage/Nut021": {
+   "along": -9.6,
+   "datum": "NUT6",
+   "diameter": "M3",
+   "object": "LCS014",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 9.019977827,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS002.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS002",
+   "was": "BOT_BEARING_MOUNT_X_AXIS002.Pocket004.Edge117"
+  },
+  "X_Axis_Carriage/Nut022": {
+   "along": -9.6,
+   "datum": "NUT6",
+   "diameter": "M3",
+   "object": "LCS014",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 9.019977827,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS001",
+   "was": "Pocket004.Edge117"
+  },
+  "X_Axis_Carriage/Nut023": {
+   "along": -9.6,
+   "datum": "NUT1",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 20.663010429,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS001.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS001",
+   "was": "BOT_BEARING_MOUNT_X_AXIS001.Pocket004.Edge101"
+  },
+  "X_Axis_Carriage/Nut024": {
+   "along": -9.6,
+   "datum": "NUT6",
+   "diameter": "M3",
+   "object": "LCS014",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 9.019977827,
+   "prefix": "",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS003",
+   "was": "Pocket004.Edge117"
+  },
+  "X_Axis_Carriage/Nut025": {
+   "along": -9.6,
+   "datum": "NUT1",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "BOT_BEARING_MOUNT_X_AXIS",
+   "perp": 20.663010429,
+   "prefix": "BOT_BEARING_MOUNT_X_AXIS003.",
+   "type": "DIN934",
+   "via_link": "BOT_BEARING_MOUNT_X_AXIS003",
+   "was": "BOT_BEARING_MOUNT_X_AXIS003.Pocket004.Edge101"
+  },
+  "X_Axis_Carriage/Screw": {
+   "along": 76.0,
+   "datum": "BOLT1",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "XY_PLATE",
+   "perp": 76.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "Pocket.Edge12"
+  },
+  "X_Axis_Carriage/Screw001": {
+   "along": 59.0,
+   "datum": "BOLT2",
+   "diameter": "M3",
+   "object": "LCS012",
+   "part": "XY_PLATE",
+   "perp": 59.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge13"
+  },
+  "X_Axis_Carriage/Screw002": {
+   "along": 59.0,
+   "datum": "BOLT6",
+   "diameter": "M3",
+   "object": "LCS016",
+   "part": "XY_PLATE",
+   "perp": 59.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge15"
+  },
+  "X_Axis_Carriage/Screw003": {
+   "along": 76.0,
+   "datum": "BOLT5",
+   "diameter": "M3",
+   "object": "LCS015",
+   "part": "XY_PLATE",
+   "perp": 76.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge14"
+  },
+  "X_Axis_Carriage/Screw004": {
+   "along": 76.0,
+   "datum": "BOLT9",
+   "diameter": "M3",
+   "object": "LCS019",
+   "part": "XY_PLATE",
+   "perp": 76.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge20"
+  },
+  "X_Axis_Carriage/Screw005": {
+   "along": 59.0,
+   "datum": "BOLT10",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "XY_PLATE",
+   "perp": 59.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge21"
+  },
+  "X_Axis_Carriage/Screw006": {
+   "along": 76.0,
+   "datum": "BOLT13",
+   "diameter": "M3",
+   "object": "LCS008",
+   "part": "XY_PLATE",
+   "perp": 76.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge22"
+  },
+  "X_Axis_Carriage/Screw007": {
+   "along": 59.0,
+   "datum": "BOLT14",
+   "diameter": "M3",
+   "object": "LCS009",
+   "part": "XY_PLATE",
+   "perp": 59.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge23"
+  },
+  "X_Axis_Carriage/Screw008": {
+   "along": -59.0,
+   "datum": "BOLT15",
+   "diameter": "M3",
+   "object": "LCS010",
+   "part": "XY_PLATE",
+   "perp": 59.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge26"
+  },
+  "X_Axis_Carriage/Screw009": {
+   "along": -76.0,
+   "datum": "BOLT16",
+   "diameter": "M3",
+   "object": "LCS011",
+   "part": "XY_PLATE",
+   "perp": 76.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge27"
+  },
+  "X_Axis_Carriage/Screw010": {
+   "along": -76.0,
+   "datum": "BOLT12",
+   "diameter": "M3",
+   "object": "LCS007",
+   "part": "XY_PLATE",
+   "perp": 76.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge25"
+  },
+  "X_Axis_Carriage/Screw011": {
+   "along": -59.0,
+   "datum": "BOLT11",
+   "diameter": "M3",
+   "object": "LCS006",
+   "part": "XY_PLATE",
+   "perp": 59.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge24"
+  },
+  "X_Axis_Carriage/Screw012": {
+   "along": -59.0,
+   "datum": "BOLT7",
+   "diameter": "M3",
+   "object": "LCS017",
+   "part": "XY_PLATE",
+   "perp": 59.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge18"
+  },
+  "X_Axis_Carriage/Screw013": {
+   "along": -76.0,
+   "datum": "BOLT8",
+   "diameter": "M3",
+   "object": "LCS018",
+   "part": "XY_PLATE",
+   "perp": 76.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge19"
+  },
+  "X_Axis_Carriage/Screw014": {
+   "along": -59.0,
+   "datum": "BOLT3",
+   "diameter": "M3",
+   "object": "LCS013",
+   "part": "XY_PLATE",
+   "perp": 59.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge16"
+  },
+  "X_Axis_Carriage/Screw015": {
+   "along": -76.0,
+   "datum": "BOLT4",
+   "diameter": "M3",
+   "object": "LCS014",
+   "part": "XY_PLATE",
+   "perp": 76.0,
+   "prefix": "XY_PLATE.",
+   "type": "ISO4762",
+   "via_link": "XY_PLATE",
+   "was": "XY_PLATE.Pocket.Edge17"
+  },
+  "X_Axis_Carriage/Screw016": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "BOT_RAIL_CLAMP_Y_AXIS_1",
+   "perp": 9.486832981,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_RAIL_CLAMP_Y_AXIS_1",
+   "was": "Pocket003.Edge58"
+  },
+  "X_Axis_Carriage/Screw017": {
+   "along": 12.0,
+   "datum": "BOLT2",
+   "diameter": "M3",
+   "object": "LCS003",
+   "part": "BOT_RAIL_CLAMP_Y_AXIS_1",
+   "perp": 9.486832981,
+   "prefix": "BOT_RAIL_CLAMP_Y_AXIS_1.",
+   "type": "ISO4762",
+   "via_link": "BOT_RAIL_CLAMP_Y_AXIS_1",
+   "was": "BOT_RAIL_CLAMP_Y_AXIS_1.Pocket003.Edge56"
+  },
+  "X_Axis_Carriage/Screw018": {
+   "along": 12.0,
+   "datum": "BOLT1",
+   "diameter": "M3",
+   "object": "LCS002",
+   "part": "BOT_RAIL_CLAMP_Y_AXIS",
+   "perp": 9.486832981,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_RAIL_CLAMP_Y_AXIS001",
+   "was": "Pocket001.Edge19"
+  },
+  "X_Axis_Carriage/Screw019": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "BOT_RAIL_CLAMP_Y_AXIS",
+   "perp": 9.486832981,
+   "prefix": "BOT_RAIL_CLAMP_Y_AXIS001.",
+   "type": "ISO4762",
+   "via_link": "BOT_RAIL_CLAMP_Y_AXIS001",
+   "was": "BOT_RAIL_CLAMP_Y_AXIS001.Pocket001.Edge27"
+  },
+  "X_Axis_Carriage/Screw020": {
+   "along": 0.0,
+   "datum": "BOLT3",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "BOT_RAIL_CLAMP_X_DRIVE",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_RAIL_CLAMP_X_DRIVE",
+   "was": "Pocket005.Edge123"
+  },
+  "X_Axis_Carriage/Screw021": {
+   "along": 0.0,
+   "datum": "BOLT1",
+   "diameter": "M3",
+   "object": "LCS002",
+   "part": "BOT_RAIL_CLAMP_X_DRIVE",
+   "perp": 0.0,
+   "prefix": "BOT_RAIL_CLAMP_X_DRIVE.",
+   "type": "ISO4762",
+   "via_link": "BOT_RAIL_CLAMP_X_DRIVE",
+   "was": "BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge77"
+  },
+  "X_Axis_Carriage/Screw022": {
+   "along": 12.0,
+   "datum": "BOLT1",
+   "diameter": "M3",
+   "object": "LCS002",
+   "part": "BOT_RAIL_CLAMP_Y_AXIS",
+   "perp": 9.486832981,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "BOT_RAIL_CLAMP_Y_AXIS",
+   "was": "Pocket001.Edge19"
+  },
+  "X_Axis_Carriage/Screw023": {
+   "along": -6.0,
+   "datum": "BOLT3",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "BOT_RAIL_CLAMP_Y_AXIS",
+   "perp": 9.486832981,
+   "prefix": "BOT_RAIL_CLAMP_Y_AXIS.",
+   "type": "ISO4762",
+   "via_link": "BOT_RAIL_CLAMP_Y_AXIS",
+   "was": "BOT_RAIL_CLAMP_Y_AXIS.Pocket001.Edge27"
+  }
+ },
+ "internal": {
+  "2020_280": {
+   "END_A": "LCS",
+   "END_B": "LCS001",
+   "FRAME1": "LCS006",
+   "FRAME2": "LCS007",
+   "FRAME3": "LCS008",
+   "FRAME4": "LCS009",
+   "SLOT_XN": "LCS004",
+   "SLOT_XP": "LCS002",
+   "SLOT_YN": "LCS005",
+   "SLOT_YP": "LCS003"
+  },
+  "2020_300": {
+   "BRACKET1": "LCS006",
+   "BRACKET2": "LCS007",
+   "BRACKET3": "LCS008",
+   "BRACKET4": "LCS009",
+   "BRACKET5": "LCS010",
+   "BRACKET6": "LCS011",
+   "BRACKET7": "LCS012",
+   "BRACKET8": "LCS013",
+   "BRACKET9": "LCS014",
+   "BRACKET_X": "LCS015",
+   "END_A": "LCS",
+   "END_B": "LCS001",
+   "FACE1": "LCS016",
+   "FACE2": "LCS017",
+   "FRAME1": "LCS018",
+   "FRAME2": "LCS019",
+   "FRAME3": "LCS020",
+   "HINGE1": "LCS021",
+   "HINGE2": "LCS022",
+   "RAIL_HOLDER1": "LCS023",
+   "RAIL_HOLDER2": "LCS024",
+   "SLOT_XN": "LCS004",
+   "SLOT_XP": "LCS002",
+   "SLOT_YN": "LCS005",
+   "SLOT_YP": "LCS003",
+   "Z_AXIS_BRACKET1": "LCS025",
+   "Z_AXIS_BRACKET2": "LCS026"
+  },
+  "2020_300_TOP_FRONT": {
+   "BRACKET1": "LCS006",
+   "BRACKET2": "LCS007",
+   "BRACKET3": "LCS008",
+   "BRACKET4": "LCS009",
+   "END_A": "LCS",
+   "END_B": "LCS001",
+   "FRAME": "LCS010",
+   "SLOT_XN": "LCS004",
+   "SLOT_XP": "LCS002",
+   "SLOT_YN": "LCS005",
+   "SLOT_YP": "LCS003",
+   "SPANNER_CASE1": "LCS011",
+   "SPANNER_CASE2": "LCS012"
+  },
+  "ADAPTER_D5_TO_M3": {
+   "BEARING": "LCS"
+  },
+  "ALPHA_BOT_PLATE": {
+   "BEARING_MOUNT_Y1": "LCS",
+   "BEARING_MOUNT_Y2": "LCS001",
+   "BEARING_MOUNT_Y3": "LCS002",
+   "BEARING_MOUNT_Y_AXIS": "LCS003",
+   "PLATE": "LCS004",
+   "ROD_HOLDER_ALPHA": "LCS005",
+   "ROD_HOLDER_ALPHA_AXIS": "LCS006"
+  },
+  "ALPHA_TOP_PLATE": {
+   "RING": "LCS"
+  },
+  "BEARING_14X5X5": {
+   "ADAPTER": "LCS003",
+   "AXIS": "LCS",
+   "FACE_A": "LCS001",
+   "FACE_B": "LCS002"
+  },
+  "BOT_BEARING_MOUNT_X_AXIS": {
+   "BEARING1": "LCS007",
+   "BEARING2": "LCS008",
+   "BOLT1": "LCS003",
+   "BOLT2": "LCS004",
+   "BOLT3": "LCS005",
+   "BOLT4": "LCS006",
+   "NUT1": "LCS009",
+   "NUT2": "LCS010",
+   "NUT3": "LCS011",
+   "NUT4": "LCS012",
+   "NUT5": "LCS013",
+   "NUT6": "LCS014",
+   "PLATE": "LCS002",
+   "RAIL": "LCS",
+   "RAIL_CLAMP_X_DRIVE": "LCS015",
+   "RAIL_CLAMP_Y": "LCS016",
+   "ROD": "LCS017",
+   "TROUGH": "LCS001"
+  },
+  "BOT_BEARING_MOUNT_Y_AXIS": {
+   "BEARING": "LCS",
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "BOLT5": "LCS006",
+   "BOLT6": "LCS007",
+   "BOLT7": "LCS008",
+   "BOLT8": "LCS009",
+   "BOT_PLATE1": "LCS010",
+   "BOT_PLATE2": "LCS011",
+   "BOT_PLATE3": "LCS012",
+   "PLATE": "LCS001"
+  },
+  "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN": {
+   "BEARING": "LCS",
+   "BEARING2": "LCS007",
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "BOLT5": "LCS008",
+   "BOLT6": "LCS009",
+   "BOLT7": "LCS010",
+   "BOLT8": "LCS011",
+   "BOT_PLATE": "LCS012",
+   "NUT1": "LCS013",
+   "NUT2": "LCS014",
+   "PLATE": "LCS001",
+   "SCREW": "LCS006"
+  },
+  "BOT_BRACKETS": {
+   "BOLT1": "LCS001",
+   "BOLT2": "LCS002",
+   "BOLT3": "LCS003",
+   "BOLT4": "LCS004",
+   "BOLT5": "LCS005",
+   "ECC_BOT": "LCS006",
+   "FOOT": "LCS007",
+   "FRAME1": "LCS008",
+   "FRAME2": "LCS009",
+   "FRAME3": "LCS010",
+   "HINGE1": "LCS011",
+   "HINGE2": "LCS012",
+   "MOUNT": "LCS"
+  },
+  "BOT_BRACKET_X_AXIS": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "BOLT5": "LCS006",
+   "BOLT6": "LCS007",
+   "ECC_BOT": "LCS008",
+   "FRAME": "LCS009",
+   "MOUNT": "LCS001",
+   "NUT": "LCS010",
+   "SCREW": "LCS"
+  },
+  "BOT_HANDWHEEL": {
+   "BRACKET_X": "LCS002",
+   "FACE": "LCS001",
+   "GRUB": "LCS003",
+   "NUT": "LCS004",
+   "SHAFT": "LCS",
+   "STUD": "LCS005"
+  },
+  "BOT_RAIL_CLAMP_X_DRIVE": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS005",
+   "MOUNT": "LCS001",
+   "NUT1": "LCS006",
+   "NUT2": "LCS007",
+   "ROD": "LCS",
+   "SCREW": "LCS004",
+   "SPRING": "LCS008"
+  },
+  "BOT_RAIL_CLAMP_Y_AXIS": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "MOUNT": "LCS001",
+   "ROD": "LCS"
+  },
+  "BOT_RAIL_CLAMP_Y_AXIS_1": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS005",
+   "HANDWHEEL": "LCS006",
+   "MOUNT": "LCS001",
+   "ROD": "LCS",
+   "SCREW": "LCS004"
+  },
+  "BOT_RAIL_HOLDER": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "FACE": "LCS006",
+   "FRAME": "LCS007",
+   "MOUNT": "LCS001",
+   "RAIL": "LCS"
+  },
+  "BOT_ROD_HOLDER_ALPHA_AXIS": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "BOLT5": "LCS006",
+   "BOLT6": "LCS007",
+   "BOLT7": "LCS008",
+   "BOLT8": "LCS009",
+   "BOT_PLATE": "LCS010",
+   "MOUNT": "LCS001",
+   "ROD": "LCS"
+  },
+  "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "BOLT5": "LCS006",
+   "BOLT6": "LCS007",
+   "BOLT7": "LCS008",
+   "BOLT8": "LCS009",
+   "BOT_PLATE": "LCS010",
+   "MOUNT": "LCS001",
+   "ROD": "LCS"
+  },
+  "BOT_Z_AXIS_BRACKET": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "BOLT5": "LCS006",
+   "ECC_BOT": "LCS007",
+   "FRAME": "LCS008",
+   "MOUNT": "LCS001",
+   "ROD": "LCS",
+   "ROD2": "LCS009"
+  },
+  "BOT_Z_AXIS_BRACKET_MIRRORED": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "BOLT5": "LCS006",
+   "ECC_BOT": "LCS007",
+   "FRAME": "LCS008",
+   "MOUNT": "LCS001",
+   "ROD": "LCS",
+   "ROD2": "LCS009"
+  },
+  "ECCF_BOT": {
+   "BOLT1": "LCS",
+   "BOLT2": "LCS001",
+   "BRACKET": "LCS002",
+   "BRACKET_X": "LCS003",
+   "NUT": "LCS004",
+   "STUD": "LCS005",
+   "Z_AXIS_BRACKET": "LCS006"
+  },
+  "ECCF_HEIGHT": {
+   "ECC_MOUNT": "LCS",
+   "NUT": "LCS001"
+  },
+  "ECCF_LEVER": {
+   "BOLT": "LCS",
+   "ECC_MOUNT": "LCS001",
+   "TUBE": "LCS002"
+  },
+  "ECCF_LEVER_MIRRORED": {
+   "BOLT": "LCS",
+   "ECC_MOUNT": "LCS001",
+   "TUBE": "LCS002"
+  },
+  "ECCF_MOUNT": {
+   "ECC_HEIGHT": "LCS",
+   "ECC_TOP": "LCS001",
+   "INSERT1": "LCS002",
+   "INSERT2": "LCS003",
+   "LEVER1": "LCS004",
+   "LEVER2": "LCS005"
+  },
+  "ECCF_TOP": {
+   "ECC_MOUNT": "LCS",
+   "STUD": "LCS001"
+  },
+  "HINGE_40_LEAF": {
+   "BORE1": "LCS004",
+   "BORE2": "LCS005",
+   "BRACKET1": "LCS006",
+   "BRACKET2": "LCS007",
+   "FACE1": "LCS008",
+   "FACE2": "LCS009",
+   "FRAME1": "LCS010",
+   "FRAME2": "LCS011",
+   "MOUNT": "LCS001",
+   "PIVOT": "LCS",
+   "SCREW1": "LCS002",
+   "SCREW2": "LCS003"
+  },
+  "LM8UU": {
+   "BORE": "LCS",
+   "END_A": "LCS002",
+   "END_B": "LCS003",
+   "SEAT": "LCS001"
+  },
+  "M5_270": {
+   "HANDWHEEL": "LCS012",
+   "SPANNER_CASE": "LCS013",
+   "SPANNER_COUNTER": "LCS014",
+   "Stencil_Stretcher_AXIS": "LCS009",
+   "Stencil_Stretcher_END_A": "LCS010",
+   "Stencil_Stretcher_END_B": "LCS011",
+   "WORM_SHAFT_AXIS": "LCS",
+   "WORM_SHAFT_END_A": "LCS001",
+   "WORM_SHAFT_END_B": "LCS002",
+   "X_SCREW_AXIS": "LCS003",
+   "X_SCREW_END_A": "LCS004",
+   "X_SCREW_END_B": "LCS005",
+   "Y_SCREW_AXIS": "LCS006",
+   "Y_SCREW_END_A": "LCS007",
+   "Y_SCREW_END_B": "LCS008"
+  },
+  "M8_55": {
+   "AXIS": "LCS",
+   "ECC_BOT": "LCS003",
+   "ECC_TOP": "LCS004",
+   "END_A": "LCS001",
+   "END_B": "LCS002"
+  },
+  "ROD_D8_140": {
+   "AXIS": "LCS",
+   "END_A": "LCS001",
+   "END_B": "LCS002",
+   "Z": "LCS003"
+  },
+  "ROD_D8_244": {
+   "AXIS": "LCS",
+   "END_A": "LCS001",
+   "END_B": "LCS002"
+  },
+  "ROD_D8_280": {
+   "AXIS": "LCS",
+   "END_A": "LCS001",
+   "END_B": "LCS002",
+   "RAIL_HOLDER": "LCS003"
+  },
+  "ROD_D8_300": {
+   "AXIS": "LCS",
+   "END_A": "LCS001",
+   "END_B": "LCS002",
+   "RAIL_HOLDER": "LCS003"
+  },
+  "SPRING_ID10_L35_AT20": {
+   "AXIS": "LCS",
+   "END_A": "LCS001",
+   "END_B": "LCS002",
+   "SPRING_PLATE": "LCS003"
+  },
+  "SPRING_ID6_L30_AT12": {
+   "AXIS": "LCS",
+   "END_A": "LCS001",
+   "END_B": "LCS002",
+   "RAIL_CLAMP_X_DRIVE": "LCS003"
+  },
+  "SR_BEARING_PLATE": {
+   "BEARING1": "LCS",
+   "BEARING2": "LCS001",
+   "BEARING3": "LCS002",
+   "BEARING4": "LCS003",
+   "BOT_PLATE": "LCS004",
+   "RING": "LCS005"
+  },
+  "SR_INNER_RING": {
+   "BEARING": "LCS",
+   "PLATE": "LCS001",
+   "RING": "LCS002",
+   "STUD": "LCS003"
+  },
+  "SR_OUTER_RING_W_GEAR": {
+   "BOLT1": "LCS",
+   "BOLT2": "LCS001",
+   "BOLT3": "LCS002",
+   "BOLT4": "LCS003",
+   "BOLT5": "LCS004",
+   "RING": "LCS005",
+   "TOP_PLATE": "LCS006"
+  },
+  "SR_WORM_GEAR": {
+   "MESH": "LCS001",
+   "SHAFT": "LCS"
+  },
+  "STAND": {
+   "AXIS": "LCS001",
+   "BOLT": "LCS003",
+   "BRACKET": "LCS004",
+   "SEAT": "LCS",
+   "TIP": "LCS002"
+  },
+  "STENCIL_HOLDER_BACK": {
+   "BEARING_MOUNT": "LCS",
+   "BOLT1": "LCS001",
+   "BOLT2": "LCS002",
+   "BOLT3": "LCS003",
+   "BOLT4": "LCS004",
+   "BOLT5": "LCS005",
+   "BOLT6": "LCS006",
+   "HOLDER_BACK": "LCS007",
+   "NUT_HOLDER1": "LCS008",
+   "NUT_HOLDER2": "LCS009",
+   "NUT_HOLDER3": "LCS010",
+   "NUT_HOLDER4": "LCS011"
+  },
+  "STENCIL_HOLDER_BACK_2": {
+   "HOLDER_BACK": "LCS"
+  },
+  "STENCIL_HOLDER_FRONT": {
+   "BEARING_MOUNT1": "LCS",
+   "BEARING_MOUNT2": "LCS001",
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "BOLT5": "LCS006",
+   "BOLT6": "LCS007",
+   "HOLDER_FRONT": "LCS008",
+   "NUT_HOLDER1": "LCS009",
+   "NUT_HOLDER2": "LCS010"
+  },
+  "STENCIL_HOLDER_FRONT_2": {
+   "HOLDER_FRONT": "LCS",
+   "SPANNER_COUNTER": "LCS001"
+  },
+  "TOP_CLAMP_BEARING_MOUNT_1": {
+   "BEARING": "LCS",
+   "HOLDER_FRONT": "LCS001",
+   "NUT": "LCS002",
+   "SPRING_PLATE": "LCS003"
+  },
+  "TOP_CLAMP_BEARING_MOUNT_2": {
+   "BEARING1": "LCS",
+   "BEARING2": "LCS001",
+   "HOLDER_FRONT": "LCS002",
+   "NUT1": "LCS003",
+   "NUT2": "LCS004",
+   "NUT3": "LCS005",
+   "SPRING_PLATE": "LCS006"
+  },
+  "TOP_CLAMP_NUT_HOLDER": {
+   "HOLDER_BACK": "LCS",
+   "NUT": "LCS001"
+  },
+  "TOP_CLAMP_SPANNER_CASE_1": {
+   "FRAME": "LCS",
+   "SPANNER_CASE": "LCS001",
+   "STUD": "LCS002"
+  },
+  "TOP_CLAMP_SPANNER_CASE_2": {
+   "FRAME": "LCS",
+   "SPANNER_CASE": "LCS001",
+   "SPANNER_HANDWHEEL": "LCS002"
+  },
+  "TOP_CLAMP_SPANNER_COUNTER": {
+   "HOLDER_FRONT": "LCS",
+   "NUT": "LCS001",
+   "STUD": "LCS002"
+  },
+  "TOP_CLAMP_SPANNER_HANDWHEEL": {
+   "NUT": "LCS",
+   "SPANNER_CASE": "LCS001"
+  },
+  "TOP_CLAMP_STOP": {
+   "BOLT": "LCS",
+   "NUT": "LCS001",
+   "SPRING": "LCS002"
+  },
+  "TOP_CLAMP_Z_AXIS": {
+   "BOLT1": "LCS",
+   "BOLT2": "LCS001",
+   "BOLT3": "LCS002",
+   "FRAME1": "LCS003",
+   "FRAME2": "LCS004",
+   "ROD1": "LCS005",
+   "ROD2": "LCS006"
+  },
+  "TOP_HINGE_LOCK_BACK": {
+   "HOOK": "LCS",
+   "LOCK": "LCS001"
+  },
+  "TOP_HINGE_LOCK_FRONT": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "LOCK": "LCS001",
+   "MOUNT": "LCS"
+  },
+  "TOP_RAIL_HOLDER": {
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "BOLT3": "LCS004",
+   "BOLT4": "LCS005",
+   "FRAME": "LCS006",
+   "MOUNT": "LCS001",
+   "RAIL": "LCS"
+  },
+  "TOP_SPRING_PLATE": {
+   "BEARING_MOUNT": "LCS",
+   "SPRING": "LCS001"
+  },
+  "TOP_Z_AXIS_BEARING_MOUNT": {
+   "BEARING": "LCS",
+   "BOLT1": "LCS002",
+   "BOLT2": "LCS003",
+   "MOUNT": "LCS001"
+  },
+  "TUBE_D8_170": {
+   "AXIS": "LCS",
+   "BORE": "LCS001",
+   "END_A": "LCS002",
+   "END_B": "LCS003"
+  },
+  "XY_PLATE": {
+   "BEARING_MOUNT_X1": "LCS",
+   "BEARING_MOUNT_X2": "LCS001",
+   "BEARING_MOUNT_X3": "LCS002",
+   "BEARING_MOUNT_X4": "LCS003",
+   "BOLT1": "LCS004",
+   "BOLT10": "LCS005",
+   "BOLT11": "LCS006",
+   "BOLT12": "LCS007",
+   "BOLT13": "LCS008",
+   "BOLT14": "LCS009",
+   "BOLT15": "LCS010",
+   "BOLT16": "LCS011",
+   "BOLT2": "LCS012",
+   "BOLT3": "LCS013",
+   "BOLT4": "LCS014",
+   "BOLT5": "LCS015",
+   "BOLT6": "LCS016",
+   "BOLT7": "LCS017",
+   "BOLT8": "LCS018",
+   "BOLT9": "LCS019"
+  }
+ },
+ "joints": {
+  "Bottom_Assembly/Joint": {
+   "Reference1": {
+    "datum": "FRAME",
+    "object": "LCS007",
+    "part": "BOT_RAIL_HOLDER",
+    "prefix": "BOT_RAIL_HOLDER001.",
+    "via_link": null,
+    "was": "BOT_RAIL_HOLDER001.Edge50"
+   },
+   "Reference2": {
+    "datum": "RAIL_HOLDER2",
+    "object": "LCS024",
+    "part": "_2020_300",
+    "prefix": "_2020_304.",
+    "via_link": null,
+    "was": "_2020_304.Face27"
+   }
+  },
+  "Bottom_Assembly/Joint001": {
+   "Reference1": {
+    "datum": "BEARING2",
+    "object": "LCS007",
+    "part": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+    "prefix": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.",
+    "via_link": null,
+    "was": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Edge28"
+   },
+   "Reference2": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "LM8UU004.",
+    "via_link": null,
+    "was": "LM8UU004.Edge2"
+   }
+  },
+  "Bottom_Assembly/Joint002": {
+   "Reference1": {
+    "datum": "SCREW",
+    "object": "LCS",
+    "part": "BOT_BRACKET_X_AXIS",
+    "prefix": "BOT_BRACKET_X_AXIS001.",
+    "via_link": null,
+    "was": "BOT_BRACKET_X_AXIS001.Edge33"
+   },
+   "Reference2": {
+    "datum": "BRACKET_X",
+    "object": "LCS002",
+    "part": "BOT_HANDWHEEL",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Edge210"
+   }
+  },
+  "Bottom_Assembly/Joint003": {
+   "Reference1": {
+    "datum": "WORM_SHAFT_END_B",
+    "object": "LCS002",
+    "part": "M5_270",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   },
+   "Reference2": {
+    "datum": "STUD",
+    "object": "LCS005",
+    "part": "BOT_HANDWHEEL",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face86"
+   }
+  },
+  "Bottom_Assembly/Joint004": {
+   "Reference1": {
+    "datum": "STUD",
+    "object": "LCS005",
+    "part": "BOT_HANDWHEEL",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Face86"
+   },
+   "Reference2": {
+    "datum": "WORM_SHAFT_END_B",
+    "object": "LCS002",
+    "part": "M5_270",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad002.Face3"
+   }
+  },
+  "Bottom_Assembly/Joint005": {
+   "Reference1": {
+    "datum": "BRACKET_X",
+    "object": "LCS002",
+    "part": "BOT_HANDWHEEL",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Edge210"
+   },
+   "Reference2": {
+    "datum": "HANDWHEEL",
+    "object": "LCS006",
+    "part": "BOT_RAIL_CLAMP_Y_AXIS_1",
+    "prefix": "BOT_RAIL_CLAMP_Y_AXIS_1.",
+    "via_link": null,
+    "was": "BOT_RAIL_CLAMP_Y_AXIS_1.Edge54"
+   }
+  },
+  "Bottom_Assembly/Joint006": {
+   "Reference1": {
+    "datum": "BRACKET_X",
+    "object": "LCS003",
+    "part": "ECCF_BOT",
+    "prefix": "ECCF_BOT.",
+    "via_link": null,
+    "was": "ECCF_BOT.Face5"
+   },
+   "Reference2": {
+    "datum": "ECC_BOT",
+    "object": "LCS008",
+    "part": "BOT_BRACKET_X_AXIS",
+    "prefix": "BOT_BRACKET_X_AXIS001.",
+    "via_link": null,
+    "was": "BOT_BRACKET_X_AXIS001.Edge27"
+   }
+  },
+  "Bottom_Assembly/Joint007": {
+   "Reference1": {
+    "datum": "BRACKET",
+    "object": "LCS002",
+    "part": "ECCF_BOT",
+    "prefix": "ECCF_BOT003.",
+    "via_link": null,
+    "was": "ECCF_BOT003.Edge17"
+   },
+   "Reference2": {
+    "datum": "ECC_BOT",
+    "object": "LCS006",
+    "part": "BOT_BRACKETS",
+    "prefix": "BOT_BRACKETS008.",
+    "via_link": null,
+    "was": "BOT_BRACKETS008.Edge2"
+   }
+  },
+  "Bottom_Assembly/Joint008": {
+   "Reference1": {
+    "datum": "Z_AXIS_BRACKET",
+    "object": "LCS006",
+    "part": "ECCF_BOT",
+    "prefix": "ECCF_BOT002.",
+    "via_link": null,
+    "was": "ECCF_BOT002.Edge11"
+   },
+   "Reference2": {
+    "datum": "ECC_BOT",
+    "object": "LCS007",
+    "part": "BOT_Z_AXIS_BRACKET",
+    "prefix": "BOT_Z_AXIS_BRACKET001.",
+    "via_link": null,
+    "was": "BOT_Z_AXIS_BRACKET001.Edge2"
+   }
+  },
+  "Bottom_Assembly/Joint009": {
+   "Reference1": {
+    "datum": "BRACKET",
+    "object": "LCS002",
+    "part": "ECCF_BOT",
+    "prefix": "ECCF_BOT001.",
+    "via_link": null,
+    "was": "ECCF_BOT001.Edge17"
+   },
+   "Reference2": {
+    "datum": "ECC_BOT",
+    "object": "LCS007",
+    "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+    "prefix": "BOT_Z_AXIS_BRACKET_MIRRORED001.",
+    "via_link": null,
+    "was": "BOT_Z_AXIS_BRACKET_MIRRORED001.Edge44"
+   }
+  },
+  "Bottom_Assembly/Joint010": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS001",
+    "part": "TUBE_D8_170",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   },
+   "Reference2": {
+    "datum": "TUBE",
+    "object": "LCS002",
+    "part": "ECCF_LEVER_MIRRORED",
+    "prefix": "ECCF_LEVER_MIRRORED003.",
+    "via_link": null,
+    "was": "ECCF_LEVER_MIRRORED003.Edge23"
+   }
+  },
+  "Bottom_Assembly/Joint011": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS001",
+    "part": "TUBE_D8_170",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   },
+   "Reference2": {
+    "datum": "TUBE",
+    "object": "LCS002",
+    "part": "ECCF_LEVER",
+    "prefix": "ECCF_LEVER002.",
+    "via_link": null,
+    "was": "ECCF_LEVER002.Edge23"
+   }
+  },
+  "Bottom_Frame/Joint": {
+   "Reference1": {
+    "datum": "BRACKET9",
+    "object": "LCS014",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge26"
+   },
+   "Reference2": {
+    "datum": "BRACKET9",
+    "object": "LCS014",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge26"
+   }
+  },
+  "Bottom_Frame/Joint001": {
+   "Reference1": {
+    "datum": "FRAME2",
+    "object": "LCS009",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face4"
+   },
+   "Reference2": {
+    "datum": "BRACKET3",
+    "object": "LCS008",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "Bottom_Frame/Joint003": {
+   "Reference1": {
+    "datum": "BRACKET7",
+    "object": "LCS012",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge90"
+   },
+   "Reference2": {
+    "datum": "BRACKET7",
+    "object": "LCS012",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge90"
+   }
+  },
+  "Bottom_Frame/Joint008": {
+   "Reference1": {
+    "datum": "BRACKET_X",
+    "object": "LCS015",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge72"
+   },
+   "Reference2": {
+    "datum": "FRAME",
+    "object": "LCS009",
+    "part": "BOT_BRACKET_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face5"
+   }
+  },
+  "Bottom_Frame/Joint010": {
+   "Reference1": {
+    "datum": "FRAME",
+    "object": "LCS008",
+    "part": "BOT_Z_AXIS_BRACKET",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge76"
+   },
+   "Reference2": {
+    "datum": "Z_AXIS_BRACKET1",
+    "object": "LCS025",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge7"
+   }
+  },
+  "Bottom_Frame/Joint011": {
+   "Reference1": {
+    "datum": "Z_AXIS_BRACKET2",
+    "object": "LCS026",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge53"
+   },
+   "Reference2": {
+    "datum": "FRAME",
+    "object": "LCS008",
+    "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge83"
+   }
+  },
+  "Bottom_Frame/Joint013": {
+   "Reference1": {
+    "datum": "BRACKET1",
+    "object": "LCS006",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   },
+   "Reference2": {
+    "datum": "FRAME3",
+    "object": "LCS010",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Bottom_Frame/Joint015": {
+   "Reference1": {
+    "datum": "Z_AXIS_BRACKET2",
+    "object": "LCS026",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge53"
+   },
+   "Reference2": {
+    "datum": "BRACKET9",
+    "object": "LCS014",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge26"
+   }
+  },
+  "Bottom_Frame/Joint016": {
+   "Reference1": {
+    "datum": "BRACKET7",
+    "object": "LCS012",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge90"
+   },
+   "Reference2": {
+    "datum": "FRAME1",
+    "object": "LCS008",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Bottom_Frame/Joint017": {
+   "Reference1": {
+    "datum": "FRAME3",
+    "object": "LCS010",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   },
+   "Reference2": {
+    "datum": "BRACKET5",
+    "object": "LCS010",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge45"
+   }
+  },
+  "Bottom_Frame/Joint018": {
+   "Reference1": {
+    "datum": "BRACKET9",
+    "object": "LCS014",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge26"
+   },
+   "Reference2": {
+    "datum": "FRAME1",
+    "object": "LCS008",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Bottom_Frame/Joint019": {
+   "Reference1": {
+    "datum": "BRACKET",
+    "object": "LCS004",
+    "part": "STAND",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge1"
+   },
+   "Reference2": {
+    "datum": "BOLT1",
+    "object": "LCS001",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge24"
+   }
+  },
+  "Bottom_Frame/Joint020": {
+   "Reference1": {
+    "datum": "BRACKET",
+    "object": "LCS004",
+    "part": "STAND",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge1"
+   },
+   "Reference2": {
+    "datum": "BOLT1",
+    "object": "LCS001",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge24"
+   }
+  },
+  "Bottom_Frame/Joint021": {
+   "Reference1": {
+    "datum": "BRACKET",
+    "object": "LCS004",
+    "part": "STAND",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge1"
+   },
+   "Reference2": {
+    "datum": "FOOT",
+    "object": "LCS007",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge15"
+   }
+  },
+  "Bottom_Frame/Joint022": {
+   "Reference1": {
+    "datum": "BOLT1",
+    "object": "LCS001",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge24"
+   },
+   "Reference2": {
+    "datum": "BRACKET",
+    "object": "LCS004",
+    "part": "STAND",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge1"
+   }
+  },
+  "Eccenter/Joint": {
+   "Reference1": {
+    "datum": "ECC_BOT",
+    "object": "LCS003",
+    "part": "M8_55",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Face4"
+   },
+   "Reference2": {
+    "datum": "STUD",
+    "object": "LCS005",
+    "part": "ECCF_BOT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Edge49"
+   }
+  },
+  "Eccenter/Joint001": {
+   "Reference1": {
+    "datum": "ECC_HEIGHT",
+    "object": "LCS",
+    "part": "ECCF_MOUNT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge22"
+   },
+   "Reference2": {
+    "datum": "ECC_MOUNT",
+    "object": "LCS",
+    "part": "ECCF_HEIGHT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face24"
+   }
+  },
+  "Eccenter/Joint002": {
+   "Reference1": {
+    "datum": "ECC_MOUNT",
+    "object": "LCS001",
+    "part": "ECCF_LEVER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge39"
+   },
+   "Reference2": {
+    "datum": "LEVER2",
+    "object": "LCS005",
+    "part": "ECCF_MOUNT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge33"
+   }
+  },
+  "Eccenter/Joint003": {
+   "Reference1": {
+    "datum": "ECC_MOUNT",
+    "object": "LCS",
+    "part": "ECCF_TOP",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge5"
+   },
+   "Reference2": {
+    "datum": "ECC_TOP",
+    "object": "LCS001",
+    "part": "ECCF_MOUNT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Face11"
+   }
+  },
+  "Eccenter/Joint004": {
+   "Reference1": {
+    "datum": "ECC_TOP",
+    "object": "LCS004",
+    "part": "M8_55",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Face183"
+   },
+   "Reference2": {
+    "datum": "STUD",
+    "object": "LCS001",
+    "part": "ECCF_TOP",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge62"
+   }
+  },
+  "Eccenter/Joint005": {
+   "Reference1": {
+    "datum": "ECC_MOUNT",
+    "object": "LCS001",
+    "part": "ECCF_LEVER_MIRRORED",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge39"
+   },
+   "Reference2": {
+    "datum": "LEVER1",
+    "object": "LCS004",
+    "part": "ECCF_MOUNT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge34"
+   }
+  },
+  "Eccenter/Joint006": {
+   "Reference1": {
+    "datum": "SPRING_PLATE",
+    "object": "LCS003",
+    "part": "SPRING_ID10_L35_AT20",
+    "prefix": "LCS002.",
+    "via_link": null,
+    "was": "LCS002."
+   },
+   "Reference2": {
+    "datum": "STUD",
+    "object": "LCS001",
+    "part": "ECCF_TOP",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge62"
+   }
+  },
+  "Rotation_Table/Joint002": {
+   "Reference1": {
+    "datum": "BOT_PLATE3",
+    "object": "LCS012",
+    "part": "BOT_BEARING_MOUNT_Y_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge51"
+   },
+   "Reference2": {
+    "datum": "BEARING_MOUNT_Y1",
+    "object": "LCS",
+    "part": "ALPHA_BOT_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge24"
+   }
+  },
+  "Rotation_Table/Joint003": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT_Y3",
+    "object": "LCS002",
+    "part": "ALPHA_BOT_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge42"
+   },
+   "Reference2": {
+    "datum": "BOT_PLATE1",
+    "object": "LCS010",
+    "part": "BOT_BEARING_MOUNT_Y_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge32"
+   }
+  },
+  "Rotation_Table/Joint004": {
+   "Reference1": {
+    "datum": "BOT_PLATE",
+    "object": "LCS012",
+    "part": "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge81"
+   },
+   "Reference2": {
+    "datum": "BEARING_MOUNT_Y_AXIS",
+    "object": "LCS003",
+    "part": "ALPHA_BOT_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge36"
+   }
+  },
+  "Rotation_Table/Joint005": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT_Y2",
+    "object": "LCS001",
+    "part": "ALPHA_BOT_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge19"
+   },
+   "Reference2": {
+    "datum": "BOT_PLATE2",
+    "object": "LCS011",
+    "part": "BOT_BEARING_MOUNT_Y_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge52"
+   }
+  },
+  "Rotation_Table/Joint006": {
+   "Reference1": {
+    "datum": "ROD_HOLDER_ALPHA",
+    "object": "LCS005",
+    "part": "ALPHA_BOT_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge46"
+   },
+   "Reference2": {
+    "datum": "BOT_PLATE",
+    "object": "LCS010",
+    "part": "BOT_ROD_HOLDER_ALPHA_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge14"
+   }
+  },
+  "Rotation_Table/Joint007": {
+   "Reference1": {
+    "datum": "BOT_PLATE",
+    "object": "LCS010",
+    "part": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge16"
+   },
+   "Reference2": {
+    "datum": "ROD_HOLDER_ALPHA_AXIS",
+    "object": "LCS006",
+    "part": "ALPHA_BOT_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge60"
+   }
+  },
+  "Rotation_Table/Joint008": {
+   "Reference1": {
+    "datum": "WORM_SHAFT_END_B",
+    "object": "LCS002",
+    "part": "M5_270",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face3"
+   },
+   "Reference2": {
+    "datum": "ROD",
+    "object": "LCS",
+    "part": "BOT_ROD_HOLDER_ALPHA_AXIS_SHORT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge22"
+   }
+  },
+  "Rotation_Table/Joint009": {
+   "Reference1": {
+    "datum": "STUD",
+    "object": "LCS005",
+    "part": "BOT_HANDWHEEL",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Face86"
+   },
+   "Reference2": {
+    "datum": "HANDWHEEL",
+    "object": "LCS012",
+    "part": "M5_270",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face2"
+   }
+  },
+  "Rotation_Table/Joint010": {
+   "Reference1": {
+    "datum": "BOT_PLATE",
+    "object": "LCS004",
+    "part": "SR_BEARING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge40"
+   },
+   "Reference2": {
+    "datum": "PLATE",
+    "object": "LCS004",
+    "part": "ALPHA_BOT_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge73"
+   }
+  },
+  "Rotation_Table/Joint011": {
+   "Reference1": {
+    "datum": "RING",
+    "object": "LCS002",
+    "part": "SR_INNER_RING",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge5"
+   },
+   "Reference2": {
+    "datum": "RING",
+    "object": "LCS005",
+    "part": "SR_OUTER_RING_W_GEAR",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge427"
+   }
+  },
+  "Rotation_Table/Joint012": {
+   "Reference1": {
+    "datum": "SHAFT",
+    "object": "LCS",
+    "part": "SR_WORM_GEAR",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Face7"
+   },
+   "Reference2": {
+    "datum": "WORM_SHAFT_AXIS",
+    "object": "LCS",
+    "part": "M5_270",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face1"
+   }
+  },
+  "Rotation_Table/Joint021": {
+   "Reference1": {
+    "datum": "PLATE",
+    "object": "LCS001",
+    "part": "SR_INNER_RING",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Face4"
+   },
+   "Reference2": {
+    "datum": "RING",
+    "object": "LCS005",
+    "part": "SR_BEARING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face17"
+   }
+  },
+  "Rotation_Table/Joint023": {
+   "Reference1": {
+    "datum": "WORM_SHAFT_AXIS",
+    "object": "LCS",
+    "part": "M5_270",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   },
+   "Reference2": {
+    "datum": "STUD",
+    "object": "LCS003",
+    "part": "SR_INNER_RING",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Rotation_Table/Joint024": {
+   "Reference1": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "ADAPTER_D5_TO_M3",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge5"
+   },
+   "Reference2": {
+    "datum": "ADAPTER",
+    "object": "LCS003",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge1"
+   }
+  },
+  "Rotation_Table/Joint025": {
+   "Reference1": {
+    "datum": "ADAPTER",
+    "object": "LCS003",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge1"
+   },
+   "Reference2": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "ADAPTER_D5_TO_M3",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge5"
+   }
+  },
+  "Rotation_Table/Joint026": {
+   "Reference1": {
+    "datum": "ADAPTER",
+    "object": "LCS003",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge1"
+   },
+   "Reference2": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "ADAPTER_D5_TO_M3",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge5"
+   }
+  },
+  "Rotation_Table/Joint027": {
+   "Reference1": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "ADAPTER_D5_TO_M3",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge5"
+   },
+   "Reference2": {
+    "datum": "ADAPTER",
+    "object": "LCS003",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge1"
+   }
+  },
+  "Rotation_Table/Joint028": {
+   "Reference1": {
+    "datum": "FACE_B",
+    "object": "LCS002",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge5"
+   },
+   "Reference2": {
+    "datum": "BEARING2",
+    "object": "LCS001",
+    "part": "SR_BEARING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge147"
+   }
+  },
+  "Rotation_Table/Joint029": {
+   "Reference1": {
+    "datum": "FACE_B",
+    "object": "LCS002",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge5"
+   },
+   "Reference2": {
+    "datum": "BEARING1",
+    "object": "LCS",
+    "part": "SR_BEARING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge149"
+   }
+  },
+  "Rotation_Table/Joint030": {
+   "Reference1": {
+    "datum": "FACE_B",
+    "object": "LCS002",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge5"
+   },
+   "Reference2": {
+    "datum": "BEARING3",
+    "object": "LCS002",
+    "part": "SR_BEARING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge125"
+   }
+  },
+  "Rotation_Table/Joint031": {
+   "Reference1": {
+    "datum": "BEARING4",
+    "object": "LCS003",
+    "part": "SR_BEARING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Edge114"
+   },
+   "Reference2": {
+    "datum": "FACE_B",
+    "object": "LCS002",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Edge5"
+   }
+  },
+  "Rotation_Table/Joint032": {
+   "Reference1": {
+    "datum": "FACE_A",
+    "object": "LCS001",
+    "part": "BEARING_14X5X5",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Face1"
+   },
+   "Reference2": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "SR_INNER_RING",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Face5"
+   }
+  },
+  "Rotation_Table/Joint033": {
+   "Reference1": {
+    "datum": "TOP_PLATE",
+    "object": "LCS006",
+    "part": "SR_OUTER_RING_W_GEAR",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge272"
+   },
+   "Reference2": {
+    "datum": "RING",
+    "object": "LCS",
+    "part": "ALPHA_TOP_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge177"
+   }
+  },
+  "Stencil_Clamp/Joint": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face3"
+   },
+   "Reference2": {
+    "datum": "RAIL",
+    "object": "LCS",
+    "part": "TOP_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge39"
+   }
+  },
+  "Stencil_Clamp/Joint001": {
+   "Reference1": {
+    "datum": "RAIL",
+    "object": "LCS",
+    "part": "TOP_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge39"
+   },
+   "Reference2": {
+    "datum": "RAIL_HOLDER",
+    "object": "LCS003",
+    "part": "ROD_D8_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face2"
+   }
+  },
+  "Stencil_Clamp/Joint002": {
+   "Reference1": {
+    "datum": "RAIL",
+    "object": "LCS",
+    "part": "TOP_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge39"
+   },
+   "Reference2": {
+    "datum": "RAIL_HOLDER",
+    "object": "LCS003",
+    "part": "ROD_D8_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face2"
+   }
+  },
+  "Stencil_Clamp/Joint003": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face3"
+   },
+   "Reference2": {
+    "datum": "RAIL",
+    "object": "LCS",
+    "part": "TOP_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge39"
+   }
+  },
+  "Stencil_Clamp/Joint012": {
+   "Reference1": {
+    "datum": "BEARING1",
+    "object": "LCS",
+    "part": "TOP_CLAMP_BEARING_MOUNT_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge12"
+   },
+   "Reference2": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face3"
+   }
+  },
+  "Stencil_Clamp/Joint013": {
+   "Reference1": {
+    "datum": "BEARING2",
+    "object": "LCS001",
+    "part": "TOP_CLAMP_BEARING_MOUNT_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge41"
+   },
+   "Reference2": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face3"
+   }
+  },
+  "Stencil_Clamp/Joint014": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT",
+    "object": "LCS",
+    "part": "TOP_SPRING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Face1"
+   },
+   "Reference2": {
+    "datum": "SPRING_PLATE",
+    "object": "LCS003",
+    "part": "TOP_CLAMP_BEARING_MOUNT_1",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge19"
+   }
+  },
+  "Stencil_Clamp/Joint015": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT",
+    "object": "LCS",
+    "part": "TOP_SPRING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Revolution.Face1"
+   },
+   "Reference2": {
+    "datum": "SPRING_PLATE",
+    "object": "LCS006",
+    "part": "TOP_CLAMP_BEARING_MOUNT_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge19"
+   }
+  },
+  "Stencil_Clamp/Joint027": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT1",
+    "object": "LCS",
+    "part": "STENCIL_HOLDER_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge49"
+   },
+   "Reference2": {
+    "datum": "HOLDER_FRONT",
+    "object": "LCS002",
+    "part": "TOP_CLAMP_BEARING_MOUNT_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge22"
+   }
+  },
+  "Stencil_Clamp/Joint028": {
+   "Reference1": {
+    "datum": "HOLDER_FRONT",
+    "object": "LCS001",
+    "part": "TOP_CLAMP_BEARING_MOUNT_1",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Edge7"
+   },
+   "Reference2": {
+    "datum": "BEARING_MOUNT2",
+    "object": "LCS001",
+    "part": "STENCIL_HOLDER_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge35"
+   }
+  },
+  "Stencil_Clamp/Joint029": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face2"
+   },
+   "Reference2": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "TOP_CLAMP_BEARING_MOUNT_1",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Face2"
+   }
+  },
+  "Stencil_Clamp/Joint030": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face2"
+   },
+   "Reference2": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "TOP_CLAMP_BEARING_MOUNT_1",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Face2"
+   }
+  },
+  "Stencil_Clamp/Joint031": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face4"
+   },
+   "Reference2": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   }
+  },
+  "Stencil_Clamp/Joint032": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face4"
+   },
+   "Reference2": {
+    "datum": "RAIL_HOLDER",
+    "object": "LCS003",
+    "part": "ROD_D8_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   }
+  },
+  "Stencil_Clamp/Joint033": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face3"
+   },
+   "Reference2": {
+    "datum": "RAIL_HOLDER",
+    "object": "LCS003",
+    "part": "ROD_D8_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face2"
+   }
+  },
+  "Stencil_Clamp/Joint034": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   },
+   "Reference2": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   }
+  },
+  "Stencil_Clamp/Joint035": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT",
+    "object": "LCS",
+    "part": "STENCIL_HOLDER_BACK",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge46"
+   },
+   "Reference2": {
+    "datum": "HOLDER_FRONT",
+    "object": "LCS002",
+    "part": "TOP_CLAMP_BEARING_MOUNT_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge22"
+   }
+  },
+  "Stencil_Clamp/Joint036": {
+   "Reference1": {
+    "datum": "HOLDER_BACK",
+    "object": "LCS",
+    "part": "TOP_CLAMP_NUT_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge82"
+   },
+   "Reference2": {
+    "datum": "NUT_HOLDER4",
+    "object": "LCS011",
+    "part": "STENCIL_HOLDER_BACK",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge30"
+   }
+  },
+  "Stencil_Clamp/Joint037": {
+   "Reference1": {
+    "datum": "NUT_HOLDER3",
+    "object": "LCS010",
+    "part": "STENCIL_HOLDER_BACK",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge32"
+   },
+   "Reference2": {
+    "datum": "HOLDER_BACK",
+    "object": "LCS",
+    "part": "TOP_CLAMP_NUT_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge82"
+   }
+  },
+  "Stencil_Clamp/Joint038": {
+   "Reference1": {
+    "datum": "HOLDER_BACK",
+    "object": "LCS",
+    "part": "TOP_CLAMP_NUT_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge82"
+   },
+   "Reference2": {
+    "datum": "NUT_HOLDER2",
+    "object": "LCS009",
+    "part": "STENCIL_HOLDER_BACK",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge36"
+   }
+  },
+  "Stencil_Clamp/Joint039": {
+   "Reference1": {
+    "datum": "HOLDER_BACK",
+    "object": "LCS",
+    "part": "TOP_CLAMP_NUT_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge82"
+   },
+   "Reference2": {
+    "datum": "NUT_HOLDER1",
+    "object": "LCS008",
+    "part": "STENCIL_HOLDER_BACK",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge40"
+   }
+  },
+  "Stencil_Clamp/Joint040": {
+   "Reference1": {
+    "datum": "HOLDER_BACK",
+    "object": "LCS",
+    "part": "TOP_CLAMP_NUT_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge82"
+   },
+   "Reference2": {
+    "datum": "NUT_HOLDER1",
+    "object": "LCS009",
+    "part": "STENCIL_HOLDER_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge41"
+   }
+  },
+  "Stencil_Clamp/Joint043": {
+   "Reference1": {
+    "datum": "NUT_HOLDER2",
+    "object": "LCS010",
+    "part": "STENCIL_HOLDER_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge31"
+   },
+   "Reference2": {
+    "datum": "HOLDER_BACK",
+    "object": "LCS",
+    "part": "TOP_CLAMP_NUT_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge82"
+   }
+  },
+  "Stencil_Clamp/Joint044": {
+   "Reference1": {
+    "datum": "HOLDER_BACK",
+    "object": "LCS",
+    "part": "STENCIL_HOLDER_BACK_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge22"
+   },
+   "Reference2": {
+    "datum": "HOLDER_BACK",
+    "object": "LCS007",
+    "part": "STENCIL_HOLDER_BACK",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge6"
+   }
+  },
+  "Stencil_Clamp/Joint045": {
+   "Reference1": {
+    "datum": "HOLDER_FRONT",
+    "object": "LCS",
+    "part": "STENCIL_HOLDER_FRONT_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge29"
+   },
+   "Reference2": {
+    "datum": "HOLDER_FRONT",
+    "object": "LCS008",
+    "part": "STENCIL_HOLDER_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge11"
+   }
+  },
+  "Stencil_Clamp/Joint046": {
+   "Reference1": {
+    "datum": "SPRING_PLATE",
+    "object": "LCS003",
+    "part": "SPRING_ID10_L35_AT20",
+    "prefix": "LCS002.",
+    "via_link": null,
+    "was": "LCS002."
+   },
+   "Reference2": {
+    "datum": "SPRING",
+    "object": "LCS001",
+    "part": "TOP_SPRING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge10"
+   }
+  },
+  "Stencil_Clamp/Joint047": {
+   "Reference1": {
+    "datum": "SPRING_PLATE",
+    "object": "LCS003",
+    "part": "SPRING_ID10_L35_AT20",
+    "prefix": "LCS002.",
+    "via_link": null,
+    "was": "LCS002."
+   },
+   "Reference2": {
+    "datum": "SPRING",
+    "object": "LCS001",
+    "part": "TOP_SPRING_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face6"
+   }
+  },
+  "Stencil_Clamp/Joint048": {
+   "Reference1": {
+    "datum": "SPRING_PLATE",
+    "object": "LCS003",
+    "part": "SPRING_ID10_L35_AT20",
+    "prefix": "LCS001.",
+    "via_link": null,
+    "was": "LCS001."
+   },
+   "Reference2": {
+    "datum": "SPRING",
+    "object": "LCS002",
+    "part": "TOP_CLAMP_STOP",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge11"
+   }
+  },
+  "Stencil_Clamp/Joint049": {
+   "Reference1": {
+    "datum": "SPRING_PLATE",
+    "object": "LCS003",
+    "part": "SPRING_ID10_L35_AT20",
+    "prefix": "LCS001.",
+    "via_link": null,
+    "was": "LCS001."
+   },
+   "Reference2": {
+    "datum": "SPRING",
+    "object": "LCS002",
+    "part": "TOP_CLAMP_STOP",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge11"
+   }
+  },
+  "Top_Assembly/Joint": {
+   "Reference1": {
+    "datum": "RAIL_HOLDER1",
+    "object": "LCS023",
+    "part": "_2020_300",
+    "prefix": "_2020_300.",
+    "via_link": null,
+    "was": "_2020_300.Edge22"
+   },
+   "Reference2": {
+    "datum": "FRAME",
+    "object": "LCS006",
+    "part": "TOP_RAIL_HOLDER",
+    "prefix": "TOP_RAIL_HOLDER001.",
+    "via_link": null,
+    "was": "TOP_RAIL_HOLDER001.Edge38"
+   }
+  },
+  "Top_Assembly/Joint001": {
+   "Reference1": {
+    "datum": "HOLDER_FRONT",
+    "object": "LCS",
+    "part": "TOP_CLAMP_SPANNER_COUNTER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge26"
+   },
+   "Reference2": {
+    "datum": "SPANNER_COUNTER",
+    "object": "LCS001",
+    "part": "STENCIL_HOLDER_FRONT_2",
+    "prefix": "STENCIL_HOLDER_FRONT_2.",
+    "via_link": null,
+    "was": "STENCIL_HOLDER_FRONT_2.Edge12"
+   }
+  },
+  "Top_Assembly/Joint002": {
+   "Reference1": {
+    "datum": "SPANNER_COUNTER",
+    "object": "LCS014",
+    "part": "M5_270",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   },
+   "Reference2": {
+    "datum": "STUD",
+    "object": "LCS002",
+    "part": "TOP_CLAMP_SPANNER_COUNTER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face60"
+   }
+  },
+  "Top_Assembly/Joint003": {
+   "Reference1": {
+    "datum": "SPANNER_CASE",
+    "object": "LCS001",
+    "part": "TOP_CLAMP_SPANNER_HANDWHEEL",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge89"
+   },
+   "Reference2": {
+    "datum": "SPANNER_HANDWHEEL",
+    "object": "LCS002",
+    "part": "TOP_CLAMP_SPANNER_CASE_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Edge45"
+   }
+  },
+  "Top_Assembly/Joint004": {
+   "Reference1": {
+    "datum": "SPANNER_CASE",
+    "object": "LCS001",
+    "part": "TOP_CLAMP_SPANNER_CASE_1",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge41"
+   },
+   "Reference2": {
+    "datum": "SPANNER_CASE",
+    "object": "LCS001",
+    "part": "TOP_CLAMP_SPANNER_CASE_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge14"
+   }
+  },
+  "Top_Assembly/Joint005": {
+   "Reference1": {
+    "datum": "SPANNER_CASE",
+    "object": "LCS013",
+    "part": "M5_270",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   },
+   "Reference2": {
+    "datum": "STUD",
+    "object": "LCS002",
+    "part": "TOP_CLAMP_SPANNER_CASE_1",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face12"
+   }
+  },
+  "Top_Assembly/Joint006": {
+   "Reference1": {
+    "datum": "SPANNER_CASE1",
+    "object": "LCS011",
+    "part": "_2020_300_TOP_FRONT",
+    "prefix": "_2020_300_TOP_FRONT.",
+    "via_link": null,
+    "was": "_2020_300_TOP_FRONT.Face25"
+   },
+   "Reference2": {
+    "datum": "FRAME",
+    "object": "LCS",
+    "part": "TOP_CLAMP_SPANNER_CASE_1",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face5"
+   }
+  },
+  "Top_Assembly/Joint007": {
+   "Reference1": {
+    "datum": "FRAME",
+    "object": "LCS",
+    "part": "TOP_CLAMP_SPANNER_CASE_2",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face7"
+   },
+   "Reference2": {
+    "datum": "SPANNER_CASE2",
+    "object": "LCS012",
+    "part": "_2020_300_TOP_FRONT",
+    "prefix": "_2020_300_TOP_FRONT.",
+    "via_link": null,
+    "was": "_2020_300_TOP_FRONT.Face27"
+   }
+  },
+  "Top_Frame/Joint": {
+   "Reference1": {
+    "datum": "FRAME1",
+    "object": "LCS018",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge5"
+   },
+   "Reference2": {
+    "datum": "FRAME1",
+    "object": "LCS006",
+    "part": "_2020_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge5"
+   }
+  },
+  "Top_Frame/Joint001": {
+   "Reference1": {
+    "datum": "FRAME3",
+    "object": "LCS020",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge70"
+   },
+   "Reference2": {
+    "datum": "FRAME3",
+    "object": "LCS008",
+    "part": "_2020_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge47"
+   }
+  },
+  "Top_Frame/Joint007": {
+   "Reference1": {
+    "datum": "FRAME1",
+    "object": "LCS008",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   },
+   "Reference2": {
+    "datum": "BRACKET6",
+    "object": "LCS011",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge47"
+   }
+  },
+  "Top_Frame/Joint008": {
+   "Reference1": {
+    "datum": "FRAME1",
+    "object": "LCS008",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   },
+   "Reference2": {
+    "datum": "BRACKET2",
+    "object": "LCS007",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Top_Frame/Joint009": {
+   "Reference1": {
+    "datum": "FRAME1",
+    "object": "LCS008",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   },
+   "Reference2": {
+    "datum": "BRACKET8",
+    "object": "LCS013",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge92"
+   }
+  },
+  "Top_Frame/Joint010": {
+   "Reference1": {
+    "datum": "FRAME1",
+    "object": "LCS008",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   },
+   "Reference2": {
+    "datum": "BRACKET4",
+    "object": "LCS009",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge3"
+   }
+  },
+  "Top_Frame/Joint015": {
+   "Reference1": {
+    "datum": "BORE2",
+    "object": "LCS005",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge36"
+   },
+   "Reference2": {
+    "datum": "BORE1",
+    "object": "LCS004",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge16"
+   }
+  },
+  "Top_Frame/Joint016": {
+   "Reference1": {
+    "datum": "BORE2",
+    "object": "LCS005",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge36"
+   },
+   "Reference2": {
+    "datum": "BORE1",
+    "object": "LCS004",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge16"
+   }
+  },
+  "Top_Frame/Joint022": {
+   "Reference1": {
+    "datum": "FRAME1",
+    "object": "LCS003",
+    "part": "TOP_CLAMP_Z_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge12"
+   },
+   "Reference2": {
+    "datum": "BRACKET2",
+    "object": "LCS007",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Top_Frame/Joint023": {
+   "Reference1": {
+    "datum": "FRAME2",
+    "object": "LCS004",
+    "part": "TOP_CLAMP_Z_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge24"
+   },
+   "Reference2": {
+    "datum": "BRACKET4",
+    "object": "LCS009",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge3"
+   }
+  },
+  "Top_Frame/Joint024": {
+   "Reference1": {
+    "datum": "FRAME",
+    "object": "LCS010",
+    "part": "_2020_300_TOP_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge24"
+   },
+   "Reference2": {
+    "datum": "FRAME2",
+    "object": "LCS007",
+    "part": "_2020_280",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge51"
+   }
+  },
+  "Top_Frame/Joint025": {
+   "Reference1": {
+    "datum": "BRACKET3",
+    "object": "LCS008",
+    "part": "_2020_300_TOP_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge47"
+   },
+   "Reference2": {
+    "datum": "FRAME3",
+    "object": "LCS010",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Top_Frame/Joint026": {
+   "Reference1": {
+    "datum": "FRAME3",
+    "object": "LCS010",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   },
+   "Reference2": {
+    "datum": "BRACKET4",
+    "object": "LCS009",
+    "part": "_2020_300_TOP_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge92"
+   }
+  },
+  "Top_Frame/Joint027": {
+   "Reference1": {
+    "datum": "BRACKET1",
+    "object": "LCS006",
+    "part": "_2020_300_TOP_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   },
+   "Reference2": {
+    "datum": "FRAME3",
+    "object": "LCS010",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Top_Frame/Joint028": {
+   "Reference1": {
+    "datum": "BRACKET2",
+    "object": "LCS007",
+    "part": "_2020_300_TOP_FRONT",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge3"
+   },
+   "Reference2": {
+    "datum": "FRAME3",
+    "object": "LCS010",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   }
+  },
+  "Top_Frame/Joint029": {
+   "Reference1": {
+    "datum": "BRACKET1",
+    "object": "LCS006",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge22"
+   },
+   "Reference2": {
+    "datum": "HINGE2",
+    "object": "LCS012",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge8"
+   }
+  },
+  "Top_Frame/Joint030": {
+   "Reference1": {
+    "datum": "HINGE1",
+    "object": "LCS011",
+    "part": "BOT_BRACKETS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge29"
+   },
+   "Reference2": {
+    "datum": "BRACKET2",
+    "object": "LCS007",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "Top_Frame/Joint031": {
+   "Reference1": {
+    "datum": "FRAME2",
+    "object": "LCS011",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face7"
+   },
+   "Reference2": {
+    "datum": "HINGE2",
+    "object": "LCS022",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "Top_Frame/Joint032": {
+   "Reference1": {
+    "datum": "FRAME1",
+    "object": "LCS010",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   },
+   "Reference2": {
+    "datum": "HINGE1",
+    "object": "LCS021",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face5"
+   }
+  },
+  "Top_Frame/Joint033": {
+   "Reference1": {
+    "datum": "FACE2",
+    "object": "LCS009",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face15"
+   },
+   "Reference2": {
+    "datum": "FACE1",
+    "object": "LCS008",
+    "part": "HINGE_40_LEAF",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face15"
+   }
+  },
+  "Top_Frame/Joint034": {
+   "Reference1": {
+    "datum": "FACE1",
+    "object": "LCS016",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   },
+   "Reference2": {
+    "datum": "FACE2",
+    "object": "LCS017",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   }
+  },
+  "X_Axis_Carriage/Joint": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT_X4",
+    "object": "LCS003",
+    "part": "XY_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge44"
+   },
+   "Reference2": {
+    "datum": "BOLT2",
+    "object": "LCS004",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge10"
+   }
+  },
+  "X_Axis_Carriage/Joint001": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT_X3",
+    "object": "LCS002",
+    "part": "XY_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge39"
+   },
+   "Reference2": {
+    "datum": "BOLT1",
+    "object": "LCS003",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge11"
+   }
+  },
+  "X_Axis_Carriage/Joint002": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT_X1",
+    "object": "LCS",
+    "part": "XY_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge29"
+   },
+   "Reference2": {
+    "datum": "BOLT2",
+    "object": "LCS004",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge10"
+   }
+  },
+  "X_Axis_Carriage/Joint003": {
+   "Reference1": {
+    "datum": "BEARING_MOUNT_X2",
+    "object": "LCS001",
+    "part": "XY_PLATE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge34"
+   },
+   "Reference2": {
+    "datum": "BOLT4",
+    "object": "LCS006",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge8"
+   }
+  },
+  "X_Axis_Carriage/Joint004": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge3"
+   },
+   "Reference2": {
+    "datum": "BEARING2",
+    "object": "LCS008",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge126"
+   }
+  },
+  "X_Axis_Carriage/Joint005": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge3"
+   },
+   "Reference2": {
+    "datum": "BEARING2",
+    "object": "LCS008",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge126"
+   }
+  },
+  "X_Axis_Carriage/Joint006": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge3"
+   },
+   "Reference2": {
+    "datum": "BEARING1",
+    "object": "LCS007",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge108"
+   }
+  },
+  "X_Axis_Carriage/Joint008": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face3"
+   },
+   "Reference2": {
+    "datum": "AXIS",
+    "object": "LCS",
+    "part": "ROD_D8_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "X_Axis_Carriage/Joint009": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   },
+   "Reference2": {
+    "datum": "RAIL",
+    "object": "LCS",
+    "part": "BOT_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge17"
+   }
+  },
+  "X_Axis_Carriage/Joint010": {
+   "Reference1": {
+    "datum": "RAIL",
+    "object": "LCS",
+    "part": "BOT_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge17"
+   },
+   "Reference2": {
+    "datum": "RAIL_HOLDER",
+    "object": "LCS003",
+    "part": "ROD_D8_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   }
+  },
+  "X_Axis_Carriage/Joint011": {
+   "Reference1": {
+    "datum": "RAIL",
+    "object": "LCS",
+    "part": "BOT_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge17"
+   },
+   "Reference2": {
+    "datum": "RAIL_HOLDER",
+    "object": "LCS003",
+    "part": "ROD_D8_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   }
+  },
+  "X_Axis_Carriage/Joint014": {
+   "Reference1": {
+    "datum": "ROD",
+    "object": "LCS017",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge144"
+   },
+   "Reference2": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_244",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   }
+  },
+  "X_Axis_Carriage/Joint015": {
+   "Reference1": {
+    "datum": "ROD",
+    "object": "LCS017",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge144"
+   },
+   "Reference2": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_244",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   }
+  },
+  "X_Axis_Carriage/Joint016": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face4"
+   },
+   "Reference2": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_244",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "X_Axis_Carriage/Joint017": {
+   "Reference1": {
+    "datum": "SEAT",
+    "object": "LCS001",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face4"
+   },
+   "Reference2": {
+    "datum": "AXIS",
+    "object": "LCS",
+    "part": "ROD_D8_244",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "X_Axis_Carriage/Joint018": {
+   "Reference1": {
+    "datum": "SEAT",
+    "object": "LCS001",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face4"
+   },
+   "Reference2": {
+    "datum": "AXIS",
+    "object": "LCS",
+    "part": "ROD_D8_244",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "X_Axis_Carriage/Joint019": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face4"
+   },
+   "Reference2": {
+    "datum": "AXIS",
+    "object": "LCS",
+    "part": "ROD_D8_244",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "X_Axis_Carriage/Joint020": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face3"
+   },
+   "Reference2": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face2"
+   }
+  },
+  "X_Axis_Carriage/Joint021": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face3"
+   },
+   "Reference2": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face2"
+   }
+  },
+  "X_Axis_Carriage/Joint022": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face2"
+   },
+   "Reference2": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face2"
+   }
+  },
+  "X_Axis_Carriage/Joint023": {
+   "Reference1": {
+    "datum": "SEAT",
+    "object": "LCS001",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face4"
+   },
+   "Reference2": {
+    "datum": "AXIS",
+    "object": "LCS",
+    "part": "ROD_D8_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face1"
+   }
+  },
+  "X_Axis_Carriage/Joint024": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pad.Face3"
+   },
+   "Reference2": {
+    "datum": "RAIL",
+    "object": "LCS",
+    "part": "BOT_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Edge16"
+   }
+  },
+  "X_Axis_Carriage/Joint025": {
+   "Reference1": {
+    "datum": "FACE",
+    "object": "LCS006",
+    "part": "BOT_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Face4"
+   },
+   "Reference2": {
+    "datum": "FACE",
+    "object": "LCS006",
+    "part": "BOT_RAIL_HOLDER",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket002.Face4"
+   }
+  },
+  "X_Axis_Carriage/Joint026": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket.Face2"
+   },
+   "Reference2": {
+    "datum": "BEARING1",
+    "object": "LCS007",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge108"
+   }
+  },
+  "X_Axis_Carriage/Joint027": {
+   "Reference1": {
+    "datum": "BOLT1",
+    "object": "LCS002",
+    "part": "BOT_RAIL_CLAMP_X_DRIVE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket005.Edge31"
+   },
+   "Reference2": {
+    "datum": "RAIL_CLAMP_X_DRIVE",
+    "object": "LCS015",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge94"
+   }
+  },
+  "X_Axis_Carriage/Joint028": {
+   "Reference1": {
+    "datum": "BOLT1",
+    "object": "LCS002",
+    "part": "BOT_RAIL_CLAMP_Y_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge5"
+   },
+   "Reference2": {
+    "datum": "RAIL_CLAMP_Y",
+    "object": "LCS016",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge112"
+   }
+  },
+  "X_Axis_Carriage/Joint029": {
+   "Reference1": {
+    "datum": "BOLT2",
+    "object": "LCS003",
+    "part": "BOT_RAIL_CLAMP_Y_AXIS_1",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket003.Edge35"
+   },
+   "Reference2": {
+    "datum": "RAIL_CLAMP_X_DRIVE",
+    "object": "LCS015",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge94"
+   }
+  },
+  "X_Axis_Carriage/Joint030": {
+   "Reference1": {
+    "datum": "BOLT1",
+    "object": "LCS002",
+    "part": "BOT_RAIL_CLAMP_Y_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket001.Edge5"
+   },
+   "Reference2": {
+    "datum": "RAIL_CLAMP_Y",
+    "object": "LCS016",
+    "part": "BOT_BEARING_MOUNT_X_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Pocket004.Edge112"
+   }
+  },
+  "X_Axis_Carriage/Joint031": {
+   "Reference1": {
+    "datum": "RAIL_CLAMP_X_DRIVE",
+    "object": "LCS003",
+    "part": "SPRING_ID6_L30_AT12",
+    "prefix": "LCS002.",
+    "via_link": null,
+    "was": "LCS002."
+   },
+   "Reference2": {
+    "datum": "SPRING",
+    "object": "LCS008",
+    "part": "BOT_RAIL_CLAMP_X_DRIVE",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge105"
+   }
+  },
+  "_4_Axis_Stencil_Printer/Joint": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_140",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   },
+   "Reference2": {
+    "datum": "ROD2",
+    "object": "LCS009",
+    "part": "BOT_Z_AXIS_BRACKET_MIRRORED",
+    "prefix": "Bottom_Frame001.BOT_Z_AXIS_BRACKET_MIRRORED.",
+    "via_link": null,
+    "was": "Bottom_Frame001.BOT_Z_AXIS_BRACKET_MIRRORED.Face9"
+   }
+  },
+  "_4_Axis_Stencil_Printer/Joint001": {
+   "Reference1": {
+    "datum": "ROD2",
+    "object": "LCS009",
+    "part": "BOT_Z_AXIS_BRACKET",
+    "prefix": "Bottom_Frame001.BOT_Z_AXIS_BRACKET.",
+    "via_link": null,
+    "was": "Bottom_Frame001.BOT_Z_AXIS_BRACKET.Edge52"
+   },
+   "Reference2": {
+    "datum": "END_B",
+    "object": "LCS002",
+    "part": "ROD_D8_140",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face3"
+   }
+  },
+  "_4_Axis_Stencil_Printer/Joint002": {
+   "Reference1": {
+    "datum": "ROD1",
+    "object": "LCS005",
+    "part": "TOP_CLAMP_Z_AXIS",
+    "prefix": "Top_Frame.TOP_CLAMP_Z_AXIS.",
+    "via_link": null,
+    "was": "Top_Frame.TOP_CLAMP_Z_AXIS.Face26"
+   },
+   "Reference2": {
+    "datum": "Z",
+    "object": "LCS003",
+    "part": "ROD_D8_140",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "_4_Axis_Stencil_Printer/Joint003": {
+   "Reference1": {
+    "datum": "ROD2",
+    "object": "LCS006",
+    "part": "TOP_CLAMP_Z_AXIS",
+    "prefix": "Top_Frame.TOP_CLAMP_Z_AXIS.",
+    "via_link": null,
+    "was": "Top_Frame.TOP_CLAMP_Z_AXIS.Face4"
+   },
+   "Reference2": {
+    "datum": "Z",
+    "object": "LCS003",
+    "part": "ROD_D8_140",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face2"
+   }
+  },
+  "_4_Axis_Stencil_Printer/Joint004": {
+   "Reference1": {
+    "datum": "FRAME4",
+    "object": "LCS009",
+    "part": "_2020_280",
+    "prefix": "Top_Frame._2020_302.",
+    "via_link": null,
+    "was": "Top_Frame._2020_302.Face25"
+   },
+   "Reference2": {
+    "datum": "FRAME2",
+    "object": "LCS019",
+    "part": "_2020_300",
+    "prefix": "Bottom_Frame001._2020_306.",
+    "via_link": null,
+    "was": "Bottom_Frame001._2020_306.Face44"
+   }
+  }
+ },
+ "unmapped": [
+  {
+   "assembly": "Bottom_Assembly",
+   "datum": null,
+   "joint": "Nut031",
+   "object": null,
+   "part": "Bottom_Assembly",
+   "prefix": "",
+   "prop": "BaseObject",
+   "via_link": "Nut030",
+   "was": "Edge2"
+  }
+ ]
+}
