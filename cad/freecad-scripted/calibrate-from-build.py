@@ -15,7 +15,7 @@ So `asmbuild.py` records the frame it used for each fastener (`ASM_FRAMES`) and
 this measures against that.  Plain Python: composing placements is arithmetic,
 and it needs no FreeCAD.
 """
-import json, math, sys
+import json, math, os, sys
 
 
 def qmul(a, b):
@@ -55,8 +55,15 @@ def main():
 
     hand = {}
     for p in sys.argv[4:]:
-        asm = p.split("fh-")[-1][:-5]
-        doc = model[asm]["document"] if asm in model else asm
+        # `data/hand/<Assembly>.json`, as `rebuild.py`'s poses stage writes it.
+        # This used to split on an `fh-` prefix those files have not carried
+        # for some time, so every key came out as a whole path, nothing matched
+        # the frames, and the calibration wrote an **empty** offsets file --
+        # silently, since a run with nothing to say still says "0 offsets".
+        asm = os.path.basename(p)[:-5]
+        if asm not in model:
+            raise SystemExit(f"{p}: {asm!r} is not an assembly in the model")
+        doc = model[asm]["document"]
         for name, rec in json.load(open(p)).items():
             hand[f"{doc}/{name}"] = rec
 

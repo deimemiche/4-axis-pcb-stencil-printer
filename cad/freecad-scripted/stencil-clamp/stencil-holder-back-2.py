@@ -89,8 +89,21 @@ def angle(doc, name, middle=None):
     return bdy
 
 
+def face_hole(x, z=0.0):
+    """Where a hole through the horizontal leg sits, in the bar's own frame.
+
+    They are all on the leg's centre line; `z` picks which of its two faces.
+    """
+    return (x, leg - face_from_edge, z)
+
+
 def stencil_holder_back_2(doc):
-    return angle(doc, "STENCIL_HOLDER_BACK_2")
+    bdy = angle(doc, "STENCIL_HOLDER_BACK_2")
+    # The short bar is bolted to the long one through the far row hole, on the
+    # face that closes on it.
+    fcprim.lcs(bdy, "HOLDER_BACK", at=face_hole(face_x[-1], wall),
+               axis=(0, 0, 1))
+    return bdy
 
 
 # Set by stencil-holder-front-2.py, which runs this file for `angle` and builds

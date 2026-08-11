@@ -102,6 +102,23 @@ def bot_bearing_mount_y_axis(doc):
                                 (-bolt_x, bolt_z), (-bolt_x, -bolt_z))):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, flange_top_y, z), axis=(0, 1, 0))
 
+    # Each of the four bolts goes right through the flange, so each has a
+    # second datum on its underside, where the head seats -- numbered along the
+    # part, which is what sorting the centres does.
+    seats = sorted((sx * bolt_x, sz * bolt_z)
+                   for sx in (-1, 1) for sz in (-1, 1))
+    for i, (x, z) in enumerate(seats):
+        fcprim.lcs(bdy, f"BOLT{i + 5}",
+                   at=(x, flange_top_y - flange_thickness, z), axis=(0, -1, 0))
+
+    # Three of the four bolt tops are where the alpha plate is clamped down.
+    # The fourth -- the one at +X, -Z -- is left to the joint at the other end
+    # of the pair, so it is the one dropped here.
+    clamped = [c for c in seats if c != (bolt_x, -bolt_z)]
+    for i, (x, z) in enumerate(clamped):
+        fcprim.lcs(bdy, f"BOT_PLATE{i + 1}", at=(x, flange_top_y, z),
+                   axis=(0, -1, 0))
+
     return bdy
 
 

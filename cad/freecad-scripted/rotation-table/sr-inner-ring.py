@@ -42,6 +42,17 @@ def sr_inner_ring(doc):
     ], name="section")
     fcprim.revolution(bdy, "Turned ring", section, axis="V_Axis")
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The ring is turned, so
+    # every one of them is on its axis and what tells them apart is the height:
+    # the two ends, the step the bore opens out at -- which is what the ball
+    # bearing drops onto -- and the middle of the upper bore, which is the face
+    # the bearing plate is a fit in and so where that face's own frame sits.
+    fcprim.lcs(bdy, "STUD", at=(0.0, bottom_y, 0.0), axis=(0, 1, 0))
+    fcprim.lcs(bdy, "BEARING", at=(0.0, step_y, 0.0), axis=(0, 1, 0))
+    fcprim.lcs(bdy, "PLATE", at=(0.0, (step_y + top_y) / 2.0, 0.0),
+               axis=(0, 1, 0))
+    fcprim.lcs(bdy, "RING", at=(0.0, top_y, 0.0), axis=(0, 1, 0))
+
     return bdy
 
 

@@ -22,6 +22,14 @@ stlrender.py     draws a mesh, so a shape can be looked at rather than guessed
 export.py        tessellates a built body back to STL, to render against the
                  original
 
+rebuild.py       drives every stage below, from the hand-built assembly to the
+                 scripted one; see ASSEMBLY_SCRIPT.md
+datum-plan.json  where every joint and every bolt attaches, measured off the
+                 hand-built assembly -- the **answer key** the part scripts'
+                 own datums are held against, part by part, at build time
+datum-derive.py  read-only: which sketched feature each of those measurements
+                 sits on, which is how the numbers became expressions
+
 stock/           bought or cut to length, never printed: 2020 extrusion, D8
                  rod and tube, M5 and M8 studding, LM8UU, the alpha axis's ball
                  bearing, the springs, the hinge leaf
@@ -124,7 +132,15 @@ the wrong place and has to be copied over the right one. That copy is a
 names any assembly stored - `Pad.;#6:1;:G;XTR;:H440:7,F.Face1` - no longer
 resolve, and every joint made against a face or an edge of that part breaks.
 Moving a built document is the same trap. This is what LCS datums are for, and
-why the scripted assemblies in `asm/` use nothing else; see `fcprim.lcs`.
+why the scripted assemblies in `assembly/` use nothing else; see `fcprim.lcs`.
+
+**Every datum is written by the part script that draws the part**, in that
+script's own dimensions -- `at=(x, thickness, z)` off the same list the holes
+are drilled from, never a coordinate copied out of an assembly. There are 308
+of them across 59 documents, and `fcprim.apply_datums` checks each one against
+`datum-plan.json` -- the position the hand-built assembly actually joins at --
+every time the part is built. An expression that lands anywhere else fails the
+build. `ASSEMBLY_SCRIPT.md`'s step 6 has the whole of it.
 
 The exceptions are the **bought stock**, which was never printed and so was
 never an STL. All of it is in `stock/`, because a rod or a length of extrusion

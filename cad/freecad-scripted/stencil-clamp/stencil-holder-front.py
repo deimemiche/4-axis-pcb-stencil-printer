@@ -38,8 +38,28 @@ def expected_volume():
 
 
 def stencil_holder_front(doc):
-    return back["angle"](doc, "STENCIL_HOLDER_FRONT",
-                         middle=(middle_d, middle_from_edge))
+    bdy = back["angle"](doc, "STENCIL_HOLDER_FRONT",
+                        middle=(middle_d, middle_from_edge))
+    # The front bar carries a clamp bearing mount at each end, and they are not
+    # the same joint: at -X the mount is bolted to the upright's outer face, at
+    # +X to the leg's upper face.  Only the two outer row holes take a nut
+    # holder here -- the two in the middle are the back bar's -- and the near
+    # one is also where the short bar closes on this one.
+    fcprim.lcs(bdy, "BEARING_MOUNT1",
+               at=back["edge_hole"](back["mount_x"][0], back["wall"]),
+               axis=(0, -1, 0))
+    fcprim.lcs(bdy, "BEARING_MOUNT2",
+               at=back["face_hole"](back["mount_x"][1],
+                                    back["mount_from_edge"][1], back["wall"]),
+               axis=(0, 0, 1))
+    for i, x in enumerate((back["row_x"][0], back["row_x"][-1])):
+        fcprim.lcs(bdy, f"NUT_HOLDER{i + 1}",
+                   at=back["face_hole"](x, back["row_from_edge"],
+                                        back["wall"]), axis=(0, 0, 1))
+    fcprim.lcs(bdy, "HOLDER_FRONT",
+               at=back["face_hole"](back["row_x"][0], back["row_from_edge"]),
+               axis=(0, 0, 1))
+    return bdy
 
 
 fcprim.make(__file__, "STENCIL_HOLDER_FRONT", stencil_holder_front,

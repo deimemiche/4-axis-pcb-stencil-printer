@@ -167,6 +167,31 @@ def top_clamp_z_axis(doc):
         fcprim.circle(sk, (bolt[0], side * bolt[1]), diameter, name="head")
         fcprim.pocket(bdy, label, sk, boss_d + over)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `ROD1` is the bore's
+    # own axis at the clamp's lower end, where the Z rod enters.  The two
+    # `FRAME`n are the shelf's top face at each end -- the shelf is a foot
+    # *under* the lid's top plate, so what lands on the member is its upper
+    # side.  Of the three bolts, two pinch the collar shut -- one from each
+    # side, so one is on the far face and one on the plate -- and the third
+    # comes down through the top plate.
+    fcprim.lcs(bdy, "ROD1", at=(rod[0], body_y[0], rod[1]), axis=(0, -1, 0))
+    for sign, label in ((-1, "FRAME1"), (1, "FRAME2")):
+        fcprim.lcs(bdy, label, at=(0.0, shelf_y[1], sign * half_z),
+                   axis=(0, -1, 0), roll=270.0)
+    fcprim.lcs(bdy, "BOLT1", at=(bolt_x[0], bolt[0], bolt[1]), axis=(1, 0, 0))
+    fcprim.lcs(bdy, "BOLT2", at=(plate_x[0], bolt[0], -bolt[1]),
+               axis=(-1, 0, 0))
+    fcprim.lcs(bdy, "BOLT3", at=(top_bore[0], top_y[1], top_bore[1]),
+               axis=(0, -1, 0))
+
+    # One the assembly measured on a *face* rather than on anything drawn, and
+    # a face's own frame sits at its centre of area -- the clamp's top face is
+    # the body's outline with the boss and the saw cut taken out of it, so its
+    # middle is not on any dimension here.  Kept as measured; see
+    # ASSEMBLY_SCRIPT.md, step 6.
+    fcprim.lcs(bdy, "ROD2", at=(1.9601, body_y[1], 0.2527), axis=(0, 1, 0),
+               roll=180.0)
+
     return bdy
 
 

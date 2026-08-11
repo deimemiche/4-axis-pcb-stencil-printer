@@ -27,3 +27,8 @@ cad/freecad/asm/reference/
 
 # FreeCAD leaves these beside every document it saves
 *.FCBak
+
+# Written only by `rebuild.py assemble --calibrate`, and only so that
+# calibrate-from-build.py can read the frames that run used.  Regenerated every
+# time; the offsets it produces are what is committed.
+cad/freecad-scripted/data/frames.json

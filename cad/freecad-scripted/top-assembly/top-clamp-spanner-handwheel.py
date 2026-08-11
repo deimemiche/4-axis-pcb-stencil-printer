@@ -64,6 +64,14 @@ def top_clamp_spanner_handwheel(doc):
     fcprim.circle(rod, (0.0, 0.0), rod_clear_d, name="rod")
     fcprim.pocket(bdy, "Rod clearance cut", rod, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  Both are on the
+    # wheel's axis: the floor of the nut pocket, and the wheel's back face,
+    # which is what runs on the case's hub.
+    fcprim.lcs(bdy, "NUT", at=(nut_depth, 0.0, 0.0), axis=(-1, 0, 0))
+    fcprim.lcs(bdy, "SPANNER_CASE",
+               at=(boss_thickness + wheel_thickness, 0.0, 0.0),
+               axis=(-1, 0, 0), roll=90.0)
+
     return bdy
 
 

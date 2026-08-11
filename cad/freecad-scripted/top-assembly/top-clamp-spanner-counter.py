@@ -191,6 +191,17 @@ def top_clamp_spanner_counter(doc):
     fcprim.pocket(bdy, "Nut slots", slots, slot_y[1] - slot_y[0],
                   reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  All three are on the
+    # spanner screw's own axis, and what tells them apart is which face they
+    # are on: the spine's front, where the stencil holder is pulled against;
+    # the near wall of the spanner's slot, where the nut sits; and the block's
+    # far face, where the studding comes out.
+    fcprim.lcs(bdy, "HOLDER_FRONT", at=(spine_x[1], 0.0, 0.0), axis=(-1, 0, 0),
+               roll=90.0)
+    fcprim.lcs(bdy, "NUT", at=(slot_x[0], 0.0, 0.0), axis=(-1, 0, 0))
+    fcprim.lcs(bdy, "STUD", at=(block_x[1], 0.0, 0.0), axis=(1, 0, 0),
+               roll=90.0)
+
     return bdy
 
 

@@ -46,6 +46,12 @@ def top_spring_plate(doc):
     ], name="section")
     fcprim.revolution(bdy, "Turned body", section, axis="V_Axis")
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The plate is turned,
+    # so both are on its axis: the brim's underside, which lands on the clamp
+    # bearing mount, and the shoulder inside it that the spring stands on.
+    fcprim.lcs(bdy, "BEARING_MOUNT", axis=(0, -1, 0), roll=180.0)
+    fcprim.lcs(bdy, "SPRING", at=(0.0, brim_height, 0.0), axis=(0, 1, 0))
+
     return bdy
 
 

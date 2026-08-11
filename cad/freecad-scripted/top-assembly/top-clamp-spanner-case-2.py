@@ -90,6 +90,21 @@ def top_clamp_spanner_case_2(doc):
     fcprim.circle(spindle, (0.0, 0.0), spindle_d, name="spindle")
     fcprim.pocket(bdy, "Spindle clearance", spindle, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `SPANNER_CASE` is the
+    # bolt at -Z on the face CASE_1 closes against, and `SPANNER_HANDWHEEL` the
+    # hub's own face, which is what the wheel runs on.
+    fcprim.lcs(bdy, "SPANNER_CASE", at=(face_x, 0.0, -bolt_z), axis=(1, 0, 0),
+               roll=90.0)
+    fcprim.lcs(bdy, "SPANNER_HANDWHEEL", at=(floor_x - hub_height, 0.0, 0.0),
+               axis=(1, 0, 0), roll=90.0)
+
+    # `FRAME` is the plate's own top edge, and the assembly measured it on that
+    # *face* -- whose frame sits at its centre of area, which the two corner
+    # radii move off the middle.  The height and the depth are the part's; the
+    # position along it is kept as measured.  See ASSEMBLY_SCRIPT.md, step 6.
+    fcprim.lcs(bdy, "FRAME", at=(floor_x, plate_half_y, -17.6635),
+               axis=(0, -1, 0), roll=90.0)
+
     return bdy
 
 

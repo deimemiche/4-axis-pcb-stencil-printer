@@ -72,6 +72,24 @@ def sr_bearing_plate(doc):
         fcprim.circle(bolts, (x, z), bolt_hole_d, name=f"bolt{i}")
     fcprim.pocket(bdy, "Bolt clearance", bolts, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The plate is a cross
+    # in a rim with a bolt pad at each arm's end, so the four `BEARING`n are
+    # those pads' undersides -- the face that lands on the inner ring -- and
+    # `BOT_PLATE` is the one at -Z on top, where the alpha plate is bolted
+    # through.  They are numbered along the plate rather than in the order the
+    # pads are drawn, which is what sorting the centres does.  `RING` is the
+    # rim's outer surface, halfway down it, which is where a cylindrical face's
+    # own frame sits.
+    pads_at = sorted((sign * pad_circle_r, 0.0) for sign in (-1, 1))
+    pads_at += sorted((0.0, sign * pad_circle_r) for sign in (-1, 1))
+    for i, (x, z) in enumerate(sorted(pads_at)):
+        fcprim.lcs(bdy, f"BEARING{i + 1}", at=(x, top_y - pad_depth, z),
+                   axis=(0, 1, 0))
+    fcprim.lcs(bdy, "BOT_PLATE", at=(0.0, top_y, -pad_circle_r),
+               axis=(0, -1, 0))
+    fcprim.lcs(bdy, "RING", at=(0.0, top_y - rim_depth / 2.0, 0.0),
+               axis=(0, -1, 0))
+
     return bdy
 
 

@@ -152,6 +152,14 @@ def bot_rail_clamp_y_axis_1(doc):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(0.0, 0.0, side * bolt_z),
                    axis=(0, -1, 0))
     fcprim.lcs(bdy, "SCREW", at=(0.0, tube[0], tube[1]), axis=(1, 0, 0))
+    # The counterbore floor under each bolt head, and the far end of the tube,
+    # which is where the handwheel comes up against it.
+    for i, side in enumerate((-1, 1)):
+        fcprim.lcs(bdy, f"BOLT{i + 1}_HEAD",
+                   at=(0.0, block_y - head_depth, side * bolt_z),
+                   axis=(0, -1, 0))
+    fcprim.lcs(bdy, "HANDWHEEL", at=(tube_x[1], tube[0], tube[1]),
+               axis=(1, 0, 0), roll=90.0)
 
     return bdy
 

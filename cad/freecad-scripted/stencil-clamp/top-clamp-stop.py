@@ -107,6 +107,15 @@ def top_clamp_stop(doc):
     ], name="nut")
     fcprim.pocket(bdy, "Nut seat", nut, nut_z[1] - nut_z[0], reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `SPRING` is the
+    # barrel's own axis at the near end face, which is what the spring pushes
+    # on.  The pinch bolt crosses the saw cut, so it takes one at each end of
+    # what it reaches: the far face it enters through, and the floor of its
+    # nut seat.
+    fcprim.lcs(bdy, "SPRING", axis=(1, 0, 0), roll=90.0)
+    fcprim.lcs(bdy, "BOLT", at=(length / 2, bolt_y, length / 2), axis=(0, 0, 1))
+    fcprim.lcs(bdy, "NUT", at=(length / 2, bolt_y, nut_z[1]), axis=(0, 0, 1))
+
     return bdy
 
 

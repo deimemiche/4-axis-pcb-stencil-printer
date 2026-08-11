@@ -70,6 +70,12 @@ def bot_rail_clamp_y_axis(doc):
     for i, side in enumerate((-1, 1)):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(0.0, 0.0, side * bolt_z),
                    axis=(0, -1, 0))
+    # Both bolts are counterbored from the top, so each has a second datum on
+    # the floor of that bore, which is where its head seats.
+    for i, side in enumerate((-1, 1)):
+        fcprim.lcs(bdy, f"BOLT{i + 1}_HEAD",
+                   at=(0.0, height - head_depth, side * bolt_z),
+                   axis=(0, -1, 0))
 
     return bdy
 

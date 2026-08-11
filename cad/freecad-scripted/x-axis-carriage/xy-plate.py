@@ -67,6 +67,20 @@ def plate(doc):
         fcprim.circle(drilling, (x, z), hole_d, name=f"hole{i}")
     fcprim.pocket(bdy, "Holes", drilling, midplane=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The plate is nothing
+    # but sixteen holes, so every datum here is one of them: `BOLT`n on the
+    # underside, where the screw goes in, numbered along the plate rather than
+    # in the order `holes()` happens to draw them -- which is what sorting the
+    # centres does.  The four **corner** holes carry the X axis bearing mounts
+    # and so have a second datum on the top face, where the mount's foot lies.
+    for i, (x, z) in enumerate(sorted(holes())):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, 0.0, z), axis=(0, -1, 0))
+    corners = sorted((sx * hole_x[-1], sz * hole_z[-1])
+                     for sx in (-1, 1) for sz in (-1, 1))
+    for i, (x, z) in enumerate(corners):
+        fcprim.lcs(bdy, f"BEARING_MOUNT_X{i + 1}", at=(x, thickness, z),
+                   axis=(0, -1, 0))
+
     return bdy
 
 

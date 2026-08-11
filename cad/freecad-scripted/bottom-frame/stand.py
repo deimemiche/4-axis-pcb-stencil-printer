@@ -71,6 +71,14 @@ def stand(doc):
     fcprim.lcs(bdy, "AXIS", at=(0.0, total_height / 2.0, 0.0), axis=(0, 1, 0))
     fcprim.lcs(bdy, "TIP", at=(0.0, total_height, 0.0), axis=(0, 1, 0))
 
+    # And the two the assembly joins to.  The gusset lands on the seat looking
+    # up the foot rather than down onto it, so `BRACKET` is `SEAT`'s point with
+    # its Z the other way.  `BOLT` is the M4's own axis at the step the base
+    # ends on, which is where the counterbore above it begins and so where the
+    # head is seated.
+    fcprim.lcs(bdy, "BRACKET", axis=(0, 1, 0))
+    fcprim.lcs(bdy, "BOLT", at=(0.0, base_height, 0.0), axis=(0, 1, 0))
+
     return bdy
 
 

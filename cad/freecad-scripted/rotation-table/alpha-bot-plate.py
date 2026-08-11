@@ -59,6 +59,17 @@ inner_x = (53.0, 82.0)             # both sides
 inner_z = (52.0, 70.0)
 
 
+# Which four of the sixteen inner holes carry the Y axis bearing mounts, and
+# what the assembly calls each.  They are not a symmetric four: the mounts run
+# in pairs along Z and the drawing offers two holes for each end of a pair, so
+# the machine uses one from each corner cluster.  The names are the plan's own,
+# numbered along the plate.
+bearing_mount_at = ((-inner_x[1], inner_z[1]), (-inner_x[0], -inner_z[0]),
+                    (inner_x[0], inner_z[1]), (inner_x[1], -inner_z[0]))
+bearing_mount_labels = ("BEARING_MOUNT_Y1", "BEARING_MOUNT_Y2",
+                        "BEARING_MOUNT_Y3", "BEARING_MOUNT_Y_AXIS")
+
+
 def ring_bolts():
     r = bolt_circle_d / 2.0
     return [(r * math.cos(math.radians(a)), r * math.sin(math.radians(a)))
@@ -107,6 +118,20 @@ def plate(doc):
     for i, (x, z) in enumerate(mounting()):
         fcprim.circle(mount, (x, z), m3_tap_d, name=f"mount{i}")
     fcprim.pocket(bdy, "Mounting holes", mount, midplane=True)
+
+    # Mounting datums for the assembly; see fcprim.lcs.  Every one of them is
+    # one of the holes above, on one face of the plate or the other -- the
+    # plate is 200 square and drilled, and nothing else about it is a mounting
+    # feature.  The four Y bearing mounts hang under it, so theirs are on the
+    # underside; the ring, the two alpha rod holders and the plate itself sit
+    # on top, so theirs are at `thickness`.
+    for (x, z), label in zip(bearing_mount_at, bearing_mount_labels):
+        fcprim.lcs(bdy, label, at=(x, 0.0, z), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "PLATE", at=(0.0, thickness, bolt_circle_d / 2.0),
+               axis=(0, -1, 0))
+    for z, label in ((-corner_z[1], "ROD_HOLDER_ALPHA"),
+                     (corner_z[1], "ROD_HOLDER_ALPHA_AXIS")):
+        fcprim.lcs(bdy, label, at=(corner_x[0], thickness, z), axis=(0, -1, 0))
 
     return bdy
 

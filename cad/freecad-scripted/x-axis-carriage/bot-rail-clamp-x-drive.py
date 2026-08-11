@@ -150,6 +150,17 @@ def bot_rail_clamp_x_drive(doc):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(0.0, 0.0, side * bolt_z),
                    axis=(0, -1, 0))
     fcprim.lcs(bdy, "SCREW", at=(boss[0], boss[1], 0.0), axis=(0, 0, 1))
+    # The floor of each bolt's counterbore, where its head seats.  Then three
+    # on the eye's own axis, at the walls the arm is hollowed back to: the
+    # near skin holds the nut that runs on the screw, the far one the second
+    # nut, and the spring bears on the deep hollow's far wall between them.
+    for i, side in enumerate((-1, 1)):
+        fcprim.lcs(bdy, f"BOLT{i + 1}_HEAD", at=(0.0, shank_y, side * bolt_z),
+                   axis=(0, -1, 0))
+    fcprim.lcs(bdy, "NUT1", at=(boss[0], boss[1], web_near[0]), axis=(0, 0, -1))
+    fcprim.lcs(bdy, "NUT2", at=(boss[0], boss[1], web_far[0]), axis=(0, 0, -1))
+    fcprim.lcs(bdy, "SPRING", at=(boss[0], boss[1], web_deep[1]),
+               axis=(0, 0, -1), roll=180.0)
 
     return bdy
 

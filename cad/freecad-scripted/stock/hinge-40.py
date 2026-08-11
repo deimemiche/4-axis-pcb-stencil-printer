@@ -175,6 +175,34 @@ def hinge_leaf(doc):
                             (length + hole_pitch) / 2.0)):
         fcprim.lcs(bdy, f"SCREW{i + 1}", at=(-thick, leaf / 2.0, at),
                    axis=(-1, 0, 0))
+
+    # What the assembly joins to, on top of those.  `BORE`1 and 2 are on the
+    # pivot where this leaf's two knuckles end -- the seam a knuckle of the
+    # other leaf butts into -- and `BRACKET`1 and 2 are the two far corners of
+    # the face that lies on the member, where the corner gussets come up
+    # against it.  `FRAME2` is the middle of the leaf's outer edge, which is
+    # the plate seen end on, so it is half the sheet's thickness in.
+    for i in range(knuckles // 2):
+        fcprim.lcs(bdy, f"BORE{i + 1}", at=(0.0, 0.0, (2 * i + 1) * station),
+                   axis=(0, 0, 1))
+    for i, at in enumerate((0.0, length)):
+        fcprim.lcs(bdy, f"BRACKET{i + 1}", at=(-thick, leaf, at),
+                   axis=(1, 0, 0), roll=180.0)
+    fcprim.lcs(bdy, "FRAME2", at=(-thick / 2.0, leaf, length / 2.0),
+               axis=(0, -1, 0), roll=90.0)
+
+    # Three more the assembly measured on a *face* rather than on anything
+    # drawn, and a face's own frame sits at its centre of area: the plate is
+    # notched, so that centre is not the middle of the leaf and the numbers
+    # below are not dimensions of anything.  They are kept as measured, because
+    # the assembly is held against the machine Michael built and moving them
+    # would move what hangs off them.  See ASSEMBLY_SCRIPT.md, step 6.
+    fcprim.lcs(bdy, "FACE1", at=(0.0, 11.3095, length / 2.0),
+               axis=(1, 0, 0), roll=180.0)
+    fcprim.lcs(bdy, "FACE2", at=(0.0, 12.25, station), axis=(1, 0, 0),
+               roll=180.0)
+    fcprim.lcs(bdy, "FRAME1", at=(-thick, 11.1759, 19.9263), axis=(1, 0, 0),
+               roll=180.0)
     return bdy
 
 

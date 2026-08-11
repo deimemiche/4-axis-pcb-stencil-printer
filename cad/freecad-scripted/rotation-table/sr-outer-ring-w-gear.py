@@ -123,6 +123,21 @@ def sr_outer_ring_w_gear(doc):
         fcprim.circle(heads, polar(ring_r, where), head_d, name=f"head{i}")
     fcprim.pocket(bdy, "Heads", heads, ring_y[1] - head_y, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The five `BOLT`n are
+    # the five screws through the ring, each on the floor of its own
+    # counterbore -- which is where the head seats -- and numbered along the
+    # ring rather than round it, which is what sorting the centres does.
+    # `TOP_PLATE` is the first of those screws at the ring's underside, where
+    # the plate it holds lies; `RING` is the step in the bore, which is what
+    # rests on the inner ring's rim.
+    seats = sorted(polar(ring_r, where) for where in boss_at)
+    for i, (x, z) in enumerate(seats):
+        fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, head_y, z), axis=(0, -1, 0))
+    first_x, first_z = polar(ring_r, boss_at[0])
+    fcprim.lcs(bdy, "TOP_PLATE", at=(first_x, ring_y[0], first_z),
+               axis=(0, -1, 0))
+    fcprim.lcs(bdy, "RING", at=(0.0, bore_step_y, 0.0), axis=(0, 1, 0))
+
     return bdy
 
 

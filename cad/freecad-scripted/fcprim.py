@@ -866,10 +866,12 @@ def datum_plan():
     See `ASSEMBLY_SCRIPT.md`.
 
     The positions are **literals**, because that is what a measurement gives.
-    Moving each one into the part script as an expression in that part's own
-    dimensions is the last step of the plan, not this one; a number here is
-    checkable against the assembly it came from, and a guessed expression is
-    not.
+    Step 6 moves each one into the part script as an expression in that part's
+    own dimensions -- and when it does, the number here stays, as the **answer
+    key**: `apply_datums` holds every datum a script writes against the
+    measurement it came from, so a wrong expression fails the build instead of
+    quietly moving a joint.  `datum-derive.py` says which sketched feature each
+    literal sits on, so the expression is read off the part rather than guessed.
     """
     global _DATUM_PLAN
     if _DATUM_PLAN is None:
@@ -883,36 +885,78 @@ def datum_plan():
     return _DATUM_PLAN
 
 
+# How far a script's datum may sit from the measurement, in mm.  Not a
+# modelling tolerance: `datums.py` deduplicates on positions rounded to four
+# decimals and the plan stores them that way, so an expression that is exactly
+# right still lands up to 5e-5 off per axis.  A micron is comfortably inside
+# that and far below anything a joint can feel.
+DATUM_TOL = 1e-3
+AXIS_TOL = 1e-6          # ... and how far its Z may point elsewhere
+
+
+def _plan_placement(d):
+    """The placement `datum-plan.json` asks for, composed as `lcs` composes it."""
+    swing = Rotation(Vector(0.0, 0.0, 1.0), Vector(*d["axis"]))
+    return Placement(Vector(*d["at"]),
+                     swing * Rotation(Vector(0.0, 0.0, 1.0), d.get("roll", 0.0)))
+
+
 def apply_datums(doc, result):
-    """Put this document's mounting datums on its body.
+    """Check this document's mounting datums against the plan, and fill the gaps.
 
-    Applied here rather than written into each of the sixty part scripts, for
-    three reasons that are all the same reason.  Five scripts build more than
-    one document -- `rod-d8.py` writes four rods, each wanting its own datums --
-    and keying off `doc.Name` gets that right for free.  Three more delegate to
-    a builder in another script and have no body of their own to hang a call
-    on.  And sixty hand-inserted calls can drift out of step with the plan,
-    while one cannot.
+    A datum the part script has already written is **held against the
+    measurement**: same position to a micron, same Z, same roll, or the build
+    fails.  That is what makes step 6 safe.  Replacing `at=(-124.35, 2.0, -76)`
+    with `at=(-hole_x_outer, plate_t, -hole_z_outer)` is only an improvement if
+    the expression comes out at the measured spot, and here it has to.
 
-    A datum whose label is already on the body is left alone: twenty-four are
-    already where a joint wants them, and rewriting those would be churn.
+    A datum the script does *not* write yet is added from the plan, so a part
+    part-way through step 6 still assembles.  The count of those is the size of
+    what is left to do, and `make` prints it.
+
+    **Position and Z are held exactly; `roll` is reported, not enforced.**  Z is
+    the axis every joint turns or slides about, so getting it wrong is getting
+    the joint wrong.  Roll is only pinned where both other axes have to line up
+    too, as a `Fixed` joint's do -- and where the measurement and the script
+    disagree about it, what they disagree about is an axis of revolution: a
+    bore, a rod, a bearing face.  There the measured roll is whatever the
+    underlying curve's parameterisation handed back, and insisting on it would
+    be insisting on an artefact.  A roll that does matter is caught where it
+    shows: `asmdiff.py`, against the placements of the hand-built machine.
     """
     entries = datum_plan().get(doc.Name)
     if not entries:
-        return 0
+        return 0, []
     bodies = [i for i in _results(result) if i.TypeId == "PartDesign::Body"]
     if not bodies:
-        return 0
+        return 0, []
     bdy = bodies[0]
-    have = {o.Label for o in bdy.Group}
-    added = 0
+    have = {o.Label: o for o in bdy.Group}
+    added, rolled = 0, []
     for d in entries:
-        if d["name"] in have:
+        want = _plan_placement(d)
+        got = have.get(d["name"])
+        if got is None:
+            lcs(bdy, d["name"], at=tuple(d["at"]), axis=tuple(d["axis"]),
+                roll=d.get("roll", 0.0))
+            added += 1
             continue
-        lcs(bdy, d["name"], at=tuple(d["at"]), axis=tuple(d["axis"]),
-            roll=d.get("roll", 0.0))
-        added += 1
-    return added
+        moved = (got.Placement.Base - want.Base).Length
+        mine = got.Placement.Rotation.multVec(Vector(0, 0, 1))
+        theirs = want.Rotation.multVec(Vector(0, 0, 1))
+        tipped = (mine - theirs).Length
+        if moved > DATUM_TOL or tipped > AXIS_TOL:
+            raise ValueError(
+                f"{doc.Name}: datum {d['name']} is not where the assembly "
+                f"measured it -- {moved:.6f} mm out, and its Z is "
+                f"{tuple(round(v, 6) for v in mine)} against the measured "
+                f"{tuple(round(v, 6) for v in theirs)}.  The script puts it at "
+                f"{tuple(round(v, 6) for v in got.Placement.Base)}, "
+                f"datum-plan.json says {tuple(d['at'])}")
+        turned = want.Rotation.multiply(got.Placement.Rotation.inverted()).Angle
+        if abs(turned) > AXIS_TOL:
+            rolled.append((d["name"], math.degrees(turned)))
+    return added, rolled
 
 
 def make(script, name, builder, expect_volume=None, tolerance=0.01,
@@ -928,9 +972,15 @@ def make(script, name, builder, expect_volume=None, tolerance=0.01,
     """
     doc = document(name)
     result = builder(doc)
-    added = apply_datums(doc, result)
-    if added:
-        print(f"  {added} mounting datum(s) from datum-plan.json")
+    added, rolled = apply_datums(doc, result)
+    total = len(datum_plan().get(doc.Name, ()))
+    if total:
+        print(f"  datums: {total - added}/{total} from the part's own"
+              f" dimensions, checked against datum-plan.json"
+              + (f"; {added} still literals from the plan" if added else ""))
+        for label, degrees in rolled:
+            print(f"    {label}: roll differs by {degrees:.1f} deg -- an axis "
+                  f"of revolution, so nothing turns on it; see apply_datums")
     for item in _results(result):
         check_sketches(item if item.TypeId == "PartDesign::Body"
                        else item.getParent())

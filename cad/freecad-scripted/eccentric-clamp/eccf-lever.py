@@ -162,6 +162,17 @@ def eccf_lever(doc, hand=1):
     fcprim.pocket(bdy, "Pin", hole, cheek_x[1] - cheek_x[0],
                   reversed_=cut_reversed)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `BOLT` and `ECC_MOUNT`
+    # are the pin's two ends -- the cross bolt's head on the outside of the
+    # cheek, and the face that lands on the eccenter mount's lug -- and `TUBE`
+    # is the eye, on the outside, where the tube through the pair goes.  `x`
+    # reflects them onto the other hand exactly as it does the sketches.
+    fcprim.lcs(bdy, "BOLT", at=(x(cheek_x[0]), pin[0], pin[1]), axis=(1, 0, 0))
+    fcprim.lcs(bdy, "ECC_MOUNT", at=(x(cheek_x[1]), pin[0], pin[1]),
+               axis=(1, 0, 0), roll=90.0)
+    fcprim.lcs(bdy, "TUBE", at=(x(cheek_x[0]), eye[0], eye[1]), axis=(1, 0, 0),
+               roll=90.0)
+
     return bdy
 
 

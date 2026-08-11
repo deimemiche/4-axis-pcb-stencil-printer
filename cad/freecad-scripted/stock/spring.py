@@ -204,9 +204,11 @@ springs = {
 # What to draw, and at what length: a spring in an assembly is at the length it
 # is fitted at, not its free length.  `None` draws it as it comes.  The big one
 # is fitted a millimetre past its own limit; see the module docstring.
+# ... and what its A end seats on, which is the one datum the assembly needs
+# beyond the three every spring gets.
 instances = (
-    ("ID6", 12.0),
-    ("ID10", 20.0),
+    ("ID6", 12.0, "RAIL_CLAMP_X_DRIVE"),
+    ("ID10", 20.0, "SPRING_PLATE"),
 )
 
 dead = 1                 # dead coils at each end, one turn apiece
@@ -279,7 +281,7 @@ def ground_off(bore, wire):
     return mean * (2.0 * math.pi / (wire + touch_gap)) * -f_low
 
 
-def spring(doc, name, bore, wire, coils, length):
+def spring(doc, name, bore, wire, coils, length, seats_on):
     """One spring at `length`, standing on Z = 0 and wound right handed up +Z."""
     if length < drawn_floor(wire, coils):
         raise SystemExit(
@@ -318,13 +320,17 @@ def spring(doc, name, bore, wire, coils, length):
         fcprim.pocket(bdy, label, flat, grind(wire) + over, reversed_=away)
 
     # Mounting datums for the assembly; see fcprim.lcs and the module docstring.
+    # `seats_on` is the ground flat at A named for what it is pushed against --
+    # the same point as `END_A`, looking up the spring rather than out of it,
+    # because that is the way the spring pushes.
     fcprim.lcs(bdy, "AXIS", at=(0.0, 0.0, length / 2.0), axis=(0, 0, 1))
     fcprim.lcs(bdy, "END_A", axis=(0, 0, -1))
     fcprim.lcs(bdy, "END_B", at=(0.0, 0.0, length), axis=(0, 0, 1))
+    fcprim.lcs(bdy, seats_on, axis=(0, 0, 1))
     return bdy
 
 
-for key, at in instances:
+for key, at, seat in instances:
     bore, free, wire, coils, squash = springs[key]
     length = free if at is None else at
     name = (f"SPRING_{key}_L{free:.0f}"
@@ -338,6 +344,7 @@ for key, at in instances:
               f"{squash * 100.0:.0f} % allows -- it would take a set")
     fcprim.make(__file__, name,
                 lambda doc, name=name, bore=bore, wire=wire, coils=coils,
-                length=length: spring(doc, name, bore, wire, coils, length),
+                length=length, seat=seat: spring(doc, name, bore, wire,
+                                                 coils, length, seat),
                 wire_volume(bore, wire, coils) - 2.0 * ground_off(bore, wire),
                 made_of=fcprim.STEEL)

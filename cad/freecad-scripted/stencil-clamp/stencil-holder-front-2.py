@@ -38,8 +38,16 @@ def expected_volume():
 
 
 def stencil_holder_front_2(doc):
-    return back["angle"](doc, "STENCIL_HOLDER_FRONT_2",
-                         middle=(middle_d, middle_from_edge))
+    bdy = back["angle"](doc, "STENCIL_HOLDER_FRONT_2",
+                        middle=(middle_d, middle_from_edge))
+    # The near row hole is where this bar closes on the long one, and the hole
+    # through the upright is what the spanner's counter pulls on.
+    fcprim.lcs(bdy, "HOLDER_FRONT",
+               at=back["face_hole"](back["face_x"][0], back["wall"]),
+               axis=(0, 0, 1))
+    fcprim.lcs(bdy, "SPANNER_COUNTER",
+               at=(0.0, 0.0, back["leg"] - middle_from_edge), axis=(0, -1, 0))
+    return bdy
 
 
 fcprim.make(__file__, "STENCIL_HOLDER_FRONT_2", stencil_holder_front_2,

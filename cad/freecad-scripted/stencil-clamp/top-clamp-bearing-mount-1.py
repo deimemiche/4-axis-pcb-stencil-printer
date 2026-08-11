@@ -140,6 +140,44 @@ def bearing_mount(doc, name, hand=1):
     fcprim.pocket(bdy, "Nut slots across", slots_across, nut_thick,
                   reversed_=(hand > 0))
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `SPRING_PLATE` is the
+    # barrel's far end, where the plate the spring bears on sits, and the nut
+    # on the bolt that runs along the screw is `nut_from_face` in from the
+    # plate's own face, which is as far as that bolt reaches.
+    #
+    # The rest differ between the two hands, and not only by being mirrored:
+    # the pair carry the front bar between them, and it is bolted to one of
+    # them across the screw and to the other along it.  So each says what it
+    # holds rather than sharing a name.
+    fcprim.lcs(bdy, "SPRING_PLATE", at=(screw_x[1], 0.0, 0.0), axis=(1, 0, 0),
+               roll=90.0)
+    along_at = (plate_from_x + nut_from_face, bolt_y, hand * along_z)
+    if hand > 0:
+        fcprim.lcs(bdy, "NUT", at=along_at, axis=(-1, 0, 0))
+        fcprim.lcs(bdy, "HOLDER_FRONT", at=(across_x[1], bolt_y, chord),
+                   axis=(0, 0, 1))
+        # The barrel's near end, measured on that *face*, whose own frame sits
+        # at its centre of area -- the plate has taken a bite out of it, so
+        # that centre is off the screw's axis by a number that is not a
+        # dimension here.  Kept as measured; see ASSEMBLY_SCRIPT.md, step 6.
+        fcprim.lcs(bdy, "BEARING", at=(screw_x[0], 0.0, 0.6556), axis=(1, 0, 0),
+                   roll=180.0)
+    else:
+        fcprim.lcs(bdy, "NUT1", at=along_at, axis=(-1, 0, 0))
+        fcprim.lcs(bdy, "HOLDER_FRONT",
+                   at=(plate_from_x, bolt_y, hand * along_z), axis=(1, 0, 0),
+                   roll=90.0)
+        for i, x in enumerate(across_x):
+            fcprim.lcs(bdy, f"NUT{i + 2}",
+                       at=(x, bolt_y, chord + hand * nut_from_face),
+                       axis=(0, 0, 1))
+        # Both ends of the bearing's own seat: where the LM8UU goes in, and
+        # where the lead in at the far end stops it.
+        fcprim.lcs(bdy, "BEARING1", at=(screw_x[0], 0.0, 0.0), axis=(1, 0, 0),
+                   roll=90.0)
+        fcprim.lcs(bdy, "BEARING2", at=(screw_x[1] - lead_in, 0.0, 0.0),
+                   axis=(1, 0, 0), roll=90.0)
+
     return bdy
 
 

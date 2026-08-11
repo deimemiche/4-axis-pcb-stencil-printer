@@ -125,6 +125,19 @@ def top_rail_holder(doc):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(-foot_length, 0.0, z),
                    axis=(-1, 0, 0))
 
+    # Each bolt is counterbored from the far end, so it has a second datum on
+    # the floor of that bore, which is where its head seats.
+    for i, z in enumerate((-bolt_z, bolt_z)):
+        fcprim.lcs(bdy, f"BOLT{i + 3}", at=(length - head_depth, 0.0, z),
+                   axis=(-1, 0, 0))
+
+    # `FRAME` is the collar's own front face, and the assembly measured it
+    # there -- a face's frame sits at its centre of area, and this outline is
+    # lobes and blends, so neither number below is a dimension of anything.
+    # Kept as measured; see ASSEMBLY_SCRIPT.md, step 6.
+    fcprim.lcs(bdy, "FRAME", at=(0.0, -2.5, -3.1863), axis=(-1, 0, 0),
+               roll=270.0)
+
     return bdy
 
 

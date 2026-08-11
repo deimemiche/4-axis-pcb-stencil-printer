@@ -85,6 +85,10 @@ bury = 0.1               # how far the rib's inner edge sits inside the core
 overrun = 2.0 * pitch    # how far the sweep runs past each end, to be trimmed
 over = 2.0               # how far the trimming profiles clear the crests
 
+# Where FreeCAD puts the origin of a cut end's face -- measured, not designed;
+# see the datums at the foot of `studding`.
+end_face_centre = 0.3606
+
 
 def section_area():
     """The rod's cross section -- the same at every height; see the docstring.
@@ -144,6 +148,18 @@ def studding(doc, length):
     fcprim.lcs(bdy, "AXIS", at=(0.0, 0.0, length / 2.0), axis=(0, 0, 1))
     fcprim.lcs(bdy, "END_A", axis=(0, 0, -1))
     fcprim.lcs(bdy, "END_B", at=(0.0, 0.0, length), axis=(0, 0, 1))
+
+    # The eccenter hangs on this stick and grips it at both cut ends.  Those
+    # two datums are `end_face_centre` out along X, and that number is not a
+    # dimension of anything: the hand-built assembly picked the end *face*, and
+    # a thread trimmed square leaves an end face that is not symmetric about
+    # the rod's axis, so FreeCAD's own frame for it sits a third of a
+    # millimetre off centre.  It is kept as measured, because moving it onto
+    # the axis would move both eccenter halves by that much.  See
+    # ASSEMBLY_SCRIPT.md, step 6.
+    fcprim.lcs(bdy, "ECC_BOT", at=(end_face_centre, 0.0, 0.0), axis=(0, 0, -1),
+               roll=180.0)
+    fcprim.lcs(bdy, "ECC_TOP", at=(end_face_centre, 0.0, length), axis=(0, 0, 1))
     return bdy
 
 

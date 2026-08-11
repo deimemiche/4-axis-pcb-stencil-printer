@@ -83,6 +83,26 @@ def eccf_bot(doc):
                       name=f"bolt{'np'[side > 0]}")
     fcprim.pocket(bdy, "Bolt clearance", bolts, bolt_hole_depth)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The plate is bolted
+    # down onto three brackets at once, so it takes a datum at each of the
+    # corners they reach -- two of them the same corner, once each way up,
+    # because two brackets meet there.  `NUT` and `STUD` are on the shaft's own
+    # axis: the top face, where the eccenter's stud enters, and the floor of
+    # the bore, where the nut behind it stops.  The two mounting bolts have
+    # theirs on the floor of the slot cut for their heads.
+    for side, label in ((-1, "BOLT1"), (1, "BOLT2")):
+        fcprim.lcs(bdy, label, at=(side * bolt_x, top_y - head_depth, 0.0),
+                   axis=(0, -1, 0))
+    fcprim.lcs(bdy, "NUT", at=(0.0, top_y, 0.0), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "STUD", at=(0.0, top_y - shaft_depth, 0.0), axis=(0, -1, 0))
+    under = top_y - plate_thickness
+    fcprim.lcs(bdy, "BRACKET", at=(plate_x / 2, under, plate_z / 2),
+               axis=(0, -1, 0), roll=270.0)
+    fcprim.lcs(bdy, "BRACKET_X", at=(-plate_x / 2, under, plate_z / 2),
+               axis=(0, 1, 0), roll=270.0)
+    fcprim.lcs(bdy, "Z_AXIS_BRACKET", at=(-plate_x / 2, under, plate_z / 2),
+               axis=(0, -1, 0), roll=270.0)
+
     return bdy
 
 

@@ -131,9 +131,31 @@ def studding(doc, role, length, at_x):
 
 
 def sticks(doc):
-    """All four, side by side."""
-    return [studding(doc, role, length, i * spacing)
+    """All four, side by side, with the three datums the assembly adds on top.
+
+    A document here holds four sticks and the assembly links the *document*, so
+    a datum it carries is read in the first body's frame whichever stick it
+    belongs to.  These three are measured there, and they are three different
+    sticks' business:
+
+        HANDWHEEL         a 270's A end, looking up the rod rather than out of
+                          it, which is what the handwheel is pushed onto
+        SPANNER_CASE      the stretcher's own mid length ...
+        SPANNER_COUNTER   ... and its far end
+
+    So the two heights are the stretcher's `length / 2` and `length`, taken
+    from `rods` above -- see the docstring's note on the stretcher's own datums
+    being the Y screw's, which is the same confusion seen from the other side.
+    """
+    made = [studding(doc, role, length, i * spacing)
             for i, (role, length) in enumerate(rods)]
+    stretcher = dict(rods)["Stencil_Stretcher"]
+    fcprim.lcs(made[0], "HANDWHEEL", axis=(0, 0, 1))
+    fcprim.lcs(made[0], "SPANNER_CASE", at=(0.0, 0.0, stretcher / 2.0),
+               axis=(0, 0, 1))
+    fcprim.lcs(made[0], "SPANNER_COUNTER", at=(0.0, 0.0, stretcher),
+               axis=(0, 0, 1))
+    return made
 
 
 fcprim.make(__file__, "M5_270", sticks,

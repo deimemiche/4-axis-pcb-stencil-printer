@@ -156,6 +156,27 @@ def bot_bearing_mount_x_axis(doc):
     for i, (x, z) in enumerate(corners):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, plate_y[0], z), axis=(0, -1, 0))
 
+    # What the assembly joins to on top of those.  `BEARING`1 and 2 are the
+    # seat's two shoulders, where the LM8UU's ends come to rest; `ROD` is the
+    # trough's mouth at the far side, which is where the Y rail crosses.  The
+    # two M3 down into the seat have a datum where their head sits on the top
+    # face -- named for the clamp each carries -- and one at the nut slot they
+    # run into; the four plate bolts likewise have theirs at their own nut
+    # seats, which is as far up as they reach.
+    for side, label in ((-1, "BEARING1"), (1, "BEARING2")):
+        fcprim.lcs(bdy, label, at=(side * (half_x - seat_lead), 0.0, 0.0),
+                   axis=(1, 0, 0), roll=90.0)
+    fcprim.lcs(bdy, "ROD", at=(0.0, house_y, house_z), axis=(0, 0, 1))
+    for side, label in ((-1, "RAIL_CLAMP_X_DRIVE"), (1, "RAIL_CLAMP_Y")):
+        fcprim.lcs(bdy, label, at=(side * cap_bolt_x, house_y, 0.0),
+                   axis=(0, -1, 0))
+    for side, label in ((-1, "NUT1"), (1, "NUT6")):
+        fcprim.lcs(bdy, label, at=(side * cap_bolt_x, cap_nut_y[0], 0.0),
+                   axis=(0, 1, 0))
+    for i, (x, z) in enumerate(corners):
+        fcprim.lcs(bdy, f"NUT{i + 2}", at=(x, plate_bolt_y, z),
+                   axis=(0, -1, 0))
+
     return bdy
 
 

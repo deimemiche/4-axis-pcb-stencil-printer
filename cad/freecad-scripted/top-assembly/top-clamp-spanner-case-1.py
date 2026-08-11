@@ -71,6 +71,17 @@ def top_clamp_spanner_case_1(doc):
                       name=f"bolt{'np'[side > 0]}")
     fcprim.pocket(bdy, "Bolt clearance", bolts, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  `STUD` is the
+    # spanner's own shaft, on the face the two cases close on.  The bolt at
+    # -Z is what holds the pair together and to the rail, so it takes two: one
+    # on the rib's outer face, where CASE_2 comes up against it, and one on the
+    # plate's far face, which is what lands on the member.
+    fcprim.lcs(bdy, "STUD", at=(face_x, 0.0, 0.0), axis=(1, 0, 0), roll=90.0)
+    fcprim.lcs(bdy, "SPANNER_CASE", at=(face_x - rib_height, 0.0, -bolt_z),
+               axis=(1, 0, 0), roll=90.0)
+    fcprim.lcs(bdy, "FRAME", at=(face_x + plate_thickness, 0.0, -bolt_z),
+               axis=(1, 0, 0), roll=180.0)
+
     return bdy
 
 

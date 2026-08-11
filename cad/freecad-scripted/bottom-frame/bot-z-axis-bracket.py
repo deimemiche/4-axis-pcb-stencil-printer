@@ -230,6 +230,24 @@ def bracket(doc, hand=1):
     for i, (bx, bz) in enumerate(at):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x(bx), 0.0, bz), axis=(0, -1, 0))
 
+    # And what the assembly joins to on top of those.  `ROD2` is the collar's
+    # far end -- the same line as `ROD`, `collar_h` along it, where the rod
+    # comes out.  `FRAME` and `ECC_BOT` are the plate's top face at its two
+    # ends, the member on one and the eccenter's foot on the other.  The two
+    # M4 across the mount take theirs on the floor of what is bored for the
+    # head, which is where the head actually seats: `cbore_depth` into the web
+    # for the one, `spot_depth` into the ear for the other.
+    fcprim.lcs(bdy, "ROD2", at=(x(rod_x), collar_h, -rod_out), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "FRAME", at=(0.0, plate_thickness, 0.0), axis=(0, 1, 0),
+               roll=270.0)
+    fcprim.lcs(bdy, "ECC_BOT", at=(x(plate_size), plate_thickness, 0.0),
+               axis=(0, 1, 0), roll=270.0)
+    fcprim.lcs(bdy, "MOUNT_BOLT",
+               at=(x(mount_x), bolt_y, -web_depth + cbore_depth), axis=(0, 0, 1))
+    fcprim.lcs(bdy, "PINCH_BOLT",
+               at=(x(pinch_x), bolt_y, -rod_out - ear_up + spot_depth),
+               axis=(0, 0, 1))
+
     return bdy
 
 

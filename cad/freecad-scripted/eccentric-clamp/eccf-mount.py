@@ -122,6 +122,19 @@ def eccf_mount(doc):
     fcprim.circle(bolt, (lug_y, 0.0), bolt_hole_d, name="bolt")
     fcprim.pocket(bdy, "Cross bolt cut", bolt, midplane=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The collar's two ends
+    # are what it is stacked between -- the height adjuster below, the top
+    # block above -- and each lug carries a heat set insert on the cross bolt's
+    # line, with the lever's cheek pivoting on the same spot.
+    fcprim.lcs(bdy, "ECC_HEIGHT", axis=(0, -1, 0))
+    fcprim.lcs(bdy, "ECC_TOP", at=(0.0, collar_height, 0.0), axis=(0, 1, 0),
+               roll=270.0)
+    for side, insert, lever in ((-1, "INSERT1", "LEVER1"),
+                                (1, "INSERT2", "LEVER2")):
+        at = (side * lug_span / 2.0, lug_y, 0.0)
+        fcprim.lcs(bdy, insert, at=at, axis=(1, 0, 0))
+        fcprim.lcs(bdy, lever, at=at, axis=(1, 0, 0), roll=90.0)
+
     return bdy
 
 

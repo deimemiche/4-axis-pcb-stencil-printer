@@ -67,6 +67,9 @@ def bearing(doc):
     fcprim.lcs(bdy, "AXIS", at=(0.0, 0.0, width / 2.0), axis=(0, 0, 1))
     fcprim.lcs(bdy, "FACE_A", axis=(0, 0, -1))
     fcprim.lcs(bdy, "FACE_B", at=(0.0, 0.0, width), axis=(0, 0, 1))
+    # The adapter's spigot goes *into* the bore from the A face, so its datum
+    # is that face's own point looking up the axis rather than out of it.
+    fcprim.lcs(bdy, "ADAPTER", axis=(0, 0, 1))
     return bdy
 
 

@@ -58,6 +58,10 @@ def adapter_d5_to_m3(doc):
     ], name="section")
     fcprim.revolution(bdy, "Turned body", section, axis="V_Axis")
 
+    # The one datum the assembly needs: the shoulder the collar makes, which
+    # is how far the spigot goes into the bearing before it stops.
+    fcprim.lcs(bdy, "BEARING", at=(0.0, collar_height, 0.0), axis=(0, 1, 0))
+
     return bdy
 
 

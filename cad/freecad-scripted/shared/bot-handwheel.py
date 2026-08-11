@@ -165,6 +165,17 @@ def bot_handwheel(doc):
     fcprim.lcs(bdy, "SHAFT", at=(0.0, bore_floor, 0.0), axis=(0, -1, 0))
     fcprim.lcs(bdy, "FACE", at=(0.0, rim_y[0], 0.0), axis=(0, -1, 0))
 
+    # What the assembly joins to on top of those.  `STUD` is `SHAFT`'s point
+    # looking *up* the bore, which is the way the studding comes in;
+    # `BRACKET_X` is the spigot's far end, which is what stands against the
+    # bracket.  The grub screw is on its own axis at the lug's outer face,
+    # and its nut on the near wall of the slot the lug is split by.
+    fcprim.lcs(bdy, "STUD", at=(0.0, bore_floor, 0.0), axis=(0, 1, 0),
+               roll=270.0)
+    fcprim.lcs(bdy, "BRACKET_X", at=(0.0, spigot_y[1], 0.0), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "GRUB", at=(-lug_d / 2, grub_y, 0.0), axis=(1, 0, 0))
+    fcprim.lcs(bdy, "NUT", at=(-lug_slot[0], grub_y, 0.0), axis=(-1, 0, 0))
+
     return bdy
 
 

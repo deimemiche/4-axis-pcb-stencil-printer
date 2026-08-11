@@ -163,6 +163,13 @@ def top_clamp_nut_holder(doc):
     fcprim.pocket(bdy, "Nut clearance", seat, nut_y[1] - nut_y[0],
                   reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  Both are on the
+    # screw's own line: the block's front face, which the back bar is pulled
+    # against, and the floor of the slot the nut drops into behind it.
+    fcprim.lcs(bdy, "HOLDER_BACK", at=(barrel_x, screw_y[0], 0.0),
+               axis=(0, -1, 0))
+    fcprim.lcs(bdy, "NUT", at=(barrel_x, nut_y[0], 0.0), axis=(0, -1, 0))
+
     return bdy
 
 

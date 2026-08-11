@@ -87,6 +87,12 @@ def eccf_top(doc):
     fcprim.circle(rod, (0.0, 0.0), rod_clear_d, name="rod")
     fcprim.pocket(bdy, "Rod clearance cut", rod, nut_bottom_y)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  Both are on the
+    # block's own axis: the underside, which is the spigot's shoulder onto the
+    # height adjuster, and the floor of the nut pocket above it.
+    fcprim.lcs(bdy, "ECC_MOUNT", at=(0.0, block_bottom_y, 0.0), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "STUD", at=(0.0, nut_bottom_y, 0.0), axis=(0, -1, 0))
+
     return bdy
 
 

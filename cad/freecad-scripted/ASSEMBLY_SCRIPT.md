@@ -5,7 +5,7 @@ the plan for **rebuilding, from Python, the assembly Michael built by hand** in
 [`../freecad/assembly/`](../freecad/assembly/) — so that the nine documents there stop being the only
 copy of that work.
 
-**Steps 1 to 5 are built.** What follows is the design, kept because the
+**All six steps are built.** What follows is the design, kept because the
 reasoning still explains the code; `## Where it got to` records what actually
 happened, including the places the plan was wrong. The work is on the
 `assembly-datums` branch, and the nine hand-built documents were never written
@@ -266,9 +266,9 @@ as a diff rather than as an opinion. Datums are what make that expressible:
 ## Where it got to
 
     parts      145/145 exact, worst 0.000000 mm
-    fasteners  233/241 exact
+    bolts      235/245 exact
     joints     149, none naming an edge
-    datums     308 across 59 part documents
+    datums     308 across 59 part documents, all written by the part scripts
 
 Every leaf sub-assembly -- `Bottom_Frame`, `Eccenter`, `Rotation_Table`,
 `Top_Frame`, `X-Axis_Carriage`, `Stencil_Clamp` -- reproduces the hand-built
@@ -281,22 +281,102 @@ The pipeline, in order:
     extract-all.sh    the nine documents -> model.json          (step 1)
     datums-all.sh     every reference measured -> datums.json   (step 2)
     datum-names.py    named by what mates there -> datum-plan.json
+    datum-derive.py   which sketched feature each one sits on   (step 6)
     build.py          the parts, datums and all                 (step 3)
     wiring.py         old edge name -> new datum -> wiring.json
     calibrate.py      each fastener's offset, in the datum frame
     asmbuild.py       the nine assemblies                       (step 4)
     asmpose.py        solved placements, one document per process (step 5)
 
+`rebuild.py` drives the lot; its stage names are `extract datums names parts
+wiring poses assemble dress drawings bom verify`.
+
+## Step 6: the datums say where they came from
+
+The plan's last step was *"intent-level source"*, and the concrete thing it
+meant was this: **a datum position should be an expression in the part's own
+dimensions, not a number measured off an assembly.** A literal is checkable but
+it is not readable, and it does not move when the part does -- widen a hole
+pattern and the datum stays where the old assembly had it, silently.
+
+All 308 are now written by the part scripts, in those scripts' own terms:
+
+```python
+# before -- from datum-plan.json, applied by fcprim.apply_datums
+fcprim.lcs(bdy, "BOLT1", at=(-124.35, 0.0, -76.0), axis=(0, -1, 0))
+
+# after -- in xy-plate.py, off the same list the holes are drilled from
+for i, (x, z) in enumerate(sorted(holes())):
+    fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, 0.0, z), axis=(0, -1, 0))
+```
+
+**`datum-plan.json` did not go away; it changed job.** It is now the **answer
+key**: `fcprim.apply_datums` holds every datum a script writes against the
+position measured off the hand-built machine, to a micron, and *fails the
+build* if they disagree. So an expression is not a guess -- it is a claim that
+has to come out on the measured spot. Getting `BEARING_MOUNT_Y3` wrong by
+29 mm, or `FRAME1` by 1 mm because it named the wrong face of a shelf, is a
+traceback rather than a part that quietly moves.
+
+`datum-derive.py` is what made the edit tractable. It is read-only: it opens
+each built part, and for every literal in the plan says which sketched feature
+sits exactly there -- the centre of circle `bolt_a0`, a point `4` mm along that
+circle's axis, a vertex of the `plate` profile, a sketch's own plane. 263 of
+the 308 were explained outright, and the name it gives is the name the *script*
+knows the feature by, so the expression is read off the source rather than
+worked out.
+
+Two things are worth knowing about what came out of it.
+
+**Position and Z are enforced; `roll` is reported.** Five datums are turned
+about their own axis relative to the measurement -- `RAIL` on both rail
+holders, `ROD` on the short alpha holder, `SCREW` on the X bracket, `FACE_A` on
+the ball bearing. Every one of them is an axis of revolution, where the
+measured roll is whatever the underlying curve's parameterisation handed back,
+and no joint uses it. `apply_datums` prints these and carries on; a roll that
+*does* matter shows up in `asmdiff` against the hand-built placements, which is
+where it should.
+
+**Seven datums cannot be expressed, and are kept as measured with a note.**
+They are the ones the hand-built assembly picked on a *face* rather than on
+anything drawn, and a face's own frame sits at its centre of area: the notched
+hinge leaf (`FACE1`, `FACE2`, `FRAME1`), both rail holders' collar face
+(`FRAME`), the spanner case's top edge (`FRAME`), the clamp bearing mount's
+barrel end (`BEARING`), and the Z clamp's top face (`ROD2`). `M8_55`'s two
+eccenter datums are the same case in a different guise -- a thread trimmed
+square leaves an end face whose centre is 0.3606 mm off the rod's axis. Each
+carries a comment saying so where it is written, because the number means
+nothing on its own and moving it onto the axis would move the parts hung off it.
+
+### Two bugs step 6 turned up
+
+**Eleven datums were never being created.** `datum-names.py` dropped the kept
+labels from its "already taken" set before numbering the generated ones, so a
+part whose script already wrote `BOLT1`..`BOLT5` could be handed `BOLT1` again
+for a different spot -- and the old `apply_datums` *skipped* a label it found
+rather than checking it. `BOT_BRACKETS`, the three rail clamps and both hands
+of `BOT_Z_AXIS_BRACKET` lost between them eleven of the plan's datums, which is
+seven of the eight fasteners the plan listed as unfinished. They are named for
+what is actually there now: `BOLT2_HEAD` is the far end of `BOLT2`, and the Z
+bracket's two are `MOUNT_BOLT` and `PINCH_BOLT`. `datum-names.py` reproduces
+those names from a `REVIEWED` table, so a re-run does not undo the review.
+
+**`--calibrate` wrote an empty offsets file.** `calibrate-from-build.py` split
+the hand-pose filenames on an `fh-` prefix they have not carried for some time,
+so nothing matched and it wrote nothing -- reporting "0 offsets" and carrying
+on. Eight bolts moved before this was spotted. It now takes the basename and
+refuses a file that is not one of the nine.
+
 ### What is not done
 
-**Eight fasteners**, all in container assemblies, where a reference reaches
-through a sub-assembly path that resolves to no datum. `Nut031`'s `BaseObject`
-lands on `Bottom_Assembly` itself rather than on any part; `Nut030`'s path
-resolves to nothing; six more sit off-axis from the datum they matched. The
-build names them in its own notes.
+**One fastener.** `Nut031`'s `BaseObject` lands on `Bottom_Assembly` itself
+rather than on any part, so there is no datum for it to name. The other seven
+of the plan's original eight came back with the eleven datums above.
 
-**Step 6**, the intent-level source. The datum positions are still literals,
-because that is what a measurement gives.
+**Ten bolts** are placed but not exactly where the hand-built assembly has
+them, all in `Stencil_Clamp` (4 unplaced), `Bottom_Assembly` (5) and
+`Top_Assembly` (1). Nine of the 239 calibrated offsets sit more than a
+millimetre off their datum, which is the same story from the other end.
 
 ### What the plan got wrong
 
@@ -342,7 +422,10 @@ tolerance and the difference is 0.000000 mm.
 5. **Differ**: `asm/` against `../freecad/assembly/`, document for document under the same
    names, on object set, joint table and solved placements — with a tolerance,
    because the solve is not idempotent and lands about 1e-5 apart between runs.
-6. **Intent-level source**, with 1-5 as the safety net.
+6. **Intent-level source**, with 1-5 as the safety net. Every datum position
+   becomes an expression in its part's own dimensions, and `datum-plan.json`
+   becomes the answer key those expressions are checked against. See
+   `## Step 6` above for what that turned into.
 
 Steps 1 and 2 are read-only and cannot disturb work in progress. Step 3 is the
 first one that writes.

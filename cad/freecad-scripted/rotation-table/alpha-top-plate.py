@@ -99,6 +99,10 @@ def plate(doc):
         fcprim.circle(work, (x, z), grid_d, name=f"grid{i}")
     fcprim.pocket(bdy, "Workholding grid", work, midplane=True)
 
+    # The one datum the assembly needs: the first hole of the ring's own bolt
+    # circle, on the plate's top face, which is where the ring is bolted on.
+    fcprim.lcs(bdy, "RING", at=(mount_r, thickness, 0.0), axis=(0, -1, 0))
+
     return bdy
 
 

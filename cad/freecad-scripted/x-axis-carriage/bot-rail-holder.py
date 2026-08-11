@@ -136,6 +136,23 @@ def bot_rail_holder(doc):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(-foot_length, 0.0, z),
                    axis=(-1, 0, 0))
 
+    # Each bolt is counterbored from the far end, so it has a second datum on
+    # the floor of that bore -- which is where its head actually seats.
+    for i, z in enumerate(bolt_z):
+        fcprim.lcs(bdy, f"BOLT{i + 3}", at=(length - head_depth, 0.0, z),
+                   axis=(-1, 0, 0))
+
+    # Two the assembly measured on a *face* rather than on anything drawn, and
+    # a face's own frame sits at its centre of area -- so these two heights are
+    # not dimensions of anything: the collar's outline is lobes and blends, and
+    # that is where its middle falls.  Kept as measured; see ASSEMBLY_SCRIPT.md,
+    # step 6.  Both are on the collar's own front face, `FACE` looking out
+    # along the rail and `FRAME` back down it.
+    fcprim.lcs(bdy, "FACE", at=(0.0, 4.1272, boss_z), axis=(1, 0, 0),
+               roll=180.0)
+    fcprim.lcs(bdy, "FRAME", at=(0.0, 2.5, 16.228), axis=(-1, 0, 0),
+               roll=180.0)
+
     return bdy
 
 

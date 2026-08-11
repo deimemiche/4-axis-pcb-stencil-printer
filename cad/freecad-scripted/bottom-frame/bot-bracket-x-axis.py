@@ -42,6 +42,10 @@ web_fillet_r = 3.5
 
 bolt_hole_d = 4.5        # M4 clearance
 bolt_at = ((-30.0, -10.0), (-10.0, -30.0), (-10.0, -50.0))
+# What the assembly calls each hole's *head* end, on the plate's top face.  The
+# numbers are the plan's own, which ran along the part rather than along
+# `bolt_at`; the order here is `bolt_at`'s, so that one list drives both.
+bolt_heads = ("BOLT4", "BOLT6", "BOLT5")
 
 mesh_volume = 9745.755
 
@@ -106,6 +110,18 @@ def bot_bracket_x_axis(doc):
     fcprim.lcs(bdy, "MOUNT", axis=(0, -1, 0))
     for i, (x, z) in enumerate(bolt_at):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, 0.0, z), axis=(0, -1, 0))
+
+    # What the assembly joins to, on top of those.  The three bolts go right
+    # through the plate, so each has a second datum on the top face where its
+    # head seats; the nut on the X screw sits against the web's far side; and
+    # the plate's two free corners are where a member and the eccenter's foot
+    # come up against it.
+    for (x, z), label in zip(bolt_at, bolt_heads):
+        fcprim.lcs(bdy, label, at=(x, plate_thickness, z), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "NUT", at=(web_x[0], screw_y, screw_z), axis=(1, 0, 0))
+    fcprim.lcs(bdy, "FRAME", axis=(0, 1, 0), roll=270.0)
+    fcprim.lcs(bdy, "ECC_BOT", at=(0.0, 0.0, long_leg_z), axis=(0, -1, 0),
+               roll=270.0)
 
     return bdy
 

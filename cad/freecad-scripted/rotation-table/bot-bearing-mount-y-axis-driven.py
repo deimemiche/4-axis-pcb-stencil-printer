@@ -171,6 +171,28 @@ def bot_bearing_mount_y_axis_driven(doc):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, flange_top_y, z), axis=(0, 1, 0))
     fcprim.lcs(bdy, "SCREW", at=(0.0, shaft[0], shaft[1]), axis=(1, 0, 0))
 
+    # Each of the four bolts goes right through the flange, so each has a
+    # second datum on its underside, where the head seats -- numbered along the
+    # part, which is what sorting the centres does.
+    seats = sorted((sx * bolt_x, sz * bolt_z)
+                   for sx in (-1, 1) for sz in (-1, 1))
+    for i, (x, z) in enumerate(seats):
+        fcprim.lcs(bdy, f"BOLT{i + 5}",
+                   at=(x, flange_top_y - flange_thickness, z), axis=(0, -1, 0))
+
+    # `BEARING2` is the seat's far end, where the LM8UU comes to rest;
+    # `BOT_PLATE` is one bolt top, where the alpha plate is clamped down; and
+    # the two nuts on the screw sit against the walls the arm is hollowed back
+    # to, the near skin and the far one.
+    fcprim.lcs(bdy, "BEARING2", at=(width / 2.0, 0.0, 0.0), axis=(1, 0, 0),
+               roll=90.0)
+    fcprim.lcs(bdy, "BOT_PLATE", at=(-bolt_x, flange_top_y, bolt_z),
+               axis=(0, -1, 0))
+    fcprim.lcs(bdy, "NUT1", at=(web_near[0], shaft[0], shaft[1]),
+               axis=(-1, 0, 0))
+    fcprim.lcs(bdy, "NUT2", at=(web_far[0], shaft[0], shaft[1]),
+               axis=(-1, 0, 0))
+
     return bdy
 
 

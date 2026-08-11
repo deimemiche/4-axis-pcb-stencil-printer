@@ -42,11 +42,18 @@ import fcprim
 
 diameter = 8.0           # what an LM8UU bores for, and every rail here
 
-# The lengths this machine is built from.
-lengths = (300.0, 280.0, 244.0, 140.0)
+# The lengths this machine is built from, and what holds each stick's A end.
+#
+# Every rod gets `AXIS`, `END_A` and `END_B` from its own two dimensions.  Three
+# of the four are also *located* at their A end -- pushed home into a holder or
+# a clamp rather than free to slide -- and that joint wants a datum looking up
+# the rod rather than out of its end face, which is what `END_A` gives.  It is
+# the same point; the name is whichever part comes up against it there.
+lengths = {300.0: "RAIL_HOLDER", 280.0: "RAIL_HOLDER", 244.0: None,
+           140.0: "Z"}
 
 
-def rod(doc, length):
+def rod(doc, length, held_by=None):
     """A circle, run up +Z for `length`."""
     bdy = fcprim.body(doc, f"ROD_D8_{length:.0f}")
 
@@ -62,11 +69,14 @@ def rod(doc, length):
     fcprim.lcs(bdy, "AXIS", at=(0.0, 0.0, length / 2.0), axis=(0, 0, 1))
     fcprim.lcs(bdy, "END_A", axis=(0, 0, -1))
     fcprim.lcs(bdy, "END_B", at=(0.0, 0.0, length), axis=(0, 0, 1))
+    if held_by:
+        fcprim.lcs(bdy, held_by, axis=(0, 0, 1))
     return bdy
 
 
-for cut_length in lengths:
+for cut_length, holder in lengths.items():
     fcprim.make(__file__, f"ROD_D8_{cut_length:.0f}",
-                lambda doc, length=cut_length: rod(doc, length),
+                lambda doc, length=cut_length, held=holder: rod(doc, length,
+                                                                held),
                 math.pi * (diameter / 2.0) ** 2 * cut_length,
                 made_of=fcprim.STEEL)

@@ -72,6 +72,30 @@ def bot_brackets(doc):
     for i, (x, z) in enumerate(at):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, 0.0, z), axis=(0, -1, 0))
 
+    # Every bolt goes right through the plate, so each also has a datum on the
+    # top face where its head seats.  The corner one is `FOOT` rather than
+    # `BOLT1_HEAD` because that is the hole the stand is bolted through.
+    heads = ("FOOT", "BOLT2_HEAD", "BOLT3_HEAD", "BOLT4_HEAD", "BOLT5_HEAD")
+    for (x, z), label in zip(at, heads):
+        fcprim.lcs(bdy, label, at=(x, thickness, z), axis=(0, -1, 0))
+
+    # And the corners.  The gusset's outer corner is where the two members
+    # cross, so `FRAME1` is on the underside there and `FRAME2`/`FRAME3` are
+    # the same corner on the top face, once each way up.  The other two
+    # corners of the L carry a hinge leaf, and the far end of the long leg is
+    # what the eccenter's foot comes up against.
+    fcprim.lcs(bdy, "FRAME1", axis=(0, -1, 0), roll=270.0)
+    fcprim.lcs(bdy, "FRAME2", at=(0.0, thickness, 0.0), axis=(0, 1, 0),
+               roll=270.0)
+    fcprim.lcs(bdy, "FRAME3", at=(0.0, thickness, 0.0), axis=(0, -1, 0),
+               roll=270.0)
+    fcprim.lcs(bdy, "HINGE1", at=(leg_width, 0.0, size), axis=(0, -1, 0),
+               roll=270.0)
+    fcprim.lcs(bdy, "HINGE2", at=(size, 0.0, leg_width), axis=(0, -1, 0),
+               roll=270.0)
+    fcprim.lcs(bdy, "ECC_BOT", at=(size, 0.0, 0.0), axis=(0, -1, 0),
+               roll=270.0)
+
     return bdy
 
 

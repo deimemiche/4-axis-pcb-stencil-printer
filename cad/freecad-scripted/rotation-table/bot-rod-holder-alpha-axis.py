@@ -103,6 +103,14 @@ def bot_rod_holder_alpha_axis(doc):
                                 for sz in (-1, 1)]):
         fcprim.lcs(bdy, f"BOLT{i + 1}", at=(x, plate_top_y, z), axis=(0, 1, 0))
 
+    # Each bolt goes right through the plate, so each has a second datum on its
+    # underside where the head seats, and one of the bolt tops is where
+    # ALPHA_BOT_PLATE is clamped against it.
+    for i, (x, z) in enumerate([(x, sz * bolt_z) for x in bolt_x
+                                for sz in (-1, 1)]):
+        fcprim.lcs(bdy, f"BOLT{i + 5}", at=(x, plate_y, z), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "BOT_PLATE", at=(bolt_x[1], plate_top_y, bolt_z), axis=(0, -1, 0))
+
     return bdy
 
 

@@ -71,6 +71,14 @@ def eccf_height(doc):
     fcprim.circle(rod, (0.0, 0.0), rod_clear_d, name="rod")
     fcprim.pocket(bdy, "Rod clearance cut", rod, rod_clear_depth, reversed_=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  The knob is turned, so
+    # both are on its axis: the top face it screws up against, and the floor of
+    # the clearance bored for the rod, which is where the nut inside it sits.
+    fcprim.lcs(bdy, "ECC_MOUNT", at=(0.0, top_y, 0.0), axis=(0, 1, 0),
+               roll=270.0)
+    fcprim.lcs(bdy, "NUT", at=(0.0, top_y - rod_clear_depth, 0.0),
+               axis=(0, -1, 0))
+
     return bdy
 
 

@@ -62,6 +62,39 @@ SUFFIX = (r"_MIRRORED$", r"_AXIS$", r"_DRIVEN$", r"_SHORT$", r"_PLAIN$",
 FASTENER_STEM = {"ISO4762": "BOLT", "DIN934": "NUT", "ISO4035": "NUT",
                  "ISO4027": "GRUB", "IUTHeatInsert": "INSERT"}
 
+# Names given on review, which beat anything the rules above can work out, keyed
+# by the part and the position measured there.  This is the step the module
+# docstring calls "Michael reviews and names them", written down so that a
+# re-run reproduces the reviewed plan instead of undoing it.
+#
+# All fourteen are the same case: a spot on a part whose script already writes
+# `BOLT`n somewhere else, so the counter's answer would be a second meaning for
+# a name already taken.  Naming what is actually there says more anyway -- the
+# far end of a bolt that goes right through is that bolt's head, and the two M4
+# across the Z bracket's mount are the one that pulls it onto the member and the
+# one that pinches the collar shut.
+REVIEWED = {
+    ("BOT_BRACKETS", (30.0, 4.0, 10.0)): "BOLT2_HEAD",
+    ("BOT_BRACKETS", (50.0, 4.0, 10.0)): "BOLT3_HEAD",
+    ("BOT_BRACKETS", (10.0, 4.0, 30.0)): "BOLT4_HEAD",
+    ("BOT_BRACKETS", (10.0, 4.0, 50.0)): "BOLT5_HEAD",
+    ("BOT_RAIL_CLAMP_X_DRIVE", (0.0, 3.0, -9.0)): "BOLT1_HEAD",
+    ("BOT_RAIL_CLAMP_X_DRIVE", (0.0, 3.0, 9.0)): "BOLT2_HEAD",
+    ("BOT_RAIL_CLAMP_Y_AXIS", (0.0, 3.0, -9.0)): "BOLT1_HEAD",
+    ("BOT_RAIL_CLAMP_Y_AXIS", (0.0, 3.0, 9.0)): "BOLT2_HEAD",
+    ("BOT_RAIL_CLAMP_Y_AXIS_1", (0.0, 3.0, -9.0)): "BOLT1_HEAD",
+    ("BOT_RAIL_CLAMP_Y_AXIS_1", (0.0, 3.0, 9.0)): "BOLT2_HEAD",
+    ("BOT_Z_AXIS_BRACKET", (7.0072, 14.0, -3.45)): "MOUNT_BOLT",
+    ("BOT_Z_AXIS_BRACKET", (35.4181, 14.0, -13.4)): "PINCH_BOLT",
+    ("BOT_Z_AXIS_BRACKET_MIRRORED", (-7.0072, 14.0, -3.45)): "MOUNT_BOLT",
+    ("BOT_Z_AXIS_BRACKET_MIRRORED", (-35.4181, 14.0, -13.4)): "PINCH_BOLT",
+}
+
+
+def reviewed_name(part, at):
+    """The name review gave this spot, if it gave it one."""
+    return REVIEWED.get((part, tuple(round(v, 4) + 0.0 for v in at)))
+
 
 def stem_for(part):
     """The noun in a part's name: BOT_RAIL_CLAMP_Y_AXIS_1 -> RAIL_CLAMP."""
@@ -202,18 +235,31 @@ def main():
     # Number per part and stem, ordered along the part.
     #
     # A generated name must not collide with a datum the part script already
-    # writes somewhere else: `apply_datums` skips a label the body already
-    # carries, so a collision does not overwrite -- it silently leaves the datum
-    # at the script's position instead of the measured one, and the joint that
-    # wanted it lands in the wrong place.
+    # writes somewhere else.  This was got wrong once and cost eleven datums:
+    # the line here used to drop the kept labels from `taken` -- "kept ones are
+    # ours" -- and a kept `BOLT3` therefore freed `BOLT3` for the numbering to
+    # hand to a different spot.  Every label the part carries stays taken; a
+    # kept datum does not need its own name reserved, because it never asks the
+    # counter for one.
+    #
+    # The eleven were `BOLT1`..`BOLT5` on `BOT_BRACKETS`, the three rail clamps
+    # and both hands of `BOT_Z_AXIS_BRACKET`, and they are the reason
+    # `apply_datums` now *checks* a datum it finds rather than stepping over it.
     for part, ds in plan.items():
         d0 = match_doc(part, have)
         taken = {e["label"] for e in have.get(d0, [])} if d0 else set()
-        taken -= {d["stem"] for d in ds if d["fixed"]}      # kept ones are ours
         ds.sort(key=lambda d: (d["stem"], d["at"]))
-        counts = collections.Counter(d["stem"] for d in ds)
+        for d in ds:
+            given = reviewed_name(part, d["at"])
+            if given:
+                d["name"], d["why"] = given, "reviewed"
+                taken.add(given)
+        counts = collections.Counter(d["stem"] for d in ds
+                                     if not d.get("name"))
         seen = collections.Counter()
         for d in ds:
+            if d.get("name"):
+                continue
             if d["fixed"]:
                 d["name"] = d["stem"]
                 continue
@@ -232,6 +278,7 @@ def main():
     why = collections.Counter(d["why"] for v in plan.values() for d in v)
     print(f"datums          : {total} across {len(plan)} part documents")
     print(f"  kept existing : {kept_n}")
+    print(f"  named on review: {why['reviewed']}")
     print(f"  named by mate : {why['mates']}")
     print(f"  by fastener   : {why['fastener']}")
     print(f"  by geometry   : {why['geometry']}   <- the ones with no intent to read")

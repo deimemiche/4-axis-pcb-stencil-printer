@@ -111,6 +111,92 @@ section_area = 196.0
 # The lengths this machine is built from.
 lengths = (300.0, 280.0)
 
+# Where the spanner case lands on the lid's front rail, off the stick's own
+# axis.  This is the one number here that is **not** the extrusion's: nothing
+# on the section is 6.5 from the middle, and it is where
+# `TOP_CLAMP_SPANNER_CASE_1`'s own bolt line falls on the face it is screwed to.
+spanner_case_off = 6.5
+
+
+def mounts(length, stretcher):
+    """Where the machine bolts onto a stick of this length.
+
+    A stick is the same all the way along and four-fold symmetric, so nothing
+    here is a position measured off a drawing: every datum is a **corner** or a
+    **face**, at one end or the other, and the only lengths in it are the
+    section's own half width, its slot's half mouth, the channel behind that
+    slot, and how long this stick was cut.  Which of the four corners and which
+    way up is what the name and the axis say.
+
+    `axis` is the direction the datum's Z points -- out of the face a bolt goes
+    into, or along the stick where a member butts on -- and `roll` spins it
+    about that.  Both are directions read off the joint that lands there, not
+    dimensions, so they stay as they were measured.
+
+    The names are the assembly's: a stick of stock has no opinion about which
+    of its four corners carries a gusset, so each is named for what comes up
+    against it there.  That is also why this is keyed by document -- the seven
+    300s are the same stick, and only the machine tells them apart.
+    """
+    half = cell / 2.0                    # the corners, and the four faces
+    mouth = slot_mouth / 2.0             # a slot's own centre line, either side
+    inner = slot_channel / 2.0           # the channel's half width, and ...
+    floor = half - slot_mouth_depth      # ... the wall it opens through
+    far = length                         # the B end, in the stick's own terms
+
+    if stretcher:
+        # The lid's front rail: two corner gussets at each end and the far
+        # frame corner, plus the spanner case on the two faces at mid length,
+        # which is where this stick's stretcher hole already is.
+        return (
+            ("BRACKET1", (-half, -half, 0.0), (1, 0, 0), 180.0),
+            ("BRACKET2", (-half, -half, far), (1, 0, 0), 180.0),
+            ("BRACKET3", (half, -half, 0.0), (1, 0, 0), 180.0),
+            ("BRACKET4", (half, -half, far), (1, 0, 0), 180.0),
+            ("FRAME", (half, half, 0.0), (-1, 0, 0), 180.0),
+            ("SPANNER_CASE1", (spanner_case_off, half, far / 2.0),
+             (0, -1, 0), 180.0),
+            ("SPANNER_CASE2", (half, spanner_case_off, far / 2.0),
+             (-1, 0, 0), 90.0),
+        )
+    if length == 280.0:
+        # The lid's two sides: each spans between two 300s and is bolted at
+        # three of its four end corners.
+        return (
+            ("FRAME1", (-half, half, 0.0), (-1, 0, 0), 180.0),
+            ("FRAME2", (-half, half, far), (-1, 0, 0), 180.0),
+            ("FRAME3", (half, -half, 0.0), (1, 0, 0), 180.0),
+            ("FRAME4", (half, half, 0.0), (0, -1, 0), 180.0),
+        )
+    # The plain 300, which is six sticks: the bottom frame's four members, the
+    # lid's back rail and the hinge bar.  Between them they use ten corners for
+    # gussets, three for a butting member, two for a Z bracket, two slot centre
+    # lines for the hinge leaves, two more for the rail holders, and the two
+    # inner corners of the channel at the A end.
+    return (
+        ("BRACKET1", (-half, -half, 0.0), (0, 1, 0), 0.0),
+        ("BRACKET2", (-half, -half, 0.0), (1, 0, 0), 180.0),
+        ("BRACKET3", (-half, -half, far), (0, 1, 0), 0.0),
+        ("BRACKET4", (-half, -half, far), (1, 0, 0), 180.0),
+        ("BRACKET5", (half, -half, 0.0), (0, 1, 0), 270.0),
+        ("BRACKET6", (half, -half, 0.0), (1, 0, 0), 180.0),
+        ("BRACKET7", (half, -half, far), (0, 1, 0), 270.0),
+        ("BRACKET8", (half, -half, far), (1, 0, 0), 180.0),
+        ("BRACKET9", (half, half, 0.0), (0, 1, 0), 270.0),
+        ("BRACKET_X", (half, half, far), (0, 1, 0), 270.0),
+        ("FACE1", (inner, -floor, 0.0), (0, 0, 1), 0.0),
+        ("FACE2", (inner, floor, 0.0), (0, 0, 1), 0.0),
+        ("FRAME1", (-half, half, 0.0), (-1, 0, 0), 180.0),
+        ("FRAME2", (half, -half, 0.0), (-1, 0, 0), 90.0),
+        ("FRAME3", (half, half, far), (-1, 0, 0), 180.0),
+        ("HINGE1", (-half, -mouth, far), (1, 0, 0), 270.0),
+        ("HINGE2", (-mouth, -half, far), (0, 1, 0), 0.0),
+        ("RAIL_HOLDER1", (mouth, half, 0.0), (0, 1, 0), 270.0),
+        ("RAIL_HOLDER2", (half, mouth, far), (-1, 0, 0), 90.0),
+        ("Z_AXIS_BRACKET1", (-half, half, 0.0), (0, -1, 0), 270.0),
+        ("Z_AXIS_BRACKET2", (-half, half, far), (0, -1, 0), 270.0),
+    )
+
 
 def stick(length, stretcher=False):
     """What a stick of this length is called -- document, body and file."""
@@ -172,6 +258,8 @@ def extrusion(doc, length, stretcher=False):
                           ("SLOT_XN", (-half, 0.0)), ("SLOT_YN", (0.0, -half))):
         fcprim.lcs(bdy, label, at=(x, y, length / 2.0),
                    axis=(x / half, y / half, 0.0))
+    for label, at, axis, roll in mounts(length, stretcher):
+        fcprim.lcs(bdy, label, at=at, axis=axis, roll=roll)
     return bdy
 
 

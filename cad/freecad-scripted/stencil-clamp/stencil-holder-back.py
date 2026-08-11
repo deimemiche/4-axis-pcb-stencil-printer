@@ -49,6 +49,21 @@ mount_from_edge = (13.6, 4.4)   # the mount's cross bolts, through the leg
 mount_edge_from_edge = 4.36     # its bolt along the rod, through the upright
 
 
+def face_hole(x, from_edge, z=0.0):
+    """Where a hole through the horizontal leg sits, in the bar's own frame.
+
+    `from_edge` is measured from that leg's free edge, which is how the bar is
+    dimensioned; `z` picks which of the leg's two faces, 0 being the underside
+    the pocket starts from and `wall` the face things are bolted onto.
+    """
+    return (x, leg - from_edge, z)
+
+
+def edge_hole(x, y=0.0):
+    """... and one through the upright, `y` picking which of its faces."""
+    return (x, y, leg - mount_edge_from_edge)
+
+
 def expected_volume():
     holes = len(row_x) + len(mount_x) * (len(mount_from_edge) + 1)
     section = leg * wall * 2 - wall * wall
@@ -92,11 +107,32 @@ def angle(doc, name, middle=None):
         fcprim.circle(edge, (0.0, leg - from_edge), diameter, name="middle")
     fcprim.pocket(bdy, "Edge holes", edge, midplane=True)
 
+    # Mounting datums for the assembly; see fcprim.lcs.  A bar is an angle with
+    # holes in it and nothing else, so every datum here is one of those holes.
+    # The six the two bars share are the clamp bearing mount's, three at each
+    # end: one along the rod through the upright, two down through the leg.
+    for i, x in enumerate(mount_x):
+        fcprim.lcs(bdy, f"BOLT{1 + 3 * i}", at=edge_hole(x), axis=(0, -1, 0))
+        for j, from_edge in enumerate(mount_from_edge):
+            fcprim.lcs(bdy, f"BOLT{2 + 3 * i + j}", at=face_hole(x, from_edge),
+                       axis=(0, 0, 1))
+
     return bdy
 
 
 def stencil_holder_back(doc):
-    return angle(doc, "STENCIL_HOLDER_BACK")
+    bdy = angle(doc, "STENCIL_HOLDER_BACK")
+    # The bearing mount lands on the upright's outer face at the -X end, and
+    # all four of the row holes take a nut holder on the leg's upper face.  The
+    # far row hole is also where the short bar closes on this one.
+    fcprim.lcs(bdy, "BEARING_MOUNT", at=edge_hole(mount_x[0], wall),
+               axis=(0, -1, 0))
+    for i, x in enumerate(row_x):
+        fcprim.lcs(bdy, f"NUT_HOLDER{i + 1}",
+                   at=face_hole(x, row_from_edge, wall), axis=(0, 0, 1))
+    fcprim.lcs(bdy, "HOLDER_BACK", at=face_hole(row_x[-1], row_from_edge),
+               axis=(0, 0, 1))
+    return bdy
 
 
 # Set by stencil-holder-front.py, which runs this file for `angle` and builds
