@@ -24,13 +24,26 @@
    "via_link": "Bottom_Frame001",
    "was": "BOT_BRACKET_X_AXIS001.Pocket001.Edge40"
   },
-  "Bottom_Assembly/Nut032": {
-   "along": -40.849313862,
+  "Bottom_Assembly/Nut031": {
+   "along": null,
+   "datum": "NUT",
+   "diameter": "M5",
+   "object": "LCS008",
+   "part": "BOT_BRACKET_X_AXIS",
+   "perp": null,
+   "prefix": "BOT_BRACKET_X_AXIS001.",
+   "type": "DIN934",
+   "via_link": "Bottom_Frame001",
+   "was": "Nut030.Edge2",
+   "why": "based on another fastener"
+  },
+  "Bottom_Assembly/Nut049": {
+   "along": 0.0,
    "datum": "NUT",
    "diameter": "M3",
    "object": "LCS005",
    "part": "BOT_HANDWHEEL",
-   "perp": 597.115654543,
+   "perp": 0.0,
    "prefix": "",
    "type": "DIN934",
    "via_link": "BOT_HANDWHEEL002",
@@ -144,18 +157,6 @@
    "via_link": "BOT_HANDWHEEL001",
    "was": "Pocket003.Edge168"
   },
-  "Bottom_Assembly/Screw140": {
-   "along": 50.049313862,
-   "datum": "GRUB",
-   "diameter": "M3",
-   "object": "LCS004",
-   "part": "BOT_HANDWHEEL",
-   "perp": 597.115654543,
-   "prefix": "",
-   "type": "ISO4027",
-   "via_link": "BOT_HANDWHEEL002",
-   "was": "Pocket003.Edge168"
-  },
   "Bottom_Assembly/Screw149": {
    "along": -14.5,
    "datum": "BOLT1",
@@ -251,6 +252,18 @@
    "type": "ISO4762",
    "via_link": "Eccenter003",
    "was": "ECCF_BOT003.Pocket003.Edge46"
+  },
+  "Bottom_Assembly/Screw157": {
+   "along": -0.0,
+   "datum": "GRUB",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "BOT_HANDWHEEL",
+   "perp": 0.0,
+   "prefix": "",
+   "type": "ISO4027",
+   "via_link": "BOT_HANDWHEEL002",
+   "was": "Pocket003.Edge168"
   },
   "Bottom_Frame/Screw": {
    "along": 34.0,
@@ -1421,7 +1434,7 @@
    "was": "Pocket004.Edge54"
   },
   "Stencil_Clamp/Nut014": {
-   "along": -0.0,
+   "along": 0.0,
    "datum": "NUT",
    "diameter": "M3",
    "object": "LCS001",
@@ -1433,7 +1446,7 @@
    "was": "Pocket002.Edge102"
   },
   "Stencil_Clamp/Nut015": {
-   "along": -0.0,
+   "along": 0.0,
    "datum": "NUT",
    "diameter": "M3",
    "object": "LCS001",
@@ -1445,7 +1458,7 @@
    "was": "Pocket002.Edge102"
   },
   "Stencil_Clamp/Nut016": {
-   "along": -0.0,
+   "along": 0.0,
    "datum": "NUT",
    "diameter": "M3",
    "object": "LCS001",
@@ -1457,7 +1470,7 @@
    "was": "Pocket002.Edge102"
   },
   "Stencil_Clamp/Nut018": {
-   "along": -0.0,
+   "along": 0.0,
    "datum": "NUT",
    "diameter": "M3",
    "object": "LCS001",
@@ -1661,7 +1674,7 @@
    "was": "STENCIL_HOLDER_BACK.Pocket001.Edge12"
   },
   "Top_Assembly/Nut022": {
-   "along": 4.000000188,
+   "along": 4.000000596,
    "datum": "NUT",
    "diameter": "M5",
    "object": "LCS",
@@ -1673,108 +1686,108 @@
    "was": "Pocket002.Edge88"
   },
   "Top_Assembly/Nut023": {
-   "along": 1.4669e-05,
+   "along": -2.267e-06,
    "datum": "NUT",
    "diameter": "M5",
    "object": "LCS001",
    "part": "TOP_CLAMP_SPANNER_COUNTER",
-   "perp": 1.489e-06,
+   "perp": 2.9095e-05,
    "prefix": "",
    "type": "ISO4035",
    "via_link": "TOP_CLAMP_SPANNER_COUNTER",
    "was": "Pocket004.Edge135"
   },
   "Top_Assembly/Screw059": {
-   "along": 6.0,
+   "along": 5.999999109,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930387,
+   "perp": 17.230901027,
    "prefix": "TOP_RAIL_HOLDER003.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER003.Pocket002.Edge60"
   },
   "Top_Assembly/Screw060": {
-   "along": 6.0,
+   "along": 5.999999173,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246024119,
+   "perp": 9.246033071,
    "prefix": "TOP_RAIL_HOLDER003.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER003.Pocket002.Edge61"
   },
   "Top_Assembly/Screw062": {
-   "along": 6.0,
+   "along": 5.999999979,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930387,
+   "perp": 17.230930633,
    "prefix": "TOP_RAIL_HOLDER001.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER001.Pocket002.Edge60"
   },
   "Top_Assembly/Screw063": {
-   "along": 6.0,
+   "along": 5.9999992,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930387,
+   "perp": 17.2309381,
    "prefix": "TOP_RAIL_HOLDER002.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER002.Pocket002.Edge60"
   },
   "Top_Assembly/Screw064": {
-   "along": 6.0,
+   "along": 5.999999135,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246024119,
+   "perp": 9.24605073,
    "prefix": "TOP_RAIL_HOLDER002.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER002.Pocket002.Edge61"
   },
   "Top_Assembly/Screw065": {
-   "along": 6.0,
+   "along": 6.000000017,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930387,
+   "perp": 17.230951787,
    "prefix": "TOP_RAIL_HOLDER.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER.Pocket002.Edge60"
   },
   "Top_Assembly/Screw066": {
-   "along": 6.0,
+   "along": 5.999999952,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246024119,
+   "perp": 9.245987214,
    "prefix": "TOP_RAIL_HOLDER.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER.Pocket002.Edge61"
   },
   "Top_Assembly/Screw067": {
-   "along": 6.0,
+   "along": 6.000000043,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246024119,
+   "perp": 9.246025459,
    "prefix": "TOP_RAIL_HOLDER001.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
@@ -2537,7 +2550,7 @@
    "was": "Pocket005.Edge63"
   },
   "X_Axis_Carriage/Nut017": {
-   "along": -0.0,
+   "along": 0.0,
    "datum": "NUT2",
    "diameter": "M5",
    "object": "LCS008",
@@ -2897,7 +2910,7 @@
    "was": "Pocket005.Edge123"
   },
   "X_Axis_Carriage/Screw021": {
-   "along": 0.0,
+   "along": -0.0,
    "datum": "BOLT1_HEAD",
    "diameter": "M3",
    "object": "LCS005",
@@ -6175,17 +6188,5 @@
    }
   }
  },
- "unmapped": [
-  {
-   "assembly": "Bottom_Assembly",
-   "datum": null,
-   "joint": "Nut031",
-   "object": null,
-   "part": "Bottom_Assembly",
-   "prefix": "",
-   "prop": "BaseObject",
-   "via_link": "Nut030",
-   "was": "Edge2"
-  }
- ]
+ "unmapped": []
 }

@@ -96,31 +96,31 @@
         # fastener: DIN934  [1 ref(s), was BOT_BEARING_MOUNT_Y_AXIS_DRIVEN.Pocket004.Edge105]
 
 # BOT_BRACKETS
-    fcprim.lcs(bdy, "BOLT1", at=(10, 4, 30), axis=(0, -1, 0))
-        # fastener: ISO4762  [6 ref(s), was BOT_BRACKETS.Pocket.Edge16, BOT_BRACKETS001.Pocket.Edge16, BOT_BRACKETS003.Pocket.Edge16, BOT_BRACKETS005.Pocket.Edge16, BOT_BRACKETS006.Pocket.Edge16, BOT_BRACKETS007.Pocket.Edge16]
-    fcprim.lcs(bdy, "BOLT1", at=(10, -0, 10), axis=(0, -1, -0))
+    fcprim.lcs(bdy, "BOLT1", at=(10, -0, 10), axis=(-0, -1, 0))
         # kept: STAND, ISO4762  [7 ref(s), was BOT_BRACKETS001.Pocket.Edge24, BOT_BRACKETS003.Pocket.Edge24, BOT_BRACKETS004.Pocket.Edge24, Pocket.Edge24]
-    fcprim.lcs(bdy, "BOLT2", at=(10, 4, 50), axis=(0, -1, 0))
-        # fastener: ISO4762  [6 ref(s), was BOT_BRACKETS001.Pocket.Edge17, BOT_BRACKETS003.Pocket.Edge17, BOT_BRACKETS006.Pocket.Edge17, Pocket.Edge17]
     fcprim.lcs(bdy, "BOLT2", at=(30, 0, 10), axis=(0, -1, 0))
         # kept: ISO4762  [7 ref(s), was BOT_BRACKETS.Pocket.Edge27, BOT_BRACKETS002.Pocket.Edge27, BOT_BRACKETS003.Pocket.Edge27, BOT_BRACKETS004.Pocket.Edge27, Pocket.Edge27]
-    fcprim.lcs(bdy, "BOLT3", at=(30, 4, 10), axis=(0, -1, 0))
-        # fastener: ISO4762  [6 ref(s), was BOT_BRACKETS.Pocket.Edge18, BOT_BRACKETS001.Pocket.Edge18, BOT_BRACKETS003.Pocket.Edge18, BOT_BRACKETS006.Pocket.Edge18, BOT_BRACKETS007.Pocket.Edge18, Pocket.Edge18]
+    fcprim.lcs(bdy, "BOLT2_HEAD", at=(30, 4, 10), axis=(0, -1, 0))
+        # reviewed: ISO4762  [6 ref(s), was BOT_BRACKETS.Pocket.Edge18, BOT_BRACKETS001.Pocket.Edge18, BOT_BRACKETS003.Pocket.Edge18, BOT_BRACKETS006.Pocket.Edge18, BOT_BRACKETS007.Pocket.Edge18, Pocket.Edge18]
     fcprim.lcs(bdy, "BOLT3", at=(50, 0, 10), axis=(0, -1, 0))
         # kept: ISO4762  [7 ref(s), was BOT_BRACKETS001.Pocket.Edge28, BOT_BRACKETS002.Pocket.Edge28, BOT_BRACKETS004.Pocket.Edge28, Pocket.Edge28]
-    fcprim.lcs(bdy, "BOLT4", at=(50, 4, 10), axis=(0, -1, 0))
-        # fastener: ISO4762  [6 ref(s), was BOT_BRACKETS.Pocket.Edge19, BOT_BRACKETS005.Pocket.Edge19, BOT_BRACKETS007.Pocket.Edge19, Pocket.Edge19]
+    fcprim.lcs(bdy, "BOLT3_HEAD", at=(50, 4, 10), axis=(0, -1, 0))
+        # reviewed: ISO4762  [6 ref(s), was BOT_BRACKETS.Pocket.Edge19, BOT_BRACKETS005.Pocket.Edge19, BOT_BRACKETS007.Pocket.Edge19, Pocket.Edge19]
     fcprim.lcs(bdy, "BOLT4", at=(10, 0, 30), axis=(0, -1, 0))
         # kept: ISO4762  [7 ref(s), was BOT_BRACKETS.Pocket.Edge25, BOT_BRACKETS001.Pocket.Edge25, BOT_BRACKETS002.Pocket.Edge25, BOT_BRACKETS003.Pocket.Edge25, BOT_BRACKETS004.Pocket.Edge25]
+    fcprim.lcs(bdy, "BOLT4_HEAD", at=(10, 4, 30), axis=(0, -1, 0))
+        # reviewed: ISO4762  [6 ref(s), was BOT_BRACKETS.Pocket.Edge16, BOT_BRACKETS001.Pocket.Edge16, BOT_BRACKETS003.Pocket.Edge16, BOT_BRACKETS005.Pocket.Edge16, BOT_BRACKETS006.Pocket.Edge16, BOT_BRACKETS007.Pocket.Edge16]
     fcprim.lcs(bdy, "BOLT5", at=(10, 0, 50), axis=(0, -1, 0))
         # kept: ISO4762  [7 ref(s), was BOT_BRACKETS.Pocket.Edge26, BOT_BRACKETS001.Pocket.Edge26, BOT_BRACKETS002.Pocket.Edge26, BOT_BRACKETS003.Pocket.Edge26, Pocket.Edge26]
+    fcprim.lcs(bdy, "BOLT5_HEAD", at=(10, 4, 50), axis=(0, -1, 0))
+        # reviewed: ISO4762  [6 ref(s), was BOT_BRACKETS001.Pocket.Edge17, BOT_BRACKETS003.Pocket.Edge17, BOT_BRACKETS006.Pocket.Edge17, Pocket.Edge17]
     fcprim.lcs(bdy, "ECC_BOT", at=(60, 0, 0), axis=(0, -1, 0), roll=270)
         # mates: ECCF_BOT  [1 ref(s), was BOT_BRACKETS008.Edge2]
     fcprim.lcs(bdy, "FOOT", at=(10, 4, 10), axis=(0, -1, 0))
         # mates: STAND, ISO4762  [6 ref(s), was BOT_BRACKETS.Pocket.Edge15, BOT_BRACKETS003.Pocket.Edge15, BOT_BRACKETS005.Pocket.Edge15, BOT_BRACKETS006.Pocket.Edge15, BOT_BRACKETS007.Pocket.Edge15, Pocket.Edge15]
     fcprim.lcs(bdy, "FRAME1", axis=(0, -1, 0), roll=270)
         # mates: _2020_300  [6 ref(s), was Edge1]
-    fcprim.lcs(bdy, "FRAME2", at=(0, 4, 0), axis=(0, 1, 0), roll=270)
+    fcprim.lcs(bdy, "FRAME2", at=(0, 4, 0), axis=(0, 1, -0), roll=270)
         # mates: _2020_300  [1 ref(s), was Face4]
     fcprim.lcs(bdy, "FRAME3", at=(0, 4, 0), axis=(0, -1, 0), roll=270)
         # mates: _2020_300, _2020_300_TOP_FRONT  [6 ref(s), was Edge1]
@@ -146,7 +146,7 @@
         # kept: BOT_HANDWHEEL  [1 ref(s), was BOT_BRACKET_X_AXIS001.Edge33]
 
 # BOT_HANDWHEEL
-    fcprim.lcs(bdy, "BRACKET_X", at=(0, 26, 0), axis=(0, -1, -0))
+    fcprim.lcs(bdy, "BRACKET_X", at=(0, 26, 0), axis=(-0, -1, 0))
         # mates: BOT_BRACKET_X_AXIS, BOT_RAIL_CLAMP_Y_AXIS_1  [2 ref(s), was Pocket003.Edge210]
     fcprim.lcs(bdy, "GRUB", at=(-8.6, 21.5, 0), axis=(1, 0, 0))
         # fastener: ISO4027  [3 ref(s), was Pocket003.Edge168]
@@ -156,34 +156,34 @@
         # mates: M5_270  [3 ref(s), was Face86, Pocket003.Face86]
 
 # BOT_RAIL_CLAMP_X_DRIVE
-    fcprim.lcs(bdy, "BOLT1", at=(0, 3, -9), axis=(0, -1, 0))
-        # fastener: ISO4762  [1 ref(s), was BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge77]
-    fcprim.lcs(bdy, "BOLT1", at=(0, 0, -9), axis=(-0, -1, 0))
+    fcprim.lcs(bdy, "BOLT1", at=(0, -0, -9), axis=(0, -1, -0))
         # kept: BOT_BEARING_MOUNT_X_AXIS  [1 ref(s), was Pocket005.Edge31]
-    fcprim.lcs(bdy, "BOLT3", at=(0, 3, 9), axis=(0, -1, 0))
-        # fastener: ISO4762  [1 ref(s), was Pocket005.Edge123]
+    fcprim.lcs(bdy, "BOLT1_HEAD", at=(0, 3, -9), axis=(0, -1, 0))
+        # reviewed: ISO4762  [1 ref(s), was BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge77]
+    fcprim.lcs(bdy, "BOLT2_HEAD", at=(0, 3, 9), axis=(0, -1, 0))
+        # reviewed: ISO4762  [1 ref(s), was Pocket005.Edge123]
     fcprim.lcs(bdy, "NUT1", at=(-28.622, 9.4, -11.5), axis=(0, 0, -1))
         # fastener: DIN934  [1 ref(s), was Pocket005.Edge63]
     fcprim.lcs(bdy, "NUT2", at=(-28.622, 9.4, 7.1), axis=(0, 0, -1))
         # fastener: DIN934  [1 ref(s), was BOT_RAIL_CLAMP_X_DRIVE.Pocket005.Edge82]
-    fcprim.lcs(bdy, "SPRING", at=(-28.622, 9.4, 5.1), axis=(0, 0, -1), roll=180)
+    fcprim.lcs(bdy, "SPRING", at=(-28.622, 9.4, 5.1), axis=(0, -0, -1), roll=180)
         # mates: SPRING_ID6_L30_AT12  [1 ref(s), was Edge105]
 
 # BOT_RAIL_CLAMP_Y_AXIS
-    fcprim.lcs(bdy, "BOLT1", at=(0, 3, -9), axis=(-0, -1, 0))
-        # fastener: ISO4762  [2 ref(s), was Pocket001.Edge19]
-    fcprim.lcs(bdy, "BOLT1", at=(0, 0, -9), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "BOLT1", at=(0, 0, -9), axis=(0, -1, -0))
         # kept: BOT_BEARING_MOUNT_X_AXIS  [2 ref(s), was Pocket001.Edge5]
-    fcprim.lcs(bdy, "BOLT3", at=(-0, 3, 9), axis=(-0, -1, 0))
-        # fastener: ISO4762  [2 ref(s), was BOT_RAIL_CLAMP_Y_AXIS.Pocket001.Edge27, BOT_RAIL_CLAMP_Y_AXIS001.Pocket001.Edge27]
+    fcprim.lcs(bdy, "BOLT1_HEAD", at=(0, 3, -9), axis=(-0, -1, 0))
+        # reviewed: ISO4762  [2 ref(s), was Pocket001.Edge19]
+    fcprim.lcs(bdy, "BOLT2_HEAD", at=(-0, 3, 9), axis=(-0, -1, 0))
+        # reviewed: ISO4762  [2 ref(s), was BOT_RAIL_CLAMP_Y_AXIS.Pocket001.Edge27, BOT_RAIL_CLAMP_Y_AXIS001.Pocket001.Edge27]
 
 # BOT_RAIL_CLAMP_Y_AXIS_1
-    fcprim.lcs(bdy, "BOLT2", at=(0, 3, -9), axis=(0, -1, 0))
-        # fastener: ISO4762  [1 ref(s), was BOT_RAIL_CLAMP_Y_AXIS_1.Pocket003.Edge56]
-    fcprim.lcs(bdy, "BOLT2", at=(0, -0, 9), axis=(0, -1, 0))
+    fcprim.lcs(bdy, "BOLT1_HEAD", at=(0, 3, -9), axis=(0, -1, 0))
+        # reviewed: ISO4762  [1 ref(s), was BOT_RAIL_CLAMP_Y_AXIS_1.Pocket003.Edge56]
+    fcprim.lcs(bdy, "BOLT2", at=(-0, 0, 9), axis=(0, -1, 0))
         # kept: BOT_BEARING_MOUNT_X_AXIS  [1 ref(s), was Pocket003.Edge35]
-    fcprim.lcs(bdy, "BOLT3", at=(0, 3, 9), axis=(0, -1, 0))
-        # fastener: ISO4762  [1 ref(s), was Pocket003.Edge58]
+    fcprim.lcs(bdy, "BOLT2_HEAD", at=(0, 3, 9), axis=(0, -1, 0))
+        # reviewed: ISO4762  [1 ref(s), was Pocket003.Edge58]
     fcprim.lcs(bdy, "HANDWHEEL", at=(38.622, 4, -26), axis=(1, 0, 0), roll=90)
         # mates: BOT_HANDWHEEL  [1 ref(s), was BOT_RAIL_CLAMP_Y_AXIS_1.Edge54]
 
@@ -196,7 +196,7 @@
         # geometry: X_Axis_Carriage.Distance  [2 ref(s), was Pocket002.Face4]
     fcprim.lcs(bdy, "FRAME", at=(-0, 2.5, 16.228), axis=(-1, 0, 0), roll=180)
         # mates: _2020_300  [1 ref(s), was BOT_RAIL_HOLDER001.Edge50]
-    fcprim.lcs(bdy, "RAIL", at=(0, -1, 14.2915), axis=(1, 0, 0), roll=90)
+    fcprim.lcs(bdy, "RAIL", at=(-0, -1, 14.2915), axis=(1, 0, 0), roll=90)
         # kept: ROD_D8_300  [4 ref(s), was Edge17, Pocket002.Edge16, Pocket002.Edge17]
 
 # BOT_ROD_HOLDER_ALPHA_AXIS
@@ -226,12 +226,8 @@
         # kept: M5_270  [1 ref(s), was Pocket001.Edge22]
 
 # BOT_Z_AXIS_BRACKET
-    fcprim.lcs(bdy, "BOLT1", at=(7.0072, 14, -3.45), axis=(0, 0, 1))
-        # fastener: ISO4762  [1 ref(s), was Pocket005.Edge92]
     fcprim.lcs(bdy, "BOLT1", at=(10, 0, 10), axis=(0, -1, 0))
         # kept: ISO4762  [1 ref(s), was Pocket005.Edge23]
-    fcprim.lcs(bdy, "BOLT2", at=(35.4181, 14, -13.4), axis=(0, 0, 1))
-        # fastener: ISO4762  [1 ref(s), was Pocket005.Edge86]
     fcprim.lcs(bdy, "BOLT2", at=(30, 0, 10), axis=(0, -1, 0))
         # kept: ISO4762  [1 ref(s), was BOT_Z_AXIS_BRACKET.Pocket005.Edge22]
     fcprim.lcs(bdy, "BOLT3", at=(50, 0, 10), axis=(0, -1, 0))
@@ -244,16 +240,16 @@
         # mates: ECCF_BOT  [1 ref(s), was BOT_Z_AXIS_BRACKET001.Edge2]
     fcprim.lcs(bdy, "FRAME", at=(0, 4, 0), axis=(0, 1, 0), roll=270)
         # mates: _2020_300  [1 ref(s), was Edge76]
-    fcprim.lcs(bdy, "ROD2", at=(21, 24, -11.55), axis=(0, -1, -0))
+    fcprim.lcs(bdy, "MOUNT_BOLT", at=(7.0072, 14, -3.45), axis=(0, 0, 1))
+        # reviewed: ISO4762  [1 ref(s), was Pocket005.Edge92]
+    fcprim.lcs(bdy, "PINCH_BOLT", at=(35.4181, 14, -13.4), axis=(0, 0, 1))
+        # reviewed: ISO4762  [1 ref(s), was Pocket005.Edge86]
+    fcprim.lcs(bdy, "ROD2", at=(21, 24, -11.55), axis=(-0, -1, -0))
         # mates: ROD_D8_140  [1 ref(s), was Bottom_Frame001.BOT_Z_AXIS_BRACKET.Edge52]
 
 # BOT_Z_AXIS_BRACKET_MIRRORED
-    fcprim.lcs(bdy, "BOLT1", at=(-35.4181, 14, -13.4), axis=(0, 0, 1))
-        # fastener: ISO4762  [1 ref(s), was Pocket005.Edge92]
     fcprim.lcs(bdy, "BOLT1", at=(-10, 0, 10), axis=(0, -1, 0))
         # kept: ISO4762  [1 ref(s), was BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge24]
-    fcprim.lcs(bdy, "BOLT2", at=(-7.0072, 14, -3.45), axis=(0, 0, 1))
-        # fastener: ISO4762  [1 ref(s), was Pocket005.Edge94]
     fcprim.lcs(bdy, "BOLT2", at=(-30, 0, 10), axis=(0, -1, 0))
         # kept: ISO4762  [1 ref(s), was BOT_Z_AXIS_BRACKET_MIRRORED.Pocket005.Edge25]
     fcprim.lcs(bdy, "BOLT3", at=(-50, 0, 10), axis=(0, -1, 0))
@@ -266,6 +262,10 @@
         # mates: ECCF_BOT  [1 ref(s), was BOT_Z_AXIS_BRACKET_MIRRORED001.Edge44]
     fcprim.lcs(bdy, "FRAME", at=(0, 4, 0), axis=(0, 1, 0), roll=270)
         # mates: _2020_300  [1 ref(s), was Edge83]
+    fcprim.lcs(bdy, "MOUNT_BOLT", at=(-7.0072, 14, -3.45), axis=(0, 0, 1))
+        # reviewed: ISO4762  [1 ref(s), was Pocket005.Edge94]
+    fcprim.lcs(bdy, "PINCH_BOLT", at=(-35.4181, 14, -13.4), axis=(0, 0, 1))
+        # reviewed: ISO4762  [1 ref(s), was Pocket005.Edge92]
     fcprim.lcs(bdy, "ROD2", at=(-21, 24, -11.55), axis=(0, -1, 0))
         # mates: ROD_D8_140  [1 ref(s), was Bottom_Frame001.BOT_Z_AXIS_BRACKET_MIRRORED.Face9]
 
@@ -348,7 +348,7 @@
 # LM8UU
     fcprim.lcs(bdy, "BORE", axis=(0, 0, 1))
         # kept: BOT_BEARING_MOUNT_X_AXIS, BOT_BEARING_MOUNT_Y_AXIS_DRIVEN, ROD_D8_280, TOP_CLAMP_BEARING_MOUNT_1  [11 ref(s), was Face2, Face4, LM8UU004.Edge2, Pocket.Face2]
-    fcprim.lcs(bdy, "END_B", at=(0, -0, 24), axis=(0, -0, 1))
+    fcprim.lcs(bdy, "END_B", at=(0, -0, 24), axis=(0, 0, 1))
         # kept: BOT_BEARING_MOUNT_X_AXIS, ROD_D8_244, ROD_D8_280, ROD_D8_300, TOP_CLAMP_BEARING_MOUNT_2  [11 ref(s), was Edge3, Face4, Pocket.Face3]
     fcprim.lcs(bdy, "SEAT", at=(0, 0, 12), axis=(0, 0, 1))
         # kept: ROD_D8_244, ROD_D8_300  [3 ref(s), was Pocket.Face4]
@@ -356,13 +356,13 @@
 # M5_270
     fcprim.lcs(bdy, "HANDWHEEL", axis=(0, 0, 1))
         # mates: BOT_HANDWHEEL  [1 ref(s), was Pad.Face2]
-    fcprim.lcs(bdy, "SPANNER_CASE", at=(0, 0, 50), axis=(0, 0, 1))
+    fcprim.lcs(bdy, "SPANNER_CASE", at=(-0, 0, 50), axis=(0, -0, 1))
         # mates: TOP_CLAMP_SPANNER_CASE_1  [1 ref(s), was Face1]
-    fcprim.lcs(bdy, "SPANNER_COUNTER", at=(0, 0, 100), axis=(0, 0, 1))
+    fcprim.lcs(bdy, "SPANNER_COUNTER", at=(-0, 0, 100), axis=(0, -0, 1))
         # mates: TOP_CLAMP_SPANNER_COUNTER  [1 ref(s), was Face3]
     fcprim.lcs(bdy, "WORM_SHAFT_AXIS", at=(0, 0, 135), axis=(0, 0, 1))
         # kept: SR_INNER_RING, SR_WORM_GEAR  [2 ref(s), was Face1, Pad.Face1]
-    fcprim.lcs(bdy, "WORM_SHAFT_END_B", at=(0, -0, 270), axis=(-0, 0, 1))
+    fcprim.lcs(bdy, "WORM_SHAFT_END_B", at=(0, 0, 270), axis=(-0, 0, 1))
         # kept: BOT_HANDWHEEL, BOT_ROD_HOLDER_ALPHA_AXIS_SHORT  [3 ref(s), was Face3, Pad.Face3, Pad002.Face3]
 
 # M8_55
@@ -384,17 +384,17 @@
         # kept: BOT_BEARING_MOUNT_X_AXIS, LM8UU  [3 ref(s), was Face1, Face3]
 
 # ROD_D8_280
-    fcprim.lcs(bdy, "END_B", at=(-0, -0, 280), axis=(-0, 0, 1))
+    fcprim.lcs(bdy, "END_B", at=(-0, 0, 280), axis=(-0, 0, 1))
         # kept: LM8UU, TOP_RAIL_HOLDER  [4 ref(s), was Face3, Pad.Face3]
     fcprim.lcs(bdy, "RAIL_HOLDER", axis=(-0, 0, 1))
         # mates: LM8UU, TOP_RAIL_HOLDER  [4 ref(s), was Face2, Pad.Face2]
 
 # ROD_D8_300
-    fcprim.lcs(bdy, "AXIS", at=(0, 0, 150), axis=(0, -0, 1))
+    fcprim.lcs(bdy, "AXIS", at=(0, 0, 150), axis=(-0, 0, 1))
         # kept: LM8UU  [2 ref(s), was Face1, Pad.Face1]
-    fcprim.lcs(bdy, "END_B", at=(0, 0, 300), axis=(0, -0, 1))
+    fcprim.lcs(bdy, "END_B", at=(0, 0, 300), axis=(-0, 0, 1))
         # kept: BOT_RAIL_HOLDER  [2 ref(s), was Face3, Pad.Face3]
-    fcprim.lcs(bdy, "RAIL_HOLDER", axis=(-0, -0, 1))
+    fcprim.lcs(bdy, "RAIL_HOLDER", axis=(0, 0, 1))
         # mates: BOT_RAIL_HOLDER  [2 ref(s), was Face2]
 
 # SPRING_ID10_L35_AT20
@@ -452,7 +452,7 @@
 # STAND
     fcprim.lcs(bdy, "BOLT", at=(0, 1, 0), axis=(0, 1, 0))
         # fastener: ISO4762  [4 ref(s), was Revolution.Edge10]
-    fcprim.lcs(bdy, "BRACKET", axis=(0, 1, -0))
+    fcprim.lcs(bdy, "BRACKET", axis=(0, 1, 0))
         # mates: BOT_BRACKETS  [4 ref(s), was Revolution.Edge1]
 
 # STENCIL_HOLDER_BACK
@@ -502,7 +502,7 @@
         # fastener: ISO4762  [1 ref(s), was STENCIL_HOLDER_TOP.Pocket001.Edge5]
     fcprim.lcs(bdy, "BOLT6", at=(103.11, 15.6, 0), axis=(0, 0, 1))
         # fastener: ISO4762  [1 ref(s), was STENCIL_HOLDER_TOP.Pocket001.Edge8]
-    fcprim.lcs(bdy, "HOLDER_FRONT", at=(-75, 8, -0), axis=(0, 0, 1))
+    fcprim.lcs(bdy, "HOLDER_FRONT", at=(-75, 8, 0), axis=(0, 0, 1))
         # mates: STENCIL_HOLDER_FRONT_2  [1 ref(s), was Edge11]
     fcprim.lcs(bdy, "NUT_HOLDER1", at=(-75, 8, 2), axis=(0, 0, 1))
         # mates: TOP_CLAMP_NUT_HOLDER  [1 ref(s), was Pocket001.Edge41]
@@ -516,19 +516,19 @@
         # mates: TOP_CLAMP_SPANNER_COUNTER  [1 ref(s), was STENCIL_HOLDER_FRONT_2.Edge12]
 
 # TOP_CLAMP_BEARING_MOUNT_1
-    fcprim.lcs(bdy, "BEARING", at=(-10, 0, 0.6556), axis=(1, -0, -0), roll=180)
+    fcprim.lcs(bdy, "BEARING", at=(-10, -0, 0.6556), axis=(1, -0, -0), roll=180)
         # mates: LM8UU  [2 ref(s), was Pocket003.Face2]
     fcprim.lcs(bdy, "HOLDER_FRONT", at=(5.6, 12.75, -7.5), axis=(0, 0, 1))
         # mates: STENCIL_HOLDER_FRONT  [1 ref(s), was Pocket003.Edge7]
     fcprim.lcs(bdy, "NUT", at=(-6, 12.75, 6.1385), axis=(-1, 0, -0))
         # fastener: ISO4035  [2 ref(s), was TOP_CLAMP_BEARING_MOUNT_001.Pocket004.Edge44, TOP_CLAMP_BEARING_MOUNT_1.Pocket004.Edge44]
-    fcprim.lcs(bdy, "SPRING_PLATE", at=(16, 0, 0), axis=(1, -0, 0), roll=90)
+    fcprim.lcs(bdy, "SPRING_PLATE", at=(16, 0, -0), axis=(1, 0, 0), roll=90)
         # mates: TOP_SPRING_PLATE  [1 ref(s), was Pocket004.Edge19]
 
 # TOP_CLAMP_BEARING_MOUNT_2
     fcprim.lcs(bdy, "BEARING1", at=(-10, 0, 0), axis=(1, 0, 0), roll=90)
         # mates: LM8UU  [1 ref(s), was Pocket004.Edge12]
-    fcprim.lcs(bdy, "BEARING2", at=(14.5, 0, -0), axis=(1, 0, 0), roll=90)
+    fcprim.lcs(bdy, "BEARING2", at=(14.5, 0, 0), axis=(1, -0, 0), roll=90)
         # mates: LM8UU  [1 ref(s), was Pocket004.Edge41]
     fcprim.lcs(bdy, "HOLDER_FRONT", at=(-8, 12.75, -6.1385), axis=(1, 0, 0), roll=90)
         # mates: STENCIL_HOLDER_BACK, STENCIL_HOLDER_FRONT  [2 ref(s), was Edge22]
@@ -538,7 +538,7 @@
         # fastener: ISO4035  [2 ref(s), was TOP_CLAMP_BEARING_MOUNT_002.Pocket004.Edge39, TOP_CLAMP_BEARING_MOUNT_2.Pocket004.Edge39]
     fcprim.lcs(bdy, "NUT3", at=(5.6, 12.75, 5.5), axis=(0, 0, 1))
         # fastener: ISO4035  [2 ref(s), was Pocket004.Edge37]
-    fcprim.lcs(bdy, "SPRING_PLATE", at=(16, 0, -0), axis=(1, 0, 0), roll=90)
+    fcprim.lcs(bdy, "SPRING_PLATE", at=(16, 0, 0), axis=(1, -0, 0), roll=90)
         # mates: TOP_SPRING_PLATE  [1 ref(s), was Pocket004.Edge19]
 
 # TOP_CLAMP_NUT_HOLDER
@@ -552,7 +552,7 @@
         # mates: _2020_300_TOP_FRONT  [1 ref(s), was Face5]
     fcprim.lcs(bdy, "SPANNER_CASE", at=(-1.2, 0, -24), axis=(1, 0, 0), roll=90)
         # mates: TOP_CLAMP_SPANNER_CASE_2  [1 ref(s), was Edge41]
-    fcprim.lcs(bdy, "STUD", axis=(1, -0, 0), roll=90)
+    fcprim.lcs(bdy, "STUD", axis=(1, 0, 0), roll=90)
         # mates: M5_270  [1 ref(s), was Face12]
 
 # TOP_CLAMP_SPANNER_CASE_2
@@ -560,15 +560,15 @@
         # mates: _2020_300_TOP_FRONT  [1 ref(s), was Face7]
     fcprim.lcs(bdy, "SPANNER_CASE", at=(2, 0, -24), axis=(1, 0, 0), roll=90)
         # mates: TOP_CLAMP_SPANNER_CASE_1  [1 ref(s), was Edge14]
-    fcprim.lcs(bdy, "SPANNER_HANDWHEEL", at=(7, 0, 0), axis=(1, 0, 0), roll=90)
+    fcprim.lcs(bdy, "SPANNER_HANDWHEEL", at=(7, 0, -0), axis=(1, 0, 0), roll=90)
         # mates: TOP_CLAMP_SPANNER_HANDWHEEL  [1 ref(s), was Pocket003.Edge45]
 
 # TOP_CLAMP_SPANNER_COUNTER
-    fcprim.lcs(bdy, "HOLDER_FRONT", at=(-8.4, -0, 0), axis=(-1, -0, 0), roll=90)
+    fcprim.lcs(bdy, "HOLDER_FRONT", at=(-8.4, 0, 0), axis=(-1, 0, 0), roll=90)
         # mates: STENCIL_HOLDER_FRONT_2  [1 ref(s), was Edge26]
     fcprim.lcs(bdy, "NUT", at=(-1.2, 0, 0), axis=(-1, 0, 0))
         # fastener: ISO4035  [1 ref(s), was Pocket004.Edge135]
-    fcprim.lcs(bdy, "STUD", at=(5, 0, 0), axis=(1, 0, -0), roll=90)
+    fcprim.lcs(bdy, "STUD", at=(5, 0, 0), axis=(1, -0, 0), roll=90)
         # mates: M5_270  [1 ref(s), was Face60]
 
 # TOP_CLAMP_SPANNER_HANDWHEEL
@@ -614,7 +614,7 @@
 # TOP_SPRING_PLATE
     fcprim.lcs(bdy, "BEARING_MOUNT", axis=(0, -1, 0), roll=180)
         # mates: TOP_CLAMP_BEARING_MOUNT_1, TOP_CLAMP_BEARING_MOUNT_2  [2 ref(s), was Revolution.Face1]
-    fcprim.lcs(bdy, "SPRING", at=(0, 2.4, 0), axis=(-0, 1, 0))
+    fcprim.lcs(bdy, "SPRING", at=(0, 2.4, 0), axis=(0, 1, -0))
         # mates: SPRING_ID10_L35_AT20  [2 ref(s), was Edge10, Face6]
 
 # TUBE_D8_170
@@ -700,7 +700,7 @@
         # geometry: Top_Frame.Distance  [1 ref(s), was Face2]
     fcprim.lcs(bdy, "FRAME1", at=(-10, 10, 0), axis=(-1, 0, 0), roll=180)
         # mates: _2020_280  [1 ref(s), was Edge5]
-    fcprim.lcs(bdy, "FRAME2", at=(10, -10, 0), axis=(-1, 0, -0), roll=90)
+    fcprim.lcs(bdy, "FRAME2", at=(10, -10, 0), axis=(-1, 0, 0), roll=90)
         # mates: _2020_280  [1 ref(s), was Bottom_Frame001._2020_306.Face44]
     fcprim.lcs(bdy, "FRAME3", at=(10, 10, 300), axis=(-1, 0, 0), roll=180)
         # mates: _2020_280  [1 ref(s), was Edge70]

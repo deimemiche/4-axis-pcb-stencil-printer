@@ -86,7 +86,7 @@
     -11.55
    ],
    "axis": [
-    0.0,
+    -0.0,
     -1.0,
     -0.0
    ],
@@ -242,7 +242,7 @@
    "axis": [
     -1.0,
     0.0,
-    -0.0
+    0.0
    ],
    "geom": "Plane",
    "joint": "Joint004",
@@ -298,7 +298,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw108",
-   "joint_label": "M4x10-Screw228",
+   "joint_label": "M4x10-Screw242",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_RAIL_HOLDER",
@@ -325,7 +325,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw109",
-   "joint_label": "M4x10-Screw231",
+   "joint_label": "M4x10-Screw245",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_RAIL_HOLDER",
@@ -352,7 +352,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw110",
-   "joint_label": "M4x10-Screw232",
+   "joint_label": "M4x10-Screw246",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_RAIL_HOLDER",
@@ -379,7 +379,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw111",
-   "joint_label": "M4x10-Screw230",
+   "joint_label": "M4x10-Screw244",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_RAIL_HOLDER",
@@ -406,7 +406,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw112",
-   "joint_label": "M4x10-Screw233",
+   "joint_label": "M4x10-Screw247",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_RAIL_HOLDER",
@@ -433,7 +433,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw113",
-   "joint_label": "M4x10-Screw229",
+   "joint_label": "M4x10-Screw243",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_RAIL_HOLDER",
@@ -460,7 +460,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw114",
-   "joint_label": "M4x10-Screw227",
+   "joint_label": "M4x10-Screw241",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_RAIL_HOLDER",
@@ -541,7 +541,7 @@
    "fastener": "DIN934",
    "geom": "Circle",
    "joint": "Nut030",
-   "joint_label": "M5-Nut030",
+   "joint_label": "M5-Nut038",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKET_X_AXIS",
@@ -561,14 +561,14 @@
    ],
    "axis": [
     -1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "diameter": "M5",
    "fastener": "DIN934",
    "geom": "Circle",
    "joint": "Nut031",
-   "joint_label": "M5-Nut031",
+   "joint_label": "M5-Nut039",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "Bottom_Assembly",
@@ -577,60 +577,6 @@
    "roll": 0.0,
    "sub": "Edge2",
    "via_link": "Nut030"
-  },
-  {
-   "along": -40.849313862,
-   "assembly": "Bottom_Assembly",
-   "at": [
-    -4.0,
-    21.5,
-    0.0
-   ],
-   "axis": [
-    -1.0,
-    0.0,
-    0.0
-   ],
-   "diameter": "M3",
-   "fastener": "DIN934",
-   "geom": "Circle",
-   "joint": "Nut032",
-   "joint_label": "M3-Nut055",
-   "joint_type": "Fastener",
-   "kind": "Edge",
-   "part": "BOT_HANDWHEEL",
-   "perp": 597.115654543,
-   "prop": "BaseObject",
-   "roll": 0.0,
-   "sub": "Pocket003.Edge203",
-   "via_link": "BOT_HANDWHEEL002"
-  },
-  {
-   "along": 50.049313862,
-   "assembly": "Bottom_Assembly",
-   "at": [
-    -8.6,
-    21.5,
-    0.0
-   ],
-   "axis": [
-    1.0,
-    0.0,
-    0.0
-   ],
-   "diameter": "M3",
-   "fastener": "ISO4027",
-   "geom": "Circle",
-   "joint": "Screw140",
-   "joint_label": "M3x6-Screw037",
-   "joint_type": "Fastener",
-   "kind": "Edge",
-   "part": "BOT_HANDWHEEL",
-   "perp": 597.115654543,
-   "prop": "BaseObject",
-   "roll": 0.0,
-   "sub": "Pocket003.Edge168",
-   "via_link": "BOT_HANDWHEEL002"
   },
   {
    "along": -14.5,
@@ -849,6 +795,60 @@
    "via_link": "Eccenter003"
   },
   {
+   "along": 0.0,
+   "assembly": "Bottom_Assembly",
+   "at": [
+    -4.0,
+    21.5,
+    0.0
+   ],
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M3",
+   "fastener": "DIN934",
+   "geom": "Circle",
+   "joint": "Nut049",
+   "joint_label": "M3-Nut056",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "BOT_HANDWHEEL",
+   "perp": 0.0,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "Pocket003.Edge203",
+   "via_link": "BOT_HANDWHEEL002"
+  },
+  {
+   "along": -0.0,
+   "assembly": "Bottom_Assembly",
+   "at": [
+    -8.6,
+    21.5,
+    0.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M3",
+   "fastener": "ISO4027",
+   "geom": "Circle",
+   "joint": "Screw157",
+   "joint_label": "M3x6-Screw038",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "BOT_HANDWHEEL",
+   "perp": 0.0,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "Pocket003.Edge168",
+   "via_link": "BOT_HANDWHEEL002"
+  },
+  {
    "assembly": "Bottom_Assembly",
    "at": [
     -0.0,
@@ -966,9 +966,9 @@
     0.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     -1.0,
-    -0.0
+    0.0
    ],
    "geom": "Circle",
    "joint": "Joint002",
@@ -984,7 +984,7 @@
    "assembly": "Bottom_Assembly",
    "at": [
     0.0,
-    -0.0,
+    0.0,
     270.0
    ],
    "axis": [
@@ -1029,12 +1029,12 @@
    "at": [
     0.0,
     5.0,
-    0.0
+    -0.0
    ],
    "axis": [
     0.0,
     1.0,
-    -0.0
+    0.0
    ],
    "geom": "Plane",
    "joint": "Joint004",
@@ -1073,7 +1073,7 @@
    "at": [
     0.0,
     26.0,
-    0.0
+    -0.0
    ],
    "axis": [
     0.0,
@@ -1336,7 +1336,7 @@
    "assembly": "Bottom_Assembly",
    "at": [
     0.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "axis": [
@@ -2520,7 +2520,7 @@
    "axis": [
     0.0,
     1.0,
-    0.0
+    -0.0
    ],
    "geom": "Plane",
    "joint": "Joint001",
@@ -3004,7 +3004,7 @@
    "axis": [
     0.0,
     1.0,
-    -0.0
+    0.0
    ],
    "geom": "Circle",
    "joint": "Joint019",
@@ -3024,9 +3024,9 @@
     10.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     -1.0,
-    -0.0
+    0.0
    ],
    "geom": "Circle",
    "joint": "Joint019",
@@ -6246,7 +6246,7 @@
    "via_link": "STENCIL_HOLDER_BACK"
   },
   {
-   "along": -0.0,
+   "along": 0.0,
    "assembly": "Stencil_Clamp",
    "at": [
     1.0,
@@ -6273,7 +6273,7 @@
    "via_link": "TOP_CLAMP_NUT_HOLDER005"
   },
   {
-   "along": -0.0,
+   "along": 0.0,
    "assembly": "Stencil_Clamp",
    "at": [
     1.0,
@@ -6300,7 +6300,7 @@
    "via_link": "TOP_CLAMP_NUT_HOLDER003"
   },
   {
-   "along": -0.0,
+   "along": 0.0,
    "assembly": "Stencil_Clamp",
    "at": [
     1.0,
@@ -6327,7 +6327,7 @@
    "via_link": "TOP_CLAMP_NUT_HOLDER001"
   },
   {
-   "along": -0.0,
+   "along": 0.0,
    "assembly": "Stencil_Clamp",
    "at": [
     1.0,
@@ -6411,7 +6411,7 @@
    "assembly": "Stencil_Clamp",
    "at": [
     -0.0,
-    -0.0,
+    0.0,
     280.0
    ],
    "axis": [
@@ -6525,7 +6525,7 @@
     0.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     0.0,
     1.0
    ],
@@ -6543,11 +6543,11 @@
    "assembly": "Stencil_Clamp",
    "at": [
     0.0,
-    0.0,
+    -0.0,
     280.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     0.0,
     1.0
    ],
@@ -6614,7 +6614,7 @@
    ],
    "axis": [
     0.0,
-    -0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -6632,11 +6632,11 @@
    "at": [
     14.5,
     0.0,
-    -0.0
+    0.0
    ],
    "axis": [
     1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "geom": "Circle",
@@ -6653,7 +6653,7 @@
    "assembly": "Stencil_Clamp",
    "at": [
     0.0,
-    -0.0,
+    0.0,
     24.0
    ],
    "axis": [
@@ -6698,11 +6698,11 @@
    "at": [
     16.0,
     0.0,
-    0.0
+    -0.0
    ],
    "axis": [
     1.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "geom": "Circle",
@@ -6725,7 +6725,7 @@
    "axis": [
     -0.0,
     -1.0,
-    0.0
+    -0.0
    ],
    "geom": "Plane",
    "joint": "Joint015",
@@ -6742,11 +6742,11 @@
    "at": [
     16.0,
     0.0,
-    -0.0
+    0.0
    ],
    "axis": [
     1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "geom": "Circle",
@@ -6873,7 +6873,7 @@
    "assembly": "Stencil_Clamp",
    "at": [
     -10.0,
-    0.0,
+    -0.0,
     0.655589555
    ],
    "axis": [
@@ -6899,8 +6899,8 @@
     0.0
    ],
    "axis": [
-    0.0,
-    0.0,
+    -0.0,
+    -0.0,
     1.0
    ],
    "geom": "Plane",
@@ -6917,13 +6917,13 @@
    "assembly": "Stencil_Clamp",
    "at": [
     -10.0,
-    -0.0,
+    0.0,
     0.655589555
    ],
    "axis": [
     1.0,
     -0.0,
-    0.0
+    -0.0
    ],
    "geom": "Plane",
    "joint": "Joint030",
@@ -6961,7 +6961,7 @@
    "assembly": "Stencil_Clamp",
    "at": [
     -0.0,
-    -0.0,
+    0.0,
     280.0
    ],
    "axis": [
@@ -7032,7 +7032,7 @@
    ],
    "axis": [
     0.0,
-    -0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -7053,7 +7053,7 @@
     0.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     0.0,
     1.0
    ],
@@ -7075,8 +7075,8 @@
     0.0
    ],
    "axis": [
-    0.0,
-    0.0,
+    -0.0,
+    -0.0,
     1.0
    ],
    "geom": "Plane",
@@ -7093,11 +7093,11 @@
    "assembly": "Stencil_Clamp",
    "at": [
     0.0,
-    0.0,
+    -0.0,
     280.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     0.0,
     1.0
    ],
@@ -7229,7 +7229,7 @@
     0.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     -1.0,
     0.0
    ],
@@ -7402,7 +7402,7 @@
    "at": [
     1.0,
     -7.3,
-    0.0
+    -0.0
    ],
    "axis": [
     0.0,
@@ -7490,7 +7490,7 @@
    "at": [
     -75.0,
     8.0,
-    -0.0
+    0.0
    ],
    "axis": [
     0.0,
@@ -7537,9 +7537,9 @@
     0.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     1.0,
-    0.0
+    -0.0
    ],
    "geom": "Circle",
    "joint": "Joint046",
@@ -7684,7 +7684,7 @@
    "sub": "Edge11"
   },
   {
-   "along": 6.0,
+   "along": 5.999999109,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7700,18 +7700,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw059",
-   "joint_label": "M4x10-Screw609",
+   "joint_label": "M4x10-Screw625",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930387,
+   "perp": 17.230901027,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER003.Pocket002.Edge60",
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 6.0,
+   "along": 5.999999173,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7727,18 +7727,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw060",
-   "joint_label": "M4x10-Screw610",
+   "joint_label": "M4x10-Screw626",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246024119,
+   "perp": 9.246033071,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER003.Pocket002.Edge61",
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 6.0,
+   "along": 5.999999979,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7754,18 +7754,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw062",
-   "joint_label": "M4x10-Screw611",
+   "joint_label": "M4x10-Screw627",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930387,
+   "perp": 17.230930633,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER001.Pocket002.Edge60",
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 6.0,
+   "along": 5.9999992,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7781,18 +7781,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw063",
-   "joint_label": "M4x10-Screw612",
+   "joint_label": "M4x10-Screw628",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930387,
+   "perp": 17.2309381,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER002.Pocket002.Edge60",
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 6.0,
+   "along": 5.999999135,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7808,18 +7808,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw064",
-   "joint_label": "M4x10-Screw613",
+   "joint_label": "M4x10-Screw629",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246024119,
+   "perp": 9.24605073,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER002.Pocket002.Edge61",
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 6.0,
+   "along": 6.000000017,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7835,18 +7835,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw065",
-   "joint_label": "M4x10-Screw614",
+   "joint_label": "M4x10-Screw630",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930387,
+   "perp": 17.230951787,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER.Pocket002.Edge60",
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 6.0,
+   "along": 5.999999952,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7862,18 +7862,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw066",
-   "joint_label": "M4x10-Screw615",
+   "joint_label": "M4x10-Screw631",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246024119,
+   "perp": 9.245987214,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER.Pocket002.Edge61",
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 4.000000188,
+   "along": 4.000000596,
    "assembly": "Top_Assembly",
    "at": [
     4.0,
@@ -7900,7 +7900,7 @@
    "via_link": "TOP_CLAMP_SPANNER_HANDWHEEL"
   },
   {
-   "along": 1.4669e-05,
+   "along": -2.267e-06,
    "assembly": "Top_Assembly",
    "at": [
     -1.2,
@@ -7920,14 +7920,14 @@
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_CLAMP_SPANNER_COUNTER",
-   "perp": 1.489e-06,
+   "perp": 2.9095e-05,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "Pocket004.Edge135",
    "via_link": "TOP_CLAMP_SPANNER_COUNTER"
   },
   {
-   "along": 6.0,
+   "along": 6.000000043,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7943,11 +7943,11 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw067",
-   "joint_label": "M4x10-Screw616",
+   "joint_label": "M4x10-Screw632",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246024119,
+   "perp": 9.246025459,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER001.Pocket002.Edge61",
@@ -7957,12 +7957,12 @@
    "assembly": "Top_Assembly",
    "at": [
     -8.4,
-    -0.0,
+    0.0,
     0.0
    ],
    "axis": [
     -1.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "geom": "Circle",
@@ -8000,13 +8000,13 @@
   {
    "assembly": "Top_Assembly",
    "at": [
-    0.0,
+    -0.0,
     0.0,
     100.0
    ],
    "axis": [
     0.0,
-    0.0,
+    -0.0,
     1.0
    ],
    "geom": "Plane",
@@ -8028,8 +8028,8 @@
    ],
    "axis": [
     1.0,
-    0.0,
-    -0.0
+    -0.0,
+    0.0
    ],
    "geom": "Cylinder",
    "joint": "Joint002",
@@ -8068,7 +8068,7 @@
    "at": [
     7.0,
     0.0,
-    0.0
+    -0.0
    ],
    "axis": [
     1.0,
@@ -8132,13 +8132,13 @@
   {
    "assembly": "Top_Assembly",
    "at": [
-    0.0,
+    -0.0,
     0.0,
     50.0
    ],
    "axis": [
     0.0,
-    0.0,
+    -0.0,
     1.0
    ],
    "geom": "Cylinder",
@@ -8160,7 +8160,7 @@
    ],
    "axis": [
     1.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "geom": "Cylinder",
@@ -11471,7 +11471,7 @@
    "via_link": "BOT_RAIL_CLAMP_X_DRIVE"
   },
   {
-   "along": 0.0,
+   "along": -0.0,
    "assembly": "X_Axis_Carriage",
    "at": [
     0.0,
@@ -11579,7 +11579,7 @@
    "via_link": "BOT_RAIL_CLAMP_X_DRIVE"
   },
   {
-   "along": -0.0,
+   "along": 0.0,
    "assembly": "X_Axis_Carriage",
    "at": [
     -28.622,
@@ -12000,13 +12000,13 @@
   {
    "assembly": "X_Axis_Carriage",
    "at": [
-    0.0,
+    -0.0,
     0.0,
     24.0
    ],
    "axis": [
     0.0,
-    -0.0,
+    0.0,
     1.0
    ],
    "geom": "Circle",
@@ -12049,7 +12049,7 @@
     24.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     0.0,
     1.0
    ],
@@ -12094,7 +12094,7 @@
    ],
    "axis": [
     0.0,
-    -0.0,
+    0.0,
     1.0
    ],
    "geom": "Circle",
@@ -12137,7 +12137,7 @@
     24.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     0.0,
     1.0
    ],
@@ -12159,8 +12159,8 @@
     150.0
    ],
    "axis": [
-    0.0,
     -0.0,
+    0.0,
     1.0
    ],
    "geom": "Cylinder",
@@ -12181,8 +12181,8 @@
     300.0
    ],
    "axis": [
-    0.0,
     -0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -12198,7 +12198,7 @@
   {
    "assembly": "X_Axis_Carriage",
    "at": [
-    0.0,
+    -0.0,
     -1.0,
     14.2915
    ],
@@ -12247,8 +12247,8 @@
     0.0
    ],
    "axis": [
-    -0.0,
-    -0.0,
+    0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -12291,8 +12291,8 @@
     0.0
    ],
    "axis": [
-    0.0,
     -0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -12710,7 +12710,7 @@
    ],
    "axis": [
     0.0,
-    -0.0,
+    0.0,
     1.0
    ],
    "geom": "Cylinder",
@@ -12731,8 +12731,8 @@
     150.0
    ],
    "axis": [
-    -0.0,
-    -0.0,
+    0.0,
+    0.0,
     1.0
    ],
    "geom": "Cylinder",
@@ -12753,8 +12753,8 @@
     300.0
    ],
    "axis": [
-    -0.0,
-    -0.0,
+    0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -12842,7 +12842,7 @@
    ],
    "axis": [
     0.0,
-    -0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -12881,13 +12881,13 @@
    "assembly": "X_Axis_Carriage",
    "at": [
     0.0,
-    0.0,
+    -0.0,
     -9.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     -1.0,
-    0.0
+    -0.0
    ],
    "geom": "Circle",
    "joint": "Joint027",
@@ -12931,7 +12931,7 @@
    "axis": [
     0.0,
     -1.0,
-    0.0
+    -0.0
    ],
    "geom": "Circle",
    "joint": "Joint028",
@@ -12968,8 +12968,8 @@
   {
    "assembly": "X_Axis_Carriage",
    "at": [
-    0.0,
     -0.0,
+    0.0,
     9.0
    ],
    "axis": [
@@ -13019,7 +13019,7 @@
    "axis": [
     0.0,
     -1.0,
-    0.0
+    -0.0
    ],
    "geom": "Circle",
    "joint": "Joint030",
@@ -13084,7 +13084,7 @@
    ],
    "axis": [
     0.0,
-    0.0,
+    -0.0,
     -1.0
    ],
    "geom": "Circle",

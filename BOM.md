@@ -5,16 +5,7 @@ Counted by walking the built assembly, not kept by hand: see
 A part inside a sub-assembly that is linked four times is counted
 four times, so these are the numbers to order.
 
-**421 pieces in all.**
-
-> **Incomplete: 6 fastener(s) are missing from the counts below.**
->
-> They are counted off the built assembly, and the build did not place these:
->
-> * Bottom_Assembly: 2 of 22
-> * Stencil_Clamp: 4 of 34
->
-> Every other line is exact; see `verify` in `rebuild.py`.
+**427 pieces in all.**
 
 ## Printed parts
 
@@ -98,7 +89,7 @@ four times, so these are the numbers to order.
 
 ## Fasteners
 
-14 distinct, 263 pieces.
+14 distinct, 269 pieces.
 
 | Qty | Part |
 |---:|:---|
@@ -106,12 +97,12 @@ four times, so these are the numbers to order.
 | 27 | DIN 934 hex nut M3 |
 | 24 | ISO 4762 socket head cap screw M3x8 |
 | 22 | ISO 4762 socket head cap screw M3x10 |
-| 16 | ISO 4035 thin hex nut M3 |
+| 20 | ISO 4035 thin hex nut M3 |
 | 16 | ISO 4035 thin hex nut M8 |
 | 16 | ISO 4762 socket head cap screw M3x6 |
 | 8 | Heat-set threaded insert, brass M4x8.15 mm |
+| 6 | DIN 934 hex nut M5 |
 | 5 | ISO 4762 socket head cap screw M3x14 |
-| 4 | DIN 934 hex nut M5 |
 | 3 | ISO 4027 set screw, cone point M3x3 |
 | 2 | ISO 4035 thin hex nut M5 |
 | 2 | ISO 4762 socket head cap screw M4x14 |

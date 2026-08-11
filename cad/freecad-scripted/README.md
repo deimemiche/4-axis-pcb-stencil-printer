@@ -30,7 +30,7 @@ datum-plan.json  where every joint and every bolt attaches, measured off the
 datum-derive.py  read-only: which sketched feature each of those measurements
                  sits on, which is how the numbers became expressions
 asmverify.py     the scripted assembly against the hand-built one: 145/145
-                 parts at 0.000000 mm, 244 of 245 bolts
+                 parts at 0.000000 mm, 245 of 245 bolts
 
 stock/           bought or cut to length, never printed: 2020 extrusion, D8
                  rod and tube, M5 and M8 studding, LM8UU, the alpha axis's ball

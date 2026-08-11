@@ -1,6 +1,6 @@
 {
  "4-Axis_Stencil_Printer": {
-  "authored_total": 11,
+  "authored_total": 13,
   "document": "_4_Axis_Stencil_Printer",
   "fasteners": [],
   "file": "4-Axis_Stencil_Printer.FCStd",
@@ -14,6 +14,42 @@
    }
   ],
   "instances": [
+   {
+    "document": "ROD_D8_140",
+    "file": "../stock/ROD_D8_140.FCStd",
+    "is_subassembly": false,
+    "label": "ROD_D8_140",
+    "linked_object": "Body",
+    "name": "ROD_D8_140",
+    "placement": [
+     -21.55,
+     130.0,
+     279.0,
+     0.5,
+     -0.5,
+     0.5,
+     0.5
+    ],
+    "type": "App::Link"
+   },
+   {
+    "document": "ROD_D8_140",
+    "file": "../stock/ROD_D8_140.FCStd",
+    "is_subassembly": false,
+    "label": "ROD_D8_303",
+    "linked_object": "Body",
+    "name": "ROD_D8_303",
+    "placement": [
+     -21.55,
+     130.0,
+     21.0,
+     0.5,
+     -0.5,
+     0.5,
+     0.5
+    ],
+    "type": "App::Link"
+   },
    {
     "document": "Top_Assembly",
     "file": "Top_Assembly.FCStd",
@@ -49,42 +85,6 @@
      1.0
     ],
     "type": "Assembly::AssemblyLink"
-   },
-   {
-    "document": "ROD_D8_140",
-    "file": "../stock/ROD_D8_140.FCStd",
-    "is_subassembly": false,
-    "label": "ROD_D8_140",
-    "linked_object": "Body",
-    "name": "ROD_D8_140",
-    "placement": [
-     -21.55,
-     130.0,
-     279.0,
-     -0.5,
-     0.5,
-     -0.5,
-     -0.5
-    ],
-    "type": "App::Link"
-   },
-   {
-    "document": "ROD_D8_140",
-    "file": "../stock/ROD_D8_140.FCStd",
-    "is_subassembly": false,
-    "label": "ROD_D8_303",
-    "linked_object": "Body",
-    "name": "ROD_D8_303",
-    "placement": [
-     -21.55,
-     130.0,
-     21.0,
-     0.5,
-     -0.5,
-     0.5,
-     0.5
-    ],
-    "type": "App::Link"
    }
   ],
   "joints": [
@@ -229,7 +229,7 @@
     }
    }
   ],
-  "objects_total": 542,
+  "objects_total": 544,
   "unknown": []
  },
  "Bottom_Assembly": {
@@ -278,7 +278,7 @@
      "via": "X_Axis_Carriage",
      "via_label": "X-Axis_Carriage"
     },
-    "label": "M4x10-Screw227",
+    "label": "M4x10-Screw241",
     "name": "Screw114",
     "type_id": "Part::FeaturePython"
    },
@@ -301,7 +301,7 @@
      "via": "X_Axis_Carriage",
      "via_label": "X-Axis_Carriage"
     },
-    "label": "M4x10-Screw228",
+    "label": "M4x10-Screw242",
     "name": "Screw108",
     "type_id": "Part::FeaturePython"
    },
@@ -324,7 +324,7 @@
      "via": "X_Axis_Carriage",
      "via_label": "X-Axis_Carriage"
     },
-    "label": "M4x10-Screw229",
+    "label": "M4x10-Screw243",
     "name": "Screw113",
     "type_id": "Part::FeaturePython"
    },
@@ -347,7 +347,7 @@
      "via": "X_Axis_Carriage",
      "via_label": "X-Axis_Carriage"
     },
-    "label": "M4x10-Screw230",
+    "label": "M4x10-Screw244",
     "name": "Screw111",
     "type_id": "Part::FeaturePython"
    },
@@ -370,7 +370,7 @@
      "via": "X_Axis_Carriage",
      "via_label": "X-Axis_Carriage"
     },
-    "label": "M4x10-Screw231",
+    "label": "M4x10-Screw245",
     "name": "Screw109",
     "type_id": "Part::FeaturePython"
    },
@@ -393,7 +393,7 @@
      "via": "X_Axis_Carriage",
      "via_label": "X-Axis_Carriage"
     },
-    "label": "M4x10-Screw232",
+    "label": "M4x10-Screw246",
     "name": "Screw110",
     "type_id": "Part::FeaturePython"
    },
@@ -416,7 +416,7 @@
      "via": "X_Axis_Carriage",
      "via_label": "X-Axis_Carriage"
     },
-    "label": "M4x10-Screw233",
+    "label": "M4x10-Screw247",
     "name": "Screw112",
     "type_id": "Part::FeaturePython"
    },
@@ -483,7 +483,7 @@
      "via": "Bottom_Frame001",
      "via_label": "Bottom_Frame"
     },
-    "label": "M5-Nut030",
+    "label": "M5-Nut038",
     "name": "Nut030",
     "type_id": "Part::FeaturePython"
    },
@@ -503,55 +503,10 @@
       "Edge2"
      ],
      "via": "Nut030",
-     "via_label": "M5-Nut030"
+     "via_label": "M5-Nut038"
     },
-    "label": "M5-Nut031",
+    "label": "M5-Nut039",
     "name": "Nut031",
-    "type_id": "Part::FeaturePython"
-   },
-   {
-    "Diameter": "M3",
-    "Invert": "False",
-    "LeftHanded": "False",
-    "MatchOuter": "True",
-    "Offset": "0.0 mm",
-    "OffsetAngle": "0.0 deg",
-    "Thread": "False",
-    "Type": "DIN934",
-    "base": {
-     "document": "BOT_HANDWHEEL",
-     "file": "../shared/BOT_HANDWHEEL.FCStd",
-     "subs": [
-      "Pocket003.Edge203"
-     ],
-     "via": "BOT_HANDWHEEL002",
-     "via_label": "BOT_HANDWHEEL002"
-    },
-    "label": "M3-Nut055",
-    "name": "Nut032",
-    "type_id": "Part::FeaturePython"
-   },
-   {
-    "Diameter": "M3",
-    "Invert": "True",
-    "LeftHanded": "False",
-    "Length": "6",
-    "MatchOuter": "True",
-    "Offset": "0.0 mm",
-    "OffsetAngle": "0.0 deg",
-    "Thread": "False",
-    "Type": "ISO4027",
-    "base": {
-     "document": "BOT_HANDWHEEL",
-     "file": "../shared/BOT_HANDWHEEL.FCStd",
-     "subs": [
-      "Pocket003.Edge168"
-     ],
-     "via": "BOT_HANDWHEEL002",
-     "via_label": "BOT_HANDWHEEL002"
-    },
-    "label": "M3x6-Screw037",
-    "name": "Screw140",
     "type_id": "Part::FeaturePython"
    },
    {
@@ -693,6 +648,28 @@
     "type_id": "Part::FeaturePython"
    },
    {
+    "Diameter": "M3",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "MatchOuter": "False",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "DIN934",
+    "base": {
+     "document": "BOT_HANDWHEEL",
+     "file": "../shared/BOT_HANDWHEEL.FCStd",
+     "subs": [
+      "Pocket003.Edge203"
+     ],
+     "via": "BOT_HANDWHEEL002",
+     "via_label": "BOT_HANDWHEEL002"
+    },
+    "label": "M3-Nut056",
+    "name": "Nut049",
+    "type_id": "Part::FeaturePython"
+   },
+   {
     "Diameter": "M4",
     "Invert": "True",
     "LeftHanded": "False",
@@ -736,6 +713,29 @@
     },
     "label": "M4x10-Screw226",
     "name": "Screw156",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M3",
+    "Invert": "True",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "False",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4027",
+    "base": {
+     "document": "BOT_HANDWHEEL",
+     "file": "../shared/BOT_HANDWHEEL.FCStd",
+     "subs": [
+      "Pocket003.Edge168"
+     ],
+     "via": "BOT_HANDWHEEL002",
+     "via_label": "BOT_HANDWHEEL002"
+    },
+    "label": "M3x6-Screw038",
+    "name": "Screw157",
     "type_id": "Part::FeaturePython"
    }
   ],
@@ -833,7 +833,7 @@
      -45.714585907,
      23.594185222,
      142.53331107,
-     0.0,
+     -0.0,
      1.0,
      0.0,
      -0.0
@@ -851,7 +851,7 @@
      -45.714585907,
      23.594185222,
      2.53331107,
-     0.0,
+     -0.0,
      1.0,
      0.0,
      -0.0
@@ -943,7 +943,7 @@
      248.941508327,
      1.0,
      0.0,
-     0.0,
+     -0.0,
      -0.0
     ],
     "type": "App::Link"
@@ -2376,7 +2376,7 @@
      0.707106781,
      0.0,
      0.707106781,
-     0.0
+     -0.0
     ],
     "type": "App::Link"
    },
@@ -2394,7 +2394,7 @@
      -0.707106781,
      -0.0,
      0.707106781,
-     0.0
+     -0.0
     ],
     "type": "App::Link"
    },
@@ -2410,9 +2410,9 @@
      -14.0,
      290.0,
      0.707106781,
-     -0.0,
+     0.0,
      -0.707106781,
-     0.0
+     -0.0
     ],
     "type": "App::Link"
    },
@@ -2498,7 +2498,7 @@
     "placement": [
      -10.0,
      -14.0,
-     0.0,
+     -0.0,
      0.0,
      0.0,
      0.0,
@@ -7533,7 +7533,7 @@
      "via": "Stencil_Clamp",
      "via_label": "Stencil_Clamp"
     },
-    "label": "M4x10-Screw609",
+    "label": "M4x10-Screw625",
     "name": "Screw059",
     "type_id": "Part::FeaturePython"
    },
@@ -7556,7 +7556,7 @@
      "via": "Stencil_Clamp",
      "via_label": "Stencil_Clamp"
     },
-    "label": "M4x10-Screw610",
+    "label": "M4x10-Screw626",
     "name": "Screw060",
     "type_id": "Part::FeaturePython"
    },
@@ -7579,7 +7579,7 @@
      "via": "Stencil_Clamp",
      "via_label": "Stencil_Clamp"
     },
-    "label": "M4x10-Screw611",
+    "label": "M4x10-Screw627",
     "name": "Screw062",
     "type_id": "Part::FeaturePython"
    },
@@ -7602,7 +7602,7 @@
      "via": "Stencil_Clamp",
      "via_label": "Stencil_Clamp"
     },
-    "label": "M4x10-Screw612",
+    "label": "M4x10-Screw628",
     "name": "Screw063",
     "type_id": "Part::FeaturePython"
    },
@@ -7625,7 +7625,7 @@
      "via": "Stencil_Clamp",
      "via_label": "Stencil_Clamp"
     },
-    "label": "M4x10-Screw613",
+    "label": "M4x10-Screw629",
     "name": "Screw064",
     "type_id": "Part::FeaturePython"
    },
@@ -7648,7 +7648,7 @@
      "via": "Stencil_Clamp",
      "via_label": "Stencil_Clamp"
     },
-    "label": "M4x10-Screw614",
+    "label": "M4x10-Screw630",
     "name": "Screw065",
     "type_id": "Part::FeaturePython"
    },
@@ -7671,7 +7671,7 @@
      "via": "Stencil_Clamp",
      "via_label": "Stencil_Clamp"
     },
-    "label": "M4x10-Screw615",
+    "label": "M4x10-Screw631",
     "name": "Screw066",
     "type_id": "Part::FeaturePython"
    },
@@ -7694,7 +7694,7 @@
      "via": "Stencil_Clamp",
      "via_label": "Stencil_Clamp"
     },
-    "label": "M4x10-Screw616",
+    "label": "M4x10-Screw632",
     "name": "Screw067",
     "type_id": "Part::FeaturePython"
    },
@@ -7762,9 +7762,9 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_CASE_1",
     "placement": [
-     -59.110899352,
-     307.500140279,
-     174.459588127,
+     -59.110898945,
+     307.500140306,
+     174.459627684,
      -5.8e-08,
      6.2e-08,
      0.729609057,
@@ -7780,9 +7780,9 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_CASE_2",
     "placement": [
-     -59.162626353,
-     308.298466226,
-     174.459587992,
+     -59.162625946,
+     308.298466253,
+     174.459627549,
      -6.2e-08,
      -5.8e-08,
      -0.683864478,
@@ -7798,11 +7798,11 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_COUNTER",
     "placement": [
-     -54.946874821,
-     243.234886922,
-     174.459608123,
-     -1.1e-07,
-     -1.1e-07,
+     -54.946875502,
+     243.23490385,
+     174.459638518,
+     -6e-08,
+     -5.9e-08,
      -0.683864478,
      0.729609057
     ],
@@ -7816,9 +7816,9 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_HANDWHEEL",
     "placement": [
-     -59.03330885,
-     306.302651359,
-     174.459588329,
+     -59.033308443,
+     306.302651385,
+     174.459627886,
      -6.2e-08,
      -5.8e-08,
      -0.683864478,
@@ -7834,13 +7834,13 @@
     "linked_object": "Body004",
     "name": "M5_100_Stencil_Stretcher",
     "placement": [
-     -61.089456193,
-     338.036093107,
-     174.459578626,
-     0.706736658,
+     -61.089456884,
+     338.036110034,
+     174.459622536,
+     0.706736708,
      0.022872289,
-     0.02287229,
-     0.706736877
+     0.022872289,
+     0.706736827
     ],
     "type": "App::Link"
    },
@@ -7870,13 +7870,13 @@
     "linked_object": "Assembly",
     "name": "Stencil_Clamp",
     "placement": [
-     -110.764974239,
-     113.133862111,
-     501.868756341,
-     0.678006538,
-     0.733063719,
-     0.037245273,
-     -0.039211063
+     -110.764973092,
+     113.133832473,
+     501.868768544,
+     0.678006535,
+     0.733063717,
+     0.037245323,
+     -0.039211113
     ],
     "type": "Assembly::AssemblyLink"
    }
@@ -11495,6 +11495,24 @@
     "type": "App::Link"
    },
    {
+    "document": "SPRING_ID6_L30_AT12",
+    "file": "../stock/SPRING_ID6_L30_AT12.FCStd",
+    "is_subassembly": false,
+    "label": "SPRING_ID6_L30_AT12",
+    "linked_object": "Body",
+    "name": "SPRING_ID6_L30_AT12",
+    "placement": [
+     309.206079858,
+     68.471196741,
+     114.48187243,
+     0.0,
+     0.707106781,
+     0.0,
+     0.707106781
+    ],
+    "type": "App::Link"
+   },
+   {
     "document": "BOT_RAIL_HOLDER",
     "file": "../x-axis-carriage/BOT_RAIL_HOLDER.FCStd",
     "is_subassembly": false,
@@ -11703,24 +11721,6 @@
      316.406079858,
      59.071196741,
      -136.14012757,
-     0.0,
-     0.707106781,
-     0.0,
-     0.707106781
-    ],
-    "type": "App::Link"
-   },
-   {
-    "document": "SPRING_ID6_L30_AT12",
-    "file": "../stock/SPRING_ID6_L30_AT12.FCStd",
-    "is_subassembly": false,
-    "label": "SPRING_ID6_L30_AT12",
-    "linked_object": "Body",
-    "name": "SPRING_ID6_L30_AT12",
-    "placement": [
-     309.206079858,
-     68.471196741,
-     114.48187243,
      0.0,
      0.707106781,
      0.0,

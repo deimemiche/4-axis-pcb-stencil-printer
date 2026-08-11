@@ -32,3 +32,4 @@ cad/freecad/asm/reference/
 # calibrate-from-build.py can read the frames that run used.  Regenerated every
 # time; the offsets it produces are what is committed.
 cad/freecad-scripted/data/frames.json
+cad/freecad-scripted/data/_tmp/

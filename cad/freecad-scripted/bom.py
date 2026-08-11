@@ -187,10 +187,10 @@ def markdown(count, name, gap=None):
         out += [">", "> Every other line is exact; see `verify` in "
                 "`rebuild.py`.", ""]
     titles = {"Printed_parts": "Printed parts",
-              "CNC_parts": "Machined parts (aluminium)",
+              "CNC": "Machined parts (aluminium)",
               "COTS": "Bought parts",
               "Norm_parts": "Fasteners"}
-    for group in ("Printed_parts", "CNC_parts", "COTS", "Norm_parts"):
+    for group in ("Printed_parts", "CNC", "COTS", "Norm_parts"):
         rows = count.get(group) or {}
         if not rows:
             continue
@@ -201,7 +201,7 @@ def markdown(count, name, gap=None):
         for part, n in sorted(rows.items(), key=lambda kv: (-kv[1], kv[0])):
             out.append(f"| {n} | {part} |")
         out.append("")
-    drawn = count.get("CNC_parts") or {}
+    drawn = count.get("CNC") or {}
     if drawn:
         out += ["Every machined part has a drawing in",
                 "[`technical-drawings/`](technical-drawings/), with a PDF, a",

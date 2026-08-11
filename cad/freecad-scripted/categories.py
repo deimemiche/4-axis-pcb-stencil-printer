@@ -12,10 +12,13 @@ import os
 
 
 # The five families Michael sorts an assembly into, in the order he lists
-# them.  His own trees drifted -- `Printed_parts` in six documents but
+# them.  His own trees had drifted -- `Printed_parts` in six documents but
 # `3D_parts` in `Bottom_Frame`, `CNC_parts` in two but `CNC` in
-# `Stencil_Clamp` -- so the scripted build settles on one spelling of each.
-GROUPS = ("Printed_parts", "CNC_parts", "Norm_parts", "COTS", "Assemblies")
+# `Stencil_Clamp` -- and the scripted build picked the majority spelling of
+# each.  Michael has since made the hand-built documents consistent, and
+# settled the `CNC` one the other way: `3D_parts` became `Printed_parts`, and
+# `CNC_parts` became **`CNC`**.  His tree is the reference, so this follows it.
+GROUPS = ("Printed_parts", "CNC", "Norm_parts", "COTS", "Assemblies")
 
 
 def category(obj):
@@ -49,4 +52,4 @@ def category(obj):
     source = getattr(target.Document, "FileName", "") or ""
     if os.path.basename(os.path.dirname(source)) == "stock":
         return "COTS"
-    return "CNC_parts"
+    return "CNC"

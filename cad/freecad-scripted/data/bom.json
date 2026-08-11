@@ -1,8 +1,8 @@
 {
  "assembly": "4-Axis_Stencil_Printer",
- "fasteners_missing": 6,
+ "fasteners_missing": 0,
  "groups": {
-  "CNC_parts": {
+  "CNC": {
    "ALPHA_BOT_PLATE": 1,
    "ALPHA_TOP_PLATE": 1,
    "STENCIL_HOLDER_BACK": 1,
@@ -30,10 +30,10 @@
   },
   "Norm_parts": {
    "DIN 934 hex nut M3": 27,
-   "DIN 934 hex nut M5": 4,
+   "DIN 934 hex nut M5": 6,
    "Heat-set threaded insert, brass M4x8.15 mm": 8,
    "ISO 4027 set screw, cone point M3x3": 3,
-   "ISO 4035 thin hex nut M3": 16,
+   "ISO 4035 thin hex nut M3": 20,
    "ISO 4035 thin hex nut M5": 2,
    "ISO 4035 thin hex nut M8": 16,
    "ISO 4762 socket head cap screw M3x10": 22,

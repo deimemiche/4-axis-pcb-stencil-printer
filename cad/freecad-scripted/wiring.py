@@ -61,18 +61,46 @@ BY_INSPECTION = {
 }
 
 
-def by_inspection(internal):
-    """`BY_INSPECTION`, with each datum's internal object name filled in."""
+# One fastener is based on **another fastener**, and that is not a fault: it is
+# a jam nut.  `Nut031` sits against `Nut030` on the X axis screw, both M5
+# DIN934, faces touching -- the measured gap is 4.000 mm and a DIN 934 M5 is
+# 4.0 mm thick.  Michael confirmed the reading.
+#
+# The hand-built assembly can say that directly, because there `Nut030` is a
+# solid with a far face to sit on.  Here a fastener is placed from a datum and
+# has no face to offer, so the jam nut is given the datum its partner uses --
+# `BOT_BRACKET_X_AXIS.NUT`, the far side of the web the screw passes through --
+# and the 4 mm falls out of the calibration as an offset **along** that datum's
+# own axis, which is exactly what an along-offset means.  Writing 4.0 into the
+# bracket would be worse: the bracket has no feature there, and a nut's
+# thickness is not one of its dimensions.
+ON_A_FASTENER = {
+    "Bottom_Assembly/Nut031": ("BOT_BRACKET_X_AXIS", "NUT",
+                               "BOT_BRACKET_X_AXIS001.", "Bottom_Frame001",
+                               "Nut030.Edge2", "DIN934", "M5"),
+}
+
+
+def _named(internal, name, part, datum, prefix, via, was, type_, dia, why):
+    """One wiring record, with the datum's internal object name filled in."""
+    obj = internal.get(part, {}).get(datum)
+    if obj is None:
+        raise SystemExit(f"{name}: {part} has no datum called {datum} -- "
+                         f"has the part script stopped writing it?")
+    return {"part": part, "datum": datum, "object": obj, "prefix": prefix,
+            "was": was, "via_link": via, "type": type_, "diameter": dia,
+            "along": None, "perp": None, "why": why}
+
+
+def by_hand(internal):
+    """The fasteners no measurement can place, read out of the two tables above."""
     out = {}
     for name, (part, datum, prefix, via, was) in BY_INSPECTION.items():
-        obj = internal.get(part, {}).get(datum)
-        if obj is None:
-            raise SystemExit(f"{name}: {part} has no datum called {datum} -- "
-                             f"has the part script stopped writing it?")
-        out[name] = {"part": part, "datum": datum, "object": obj,
-                     "prefix": prefix, "was": was, "via_link": via,
-                     "type": "ISO4035", "diameter": "M3",
-                     "along": None, "perp": None, "why": "by inspection"}
+        out[name] = _named(internal, name, part, datum, prefix, via, was,
+                           "ISO4035", "M3", "by inspection")
+    for name, (part, datum, prefix, via, was, t, d) in ON_A_FASTENER.items():
+        out[name] = _named(internal, name, part, datum, prefix, via, was,
+                           t, d, "based on another fastener")
     return out
 
 
@@ -160,7 +188,7 @@ def main():
         else:
             joints.setdefault(f"{r['assembly']}/{r['joint']}", {})[r["prop"]] = rec
 
-    for name, rec in by_inspection(internal).items():
+    for name, rec in by_hand(internal).items():
         fasteners[name] = rec
         unmapped[:] = [u for u in unmapped
                        if f"{u['assembly']}/{u['joint']}" != name]

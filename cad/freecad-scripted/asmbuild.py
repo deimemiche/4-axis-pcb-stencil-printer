@@ -203,9 +203,18 @@ def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes,
         if w is None:
             notes.append(f"fastener {f['name']}: not wired")
             continue
-        link = links.get(f["base"]["via"])
+        # Which link the datum is reached through is the wiring's to say, not
+        # the model's.  `base.via` is whatever the hand-built document's
+        # `BaseObject` pointed at, and that is only a link when the base was a
+        # part.  `Nut031` is based on the *nut in front of it* -- it is a jam
+        # nut -- so its `via` is `Nut030`, which is a fastener and no link at
+        # all.  The wiring knows the datum lives in a part and which link
+        # reaches it.  For the other 244 the two agree exactly, so this only
+        # ever changes the ones the model could not answer for.
+        via = w.get("via_link") or f["base"]["via"]
+        link = links.get(via)
         if link is None:
-            notes.append(f"fastener {f['name']}: no link {f['base']['via']}")
+            notes.append(f"fastener {f['name']}: no link {via}")
             continue
         sub = datum_sub(link, w.get("prefix", ""), w.get("datum"),
                         w["object"], w.get("part"))

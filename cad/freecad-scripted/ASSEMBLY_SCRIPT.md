@@ -266,7 +266,7 @@ as a diff rather than as an opinion. Datums are what make that expressible:
 ## Where it got to
 
     parts      145/145 exact, worst 0.000000 mm
-    bolts      244/245 exact
+    bolts      245/245 exact
     joints     149, none naming an edge
     datums     308 across 59 part documents, all written by the part scripts
 
@@ -408,12 +408,41 @@ properly, the score before any of this work was 239, not 235.
 every offset more than a millimetre from its datum, which is nine -- including
 a nut sitting 20 mm up a stud, which is exactly what an offset is *for*. It now
 splits the offset **along** the datum's own Z from **across** it, and only
-across is worth reading. 236 of 244 are dead on their datum's axis.
+across is worth reading. 237 of 245 are dead on their datum's axis.
+
+### The last bolt was a jam nut
+
+`Nut031` was read for a while as having no part to name: its `BaseObject`
+resolves to `Bottom_Assembly` itself. True, and it hides the cause. Its base
+is **another fastener** -- `Edge2` of `Nut030` -- and a fastener's base is
+walked up to the document that owns it, which is the assembly. It is a jam
+nut, sitting against its partner on the X axis screw. Michael confirmed it.
+
+The measurement says the same thing before anyone opens the document. Both are
+`DIN934` M5, both axes along -X, and the gap between them is **4.000 mm** --
+which is what a DIN 934 M5 is thick. Faces touching.
+
+The hand-built assembly can say that directly, because there `Nut030` is a
+solid with a far face to land on. Here a fastener is placed from a datum and
+offers no face, so the jam nut is wired to the datum its partner already uses:
+`BOT_BRACKET_X_AXIS.NUT`, the far side of the web the screw passes through.
+The 4 mm is then **not written down anywhere**. It falls out of the
+calibration as `along = -4.000, across = 0.000` -- an offset along the datum's
+own axis, which is precisely what an along-offset means. Putting a `NUT2` on
+the bracket 4 mm past its own web would have been worse: there is no feature
+there, and a nut's thickness is not one of the bracket's dimensions.
+
+Two small things had to give way for it. `wiring.py` grew `ON_A_FASTENER`
+beside `BY_INSPECTION` -- different stories, kept apart: one is a reference
+that is broken, this one is a reference that is fine and points somewhere the
+scripted build has no equivalent of. And `asmbuild.place_fasteners` took the
+link from the wiring rather than from the model. `base.via` is whatever the
+hand-built `BaseObject` pointed at, and that is only a link when the base was
+a part; for `Nut031` it is `Nut030`, which is no link at all. The wiring knows
+both the part and the link that reaches it. For the other 244 the two agree
+exactly, so this changes nothing that already worked.
 
 ### What is not done
-
-**One fastener.** `Nut031`'s `BaseObject` lands on `Bottom_Assembly` itself
-rather than on any part, so there is no datum for it to name.
 
 **Eight offsets sit across their datum's axis**, and neither is a fault in the
 datums:
