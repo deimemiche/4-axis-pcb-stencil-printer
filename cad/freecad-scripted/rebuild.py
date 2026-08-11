@@ -280,13 +280,12 @@ def stage_dress():
     files: a `.FCStd` is a zip, and either `GuiDocument.xml` is in it or the
     document opens blank.
 
-    **Run this attached to a terminal.**  Backgrounded -- `rebuild.py dress &`
-    -- the stage gets partway through and stops without a word: the parts pass
-    prints, a few assemblies come out dressed, and nothing after that, not even
-    the shortfall this function ends with.  Three runs in a row each dressed a
-    few more and left the rest.  Whatever kills the GUI child takes the parent
-    with it before it can report, so the only sign is that documents are still
-    blank.  If it happens, `view.py` takes one document at a time:
+    **It is slower than it looks and says nothing while it works.**  The parts
+    pass prints one line and then runs for minutes; each assembly prints its
+    name only once its own process has finished.  A run takes around five
+    minutes and a partly written log is the normal sight most of the way
+    through, not a failure -- read it to the end before concluding anything.
+    If a document really is left blank, `view.py` takes one at a time:
 
         flatpak run --filesystem=home org.freecad.FreeCAD \\
             view.py assembly/Top_Assembly.FCStd
