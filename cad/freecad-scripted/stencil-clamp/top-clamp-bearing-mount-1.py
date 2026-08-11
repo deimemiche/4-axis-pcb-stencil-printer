@@ -162,6 +162,19 @@ def bearing_mount(doc, name, hand=1):
         # dimension here.  Kept as measured; see ASSEMBLY_SCRIPT.md, step 6.
         fcprim.lcs(bdy, "BEARING", at=(screw_x[0], 0.0, 0.6556), axis=(1, 0, 0),
                    roll=180.0)
+        # The two nuts across the screw, which this hand needs as much as the
+        # other one does.  They are **not** in `datum-plan.json`, and that is
+        # the point: the four `ISO4035` that sit in these slots are attached in
+        # the hand-built assembly to `Pocket004.?Edge37` and `?Edge39` -- a `?`
+        # prefix meaning FreeCAD could not map the element, so the reference
+        # comes back a null shape and there was nothing to measure.  They are
+        # the same two slots the mirrored hand has, drawn from the same
+        # numbers, and `wiring.py` names them by inspection; see its
+        # `BY_INSPECTION`.
+        for i, x in enumerate(across_x):
+            fcprim.lcs(bdy, f"NUT{i + 2}",
+                       at=(x, bolt_y, chord + hand * nut_from_face),
+                       axis=(0, 0, -1))
     else:
         fcprim.lcs(bdy, "NUT1", at=along_at, axis=(-1, 0, 0))
         fcprim.lcs(bdy, "HOLDER_FRONT",

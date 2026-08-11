@@ -30,6 +30,52 @@ FEATURE = re.compile(r"^(Pad|Pocket|Revolution|Groove|Loft|Pipe|Helix|Chamfer|"
                      r"PolarPattern|MultiTransform|Body|Sketch)\d*$")
 
 
+# The four references the hand-built assembly stores with a `?` prefix --
+# `Pocket004.?Edge39` -- which means FreeCAD could not map the element.  The
+# reference comes back a *null shape*, so `datums.py` had nothing to measure
+# and there is no datum for these to land on: they are four of the ten bolts
+# the build was missing, and no amount of measuring will find them, because
+# what is broken is broken in Michael's document.
+#
+# They are all `ISO4035` thin nuts in `TOP_CLAMP_BEARING_MOUNT_1`'s two nut
+# slots across the screw, one in each of the two instances.  The part carries
+# datums for both slots -- see `top-clamp-bearing-mount-1.py` -- and those
+# datums land **exactly** on the four hand-built nut positions, 0.000 mm, which
+# is what says this reading is right rather than merely plausible.  `?Edge39`
+# is the slot at the low X end and `?Edge37` the one at the high, consistently
+# across both instances.
+BY_INSPECTION = {
+    "Stencil_Clamp/Nut003": ("TOP_CLAMP_BEARING_MOUNT_1", "NUT2", "",
+                             "TOP_CLAMP_BEARING_MOUNT_1", "Pocket004.?Edge39"),
+    "Stencil_Clamp/Nut004": ("TOP_CLAMP_BEARING_MOUNT_1", "NUT3",
+                             "TOP_CLAMP_BEARING_MOUNT_1.",
+                             "TOP_CLAMP_BEARING_MOUNT_1",
+                             "TOP_CLAMP_BEARING_MOUNT_1.Pocket004.?Edge37"),
+    "Stencil_Clamp/Nut009": ("TOP_CLAMP_BEARING_MOUNT_1", "NUT2", "",
+                             "TOP_CLAMP_BEARING_MOUNT_001",
+                             "Pocket004.?Edge39"),
+    "Stencil_Clamp/Nut010": ("TOP_CLAMP_BEARING_MOUNT_1", "NUT3",
+                             "TOP_CLAMP_BEARING_MOUNT_001.",
+                             "TOP_CLAMP_BEARING_MOUNT_001",
+                             "TOP_CLAMP_BEARING_MOUNT_001.Pocket004.?Edge37"),
+}
+
+
+def by_inspection(internal):
+    """`BY_INSPECTION`, with each datum's internal object name filled in."""
+    out = {}
+    for name, (part, datum, prefix, via, was) in BY_INSPECTION.items():
+        obj = internal.get(part, {}).get(datum)
+        if obj is None:
+            raise SystemExit(f"{name}: {part} has no datum called {datum} -- "
+                             f"has the part script stopped writing it?")
+        out[name] = {"part": part, "datum": datum, "object": obj,
+                     "prefix": prefix, "was": was, "via_link": via,
+                     "type": "ISO4035", "diameter": "M3",
+                     "along": None, "perp": None, "why": "by inspection"}
+    return out
+
+
 def key(r):
     return (r["part"],
             tuple(round(v, TOL) for v in r["at"]),
@@ -113,6 +159,11 @@ def main():
                 "along": r.get("along"), "perp": r.get("perp")}
         else:
             joints.setdefault(f"{r['assembly']}/{r['joint']}", {})[r["prop"]] = rec
+
+    for name, rec in by_inspection(internal).items():
+        fasteners[name] = rec
+        unmapped[:] = [u for u in unmapped
+                       if f"{u['assembly']}/{u['joint']}" != name]
 
     json.dump({"joints": joints, "fasteners": fasteners,
                "unmapped": unmapped, "internal": internal},

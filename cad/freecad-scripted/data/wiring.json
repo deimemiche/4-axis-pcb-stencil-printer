@@ -1284,6 +1284,32 @@
    "via_link": "TOP_CLAMP_BEARING_MOUNT_002",
    "was": "TOP_CLAMP_BEARING_MOUNT_002.Pocket004.Edge44"
   },
+  "Stencil_Clamp/Nut003": {
+   "along": null,
+   "datum": "NUT2",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "TOP_CLAMP_BEARING_MOUNT_1",
+   "perp": null,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_1",
+   "was": "Pocket004.?Edge39",
+   "why": "by inspection"
+  },
+  "Stencil_Clamp/Nut004": {
+   "along": null,
+   "datum": "NUT3",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "TOP_CLAMP_BEARING_MOUNT_1",
+   "perp": null,
+   "prefix": "TOP_CLAMP_BEARING_MOUNT_1.",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_1",
+   "was": "TOP_CLAMP_BEARING_MOUNT_1.Pocket004.?Edge37",
+   "why": "by inspection"
+  },
   "Stencil_Clamp/Nut005": {
    "along": -18.75,
    "datum": "NUT",
@@ -1331,6 +1357,32 @@
    "type": "ISO4035",
    "via_link": "TOP_CLAMP_BEARING_MOUNT_2",
    "was": "TOP_CLAMP_BEARING_MOUNT_2.Pocket004.Edge44"
+  },
+  "Stencil_Clamp/Nut009": {
+   "along": null,
+   "datum": "NUT2",
+   "diameter": "M3",
+   "object": "LCS004",
+   "part": "TOP_CLAMP_BEARING_MOUNT_1",
+   "perp": null,
+   "prefix": "",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_001",
+   "was": "Pocket004.?Edge39",
+   "why": "by inspection"
+  },
+  "Stencil_Clamp/Nut010": {
+   "along": null,
+   "datum": "NUT3",
+   "diameter": "M3",
+   "object": "LCS005",
+   "part": "TOP_CLAMP_BEARING_MOUNT_1",
+   "perp": null,
+   "prefix": "TOP_CLAMP_BEARING_MOUNT_001.",
+   "type": "ISO4035",
+   "via_link": "TOP_CLAMP_BEARING_MOUNT_001",
+   "was": "TOP_CLAMP_BEARING_MOUNT_001.Pocket004.?Edge37",
+   "why": "by inspection"
   },
   "Stencil_Clamp/Nut011": {
    "along": -18.75,
@@ -3331,6 +3383,8 @@
    "BEARING": "LCS003",
    "HOLDER_FRONT": "LCS002",
    "NUT": "LCS001",
+   "NUT2": "LCS004",
+   "NUT3": "LCS005",
    "SPRING_PLATE": "LCS"
   },
   "TOP_CLAMP_BEARING_MOUNT_2": {

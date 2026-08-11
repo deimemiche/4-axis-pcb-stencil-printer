@@ -66,10 +66,21 @@ def main():
         p_ok = sum(1 for d in dev if d < TOL)
         worst = max(worst, max(dev))
 
-        # bolts: by position, never by name
+        # bolts: by position, never by name -- and on the scripted side, not
+        # selected by name either.  Picking the made bolts out by the hand
+        # document's names looks harmless and is the same trap one step back:
+        # `Screw108` is taken by a mirrored child before the builder gets to
+        # it, so the bolt it authored is called `Screw115` and was left out of
+        # the count entirely, while the mirror standing 18 mm away was counted
+        # in its place.  Six bolts read as missing that were exactly where they
+        # belong.  `asmpose` marks what the assembly itself holds, so take all
+        # of that which is not a part instance: those are the bolts this
+        # document authored, whatever FreeCAD ended up calling them.
         want = {f["name"] for f in spec["fasteners"]}
         h = collections.Counter(spot(hand[n]["pos"]) for n in want if n in hand)
-        m = collections.Counter(spot(made[n]["pos"]) for n in want if n in made)
+        m = collections.Counter(
+            spot(v["pos"]) for n, v in made.items()
+            if v.get("authored") and n not in authored)
         b_ok = sum((h & m).values())
 
         tp += len(shared); op += p_ok

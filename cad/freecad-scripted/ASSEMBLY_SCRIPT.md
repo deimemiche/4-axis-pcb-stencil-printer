@@ -266,7 +266,7 @@ as a diff rather than as an opinion. Datums are what make that expressible:
 ## Where it got to
 
     parts      145/145 exact, worst 0.000000 mm
-    bolts      235/245 exact
+    bolts      244/245 exact
     joints     149, none naming an edge
     datums     308 across 59 part documents, all written by the part scripts
 
@@ -367,16 +367,64 @@ so nothing matched and it wrote nothing -- reporting "0 offsets" and carrying
 on. Eight bolts moved before this was spotted. It now takes the basename and
 refuses a file that is not one of the nine.
 
+### Chasing the last ten bolts
+
+Ten of the 245 were missing after step 6, and every one of them turned out to
+be a name that had moved rather than a datum in the wrong place. Four separate
+things, in the order they came off:
+
+**Four `?Edge` nuts, placed by inspection.** `Stencil_Clamp`'s `Nut003`,
+`Nut004`, `Nut009` and `Nut010` attach to `Pocket004.?Edge39` and `?Edge37` --
+the `?` meaning FreeCAD could not map the element, so the reference comes back
+a **null shape** and there was nothing for step 2 to measure. What is broken is
+broken in the hand-built document, and no amount of measuring finds it. They
+are all `ISO4035` in `TOP_CLAMP_BEARING_MOUNT_1`'s two nut slots across the
+screw, one pair in each of its two instances; the part now carries datums for
+both slots on both hands, and **those datums land on the four hand-built nut
+positions to 0.000 mm**, which is what makes this a reading rather than a
+guess. `wiring.py`'s `BY_INSPECTION` says so out loud.
+
+**A datum addressed by a name the builder does not mint.** `wiring.json`
+records a path of hand-built link names ending in an internal object name --
+`BOT_BRACKET_X_AXIS001.LCS008.` -- and both halves move. `Bottom_Frame` holds
+one X-axis bracket, which the hand document calls `BOT_BRACKET_X_AXIS001` and
+the build calls `BOT_BRACKET_X_AXIS`, so `Nut030` resolved to nothing.
+`asmbuild.datum_sub` now asks the part which of its datums is **labelled**
+`NUT` -- a label is what the part script wrote and nothing downstream renames
+it -- and `_only_instance` finds the link by what it is an instance of where
+the sub-assembly holds exactly one. Two identical builds now hand back
+identical frames for all 244; before, some moved by a whole hole spacing.
+
+**Six bolts that were never missing.** `asmverify` says, and has always said,
+that it does not compare fasteners by name, because a container renames one:
+`Screw108` is taken by a mirrored child before the builder gets to it, so the
+bolt it authored is called `Screw115`. But it still *selected* the scripted
+bolts by the hand document's names -- so `Screw115` was left out of the count
+and the mirror standing 18 mm away was counted in its place. `asmpose` already
+marks what each assembly itself holds; the count uses that now. Measured
+properly, the score before any of this work was 239, not 235.
+
+**A metric that flagged the honest ones.** `calibrate-from-build.py` reported
+every offset more than a millimetre from its datum, which is nine -- including
+a nut sitting 20 mm up a stud, which is exactly what an offset is *for*. It now
+splits the offset **along** the datum's own Z from **across** it, and only
+across is worth reading. 236 of 244 are dead on their datum's axis.
+
 ### What is not done
 
 **One fastener.** `Nut031`'s `BaseObject` lands on `Bottom_Assembly` itself
-rather than on any part, so there is no datum for it to name. The other seven
-of the plan's original eight came back with the eleven datums above.
+rather than on any part, so there is no datum for it to name.
 
-**Ten bolts** are placed but not exactly where the hand-built assembly has
-them, all in `Stencil_Clamp` (4 unplaced), `Bottom_Assembly` (5) and
-`Top_Assembly` (1). Nine of the 239 calibrated offsets sit more than a
-millimetre off their datum, which is the same story from the other end.
+**Eight offsets sit across their datum's axis**, and neither is a fault in the
+datums:
+
+* `Top_Frame`'s six `TOP_CLAMP_Z_AXIS` screws, 3.110 mm each. The build
+  reproduces the hand-built machine exactly there -- 46 of 46 -- so this is
+  where Michael's screws actually are, beside the holes rather than in them.
+* `Bottom_Assembly`'s `Screw140` and `Nut032`, 597 mm. Those two are **adrift
+  in the hand-built assembly**: the nearest authored part to where they sit is
+  245 mm away. The offset is faithfully reproducing two fasteners floating in
+  space, which is worth knowing and not worth "fixing" here.
 
 ### What the plan got wrong
 

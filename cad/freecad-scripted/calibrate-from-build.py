@@ -67,20 +67,28 @@ def main():
         for name, rec in json.load(open(p)).items():
             hand[f"{doc}/{name}"] = rec
 
-    out, big = {}, 0
+    out, off_axis = {}, []
     for key, fr in frames.items():
         rec = hand.get(key)
         if rec is None:
             continue
         finv = inverse(tuple(fr[:3]), tuple(fr[3:]))
         rel = compose(finv, (tuple(rec["pos"]), tuple(rec["rot"])))
-        d = math.dist((0.0, 0.0, 0.0), rel[0])
-        big += d > 1.0
+        # How far the bolt sits from its datum, split the only way that means
+        # anything: **along** the datum's own Z is what an offset is *for* --
+        # a nut 20 mm up a stud is not an error -- while **across** it says
+        # the datum is not on the bolt's line at all.  Reporting the total
+        # distance flagged the honest ones and buried the rest.
+        across = math.hypot(rel[0][0], rel[0][1])
+        if across > 0.05:
+            off_axis.append((across, key))
         out[key] = {"offset": [round(v, 9) for v in tuple(rel[0]) + tuple(rel[1])],
-                    "shift": round(d, 6)}
+                    "along": round(rel[0][2], 6), "across": round(across, 6)}
     json.dump(out, open(out_path, "w"), indent=1, sort_keys=True)
-    print(f"{len(out)} offsets from build-time frames "
-          f"({big} shifted more than 1 mm from their datum)")
+    print(f"{len(out)} offsets from build-time frames, "
+          f"{len(out) - len(off_axis)} of them on their datum's own axis")
+    for across, key in sorted(off_axis, reverse=True):
+        print(f"    {across:9.3f} mm across the axis  {key}")
 
 
 main()

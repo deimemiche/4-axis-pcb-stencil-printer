@@ -279,6 +279,17 @@ def stage_dress():
     `view.py` cannot report a hang, so the check is made from outside, on the
     files: a `.FCStd` is a zip, and either `GuiDocument.xml` is in it or the
     document opens blank.
+
+    **Run this attached to a terminal.**  Backgrounded -- `rebuild.py dress &`
+    -- the stage gets partway through and stops without a word: the parts pass
+    prints, a few assemblies come out dressed, and nothing after that, not even
+    the shortfall this function ends with.  Three runs in a row each dressed a
+    few more and left the rest.  Whatever kills the GUI child takes the parent
+    with it before it can report, so the only sign is that documents are still
+    blank.  If it happens, `view.py` takes one document at a time:
+
+        flatpak run --filesystem=home org.freecad.FreeCAD \\
+            view.py assembly/Top_Assembly.FCStd
     """
     if not os.environ.get("DISPLAY") and not os.environ.get("WAYLAND_DISPLAY"):
         raise SystemExit(

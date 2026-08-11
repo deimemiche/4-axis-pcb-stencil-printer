@@ -110,6 +110,81 @@ def fastener_class(App):
     return cls
 
 
+def _only_instance(link, part):
+    """The one child of `link` that is an instance of the part `part`.
+
+    The prefix `wiring.json` records is a chain of *hand-built* link names, and
+    the builder does not always mint the same ones: `Bottom_Frame` holds a
+    single X-axis bracket, which the hand document called
+    `BOT_BRACKET_X_AXIS001` and the build calls `BOT_BRACKET_X_AXIS`.  The path
+    then resolves to nothing and the nut in that bracket is never placed.
+
+    Where the sub-assembly holds exactly **one** instance of the part, there is
+    no ambiguity about which link was meant, whatever it is called.  Where it
+    holds more than one there is, and this hands back nothing rather than
+    guessing.
+    """
+    found = []
+    for child in getattr(link, "getSubObjects", lambda: ())():
+        try:
+            obj = link.getSubObject(child, retType=1)
+        except Exception:
+            continue
+        tail = obj
+        while tail is not None and tail.TypeId in (
+                "App::Link", "Assembly::AssemblyLink"):
+            tail = tail.LinkedObject
+        if tail is not None and tail.TypeId == "PartDesign::Body" \
+                and tail.Label == part:
+            found.append(child)
+    return found[0] if len(found) == 1 else None
+
+
+def datum_sub(link, prefix, label, name, part=None):
+    """Where a datum is *now*, addressed by what the part script called it.
+
+    `wiring.json` records a path made of names read out of the **hand-built**
+    documents -- a chain of link names and then the datum's own internal object
+    name, `BOT_BRACKET_X_AXIS001.LCS008.`.  Both halves of that are fragile.
+    An internal name depends on the order objects were created in, and the
+    builder does not always mint the same link names the hand document had: a
+    sub-assembly holding one X-axis bracket calls it `BOT_BRACKET_X_AXIS` where
+    the hand document called it `BOT_BRACKET_X_AXIS001`, so the path resolves
+    to nothing and the nut in that bracket is never placed.
+
+    What does not move is the **label**: `BOLT4` is what the part script wrote,
+    and nothing downstream renames it.  So this walks the path and asks the
+    part which of its datums is called `label`, falling back to the recorded
+    name only when it cannot.  Where the prefix itself is the part that will
+    not resolve, `_only_instance` finds the link by what it is an instance of.
+    """
+    owner, used = link, prefix
+    if prefix:
+        try:
+            owner = link.getSubObject(prefix, retType=1)
+        except Exception:
+            owner = None
+        if owner is None and part:
+            found = _only_instance(link, part)
+            if found:
+                used = found
+                try:
+                    owner = link.getSubObject(found, retType=1)
+                except Exception:
+                    owner = None
+    if owner is None or not label:
+        return used + name + "."
+    while owner.TypeId in ("App::Link", "Assembly::AssemblyLink"):
+        if owner.LinkedObject is None:
+            return used + name + "."
+        owner = owner.LinkedObject
+    group = getattr(owner, "Group", None) or getattr(owner, "OutList", ())
+    for o in group:
+        if o.TypeId == "PartDesign::CoordinateSystem" and o.Label == label:
+            return used + o.Name + "."
+    return used + name + "."
+
+
 def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes,
                     offsets, frames=None):
     """Every fastener, put where its datum is.
@@ -132,7 +207,8 @@ def place_fasteners(App, doc, asm, spec, wiring, links, fcls, notes,
         if link is None:
             notes.append(f"fastener {f['name']}: no link {f['base']['via']}")
             continue
-        sub = w.get("prefix", "") + w["object"] + "."
+        sub = datum_sub(link, w.get("prefix", ""), w.get("datum"),
+                        w["object"], w.get("part"))
         try:
             datum = link.getSubObject(sub, retType=1)
         except Exception as e:
