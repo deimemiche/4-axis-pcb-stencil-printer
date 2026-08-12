@@ -188,7 +188,7 @@ def top_clamp_z_axis(doc):
     # a face's own frame sits at its centre of area -- the clamp's top face is
     # the body's outline with the boss and the saw cut taken out of it, so its
     # middle is not on any dimension here.  Kept as measured; see
-    # ASSEMBLY_SCRIPT.md, step 6.
+    # ASSEMBLY.md Part II, step 6.
     fcprim.lcs(bdy, "ROD2", at=(1.9601, body_y[1], 0.2527), axis=(0, 1, 0),
                roll=180.0)
 

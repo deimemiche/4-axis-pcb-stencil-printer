@@ -4,9 +4,9 @@ freecadcmd swallows tracebacks -- a script that raises simply prints nothing --
 so every build goes through here instead:
 
     flatpak run --command=freecadcmd --filesystem=home org.freecad.FreeCAD \
-        cad/freecad/build.py                     # everything
+        cad/freecad-scripted/code/pipeline/build.py   # everything
     flatpak run --command=freecadcmd --filesystem=home org.freecad.FreeCAD \
-        cad/freecad/build.py eccf/eccf-bot.py    # just one
+        cad/freecad-scripted/code/pipeline/build.py eccentric-clamp/eccf-bot.py
 
 Paths are relative to this directory.  With no arguments every part script in
 every group is rebuilt, in group order.
@@ -16,7 +16,13 @@ import os
 import sys
 import traceback
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
+
+# Every part script says a bare `import fcprim`, and nothing else puts the
+# library within reach: Python seeds sys.path with *this* script's folder,
+# which is `pipeline/`, not `lib/`.  Until these two lived apart the import
+# resolved by accident, because build.py sat next to fcprim.py.
+sys.path.insert(0, os.path.join(HERE, "code", "lib"))
 # The part folders, named for the sub-assembly each part belongs to.  `stock/`
 # is what is bought or cut to length, `shared/` the two printed parts more than
 # one sub-assembly uses, `archive/` what no assembly consumes any more.

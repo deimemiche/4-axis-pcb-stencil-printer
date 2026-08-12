@@ -1,4 +1,4 @@
-"""Step 6 of ASSEMBLY_SCRIPT.md: say what each measured datum is *made of*.
+"""Step 6 of ASSEMBLY.md Part II: say what each measured datum is *made of*.
 
 **Read-only.**  `datum-plan.json` holds 308 datum positions as literals, because
 that is what a measurement off the hand-built assembly gives.  This asks the
@@ -42,8 +42,8 @@ import re
 import sys
 import traceback
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-PLAN = os.path.join(HERE, "datum-plan.json")
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
+PLAN = os.path.join(HERE, "data", "datum-plan.json")
 TOL = 1e-6          # a match is exact: both numbers came out of the same build
 DIM = 1e-6          # ... and so does a coordinate matching a dimension
 

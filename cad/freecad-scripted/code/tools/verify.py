@@ -9,7 +9,8 @@ Points within `skin` of the solid's surface are excused, because there the mesh
 and the true surface legitimately differ by the faceting error.  That test is
 expensive, so it only runs on the points that actually disagreed.
 
-    freecadcmd cad/freecad/verify.py cad/freecad/eccf/ECCF_BOT.FCStd \
+    freecadcmd cad/freecad-scripted/code/tools/verify.py \
+        cad/freecad-scripted/eccentric-clamp/ECCF_BOT.FCStd \
         cad/original-stl/ECCF_BOT.stl [--samples=20000]
 """
 import random

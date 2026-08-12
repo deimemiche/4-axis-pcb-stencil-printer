@@ -1,5 +1,12 @@
 # Reconstruction status
 
+> **On the `asm/*.py` names below.** A few findings here are attributed to
+> `asm/stock.py`, `asm/column.py`, `asm/check.py` or `asm/machine.py`. Those
+> belonged to the first scripted assembly, retired in commit `a8a1611`; the
+> assembly is now written by [`code/pipeline/asmbuild.py`](code/pipeline/asmbuild.py) into
+> [`assembly/`](assembly/). The names are kept because they record how each thing
+> was found, and the findings still hold. See `ASSEMBLY.md`.
+
 ## The parts that were drawn, not reverse engineered
 
 The author published the aluminium as proper 2D drawings rather than as meshes,
@@ -348,9 +355,9 @@ It also checks work. `export.py` tessellates a built body back to STL, and
 rendering the two together in different colours settles at a glance what a
 volume figure cannot: whether a thread runs the right way round.
 
-    python3 cad/freecad/stlrender.py cad/original-stl/ECCF_LEVER.stl
-    fc cad/freecad/export.py cad/freecad/rotation-table/SR_WORM_GEAR.FCStd built.stl
-    python3 cad/freecad/stlrender.py cad/original-stl/SR_WORM_GEAR.stl built.stl cmp.png
+    python3 cad/freecad-scripted/code/tools/stlrender.py cad/original-stl/ECCF_LEVER.stl
+    fc cad/freecad-scripted/code/tools/export.py cad/freecad-scripted/rotation-table/SR_WORM_GEAR.FCStd built.stl
+    python3 cad/freecad-scripted/code/tools/stlrender.py cad/original-stl/SR_WORM_GEAR.stl built.stl cmp.png
 
 ## The one thing a revolve cannot do
 

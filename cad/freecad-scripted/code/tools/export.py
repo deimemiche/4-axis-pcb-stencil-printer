@@ -1,6 +1,7 @@
 """Tessellate a built body back to STL, so it can be looked at or diffed.
 
-    freecadcmd cad/freecad/export.py cad/freecad/sr/SR_WORM_GEAR.FCStd out.stl
+    freecadcmd cad/freecad-scripted/code/tools/export.py \
+        cad/freecad-scripted/rotation-table/SR_WORM_GEAR.FCStd out.stl
 
 Written for `stlrender.py`: rendering the reconstruction over the original in
 two colours shows up a wrong handedness, a mirrored profile or a phase error at

@@ -13,9 +13,9 @@ is the one script here that runs under the full FreeCAD binary rather than
 under `freecadcmd`:
 
     flatpak run --filesystem=home \\
-        org.freecad.FreeCAD cad/freecad-scripted/view.py           # everything
+        org.freecad.FreeCAD cad/freecad-scripted/code/pipeline/view.py           # everything
     flatpak run --filesystem=home \\
-        org.freecad.FreeCAD cad/freecad-scripted/view.py shared/BOT_HANDWHEEL.FCStd
+        org.freecad.FreeCAD cad/freecad-scripted/code/pipeline/view.py shared/BOT_HANDWHEEL.FCStd
 
 Paths are relative to this directory.  Run it after `build.py` -- building
 stays headless, and this dresses what the build produced.
@@ -50,8 +50,8 @@ import FreeCAD as App
 import FreeCADGui as Gui
 from FreeCAD import Rotation, Vector
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
+sys.path.insert(0, os.path.join(HERE, "code", "lib"))
 
 import fcprim  # noqa: E402  (needs the path above)
 from doclist import documents  # noqa: E402  (same)

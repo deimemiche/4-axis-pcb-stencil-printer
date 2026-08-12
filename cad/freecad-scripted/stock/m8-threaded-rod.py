@@ -156,7 +156,7 @@ def studding(doc, length):
     # the rod's axis, so FreeCAD's own frame for it sits a third of a
     # millimetre off centre.  It is kept as measured, because moving it onto
     # the axis would move both eccenter halves by that much.  See
-    # ASSEMBLY_SCRIPT.md, step 6.
+    # ASSEMBLY.md Part II, step 6.
     fcprim.lcs(bdy, "ECC_BOT", at=(end_face_centre, 0.0, 0.0), axis=(0, 0, -1),
                roll=180.0)
     fcprim.lcs(bdy, "ECC_TOP", at=(end_face_centre, 0.0, length), axis=(0, 0, 1))

@@ -17,7 +17,7 @@ never open together.
 import os, sys, traceback
 
 def say(*a): os.write(1, (" ".join(str(x) for x in a) + "\n").encode())
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
 TYPES = ("ISO4762", "DIN934", "ISO4035", "ISO4027", "IUTHeatInsert")
 
 def main():

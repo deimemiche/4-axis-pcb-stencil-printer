@@ -32,14 +32,15 @@ labels are FreeCAD's own `M4x10-Screw049` and drift as things are added.
 
 import json
 import os
+import re
 import sys
 import traceback
 from collections import defaultdict
 
 import FreeCAD as App
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
+sys.path.insert(0, os.path.join(HERE, "code", "lib"))
 from categories import GROUPS, category   # noqa: E402
 
 ASM = os.path.join(HERE, "assembly")
@@ -91,6 +92,36 @@ def designation(obj):
     length = str(getattr(obj, "Length", "") or "").strip()
     name = STANDARD.get(kind, kind)
     return f"{name} {size}x{length}" if length else f"{name} {size}"
+
+
+# What a fastener is, before what size it is.  Ordered as somebody sorting a
+# drawer would: the screws, then the nuts that go on them, then washers, then
+# the odd one out.  `screw` is tested first on purpose -- "set screw" is a
+# screw, and nothing that is really a nut has the word "screw" in its name.
+FAMILY = ("screw", "nut", "washer", "insert")
+
+
+def fastener_key(part):
+    """Sort a fastener by what it is, then by thread, then by length.
+
+    `designation` builds every row as `<standard and name> M<size>[x<length>]`,
+    so the thread and the length come straight back off the end of it, and the
+    family off the name -- which is what makes `DIN 934 hex nut M3` and
+    `ISO 4035 thin hex nut M3` land together whichever standard drew them.
+
+    Sorting the text instead would order by standard number, putting the M8
+    nuts of ISO 4035 above the M3 screws of ISO 4762; sorting by quantity, as
+    every other table here does, scatters each thread size down the column.
+    Neither is a list you can take to a drawer.  Length is numeric for the
+    same reason: as text, `M4x6` follows `M4x14`.
+    """
+    text = part.lower()
+    family = next((i for i, word in enumerate(FAMILY) if word in text),
+                  len(FAMILY))
+    m = re.search(r"\bM(\d+(?:\.\d+)?)(?:x(\d+(?:\.\d+)?))?", part)
+    size = float(m.group(1)) if m else 0.0
+    length = float(m.group(2)) if m and m.group(2) else 0.0
+    return (family, size, length, part)
 
 
 def part_name(link):
@@ -171,7 +202,8 @@ def markdown(count, name, gap=None):
     total = sum(sum(v.values()) for v in count.values())
     out = [f"# Bill of materials -- {name.replace('_', ' ')}", "",
            "Counted by walking the built assembly, not kept by hand: see",
-           "[`cad/freecad-scripted/bom.py`](cad/freecad-scripted/bom.py).",
+           "[`cad/freecad-scripted/code/pipeline/bom.py`]"
+           "(cad/freecad-scripted/code/pipeline/bom.py).",
            "A part inside a sub-assembly that is linked four times is counted",
            "four times, so these are the numbers to order.", "",
            f"**{total} pieces in all.**", ""]
@@ -198,8 +230,14 @@ def markdown(count, name, gap=None):
         out += [f"## {titles[group]}", "",
                 f"{len(rows)} distinct, {pieces} pieces.", "",
                 "| Qty | Part |", "|---:|:---|"]
-        for part, n in sorted(rows.items(), key=lambda kv: (-kv[1], kv[0])):
-            out.append(f"| {n} | {part} |")
+        # The fasteners are a shopping list and sort like one -- by what the
+        # thing is, then its thread, then its length.  Everything else sorts
+        # by how many you need, which is what you want of parts that have no
+        # size to order by.
+        order = (fastener_key if group == "Norm_parts"
+                 else (lambda kv: (-rows[kv], kv)))
+        for part in sorted(rows, key=order):
+            out.append(f"| {rows[part]} | {part} |")
         out.append("")
     drawn = count.get("CNC") or {}
     if drawn:

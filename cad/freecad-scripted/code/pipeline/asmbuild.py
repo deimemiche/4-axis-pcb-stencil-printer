@@ -1,4 +1,4 @@
-"""Step 4 of ASSEMBLY_SCRIPT.md: build the nine assemblies from the model.
+"""Step 4 of ASSEMBLY.md Part II: build the nine assemblies from the model.
 
     ASM_MODEL=model.json ASM_WIRING=wiring.json \
     flatpak run --command=freecadcmd --filesystem=home \
@@ -31,10 +31,10 @@ import os
 import sys
 import traceback
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
+sys.path.insert(0, os.path.join(HERE, "code", "lib"))
 from categories import GROUPS, category  # noqa: E402
 
-HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "assembly")
 
 # Leaves first: a container can only link a sub-assembly that already exists.

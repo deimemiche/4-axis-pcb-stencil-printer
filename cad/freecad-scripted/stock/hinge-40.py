@@ -196,7 +196,7 @@ def hinge_leaf(doc):
     # notched, so that centre is not the middle of the leaf and the numbers
     # below are not dimensions of anything.  They are kept as measured, because
     # the assembly is held against the machine Michael built and moving them
-    # would move what hangs off them.  See ASSEMBLY_SCRIPT.md, step 6.
+    # would move what hangs off them.  See ASSEMBLY.md Part II, step 6.
     fcprim.lcs(bdy, "FACE1", at=(0.0, 11.3095, length / 2.0),
                axis=(1, 0, 0), roll=180.0)
     fcprim.lcs(bdy, "FACE2", at=(0.0, 12.25, station), axis=(1, 0, 0),

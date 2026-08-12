@@ -2,6 +2,8 @@
 *.3mf
 *.stl
 *.step
+
+# FreeCAD leaves one of these beside every document it saves
 *.FCBak
 
 # And some resin printing-related file formats.
@@ -18,15 +20,6 @@ output/
 venv/
 __pycache__
 dist/
-
-# FreeCAD backups
-*.FCBak
-
-# The author's own build-step renders, fetched by asm/reference.py
-cad/freecad/asm/reference/
-
-# FreeCAD leaves these beside every document it saves
-*.FCBak
 
 # Written only by `rebuild.py assemble --calibrate`, and only so that
 # calibrate-from-build.py can read the frames that run used.  Regenerated every

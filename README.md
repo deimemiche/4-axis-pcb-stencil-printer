@@ -47,7 +47,7 @@ or just to increase overall rigidity of the top frame when closed, this is the d
 
 Status: in use
 
-Both halves are also in the FreeCAD assembly, as [`cad/freecad/mod/`](cad/freecad/mod/)
+Both halves are also in the FreeCAD assembly, as [`cad/freecad-scripted/archive/`](cad/freecad-scripted/archive/)
 `TOP_HINGE_LOCK_BACK` and `TOP_HINGE_LOCK_FRONT`, transcribed from
 [`cad/archive/hinge-lock.py`](cad/archive/hinge-lock.py) and checked against its own solids.
 
@@ -61,6 +61,7 @@ Status: in use
 
 * [`technical-drawings/`](technical-drawings/) - technical drawings in DXF and PDF formats for CNC manufacturing
 * [`cad/`](cad/) - source CAD files, either original author's (STLs), or mine (FreeCAD, CadQuery)
-* [`cad/freecad/`](cad/freecad/) - the original author's STLs rebuilt as editable FreeCAD parts, with the tools that measure and check them
-* [`cad/freecad/asm/`](cad/freecad/asm/) - the whole machine as a FreeCAD assembly, **with the mods above**: all eighteen build steps, held together by joints and checked for interference, alignment and fit ([`ASSEMBLY.md`](cad/freecad/ASSEMBLY.md))
+* [`cad/freecad/`](cad/freecad/) - the assembly Michael built by hand in the GUI; nothing in it can rebuild a part
+* [`cad/freecad-scripted/`](cad/freecad-scripted/) - the original author's STLs rebuilt as editable FreeCAD parts, with the tools that measure and check them
+* [`cad/freecad-scripted/assembly/`](cad/freecad-scripted/assembly/) - the whole machine as a FreeCAD assembly, **with the mods above**: all eighteen build steps, held together by joints and checked for interference, alignment and fit ([`ASSEMBLY.md`](cad/freecad-scripted/ASSEMBLY.md))
 * [`docs/`](docs/) - documentation

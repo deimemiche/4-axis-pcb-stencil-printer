@@ -33,7 +33,7 @@ import sys
 import xml.etree.ElementTree as ET
 import zipfile
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
 TOL, ATOL, RTOL = 4, 6, 3
 
 # Stock and other parts whose name says nothing useful on its own.

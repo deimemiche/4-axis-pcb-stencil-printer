@@ -9,7 +9,7 @@ solves land about 1e-5 mm apart, so anything under that is noise.
 import json, math, os, sys, traceback
 
 def say(*a): os.write(1, (" ".join(str(x) for x in a) + "\n").encode())
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
 
 def poses(App, path):
     doc = App.openDocument(path)

@@ -159,7 +159,7 @@ def bearing_mount(doc, name, hand=1):
         # The barrel's near end, measured on that *face*, whose own frame sits
         # at its centre of area -- the plate has taken a bite out of it, so
         # that centre is off the screw's axis by a number that is not a
-        # dimension here.  Kept as measured; see ASSEMBLY_SCRIPT.md, step 6.
+        # dimension here.  Kept as measured; see ASSEMBLY.md Part II, step 6.
         fcprim.lcs(bdy, "BEARING", at=(screw_x[0], 0.0, 0.6556), axis=(1, 0, 0),
                    roll=180.0)
         # The two nuts across the screw, which this hand needs as much as the

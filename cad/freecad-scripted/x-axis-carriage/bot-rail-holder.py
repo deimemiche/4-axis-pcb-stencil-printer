@@ -145,7 +145,7 @@ def bot_rail_holder(doc):
     # Two the assembly measured on a *face* rather than on anything drawn, and
     # a face's own frame sits at its centre of area -- so these two heights are
     # not dimensions of anything: the collar's outline is lobes and blends, and
-    # that is where its middle falls.  Kept as measured; see ASSEMBLY_SCRIPT.md,
+    # that is where its middle falls.  Kept as measured; see ASSEMBLY.md Part II,
     # step 6.  Both are on the collar's own front face, `FACE` looking out
     # along the rail and `FRAME` back down it.
     fcprim.lcs(bdy, "FACE", at=(0.0, 4.1272, boss_z), axis=(1, 0, 0),

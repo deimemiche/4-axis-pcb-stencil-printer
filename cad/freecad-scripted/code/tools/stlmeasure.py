@@ -13,8 +13,8 @@ exactly the information needed to redraw the part as sketches and pads.
 Uses nothing but the standard library, so it runs under plain python3 as well as
 under FreeCAD's interpreter:
 
-    python3 cad/freecad/stlmeasure.py cad/original-stl/BOT_RAIL_HOLDER.stl
-    python3 cad/freecad/stlmeasure.py cad/original-stl/*.stl --summary
+    python3 cad/freecad-scripted/code/tools/stlmeasure.py cad/original-stl/BOT_RAIL_HOLDER.stl
+    python3 cad/freecad-scripted/code/tools/stlmeasure.py cad/original-stl/*.stl --summary
 """
 
 import math

@@ -101,7 +101,7 @@ def top_clamp_spanner_case_2(doc):
     # `FRAME` is the plate's own top edge, and the assembly measured it on that
     # *face* -- whose frame sits at its centre of area, which the two corner
     # radii move off the middle.  The height and the depth are the part's; the
-    # position along it is kept as measured.  See ASSEMBLY_SCRIPT.md, step 6.
+    # position along it is kept as measured.  See ASSEMBLY.md Part II, step 6.
     fcprim.lcs(bdy, "FRAME", at=(floor_x, plate_half_y, -17.6635),
                axis=(0, -1, 0), roll=90.0)
 

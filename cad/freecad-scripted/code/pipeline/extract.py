@@ -1,4 +1,4 @@
-"""Step 1 of ASSEMBLY_SCRIPT.md: the nine hand-built assemblies to a neutral model.
+"""Step 1 of ASSEMBLY.md Part II: the nine hand-built assemblies to a neutral model.
 
 **Read-only.**  Opens each document, records what is authored in it, and closes
 it without saving.  Nothing here writes to `../freecad/`.
@@ -30,7 +30,7 @@ import os
 import sys
 import traceback
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
 ASSEMBLIES = os.path.normpath(os.path.join(HERE, "..", "freecad", "assembly"))
 
 LINK_TYPES = ("App::Link", "Assembly::AssemblyLink")

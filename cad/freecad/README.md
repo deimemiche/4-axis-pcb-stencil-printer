@@ -25,7 +25,7 @@ rebuild anything**, which is the guarantee stated as a fact about the filesystem
 rather than as a rule someone has to remember.
 
 The scripts, and the work of rebuilding the assembly from Python, are next door
-in [`../freecad-scripted/`](../freecad-scripted/). See its `ASSEMBLY_SCRIPT.md`.
+in [`../freecad-scripted/`](../freecad-scripted/). See its `ASSEMBLY.md`, Part II.
 
 ## Never open both trees in one FreeCAD session
 
@@ -43,5 +43,5 @@ takes a named path, so from `../freecad-scripted/`:
 
 ```
 flatpak run --filesystem=home --env=QT_QPA_PLATFORM=offscreen \
-    org.freecad.FreeCAD view.py ../freecad/assembly/Top_Frame.FCStd
+    org.freecad.FreeCAD code/pipeline/view.py ../freecad/assembly/Top_Frame.FCStd
 ```

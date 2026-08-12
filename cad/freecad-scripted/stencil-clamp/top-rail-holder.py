@@ -134,7 +134,7 @@ def top_rail_holder(doc):
     # `FRAME` is the collar's own front face, and the assembly measured it
     # there -- a face's frame sits at its centre of area, and this outline is
     # lobes and blends, so neither number below is a dimension of anything.
-    # Kept as measured; see ASSEMBLY_SCRIPT.md, step 6.
+    # Kept as measured; see ASSEMBLY.md Part II, step 6.
     fcprim.lcs(bdy, "FRAME", at=(0.0, -2.5, -3.1863), axis=(-1, 0, 0),
                roll=270.0)
 

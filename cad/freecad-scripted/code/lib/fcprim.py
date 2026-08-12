@@ -14,7 +14,7 @@ sensibly in the Elements/Constraints panel.
 
 Run with FreeCAD's own interpreter, e.g.:
 
-    freecadcmd cad/freecad/bot-right-angle-con.py
+    freecadcmd cad/freecad-scripted/code/pipeline/build.py archive/bot-right-angle-con.py
 """
 
 import json
@@ -863,7 +863,7 @@ def datum_plan():
     `datum-plan.json` says, for every part the assembly joins, where each joint
     and each fastener actually attaches -- measured off Michael's hand-built
     assembly by `datums.py`, named by what mates there by `datum-names.py`.
-    See `ASSEMBLY_SCRIPT.md`.
+    See `ASSEMBLY.md`, Part II.
 
     The positions are **literals**, because that is what a measurement gives.
     Step 6 moves each one into the part script as an expression in that part's
@@ -875,8 +875,12 @@ def datum_plan():
     """
     global _DATUM_PLAN
     if _DATUM_PLAN is None:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            "datum-plan.json")
+        # code/lib/fcprim.py -> the tree root -> data/, where the plan is
+        # committed alongside everything else the pipeline derives.
+        path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(
+                os.path.abspath(__file__)))),
+            "data", "datum-plan.json")
         try:
             with open(path) as fh:
                 _DATUM_PLAN = json.load(fh)

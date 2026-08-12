@@ -1,4 +1,4 @@
-"""Step 2 of ASSEMBLY_SCRIPT.md: where every joint's datum would have to go.
+"""Step 2 of ASSEMBLY.md Part II: where every joint's datum would have to go.
 
 **Read-only.**  Opens an assembly, asks FreeCAD where each joint's coordinate
 system actually sits, expresses it in the part's own local frame, deduplicates,
@@ -29,7 +29,7 @@ import os
 import sys
 import traceback
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
 ASSEMBLIES = os.path.normpath(os.path.join(HERE, "..", "freecad", "assembly"))
 TOL = 4          # decimal places position is rounded to when deduplicating
 ATOL = 6         # ... and direction

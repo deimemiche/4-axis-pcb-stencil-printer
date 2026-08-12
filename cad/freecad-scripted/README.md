@@ -12,25 +12,62 @@ the parts can be opened without running anything.
 
 ## Layout
 
-```
-fcprim.py        the helper library every part script is written against
-stlmeasure.py    measures the original meshes: layers, outlines, bores
-build.py         rebuilds part scripts and reports which ones failed
-view.py          gives the built .FCStd the view data a GUI needs to show it
-verify.py        point-samples a built solid against the mesh it came from
-stlrender.py     draws a mesh, so a shape can be looked at rather than guessed
-export.py        tessellates a built body back to STL, to render against the
-                 original
+**Everything that is code is under `code/`; everything else is CAD.** That is
+the whole of the top level: one folder of scripts, then the parts, the assembly
+they go into, and what the pipeline derives.
 
-rebuild.py       drives every stage below, from the hand-built assembly to the
-                 scripted one; see ASSEMBLY_SCRIPT.md
-datum-plan.json  where every joint and every bolt attaches, measured off the
-                 hand-built assembly -- the **answer key** the part scripts'
-                 own datums are held against, part by part, at build time
-datum-derive.py  read-only: which sketched feature each of those measurements
-                 sits on, which is how the numbers became expressions
-asmverify.py     the scripted assembly against the hand-built one: 145/145
-                 parts at 0.000000 mm, 245 of 245 bolts
+```
+code/            the only scripts here; nothing outside it runs
+  rebuild.py       drives every stage below, in order; `--list` says what they are
+
+  lib/           imported by the scripts, never run on its own
+    fcprim.py      the helper library every part script is written against
+    doclist.py     which built documents exist, and in what order to touch them
+    categories.py  which family a part belongs to, for the BOM
+
+  pipeline/      the stages rebuild.py runs, in this order
+    extract.py     the nine hand-built documents -> data/model.json
+    datums.py      every joint and fastener reference measured -> data/datums.json
+    datum-names.py named for what mates there -> data/datum-plan.json
+    build.py       rebuilds the 60 part scripts and reports which ones failed
+    wiring.py      old edge name -> new datum -> data/wiring.json
+    asmpose.py     an assembly's solved placements, to compare against
+    fastener-seed.py  mints the seed document the builder clones its bolts from
+    asmbuild.py    writes the nine scripted documents in assembly/
+    calibrate-from-build.py  fastener offsets, measured off an assembled build
+    view.py        gives a built .FCStd the view data a GUI needs to show it
+    drawings.py    the eight made parts as TechDraw sheets, dimensioned
+    drawings-pdf.py  those sheets to PDF -- needs a real display
+    bom.py         counts what the machine is made of -> data/bom.json, BOM.md
+    asmverify.py   the scripted assembly against the hand-built one: 145/145
+                   parts at 0.000000 mm, 245 of 245 bolts
+
+  tools/         run by hand, on a mesh or on a built part; no stage calls them
+    stlmeasure.py  measures the original meshes: layers, outlines, bores
+    stlrender.py   draws a mesh, so a shape can be looked at rather than guessed
+    verify.py      point-samples a built solid against the mesh it came from
+    export.py      tessellates a built body back to STL, to render against the
+                   original
+    calibrate.py   a fastener's offset measured in the frame the builder uses;
+                   the pipeline calibrates from a build instead
+    datum-derive.py  which sketched feature each measurement sits on, which is
+                   how the numbers became expressions
+    datum-report.py  reads data/datums.json and says what is in it
+    asmdiff.py     one scripted document against its hand-built twin
+
+data/            everything the pipeline derives, committed so that reading it
+                 needs neither FreeCAD nor half an hour
+  datum-plan.json  where every joint and every bolt attaches, measured off the
+                   hand-built assembly -- the **answer key** the part scripts'
+                   own datums are held against, part by part, at build time
+  fastener-offsets.json  how far each bolt stands off its datum, calibrated
+                   once from an assembled build and then committed
+  model.json       the nine hand-built documents as one neutral model
+  datums.json      every joint and fastener reference, measured
+  wiring.json      old edge name -> new datum
+  bom.json         the counted machine, which BOM.md is written from
+  datum-proposal.txt  the plan again, as something a human can read
+  hand/ made/      solved placements, hand-built and scripted, to compare
 
 stock/           bought or cut to length, never printed: 2020 extrusion, D8
                  rod and tube, M5 and M8 studding, LM8UU, the alpha axis's ball
@@ -46,11 +83,28 @@ stencil-clamp/   the four stencil holder angles, the clamp bearing mounts, nut
                  holder, stop, rail holder and spring plate
 shared/          the only two printed parts more than one sub-assembly uses
 archive/         built, and consumed by no assembly any more
-asm/             the machine itself: the parts put together with real joints
-asm/render/      four views of each assembly, drawn by asm/render.py
+assembly/        the machine itself: the parts put together with real joints,
+                 written by code/pipeline/asmbuild.py
 ```
 
-The folders are named for the **sub-assembly each part belongs to**, so what
+**Three kinds of script inside `code/`, and the split is what each one is for.**
+`lib/` is imported and never run; `pipeline/` is what
+[`rebuild.py`](code/rebuild.py) drives, in the order listed; `tools/` is what you
+run yourself when reading a mesh or checking one part, and no stage depends on
+any of it.
+
+Every part script says a bare `import fcprim`, which resolves because
+`code/pipeline/build.py` puts `code/lib/` on `sys.path` before it execs one. That
+is the one piece of plumbing this split needs: while every script sat in one
+folder the import worked by accident, `build.py` having been next to `fcprim.py`.
+
+**The part folders did not move, and that is deliberate.** The nine documents in
+`assembly/` hold 134 links spelled as relative paths -- `../shared/BOT_BRACKETS.FCStd`
+and the like -- so renaming or reparenting a part folder breaks every one of
+them until the whole assembly is rebuilt. Separating the code cost nothing;
+separating the parts would have cost that.
+
+The part folders are named for the **sub-assembly each part belongs to**, so what
 `Bottom_Frame` needs is answerable with `ls`. Three kinds of part cut across
 that: what is bought rather than printed goes to `stock/`, the two printed parts
 with more than one consumer go to `shared/`, and what no assembly consumes any
@@ -100,27 +154,20 @@ the way the plates are instead: arithmetic on the numbers the source states, and
 arithmetic cannot reach. `STATUS.md` says which is which, and what each
 transcription had to decide.
 
-`asm/` is the assembly, built with the Assembly workbench so the machine is held
-together by joints and can be driven to any pose rather than frozen in one. It
-covers all eighteen of the build manual's steps, as **Michael's** machine rather
-than the author's original -- the linear Z axis and the workholding top plate
-are in it. [`ASSEMBLY.md`](ASSEMBLY.md) is the plan and the progress against it.
+[`assembly/`](assembly/) is the assembly: nine documents built with the Assembly
+workbench, so the machine is held together by joints rather than frozen in one
+pose. It covers all eighteen of the build manual's steps, as **Michael's**
+machine rather than the author's original -- the linear Z axis and the
+workholding top plate are in it. [`ASSEMBLY.md`](ASSEMBLY.md) is the record:
+Part I what the machine is, Part II how these documents are produced.
 
 The top frame is a **lid**: a hinge bar carried on the two Z rods, and the
-stencil frame hinged off it so it swings up to put a board in. Any of the pose's
-numbers can be given on the command line, so
+stencil frame hinged off it so it swings up to put a board in.
 
-```
-... asm/machine.py lid=60
-```
-
-builds it open, as `MachineOpen.FCStd`, and checks it in that pose too.
-
-The microscope column had a second assembly driven the same way, posed by its
-carriage height. It went when the column was shelved; the parts it linked are
-in [`../archive/scope/`](../archive/scope/).
-
-Both assemblies have to be run **after** `build.py`, and neither is run by it.
+`code/pipeline/asmbuild.py` writes all nine, and it has to run **after**
+`code/pipeline/build.py` rather than as part of it. A link records when the part it
+points at was last written, so an assembly built before its parts is an assembly
+of whatever the last run left behind.
 A link records when the part it points at was last written, so an assembly
 built before its parts is an assembly of whatever the last run left behind.
 
@@ -142,7 +189,7 @@ are drilled from, never a coordinate copied out of an assembly. There are 308
 of them across 59 documents, and `fcprim.apply_datums` checks each one against
 `datum-plan.json` -- the position the hand-built assembly actually joins at --
 every time the part is built. An expression that lands anywhere else fails the
-build. `ASSEMBLY_SCRIPT.md`'s step 6 has the whole of it.
+build. [`ASSEMBLY.md`](ASSEMBLY.md)'s Part II, step 6, has the whole of it.
 
 The exceptions are the **bought stock**, which was never printed and so was
 never an STL. All of it is in `stock/`, because a rod or a length of extrusion
@@ -188,8 +235,8 @@ surface that never leaves a printed nut or a clearance hole, while the same
 thread over 55 mm is 44 turns and this is the rod you take hold of and turn to
 level the machine.
 
-The plain ones are the same solids `asm/stock.py` builds for the assembly --
-each agrees with it to **zero volume** -- drawn as sketches and pads instead of
+The plain ones agreed to **zero volume** with the solids the retired `asm/`
+attempt built for its own assembly -- drawn here as sketches and pads instead of
 booleans so they can be opened and edited like everything else here. Their
 checks are arithmetic rather than a mesh comparison: a rod is `pi/4 d^2 L`, and
 the extrusion's section is held against the 196 mm2 a real 20 x 20 slot 6
@@ -256,8 +303,8 @@ So a part is only the right colour once **both** have run, which is the order
 they already run in:
 
 ```sh
-fc cad/freecad/build.py stock/tube-d8.py     # material card, and PartMaterial
-fcgui cad/freecad/view.py stock/TUBE_D8_170.FCStd   # the colour, and the camera
+fc cad/freecad-scripted/code/pipeline/build.py stock/tube-d8.py     # material card, and PartMaterial
+fcgui cad/freecad-scripted/code/pipeline/view.py stock/TUBE_D8_170.FCStd   # the colour, and the camera
 ```
 
 `build.py` used to lose all of this: it writes a new document from a script,
@@ -277,8 +324,8 @@ FreeCAD 1.1 is needed. With the flatpak:
 ```sh
 alias fc='flatpak run --command=freecadcmd --filesystem=home org.freecad.FreeCAD'
 
-fc cad/freecad/build.py                    # rebuild everything
-fc cad/freecad/build.py eccentric-clamp/eccf-bot.py   # rebuild one part
+fc cad/freecad-scripted/code/pipeline/build.py                    # rebuild everything
+fc cad/freecad-scripted/code/pipeline/build.py eccentric-clamp/eccf-bot.py   # rebuild one part
 ```
 
 Run from the repository root. `build.py` exists because `freecadcmd` swallows
@@ -291,8 +338,8 @@ Then dress what was built, so that opening it shows something:
 alias fcgui='flatpak run --filesystem=home \
     --env=QT_QPA_PLATFORM=offscreen org.freecad.FreeCAD'
 
-fcgui cad/freecad/view.py                    # every document
-fcgui cad/freecad/view.py shared/BOT_HANDWHEEL.FCStd
+fcgui cad/freecad-scripted/code/pipeline/view.py                    # every document
+fcgui cad/freecad-scripted/code/pipeline/view.py shared/BOT_HANDWHEEL.FCStd
 ```
 
 This is the one script here that needs a real GUI rather than `freecadcmd`,
@@ -302,18 +349,18 @@ appears.
 
 **Neither script goes anywhere near `../freecad/assembly/`.** That one is Michael's, built
 by hand in the GUI, and it holds its parts together with **face and edge names**
-rather than with the LCS datums `asm/` uses. A rebuild regenerates a part's
-element map, so running `build.py` with no arguments rewrites all 68 parts and
+rather than with the LCS datums `assembly/` uses. A rebuild regenerates a part's
+element map, so running `build.py` with no arguments rewrites all 60 parts and
 leaves every one of those references pointing at whatever edge now has that
 number -- silently, because a stale reference does not have to fail. Rebuild the
 group you are working on:
 
 ```sh
-fc cad/freecad/build.py ../archive/scope/scope-top.py    # or the one script you changed
+fc cad/freecad-scripted/code/pipeline/build.py ../archive/scope/scope-top.py    # or the one script you changed
 ```
 
-`view.py` is kept out of `../freecad/assembly/` in code; see its `KEEP_OUT`. `build.py` is
-not, so that one is on you.
+`view.py` is kept out of `../freecad/assembly/` in code; see `code/lib/doclist.py`'s
+`KEEP_OUT`. `build.py` is not, so that one is on you.
 
 ## Checking a reconstruction against the original
 
@@ -335,7 +382,7 @@ check passed and the part was still wrong.
 disagreement:
 
 ```sh
-fc cad/freecad/verify.py cad/freecad/eccentric-clamp/ECCF_BOT.FCStd cad/original-stl/ECCF_BOT.stl
+fc cad/freecad-scripted/code/tools/verify.py cad/freecad-scripted/eccentric-clamp/ECCF_BOT.FCStd cad/original-stl/ECCF_BOT.stl
 ```
 
 Points within 0.05 mm of a surface are excused, because there the mesh and the
@@ -346,8 +393,8 @@ true surface legitimately differ.
 `stlmeasure.py` runs under plain `python3` - no FreeCAD, no dependencies:
 
 ```sh
-python3 cad/freecad/stlmeasure.py cad/original-stl/BOT_RAIL_HOLDER.stl
-python3 cad/freecad/stlmeasure.py cad/original-stl/*.stl --summary
+python3 cad/freecad-scripted/code/tools/stlmeasure.py cad/original-stl/BOT_RAIL_HOLDER.stl
+python3 cad/freecad-scripted/code/tools/stlmeasure.py cad/original-stl/*.stl --summary
 ```
 
 Measuring answers "what is there"; a picture answers "what is it". Arc fitting
@@ -355,16 +402,16 @@ cannot tell a fillet from a sweep from a draft, and a part whose outline is
 nothing but tangent arcs is far quicker to read than to measure:
 
 ```sh
-python3 cad/freecad/stlrender.py cad/original-stl/ECCF_LEVER.stl          # four views
-python3 cad/freecad/stlrender.py cad/original-stl/A.stl cad/original-stl/B.stl out.png # two, overlaid
+python3 cad/freecad-scripted/code/tools/stlrender.py cad/original-stl/ECCF_LEVER.stl          # four views
+python3 cad/freecad-scripted/code/tools/stlrender.py cad/original-stl/A.stl cad/original-stl/B.stl out.png # two, overlaid
 ```
 
 Overlaying a reconstruction on its original is the quickest check there is that
 a thread runs the right way round or a profile is not mirrored:
 
 ```sh
-fc cad/freecad/export.py cad/freecad/rotation-table/SR_WORM_GEAR.FCStd built.stl
-python3 cad/freecad/stlrender.py cad/original-stl/SR_WORM_GEAR.stl built.stl cmp.png
+fc cad/freecad-scripted/code/tools/export.py cad/freecad-scripted/rotation-table/SR_WORM_GEAR.FCStd built.stl
+python3 cad/freecad-scripted/code/tools/stlrender.py cad/original-stl/SR_WORM_GEAR.stl built.stl cmp.png
 ```
 
 Printed parts are layered, so `stlmeasure.py` finds the axis a prism would

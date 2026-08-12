@@ -20,7 +20,7 @@ Modelled as a PartDesign Body:
 
 Run with:
 
-    freecadcmd cad/freecad/bot-right-angle-con.py
+    freecadcmd cad/freecad-scripted/code/pipeline/build.py archive/bot-right-angle-con.py
 """
 
 import os

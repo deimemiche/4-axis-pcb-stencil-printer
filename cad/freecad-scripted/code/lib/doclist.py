@@ -7,7 +7,7 @@ processes to start.  Neither import of this module pulls in FreeCAD.
 
 import os
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
 ASSEMBLIES = os.path.join(HERE, "assembly")
 
 # Assemblies that do not live in `assembly/`.  There are none now that the

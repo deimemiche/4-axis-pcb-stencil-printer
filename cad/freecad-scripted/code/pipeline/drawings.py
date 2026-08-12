@@ -82,7 +82,7 @@ import FreeCAD as App
 import TechDraw
 from FreeCAD import Vector
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
 OUT = os.path.normpath(os.path.join(HERE, "..", "..", "technical-drawings"))
 TEMPLATES = "/app/share/Mod/TechDraw/Templates/ISO"
 TEMPLATE = "A3_Landscape_ISO5457_advanced.svg"

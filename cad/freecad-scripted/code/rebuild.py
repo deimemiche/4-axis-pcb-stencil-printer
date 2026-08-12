@@ -20,7 +20,7 @@ They are all regenerable from `../freecad/` by running this script.
 
     extract    the nine hand-built documents -> data/model.json
     datums     every joint and fastener reference measured -> data/datums.json
-    names      named for what mates there -> datum-plan.json
+    names      named for what mates there -> data/datum-plan.json
     parts      the 60 part scripts, datums and all
     wiring     old edge name -> new datum -> data/wiring.json
     poses      the hand-built solved placements, to compare against
@@ -30,7 +30,7 @@ They are all regenerable from `../freecad/` by running this script.
     bom        what the machine is made of, counted -> data/bom.json, ../../BOM.md
     verify     scripted against hand-built, parts and bolts
 
-`assemble` needs `fastener-offsets.json`, which is calibrated from an assembled
+`assemble` needs `data/fastener-offsets.json`, which is calibrated from an assembled
 build -- a bootstrap.  `--calibrate` runs assemble, measures, and assembles
 again; without it the committed offsets are used, which is what you want unless
 a datum has moved.
@@ -43,11 +43,13 @@ import subprocess
 import sys
 import time
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # the tree root
+sys.path.insert(0, os.path.join(HERE, "code", "lib"))
 import doclist  # noqa: E402  (needs the path above)
 
 DATA = os.path.join(HERE, "data")
+# Every stage below names a bare script; they all live in `pipeline/`.
+PIPELINE = os.path.join(HERE, "code", "pipeline")
 FROZEN = os.path.normpath(os.path.join(HERE, "..", "freecad", "assembly"))
 ASM = os.path.join(HERE, "assembly")
 DRAWN = os.path.normpath(os.path.join(HERE, "..", "..", "technical-drawings"))
@@ -94,7 +96,7 @@ def run(script, args=(), env=None, quiet=True):
     """One FreeCAD subprocess.  Returns its combined output."""
     e = dict(os.environ)
     e.update(env or {})
-    p = subprocess.run(FREECAD + [os.path.join(HERE, script)] + list(args),
+    p = subprocess.run(FREECAD + [os.path.join(PIPELINE, script)] + list(args),
                        capture_output=True, text=True, env=e)
     out = (p.stdout + p.stderr).replace("\r", "\n")
     # freecadcmd swallows tracebacks, so the scripts print their own; and it
@@ -119,7 +121,7 @@ def run_gui(script, args=(), timeout=1800):
     sleeps rather than spins, so nothing short of a clock notices.  Without
     this the whole pipeline waits for ever at no CPU.
     """
-    cmd = FREECAD_GUI + [os.path.join(HERE, script)] + list(args)
+    cmd = FREECAD_GUI + [os.path.join(PIPELINE, script)] + list(args)
     try:
         p = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:
@@ -191,10 +193,10 @@ def stage_datums():
 
 
 def stage_names():
-    subprocess.run([sys.executable, os.path.join(HERE, "datum-names.py"),
+    subprocess.run([sys.executable, os.path.join(PIPELINE, "datum-names.py"),
                     os.path.join(DATA, "datums.json"),
-                    f"--write={os.path.join(HERE, 'datum-plan.json')}",
-                    f"--text={os.path.join(HERE, 'datum-proposal.txt')}"],
+                    f"--write={os.path.join(DATA, 'datum-plan.json')}",
+                    f"--text={os.path.join(DATA, 'datum-proposal.txt')}"],
                    check=True)
 
 
@@ -211,9 +213,9 @@ def stage_parts():
 
 
 def stage_wiring():
-    subprocess.run([sys.executable, os.path.join(HERE, "wiring.py"),
+    subprocess.run([sys.executable, os.path.join(PIPELINE, "wiring.py"),
                     os.path.join(DATA, "datums.json"),
-                    os.path.join(HERE, "datum-plan.json"),
+                    os.path.join(DATA, "datum-plan.json"),
                     os.path.join(DATA, "wiring.json")], check=True)
 
 
@@ -234,7 +236,7 @@ def stage_assemble(calibrate=False):
         run("fastener-seed.py")
     env = {"ASM_MODEL": os.path.join(DATA, "model.json"),
            "ASM_WIRING": os.path.join(DATA, "wiring.json"),
-           "ASM_OFFSETS": os.path.join(HERE, "fastener-offsets.json"),
+           "ASM_OFFSETS": os.path.join(DATA, "fastener-offsets.json"),
            "ASM_FASTENERS": "1"}
     if calibrate:
         env["ASM_FRAMES"] = os.path.join(DATA, "frames.json")
@@ -243,10 +245,10 @@ def stage_assemble(calibrate=False):
     if not calibrate:
         return
     say("\n  calibrating the fastener offsets against the frames this build used")
-    subprocess.run([sys.executable, os.path.join(HERE, "calibrate-from-build.py"),
+    subprocess.run([sys.executable, os.path.join(PIPELINE, "calibrate-from-build.py"),
                     os.path.join(DATA, "frames.json"),
                     os.path.join(DATA, "model.json"),
-                    os.path.join(HERE, "fastener-offsets.json")]
+                    os.path.join(DATA, "fastener-offsets.json")]
                    + sorted(glob.glob(os.path.join(DATA, "hand", "*.json"))),
                    check=True)
     say("  assembling again with the calibrated offsets")
@@ -361,7 +363,7 @@ def stage_verify():
     for name in NINE:
         run("asmpose.py", [os.path.join(ASM, name + ".FCStd")],
             env={"ASM_OUT": os.path.join(d, name + ".json")})
-    subprocess.run([sys.executable, os.path.join(HERE, "asmverify.py")],
+    subprocess.run([sys.executable, os.path.join(PIPELINE, "asmverify.py")],
                    check=True)
 
 

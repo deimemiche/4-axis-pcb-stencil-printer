@@ -21,7 +21,7 @@ import FreeCAD as App
 import FreeCADGui as Gui
 import TechDrawGui
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # the tree root
 OUT = os.path.normpath(os.path.join(HERE, "..", "..", "technical-drawings"))
 
 
