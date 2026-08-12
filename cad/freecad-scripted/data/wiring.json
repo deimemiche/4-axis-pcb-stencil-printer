@@ -1674,7 +1674,7 @@
    "was": "STENCIL_HOLDER_BACK.Pocket001.Edge12"
   },
   "Top_Assembly/Nut022": {
-   "along": 4.000000596,
+   "along": 4.000000609,
    "datum": "NUT",
    "diameter": "M5",
    "object": "LCS",
@@ -1698,7 +1698,7 @@
    "was": "Pocket004.Edge135"
   },
   "Top_Assembly/Screw059": {
-   "along": 5.999999109,
+   "along": 5.999999137,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
@@ -1710,7 +1710,7 @@
    "was": "TOP_RAIL_HOLDER003.Pocket002.Edge60"
   },
   "Top_Assembly/Screw060": {
-   "along": 5.999999173,
+   "along": 5.9999992,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
@@ -1722,12 +1722,12 @@
    "was": "TOP_RAIL_HOLDER003.Pocket002.Edge61"
   },
   "Top_Assembly/Screw062": {
-   "along": 5.999999979,
+   "along": 5.99999998,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930633,
+   "perp": 17.230930634,
    "prefix": "TOP_RAIL_HOLDER001.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
@@ -1746,7 +1746,7 @@
    "was": "TOP_RAIL_HOLDER002.Pocket002.Edge60"
   },
   "Top_Assembly/Screw064": {
-   "along": 5.999999135,
+   "along": 5.999999137,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
@@ -1758,7 +1758,7 @@
    "was": "TOP_RAIL_HOLDER002.Pocket002.Edge61"
   },
   "Top_Assembly/Screw065": {
-   "along": 6.000000017,
+   "along": 6.000000042,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
@@ -1770,7 +1770,7 @@
    "was": "TOP_RAIL_HOLDER.Pocket002.Edge60"
   },
   "Top_Assembly/Screw066": {
-   "along": 5.999999952,
+   "along": 5.99999998,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
@@ -1782,7 +1782,7 @@
    "was": "TOP_RAIL_HOLDER.Pocket002.Edge61"
   },
   "Top_Assembly/Screw067": {
-   "along": 6.000000043,
+   "along": 6.000000042,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
@@ -2262,7 +2262,7 @@
    "was": "BOT_BRACKETS.Pocket.Edge19"
   },
   "Top_Frame/Screw039": {
-   "along": 20.89,
+   "along": 24.0,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS005",
@@ -2274,31 +2274,31 @@
    "was": "Pocket005.Edge41"
   },
   "Top_Frame/Screw040": {
-   "along": 0.0,
+   "along": -0.0,
    "datum": "BOLT2",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 18.995581065,
+   "perp": 22.090722034,
    "prefix": "TOP_CLAMP_Z_AXIS.",
    "type": "ISO4762",
    "via_link": "TOP_CLAMP_Z_AXIS",
    "was": "TOP_CLAMP_Z_AXIS.Pocket005.Edge115"
   },
   "Top_Frame/Screw041": {
-   "along": 0.0,
+   "along": -0.0,
    "datum": "BOLT2",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 25.189523616,
+   "perp": 22.090722034,
    "prefix": "",
    "type": "ISO4762",
    "via_link": "TOP_CLAMP_Z_AXIS001",
    "was": "Pocket005.Edge115"
   },
   "Top_Frame/Screw042": {
-   "along": 27.11,
+   "along": 24.0,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS005",
@@ -2315,7 +2315,7 @@
    "diameter": "M4",
    "object": "LCS003",
    "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 22.585661381,
+   "perp": 22.090722034,
    "prefix": "TOP_CLAMP_Z_AXIS.",
    "type": "ISO4762",
    "via_link": "TOP_CLAMP_Z_AXIS",
@@ -2327,7 +2327,7 @@
    "diameter": "M4",
    "object": "LCS003",
    "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 22.027984474,
+   "perp": 22.090722034,
    "prefix": "TOP_CLAMP_Z_AXIS001.",
    "type": "ISO4762",
    "via_link": "TOP_CLAMP_Z_AXIS001",
@@ -2344,6 +2344,102 @@
    "type": "ISO4762",
    "via_link": "BOT_BRACKETS005",
    "was": "Pocket.Edge18"
+  },
+  "Top_Frame/Screw046": {
+   "along": 10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS013",
+   "part": "HINGE_40_LEAF",
+   "perp": 36.055512755,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "HINGE_40_LEAF001",
+   "was": "Pocket002.Edge41"
+  },
+  "Top_Frame/Screw047": {
+   "along": 10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS012",
+   "part": "HINGE_40_LEAF",
+   "perp": 10.0,
+   "prefix": "HINGE_40_LEAF001.",
+   "type": "ISO4762",
+   "via_link": "HINGE_40_LEAF001",
+   "was": "HINGE_40_LEAF001.Pocket002.Edge39"
+  },
+  "Top_Frame/Screw048": {
+   "along": 10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS012",
+   "part": "HINGE_40_LEAF",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "HINGE_40_LEAF",
+   "was": "Pocket002.Edge39"
+  },
+  "Top_Frame/Screw049": {
+   "along": 10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS013",
+   "part": "HINGE_40_LEAF",
+   "perp": 36.055512755,
+   "prefix": "HINGE_40_LEAF.",
+   "type": "ISO4762",
+   "via_link": "HINGE_40_LEAF",
+   "was": "HINGE_40_LEAF.Pocket002.Edge41"
+  },
+  "Top_Frame/Screw050": {
+   "along": 10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS013",
+   "part": "HINGE_40_LEAF",
+   "perp": 36.055512755,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "HINGE_40_LEAF003",
+   "was": "Pocket002.Edge41"
+  },
+  "Top_Frame/Screw051": {
+   "along": 10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS012",
+   "part": "HINGE_40_LEAF",
+   "perp": 10.0,
+   "prefix": "HINGE_40_LEAF003.",
+   "type": "ISO4762",
+   "via_link": "HINGE_40_LEAF003",
+   "was": "HINGE_40_LEAF003.Pocket002.Edge39"
+  },
+  "Top_Frame/Screw052": {
+   "along": 10.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS012",
+   "part": "HINGE_40_LEAF",
+   "perp": 10.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "HINGE_40_LEAF002",
+   "was": "Pocket002.Edge39"
+  },
+  "Top_Frame/Screw053": {
+   "along": 10.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS013",
+   "part": "HINGE_40_LEAF",
+   "perp": 36.055512755,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "HINGE_40_LEAF002",
+   "was": "Pocket002.Edge41"
   },
   "X_Axis_Carriage/Nut": {
    "along": -22.95,
@@ -3246,6 +3342,8 @@
    "STUD": "LCS001"
   },
   "HINGE_40_LEAF": {
+   "BOLT1": "LCS012",
+   "BOLT2": "LCS013",
    "BORE1": "LCS004",
    "BORE2": "LCS005",
    "BRACKET1": "LCS006",

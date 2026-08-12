@@ -104,12 +104,12 @@
    "assembly": "_4_Axis_Stencil_Printer",
    "at": [
     0.0,
-    -0.0,
+    0.0,
     140.0
    ],
    "axis": [
-    0.0,
     -0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -152,8 +152,8 @@
     0.0
    ],
    "axis": [
-    0.0,
     -0.0,
+    0.0,
     1.0
    ],
    "geom": "Cylinder",
@@ -196,8 +196,8 @@
     0.0
    ],
    "axis": [
-    0.0,
     -0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -7684,7 +7684,7 @@
    "sub": "Edge11"
   },
   {
-   "along": 5.999999109,
+   "along": 5.999999137,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7711,7 +7711,7 @@
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 5.999999173,
+   "along": 5.9999992,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7738,7 +7738,7 @@
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 5.999999979,
+   "along": 5.99999998,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7758,7 +7758,7 @@
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930633,
+   "perp": 17.230930634,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_RAIL_HOLDER001.Pocket002.Edge60",
@@ -7792,7 +7792,7 @@
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 5.999999135,
+   "along": 5.999999137,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7819,7 +7819,7 @@
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 6.000000017,
+   "along": 6.000000042,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7846,7 +7846,7 @@
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 5.999999952,
+   "along": 5.99999998,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7873,7 +7873,7 @@
    "via_link": "Stencil_Clamp"
   },
   {
-   "along": 4.000000596,
+   "along": 4.000000609,
    "assembly": "Top_Assembly",
    "at": [
     4.0,
@@ -7927,7 +7927,7 @@
    "via_link": "TOP_CLAMP_SPANNER_COUNTER"
   },
   {
-   "along": 6.000000043,
+   "along": 6.000000042,
    "assembly": "Top_Assembly",
    "at": [
     6.0,
@@ -7957,12 +7957,12 @@
    "assembly": "Top_Assembly",
    "at": [
     -8.4,
-    0.0,
-    0.0
+    -0.0,
+    -0.0
    ],
    "axis": [
     -1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "geom": "Circle",
@@ -8000,13 +8000,13 @@
   {
    "assembly": "Top_Assembly",
    "at": [
-    -0.0,
+    0.0,
     0.0,
     100.0
    ],
    "axis": [
     0.0,
-    -0.0,
+    0.0,
     1.0
    ],
    "geom": "Plane",
@@ -8023,12 +8023,12 @@
    "assembly": "Top_Assembly",
    "at": [
     5.0,
-    0.0,
-    0.0
+    -0.0,
+    -0.0
    ],
    "axis": [
     1.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "geom": "Cylinder",
@@ -8050,7 +8050,7 @@
    ],
    "axis": [
     -1.0,
-    0.0,
+    -0.0,
     -0.0
    ],
    "geom": "Circle",
@@ -8068,7 +8068,7 @@
    "at": [
     7.0,
     0.0,
-    -0.0
+    0.0
    ],
    "axis": [
     1.0,
@@ -8132,13 +8132,13 @@
   {
    "assembly": "Top_Assembly",
    "at": [
-    -0.0,
+    0.0,
     0.0,
     50.0
    ],
    "axis": [
     0.0,
-    -0.0,
+    0.0,
     1.0
    ],
    "geom": "Cylinder",
@@ -8160,7 +8160,7 @@
    ],
    "axis": [
     1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "geom": "Cylinder",
@@ -8292,7 +8292,7 @@
    ],
    "axis": [
     -1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "geom": "Plane",
@@ -8349,7 +8349,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw001",
-   "joint_label": "M4x10-Screw782",
+   "joint_label": "M4x10-Screw825",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8376,7 +8376,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw002",
-   "joint_label": "M4x10-Screw780",
+   "joint_label": "M4x10-Screw823",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8403,7 +8403,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw003",
-   "joint_label": "M4x10-Screw794",
+   "joint_label": "M4x10-Screw837",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8430,7 +8430,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw004",
-   "joint_label": "M4x10-Screw786",
+   "joint_label": "M4x10-Screw829",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8457,7 +8457,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw005",
-   "joint_label": "M4x10-Screw783",
+   "joint_label": "M4x10-Screw826",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8484,7 +8484,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw006",
-   "joint_label": "M4x10-Screw789",
+   "joint_label": "M4x10-Screw832",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8511,7 +8511,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw007",
-   "joint_label": "M4x10-Screw797",
+   "joint_label": "M4x10-Screw840",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8538,7 +8538,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw008",
-   "joint_label": "M4x10-Screw811",
+   "joint_label": "M4x10-Screw854",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8565,7 +8565,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw009",
-   "joint_label": "M4x10-Screw775",
+   "joint_label": "M4x10-Screw818",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8592,7 +8592,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw010",
-   "joint_label": "M4x10-Screw796",
+   "joint_label": "M4x10-Screw839",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8619,7 +8619,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw011",
-   "joint_label": "M4x10-Screw806",
+   "joint_label": "M4x10-Screw849",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8646,7 +8646,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw012",
-   "joint_label": "M4x10-Screw788",
+   "joint_label": "M4x10-Screw831",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8673,7 +8673,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw013",
-   "joint_label": "M4x10-Screw810",
+   "joint_label": "M4x10-Screw853",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8700,7 +8700,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw014",
-   "joint_label": "M4x10-Screw771",
+   "joint_label": "M4x10-Screw814",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8727,7 +8727,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw015",
-   "joint_label": "M4x10-Screw777",
+   "joint_label": "M4x10-Screw820",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8754,7 +8754,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw016",
-   "joint_label": "M4x10-Screw804",
+   "joint_label": "M4x10-Screw847",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8781,7 +8781,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw017",
-   "joint_label": "M4x10-Screw795",
+   "joint_label": "M4x10-Screw838",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8808,7 +8808,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw018",
-   "joint_label": "M4x10-Screw787",
+   "joint_label": "M4x10-Screw830",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8835,7 +8835,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw019",
-   "joint_label": "M4x10-Screw790",
+   "joint_label": "M4x10-Screw833",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8862,7 +8862,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw020",
-   "joint_label": "M4x10-Screw800",
+   "joint_label": "M4x10-Screw843",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8889,7 +8889,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw021",
-   "joint_label": "M4x10-Screw791",
+   "joint_label": "M4x10-Screw834",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8916,7 +8916,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw022",
-   "joint_label": "M4x10-Screw801",
+   "joint_label": "M4x10-Screw844",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8943,7 +8943,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw023",
-   "joint_label": "M4x10-Screw781",
+   "joint_label": "M4x10-Screw824",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8970,7 +8970,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw024",
-   "joint_label": "M4x10-Screw792",
+   "joint_label": "M4x10-Screw835",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -8997,7 +8997,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw025",
-   "joint_label": "M4x10-Screw802",
+   "joint_label": "M4x10-Screw845",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9024,7 +9024,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw026",
-   "joint_label": "M4x10-Screw793",
+   "joint_label": "M4x10-Screw836",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9051,7 +9051,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw027",
-   "joint_label": "M4x10-Screw805",
+   "joint_label": "M4x10-Screw848",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9078,7 +9078,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw028",
-   "joint_label": "M4x10-Screw772",
+   "joint_label": "M4x10-Screw815",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9105,7 +9105,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw029",
-   "joint_label": "M4x10-Screw803",
+   "joint_label": "M4x10-Screw846",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9132,7 +9132,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw030",
-   "joint_label": "M4x10-Screw808",
+   "joint_label": "M4x10-Screw851",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9159,7 +9159,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw031",
-   "joint_label": "M4x10-Screw799",
+   "joint_label": "M4x10-Screw842",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9186,7 +9186,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw032",
-   "joint_label": "M4x10-Screw809",
+   "joint_label": "M4x10-Screw852",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9213,7 +9213,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw033",
-   "joint_label": "M4x10-Screw778",
+   "joint_label": "M4x10-Screw821",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9240,7 +9240,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw034",
-   "joint_label": "M4x10-Screw798",
+   "joint_label": "M4x10-Screw841",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9267,7 +9267,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw035",
-   "joint_label": "M4x10-Screw784",
+   "joint_label": "M4x10-Screw827",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9294,7 +9294,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw036",
-   "joint_label": "M4x10-Screw776",
+   "joint_label": "M4x10-Screw819",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9321,7 +9321,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw037",
-   "joint_label": "M4x10-Screw774",
+   "joint_label": "M4x10-Screw817",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9348,7 +9348,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw038",
-   "joint_label": "M4x10-Screw807",
+   "joint_label": "M4x10-Screw850",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9359,7 +9359,7 @@
    "via_link": "BOT_BRACKETS"
   },
   {
-   "along": 20.89,
+   "along": 24.0,
    "assembly": "Top_Frame",
    "at": [
     10.0,
@@ -9375,7 +9375,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw039",
-   "joint_label": "M4x10-Screw773",
+   "joint_label": "M4x10-Screw816",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_CLAMP_Z_AXIS",
@@ -9386,7 +9386,7 @@
    "via_link": "TOP_CLAMP_Z_AXIS"
   },
   {
-   "along": 0.0,
+   "along": -0.0,
    "assembly": "Top_Frame",
    "at": [
     -4.0,
@@ -9402,18 +9402,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw040",
-   "joint_label": "M4x10-Screw812",
+   "joint_label": "M4x10-Screw855",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 18.995581065,
+   "perp": 22.090722034,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_CLAMP_Z_AXIS.Pocket005.Edge115",
    "via_link": "TOP_CLAMP_Z_AXIS"
   },
   {
-   "along": 0.0,
+   "along": -0.0,
    "assembly": "Top_Frame",
    "at": [
     -4.0,
@@ -9429,18 +9429,18 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw041",
-   "joint_label": "M4x10-Screw779",
+   "joint_label": "M4x10-Screw822",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 25.189523616,
+   "perp": 22.090722034,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "Pocket005.Edge115",
    "via_link": "TOP_CLAMP_Z_AXIS001"
   },
   {
-   "along": 27.11,
+   "along": 24.0,
    "assembly": "Top_Frame",
    "at": [
     10.0,
@@ -9456,7 +9456,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw042",
-   "joint_label": "M4x10-Screw785",
+   "joint_label": "M4x10-Screw828",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_CLAMP_Z_AXIS",
@@ -9487,7 +9487,7 @@
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 22.585661381,
+   "perp": 22.090722034,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_CLAMP_Z_AXIS.Pocket005.Edge82",
@@ -9510,11 +9510,11 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw044",
-   "joint_label": "M4x14-Screw007",
+   "joint_label": "M4x14-Screw008",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 22.027984474,
+   "perp": 22.090722034,
    "prop": "BaseObject",
    "roll": 0.0,
    "sub": "TOP_CLAMP_Z_AXIS001.Pocket005.Edge82",
@@ -9537,7 +9537,7 @@
    "fastener": "ISO4762",
    "geom": "Circle",
    "joint": "Screw045",
-   "joint_label": "M4x10-Screw813",
+   "joint_label": "M4x10-Screw856",
    "joint_type": "Fastener",
    "kind": "Edge",
    "part": "BOT_BRACKETS",
@@ -9546,6 +9546,222 @@
    "roll": 0.0,
    "sub": "Pocket.Edge18",
    "via_link": "BOT_BRACKETS005"
+  },
+  {
+   "along": 10.0,
+   "assembly": "Top_Frame",
+   "at": [
+    0.0,
+    10.0,
+    30.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M4",
+   "fastener": "ISO4762",
+   "geom": "Circle",
+   "joint": "Screw046",
+   "joint_label": "M4x6-Screw001",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "HINGE_40_LEAF",
+   "perp": 36.055512755,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "Pocket002.Edge41",
+   "via_link": "HINGE_40_LEAF001"
+  },
+  {
+   "along": 10.0,
+   "assembly": "Top_Frame",
+   "at": [
+    0.0,
+    10.0,
+    10.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M4",
+   "fastener": "ISO4762",
+   "geom": "Circle",
+   "joint": "Screw047",
+   "joint_label": "M4x6-Screw002",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "HINGE_40_LEAF",
+   "perp": 10.0,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "HINGE_40_LEAF001.Pocket002.Edge39",
+   "via_link": "HINGE_40_LEAF001"
+  },
+  {
+   "along": 10.0,
+   "assembly": "Top_Frame",
+   "at": [
+    0.0,
+    10.0,
+    10.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M4",
+   "fastener": "ISO4762",
+   "geom": "Circle",
+   "joint": "Screw048",
+   "joint_label": "M4x6-Screw003",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "HINGE_40_LEAF",
+   "perp": 10.0,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "Pocket002.Edge39",
+   "via_link": "HINGE_40_LEAF"
+  },
+  {
+   "along": 10.0,
+   "assembly": "Top_Frame",
+   "at": [
+    0.0,
+    10.0,
+    30.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M4",
+   "fastener": "ISO4762",
+   "geom": "Circle",
+   "joint": "Screw049",
+   "joint_label": "M4x6-Screw004",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "HINGE_40_LEAF",
+   "perp": 36.055512755,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "HINGE_40_LEAF.Pocket002.Edge41",
+   "via_link": "HINGE_40_LEAF"
+  },
+  {
+   "along": 10.0,
+   "assembly": "Top_Frame",
+   "at": [
+    0.0,
+    10.0,
+    30.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M4",
+   "fastener": "ISO4762",
+   "geom": "Circle",
+   "joint": "Screw050",
+   "joint_label": "M4x6-Screw005",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "HINGE_40_LEAF",
+   "perp": 36.055512755,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "Pocket002.Edge41",
+   "via_link": "HINGE_40_LEAF003"
+  },
+  {
+   "along": 10.0,
+   "assembly": "Top_Frame",
+   "at": [
+    0.0,
+    10.0,
+    10.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M4",
+   "fastener": "ISO4762",
+   "geom": "Circle",
+   "joint": "Screw051",
+   "joint_label": "M4x6-Screw006",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "HINGE_40_LEAF",
+   "perp": 10.0,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "HINGE_40_LEAF003.Pocket002.Edge39",
+   "via_link": "HINGE_40_LEAF003"
+  },
+  {
+   "along": 10.0,
+   "assembly": "Top_Frame",
+   "at": [
+    0.0,
+    10.0,
+    10.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M4",
+   "fastener": "ISO4762",
+   "geom": "Circle",
+   "joint": "Screw052",
+   "joint_label": "M4x6-Screw007",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "HINGE_40_LEAF",
+   "perp": 10.0,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "Pocket002.Edge39",
+   "via_link": "HINGE_40_LEAF002"
+  },
+  {
+   "along": 10.0,
+   "assembly": "Top_Frame",
+   "at": [
+    0.0,
+    10.0,
+    30.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "diameter": "M4",
+   "fastener": "ISO4762",
+   "geom": "Circle",
+   "joint": "Screw053",
+   "joint_label": "M4x6-Screw008",
+   "joint_type": "Fastener",
+   "kind": "Edge",
+   "part": "HINGE_40_LEAF",
+   "perp": 36.055512755,
+   "prop": "BaseObject",
+   "roll": 0.0,
+   "sub": "Pocket002.Edge41",
+   "via_link": "HINGE_40_LEAF002"
   },
   {
    "assembly": "Top_Frame",
@@ -10036,7 +10252,7 @@
    "at": [
     -10.0,
     -10.0,
-    -0.0
+    0.0
    ],
    "axis": [
     1.0,
@@ -10058,7 +10274,7 @@
    "at": [
     0.0,
     4.0,
-    -0.0
+    0.0
    ],
    "axis": [
     0.0,
@@ -10127,7 +10343,7 @@
     30.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     0.0,
     1.0
    ],
@@ -10283,7 +10499,7 @@
    "axis": [
     1.0,
     0.0,
-    0.0
+    -0.0
    ],
    "geom": "Plane",
    "joint": "Joint030",
@@ -10408,14 +10624,14 @@
   {
    "assembly": "Top_Frame",
    "at": [
-    -0.0,
+    0.0,
     11.309505081,
     20.0
    ],
    "axis": [
     1.0,
     -0.0,
-    -0.0
+    0.0
    ],
    "geom": "Plane",
    "joint": "Joint033",

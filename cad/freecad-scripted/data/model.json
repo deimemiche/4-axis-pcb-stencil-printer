@@ -229,7 +229,7 @@
     }
    }
   ],
-  "objects_total": 544,
+  "objects_total": 552,
   "unknown": []
  },
  "Bottom_Assembly": {
@@ -7762,8 +7762,8 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_CASE_1",
     "placement": [
-     -59.110898945,
-     307.500140306,
+     -59.110898932,
+     307.500140307,
      174.459627684,
      -5.8e-08,
      6.2e-08,
@@ -7780,7 +7780,7 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_CASE_2",
     "placement": [
-     -59.162625946,
+     -59.162625933,
      308.298466253,
      174.459627549,
      -6.2e-08,
@@ -7798,7 +7798,7 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_COUNTER",
     "placement": [
-     -54.946875502,
+     -54.946875496,
      243.23490385,
      174.459638518,
      -6e-08,
@@ -7816,8 +7816,8 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_HANDWHEEL",
     "placement": [
-     -59.033308443,
-     306.302651385,
+     -59.03330843,
+     306.302651386,
      174.459627886,
      -6.2e-08,
      -5.8e-08,
@@ -7834,8 +7834,8 @@
     "linked_object": "Body004",
     "name": "M5_100_Stencil_Stretcher",
     "placement": [
-     -61.089456884,
-     338.036110034,
+     -61.089456867,
+     338.036110035,
      174.459622536,
      0.706736708,
      0.022872289,
@@ -7870,9 +7870,9 @@
     "linked_object": "Assembly",
     "name": "Stencil_Clamp",
     "placement": [
-     -110.764973092,
-     113.133832473,
-     501.868768544,
+     -110.764973058,
+     113.133832482,
+     501.868768552,
      0.678006535,
      0.733063717,
      0.037245323,
@@ -8107,11 +8107,11 @@
     }
    }
   ],
-  "objects_total": 185,
+  "objects_total": 193,
   "unknown": []
  },
  "Top_Frame": {
-  "authored_total": 91,
+  "authored_total": 99,
   "document": "Top_Frame",
   "fasteners": [
    {
@@ -8133,7 +8133,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw771",
+    "label": "M4x10-Screw814",
     "name": "Screw014",
     "type_id": "Part::FeaturePython"
    },
@@ -8156,7 +8156,7 @@
      "via": "TOP_CLAMP_Z_AXIS001",
      "via_label": "TOP_CLAMP_Z_AXIS001"
     },
-    "label": "M4x14-Screw007",
+    "label": "M4x14-Screw008",
     "name": "Screw044",
     "type_id": "Part::FeaturePython"
    },
@@ -8179,7 +8179,7 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw772",
+    "label": "M4x10-Screw815",
     "name": "Screw028",
     "type_id": "Part::FeaturePython"
    },
@@ -8202,7 +8202,7 @@
      "via": "TOP_CLAMP_Z_AXIS",
      "via_label": "TOP_CLAMP_Z_AXIS"
     },
-    "label": "M4x10-Screw773",
+    "label": "M4x10-Screw816",
     "name": "Screw039",
     "type_id": "Part::FeaturePython"
    },
@@ -8225,7 +8225,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw774",
+    "label": "M4x10-Screw817",
     "name": "Screw037",
     "type_id": "Part::FeaturePython"
    },
@@ -8248,7 +8248,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw775",
+    "label": "M4x10-Screw818",
     "name": "Screw009",
     "type_id": "Part::FeaturePython"
    },
@@ -8271,7 +8271,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw776",
+    "label": "M4x10-Screw819",
     "name": "Screw036",
     "type_id": "Part::FeaturePython"
    },
@@ -8294,7 +8294,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw777",
+    "label": "M4x10-Screw820",
     "name": "Screw015",
     "type_id": "Part::FeaturePython"
    },
@@ -8317,7 +8317,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw778",
+    "label": "M4x10-Screw821",
     "name": "Screw033",
     "type_id": "Part::FeaturePython"
    },
@@ -8340,7 +8340,7 @@
      "via": "TOP_CLAMP_Z_AXIS001",
      "via_label": "TOP_CLAMP_Z_AXIS001"
     },
-    "label": "M4x10-Screw779",
+    "label": "M4x10-Screw822",
     "name": "Screw041",
     "type_id": "Part::FeaturePython"
    },
@@ -8363,7 +8363,7 @@
      "via": "BOT_BRACKETS002",
      "via_label": "BOT_BRACKETS002"
     },
-    "label": "M4x10-Screw780",
+    "label": "M4x10-Screw823",
     "name": "Screw002",
     "type_id": "Part::FeaturePython"
    },
@@ -8386,7 +8386,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw781",
+    "label": "M4x10-Screw824",
     "name": "Screw023",
     "type_id": "Part::FeaturePython"
    },
@@ -8409,7 +8409,7 @@
      "via": "BOT_BRACKETS002",
      "via_label": "BOT_BRACKETS002"
     },
-    "label": "M4x10-Screw782",
+    "label": "M4x10-Screw825",
     "name": "Screw001",
     "type_id": "Part::FeaturePython"
    },
@@ -8432,7 +8432,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw783",
+    "label": "M4x10-Screw826",
     "name": "Screw005",
     "type_id": "Part::FeaturePython"
    },
@@ -8478,7 +8478,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw784",
+    "label": "M4x10-Screw827",
     "name": "Screw035",
     "type_id": "Part::FeaturePython"
    },
@@ -8501,7 +8501,7 @@
      "via": "TOP_CLAMP_Z_AXIS001",
      "via_label": "TOP_CLAMP_Z_AXIS001"
     },
-    "label": "M4x10-Screw785",
+    "label": "M4x10-Screw828",
     "name": "Screw042",
     "type_id": "Part::FeaturePython"
    },
@@ -8524,7 +8524,7 @@
      "via": "BOT_BRACKETS002",
      "via_label": "BOT_BRACKETS002"
     },
-    "label": "M4x10-Screw786",
+    "label": "M4x10-Screw829",
     "name": "Screw004",
     "type_id": "Part::FeaturePython"
    },
@@ -8547,7 +8547,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw787",
+    "label": "M4x10-Screw830",
     "name": "Screw018",
     "type_id": "Part::FeaturePython"
    },
@@ -8570,7 +8570,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw788",
+    "label": "M4x10-Screw831",
     "name": "Screw012",
     "type_id": "Part::FeaturePython"
    },
@@ -8593,7 +8593,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw789",
+    "label": "M4x10-Screw832",
     "name": "Screw006",
     "type_id": "Part::FeaturePython"
    },
@@ -8616,7 +8616,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw790",
+    "label": "M4x10-Screw833",
     "name": "Screw019",
     "type_id": "Part::FeaturePython"
    },
@@ -8639,7 +8639,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw791",
+    "label": "M4x10-Screw834",
     "name": "Screw021",
     "type_id": "Part::FeaturePython"
    },
@@ -8662,7 +8662,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw792",
+    "label": "M4x10-Screw835",
     "name": "Screw024",
     "type_id": "Part::FeaturePython"
    },
@@ -8685,7 +8685,7 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw793",
+    "label": "M4x10-Screw836",
     "name": "Screw026",
     "type_id": "Part::FeaturePython"
    },
@@ -8708,7 +8708,7 @@
      "via": "BOT_BRACKETS002",
      "via_label": "BOT_BRACKETS002"
     },
-    "label": "M4x10-Screw794",
+    "label": "M4x10-Screw837",
     "name": "Screw003",
     "type_id": "Part::FeaturePython"
    },
@@ -8731,7 +8731,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw795",
+    "label": "M4x10-Screw838",
     "name": "Screw017",
     "type_id": "Part::FeaturePython"
    },
@@ -8754,7 +8754,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw796",
+    "label": "M4x10-Screw839",
     "name": "Screw010",
     "type_id": "Part::FeaturePython"
    },
@@ -8777,7 +8777,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw797",
+    "label": "M4x10-Screw840",
     "name": "Screw007",
     "type_id": "Part::FeaturePython"
    },
@@ -8800,7 +8800,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw798",
+    "label": "M4x10-Screw841",
     "name": "Screw034",
     "type_id": "Part::FeaturePython"
    },
@@ -8823,7 +8823,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw799",
+    "label": "M4x10-Screw842",
     "name": "Screw031",
     "type_id": "Part::FeaturePython"
    },
@@ -8846,7 +8846,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw800",
+    "label": "M4x10-Screw843",
     "name": "Screw020",
     "type_id": "Part::FeaturePython"
    },
@@ -8869,7 +8869,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw801",
+    "label": "M4x10-Screw844",
     "name": "Screw022",
     "type_id": "Part::FeaturePython"
    },
@@ -8892,7 +8892,7 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw802",
+    "label": "M4x10-Screw845",
     "name": "Screw025",
     "type_id": "Part::FeaturePython"
    },
@@ -8915,7 +8915,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw803",
+    "label": "M4x10-Screw846",
     "name": "Screw029",
     "type_id": "Part::FeaturePython"
    },
@@ -8938,7 +8938,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw804",
+    "label": "M4x10-Screw847",
     "name": "Screw016",
     "type_id": "Part::FeaturePython"
    },
@@ -8961,7 +8961,7 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw805",
+    "label": "M4x10-Screw848",
     "name": "Screw027",
     "type_id": "Part::FeaturePython"
    },
@@ -9007,7 +9007,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw806",
+    "label": "M4x10-Screw849",
     "name": "Screw011",
     "type_id": "Part::FeaturePython"
    },
@@ -9030,7 +9030,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw807",
+    "label": "M4x10-Screw850",
     "name": "Screw038",
     "type_id": "Part::FeaturePython"
    },
@@ -9053,7 +9053,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw808",
+    "label": "M4x10-Screw851",
     "name": "Screw030",
     "type_id": "Part::FeaturePython"
    },
@@ -9076,7 +9076,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw809",
+    "label": "M4x10-Screw852",
     "name": "Screw032",
     "type_id": "Part::FeaturePython"
    },
@@ -9099,7 +9099,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw810",
+    "label": "M4x10-Screw853",
     "name": "Screw013",
     "type_id": "Part::FeaturePython"
    },
@@ -9122,7 +9122,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw811",
+    "label": "M4x10-Screw854",
     "name": "Screw008",
     "type_id": "Part::FeaturePython"
    },
@@ -9145,7 +9145,7 @@
      "via": "TOP_CLAMP_Z_AXIS",
      "via_label": "TOP_CLAMP_Z_AXIS"
     },
-    "label": "M4x10-Screw812",
+    "label": "M4x10-Screw855",
     "name": "Screw040",
     "type_id": "Part::FeaturePython"
    },
@@ -9168,8 +9168,192 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw813",
+    "label": "M4x10-Screw856",
     "name": "Screw045",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "HINGE_40_LEAF",
+     "file": "../stock/HINGE_40_LEAF.FCStd",
+     "subs": [
+      "Pocket002.Edge41"
+     ],
+     "via": "HINGE_40_LEAF001",
+     "via_label": "HINGE_40_LEAF001"
+    },
+    "label": "M4x6-Screw001",
+    "name": "Screw046",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "HINGE_40_LEAF",
+     "file": "../stock/HINGE_40_LEAF.FCStd",
+     "subs": [
+      "HINGE_40_LEAF001.Pocket002.Edge39"
+     ],
+     "via": "HINGE_40_LEAF001",
+     "via_label": "HINGE_40_LEAF001"
+    },
+    "label": "M4x6-Screw002",
+    "name": "Screw047",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "HINGE_40_LEAF",
+     "file": "../stock/HINGE_40_LEAF.FCStd",
+     "subs": [
+      "Pocket002.Edge39"
+     ],
+     "via": "HINGE_40_LEAF",
+     "via_label": "HINGE_40_LEAF"
+    },
+    "label": "M4x6-Screw003",
+    "name": "Screw048",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "HINGE_40_LEAF",
+     "file": "../stock/HINGE_40_LEAF.FCStd",
+     "subs": [
+      "HINGE_40_LEAF.Pocket002.Edge41"
+     ],
+     "via": "HINGE_40_LEAF",
+     "via_label": "HINGE_40_LEAF"
+    },
+    "label": "M4x6-Screw004",
+    "name": "Screw049",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "HINGE_40_LEAF",
+     "file": "../stock/HINGE_40_LEAF.FCStd",
+     "subs": [
+      "Pocket002.Edge41"
+     ],
+     "via": "HINGE_40_LEAF003",
+     "via_label": "HINGE_40_LEAF003"
+    },
+    "label": "M4x6-Screw005",
+    "name": "Screw050",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "HINGE_40_LEAF",
+     "file": "../stock/HINGE_40_LEAF.FCStd",
+     "subs": [
+      "HINGE_40_LEAF003.Pocket002.Edge39"
+     ],
+     "via": "HINGE_40_LEAF003",
+     "via_label": "HINGE_40_LEAF003"
+    },
+    "label": "M4x6-Screw006",
+    "name": "Screw051",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "HINGE_40_LEAF",
+     "file": "../stock/HINGE_40_LEAF.FCStd",
+     "subs": [
+      "Pocket002.Edge39"
+     ],
+     "via": "HINGE_40_LEAF002",
+     "via_label": "HINGE_40_LEAF002"
+    },
+    "label": "M4x6-Screw007",
+    "name": "Screw052",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "6",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "HINGE_40_LEAF",
+     "file": "../stock/HINGE_40_LEAF.FCStd",
+     "subs": [
+      "Pocket002.Edge41"
+     ],
+     "via": "HINGE_40_LEAF002",
+     "via_label": "HINGE_40_LEAF002"
+    },
+    "label": "M4x6-Screw008",
+    "name": "Screw053",
     "type_id": "Part::FeaturePython"
    }
   ],
@@ -10117,7 +10301,7 @@
     }
    }
   ],
-  "objects_total": 100,
+  "objects_total": 108,
   "unknown": []
  },
  "X-Axis_Carriage": {
