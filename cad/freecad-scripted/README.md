@@ -29,7 +29,7 @@ code/            the only scripts here; nothing outside it runs
     extract.py     the nine hand-built documents -> data/model.json
     datums.py      every joint and fastener reference measured -> data/datums.json
     datum-names.py named for what mates there -> data/datum-plan.json
-    build.py       rebuilds the 60 part scripts and reports which ones failed
+    build.py       rebuilds the 61 part scripts and reports which ones failed
     wiring.py      old edge name -> new datum -> data/wiring.json
     asmpose.py     an assembly's solved placements, to compare against
     fastener-seed.py  mints the seed document the builder clones its bolts from
@@ -39,8 +39,8 @@ code/            the only scripts here; nothing outside it runs
     drawings.py    the eight made parts as TechDraw sheets, dimensioned
     drawings-pdf.py  those sheets to PDF -- needs a real display
     bom.py         counts what the machine is made of -> data/bom.json, BOM.md
-    asmverify.py   the scripted assembly against the hand-built one: 145/145
-                   parts at 0.000000 mm, 245 of 245 bolts
+    asmverify.py   the scripted assembly against the hand-built one: 147/147
+                   parts at 0.000000 mm, 253 of 253 bolts
 
   tools/         run by hand, on a mesh or on a built part; no stage calls them
     stlmeasure.py  measures the original meshes: layers, outlines, bores
@@ -77,7 +77,7 @@ rotation-table/  the slewing ring and worm gear, the alpha plates, the Y-axis
                  bearing mounts, the alpha rod holders
 x-axis-carriage/ the XY plate, the X bearing mount, the rail clamps and holder
 eccentric-clamp/ the front eccenter (README calls the mechanism the "eccenter")
-top-frame/       the Z-axis clamp
+top-frame/       the Z-axis bearing mount
 top-assembly/    the spanner: its two cases, the counter, the handwheel
 stencil-clamp/   the four stencil holder angles, the clamp bearing mounts, nut
                  holder, stop, rail holder and spring plate
@@ -154,6 +154,17 @@ the way the plates are instead: arithmetic on the numbers the source states, and
 arithmetic cannot reach. `STATUS.md` says which is which, and what each
 transcription had to decide.
 
+**`TOP_BEARING_MOUNT_Z_AXIS` is the fourth kind, and the easiest.** Michael drew
+it himself, in FreeCAD, by taking the author's `TOP_CLAMP_Z_AXIS` and putting an
+LM8UU housing where the clamped rod bore was -- so the lid slides up and down
+the Z rods instead of being slackened off and moved by hand. There is nothing
+to reverse engineer: his document has real sketches, and
+[`top-frame/top-bearing-mount-z-axis.py`](top-frame/top-bearing-mount-z-axis.py)
+reads its dimensions straight off them. Its check is the hardest kind here, the
+one the Z bracket gets: both solids exist in FreeCAD, so they are booleaned
+against each other, and it leaves nothing on either side. `TOP_CLAMP_Z_AXIS` is
+in `archive/` now, consumed by no assembly.
+
 [`assembly/`](assembly/) is the assembly: nine documents built with the Assembly
 workbench, so the machine is held together by joints rather than frozen in one
 pose. It covers all eighteen of the build manual's steps, as **Michael's**
@@ -185,7 +196,7 @@ why the scripted assemblies in `assembly/` use nothing else; see `fcprim.lcs`.
 
 **Every datum is written by the part script that draws the part**, in that
 script's own dimensions -- `at=(x, thickness, z)` off the same list the holes
-are drilled from, never a coordinate copied out of an assembly. There are 308
+are drilled from, never a coordinate copied out of an assembly. There are 311
 of them across 59 documents, and `fcprim.apply_datums` checks each one against
 `datum-plan.json` -- the position the hand-built assembly actually joins at --
 every time the part is built. An expression that lands anywhere else fails the
@@ -350,7 +361,7 @@ appears.
 **Neither script goes anywhere near `../freecad/assembly/`.** That one is Michael's, built
 by hand in the GUI, and it holds its parts together with **face and edge names**
 rather than with the LCS datums `assembly/` uses. A rebuild regenerates a part's
-element map, so running `build.py` with no arguments rewrites all 60 parts and
+element map, so running `build.py` with no arguments rewrites all 61 parts and
 leaves every one of those references pointing at whatever edge now has that
 number -- silently, because a stale reference does not have to fail. Rebuild the
 group you are working on:
@@ -501,9 +512,10 @@ Several parts come in families, and finding the family is most of the work:
   pulling it shut.
 
 All 39 meshes are rebuilt, and with them the 8 plates drawn from the author's
-2D drawings, the 9 sticks and bearings of bought stock, and Michael's own 12 --
-the Z bracket, the 3 now in `archive/` and the 8 microscope parts since shelved
-to [`../archive/scope/`](../archive/scope/) -- so `build.py` comes back
-**60/60** over this tree. [`STATUS.md`](STATUS.md) carries the per-part table and
+2D drawings, the 9 sticks and bearings of bought stock, and Michael's own 13 --
+the Z bracket, `TOP_BEARING_MOUNT_Z_AXIS`, the 3 now in `archive/` and the 8
+microscope parts since shelved to
+[`../archive/scope/`](../archive/scope/) -- so `build.py` comes back
+**61/61** over this tree. [`STATUS.md`](STATUS.md) carries the per-part table and
 what each awkward one turned out to be; [`ASSEMBLY.md`](ASSEMBLY.md) is the plan
 for putting them together into the machine, and how far it has got.

@@ -4046,6 +4046,34 @@
   {
    "at": [
     0.0,
+    27.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fasteners": [],
+   "fixed": false,
+   "joints": [
+    "_4_Axis_Stencil_Printer.Distance"
+   ],
+   "mates": [
+    "_2020_300_TOP_FRONT"
+   ],
+   "name": "FRAME",
+   "refs": 1,
+   "roll": 180.0,
+   "stem": "FRAME",
+   "was": [
+    "Eccenter.ECCF_TOP.Face11"
+   ],
+   "why": "mates"
+  },
+  {
+   "at": [
+    0.0,
     2.0,
     0.0
    ],
@@ -4334,7 +4362,7 @@
    "axis": [
     -0.0,
     -1.0,
-    0.0
+    -0.0
    ],
    "fasteners": [],
    "fixed": false,
@@ -4371,6 +4399,7 @@
    "joints": [
     "Bottom_Assembly.Fixed",
     "Stencil_Clamp.Fixed",
+    "Top_Frame.Fixed",
     "X_Axis_Carriage.Distance",
     "X_Axis_Carriage.Fixed"
    ],
@@ -4378,13 +4407,15 @@
     "BOT_BEARING_MOUNT_X_AXIS",
     "BOT_BEARING_MOUNT_Y_AXIS_DRIVEN",
     "ROD_D8_280",
+    "TOP_BEARING_MOUNT_Z_AXIS",
     "TOP_CLAMP_BEARING_MOUNT_1"
    ],
    "name": "BORE",
-   "refs": 11,
+   "refs": 13,
    "roll": 0.0,
    "stem": "BORE",
    "was": [
+    "Edge2",
     "Face2",
     "Face4",
     "LM8UU004.Edge2",
@@ -4394,13 +4425,13 @@
   },
   {
    "at": [
-    0.0,
     -0.0,
+    0.0,
     24.0
    ],
    "axis": [
-    0.0,
-    0.0,
+    -0.0,
+    -0.0,
     1.0
    ],
    "fasteners": [],
@@ -4409,23 +4440,26 @@
     "Stencil_Clamp.Fixed",
     "X_Axis_Carriage.Distance",
     "X_Axis_Carriage.Fixed",
-    "X_Axis_Carriage.Slider"
+    "X_Axis_Carriage.Slider",
+    "_4_Axis_Stencil_Printer.Cylindrical"
    ],
    "mates": [
     "BOT_BEARING_MOUNT_X_AXIS",
+    "ROD_D8_140",
     "ROD_D8_244",
     "ROD_D8_280",
     "ROD_D8_300",
     "TOP_CLAMP_BEARING_MOUNT_2"
    ],
    "name": "END_B",
-   "refs": 11,
+   "refs": 12,
    "roll": 0.0,
    "stem": "END_B",
    "was": [
     "Edge3",
     "Face4",
-    "Pocket.Face3"
+    "Pocket.Face3",
+    "Top_Frame.LM8UU013.Face4"
    ],
    "why": "kept"
   },
@@ -4496,7 +4530,7 @@
    ],
    "axis": [
     0.0,
-    0.0,
+    -0.0,
     1.0
    ],
    "fasteners": [],
@@ -4524,7 +4558,7 @@
    ],
    "axis": [
     0.0,
-    0.0,
+    -0.0,
     1.0
    ],
    "fasteners": [],
@@ -4670,6 +4704,34 @@
   {
    "at": [
     0.0,
+    0.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fasteners": [],
+   "fixed": false,
+   "joints": [
+    "_4_Axis_Stencil_Printer.Cylindrical"
+   ],
+   "mates": [
+    "LM8UU"
+   ],
+   "name": "BEARING",
+   "refs": 1,
+   "roll": 0.0,
+   "stem": "BEARING",
+   "was": [
+    "Face1"
+   ],
+   "why": "mates"
+  },
+  {
+   "at": [
+    0.0,
     -0.0,
     140.0
    ],
@@ -4695,36 +4757,6 @@
     "Face3"
    ],
    "why": "kept"
-  },
-  {
-   "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    -0.0,
-    0.0,
-    1.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "_4_Axis_Stencil_Printer.Cylindrical",
-    "_4_Axis_Stencil_Printer.Distance"
-   ],
-   "mates": [
-    "TOP_CLAMP_Z_AXIS"
-   ],
-   "name": "Z",
-   "refs": 2,
-   "roll": 0.0,
-   "stem": "Z",
-   "was": [
-    "Face1",
-    "Face2"
-   ],
-   "why": "mates"
   }
  ],
  "ROD_D8_244": [
@@ -6308,6 +6340,177 @@
    "why": "mates"
   }
  ],
+ "TOP_BEARING_MOUNT_Z_AXIS": [
+  {
+   "at": [
+    -10.0,
+    -1.8,
+    -0.0
+   ],
+   "axis": [
+    -0.0,
+    -1.0,
+    -0.0
+   ],
+   "fasteners": [],
+   "fixed": false,
+   "joints": [
+    "Top_Frame.Fixed"
+   ],
+   "mates": [
+    "LM8UU"
+   ],
+   "name": "BEARING",
+   "refs": 2,
+   "roll": 180.0,
+   "stem": "BEARING",
+   "was": [
+    "Edge80"
+   ],
+   "why": "mates"
+  },
+  {
+   "at": [
+    -4.0,
+    10.0,
+    -13.0
+   ],
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "fasteners": [
+    "ISO4762"
+   ],
+   "fixed": false,
+   "joints": [
+    "Top_Frame.Fastener"
+   ],
+   "mates": [],
+   "name": "BOLT1",
+   "refs": 2,
+   "roll": 0.0,
+   "stem": "BOLT",
+   "was": [
+    "TOP_CLAMP_Z_AXIS.Groove.Edge36",
+    "TOP_CLAMP_Z_AXIS001.Groove.Edge36"
+   ],
+   "why": "fastener"
+  },
+  {
+   "at": [
+    -4.0,
+    10.0,
+    13.0
+   ],
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "fasteners": [
+    "ISO4762"
+   ],
+   "fixed": false,
+   "joints": [
+    "Top_Frame.Fastener"
+   ],
+   "mates": [],
+   "name": "BOLT2",
+   "refs": 2,
+   "roll": 0.0,
+   "stem": "BOLT",
+   "was": [
+    "Groove.Edge62"
+   ],
+   "why": "fastener"
+  },
+  {
+   "at": [
+    10.0,
+    24.0,
+    -0.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fasteners": [
+    "ISO4762"
+   ],
+   "fixed": false,
+   "joints": [
+    "Top_Frame.Fastener"
+   ],
+   "mates": [],
+   "name": "BOLT3",
+   "refs": 2,
+   "roll": 0.0,
+   "stem": "BOLT",
+   "was": [
+    "Groove.Edge43"
+   ],
+   "why": "fastener"
+  },
+  {
+   "at": [
+    0.0,
+    20.0,
+    -18.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fasteners": [],
+   "fixed": false,
+   "joints": [
+    "Top_Frame.Fixed"
+   ],
+   "mates": [
+    "_2020_300"
+   ],
+   "name": "FRAME1",
+   "refs": 1,
+   "roll": 270.0,
+   "stem": "FRAME",
+   "was": [
+    "Edge12"
+   ],
+   "why": "mates"
+  },
+  {
+   "at": [
+    0.0,
+    20.0,
+    18.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fasteners": [],
+   "fixed": false,
+   "joints": [
+    "Top_Frame.Fixed"
+   ],
+   "mates": [
+    "_2020_300"
+   ],
+   "name": "FRAME2",
+   "refs": 1,
+   "roll": 270.0,
+   "stem": "FRAME",
+   "was": [
+    "Edge20"
+   ],
+   "why": "mates"
+  }
+ ],
  "TOP_CLAMP_BEARING_MOUNT_1": [
   {
    "at": [
@@ -6687,7 +6890,7 @@
   {
    "at": [
     2.0,
-    0.0,
+    -0.0,
     -24.0
    ],
    "axis": [
@@ -6748,7 +6951,7 @@
    ],
    "axis": [
     1.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "fasteners": [],
@@ -6859,13 +7062,13 @@
   {
    "at": [
     -8.4,
-    -0.0,
-    -0.0
+    0.0,
+    0.0
    ],
    "axis": [
     -1.0,
-    -0.0,
-    0.0
+    0.0,
+    -0.0
    ],
    "fasteners": [],
    "fixed": false,
@@ -6915,8 +7118,8 @@
   {
    "at": [
     5.0,
-    -0.0,
-    -0.0
+    0.0,
+    0.0
    ],
    "axis": [
     1.0,
@@ -6973,7 +7176,7 @@
   {
    "at": [
     5.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "axis": [
@@ -7081,207 +7284,6 @@
    "stem": "SPRING",
    "was": [
     "Edge11"
-   ],
-   "why": "mates"
-  }
- ],
- "TOP_CLAMP_Z_AXIS": [
-  {
-   "at": [
-    -9.0,
-    10.0,
-    12.0
-   ],
-   "axis": [
-    1.0,
-    0.0,
-    0.0
-   ],
-   "fasteners": [
-    "ISO4762"
-   ],
-   "fixed": false,
-   "joints": [
-    "Top_Frame.Fastener"
-   ],
-   "mates": [],
-   "name": "BOLT1",
-   "refs": 2,
-   "roll": 0.0,
-   "stem": "BOLT",
-   "was": [
-    "TOP_CLAMP_Z_AXIS.Pocket005.Edge82",
-    "TOP_CLAMP_Z_AXIS001.Pocket005.Edge82"
-   ],
-   "why": "fastener"
-  },
-  {
-   "at": [
-    -4.0,
-    10.0,
-    -12.0
-   ],
-   "axis": [
-    -1.0,
-    0.0,
-    0.0
-   ],
-   "fasteners": [
-    "ISO4762"
-   ],
-   "fixed": false,
-   "joints": [
-    "Top_Frame.Fastener"
-   ],
-   "mates": [],
-   "name": "BOLT2",
-   "refs": 2,
-   "roll": 0.0,
-   "stem": "BOLT",
-   "was": [
-    "Pocket005.Edge115",
-    "TOP_CLAMP_Z_AXIS.Pocket005.Edge115"
-   ],
-   "why": "fastener"
-  },
-  {
-   "at": [
-    10.0,
-    24.0,
-    -0.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fasteners": [
-    "ISO4762"
-   ],
-   "fixed": false,
-   "joints": [
-    "Top_Frame.Fastener"
-   ],
-   "mates": [],
-   "name": "BOLT3",
-   "refs": 2,
-   "roll": 0.0,
-   "stem": "BOLT",
-   "was": [
-    "Pocket005.Edge41",
-    "TOP_CLAMP_Z_AXIS001.Pocket005.Edge41"
-   ],
-   "why": "fastener"
-  },
-  {
-   "at": [
-    0.0,
-    20.0,
-    -16.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "Top_Frame.Fixed"
-   ],
-   "mates": [
-    "_2020_300"
-   ],
-   "name": "FRAME1",
-   "refs": 1,
-   "roll": 270.0,
-   "stem": "FRAME",
-   "was": [
-    "Edge12"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    0.0,
-    20.0,
-    16.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "Top_Frame.Fixed"
-   ],
-   "mates": [
-    "_2020_300"
-   ],
-   "name": "FRAME2",
-   "refs": 1,
-   "roll": 270.0,
-   "stem": "FRAME",
-   "was": [
-    "Edge24"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    -8.1,
-    -10.0,
-    0.0
-   ],
-   "axis": [
-    -0.0,
-    -1.0,
-    0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "_4_Axis_Stencil_Printer.Cylindrical"
-   ],
-   "mates": [
-    "ROD_D8_140"
-   ],
-   "name": "ROD1",
-   "refs": 1,
-   "roll": 0.0,
-   "stem": "ROD",
-   "was": [
-    "Top_Frame.TOP_CLAMP_Z_AXIS.Face26"
-   ],
-   "why": "mates"
-  },
-  {
-   "at": [
-    1.9601,
-    24.0,
-    0.2527
-   ],
-   "axis": [
-    0.0,
-    1.0,
-    -0.0
-   ],
-   "fasteners": [],
-   "fixed": false,
-   "joints": [
-    "_4_Axis_Stencil_Printer.Distance"
-   ],
-   "mates": [
-    "ROD_D8_140"
-   ],
-   "name": "ROD2",
-   "refs": 1,
-   "roll": 180.0,
-   "stem": "ROD",
-   "was": [
-    "Top_Frame.TOP_CLAMP_Z_AXIS.Face4"
    ],
    "why": "mates"
   }
@@ -8220,7 +8222,7 @@
    ],
    "mates": [
     "BOT_BRACKETS",
-    "TOP_CLAMP_Z_AXIS"
+    "TOP_BEARING_MOUNT_Z_AXIS"
    ],
    "name": "BRACKET2",
    "refs": 2,
@@ -8277,7 +8279,7 @@
    ],
    "mates": [
     "BOT_BRACKETS",
-    "TOP_CLAMP_Z_AXIS"
+    "TOP_BEARING_MOUNT_Z_AXIS"
    ],
    "name": "BRACKET4",
    "refs": 2,
@@ -8489,7 +8491,7 @@
     0.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     -0.0,
     1.0
    ],
@@ -8512,7 +8514,7 @@
    "at": [
     -10.0,
     10.0,
-    0.0
+    -0.0
    ],
    "axis": [
     -1.0,
@@ -8601,7 +8603,7 @@
    "axis": [
     1.0,
     0.0,
-    -0.0
+    0.0
    ],
    "fasteners": [],
    "fixed": false,
@@ -8627,7 +8629,7 @@
     300.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     1.0,
     0.0
    ],
@@ -8766,7 +8768,7 @@
    "at": [
     -10.0,
     -10.0,
-    0.0
+    -0.0
    ],
    "axis": [
     1.0,
@@ -8822,7 +8824,7 @@
    "at": [
     10.0,
     -10.0,
-    0.0
+    -0.0
    ],
    "axis": [
     1.0,
@@ -8871,6 +8873,34 @@
    "stem": "BRACKET",
    "was": [
     "Edge92"
+   ],
+   "why": "mates"
+  },
+  {
+   "at": [
+    -10.0,
+    -6.5,
+    150.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "fasteners": [],
+   "fixed": false,
+   "joints": [
+    "_4_Axis_Stencil_Printer.Distance"
+   ],
+   "mates": [
+    "ECCF_TOP"
+   ],
+   "name": "ECC_TOP",
+   "refs": 1,
+   "roll": 270.0,
+   "stem": "ECC_TOP",
+   "was": [
+    "Top_Frame._2020_300_TOP_FRONT.Face5"
    ],
    "why": "mates"
   },

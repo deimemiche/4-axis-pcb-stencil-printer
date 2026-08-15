@@ -58,7 +58,7 @@
     "linked_object": "Assembly",
     "name": "Assembly001",
     "placement": [
-     -6.128683384,
+     -4.028683384,
      113.94904331,
      324.505949229,
      0.683864478,
@@ -148,62 +148,6 @@
     "Angle": "0.0 deg",
     "Distance": "0.0 mm",
     "Distance2": "0.0 mm",
-    "JointType": "Cylindrical",
-    "label": "Cylindrical002",
-    "name": "Joint002",
-    "ref1": {
-     "document": "Top_Assembly",
-     "file": "Top_Assembly.FCStd",
-     "subs": [
-      "Top_Frame.TOP_CLAMP_Z_AXIS.Face26",
-      "Top_Frame.TOP_CLAMP_Z_AXIS.Edge4"
-     ],
-     "via": "Assembly001",
-     "via_label": "Top_Assembly"
-    },
-    "ref2": {
-     "document": "ROD_D8_140",
-     "file": "../stock/ROD_D8_140.FCStd",
-     "subs": [
-      "Face1",
-      "Edge2"
-     ],
-     "via": "ROD_D8_303",
-     "via_label": "ROD_D8_303"
-    }
-   },
-   {
-    "Angle": "0.0 deg",
-    "Distance": "40.0 mm",
-    "Distance2": "0.0 mm",
-    "JointType": "Distance",
-    "label": "Distance002",
-    "name": "Joint003",
-    "ref1": {
-     "document": "Top_Assembly",
-     "file": "Top_Assembly.FCStd",
-     "subs": [
-      "Top_Frame.TOP_CLAMP_Z_AXIS.Face4",
-      "Top_Frame.TOP_CLAMP_Z_AXIS.Face4"
-     ],
-     "via": "Assembly001",
-     "via_label": "Top_Assembly"
-    },
-    "ref2": {
-     "document": "ROD_D8_140",
-     "file": "../stock/ROD_D8_140.FCStd",
-     "subs": [
-      "Face2",
-      "Face2"
-     ],
-     "via": "ROD_D8_303",
-     "via_label": "ROD_D8_303"
-    }
-   },
-   {
-    "Angle": "0.0 deg",
-    "Distance": "0.0 mm",
-    "Distance2": "0.0 mm",
     "JointType": "Angle",
     "label": "Angle002",
     "name": "Joint004",
@@ -227,9 +171,65 @@
      "via": "Bottom_Assembly",
      "via_label": "Bottom_Assembly"
     }
+   },
+   {
+    "Angle": "0.0 deg",
+    "Distance": "0.0 mm",
+    "Distance2": "0.0 mm",
+    "JointType": "Cylindrical",
+    "label": "Cylindrical003",
+    "name": "Joint005",
+    "ref1": {
+     "document": "Top_Assembly",
+     "file": "Top_Assembly.FCStd",
+     "subs": [
+      "Top_Frame.LM8UU013.Face4",
+      "Top_Frame.LM8UU013.Edge3"
+     ],
+     "via": "Assembly001",
+     "via_label": "Top_Assembly"
+    },
+    "ref2": {
+     "document": "ROD_D8_140",
+     "file": "../stock/ROD_D8_140.FCStd",
+     "subs": [
+      "Face1",
+      "Edge2"
+     ],
+     "via": "ROD_D8_303",
+     "via_label": "ROD_D8_303"
+    }
+   },
+   {
+    "Angle": "0.0 deg",
+    "Distance": "0.0 mm",
+    "Distance2": "0.0 mm",
+    "JointType": "Distance",
+    "label": "Distance004",
+    "name": "Joint006",
+    "ref1": {
+     "document": "Bottom_Assembly",
+     "file": "Bottom_Assembly.FCStd",
+     "subs": [
+      "Eccenter.ECCF_TOP.Face11",
+      "Eccenter.ECCF_TOP.Face11"
+     ],
+     "via": "Bottom_Assembly",
+     "via_label": "Bottom_Assembly"
+    },
+    "ref2": {
+     "document": "Top_Assembly",
+     "file": "Top_Assembly.FCStd",
+     "subs": [
+      "Top_Frame._2020_300_TOP_FRONT.Face5",
+      "Top_Frame._2020_300_TOP_FRONT.Face5"
+     ],
+     "via": "Assembly001",
+     "via_label": "Top_Assembly"
+    }
    }
   ],
-  "objects_total": 552,
+  "objects_total": 554,
   "unknown": []
  },
  "Bottom_Assembly": {
@@ -7762,9 +7762,9 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_CASE_1",
     "placement": [
-     -59.110898932,
-     307.500140307,
-     174.459627684,
+     -59.110899365,
+     307.500140278,
+     174.459588127,
      -5.8e-08,
      6.2e-08,
      0.729609057,
@@ -7780,9 +7780,9 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_CASE_2",
     "placement": [
-     -59.162625933,
-     308.298466253,
-     174.459627549,
+     -59.162626366,
+     308.298466225,
+     174.459587993,
      -6.2e-08,
      -5.8e-08,
      -0.683864478,
@@ -7798,11 +7798,11 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_COUNTER",
     "placement": [
-     -54.946875496,
-     243.23490385,
-     174.459638518,
-     -6e-08,
-     -5.9e-08,
+     -54.946874828,
+     243.234886922,
+     174.459608123,
+     -1.1e-07,
+     -1.1e-07,
      -0.683864478,
      0.729609057
     ],
@@ -7816,9 +7816,9 @@
     "linked_object": "Body",
     "name": "TOP_CLAMP_SPANNER_HANDWHEEL",
     "placement": [
-     -59.03330843,
-     306.302651386,
-     174.459627886,
+     -59.033308864,
+     306.302651358,
+     174.459588329,
      -6.2e-08,
      -5.8e-08,
      -0.683864478,
@@ -7834,13 +7834,13 @@
     "linked_object": "Body004",
     "name": "M5_100_Stencil_Stretcher",
     "placement": [
-     -61.089456867,
-     338.036110035,
-     174.459622536,
-     0.706736708,
+     -61.089456209,
+     338.036093106,
+     174.459578626,
+     0.706736658,
      0.022872289,
-     0.022872289,
-     0.706736827
+     0.02287229,
+     0.706736877
     ],
     "type": "App::Link"
    },
@@ -7870,13 +7870,13 @@
     "linked_object": "Assembly",
     "name": "Stencil_Clamp",
     "placement": [
-     -110.764973058,
-     113.133832482,
-     501.868768552,
-     0.678006535,
-     0.733063717,
-     0.037245323,
-     -0.039211113
+     -110.764974272,
+     113.133862102,
+     501.868756333,
+     0.678006538,
+     0.733063719,
+     0.037245273,
+     -0.039211063
     ],
     "type": "Assembly::AssemblyLink"
    }
@@ -8107,11 +8107,11 @@
     }
    }
   ],
-  "objects_total": 193,
+  "objects_total": 195,
   "unknown": []
  },
  "Top_Frame": {
-  "authored_total": 99,
+  "authored_total": 103,
   "document": "Top_Frame",
   "fasteners": [
    {
@@ -8133,31 +8133,8 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw814",
+    "label": "M4x10-Screw861",
     "name": "Screw014",
-    "type_id": "Part::FeaturePython"
-   },
-   {
-    "Diameter": "M4",
-    "Invert": "True",
-    "LeftHanded": "False",
-    "Length": "14",
-    "MatchOuter": "True",
-    "Offset": "0.0 mm",
-    "OffsetAngle": "0.0 deg",
-    "Thread": "False",
-    "Type": "ISO4762",
-    "base": {
-     "document": "TOP_CLAMP_Z_AXIS",
-     "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
-     "subs": [
-      "TOP_CLAMP_Z_AXIS001.Pocket005.Edge82"
-     ],
-     "via": "TOP_CLAMP_Z_AXIS001",
-     "via_label": "TOP_CLAMP_Z_AXIS001"
-    },
-    "label": "M4x14-Screw008",
-    "name": "Screw044",
     "type_id": "Part::FeaturePython"
    },
    {
@@ -8179,31 +8156,8 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw815",
+    "label": "M4x10-Screw862",
     "name": "Screw028",
-    "type_id": "Part::FeaturePython"
-   },
-   {
-    "Diameter": "M4",
-    "Invert": "True",
-    "LeftHanded": "False",
-    "Length": "10",
-    "MatchOuter": "True",
-    "Offset": "0.0 mm",
-    "OffsetAngle": "0.0 deg",
-    "Thread": "False",
-    "Type": "ISO4762",
-    "base": {
-     "document": "TOP_CLAMP_Z_AXIS",
-     "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
-     "subs": [
-      "Pocket005.Edge41"
-     ],
-     "via": "TOP_CLAMP_Z_AXIS",
-     "via_label": "TOP_CLAMP_Z_AXIS"
-    },
-    "label": "M4x10-Screw816",
-    "name": "Screw039",
     "type_id": "Part::FeaturePython"
    },
    {
@@ -8225,7 +8179,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw817",
+    "label": "M4x10-Screw864",
     "name": "Screw037",
     "type_id": "Part::FeaturePython"
    },
@@ -8248,7 +8202,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw818",
+    "label": "M4x10-Screw865",
     "name": "Screw009",
     "type_id": "Part::FeaturePython"
    },
@@ -8271,7 +8225,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw819",
+    "label": "M4x10-Screw866",
     "name": "Screw036",
     "type_id": "Part::FeaturePython"
    },
@@ -8294,7 +8248,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw820",
+    "label": "M4x10-Screw867",
     "name": "Screw015",
     "type_id": "Part::FeaturePython"
    },
@@ -8317,31 +8271,8 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw821",
+    "label": "M4x10-Screw868",
     "name": "Screw033",
-    "type_id": "Part::FeaturePython"
-   },
-   {
-    "Diameter": "M4",
-    "Invert": "False",
-    "LeftHanded": "False",
-    "Length": "10",
-    "MatchOuter": "True",
-    "Offset": "0.0 mm",
-    "OffsetAngle": "0.0 deg",
-    "Thread": "False",
-    "Type": "ISO4762",
-    "base": {
-     "document": "TOP_CLAMP_Z_AXIS",
-     "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
-     "subs": [
-      "Pocket005.Edge115"
-     ],
-     "via": "TOP_CLAMP_Z_AXIS001",
-     "via_label": "TOP_CLAMP_Z_AXIS001"
-    },
-    "label": "M4x10-Screw822",
-    "name": "Screw041",
     "type_id": "Part::FeaturePython"
    },
    {
@@ -8363,7 +8294,7 @@
      "via": "BOT_BRACKETS002",
      "via_label": "BOT_BRACKETS002"
     },
-    "label": "M4x10-Screw823",
+    "label": "M4x10-Screw870",
     "name": "Screw002",
     "type_id": "Part::FeaturePython"
    },
@@ -8386,7 +8317,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw824",
+    "label": "M4x10-Screw871",
     "name": "Screw023",
     "type_id": "Part::FeaturePython"
    },
@@ -8409,7 +8340,7 @@
      "via": "BOT_BRACKETS002",
      "via_label": "BOT_BRACKETS002"
     },
-    "label": "M4x10-Screw825",
+    "label": "M4x10-Screw872",
     "name": "Screw001",
     "type_id": "Part::FeaturePython"
    },
@@ -8432,7 +8363,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw826",
+    "label": "M4x10-Screw873",
     "name": "Screw005",
     "type_id": "Part::FeaturePython"
    },
@@ -8478,31 +8409,8 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw827",
+    "label": "M4x10-Screw874",
     "name": "Screw035",
-    "type_id": "Part::FeaturePython"
-   },
-   {
-    "Diameter": "M4",
-    "Invert": "True",
-    "LeftHanded": "False",
-    "Length": "10",
-    "MatchOuter": "True",
-    "Offset": "0.0 mm",
-    "OffsetAngle": "0.0 deg",
-    "Thread": "False",
-    "Type": "ISO4762",
-    "base": {
-     "document": "TOP_CLAMP_Z_AXIS",
-     "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
-     "subs": [
-      "TOP_CLAMP_Z_AXIS001.Pocket005.Edge41"
-     ],
-     "via": "TOP_CLAMP_Z_AXIS001",
-     "via_label": "TOP_CLAMP_Z_AXIS001"
-    },
-    "label": "M4x10-Screw828",
-    "name": "Screw042",
     "type_id": "Part::FeaturePython"
    },
    {
@@ -8524,7 +8432,7 @@
      "via": "BOT_BRACKETS002",
      "via_label": "BOT_BRACKETS002"
     },
-    "label": "M4x10-Screw829",
+    "label": "M4x10-Screw876",
     "name": "Screw004",
     "type_id": "Part::FeaturePython"
    },
@@ -8547,7 +8455,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw830",
+    "label": "M4x10-Screw877",
     "name": "Screw018",
     "type_id": "Part::FeaturePython"
    },
@@ -8570,7 +8478,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw831",
+    "label": "M4x10-Screw878",
     "name": "Screw012",
     "type_id": "Part::FeaturePython"
    },
@@ -8593,7 +8501,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw832",
+    "label": "M4x10-Screw879",
     "name": "Screw006",
     "type_id": "Part::FeaturePython"
    },
@@ -8616,7 +8524,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw833",
+    "label": "M4x10-Screw880",
     "name": "Screw019",
     "type_id": "Part::FeaturePython"
    },
@@ -8639,7 +8547,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw834",
+    "label": "M4x10-Screw881",
     "name": "Screw021",
     "type_id": "Part::FeaturePython"
    },
@@ -8662,7 +8570,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw835",
+    "label": "M4x10-Screw882",
     "name": "Screw024",
     "type_id": "Part::FeaturePython"
    },
@@ -8685,7 +8593,7 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw836",
+    "label": "M4x10-Screw883",
     "name": "Screw026",
     "type_id": "Part::FeaturePython"
    },
@@ -8708,7 +8616,7 @@
      "via": "BOT_BRACKETS002",
      "via_label": "BOT_BRACKETS002"
     },
-    "label": "M4x10-Screw837",
+    "label": "M4x10-Screw884",
     "name": "Screw003",
     "type_id": "Part::FeaturePython"
    },
@@ -8731,7 +8639,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw838",
+    "label": "M4x10-Screw885",
     "name": "Screw017",
     "type_id": "Part::FeaturePython"
    },
@@ -8754,7 +8662,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw839",
+    "label": "M4x10-Screw886",
     "name": "Screw010",
     "type_id": "Part::FeaturePython"
    },
@@ -8777,7 +8685,7 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw840",
+    "label": "M4x10-Screw887",
     "name": "Screw007",
     "type_id": "Part::FeaturePython"
    },
@@ -8800,7 +8708,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw841",
+    "label": "M4x10-Screw888",
     "name": "Screw034",
     "type_id": "Part::FeaturePython"
    },
@@ -8823,7 +8731,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw842",
+    "label": "M4x10-Screw889",
     "name": "Screw031",
     "type_id": "Part::FeaturePython"
    },
@@ -8846,7 +8754,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw843",
+    "label": "M4x10-Screw890",
     "name": "Screw020",
     "type_id": "Part::FeaturePython"
    },
@@ -8869,7 +8777,7 @@
      "via": "BOT_BRACKETS006",
      "via_label": "BOT_BRACKETS006"
     },
-    "label": "M4x10-Screw844",
+    "label": "M4x10-Screw891",
     "name": "Screw022",
     "type_id": "Part::FeaturePython"
    },
@@ -8892,7 +8800,7 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw845",
+    "label": "M4x10-Screw892",
     "name": "Screw025",
     "type_id": "Part::FeaturePython"
    },
@@ -8915,7 +8823,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw846",
+    "label": "M4x10-Screw893",
     "name": "Screw029",
     "type_id": "Part::FeaturePython"
    },
@@ -8938,7 +8846,7 @@
      "via": "BOT_BRACKETS004",
      "via_label": "BOT_BRACKETS004"
     },
-    "label": "M4x10-Screw847",
+    "label": "M4x10-Screw894",
     "name": "Screw016",
     "type_id": "Part::FeaturePython"
    },
@@ -8961,31 +8869,8 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw848",
+    "label": "M4x10-Screw895",
     "name": "Screw027",
-    "type_id": "Part::FeaturePython"
-   },
-   {
-    "Diameter": "M4",
-    "Invert": "True",
-    "LeftHanded": "False",
-    "Length": "14",
-    "MatchOuter": "True",
-    "Offset": "0.0 mm",
-    "OffsetAngle": "0.0 deg",
-    "Thread": "False",
-    "Type": "ISO4762",
-    "base": {
-     "document": "TOP_CLAMP_Z_AXIS",
-     "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
-     "subs": [
-      "TOP_CLAMP_Z_AXIS.Pocket005.Edge82"
-     ],
-     "via": "TOP_CLAMP_Z_AXIS",
-     "via_label": "TOP_CLAMP_Z_AXIS"
-    },
-    "label": "M4x14-Screw",
-    "name": "Screw043",
     "type_id": "Part::FeaturePython"
    },
    {
@@ -9007,7 +8892,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw849",
+    "label": "M4x10-Screw896",
     "name": "Screw011",
     "type_id": "Part::FeaturePython"
    },
@@ -9030,7 +8915,7 @@
      "via": "BOT_BRACKETS",
      "via_label": "BOT_BRACKETS"
     },
-    "label": "M4x10-Screw850",
+    "label": "M4x10-Screw897",
     "name": "Screw038",
     "type_id": "Part::FeaturePython"
    },
@@ -9053,7 +8938,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw851",
+    "label": "M4x10-Screw898",
     "name": "Screw030",
     "type_id": "Part::FeaturePython"
    },
@@ -9076,7 +8961,7 @@
      "via": "BOT_BRACKETS007",
      "via_label": "BOT_BRACKETS007"
     },
-    "label": "M4x10-Screw852",
+    "label": "M4x10-Screw899",
     "name": "Screw032",
     "type_id": "Part::FeaturePython"
    },
@@ -9099,7 +8984,7 @@
      "via": "BOT_BRACKETS003",
      "via_label": "BOT_BRACKETS003"
     },
-    "label": "M4x10-Screw853",
+    "label": "M4x10-Screw900",
     "name": "Screw013",
     "type_id": "Part::FeaturePython"
    },
@@ -9122,31 +9007,8 @@
      "via": "BOT_BRACKETS001",
      "via_label": "BOT_BRACKETS001"
     },
-    "label": "M4x10-Screw854",
+    "label": "M4x10-Screw901",
     "name": "Screw008",
-    "type_id": "Part::FeaturePython"
-   },
-   {
-    "Diameter": "M4",
-    "Invert": "False",
-    "LeftHanded": "False",
-    "Length": "10",
-    "MatchOuter": "True",
-    "Offset": "0.0 mm",
-    "OffsetAngle": "0.0 deg",
-    "Thread": "False",
-    "Type": "ISO4762",
-    "base": {
-     "document": "TOP_CLAMP_Z_AXIS",
-     "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
-     "subs": [
-      "TOP_CLAMP_Z_AXIS.Pocket005.Edge115"
-     ],
-     "via": "TOP_CLAMP_Z_AXIS",
-     "via_label": "TOP_CLAMP_Z_AXIS"
-    },
-    "label": "M4x10-Screw855",
-    "name": "Screw040",
     "type_id": "Part::FeaturePython"
    },
    {
@@ -9168,7 +9030,7 @@
      "via": "BOT_BRACKETS005",
      "via_label": "BOT_BRACKETS005"
     },
-    "label": "M4x10-Screw856",
+    "label": "M4x10-Screw903",
     "name": "Screw045",
     "type_id": "Part::FeaturePython"
    },
@@ -9191,7 +9053,7 @@
      "via": "HINGE_40_LEAF001",
      "via_label": "HINGE_40_LEAF001"
     },
-    "label": "M4x6-Screw001",
+    "label": "M4x6-Screw",
     "name": "Screw046",
     "type_id": "Part::FeaturePython"
    },
@@ -9214,7 +9076,7 @@
      "via": "HINGE_40_LEAF001",
      "via_label": "HINGE_40_LEAF001"
     },
-    "label": "M4x6-Screw002",
+    "label": "M4x6-Screw009",
     "name": "Screw047",
     "type_id": "Part::FeaturePython"
    },
@@ -9237,7 +9099,7 @@
      "via": "HINGE_40_LEAF",
      "via_label": "HINGE_40_LEAF"
     },
-    "label": "M4x6-Screw003",
+    "label": "M4x6-Screw010",
     "name": "Screw048",
     "type_id": "Part::FeaturePython"
    },
@@ -9260,7 +9122,7 @@
      "via": "HINGE_40_LEAF",
      "via_label": "HINGE_40_LEAF"
     },
-    "label": "M4x6-Screw004",
+    "label": "M4x6-Screw011",
     "name": "Screw049",
     "type_id": "Part::FeaturePython"
    },
@@ -9283,7 +9145,7 @@
      "via": "HINGE_40_LEAF003",
      "via_label": "HINGE_40_LEAF003"
     },
-    "label": "M4x6-Screw005",
+    "label": "M4x6-Screw012",
     "name": "Screw050",
     "type_id": "Part::FeaturePython"
    },
@@ -9306,7 +9168,7 @@
      "via": "HINGE_40_LEAF003",
      "via_label": "HINGE_40_LEAF003"
     },
-    "label": "M4x6-Screw006",
+    "label": "M4x6-Screw013",
     "name": "Screw051",
     "type_id": "Part::FeaturePython"
    },
@@ -9329,7 +9191,7 @@
      "via": "HINGE_40_LEAF002",
      "via_label": "HINGE_40_LEAF002"
     },
-    "label": "M4x6-Screw007",
+    "label": "M4x6-Screw014",
     "name": "Screw052",
     "type_id": "Part::FeaturePython"
    },
@@ -9352,8 +9214,146 @@
      "via": "HINGE_40_LEAF002",
      "via_label": "HINGE_40_LEAF002"
     },
-    "label": "M4x6-Screw008",
+    "label": "M4x6-Screw015",
     "name": "Screw053",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "10",
+    "MatchOuter": "False",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "Groove.Edge62"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS001",
+     "via_label": "TOP_CLAMP_Z_AXIS001"
+    },
+    "label": "M4x10-Screw910",
+    "name": "Screw054",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "10",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "Groove.Edge62"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS",
+     "via_label": "TOP_CLAMP_Z_AXIS"
+    },
+    "label": "M4x10-Screw911",
+    "name": "Screw055",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "True",
+    "LeftHanded": "False",
+    "Length": "10",
+    "MatchOuter": "False",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "Groove.Edge43"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS",
+     "via_label": "TOP_CLAMP_Z_AXIS"
+    },
+    "label": "M4x10-Screw917",
+    "name": "Screw056",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "10",
+    "MatchOuter": "False",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "TOP_CLAMP_Z_AXIS.Groove.Edge36"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS",
+     "via_label": "TOP_CLAMP_Z_AXIS"
+    },
+    "label": "M4x10-Screw915",
+    "name": "Screw057",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "True",
+    "LeftHanded": "False",
+    "Length": "10",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "Groove.Edge43"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS001",
+     "via_label": "TOP_CLAMP_Z_AXIS001"
+    },
+    "label": "M4x10-Screw916",
+    "name": "Screw058",
+    "type_id": "Part::FeaturePython"
+   },
+   {
+    "Diameter": "M4",
+    "Invert": "False",
+    "LeftHanded": "False",
+    "Length": "10",
+    "MatchOuter": "True",
+    "Offset": "0.0 mm",
+    "OffsetAngle": "0.0 deg",
+    "Thread": "False",
+    "Type": "ISO4762",
+    "base": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "TOP_CLAMP_Z_AXIS001.Groove.Edge36"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS001",
+     "via_label": "TOP_CLAMP_Z_AXIS001"
+    },
+    "label": "M4x10-Screw913",
+    "name": "Screw059",
     "type_id": "Part::FeaturePython"
    }
   ],
@@ -9369,8 +9369,8 @@
   ],
   "instances": [
    {
-    "document": "TOP_CLAMP_Z_AXIS",
-    "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
+    "document": "TOP_BEARING_MOUNT_Z_AXIS",
+    "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
     "is_subassembly": false,
     "label": "TOP_CLAMP_Z_AXIS",
     "linked_object": "Body",
@@ -9387,8 +9387,8 @@
     "type": "App::Link"
    },
    {
-    "document": "TOP_CLAMP_Z_AXIS",
-    "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
+    "document": "TOP_BEARING_MOUNT_Z_AXIS",
+    "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
     "is_subassembly": false,
     "label": "TOP_CLAMP_Z_AXIS001",
     "linked_object": "Body",
@@ -9709,6 +9709,42 @@
      8.4e-08
     ],
     "type": "App::Link"
+   },
+   {
+    "document": "LM8UU",
+    "file": "../stock/LM8UU.FCStd",
+    "is_subassembly": false,
+    "label": "LM8UU",
+    "linked_object": "Body",
+    "name": "LM8UU",
+    "placement": [
+     -48.512033676,
+     -20.701355443,
+     45.505952719,
+     0.515911555,
+     -0.483565169,
+     0.483565251,
+     -0.515911468
+    ],
+    "type": "App::Link"
+   },
+   {
+    "document": "LM8UU",
+    "file": "../stock/LM8UU.FCStd",
+    "is_subassembly": false,
+    "label": "LM8UU001",
+    "linked_object": "Body",
+    "name": "LM8UU001",
+    "placement": [
+     -48.512033676,
+     -20.701311947,
+     303.505952719,
+     0.515911555,
+     -0.483565169,
+     0.483565251,
+     -0.515911468
+    ],
+    "type": "App::Link"
    }
   ],
   "joints": [
@@ -9906,62 +9942,6 @@
      ],
      "via": "HINGE_40_LEAF003",
      "via_label": "HINGE_40_LEAF003"
-    }
-   },
-   {
-    "Angle": "0.0 deg",
-    "Distance": "0.0 mm",
-    "Distance2": "0.0 mm",
-    "JointType": "Fixed",
-    "label": "Fixed016",
-    "name": "Joint022",
-    "ref1": {
-     "document": "TOP_CLAMP_Z_AXIS",
-     "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
-     "subs": [
-      "Edge12",
-      "Vertex11"
-     ],
-     "via": "TOP_CLAMP_Z_AXIS",
-     "via_label": "TOP_CLAMP_Z_AXIS"
-    },
-    "ref2": {
-     "document": "_2020_300",
-     "file": "../stock/2020_300.FCStd",
-     "subs": [
-      "Edge1",
-      "Vertex1"
-     ],
-     "via": "_2020_303",
-     "via_label": "2020_300"
-    }
-   },
-   {
-    "Angle": "0.0 deg",
-    "Distance": "0.0 mm",
-    "Distance2": "0.0 mm",
-    "JointType": "Fixed",
-    "label": "Fixed017",
-    "name": "Joint023",
-    "ref1": {
-     "document": "TOP_CLAMP_Z_AXIS",
-     "file": "../top-frame/TOP_CLAMP_Z_AXIS.FCStd",
-     "subs": [
-      "Edge24",
-      "Vertex24"
-     ],
-     "via": "TOP_CLAMP_Z_AXIS001",
-     "via_label": "TOP_CLAMP_Z_AXIS001"
-    },
-    "ref2": {
-     "document": "_2020_300",
-     "file": "../stock/2020_300.FCStd",
-     "subs": [
-      "Edge3",
-      "Vertex4"
-     ],
-     "via": "_2020_303",
-     "via_label": "2020_300"
     }
    },
    {
@@ -10299,9 +10279,121 @@
      "via": "_2020_303",
      "via_label": "2020_300"
     }
+   },
+   {
+    "Angle": "0.0 deg",
+    "Distance": "0.0 mm",
+    "Distance2": "0.0 mm",
+    "JointType": "Fixed",
+    "label": "Fixed",
+    "name": "Joint035",
+    "ref1": {
+     "document": "_2020_300",
+     "file": "../stock/2020_300.FCStd",
+     "subs": [
+      "Edge3",
+      "Vertex4"
+     ],
+     "via": "_2020_303",
+     "via_label": "2020_300"
+    },
+    "ref2": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "Edge20",
+      "Vertex18"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS001",
+     "via_label": "TOP_CLAMP_Z_AXIS001"
+    }
+   },
+   {
+    "Angle": "0.0 deg",
+    "Distance": "0.0 mm",
+    "Distance2": "0.0 mm",
+    "JointType": "Fixed",
+    "label": "Fixed029",
+    "name": "Joint036",
+    "ref1": {
+     "document": "_2020_300",
+     "file": "../stock/2020_300.FCStd",
+     "subs": [
+      "Edge1",
+      "Vertex1"
+     ],
+     "via": "_2020_303",
+     "via_label": "2020_300"
+    },
+    "ref2": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "Edge12",
+      "Vertex11"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS",
+     "via_label": "TOP_CLAMP_Z_AXIS"
+    }
+   },
+   {
+    "Angle": "0.0 deg",
+    "Distance": "0.0 mm",
+    "Distance2": "0.0 mm",
+    "JointType": "Fixed",
+    "label": "Fixed030",
+    "name": "Joint037",
+    "ref1": {
+     "document": "LM8UU",
+     "file": "../stock/LM8UU.FCStd",
+     "subs": [
+      "Edge2",
+      "Edge2"
+     ],
+     "via": "LM8UU",
+     "via_label": "LM8UU"
+    },
+    "ref2": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "Edge80",
+      "Edge80"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS001",
+     "via_label": "TOP_CLAMP_Z_AXIS001"
+    }
+   },
+   {
+    "Angle": "0.0 deg",
+    "Distance": "0.0 mm",
+    "Distance2": "0.0 mm",
+    "JointType": "Fixed",
+    "label": "Fixed031",
+    "name": "Joint038",
+    "ref1": {
+     "document": "LM8UU",
+     "file": "../stock/LM8UU.FCStd",
+     "subs": [
+      "Edge2",
+      "Edge2"
+     ],
+     "via": "LM8UU001",
+     "via_label": "LM8UU001"
+    },
+    "ref2": {
+     "document": "TOP_BEARING_MOUNT_Z_AXIS",
+     "file": "../top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd",
+     "subs": [
+      "Edge80",
+      "Edge80"
+     ],
+     "via": "TOP_CLAMP_Z_AXIS",
+     "via_label": "TOP_CLAMP_Z_AXIS"
+    }
    }
   ],
-  "objects_total": 108,
+  "objects_total": 112,
   "unknown": []
  },
  "X-Axis_Carriage": {

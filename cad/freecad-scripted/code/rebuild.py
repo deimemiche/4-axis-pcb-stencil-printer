@@ -21,7 +21,7 @@ They are all regenerable from `../freecad/` by running this script.
     extract    the nine hand-built documents -> data/model.json
     datums     every joint and fastener reference measured -> data/datums.json
     names      named for what mates there -> data/datum-plan.json
-    parts      the 60 part scripts, datums and all
+    parts      the 61 part scripts, datums and all
     wiring     old edge name -> new datum -> data/wiring.json
     poses      the hand-built solved placements, to compare against
     assemble   the nine scripted documents in assembly/
@@ -201,7 +201,7 @@ def stage_names():
 
 
 def stage_parts():
-    """Rebuild the 60 part documents, `fcprim.apply_datums` and all."""
+    """Rebuild the 61 part documents, `fcprim.apply_datums` and all."""
     out = run("build.py")
     tail = [l.strip() for l in out.splitlines() if "/" in l and "built" in l]
     if not tail:

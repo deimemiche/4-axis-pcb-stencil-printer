@@ -1674,7 +1674,7 @@
    "was": "STENCIL_HOLDER_BACK.Pocket001.Edge12"
   },
   "Top_Assembly/Nut022": {
-   "along": 4.000000609,
+   "along": 4.000000175,
    "datum": "NUT",
    "diameter": "M5",
    "object": "LCS",
@@ -1686,108 +1686,108 @@
    "was": "Pocket002.Edge88"
   },
   "Top_Assembly/Nut023": {
-   "along": -2.267e-06,
+   "along": 1.4669e-05,
    "datum": "NUT",
    "diameter": "M5",
    "object": "LCS001",
    "part": "TOP_CLAMP_SPANNER_COUNTER",
-   "perp": 2.9095e-05,
+   "perp": 1.487e-06,
    "prefix": "",
    "type": "ISO4035",
    "via_link": "TOP_CLAMP_SPANNER_COUNTER",
    "was": "Pocket004.Edge135"
   },
   "Top_Assembly/Screw059": {
-   "along": 5.999999137,
+   "along": 5.999999971,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230901027,
+   "perp": 17.230930387,
    "prefix": "TOP_RAIL_HOLDER003.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER003.Pocket002.Edge60"
   },
   "Top_Assembly/Screw060": {
-   "along": 5.9999992,
+   "along": 5.999999973,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246033071,
+   "perp": 9.246024118,
    "prefix": "TOP_RAIL_HOLDER003.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER003.Pocket002.Edge61"
   },
   "Top_Assembly/Screw062": {
-   "along": 5.99999998,
+   "along": 5.999999999,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230930634,
+   "perp": 17.230930387,
    "prefix": "TOP_RAIL_HOLDER001.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER001.Pocket002.Edge60"
   },
   "Top_Assembly/Screw063": {
-   "along": 5.9999992,
+   "along": 6.0,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.2309381,
+   "perp": 17.230930387,
    "prefix": "TOP_RAIL_HOLDER002.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER002.Pocket002.Edge60"
   },
   "Top_Assembly/Screw064": {
-   "along": 5.999999137,
+   "along": 5.999999998,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.24605073,
+   "perp": 9.246024119,
    "prefix": "TOP_RAIL_HOLDER002.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER002.Pocket002.Edge61"
   },
   "Top_Assembly/Screw065": {
-   "along": 6.000000042,
+   "along": 5.999999974,
    "datum": "BOLT3",
    "diameter": "M4",
    "object": "LCS004",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 17.230951787,
+   "perp": 17.230930387,
    "prefix": "TOP_RAIL_HOLDER.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER.Pocket002.Edge60"
   },
   "Top_Assembly/Screw066": {
-   "along": 5.99999998,
+   "along": 5.999999972,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.245987214,
+   "perp": 9.246024118,
    "prefix": "TOP_RAIL_HOLDER.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
    "was": "TOP_RAIL_HOLDER.Pocket002.Edge61"
   },
   "Top_Assembly/Screw067": {
-   "along": 6.000000042,
+   "along": 6.000000001,
    "datum": "BOLT4",
    "diameter": "M4",
    "object": "LCS005",
    "part": "TOP_RAIL_HOLDER",
-   "perp": 9.246025459,
+   "perp": 9.246024119,
    "prefix": "TOP_RAIL_HOLDER001.",
    "type": "ISO4762",
    "via_link": "Stencil_Clamp",
@@ -2261,78 +2261,6 @@
    "via_link": "BOT_BRACKETS",
    "was": "BOT_BRACKETS.Pocket.Edge19"
   },
-  "Top_Frame/Screw039": {
-   "along": 24.0,
-   "datum": "BOLT3",
-   "diameter": "M4",
-   "object": "LCS005",
-   "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 24.0,
-   "prefix": "",
-   "type": "ISO4762",
-   "via_link": "TOP_CLAMP_Z_AXIS",
-   "was": "Pocket005.Edge41"
-  },
-  "Top_Frame/Screw040": {
-   "along": -0.0,
-   "datum": "BOLT2",
-   "diameter": "M4",
-   "object": "LCS004",
-   "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 22.090722034,
-   "prefix": "TOP_CLAMP_Z_AXIS.",
-   "type": "ISO4762",
-   "via_link": "TOP_CLAMP_Z_AXIS",
-   "was": "TOP_CLAMP_Z_AXIS.Pocket005.Edge115"
-  },
-  "Top_Frame/Screw041": {
-   "along": -0.0,
-   "datum": "BOLT2",
-   "diameter": "M4",
-   "object": "LCS004",
-   "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 22.090722034,
-   "prefix": "",
-   "type": "ISO4762",
-   "via_link": "TOP_CLAMP_Z_AXIS001",
-   "was": "Pocket005.Edge115"
-  },
-  "Top_Frame/Screw042": {
-   "along": 24.0,
-   "datum": "BOLT3",
-   "diameter": "M4",
-   "object": "LCS005",
-   "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 24.0,
-   "prefix": "TOP_CLAMP_Z_AXIS001.",
-   "type": "ISO4762",
-   "via_link": "TOP_CLAMP_Z_AXIS001",
-   "was": "TOP_CLAMP_Z_AXIS001.Pocket005.Edge41"
-  },
-  "Top_Frame/Screw043": {
-   "along": -0.0,
-   "datum": "BOLT1",
-   "diameter": "M4",
-   "object": "LCS003",
-   "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 22.090722034,
-   "prefix": "TOP_CLAMP_Z_AXIS.",
-   "type": "ISO4762",
-   "via_link": "TOP_CLAMP_Z_AXIS",
-   "was": "TOP_CLAMP_Z_AXIS.Pocket005.Edge82"
-  },
-  "Top_Frame/Screw044": {
-   "along": -0.0,
-   "datum": "BOLT1",
-   "diameter": "M4",
-   "object": "LCS003",
-   "part": "TOP_CLAMP_Z_AXIS",
-   "perp": 22.090722034,
-   "prefix": "TOP_CLAMP_Z_AXIS001.",
-   "type": "ISO4762",
-   "via_link": "TOP_CLAMP_Z_AXIS001",
-   "was": "TOP_CLAMP_Z_AXIS001.Pocket005.Edge82"
-  },
   "Top_Frame/Screw045": {
    "along": -6.0,
    "datum": "BOLT2_HEAD",
@@ -2440,6 +2368,78 @@
    "type": "ISO4762",
    "via_link": "HINGE_40_LEAF002",
    "was": "Pocket002.Edge41"
+  },
+  "Top_Frame/Screw054": {
+   "along": -0.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "TOP_BEARING_MOUNT_Z_AXIS",
+   "perp": 23.194827009,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS001",
+   "was": "Groove.Edge62"
+  },
+  "Top_Frame/Screw055": {
+   "along": -0.0,
+   "datum": "BOLT2",
+   "diameter": "M4",
+   "object": "LCS002",
+   "part": "TOP_BEARING_MOUNT_Z_AXIS",
+   "perp": 23.194827009,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS",
+   "was": "Groove.Edge62"
+  },
+  "Top_Frame/Screw056": {
+   "along": 24.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "TOP_BEARING_MOUNT_Z_AXIS",
+   "perp": 24.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS",
+   "was": "Groove.Edge43"
+  },
+  "Top_Frame/Screw057": {
+   "along": 0.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "TOP_BEARING_MOUNT_Z_AXIS",
+   "perp": 23.194827009,
+   "prefix": "TOP_CLAMP_Z_AXIS.",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS",
+   "was": "TOP_CLAMP_Z_AXIS.Groove.Edge36"
+  },
+  "Top_Frame/Screw058": {
+   "along": 24.0,
+   "datum": "BOLT3",
+   "diameter": "M4",
+   "object": "LCS003",
+   "part": "TOP_BEARING_MOUNT_Z_AXIS",
+   "perp": 24.0,
+   "prefix": "",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS001",
+   "was": "Groove.Edge43"
+  },
+  "Top_Frame/Screw059": {
+   "along": 0.0,
+   "datum": "BOLT1",
+   "diameter": "M4",
+   "object": "LCS001",
+   "part": "TOP_BEARING_MOUNT_Z_AXIS",
+   "perp": 23.194827009,
+   "prefix": "TOP_CLAMP_Z_AXIS001.",
+   "type": "ISO4762",
+   "via_link": "TOP_CLAMP_Z_AXIS001",
+   "was": "TOP_CLAMP_Z_AXIS001.Groove.Edge36"
   },
   "X_Axis_Carriage/Nut": {
    "along": -22.95,
@@ -3089,6 +3089,7 @@
    "BRACKET2": "LCS007",
    "BRACKET3": "LCS008",
    "BRACKET4": "LCS009",
+   "ECC_TOP": "LCS013",
    "END_A": "LCS",
    "END_B": "LCS001",
    "FRAME": "LCS010",
@@ -3339,6 +3340,7 @@
   },
   "ECCF_TOP": {
    "ECC_MOUNT": "LCS",
+   "FRAME": "LCS002",
    "STUD": "LCS001"
   },
   "HINGE_40_LEAF": {
@@ -3389,6 +3391,7 @@
   },
   "ROD_D8_140": {
    "AXIS": "LCS",
+   "BEARING": "LCS004",
    "END_A": "LCS001",
    "END_B": "LCS002",
    "Z": "LCS003"
@@ -3489,6 +3492,14 @@
   "STENCIL_HOLDER_FRONT_2": {
    "HOLDER_FRONT": "LCS",
    "SPANNER_COUNTER": "LCS001"
+  },
+  "TOP_BEARING_MOUNT_Z_AXIS": {
+   "BEARING": "LCS",
+   "BOLT1": "LCS001",
+   "BOLT2": "LCS002",
+   "BOLT3": "LCS003",
+   "FRAME1": "LCS004",
+   "FRAME2": "LCS005"
   },
   "TOP_CLAMP_BEARING_MOUNT_1": {
    "BEARING": "LCS003",
@@ -5439,42 +5450,6 @@
     "was": "Pocket002.Edge16"
    }
   },
-  "Top_Frame/Joint022": {
-   "Reference1": {
-    "datum": "FRAME1",
-    "object": "LCS001",
-    "part": "TOP_CLAMP_Z_AXIS",
-    "prefix": "",
-    "via_link": null,
-    "was": "Edge12"
-   },
-   "Reference2": {
-    "datum": "BRACKET2",
-    "object": "LCS007",
-    "part": "_2020_300",
-    "prefix": "",
-    "via_link": null,
-    "was": "Edge1"
-   }
-  },
-  "Top_Frame/Joint023": {
-   "Reference1": {
-    "datum": "FRAME2",
-    "object": "LCS002",
-    "part": "TOP_CLAMP_Z_AXIS",
-    "prefix": "",
-    "via_link": null,
-    "was": "Edge24"
-   },
-   "Reference2": {
-    "datum": "BRACKET4",
-    "object": "LCS009",
-    "part": "_2020_300",
-    "prefix": "",
-    "via_link": null,
-    "was": "Edge3"
-   }
-  },
   "Top_Frame/Joint024": {
    "Reference1": {
     "datum": "FRAME",
@@ -5671,6 +5646,78 @@
     "prefix": "",
     "via_link": null,
     "was": "Face2"
+   }
+  },
+  "Top_Frame/Joint035": {
+   "Reference1": {
+    "datum": "BRACKET4",
+    "object": "LCS009",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge3"
+   },
+   "Reference2": {
+    "datum": "FRAME2",
+    "object": "LCS005",
+    "part": "TOP_BEARING_MOUNT_Z_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge20"
+   }
+  },
+  "Top_Frame/Joint036": {
+   "Reference1": {
+    "datum": "BRACKET2",
+    "object": "LCS007",
+    "part": "_2020_300",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge1"
+   },
+   "Reference2": {
+    "datum": "FRAME1",
+    "object": "LCS004",
+    "part": "TOP_BEARING_MOUNT_Z_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge12"
+   }
+  },
+  "Top_Frame/Joint037": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge2"
+   },
+   "Reference2": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "TOP_BEARING_MOUNT_Z_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge80"
+   }
+  },
+  "Top_Frame/Joint038": {
+   "Reference1": {
+    "datum": "BORE",
+    "object": "LCS",
+    "part": "LM8UU",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge2"
+   },
+   "Reference2": {
+    "datum": "BEARING",
+    "object": "LCS",
+    "part": "TOP_BEARING_MOUNT_Z_AXIS",
+    "prefix": "",
+    "via_link": null,
+    "was": "Edge80"
    }
   },
   "X_Axis_Carriage/Joint": {
@@ -6231,42 +6278,6 @@
     "was": "Face3"
    }
   },
-  "_4_Axis_Stencil_Printer/Joint002": {
-   "Reference1": {
-    "datum": "ROD1",
-    "object": "LCS",
-    "part": "TOP_CLAMP_Z_AXIS",
-    "prefix": "Top_Frame.TOP_CLAMP_Z_AXIS.",
-    "via_link": null,
-    "was": "Top_Frame.TOP_CLAMP_Z_AXIS.Face26"
-   },
-   "Reference2": {
-    "datum": "Z",
-    "object": "LCS003",
-    "part": "ROD_D8_140",
-    "prefix": "",
-    "via_link": null,
-    "was": "Face1"
-   }
-  },
-  "_4_Axis_Stencil_Printer/Joint003": {
-   "Reference1": {
-    "datum": "ROD2",
-    "object": "LCS006",
-    "part": "TOP_CLAMP_Z_AXIS",
-    "prefix": "Top_Frame.TOP_CLAMP_Z_AXIS.",
-    "via_link": null,
-    "was": "Top_Frame.TOP_CLAMP_Z_AXIS.Face4"
-   },
-   "Reference2": {
-    "datum": "Z",
-    "object": "LCS003",
-    "part": "ROD_D8_140",
-    "prefix": "",
-    "via_link": null,
-    "was": "Face2"
-   }
-  },
   "_4_Axis_Stencil_Printer/Joint004": {
    "Reference1": {
     "datum": "FRAME4",
@@ -6283,6 +6294,42 @@
     "prefix": "Bottom_Frame001._2020_306.",
     "via_link": null,
     "was": "Bottom_Frame001._2020_306.Face44"
+   }
+  },
+  "_4_Axis_Stencil_Printer/Joint005": {
+   "Reference1": {
+    "datum": "END_B",
+    "object": "LCS003",
+    "part": "LM8UU",
+    "prefix": "Top_Frame.LM8UU013.",
+    "via_link": null,
+    "was": "Top_Frame.LM8UU013.Face4"
+   },
+   "Reference2": {
+    "datum": "BEARING",
+    "object": "LCS004",
+    "part": "ROD_D8_140",
+    "prefix": "",
+    "via_link": null,
+    "was": "Face1"
+   }
+  },
+  "_4_Axis_Stencil_Printer/Joint006": {
+   "Reference1": {
+    "datum": "FRAME",
+    "object": "LCS002",
+    "part": "ECCF_TOP",
+    "prefix": "Eccenter.ECCF_TOP.",
+    "via_link": null,
+    "was": "Eccenter.ECCF_TOP.Face11"
+   },
+   "Reference2": {
+    "datum": "ECC_TOP",
+    "object": "LCS013",
+    "part": "_2020_300_TOP_FRONT",
+    "prefix": "Top_Frame._2020_300_TOP_FRONT.",
+    "via_link": null,
+    "was": "Top_Frame._2020_300_TOP_FRONT.Face5"
    }
   }
  },

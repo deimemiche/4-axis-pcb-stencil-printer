@@ -943,35 +943,13 @@
    "along": 1.0,
    "at": [
     10.0,
-    4.0,
-    30.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fixed": false,
-   "geo": "bolt_b1_dia",
-   "how": "axis",
-   "name": "BOLT1",
-   "offset": -4.0,
-   "radius": 2.25,
-   "roll": 0.0,
-   "sketch": "Bolt holes",
-   "why": "fastener"
-  },
-  {
-   "along": 1.0,
-   "at": [
-    10.0,
     -0.0,
     10.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     -1.0,
-    -0.0
+    0.0
    ],
    "fixed": true,
    "geo": "bolt_a0_dia",
@@ -985,28 +963,6 @@
   {
    "along": 1.0,
    "at": [
-    10.0,
-    4.0,
-    50.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fixed": false,
-   "geo": "bolt_b2_dia",
-   "how": "axis",
-   "name": "BOLT2",
-   "offset": -4.0,
-   "radius": 2.25,
-   "roll": 0.0,
-   "sketch": "Bolt holes",
-   "why": "fastener"
-  },
-  {
-   "along": 1.0,
-   "at": [
     30.0,
     0.0,
     10.0
@@ -1040,12 +996,12 @@
    "fixed": false,
    "geo": "bolt_a1_dia",
    "how": "axis",
-   "name": "BOLT3",
+   "name": "BOLT2_HEAD",
    "offset": -4.0,
    "radius": 2.25,
    "roll": 0.0,
    "sketch": "Bolt holes",
-   "why": "fastener"
+   "why": "reviewed"
   },
   {
    "along": 1.0,
@@ -1083,12 +1039,12 @@
    "fixed": false,
    "geo": "bolt_a2_dia",
    "how": "axis",
-   "name": "BOLT4",
+   "name": "BOLT3_HEAD",
    "offset": -4.0,
    "radius": 2.25,
    "roll": 0.0,
    "sketch": "Bolt holes",
-   "why": "fastener"
+   "why": "reviewed"
   },
   {
    "along": 1.0,
@@ -1110,6 +1066,28 @@
    "roll": 0.0,
    "sketch": "Bolt holes",
    "why": "kept"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    10.0,
+    4.0,
+    30.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fixed": false,
+   "geo": "bolt_b1_dia",
+   "how": "axis",
+   "name": "BOLT4_HEAD",
+   "offset": -4.0,
+   "radius": 2.25,
+   "roll": 0.0,
+   "sketch": "Bolt holes",
+   "why": "reviewed"
   },
   {
    "along": 1.0,
@@ -1131,6 +1109,28 @@
    "roll": 0.0,
    "sketch": "Bolt holes",
    "why": "kept"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    10.0,
+    4.0,
+    50.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fixed": false,
+   "geo": "bolt_b2_dia",
+   "how": "axis",
+   "name": "BOLT5_HEAD",
+   "offset": -4.0,
+   "radius": 2.25,
+   "roll": 0.0,
+   "sketch": "Bolt holes",
+   "why": "reviewed"
   },
   {
    "at": [
@@ -1201,7 +1201,7 @@
    "axis": [
     0.0,
     1.0,
-    0.0
+    -0.0
    ],
    "fixed": false,
    "geo": "geo0",
@@ -1440,9 +1440,9 @@
     0.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     -1.0,
-    -0.0
+    0.0
    ],
    "fixed": false,
    "geo": "bore_dia",
@@ -1524,6 +1524,27 @@
    "along": 1.0,
    "at": [
     0.0,
+    -0.0,
+    -9.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    -0.0
+   ],
+   "fixed": true,
+   "geo": "boltn_dia",
+   "how": "centre",
+   "name": "BOLT1",
+   "radius": 1.75,
+   "roll": 0.0,
+   "sketch": "Shanks",
+   "why": "kept"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    0.0,
     3.0,
     -9.0
    ],
@@ -1535,32 +1556,11 @@
    "fixed": false,
    "geo": "headn_dia",
    "how": "centre",
-   "name": "BOLT1",
+   "name": "BOLT1_HEAD",
    "radius": 3.0,
    "roll": 0.0,
    "sketch": "Heads",
-   "why": "fastener"
-  },
-  {
-   "along": 1.0,
-   "at": [
-    0.0,
-    0.0,
-    -9.0
-   ],
-   "axis": [
-    -0.0,
-    -1.0,
-    0.0
-   ],
-   "fixed": true,
-   "geo": "boltn_dia",
-   "how": "centre",
-   "name": "BOLT1",
-   "radius": 1.75,
-   "roll": 0.0,
-   "sketch": "Shanks",
-   "why": "kept"
+   "why": "reviewed"
   },
   {
    "along": 1.0,
@@ -1577,11 +1577,11 @@
    "fixed": false,
    "geo": "headp_dia",
    "how": "centre",
-   "name": "BOLT3",
+   "name": "BOLT2_HEAD",
    "radius": 3.0,
    "roll": 0.0,
    "sketch": "Heads",
-   "why": "fastener"
+   "why": "reviewed"
   },
   {
    "along": 1.0,
@@ -1636,7 +1636,7 @@
    ],
    "axis": [
     0.0,
-    0.0,
+    -0.0,
     -1.0
    ],
    "fixed": false,
@@ -1655,6 +1655,27 @@
    "along": 1.0,
    "at": [
     0.0,
+    0.0,
+    -9.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    -0.0
+   ],
+   "fixed": true,
+   "geo": "boltn_dia",
+   "how": "centre",
+   "name": "BOLT1",
+   "radius": 1.75,
+   "roll": 0.0,
+   "sketch": "Bolt shanks",
+   "why": "kept"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    0.0,
     3.0,
     -9.0
    ],
@@ -1666,33 +1687,12 @@
    "fixed": false,
    "geo": "boltn_dia",
    "how": "axis",
-   "name": "BOLT1",
+   "name": "BOLT1_HEAD",
    "offset": -3.0,
    "radius": 1.75,
    "roll": 0.0,
    "sketch": "Bolt shanks",
-   "why": "fastener"
-  },
-  {
-   "along": 1.0,
-   "at": [
-    0.0,
-    0.0,
-    -9.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fixed": true,
-   "geo": "boltn_dia",
-   "how": "centre",
-   "name": "BOLT1",
-   "radius": 1.75,
-   "roll": 0.0,
-   "sketch": "Bolt shanks",
-   "why": "kept"
+   "why": "reviewed"
   },
   {
    "along": 1.0,
@@ -1709,12 +1709,12 @@
    "fixed": false,
    "geo": "boltp_dia",
    "how": "axis",
-   "name": "BOLT3",
+   "name": "BOLT2_HEAD",
    "offset": -3.0,
    "radius": 1.75,
    "roll": 0.0,
    "sketch": "Bolt shanks",
-   "why": "fastener"
+   "why": "reviewed"
   }
  ],
  "BOT_RAIL_CLAMP_Y_AXIS_1": [
@@ -1733,18 +1733,18 @@
    "fixed": false,
    "geo": "boltn_dia",
    "how": "axis",
-   "name": "BOLT2",
+   "name": "BOLT1_HEAD",
    "offset": -3.0,
    "radius": 1.75,
    "roll": 0.0,
    "sketch": "Shanks",
-   "why": "fastener"
+   "why": "reviewed"
   },
   {
    "along": 1.0,
    "at": [
-    0.0,
     -0.0,
+    0.0,
     9.0
    ],
    "axis": [
@@ -1776,12 +1776,12 @@
    "fixed": false,
    "geo": "boltp_dia",
    "how": "axis",
-   "name": "BOLT3",
+   "name": "BOLT2_HEAD",
    "offset": -3.0,
    "radius": 1.75,
    "roll": 0.0,
    "sketch": "Shanks",
-   "why": "fastener"
+   "why": "reviewed"
   },
   {
    "along": 1.0,
@@ -1890,7 +1890,7 @@
   {
    "along": 1.0,
    "at": [
-    0.0,
+    -0.0,
     -1.0,
     14.2915
    ],
@@ -2154,32 +2154,6 @@
  ],
  "BOT_Z_AXIS_BRACKET": [
   {
-   "at": [
-    7.0072,
-    14.0,
-    -3.45
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fixed": false,
-   "how": "coords",
-   "name": "BOLT1",
-   "per": {
-    "x": [],
-    "y": [
-     "Bolts:mount_v",
-     "Bolts:pinch_v",
-     "Mount counterbore:mount_head_v"
-    ],
-    "z": []
-   },
-   "roll": 0.0,
-   "why": "fastener"
-  },
-  {
    "along": 1.0,
    "at": [
     10.0,
@@ -2199,32 +2173,6 @@
    "roll": 0.0,
    "sketch": "Bolt holes",
    "why": "kept"
-  },
-  {
-   "at": [
-    35.4181,
-    14.0,
-    -13.4
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fixed": false,
-   "how": "coords",
-   "name": "BOLT2",
-   "per": {
-    "x": [],
-    "y": [
-     "Bolts:mount_v",
-     "Bolts:pinch_v",
-     "Mount counterbore:mount_head_v"
-    ],
-    "z": []
-   },
-   "roll": 0.0,
-   "why": "fastener"
   },
   {
    "along": 1.0,
@@ -2364,6 +2312,58 @@
    "why": "mates"
   },
   {
+   "at": [
+    7.0072,
+    14.0,
+    -3.45
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fixed": false,
+   "how": "coords",
+   "name": "MOUNT_BOLT",
+   "per": {
+    "x": [],
+    "y": [
+     "Bolts:mount_v",
+     "Bolts:pinch_v",
+     "Mount counterbore:mount_head_v"
+    ],
+    "z": []
+   },
+   "roll": 0.0,
+   "why": "reviewed"
+  },
+  {
+   "at": [
+    35.4181,
+    14.0,
+    -13.4
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fixed": false,
+   "how": "coords",
+   "name": "PINCH_BOLT",
+   "per": {
+    "x": [],
+    "y": [
+     "Bolts:mount_v",
+     "Bolts:pinch_v",
+     "Mount counterbore:mount_head_v"
+    ],
+    "z": []
+   },
+   "roll": 0.0,
+   "why": "reviewed"
+  },
+  {
    "along": 1.0,
    "at": [
     21.0,
@@ -2371,7 +2371,7 @@
     -11.55
    ],
    "axis": [
-    0.0,
+    -0.0,
     -1.0,
     -0.0
    ],
@@ -2387,32 +2387,6 @@
   }
  ],
  "BOT_Z_AXIS_BRACKET_MIRRORED": [
-  {
-   "at": [
-    -35.4181,
-    14.0,
-    -13.4
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fixed": false,
-   "how": "coords",
-   "name": "BOLT1",
-   "per": {
-    "x": [],
-    "y": [
-     "Bolts:mount_v",
-     "Bolts:pinch_v",
-     "Mount counterbore:mount_head_v"
-    ],
-    "z": []
-   },
-   "roll": 0.0,
-   "why": "fastener"
-  },
   {
    "along": 1.0,
    "at": [
@@ -2433,32 +2407,6 @@
    "roll": 0.0,
    "sketch": "Bolt holes",
    "why": "kept"
-  },
-  {
-   "at": [
-    -7.0072,
-    14.0,
-    -3.45
-   ],
-   "axis": [
-    0.0,
-    0.0,
-    1.0
-   ],
-   "fixed": false,
-   "how": "coords",
-   "name": "BOLT2",
-   "per": {
-    "x": [],
-    "y": [
-     "Bolts:mount_v",
-     "Bolts:pinch_v",
-     "Mount counterbore:mount_head_v"
-    ],
-    "z": []
-   },
-   "roll": 0.0,
-   "why": "fastener"
   },
   {
    "along": 1.0,
@@ -2595,6 +2543,58 @@
    },
    "roll": 270.0,
    "why": "mates"
+  },
+  {
+   "at": [
+    -7.0072,
+    14.0,
+    -3.45
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fixed": false,
+   "how": "coords",
+   "name": "MOUNT_BOLT",
+   "per": {
+    "x": [],
+    "y": [
+     "Bolts:mount_v",
+     "Bolts:pinch_v",
+     "Mount counterbore:mount_head_v"
+    ],
+    "z": []
+   },
+   "roll": 0.0,
+   "why": "reviewed"
+  },
+  {
+   "at": [
+    -35.4181,
+    14.0,
+    -13.4
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fixed": false,
+   "how": "coords",
+   "name": "PINCH_BOLT",
+   "per": {
+    "x": [],
+    "y": [
+     "Bolts:mount_v",
+     "Bolts:pinch_v",
+     "Mount counterbore:mount_head_v"
+    ],
+    "z": []
+   },
+   "roll": 0.0,
+   "why": "reviewed"
   },
   {
    "along": 1.0,
@@ -3100,6 +3100,28 @@
    "along": 1.0,
    "at": [
     0.0,
+    27.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fixed": false,
+   "geo": "boss_dia",
+   "how": "axis",
+   "name": "FRAME",
+   "offset": -13.0,
+   "radius": 9.0,
+   "roll": 180.0,
+   "sketch": "Boss",
+   "why": "mates"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    0.0,
     2.0,
     0.0
    ],
@@ -3120,6 +3142,50 @@
   }
  ],
  "HINGE_40_LEAF": [
+  {
+   "along": 1.0,
+   "at": [
+    0.0,
+    10.0,
+    10.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "fixed": false,
+   "geo": "screw1_dia",
+   "how": "axis",
+   "name": "BOLT1",
+   "offset": 1.5,
+   "radius": 2.25,
+   "roll": 0.0,
+   "sketch": "Screws",
+   "why": "fastener"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    0.0,
+    10.0,
+    30.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "fixed": false,
+   "geo": "screw2_dia",
+   "how": "axis",
+   "name": "BOLT2",
+   "offset": 1.5,
+   "radius": 2.25,
+   "roll": 0.0,
+   "sketch": "Screws",
+   "why": "fastener"
+  },
   {
    "along": 1.0,
    "at": [
@@ -3150,7 +3216,7 @@
     30.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     0.0,
     1.0
    ],
@@ -3192,7 +3258,7 @@
    "axis": [
     1.0,
     0.0,
-    0.0
+    -0.0
    ],
    "fixed": false,
    "geo": "plate",
@@ -3204,14 +3270,14 @@
   },
   {
    "at": [
-    -0.0,
+    0.0,
     11.3095,
     20.0
    ],
    "axis": [
     1.0,
     -0.0,
-    -0.0
+    0.0
    ],
    "fixed": false,
    "how": "coords",
@@ -3289,7 +3355,7 @@
    "axis": [
     -0.0,
     -1.0,
-    0.0
+    -0.0
    ],
    "fixed": false,
    "how": "coords",
@@ -3338,12 +3404,12 @@
   {
    "along": 1.0,
    "at": [
-    0.0,
     -0.0,
+    0.0,
     24.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     -0.0,
     1.0
    ],
@@ -3411,7 +3477,7 @@
    ],
    "axis": [
     0.0,
-    0.0,
+    -0.0,
     1.0
    ],
    "fixed": false,
@@ -3433,7 +3499,7 @@
    ],
    "axis": [
     0.0,
-    0.0,
+    -0.0,
     1.0
    ],
    "fixed": false,
@@ -3472,7 +3538,7 @@
    "along": 1.0,
    "at": [
     0.0,
-    -0.0,
+    0.0,
     270.0
    ],
    "axis": [
@@ -3536,6 +3602,27 @@
    "along": 1.0,
    "at": [
     0.0,
+    0.0,
+    0.0
+   ],
+   "axis": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "fixed": false,
+   "geo": "rod_dia",
+   "how": "centre",
+   "name": "BEARING",
+   "radius": 4.0,
+   "roll": 0.0,
+   "sketch": "Section",
+   "why": "mates"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    0.0,
     -0.0,
     140.0
    ],
@@ -3553,27 +3640,6 @@
    "roll": 0.0,
    "sketch": "Section",
    "why": "kept"
-  },
-  {
-   "along": 1.0,
-   "at": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "axis": [
-    0.0,
-    -0.0,
-    1.0
-   ],
-   "fixed": false,
-   "geo": "rod_dia",
-   "how": "centre",
-   "name": "Z",
-   "radius": 4.0,
-   "roll": 0.0,
-   "sketch": "Section",
-   "why": "mates"
   }
  ],
  "ROD_D8_244": [
@@ -3627,7 +3693,7 @@
    "along": 1.0,
    "at": [
     -0.0,
-    -0.0,
+    0.0,
     280.0
    ],
    "axis": [
@@ -3676,8 +3742,8 @@
     150.0
    ],
    "axis": [
-    0.0,
     -0.0,
+    0.0,
     1.0
    ],
    "fixed": true,
@@ -3698,8 +3764,8 @@
     300.0
    ],
    "axis": [
-    0.0,
     -0.0,
+    0.0,
     1.0
    ],
    "fixed": true,
@@ -3720,8 +3786,8 @@
     0.0
    ],
    "axis": [
-    -0.0,
-    -0.0,
+    0.0,
+    0.0,
     1.0
    ],
    "fixed": false,
@@ -4231,7 +4297,7 @@
    "axis": [
     0.0,
     1.0,
-    -0.0
+    0.0
    ],
    "fixed": false,
    "how": "coords",
@@ -4710,7 +4776,7 @@
    "at": [
     -75.0,
     8.0,
-    -0.0
+    0.0
    ],
    "axis": [
     0.0,
@@ -4816,11 +4882,138 @@
    "why": "mates"
   }
  ],
+ "TOP_BEARING_MOUNT_Z_AXIS": [
+  {
+   "along": 1.0,
+   "at": [
+    -10.0,
+    -1.8,
+    -0.0
+   ],
+   "axis": [
+    -0.0,
+    -1.0,
+    -0.0
+   ],
+   "fixed": false,
+   "geo": "side",
+   "how": "axis",
+   "name": "BEARING",
+   "offset": 25.8,
+   "radius": 10.5,
+   "roll": 180.0,
+   "sketch": "Body",
+   "why": "mates"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    -4.0,
+    10.0,
+    -13.0
+   ],
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "fixed": false,
+   "geo": "boltn_dia",
+   "how": "axis",
+   "name": "BOLT1",
+   "offset": 5.0,
+   "radius": 2.3,
+   "roll": 0.0,
+   "sketch": "Bolts",
+   "why": "fastener"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    -4.0,
+    10.0,
+    13.0
+   ],
+   "axis": [
+    -1.0,
+    0.0,
+    0.0
+   ],
+   "fixed": false,
+   "geo": "boltp_dia",
+   "how": "axis",
+   "name": "BOLT2",
+   "offset": 5.0,
+   "radius": 2.3,
+   "roll": 0.0,
+   "sketch": "Bolts",
+   "why": "fastener"
+  },
+  {
+   "along": 1.0,
+   "at": [
+    10.0,
+    24.0,
+    -0.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fixed": false,
+   "geo": "bore_dia",
+   "how": "centre",
+   "name": "BOLT3",
+   "radius": 2.3,
+   "roll": 0.0,
+   "sketch": "Top bore",
+   "why": "fastener"
+  },
+  {
+   "at": [
+    0.0,
+    20.0,
+    -18.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fixed": false,
+   "how": "plane",
+   "name": "FRAME1",
+   "offset": -0.0,
+   "roll": 270.0,
+   "sketch": "Shelf",
+   "why": "mates"
+  },
+  {
+   "at": [
+    0.0,
+    20.0,
+    18.0
+   ],
+   "axis": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "fixed": false,
+   "how": "plane",
+   "name": "FRAME2",
+   "offset": 0.0,
+   "roll": 270.0,
+   "sketch": "Shelf",
+   "why": "mates"
+  }
+ ],
  "TOP_CLAMP_BEARING_MOUNT_1": [
   {
    "at": [
     -10.0,
-    0.0,
+    -0.0,
     0.6556
    ],
    "axis": [
@@ -4884,11 +5077,11 @@
    "at": [
     16.0,
     0.0,
-    0.0
+    -0.0
    ],
    "axis": [
     1.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "fixed": false,
@@ -4929,11 +5122,11 @@
    "at": [
     14.5,
     0.0,
-    -0.0
+    0.0
    ],
    "axis": [
     1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "fixed": false,
@@ -5038,11 +5231,11 @@
    "at": [
     16.0,
     0.0,
-    -0.0
+    0.0
    ],
    "axis": [
     1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "fixed": false,
@@ -5106,7 +5299,7 @@
    "along": 1.0,
    "at": [
     2.0,
-    0.0,
+    -0.0,
     -24.0
    ],
    "axis": [
@@ -5154,7 +5347,7 @@
    ],
    "axis": [
     1.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "fixed": false,
@@ -5242,13 +5435,13 @@
    "along": 1.0,
    "at": [
     -8.4,
-    -0.0,
+    0.0,
     0.0
    ],
    "axis": [
     -1.0,
-    -0.0,
-    0.0
+    0.0,
+    -0.0
    ],
    "fixed": false,
    "geo": "screw_dia",
@@ -5292,7 +5485,7 @@
    "axis": [
     1.0,
     0.0,
-    -0.0
+    0.0
    ],
    "fixed": false,
    "geo": "screw_dia",
@@ -5332,12 +5525,12 @@
    "along": 1.0,
    "at": [
     5.0,
-    -0.0,
+    0.0,
     0.0
    ],
    "axis": [
     -1.0,
-    0.0,
+    -0.0,
     -0.0
    ],
    "fixed": false,
@@ -5414,150 +5607,6 @@
    "name": "SPRING",
    "radius": 7.8,
    "roll": 90.0,
-   "sketch": "Body",
-   "why": "mates"
-  }
- ],
- "TOP_CLAMP_Z_AXIS": [
-  {
-   "along": 1.0,
-   "at": [
-    -9.0,
-    10.0,
-    12.0
-   ],
-   "axis": [
-    1.0,
-    0.0,
-    0.0
-   ],
-   "fixed": false,
-   "geo": "boltp_dia",
-   "how": "centre",
-   "name": "BOLT1",
-   "radius": 2.3,
-   "roll": 0.0,
-   "sketch": "Bolts",
-   "why": "fastener"
-  },
-  {
-   "along": 1.0,
-   "at": [
-    -4.0,
-    10.0,
-    -12.0
-   ],
-   "axis": [
-    -1.0,
-    0.0,
-    0.0
-   ],
-   "fixed": false,
-   "geo": "head_dia",
-   "how": "centre",
-   "name": "BOLT2",
-   "radius": 4.0,
-   "roll": 0.0,
-   "sketch": "Head near",
-   "why": "fastener"
-  },
-  {
-   "along": 1.0,
-   "at": [
-    10.0,
-    24.0,
-    -0.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fixed": false,
-   "geo": "bore_dia",
-   "how": "centre",
-   "name": "BOLT3",
-   "radius": 2.3,
-   "roll": 0.0,
-   "sketch": "Top bore",
-   "why": "fastener"
-  },
-  {
-   "at": [
-    0.0,
-    20.0,
-    -16.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fixed": false,
-   "how": "plane",
-   "name": "FRAME1",
-   "offset": -0.0,
-   "roll": 270.0,
-   "sketch": "Shelf",
-   "why": "mates"
-  },
-  {
-   "at": [
-    0.0,
-    20.0,
-    16.0
-   ],
-   "axis": [
-    0.0,
-    -1.0,
-    0.0
-   ],
-   "fixed": false,
-   "how": "plane",
-   "name": "FRAME2",
-   "offset": 0.0,
-   "roll": 270.0,
-   "sketch": "Shelf",
-   "why": "mates"
-  },
-  {
-   "along": 1.0,
-   "at": [
-    -8.1,
-    -10.0,
-    0.0
-   ],
-   "axis": [
-    -0.0,
-    -1.0,
-    0.0
-   ],
-   "fixed": false,
-   "geo": "side",
-   "how": "axis",
-   "name": "ROD1",
-   "offset": 34.0,
-   "radius": 8.1,
-   "roll": 0.0,
-   "sketch": "Body",
-   "why": "mates"
-  },
-  {
-   "at": [
-    1.9601,
-    24.0,
-    0.2527
-   ],
-   "axis": [
-    0.0,
-    1.0,
-    -0.0
-   ],
-   "fixed": false,
-   "how": "plane",
-   "name": "ROD2",
-   "offset": 0.0,
-   "roll": 180.0,
    "sketch": "Body",
    "why": "mates"
   }
@@ -5682,9 +5731,9 @@
     0.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     1.0,
-    0.0
+    -0.0
    ],
    "fixed": false,
    "how": "coords",
@@ -6503,7 +6552,7 @@
     0.0
    ],
    "axis": [
-    0.0,
+    -0.0,
     -0.0,
     1.0
    ],
@@ -6519,7 +6568,7 @@
    "at": [
     -10.0,
     10.0,
-    0.0
+    -0.0
    ],
    "axis": [
     -1.0,
@@ -6543,7 +6592,7 @@
    "axis": [
     -1.0,
     0.0,
-    -0.0
+    0.0
    ],
    "fixed": false,
    "geo": "section",
@@ -6590,7 +6639,7 @@
    "axis": [
     1.0,
     0.0,
-    -0.0
+    0.0
    ],
    "fixed": false,
    "how": "coords",
@@ -6615,7 +6664,7 @@
     300.0
    ],
    "axis": [
-    -0.0,
+    0.0,
     1.0,
     0.0
    ],
@@ -6791,7 +6840,7 @@
    "at": [
     10.0,
     -10.0,
-    0.0
+    -0.0
    ],
    "axis": [
     1.0,
@@ -6832,6 +6881,33 @@
     "z": []
    },
    "roll": 180.0,
+   "why": "mates"
+  },
+  {
+   "at": [
+    -10.0,
+    -6.5,
+    150.0
+   ],
+   "axis": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "fixed": false,
+   "how": "coords",
+   "name": "ECC_TOP",
+   "per": {
+    "x": [
+     "-Section:section_x1",
+     "-Section:section_y2"
+    ],
+    "y": [],
+    "z": [
+     "Stretcher:rod_v"
+    ]
+   },
+   "roll": 270.0,
    "why": "mates"
   },
   {
@@ -6888,7 +6964,7 @@
    ],
    "axis": [
     -1.0,
-    0.0,
+    -0.0,
     0.0
    ],
    "fixed": false,

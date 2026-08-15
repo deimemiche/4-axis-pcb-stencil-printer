@@ -133,15 +133,17 @@ Which printed part belongs where:
   `BOT_RAIL_HOLDER`.
 * **`stencil-clamp/`** - the four stencil holder angles, bearing mounts 1 and
   2, nut holder, stop, spring plate, `TOP_RAIL_HOLDER`.
-* **`top-frame/`** - `TOP_CLAMP_Z_AXIS`.
+* **`top-frame/`** - `TOP_BEARING_MOUNT_Z_AXIS`, Michael's own, which put the
+  lid on an LM8UU where the author clamped it to the rod.
 * **`top-assembly/`** - the spanner: cases 1 and 2, counter, handwheel.
 * **`eccentric-clamp/`** - `ECCF_BOT`, `ECCF_HEIGHT`, `ECCF_MOUNT`, `ECCF_TOP`,
   `ECCF_LEVER` (**two cheeks per eccentric**, and two eccentrics).
 * **`shared/`** - `BOT_BRACKETS` and `BOT_HANDWHEEL`, the only two printed
   parts more than one sub-assembly uses.
 * **`archive/`** - built, but consumed by no assembly: `BOT_CLAMP_Z_AXIS`,
-  `BOT_RIGHT_ANGLE_CON`, `BOT_Z_AXIS_COUNTER_HOLDER`, `..._KNOB`,
-  `TOP_HANDWHEEL_Z_AXIS`, `ALPHA_TOP_PLATE_PLAIN`, and the mod's three.
+  `TOP_CLAMP_Z_AXIS`, `BOT_RIGHT_ANGLE_CON`, `BOT_Z_AXIS_COUNTER_HOLDER`,
+  `..._KNOB`, `TOP_HANDWHEEL_Z_AXIS`, `ALPHA_TOP_PLATE_PLAIN`, and the mod's
+  three.
 
 ## Datum
 
@@ -808,8 +810,10 @@ not one:
 That is what step 12's **third** 300 mm extrusion is for. An earlier pass here
 called it "most likely the bar the stencil clamp mounts to" and left it out; the
 manual's STEP_12 renders show it plainly, lying outboard of one side member with
-the two hinges bridging their top faces and a `TOP_CLAMP_Z_AXIS` at each end,
-and so do Michael's own photographs in [`../../docs/img/`](../../docs/img/).
+the two hinges bridging their top faces and a rod mount at each end, and so do
+Michael's own photographs in [`../../docs/img/`](../../docs/img/). Those mounts
+are `TOP_CLAMP_Z_AXIS` in the author's machine and
+`TOP_BEARING_MOUNT_Z_AXIS`, on an LM8UU each, in Michael's.
 
 It matters because it is how the machine is *used*. A stencil printer needs the
 stencil lifted clear to put a board in and lowered onto it to print; the lid is
@@ -875,12 +879,16 @@ things:
 * the M8 x 140 threaded rods become **8 mm linear rods** of the same length,
   stood up on a `BOT_Z_AXIS_BRACKET` at two corners of the bottom frame, one
   of each hand;
-* the hinge bar **rides them on an LM8UU** in a `TOP_Z_AXIS_BEARING_MOUNT`
-  instead of being clamped to them, so it slides instead of needing a hex key -
-  which is also why this machine has four eccentrics where the author's has two:
-  with a sliding Z the hinge end needs a stop of its own;
-* the travel goes from **66 mm to 92**, because a collar and a bearing take 24
-  mm of rod each where the author's two clamps take 40 and 34.
+* the hinge bar **rides them on an LM8UU** instead of being clamped to them, so
+  it slides instead of needing a hex key - which is also why this machine has
+  four eccentrics where the author's has two: with a sliding Z the hinge end
+  needs a stop of its own.  The mod's own `TOP_Z_AXIS_BEARING_MOUNT` was drawn
+  for this, but what Michael has built is
+  **`TOP_BEARING_MOUNT_Z_AXIS`**: the author's `TOP_CLAMP_Z_AXIS` with an LM8UU
+  housing where the clamped bore was, so it keeps the plate, shelf and top that
+  already fit the lid;
+* the travel goes from **66 mm to 89**, because the bracket's collar takes 24 mm
+  of rod and the bearing mount 27, where the author's two clamps take 40 and 34.
 
 The Z axis also had to move to the **+X side**, opposite the drives. The
 author's columns and his 2040 are both on -X, and so is `BOT_BRACKET_X_AXIS`;
@@ -992,19 +1000,19 @@ to derive everything from the nine documents that exist.
 
 ## What is actually in there
 
-Measured off the nine `../freecad/assembly/*.FCStd`, 2026-08-06:
+Measured off the nine `../freecad/assembly/*.FCStd`, 2026-08-15:
 
 | | count |
 |---|---|
 | Documents | 9 |
-| Authored part instances (`App::Link` + `Assembly::AssemblyLink`) | **145** |
-| Fasteners (Fasteners WB, `Part::FeaturePython`) | **245** |
-| Joint objects (149 joints + 8 grounded) | **157** |
-| Child links FreeCAD materialises on its own | 816 |
+| Authored part instances (`App::Link` + `Assembly::AssemblyLink`) | **147** |
+| Fasteners (Fasteners WB, `Part::FeaturePython`) | **253** |
+| Joint objects (151 joints + 8 grounded) | **159** |
+| Child links FreeCAD materialises on its own | 836 |
 | Distinct part documents consumed | 59 |
 
-The fasteners are `ISO4762` x 181, `DIN934` x 33, `ISO4035` x 26, `ISO4027` x 3
-and `IUTHeatInsert` x 2. **All 245 have `BaseObject` set** — every one is
+The fasteners are `ISO4762` x 189, `DIN934` x 33, `ISO4035` x 26, `ISO4027` x 3
+and `IUTHeatInsert` x 2. **All 253 have `BaseObject` set** — every one is
 attached to a hole edge, none is placed by coordinates.
 
 `Eccenter` is the one sub-assembly with **no** grounded joint.
@@ -1025,7 +1033,7 @@ the differ compares like with like and so the two can be read side by side:
 │   └── X-Axis_Carriage         (10 parts)
 └── Top_Assembly                (+5 parts)
     ├── Stencil_Clamp           (13 parts)
-    └── Top_Frame               (6 parts)
+    └── Top_Frame               (7 parts)
 ```
 
 Three levels, six leaf sub-assemblies. The nesting above is read off the
@@ -1226,10 +1234,10 @@ as a diff rather than as an opinion. Datums are what make that expressible:
 
 ## Where it got to
 
-    parts      145/145 exact, worst 0.000000 mm
-    bolts      245/245 exact
-    joints     149, none naming an edge
-    datums     308 across 59 part documents, all written by the part scripts
+    parts      147/147 exact, worst 0.000000 mm
+    bolts      253/253 exact
+    joints     151, none naming an edge
+    datums     311 across 59 part documents, all written by the part scripts
 
 Every leaf sub-assembly -- `Bottom_Frame`, `Eccenter`, `Rotation_Table`,
 `Top_Frame`, `X-Axis_Carriage`, `Stencil_Clamp` -- reproduces the hand-built
@@ -1369,7 +1377,8 @@ properly, the score before any of this work was 239, not 235.
 every offset more than a millimetre from its datum, which is nine -- including
 a nut sitting 20 mm up a stud, which is exactly what an offset is *for*. It now
 splits the offset **along** the datum's own Z from **across** it, and only
-across is worth reading. 237 of 245 are dead on their datum's axis.
+across is worth reading. All 253 are dead on their datum's axis -- the worst is
+1e-05 mm.
 
 ### The last bolt was a jam nut
 
@@ -1405,16 +1414,29 @@ exactly, so this changes nothing that already worked.
 
 ### What is not done
 
-**Eight offsets sit across their datum's axis**, and neither is a fault in the
-datums:
+**Nothing, on the fasteners** -- and what used to be here was fixed in the
+hand-built documents rather than worked around in this one.
 
-* `Top_Frame`'s six `TOP_CLAMP_Z_AXIS` screws, 3.110 mm each. The build
-  reproduces the hand-built machine exactly there -- 46 of 46 -- so this is
-  where Michael's screws actually are, beside the holes rather than in them.
-* `Bottom_Assembly`'s `Screw140` and `Nut032`, 597 mm. Those two are **adrift
-  in the hand-built assembly**: the nearest authored part to where they sit is
-  245 mm away. The offset is faithfully reproducing two fasteners floating in
-  space, which is worth knowing and not worth "fixing" here.
+Twice now the build has reported something it could not place or could not
+place honestly, and both times the reference in `../freecad/` was the thing at
+fault:
+
+* six `TOP_CLAMP_Z_AXIS` screws sat **3.110 mm off** the datum their part
+  defines, and `fastener-offsets.json` carried an `across` for each to put them
+  back -- so the scripted build reproduced the misplacement exactly and
+  `verify` called it right. Michael moved them onto their datums, and the
+  correction went with them.
+* four screws in `Top_Frame` were left attached to **`Pocket005`**, a feature
+  of `TOP_CLAMP_Z_AXIS` that `TOP_BEARING_MOUNT_Z_AXIS` does not have -- they
+  were the pinch bolts for a saw cut that no longer exists. They resolved to
+  nothing, so no frame could be measured for them and the build placed 50 of
+  `Top_Frame`'s 54. Michael has re-attached them to holes the new part really
+  has, which is what gave it its `BOLT1`, `BOLT2` and `BOLT3`.
+
+So all 253 place, all 253 are exact, and every offset is along its datum's own
+axis rather than across it. **A correction for something that is no longer
+there is just an error with a sign in front of it**, and the way to be rid of
+one is to fix the document it is correcting for.
 
 ### What the plan got wrong
 
@@ -1442,8 +1464,8 @@ tolerance and the difference is 0.000000 mm.
 
 ## Sequence
 
-1. **Extractor**, read-only: nine documents to a neutral model — 145 part
-   instances, 245 fastener attachments, 157 joint objects, 59 source documents.
+1. **Extractor**, read-only: nine documents to a neutral model — 147 part
+   instances, 253 fastener attachments, 159 joint objects, 59 source documents.
 2. **Datum proposal report**, read-only: every reference resolved and measured
    in its part's local frame, deduplicated, emitted as proposed `lcs()` calls
    grouped by part script, with the collapsed count. Replaces the old

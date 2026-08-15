@@ -62,7 +62,8 @@ They are **transcribed** from that source rather than reverse engineered, which
 is the same bargain the transcribed plates make with the author's drawings, and
 their cosmetic chamfers and fillets are deliberately left off -- they change no
 fit. Most live in `archive/`, consumed by no assembly; the Z bracket bolts to
-the bottom frame, so it is a `bottom-frame/` part and takes that prefix.
+the bottom frame, so it is a `bottom-frame/` part and takes that prefix. One
+more part of Michael's came later and from somewhere else again -- see below.
 
 | Part | From | Size mm | What it does |
 |---|---|---|---|
@@ -96,6 +97,60 @@ reaches 13.55 in. Both are right about themselves, so the difference cannot be
 split - the flange has to lie on the bar and the bore has to be on the rod. It
 comes out instead as the whole top assembly sitting 2 mm inboard of the bottom
 frame's own face, which `asm/column.py`'s `check_reach` prints every build.
+
+### The one Michael drew himself
+
+`TOP_BEARING_MOUNT_Z_AXIS` is transcribed too, but from neither a mesh nor a
+CadQuery script: Michael drew it in the FreeCAD GUI, by opening the author's
+`TOP_CLAMP_Z_AXIS` and rebuilding its front end. So its source has **real
+sketches**, and [`top-frame/top-bearing-mount-z-axis.py`](top-frame/top-bearing-mount-z-axis.py)
+reads its dimensions off them rather than off a measurement.
+
+| Part | From | Size mm | What it does |
+|---|---|---|---|
+| `TOP_BEARING_MOUNT_Z_AXIS` | `../freecad/top-frame/TOP_BEARING_MOUNT_Z_AXIS.FCStd` | 33.1 x 27 x 36 | carries the lid on a Z rod, on an LM8UU, so it slides |
+
+It does the same job as the mod's own `TOP_Z_AXIS_BEARING_MOUNT` above -- hold
+an LM8UU on a Z rod -- but it is a different part, and it is the one the machine
+uses. The mod's comes from `z-axis.py` and stands the bearing off a flange;
+Michael's keeps the author's plate, shelf and top so it drops straight into the
+lid where the clamp was.
+
+**Both solids are in FreeCAD, so this one is checked exactly.** Not arithmetic
+on a source's stated numbers, and not a volume agreeing to a few hundredths of
+a percent: the built body is **booleaned against Michael's, both ways, and each
+cut is empty**, on 29 faces against 29. That is the check the Z bracket gets
+against CadQuery, and it is available for the same reason -- the source is a
+solid that can be built here, rather than a mesh or a script that cannot be run.
+
+The two documents' *volumes* differ in the last four figures all the same --
+8308.575 against 8308.588 mm3, 2e-6 of the part. That is not a shape
+difference, since the booleans say there is none; it is OCC integrating the
+same revolved lip faces to slightly different answers in the two documents, and
+Michael's bounding box overshoots by 1e-4 mm for the same reason. `make` is
+given his number with a 1e-4 tolerance, so it still catches a real drift.
+
+What it cost was reading three things off the document rather than assuming
+them:
+
+* the housing is a **groove**, not a pocket. It is not one diameter -- a D13.2
+  lip at each end holds the bearing in and a 1 mm 45 degree lead gets it past
+  them -- and a pocket can only cut one section. D15.2 with D13.2 lips is the
+  author's own LM8UU seat, the one `BOT_BEARING_MOUNT_Y_AXIS` uses, so Michael
+  has followed the machine here rather than inventing a fit.
+* the back of the boss is **open over 60 degrees**, in a wedge whose apex is on
+  the bore's own axis. It reads as an error until it is drawn; the housing is a
+  C, not a ring. The gap is 7.6 mm at the seat and widens outwards -- narrower
+  than the bearing, so it opens the bore to the back rather than letting the
+  LM8UU out sideways.
+* the boss and the bore were, at first, **0.1 mm out of concentric** -- 10.1
+  from the origin against 10.2 -- which the transcription reproduced rather
+  than tidied, the assembly joining the LM8UU on the housing's axis and not the
+  boss's. Michael has since put both on 10.0, so the wall is 2.9 mm all the way
+  round and the script carries one `bore` instead of two numbers that agree by
+  eye. It shows in `derive.json` too: with the two on one axis, `BEARING` is
+  explained by the `side` profile's own arc rather than falling through to
+  `coords`, so all six of the part's datums now name a sketched feature.
 
 ## The microscope column, which is not part of this machine
 
@@ -294,7 +349,7 @@ the 132 mm3 that widening takes out, and `verify.py` reports 184 mismatches in
 | `TOP_CLAMP_SPANNER_COUNTER` | 16.4 x 30.0 x 58.0 | 19315 | Z | 0.94 | **done** `top-assembly/` |
 | `TOP_CLAMP_SPANNER_HANDWHEEL` | 5.0 x 33.8 x 34.0 | 3111 | X | 0.99 | **done** `top-assembly/` |
 | `TOP_CLAMP_STOP` | 10.0 x 20.8 x 15.6 | 1750 | X | 0.88 | **done** `stencil-clamp/` |
-| `TOP_CLAMP_Z_AXIS` | 30.2 x 34.0 x 32.0 | 10387 | Y | 0.86 | **done** `top-frame/` |
+| `TOP_CLAMP_Z_AXIS` | 30.2 x 34.0 x 32.0 | 10387 | Y | 0.86 | **done** `archive/` |
 | `TOP_HANDWHEEL_Z_AXIS` | 38.0 x 17.0 x 37.5 | 11108 | Y | 0.91 | **done** `archive/` |
 | `TOP_RAIL_HOLDER` | 11.4 x 16.1 x 27.6 | 2166 | X | 0.91 | **done** `stencil-clamp/` |
 | `TOP_SPRING_PLATE` | 19.4 x 4.4 x 19.4 | 769 | Y | 0.81 | **done** `stencil-clamp/` |

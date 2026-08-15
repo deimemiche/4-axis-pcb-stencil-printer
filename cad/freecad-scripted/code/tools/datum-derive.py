@@ -1,6 +1,6 @@
 """Step 6 of ASSEMBLY.md Part II: say what each measured datum is *made of*.
 
-**Read-only.**  `datum-plan.json` holds 308 datum positions as literals, because
+**Read-only.**  `datum-plan.json` holds 311 datum positions as literals, because
 that is what a measurement off the hand-built assembly gives.  This asks the
 built part which of its own sketched features sits at each of those literals, so
 the number in the plan can be replaced, in the part script, by the expression

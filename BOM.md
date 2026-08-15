@@ -5,7 +5,7 @@ Counted by walking the built assembly, not kept by hand: see
 A part inside a sub-assembly that is linked four times is counted
 four times, so these are the numbers to order.
 
-**435 pieces in all.**
+**437 pieces in all.**
 
 ## Printed parts
 
@@ -29,10 +29,10 @@ four times, so these are the numbers to order.
 | 3 | BOT_BEARING_MOUNT_Y_AXIS |
 | 3 | BOT_HANDWHEEL |
 | 2 | BOT_RAIL_CLAMP_Y_AXIS |
+| 2 | TOP_BEARING_MOUNT_Z_AXIS |
 | 2 | TOP_CLAMP_BEARING_MOUNT_1 |
 | 2 | TOP_CLAMP_BEARING_MOUNT_2 |
 | 2 | TOP_CLAMP_STOP |
-| 2 | TOP_CLAMP_Z_AXIS |
 | 2 | TOP_SPRING_PLATE |
 | 1 | BOT_BEARING_MOUNT_Y_AXIS_DRIVEN |
 | 1 | BOT_BRACKET_X_AXIS |
@@ -67,11 +67,11 @@ four times, so these are the numbers to order.
 
 ## Bought parts
 
-15 distinct, 54 pieces.
+15 distinct, 56 pieces.
 
 | Qty | Part |
 |---:|:---|
-| 12 | LM8UU |
+| 14 | LM8UU |
 | 6 | 2020_300 |
 | 6 | SPRING_ID10_L35_AT20 |
 | 4 | BEARING_14X5X5 |
@@ -89,7 +89,7 @@ four times, so these are the numbers to order.
 
 ## Fasteners
 
-14 distinct, 277 pieces.
+13 distinct, 277 pieces.
 
 | Qty | Part |
 |---:|:---|
@@ -99,8 +99,7 @@ four times, so these are the numbers to order.
 | 22 | ISO 4762 socket head cap screw M3x10 |
 | 5 | ISO 4762 socket head cap screw M3x14 |
 | 10 | ISO 4762 socket head cap screw M4x6 |
-| 116 | ISO 4762 socket head cap screw M4x10 |
-| 2 | ISO 4762 socket head cap screw M4x14 |
+| 118 | ISO 4762 socket head cap screw M4x10 |
 | 27 | DIN 934 hex nut M3 |
 | 20 | ISO 4035 thin hex nut M3 |
 | 6 | DIN 934 hex nut M5 |
