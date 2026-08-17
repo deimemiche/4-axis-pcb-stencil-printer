@@ -1,0 +1,3261 @@
+{
+ "assembly": "4-Axis_Stencil_Printer",
+ "nut": {
+  "height": 3.0,
+  "length": 10.0,
+  "width": 5.8
+ },
+ "nuts": [
+  {
+   "across": -0.0,
+   "at": [
+    278.65,
+    82.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw918",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    -0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_1",
+   "z": 250.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    250.0
+   ],
+   "bolt": "M4x10-Screw919",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 250.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    69.5,
+    30.0
+   ],
+   "bolt": "M4x10-Screw920",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 30.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    82.5,
+    50.0
+   ],
+   "bolt": "M4x10-Screw921",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 50.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    18.65,
+    69.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw922",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 10.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    69.5,
+    250.0
+   ],
+   "bolt": "M4x10-Screw923",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 250.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    58.65,
+    82.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw924",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    -0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_2",
+   "z": 30.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    69.5,
+    50.0
+   ],
+   "bolt": "M4x10-Screw925",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 50.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    69.5,
+    270.0
+   ],
+   "bolt": "M4x10-Screw926",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 270.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    69.5,
+    30.0
+   ],
+   "bolt": "M4x10-Screw927",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 30.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    298.65,
+    82.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw928",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    -0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_2",
+   "z": 270.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    318.65,
+    69.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    38.65,
+    69.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw929",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.707107,
+    -0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_2",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    278.65,
+    69.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw930",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.707107,
+    -0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_2",
+   "z": 250.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    298.65,
+    69.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw931",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.707107,
+    -0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_1",
+   "z": 270.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    82.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw932",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 290.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    278.65,
+    82.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw933",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    -0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_2",
+   "z": 250.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    278.65,
+    69.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw934",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.707107,
+    -0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_1",
+   "z": 250.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    38.65,
+    69.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw935",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.707107,
+    -0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_1",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    69.5,
+    250.0
+   ],
+   "bolt": "M4x10-Screw936",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 250.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    38.65,
+    82.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw937",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    -0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_1",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    298.65,
+    69.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw938",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.707107,
+    -0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_2",
+   "z": 270.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    69.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw939",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 290.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    82.5,
+    250.0
+   ],
+   "bolt": "M4x10-Screw940",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 250.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    82.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw941",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    58.65,
+    69.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw942",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.707107,
+    -0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_2",
+   "z": 30.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw943",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    58.65,
+    69.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw944",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.707107,
+    -0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_1",
+   "z": 30.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    69.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw945",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 290.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    58.65,
+    82.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw946",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    -0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_1",
+   "z": 30.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    50.0
+   ],
+   "bolt": "M4x10-Screw947",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 50.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    69.5,
+    270.0
+   ],
+   "bolt": "M4x10-Screw948",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 270.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw949",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 290.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    82.5,
+    270.0
+   ],
+   "bolt": "M4x10-Screw950",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 270.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    69.5,
+    50.0
+   ],
+   "bolt": "M4x10-Screw951",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    0.5,
+    -0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 50.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    30.0
+   ],
+   "bolt": "M4x10-Screw952",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 30.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    38.65,
+    82.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw953",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    -0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_2",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    298.65,
+    82.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw954",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    -0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_280",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_280_1",
+   "z": 270.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    318.65,
+    82.5,
+    30.0
+   ],
+   "bolt": "M4x10-Screw955",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.5,
+    -0.5,
+    -0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 30.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    270.0
+   ],
+   "bolt": "M4x10-Screw956",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 270.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -1.35,
+    82.5,
+    230.0
+   ],
+   "bolt": "M4x6-Screw",
+   "bolt_length": 6.0,
+   "engagement": 2.5,
+   "face": "XN",
+   "holds": [
+    "HINGE_40_LEAF"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 1.5,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 230.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -1.35,
+    82.5,
+    210.0
+   ],
+   "bolt": "M4x6-Screw016",
+   "bolt_length": 6.0,
+   "engagement": 2.5,
+   "face": "XN",
+   "holds": [
+    "HINGE_40_LEAF"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 1.5,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 210.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    230.0
+   ],
+   "bolt": "M4x6-Screw017",
+   "bolt_length": 6.0,
+   "engagement": 2.5,
+   "face": "XN",
+   "holds": [
+    "HINGE_40_LEAF"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 1.5,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 230.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    210.0
+   ],
+   "bolt": "M4x6-Screw018",
+   "bolt_length": 6.0,
+   "engagement": 2.5,
+   "face": "XN",
+   "holds": [
+    "HINGE_40_LEAF"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 1.5,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 210.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -1.35,
+    82.5,
+    90.0
+   ],
+   "bolt": "M4x6-Screw019",
+   "bolt_length": 6.0,
+   "engagement": 2.5,
+   "face": "XN",
+   "holds": [
+    "HINGE_40_LEAF"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 1.5,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 90.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -1.35,
+    82.5,
+    70.0
+   ],
+   "bolt": "M4x6-Screw020",
+   "bolt_length": 6.0,
+   "engagement": 2.5,
+   "face": "XN",
+   "holds": [
+    "HINGE_40_LEAF"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 1.5,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 70.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    90.0
+   ],
+   "bolt": "M4x6-Screw021",
+   "bolt_length": 6.0,
+   "engagement": 2.5,
+   "face": "XN",
+   "holds": [
+    "HINGE_40_LEAF"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 1.5,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 90.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    18.65,
+    82.5,
+    70.0
+   ],
+   "bolt": "M4x6-Screw022",
+   "bolt_length": 6.0,
+   "engagement": 2.5,
+   "face": "XN",
+   "holds": [
+    "HINGE_40_LEAF"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 1.5,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 70.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -7.85,
+    76.0,
+    292.0
+   ],
+   "bolt": "M4x10-Screw957",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "TOP_BEARING_MOUNT_Z_AXIS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.0,
+    0.707107,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 292.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -7.85,
+    76.0,
+    34.0
+   ],
+   "bolt": "M4x10-Screw958",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "TOP_BEARING_MOUNT_Z_AXIS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.0,
+    0.707107,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 34.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -1.35,
+    82.5,
+    21.0
+   ],
+   "bolt": "M4x10-Screw959",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "TOP_BEARING_MOUNT_Z_AXIS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 21.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -7.85,
+    76.0,
+    8.0
+   ],
+   "bolt": "M4x10-Screw960",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "TOP_BEARING_MOUNT_Z_AXIS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.0,
+    0.707107,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 8.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -1.35,
+    82.5,
+    279.0
+   ],
+   "bolt": "M4x10-Screw961",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "XN",
+   "holds": [
+    "TOP_BEARING_MOUNT_Z_AXIS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 279.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -7.85,
+    76.0,
+    266.0
+   ],
+   "bolt": "M4x10-Screw962",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "TOP_BEARING_MOUNT_Z_AXIS"
+   ],
+   "in": "/Top_Assembly/Top_Frame",
+   "rot": [
+    -0.0,
+    0.707107,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300",
+   "z": 266.0
+  },
+  {
+   "across": 1.154,
+   "at": [
+    25.15,
+    76.0,
+    274.7153
+   ],
+   "bolt": "M4x10-Screw963",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "YP",
+   "holds": [
+    "TOP_RAIL_HOLDER"
+   ],
+   "in": "/Top_Assembly",
+   "rot": [
+    -0.707107,
+    0.0,
+    -0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 274.715
+  },
+  {
+   "across": 1.154,
+   "at": [
+    25.15,
+    76.0,
+    257.0973
+   ],
+   "bolt": "M4x10-Screw964",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "YP",
+   "holds": [
+    "TOP_RAIL_HOLDER"
+   ],
+   "in": "/Top_Assembly",
+   "rot": [
+    -0.707107,
+    0.0,
+    -0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 257.097
+  },
+  {
+   "across": 0.5,
+   "at": [
+    25.15,
+    76.0,
+    25.3773
+   ],
+   "bolt": "M4x10-Screw965",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "YP",
+   "holds": [
+    "TOP_RAIL_HOLDER"
+   ],
+   "in": "/Top_Assembly",
+   "rot": [
+    -0.707107,
+    0.0,
+    -0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 25.377
+  },
+  {
+   "across": -1.154,
+   "at": [
+    312.15,
+    76.0,
+    257.0973
+   ],
+   "bolt": "M4x10-Screw966",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "YP",
+   "holds": [
+    "TOP_RAIL_HOLDER"
+   ],
+   "in": "/Top_Assembly",
+   "rot": [
+    0.0,
+    -0.707107,
+    -0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 257.097
+  },
+  {
+   "across": -1.154,
+   "at": [
+    312.15,
+    76.0,
+    274.7153
+   ],
+   "bolt": "M4x10-Screw967",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "YP",
+   "holds": [
+    "TOP_RAIL_HOLDER"
+   ],
+   "in": "/Top_Assembly",
+   "rot": [
+    0.0,
+    -0.707107,
+    -0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 274.715
+  },
+  {
+   "across": -0.5,
+   "at": [
+    312.15,
+    76.0,
+    42.9953
+   ],
+   "bolt": "M4x10-Screw968",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "YP",
+   "holds": [
+    "TOP_RAIL_HOLDER"
+   ],
+   "in": "/Top_Assembly",
+   "rot": [
+    0.0,
+    -0.707107,
+    -0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 42.995
+  },
+  {
+   "across": -0.5,
+   "at": [
+    312.15,
+    76.0,
+    25.3773
+   ],
+   "bolt": "M4x10-Screw969",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "YP",
+   "holds": [
+    "TOP_RAIL_HOLDER"
+   ],
+   "in": "/Top_Assembly",
+   "rot": [
+    0.0,
+    -0.707107,
+    -0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300_TOP_FRONT",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300_TOP_FRONT",
+   "z": 25.377
+  },
+  {
+   "across": 0.5,
+   "at": [
+    25.15,
+    76.0,
+    42.9953
+   ],
+   "bolt": "M4x10-Screw970",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "YP",
+   "holds": [
+    "TOP_RAIL_HOLDER"
+   ],
+   "in": "/Top_Assembly",
+   "rot": [
+    -0.707107,
+    0.0,
+    -0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Top_Assembly/Top_Frame/2020_300:1",
+   "z": 42.995
+  },
+  {
+   "across": -0.0,
+   "at": [
+    0.0,
+    6.5,
+    30.0
+   ],
+   "bolt": "M4x10-Screw048",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 30.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    20.0,
+    6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw049",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.707107,
+    0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_302",
+   "z": 10.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    300.0,
+    6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw050",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKET_X_AXIS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    0.707107,
+    0.707107,
+    -0.0
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_301",
+   "z": 10.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    -6.5,
+    50.0
+   ],
+   "bolt": "M4x10-Screw051",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 50.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    -6.5,
+    50.0
+   ],
+   "bolt": "M4x10-Screw052",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 50.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    300.0,
+    -6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw053",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_302",
+   "z": 290.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    -6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw054",
+   "bolt_length": 10.0,
+   "engagement": 3.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS",
+    "STAND"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 5.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    20.0,
+    6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw055",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    0.707107,
+    0.707107,
+    -0.0
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_301",
+   "z": 290.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    0.0,
+    -6.5,
+    250.0
+   ],
+   "bolt": "M4x10-Screw056",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 250.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw057",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 10.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    40.0,
+    6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw058",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.707107,
+    0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_302",
+   "z": 30.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    300.0,
+    -6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw059",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_301",
+   "z": 10.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    280.0,
+    -6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw060",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_302",
+   "z": 270.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    280.0,
+    -6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw061",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_301",
+   "z": 30.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    0.0,
+    6.5,
+    50.0
+   ],
+   "bolt": "M4x10-Screw062",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 50.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    -6.5,
+    250.0
+   ],
+   "bolt": "M4x10-Screw063",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 250.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    0.0,
+    -6.5,
+    270.0
+   ],
+   "bolt": "M4x10-Screw064",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 270.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    -6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw065",
+   "bolt_length": 10.0,
+   "engagement": 3.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS",
+    "STAND"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 5.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 290.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    -6.5,
+    270.0
+   ],
+   "bolt": "M4x10-Screw066",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 270.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    40.0,
+    -6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw067",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_301",
+   "z": 270.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    250.0
+   ],
+   "bolt": "M4x10-Screw068",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKET_X_AXIS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 250.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    -6.5,
+    30.0
+   ],
+   "bolt": "M4x10-Screw069",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 30.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    20.0,
+    -6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw070",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_302",
+   "z": 10.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    40.0,
+    6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw071",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    0.707107,
+    0.707107,
+    -0.0
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_301",
+   "z": 270.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    40.0,
+    -6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw072",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.707107,
+    -0.0,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_302",
+   "z": 30.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -6.5,
+    0.0,
+    292.9928
+   ],
+   "bolt": "M4x10-Screw073",
+   "bolt_length": 10.0,
+   "engagement": 4.55,
+   "face": "XN",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 3.45,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 292.993
+  },
+  {
+   "across": -0.0,
+   "at": [
+    20.0,
+    -6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw074",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_301",
+   "z": 290.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    -6.5,
+    30.0
+   ],
+   "bolt": "M4x10-Screw075",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 30.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw076",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 290.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    6.5,
+    270.0
+   ],
+   "bolt": "M4x10-Screw077",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 270.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -6.5,
+    0.0,
+    7.0072
+   ],
+   "bolt": "M4x10-Screw078",
+   "bolt_length": 10.0,
+   "engagement": 4.55,
+   "face": "XN",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 3.45,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 7.007
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    -6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw079",
+   "bolt_length": 10.0,
+   "engagement": 3.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS",
+    "STAND"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 5.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 10.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    6.5,
+    250.0
+   ],
+   "bolt": "M4x10-Screw080",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 250.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    -6.5,
+    290.0
+   ],
+   "bolt": "M4x10-Screw081",
+   "bolt_length": 10.0,
+   "engagement": 3.0,
+   "face": "YN",
+   "holds": [
+    "BOT_BRACKETS",
+    "STAND"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    -0.5,
+    0.5,
+    0.5
+   ],
+   "solid": 1.0,
+   "stack": 5.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 290.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    50.0
+   ],
+   "bolt": "M4x10-Screw082",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 50.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    300.0,
+    6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw083",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.707107,
+    0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_302",
+   "z": 290.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    280.0,
+    6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw084",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.707107,
+    0.0,
+    0.0,
+    -0.707107
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_302",
+   "z": 270.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    10.0
+   ],
+   "bolt": "M4x10-Screw085",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 10.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    30.0
+   ],
+   "bolt": "M4x10-Screw086",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKETS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 30.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    270.0
+   ],
+   "bolt": "M4x10-Screw",
+   "bolt_length": 10.0,
+   "engagement": 4.0,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKET_X_AXIS"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 4.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 270.0
+  },
+  {
+   "across": 0.5,
+   "at": [
+    6.5,
+    0.0,
+    270.355
+   ],
+   "bolt": "M4x10-Screw248",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "XP",
+   "holds": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.707107,
+    0.0,
+    0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 270.355
+  },
+  {
+   "across": 0.5,
+   "at": [
+    313.5,
+    0.0,
+    29.772
+   ],
+   "bolt": "M4x10-Screw249",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "XN",
+   "holds": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 29.772
+  },
+  {
+   "across": 0.5,
+   "at": [
+    6.5,
+    0.0,
+    251.772
+   ],
+   "bolt": "M4x10-Screw250",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "XP",
+   "holds": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.707107,
+    0.0,
+    0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 251.772
+  },
+  {
+   "across": 0.5,
+   "at": [
+    313.5,
+    0.0,
+    48.355
+   ],
+   "bolt": "M4x10-Screw251",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "XN",
+   "holds": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 48.355
+  },
+  {
+   "across": 0.5,
+   "at": [
+    313.5,
+    0.0,
+    270.355
+   ],
+   "bolt": "M4x10-Screw252",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "XN",
+   "holds": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 270.355
+  },
+  {
+   "across": 0.5,
+   "at": [
+    6.5,
+    0.0,
+    48.355
+   ],
+   "bolt": "M4x10-Screw253",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "XP",
+   "holds": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.707107,
+    0.0,
+    0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 48.355
+  },
+  {
+   "across": 0.5,
+   "at": [
+    6.5,
+    0.0,
+    29.772
+   ],
+   "bolt": "M4x10-Screw254",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "XP",
+   "holds": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.707107,
+    0.0,
+    0.707107,
+    0.0
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 29.772
+  },
+  {
+   "across": 0.5,
+   "at": [
+    313.5,
+    0.0,
+    251.772
+   ],
+   "bolt": "M4x10-Screw255",
+   "bolt_length": 10.0,
+   "engagement": 2.0,
+   "face": "XN",
+   "holds": [
+    "BOT_RAIL_HOLDER"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "solid": 1.0,
+   "stack": 6.0,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 251.772
+  },
+  {
+   "across": -0.0,
+   "at": [
+    0.0,
+    6.5,
+    64.0
+   ],
+   "bolt": "M4x10-Screw256",
+   "bolt_length": 10.0,
+   "engagement": 4.5,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET",
+    "ECCF_BOT"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 3.5,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 64.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    6.5,
+    96.0
+   ],
+   "bolt": "M4x10-Screw257",
+   "bolt_length": 10.0,
+   "engagement": 4.5,
+   "face": "YP",
+   "holds": [
+    "ECCF_BOT"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 3.5,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 96.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    0.0,
+    6.5,
+    236.0
+   ],
+   "bolt": "M4x10-Screw258",
+   "bolt_length": 10.0,
+   "engagement": 4.5,
+   "face": "YP",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED",
+    "ECCF_BOT"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 3.5,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 236.0
+  },
+  {
+   "across": -0.0,
+   "at": [
+    0.0,
+    6.5,
+    204.0
+   ],
+   "bolt": "M4x10-Screw259",
+   "bolt_length": 10.0,
+   "engagement": 4.5,
+   "face": "YP",
+   "holds": [
+    "ECCF_BOT"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 3.5,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "z": 204.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    96.0
+   ],
+   "bolt": "M4x10-Screw260",
+   "bolt_length": 10.0,
+   "engagement": 4.5,
+   "face": "YP",
+   "holds": [
+    "ECCF_BOT"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 3.5,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 96.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    236.0
+   ],
+   "bolt": "M4x10-Screw261",
+   "bolt_length": 10.0,
+   "engagement": 4.5,
+   "face": "YP",
+   "holds": [
+    "ECCF_BOT"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 3.5,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 236.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    204.0
+   ],
+   "bolt": "M4x10-Screw262",
+   "bolt_length": 10.0,
+   "engagement": 4.5,
+   "face": "YP",
+   "holds": [
+    "ECCF_BOT"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 3.5,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 204.0
+  },
+  {
+   "across": 0.0,
+   "at": [
+    320.0,
+    6.5,
+    64.0
+   ],
+   "bolt": "M4x10-Screw263",
+   "bolt_length": 10.0,
+   "engagement": 4.5,
+   "face": "YP",
+   "holds": [
+    "BOT_BRACKETS",
+    "ECCF_BOT"
+   ],
+   "in": "/Bottom_Assembly",
+   "rot": [
+    0.5,
+    0.5,
+    0.5,
+    -0.5
+   ],
+   "solid": 1.0,
+   "stack": 3.5,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_303",
+   "z": 64.0
+  }
+ ],
+ "rejected": [
+  {
+   "across": -0.0,
+   "at": [
+    -6.5,
+    0.0,
+    264.5819
+   ],
+   "bolt": "M4x6-Screw",
+   "bolt_length": 6.0,
+   "engagement": -9.4,
+   "face": "XN",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET_MIRRORED"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "solid": 0.923,
+   "stack": 13.4,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "why": "the 13.40 mm it clamps is not solid (0.92) -- it holds nothing against the slot",
+   "z": 264.582
+  },
+  {
+   "across": -0.0,
+   "at": [
+    -6.5,
+    0.0,
+    35.4181
+   ],
+   "bolt": "M4x6-Screw001",
+   "bolt_length": 6.0,
+   "engagement": -9.4,
+   "face": "XN",
+   "holds": [
+    "BOT_Z_AXIS_BRACKET"
+   ],
+   "in": "/Bottom_Assembly/Bottom_Frame",
+   "rot": [
+    0.0,
+    -0.707107,
+    0.0,
+    0.707107
+   ],
+   "solid": 0.923,
+   "stack": 13.4,
+   "stick": "2020_300",
+   "stick_at": "/Bottom_Assembly/Bottom_Frame/2020_300",
+   "why": "the 13.40 mm it clamps is not solid (0.92) -- it holds nothing against the slot",
+   "z": 35.418
+  }
+ ]
+}
